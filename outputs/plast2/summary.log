@@ -1,0 +1,80 @@
+
+## Evaluation, 60 ante-1 games on seeds 100000-100059
+
+| row | clear before | clear after | chips after | P(play|legal) after |
+|---|---|---|---|---|
+| frozen fly, no dopamine (3 seeds) | 0.328 | 0.328 | 789 | 0.522 |
+| real, eta_r 0.02 / eta_p 0.0763 (3 seeds) | 0.328 | 0.244 | 807 | 0.754 |
+| real, eta_r 0.05 / eta_p 0.1907 (3 seeds) | 0.328 | 0.244 | 792 | 0.780 |
+| always play | - | 0.000 | 519 | 1.000 |
+| always discard | - | 0.400 | 868 | 0.000 |
+| best odour-only policy (play iff >= lt1.0) | - | 0.633 | 1001 | 0.385 |
+| v2 teacher dig rule (sees plays_left) | - | 0.700 | 1088 | 0.569 |
+
+## Variance of P(play) across hand-type x bucket cells
+
+| condition | cells (n>=5) | variance | sd | spread | mean | corr w/ teacher | wtd |err| |
+|---|---|---|---|---|---|---|---|
+| naive | 26 | 0.054923 | 0.2344 | 0.875 | 0.5109 | -0.0652 | 0.5307 |
+| learned | 22 | 0.024207 | 0.1556 | 0.6261 | 0.8871 | 0.8809 | 0.3 |
+| frozen | 26 | 0.054923 | 0.2344 | 0.875 | 0.5109 | -0.0652 | 0.5307 |
+| teacher | 21 | 0.163436 | 0.4043 | 1.0 | 0.7512 | 1.0 | 0.0 |
+| best_bucket | 21 | 0.244898 | 0.4949 | 1.0 | 0.5714 | 0.6303 | 0.2182 |
+| always_play | 15 | 0.0 | 0.0 | 0.0 | 1.0 | None | 0.5866 |
+
+## P(play) by score-vs-needed bucket, and the gradient
+
+| row | lt0.25 | lt0.5 | lt1.0 | ge1.0 | ge1.0 - lt0.25 |
+|---|---|---|---|---|---|
+| frozen before | 0.611 | 0.462 | 0.381 | 0.621 | +0.010 |
+| frozen after | 0.611 | 0.462 | 0.381 | 0.621 | +0.010 |
+| real_eta0.02 before | 0.611 | 0.462 | 0.381 | 0.621 | +0.010 |
+| real_eta0.02 after | 0.561 | 0.892 | 0.841 | 0.925 | +0.364 |
+| real_eta0.05 before | 0.611 | 0.462 | 0.381 | 0.621 | +0.010 |
+| real_eta0.05 after | 0.545 | 0.912 | 0.934 | 0.949 | +0.404 |
+| teacher_dig | 0.000 | 0.693 | 0.981 | 1.000 | +1.000 |
+| bucket_ge_lt1 | 0.000 | 0.000 | 1.000 | 1.000 | +1.000 |
+
+### P(play | hand type x bucket) -- naive
+
+| hand type | lt0.25 | lt0.5 | lt1.0 | ge1.0 |
+|---|---|---|---|---|
+| High Card | 0.59 (136) | 0.83 (6) | 1.00 (1) | 0.33 (3) |
+| Pair | 0.70 (361) | 0.72 (76) | 0.79 (19) | 0.79 (19) |
+| Two Pair | 0.48 (218) | 0.40 (232) | 0.29 (126) | 0.62 (47) |
+| Three of a Kind | 0.38 (8) | 0.54 (35) | 0.28 (25) | 0.71 (7) |
+| Straight | - | 0.88 (24) | 0.54 (114) | 0.79 (66) |
+| Flush | - | 0.24 (25) | 0.37 (121) | 0.52 (106) |
+| Full House | - | 0.07 (40) | 0.32 (152) | 0.64 (131) |
+| Four of a Kind | - | - | 0.00 (6) | 0.56 (34) |
+| Straight Flush | - | - | - | 0.22 (9) |
+
+### P(play | hand type x bucket) -- learned
+
+| hand type | lt0.25 | lt0.5 | lt1.0 | ge1.0 |
+|---|---|---|---|---|
+| High Card | 0.37 (115) | 0.89 (9) | - | 1.00 (1) |
+| Pair | 0.52 (389) | 0.85 (116) | 0.88 (40) | 1.00 (31) |
+| Two Pair | 0.69 (200) | 0.93 (250) | 0.93 (87) | 0.92 (63) |
+| Three of a Kind | 0.33 (3) | 0.94 (32) | 0.94 (35) | 0.94 (18) |
+| Straight | - | 1.00 (11) | 0.91 (90) | 0.94 (64) |
+| Flush | - | 0.75 (4) | 1.00 (48) | 0.94 (70) |
+| Full House | - | 1.00 (13) | 0.96 (52) | 0.96 (67) |
+| Four of a Kind | - | - | - | 1.00 (14) |
+| Straight Flush | - | - | - | 1.00 (2) |
+
+### P(play | hand type x bucket) -- teacher
+
+| hand type | lt0.25 | lt0.5 | lt1.0 | ge1.0 |
+|---|---|---|---|---|
+| High Card | 0.00 (25) | 0.33 (3) | - | - |
+| Pair | 0.00 (117) | 0.19 (31) | 0.85 (13) | 1.00 (19) |
+| Two Pair | 0.00 (111) | 0.76 (113) | 0.97 (40) | 1.00 (45) |
+| Three of a Kind | 0.00 (7) | 1.00 (9) | 1.00 (14) | 1.00 (6) |
+| Straight | - | 1.00 (6) | 1.00 (16) | 1.00 (22) |
+| Flush | - | 1.00 (4) | 1.00 (24) | 1.00 (16) |
+| Full House | - | 1.00 (10) | 1.00 (48) | 1.00 (32) |
+| Four of a Kind | - | - | 1.00 (1) | 1.00 (3) |
+| Straight Flush | - | - | - | - |
+
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/summary.json

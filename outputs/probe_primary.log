@@ -1,0 +1,66 @@
+populations: ORN=2639  ALPN=686  KC=4064  MBON=97  CX=2950  DN=1314
+glomerular channels: 144
+feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 2639, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+
+simulating real wiring (window 50.0 ms, drive 30.0 mV, v_jitter 6.9 mV, persistent=False) ...
+    [real] 200/600  20s
+    [real] 400/600  40s
+    [real] 600/600  60s
+  real: 60s
+simulating shuffled wiring ...
+    [shuf] 200/600  15s
+    [shuf] 400/600  30s
+    [shuf] 600/600  45s
+  shuffled: 45s
+
+label A  (majority-class rate 0.5933)
+  raw_bits                   acc 0.9
+  glomerular_ceiling         acc 0.775  (144 channels)
+  real:ORN                   acc 0.8983 (1810/2639 cols)
+  real:ALPN                  acc 0.695 (580/686 cols)
+  real:KC                    acc 0.5867 (2058/4064 cols)
+  real:MBON                  acc 0.5833 (71/97 cols)
+  real:CX                    acc 0.5683 (1013/2950 cols)
+  real:DN                    acc 0.61 (543/1314 cols)
+  real:MBON+CX               acc 0.5833 (1084/3047 cols)
+  real:DN+MBON+CX            acc 0.625 (1627/4361 cols)
+  shuffled:ORN               acc 0.9 (1836/2639 cols)
+  shuffled:ALPN              acc 0.6033 (219/686 cols)
+  shuffled:KC                acc 0.6883 (321/4064 cols)
+  shuffled:MBON              acc 0.6667 (66/97 cols)
+  shuffled:CX                acc 0.6283 (653/2950 cols)
+  shuffled:DN                acc 0.66 (580/1314 cols)
+  shuffled:MBON+CX           acc 0.65 (719/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.6817 (1299/4361 cols)
+  PERMUTED real:DN           acc 0.5567   PERMUTED raw acc 0.555
+
+label B  (majority-class rate 0.5033)
+  raw_bits                   acc 0.8533
+  glomerular_ceiling         acc 0.745  (144 channels)
+  real:ORN                   acc 0.855 (1810/2639 cols)
+  real:ALPN                  acc 0.6633 (580/686 cols)
+  real:KC                    acc 0.615 (2058/4064 cols)
+  real:MBON                  acc 0.5283 (71/97 cols)
+  real:CX                    acc 0.5633 (1013/2950 cols)
+  real:DN                    acc 0.52 (543/1314 cols)
+  real:MBON+CX               acc 0.5667 (1084/3047 cols)
+  real:DN+MBON+CX            acc 0.535 (1627/4361 cols)
+  shuffled:ORN               acc 0.8483 (1836/2639 cols)
+  shuffled:ALPN              acc 0.5667 (219/686 cols)
+  shuffled:KC                acc 0.565 (321/4064 cols)
+  shuffled:MBON              acc 0.5183 (66/97 cols)
+  shuffled:CX                acc 0.605 (653/2950 cols)
+  shuffled:DN                acc 0.6267 (580/1314 cols)
+  shuffled:MBON+CX           acc 0.6017 (719/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.6433 (1299/4361 cols)
+  PERMUTED real:DN           acc 0.5267   PERMUTED raw acc 0.485
+wrote counts outputs/counts_w50_d30.npz
+
+firing (real):
+  ORN    1810/2639  ever fire,  1810 varying,   2042.0 spikes/sample
+  ALPN    580/686   ever fire,   556 varying,   2544.0 spikes/sample
+  KC     2058/4064  ever fire,  2053 varying,   3114.9 spikes/sample
+  MBON     71/97    ever fire,    71 varying,    297.8 spikes/sample
+  CX     1013/2950  ever fire,   858 varying,    765.9 spikes/sample
+  DN      543/1314  ever fire,   539 varying,    493.8 spikes/sample
+wrote /Users/abhipoluri/fly-balatro/outputs/brain_probe.json

@@ -1,0 +1,12 @@
+calibration: bias -2.615967 T 0.838311
+frozen: greedy 0.267 sampled 0.328
+real_eta0.02_s0: greedy 0.183 P(play|legal) 0.810 | sampled 0.167 P(play|legal) 0.743
+real_eta0.02_s1: greedy 0.183 P(play|legal) 0.776 | sampled 0.217 P(play|legal) 0.761
+real_eta0.05_s0: greedy 0.150 P(play|legal) 0.815 | sampled 0.217 P(play|legal) 0.804
+real_eta0.05_s1: greedy 0.183 P(play|legal) 0.803 | sampled 0.267 P(play|legal) 0.765
+real_eta0.05_s2: greedy 0.200 P(play|legal) 0.801 | sampled 0.250 P(play|legal) 0.771
+  always_play      clear 0.000
+  always_discard   clear 0.400
+  teacher_dig      clear 0.700
+  bucket_ge_lt1    clear 0.633
+wrote /Users/abhipoluri/fly-balatro/outputs/plast3/eval_mode.json in 1763s

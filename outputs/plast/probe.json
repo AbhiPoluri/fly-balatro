@@ -1,0 +1,1946 @@
+{
+  "args": {
+    "eta": 0.05,
+    "explore": 0.2,
+    "explore_floor": 0.0,
+    "n_calib": 200,
+    "out": "/Users/abhipoluri/fly-balatro/outputs/plast/probe.json",
+    "trials": 20,
+    "valence": "nt",
+    "window_ms": null,
+    "window_scan": "50,150,300"
+  },
+  "calibration_set": {
+    "by_bucket": {
+      "ge1.0": 49,
+      "lt0.25": 53,
+      "lt0.5": 41,
+      "lt1.0": 57
+    },
+    "by_hand_type": {
+      "Flush": 8,
+      "Four of a Kind": 2,
+      "Full House": 42,
+      "High Card": 16,
+      "Pair": 33,
+      "Straight": 24,
+      "Straight Flush": 2,
+      "Three of a Kind": 10,
+      "Two Pair": 63
+    },
+    "discard_legal": 176,
+    "distinct_odors": 137,
+    "n": 200,
+    "seeds": "300000+"
+  },
+  "config": {
+    "brain_seed": 1,
+    "derived_from": "outputs/mb2/tuned_config.json",
+    "deviation": "Two knobs added to the mb2 tuning, both about APL's non-Kenyon-cell output, because with the mb2 tuning exactly as chosen every glutamatergic PAM-compartment MBON (MBON01-07) is silent for every input: APL delivers -3198 mV to MBON01 and -3736 mV to MBON05 in one 50 ms window against 259 and 169 mV of Kenyon-cell excitation. APL is a non-spiking graded interneuron in vivo and this kernel has no graded transmission, so it fires at ~250 Hz and dumps its full synapse-count weight as spike-triggered inhibition. With the reward arm of the plasticity rule (depress KC -> avoidance MBON in PAM compartments) landing entirely on silent cells, the experiment would be a guaranteed null for a reason that has nothing to do with learning. apl_kc_only=1 restricts apl_scale=2 to APL -> KC (its documented sparsening role, 94% of its output weight); apl_mbon_scale=0.1 scales the 72 APL -> MBON synapses. The Kenyon-cell code is essentially unchanged: 212 vs 186 active per state, always-on 0.046 vs 0.042. The mb2 tuning is still run as a condition (tuning=spec) so the silenced-reward-arm result is on the record.",
+    "drive": {
+      "mode": "tonic",
+      "poisson_hz": 100.0,
+      "poisson_kick_mv": 68.75,
+      "tonic_mv": 30.0
+    },
+    "encoding": {
+      "assignment": [
+        {
+          "bit": 0,
+          "glomerulus": "ORN_VM7d",
+          "n_orn": 36
+        },
+        {
+          "bit": 1,
+          "glomerulus": "ORN_DA4m",
+          "n_orn": 35
+        },
+        {
+          "bit": 2,
+          "glomerulus": "ORN_DC3",
+          "n_orn": 35
+        },
+        {
+          "bit": 3,
+          "glomerulus": "ORN_DM5",
+          "n_orn": 35
+        },
+        {
+          "bit": 4,
+          "glomerulus": "ORN_DA3",
+          "n_orn": 34
+        },
+        {
+          "bit": 5,
+          "glomerulus": "ORN_VA4",
+          "n_orn": 34
+        },
+        {
+          "bit": 6,
+          "glomerulus": "ORN_VC3",
+          "n_orn": 34
+        },
+        {
+          "bit": 7,
+          "glomerulus": "ORN_VM5v",
+          "n_orn": 34
+        },
+        {
+          "bit": 8,
+          "glomerulus": "ORN_VM6v",
+          "n_orn": 34
+        },
+        {
+          "bit": 9,
+          "glomerulus": "ORN_V",
+          "n_orn": 55
+        },
+        {
+          "bit": 10,
+          "glomerulus": "ORN_DM2",
+          "n_orn": 54
+        },
+        {
+          "bit": 11,
+          "glomerulus": "ORN_DA2",
+          "n_orn": 48
+        },
+        {
+          "bit": 12,
+          "glomerulus": "ORN_VL2p",
+          "n_orn": 45
+        },
+        {
+          "bit": 13,
+          "glomerulus": "ORN_DL5",
+          "n_orn": 43
+        },
+        {
+          "bit": 14,
+          "glomerulus": "ORN_VM3",
+          "n_orn": 43
+        },
+        {
+          "bit": 15,
+          "glomerulus": "ORN_VM2",
+          "n_orn": 41
+        },
+        {
+          "bit": 16,
+          "glomerulus": "ORN_VC4",
+          "n_orn": 38
+        },
+        {
+          "bit": 17,
+          "glomerulus": "ORN_VL2a",
+          "n_orn": 98
+        },
+        {
+          "bit": 18,
+          "glomerulus": "ORN_VM5d",
+          "n_orn": 84
+        },
+        {
+          "bit": 19,
+          "glomerulus": "ORN_DL1",
+          "n_orn": 83
+        },
+        {
+          "bit": 20,
+          "glomerulus": "ORN_VA2",
+          "n_orn": 83
+        },
+        {
+          "bit": 21,
+          "glomerulus": "ORN_VL1",
+          "n_orn": 82
+        },
+        {
+          "bit": 22,
+          "glomerulus": "ORN_VM4",
+          "n_orn": 78
+        },
+        {
+          "bit": 23,
+          "glomerulus": "ORN_DM1",
+          "n_orn": 74
+        },
+        {
+          "bit": 24,
+          "glomerulus": "ORN_DM3",
+          "n_orn": 63
+        },
+        {
+          "bit": 25,
+          "glomerulus": "ORN_VA6",
+          "n_orn": 63
+        },
+        {
+          "bit": 26,
+          "glomerulus": "ORN_DL4",
+          "n_orn": 62
+        },
+        {
+          "bit": 27,
+          "glomerulus": "ORN_DM6",
+          "n_orn": 58
+        },
+        {
+          "bit": 28,
+          "glomerulus": "ORN_DA1",
+          "n_orn": 204
+        },
+        {
+          "bit": 29,
+          "glomerulus": "ORN_VA1d",
+          "n_orn": 132
+        },
+        {
+          "bit": 30,
+          "glomerulus": "ORN_VA1v",
+          "n_orn": 130
+        },
+        {
+          "bit": 31,
+          "glomerulus": "ORN_DL3",
+          "n_orn": 103
+        }
+      ],
+      "dropped": "the 283 v1 state bits are not encoded",
+      "kind": "glomerular",
+      "map_class": "flybalatro.encode.GlomerularMap",
+      "n_features": 32,
+      "source": "flybalatro.features_v2 relay block (bits 0-31)"
+    },
+    "gate": {
+      "checks": {
+        "always_on": true,
+        "jaccard_ratio": false,
+        "kc_probe": true,
+        "mbon": true
+      },
+      "criteria": {
+        "always_on_max": 0.05,
+        "jaccard_ratio_max": 0.5,
+        "mbon_rate_max": 30.0,
+        "mbon_varying_min": 20,
+        "probe_margin_min": 0.15
+      },
+      "n_passed": 3,
+      "passed": false
+    },
+    "label": "apl2_tonic_vth0",
+    "tuning": {
+      "alpn_kc_scale": 1.0,
+      "apl_kc_only": 1.0,
+      "apl_mbon_scale": 0.1,
+      "apl_scale": 2.0,
+      "kc_bias_mv": 0.0,
+      "kc_input_norm": 0.0,
+      "kc_kc_scale": 1.0,
+      "kc_vth_offset_mv": 0.0
+    },
+    "v_jitter_mv": 6.9,
+    "window_ms": 50.0
+  },
+  "note": "sanity checks and frozen decision calibration; no protocol run here",
+  "real": {
+    "calibration": {
+      "bias": -1.076420135603789,
+      "explore_achieved": 0.2013149696945575,
+      "explore_floor": 0.0,
+      "explore_target": 0.2,
+      "n": 200,
+      "play_bias_p": 0.55,
+      "raw_max": 7.803030303030303,
+      "raw_median": 1.2878787878787872,
+      "raw_min": -5.454545454545457,
+      "raw_p16": -0.9090909090909101,
+      "raw_p84": 3.7242424242424255,
+      "raw_sd": 2.2788634336281848,
+      "temperature": 1.0537595027913855
+    },
+    "conditioning_odors": {
+      "a": {
+        "best_score": 15,
+        "bits_on": 4,
+        "bucket": "lt0.25",
+        "hand_type": "High Card",
+        "index": 22,
+        "needed": 90
+      },
+      "b": {
+        "best_score": 348,
+        "bits_on": 8,
+        "bucket": "ge1.0",
+        "hand_type": "Full House",
+        "index": 16,
+        "needed": 300
+      }
+    },
+    "conditioning_panel_odors": [
+      {
+        "bucket": "lt1.0",
+        "hand_type": "Flush",
+        "index": 0
+      },
+      {
+        "bucket": "ge1.0",
+        "hand_type": "Straight Flush",
+        "index": 2
+      },
+      {
+        "bucket": "lt0.5",
+        "hand_type": "Two Pair",
+        "index": 4
+      },
+      {
+        "bucket": "ge1.0",
+        "hand_type": "Full House",
+        "index": 9
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "Two Pair",
+        "index": 10
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "Pair",
+        "index": 11
+      },
+      {
+        "bucket": "lt1.0",
+        "hand_type": "Full House",
+        "index": 20
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "High Card",
+        "index": 22
+      }
+    ],
+    "decider": {
+      "bias": -1.076420135603789,
+      "explore_floor": 0.0,
+      "n_approach": 66,
+      "n_avoid": 24,
+      "play_bias_p": 0.55,
+      "temperature": 1.0537595027913855,
+      "window_ms": 50.0
+    },
+    "naive_policy": {
+      "explore_floor": 0.0,
+      "frac_above_0_9": 0.195,
+      "frac_below_0_1": 0.105,
+      "frac_outside_0.1_0.9": 0.3,
+      "p_play_by_bucket": {
+        "ge1.0": 0.6828,
+        "lt0.25": 0.393,
+        "lt0.5": 0.635,
+        "lt1.0": 0.4955
+      },
+      "p_play_by_hand_type": {
+        "Flush": 0.4915,
+        "Four of a Kind": 0.5834,
+        "Full House": 0.5198,
+        "High Card": 0.3911,
+        "Pair": 0.6241,
+        "Straight": 0.5472,
+        "Straight Flush": 0.5105,
+        "Three of a Kind": 0.6065,
+        "Two Pair": 0.5485
+      },
+      "p_play_mean": 0.5428
+    },
+    "plasticity": {
+      "kc": 4064,
+      "kc_mbon_edges": 33496,
+      "kc_ref": 2.0,
+      "punish_edges": 13582,
+      "punish_mbons": 46,
+      "reward_edges": 10886,
+      "reward_mbons": 16,
+      "weight_floor": 0.05
+    },
+    "sanity_a": {
+      "approach_hz_mean": 14.689,
+      "avoid_hz_mean": 13.283,
+      "by_bucket": {
+        "ge1.0": {
+          "max": 7.803,
+          "mean": 2.4583,
+          "min": -1.4394,
+          "n": 49,
+          "sd": 2.1063
+        },
+        "lt0.25": {
+          "max": 4.8485,
+          "mean": 0.5274,
+          "min": -4.2424,
+          "n": 53,
+          "sd": 2.2767
+        },
+        "lt0.5": {
+          "max": 5.9848,
+          "mean": 1.8293,
+          "min": -5.4545,
+          "n": 41,
+          "sd": 2.122
+        },
+        "lt1.0": {
+          "max": 5.5303,
+          "mean": 1.0141,
+          "min": -3.4091,
+          "n": 57,
+          "sd": 2.097
+        }
+      },
+      "by_hand_type": {
+        "Flush": {
+          "max": 6.9697,
+          "mean": 1.6667,
+          "min": -1.6667,
+          "n": 8,
+          "sd": 3.1496
+        },
+        "Four of a Kind": {
+          "max": 7.803,
+          "mean": 3.5985,
+          "min": -0.6061,
+          "n": 2,
+          "sd": 4.2045
+        },
+        "Full House": {
+          "max": 5.3788,
+          "mean": 1.1472,
+          "min": -5.4545,
+          "n": 42,
+          "sd": 1.7322
+        },
+        "High Card": {
+          "max": 4.9242,
+          "mean": 0.5208,
+          "min": -1.7424,
+          "n": 16,
+          "sd": 1.9946
+        },
+        "Pair": {
+          "max": 6.8939,
+          "mean": 2.1097,
+          "min": -2.0455,
+          "n": 33,
+          "sd": 2.2536
+        },
+        "Straight": {
+          "max": 5.9848,
+          "mean": 1.4867,
+          "min": -3.1061,
+          "n": 24,
+          "sd": 2.4647
+        },
+        "Straight Flush": {
+          "max": 3.1818,
+          "mean": 1.1742,
+          "min": -0.8333,
+          "n": 2,
+          "sd": 2.0076
+        },
+        "Three of a Kind": {
+          "max": 5.5303,
+          "mean": 1.8864,
+          "min": -3.5606,
+          "n": 10,
+          "sd": 2.7988
+        },
+        "Two Pair": {
+          "max": 4.0909,
+          "mean": 1.2326,
+          "min": -4.2424,
+          "n": 63,
+          "sd": 2.1386
+        }
+      },
+      "distinct_values": 85,
+      "kc_active_frac_mean": 0.052,
+      "kc_active_per_state": 211.5,
+      "kc_always_on": 188,
+      "kc_input_dependent": 552,
+      "kc_never": 3434,
+      "mbon_hz_mean": 14.274,
+      "n": 200,
+      "quantum_hz": 1.1364,
+      "range_in_quanta": 11.67,
+      "raw_max": 7.803,
+      "raw_mean": 1.4061,
+      "raw_min": -5.4545,
+      "raw_range": 13.2576,
+      "raw_sd": 2.2789
+    },
+    "sanity_b": {
+      "punish": {
+        "delta_a": 0.0,
+        "delta_a_in_quanta": 0.0,
+        "delta_b": -1.3636,
+        "delta_b_in_quanta": -1.2,
+        "drive_a_after": -1.9855,
+        "drive_a_before": -1.9855,
+        "drive_b_after": -1.6067,
+        "drive_b_before": -0.2431,
+        "eta": 0.05,
+        "frac_dw_on_always_on_kc": 0.7473,
+        "frac_eligible_edges_always_on_kc": 0.7322,
+        "kind": "punish",
+        "n_trials": 20,
+        "quantum_hz": 1.1364,
+        "specific": false,
+        "sum_abs_dw": 717.543,
+        "trajectory": [
+          -0.6219,
+          -1.4552,
+          -1.4552,
+          -1.9855,
+          -0.0158,
+          -2.8188,
+          -2.8188,
+          -1.1522,
+          -1.4552,
+          -0.3188,
+          -0.6219,
+          -0.6219,
+          -0.3188,
+          -0.3188,
+          0.5145,
+          0.5145,
+          0.5145,
+          0.5145,
+          -0.6219,
+          -1.9855
+        ],
+        "weight_stats": {
+          "any_above_original": false,
+          "any_negative": false,
+          "frac_at_floor": 0.0,
+          "frac_unchanged": 0.9811320754716981,
+          "max_ratio": 1.0,
+          "mean_ratio": 0.9915013313293457,
+          "min_ratio": 0.35848572850227356,
+          "n_edges": 33496
+        }
+      },
+      "reward": {
+        "delta_a": 11.5909,
+        "delta_a_in_quanta": 10.2,
+        "delta_b": 8.2576,
+        "delta_b_in_quanta": 7.27,
+        "drive_a_after": 9.6054,
+        "drive_a_before": -1.9855,
+        "drive_b_after": 8.0145,
+        "drive_b_before": -0.2431,
+        "eta": 0.05,
+        "frac_dw_on_always_on_kc": 0.7025,
+        "frac_eligible_edges_always_on_kc": 0.706,
+        "kind": "reward",
+        "n_trials": 20,
+        "quantum_hz": 1.1364,
+        "specific": true,
+        "sum_abs_dw": 982.502,
+        "trajectory": [
+          -0.5461,
+          -0.5461,
+          -0.8491,
+          1.9539,
+          3.3933,
+          3.3933,
+          3.9993,
+          3.9993,
+          5.1357,
+          5.969,
+          5.969,
+          5.666,
+          5.969,
+          5.969,
+          5.969,
+          7.1054,
+          8.7721,
+          8.7721,
+          9.6054,
+          9.6054
+        ],
+        "weight_stats": {
+          "any_above_original": false,
+          "any_negative": false,
+          "frac_at_floor": 0.0,
+          "frac_unchanged": 0.980475280630523,
+          "max_ratio": 1.0,
+          "mean_ratio": 0.9909530878067017,
+          "min_ratio": 0.35848572850227356,
+          "n_edges": 33496
+        }
+      }
+    },
+    "sanity_b_panel": {
+      "punish": {
+        "direction_ok": true,
+        "eta": 0.05,
+        "kind": "punish",
+        "mean_delta_other": -2.4621,
+        "mean_delta_self": -2.3295,
+        "mean_specificity": 0.1326,
+        "n_odors": 8,
+        "n_odors_more_than_others": 4,
+        "n_odors_right_direction": 7,
+        "n_trials": 20,
+        "per_odor": [
+          {
+            "bucket": "lt1.0",
+            "delta_other": -2.6299,
+            "delta_self": -2.4242,
+            "drive_after": -4.9401,
+            "drive_before": -2.5158,
+            "hand_type": "Flush",
+            "index": 0,
+            "specificity": 0.2056
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": -1.8615,
+            "delta_self": -3.7879,
+            "drive_after": -1.6825,
+            "drive_before": 2.1054,
+            "hand_type": "Straight Flush",
+            "index": 2,
+            "specificity": -1.9264
+          },
+          {
+            "bucket": "lt0.5",
+            "delta_other": -2.3593,
+            "delta_self": -3.0303,
+            "drive_after": -1.4552,
+            "drive_before": 1.5751,
+            "hand_type": "Two Pair",
+            "index": 4,
+            "specificity": -0.671
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": -2.0671,
+            "delta_self": -2.3485,
+            "drive_after": -0.7734,
+            "drive_before": 1.5751,
+            "hand_type": "Full House",
+            "index": 9,
+            "specificity": -0.2814
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": -2.9654,
+            "delta_self": -1.1364,
+            "drive_after": -2.137,
+            "drive_before": -1.0007,
+            "hand_type": "Two Pair",
+            "index": 10,
+            "specificity": 1.829
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": -3.2251,
+            "delta_self": -1.7424,
+            "drive_after": 0.969,
+            "drive_before": 2.7115,
+            "hand_type": "Pair",
+            "index": 11,
+            "specificity": 1.4827
+          },
+          {
+            "bucket": "lt1.0",
+            "delta_other": -2.0887,
+            "delta_self": -4.1667,
+            "drive_after": -4.7885,
+            "drive_before": -0.6219,
+            "hand_type": "Full House",
+            "index": 20,
+            "specificity": -2.0779
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": -2.5,
+            "delta_self": 0.0,
+            "drive_after": -1.9855,
+            "drive_before": -1.9855,
+            "hand_type": "High Card",
+            "index": 22,
+            "specificity": 2.5
+          }
+        ],
+        "sd_delta_self": 1.2844,
+        "specificity_share": -0.0569
+      },
+      "reward": {
+        "direction_ok": true,
+        "eta": 0.05,
+        "kind": "reward",
+        "mean_delta_other": 7.8599,
+        "mean_delta_self": 9.1951,
+        "mean_specificity": 1.3352,
+        "n_odors": 8,
+        "n_odors_more_than_others": 6,
+        "n_odors_right_direction": 8,
+        "n_trials": 20,
+        "per_odor": [
+          {
+            "bucket": "lt1.0",
+            "delta_other": 7.013,
+            "delta_self": 11.5909,
+            "drive_after": 9.0751,
+            "drive_before": -2.5158,
+            "hand_type": "Flush",
+            "index": 0,
+            "specificity": 4.5779
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": 8.5281,
+            "delta_self": 8.5606,
+            "drive_after": 10.666,
+            "drive_before": 2.1054,
+            "hand_type": "Straight Flush",
+            "index": 2,
+            "specificity": 0.0325
+          },
+          {
+            "bucket": "lt0.5",
+            "delta_other": 8.2684,
+            "delta_self": 9.3182,
+            "drive_after": 10.8933,
+            "drive_before": 1.5751,
+            "hand_type": "Two Pair",
+            "index": 4,
+            "specificity": 1.0498
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": 8.2792,
+            "delta_self": 7.803,
+            "drive_after": 9.3781,
+            "drive_before": 1.5751,
+            "hand_type": "Full House",
+            "index": 9,
+            "specificity": -0.4762
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 8.6472,
+            "delta_self": 8.7121,
+            "drive_after": 7.7115,
+            "drive_before": -1.0007,
+            "hand_type": "Two Pair",
+            "index": 10,
+            "specificity": 0.0649
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 7.9545,
+            "delta_self": 6.4394,
+            "drive_after": 9.1509,
+            "drive_before": 2.7115,
+            "hand_type": "Pair",
+            "index": 11,
+            "specificity": -1.5152
+          },
+          {
+            "bucket": "lt1.0",
+            "delta_other": 7.9113,
+            "delta_self": 9.5455,
+            "drive_after": 8.9236,
+            "drive_before": -0.6219,
+            "hand_type": "Full House",
+            "index": 20,
+            "specificity": 1.6342
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 6.2771,
+            "delta_self": 11.5909,
+            "drive_after": 9.6054,
+            "drive_before": -1.9855,
+            "hand_type": "High Card",
+            "index": 22,
+            "specificity": 5.3139
+          }
+        ],
+        "sd_delta_self": 1.6502,
+        "specificity_share": 0.1452
+      }
+    },
+    "sanity_c": {
+      "any_above_original": false,
+      "any_negative": false,
+      "floor_frac": 0.05,
+      "frac_at_floor": 0.03737759732505374,
+      "frac_unchanged": 0.9600847862431335,
+      "max_ratio": 1.0,
+      "mean_ratio": 0.9633213877677917,
+      "min_ratio": 0.04999999701976776,
+      "n_edges": 33496,
+      "ok": true
+    },
+    "valence": {
+      "approach_neurons": 66,
+      "approach_types": [
+        "MBON09",
+        "MBON10",
+        "MBON11",
+        "MBON12",
+        "MBON13",
+        "MBON14",
+        "MBON15",
+        "MBON15-like",
+        "MBON16",
+        "MBON17",
+        "MBON17-like",
+        "MBON18",
+        "MBON19",
+        "MBON20",
+        "MBON21",
+        "MBON23",
+        "MBON24",
+        "MBON26",
+        "MBON27",
+        "MBON28",
+        "MBON29",
+        "MBON31",
+        "MBON32",
+        "MBON33",
+        "MBON35"
+      ],
+      "avoid_neurons": 24,
+      "avoid_types": [
+        "MBON01",
+        "MBON02",
+        "MBON03",
+        "MBON04",
+        "MBON05",
+        "MBON06",
+        "MBON07",
+        "MBON25",
+        "MBON25-like",
+        "MBON30"
+      ],
+      "brief_agreement": {
+        "MBON01": {
+          "agree": true,
+          "brief": "avoid",
+          "nt_rule": "avoid"
+        },
+        "MBON02": {
+          "agree": true,
+          "brief": "avoid",
+          "nt_rule": "avoid"
+        },
+        "MBON03": {
+          "agree": false,
+          "brief": "approach",
+          "nt_rule": "avoid"
+        },
+        "MBON05": {
+          "agree": false,
+          "brief": "approach",
+          "nt_rule": "avoid"
+        },
+        "MBON11": {
+          "agree": true,
+          "brief": "approach",
+          "nt_rule": "approach"
+        },
+        "MBON12": {
+          "agree": true,
+          "brief": "approach",
+          "nt_rule": "approach"
+        },
+        "MBON13": {
+          "agree": false,
+          "brief": "avoid",
+          "nt_rule": "approach"
+        },
+        "MBON14": {
+          "agree": false,
+          "brief": "avoid",
+          "nt_rule": "approach"
+        },
+        "MBON18": {
+          "agree": false,
+          "brief": "avoid",
+          "nt_rule": "approach"
+        }
+      },
+      "n_mbon": 97,
+      "n_types": 37,
+      "pam_avoid_types": [
+        "MBON01",
+        "MBON02",
+        "MBON03",
+        "MBON04",
+        "MBON05",
+        "MBON06",
+        "MBON07"
+      ],
+      "ppl1_approach_types": [
+        "MBON11",
+        "MBON12",
+        "MBON13",
+        "MBON14",
+        "MBON15",
+        "MBON15-like",
+        "MBON16",
+        "MBON17",
+        "MBON17-like",
+        "MBON18",
+        "MBON19",
+        "MBON20",
+        "MBON23",
+        "MBON28",
+        "MBON31",
+        "MBON32",
+        "MBON33",
+        "MBON35"
+      ],
+      "scheme": "nt",
+      "unassigned_neurons": 7,
+      "unassigned_types": [
+        "MBON22",
+        "MBON34"
+      ]
+    },
+    "valence_table": [
+      {
+        "brief_valence": "avoid",
+        "compartment": "y5B'2a",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 611.1,
+        "ppl1_in": 0.0,
+        "type": "MBON01",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "avoid",
+        "compartment": "B2B'2a",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 330.8,
+        "ppl1_in": 0.0,
+        "type": "MBON02",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "approach",
+        "compartment": "B'2mp",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 1274.1,
+        "ppl1_in": 0.0,
+        "type": "MBON03",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "B'2mp_bilateral",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 447.7,
+        "ppl1_in": 72.9,
+        "type": "MBON04",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "approach",
+        "compartment": "y4>y1y2",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 897.9,
+        "ppl1_in": 9.9,
+        "type": "MBON05",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "B1>a",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 1059.0,
+        "ppl1_in": 6.6,
+        "type": "MBON06",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a1",
+        "dan": "PAM",
+        "n": 4,
+        "nt": "glutamate",
+        "pam_in": 539.8,
+        "ppl1_in": 0.0,
+        "type": "MBON07",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y3B'1",
+        "dan": "PAM",
+        "n": 4,
+        "nt": "gaba",
+        "pam_in": 966.4,
+        "ppl1_in": 3.0,
+        "type": "MBON09",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "B'1",
+        "dan": "PAM",
+        "n": 9,
+        "nt": "gaba",
+        "pam_in": 27.2,
+        "ppl1_in": 3.0,
+        "type": "MBON10",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "approach",
+        "compartment": "y1pedc>a/B",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "gaba",
+        "pam_in": 27.5,
+        "ppl1_in": 672.4,
+        "type": "MBON11",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "approach",
+        "compartment": "y2a'1",
+        "dan": "PPL1",
+        "n": 4,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 223.9,
+        "type": "MBON12",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "avoid",
+        "compartment": "a'2",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 180.7,
+        "type": "MBON13",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "avoid",
+        "compartment": "a3",
+        "dan": "PPL1",
+        "n": 4,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 236.5,
+        "type": "MBON14",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'1",
+        "dan": "PPL1",
+        "n": 4,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 33.8,
+        "type": "MBON15",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'1a'2",
+        "dan": "PPL1",
+        "n": 4,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 59.4,
+        "type": "MBON15-like",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'3ap",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 83.1,
+        "type": "MBON16",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'3m",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 32.5,
+        "type": "MBON17",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'2a'3",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 15.1,
+        "type": "MBON17-like",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "avoid",
+        "compartment": "a2sc",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 119.4,
+        "type": "MBON18",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a2p3p",
+        "dan": "PPL1",
+        "n": 4,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 27.0,
+        "type": "MBON19",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y1y2",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "gaba",
+        "pam_in": 0.0,
+        "ppl1_in": 38.0,
+        "type": "MBON20",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y4y5",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 238.7,
+        "ppl1_in": 2.8,
+        "type": "MBON21",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "calyx",
+        "dan": "",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 0.0,
+        "type": "MBON22",
+        "used": false,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a2sp",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 34.4,
+        "type": "MBON23",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "B2y5",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 130.6,
+        "ppl1_in": 0.0,
+        "type": "MBON24",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y1y2",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 0.0,
+        "ppl1_in": 33.3,
+        "type": "MBON25",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y2",
+        "dan": "PPL1",
+        "n": 4,
+        "nt": "glutamate",
+        "pam_in": 0.0,
+        "ppl1_in": 22.3,
+        "type": "MBON25-like",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "b'2d",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 347.6,
+        "ppl1_in": 11.0,
+        "type": "MBON26",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y5d",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 121.3,
+        "ppl1_in": 3.3,
+        "type": "MBON27",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'3a",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 45.9,
+        "type": "MBON28",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y4y5",
+        "dan": "PAM",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 88.8,
+        "ppl1_in": 0.0,
+        "type": "MBON29",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y1y2y3",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 1.7,
+        "ppl1_in": 86.9,
+        "type": "MBON30",
+        "used": true,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "a'1a",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "gaba",
+        "pam_in": 1.7,
+        "ppl1_in": 198.8,
+        "type": "MBON31",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y2",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "gaba",
+        "pam_in": 0.0,
+        "ppl1_in": 292.6,
+        "type": "MBON32",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y2y3",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 13.8,
+        "ppl1_in": 94.3,
+        "type": "MBON33",
+        "used": true,
+        "valence": "approach"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y2",
+        "dan": "",
+        "n": 2,
+        "nt": "glutamate",
+        "pam_in": 0.0,
+        "ppl1_in": 0.0,
+        "type": "MBON34",
+        "used": false,
+        "valence": "avoid"
+      },
+      {
+        "brief_valence": "",
+        "compartment": "y2",
+        "dan": "PPL1",
+        "n": 2,
+        "nt": "acetylcholine",
+        "pam_in": 0.0,
+        "ppl1_in": 279.7,
+        "type": "MBON35",
+        "used": true,
+        "valence": "approach"
+      }
+    ],
+    "window_ms": 50.0,
+    "window_scan": {
+      "150": {
+        "punish": {
+          "direction_ok": true,
+          "mean_delta_other": -3.7437,
+          "mean_delta_self": -3.9141,
+          "mean_specificity": -0.1705,
+          "n_odors_right_direction": 8,
+          "specificity_share": 0.0435
+        },
+        "range_hz": 8.6364,
+        "reward": {
+          "direction_ok": true,
+          "mean_delta_other": 14.0765,
+          "mean_delta_self": 15.243,
+          "mean_specificity": 1.1666,
+          "n_odors_right_direction": 8,
+          "specificity_share": 0.0765
+        },
+        "sd_hz": 1.727
+      },
+      "300": {
+        "punish": {
+          "direction_ok": true,
+          "mean_delta_other": -4.0744,
+          "mean_delta_self": -4.4097,
+          "mean_specificity": -0.3353,
+          "n_odors_right_direction": 8,
+          "specificity_share": 0.076
+        },
+        "range_hz": 6.6667,
+        "reward": {
+          "direction_ok": true,
+          "mean_delta_other": 15.8563,
+          "mean_delta_self": 16.3952,
+          "mean_specificity": 0.5389,
+          "n_odors_right_direction": 8,
+          "specificity_share": 0.0329
+        },
+        "sd_hz": 1.4032
+      },
+      "50": {
+        "punish": {
+          "direction_ok": true,
+          "mean_delta_other": -2.4621,
+          "mean_delta_self": -2.3295,
+          "mean_specificity": 0.1326,
+          "n_odors_right_direction": 7,
+          "specificity_share": -0.0569
+        },
+        "range_hz": 8.9394,
+        "reward": {
+          "direction_ok": true,
+          "mean_delta_other": 7.8599,
+          "mean_delta_self": 9.1951,
+          "mean_specificity": 1.3352,
+          "n_odors_right_direction": 8,
+          "specificity_share": 0.1452
+        },
+        "sd_hz": 2.039
+      }
+    }
+  },
+  "shuffled": {
+    "calibration": {
+      "bias": -2.1685985964055057,
+      "explore_achieved": 0.19740919111934374,
+      "explore_floor": 0.0,
+      "explore_target": 0.2,
+      "n": 200,
+      "play_bias_p": 0.55,
+      "raw_max": 5.7142857142857135,
+      "raw_median": 2.2857142857142856,
+      "raw_min": -2.9010989010989015,
+      "raw_p16": 0.6839560439560437,
+      "raw_p84": 3.428571428571429,
+      "raw_sd": 1.6105587479937022,
+      "temperature": 0.5836212858038813
+    },
+    "conditioning_panel_odors": [
+      {
+        "bucket": "lt1.0",
+        "hand_type": "Flush",
+        "index": 0
+      },
+      {
+        "bucket": "ge1.0",
+        "hand_type": "Straight Flush",
+        "index": 2
+      },
+      {
+        "bucket": "lt0.5",
+        "hand_type": "Two Pair",
+        "index": 4
+      },
+      {
+        "bucket": "ge1.0",
+        "hand_type": "Full House",
+        "index": 9
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "Two Pair",
+        "index": 10
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "Pair",
+        "index": 11
+      },
+      {
+        "bucket": "lt1.0",
+        "hand_type": "Full House",
+        "index": 20
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "High Card",
+        "index": 22
+      }
+    ],
+    "decider": {
+      "bias": -2.1685985964055057,
+      "explore_floor": 0.0,
+      "n_approach": 35,
+      "n_avoid": 13,
+      "play_bias_p": 0.55,
+      "temperature": 0.5836212858038813,
+      "window_ms": 50.0
+    },
+    "naive_policy": {
+      "explore_floor": 0.0,
+      "frac_above_0_9": 0.145,
+      "frac_below_0_1": 0.215,
+      "frac_outside_0.1_0.9": 0.36,
+      "p_play_by_bucket": {
+        "ge1.0": 0.5819,
+        "lt0.25": 0.3571,
+        "lt0.5": 0.6433,
+        "lt1.0": 0.444
+      },
+      "p_play_by_hand_type": {
+        "Flush": 0.8078,
+        "Four of a Kind": 0.6493,
+        "Full House": 0.5374,
+        "High Card": 0.4147,
+        "Pair": 0.2745,
+        "Straight": 0.6382,
+        "Straight Flush": 0.5737,
+        "Three of a Kind": 0.4414,
+        "Two Pair": 0.5115
+      },
+      "p_play_mean": 0.4956
+    },
+    "plasticity": {
+      "kc": 4064,
+      "kc_mbon_edges": 664,
+      "kc_ref": 2.0,
+      "punish_edges": 111,
+      "punish_mbons": 16,
+      "reward_edges": 76,
+      "reward_mbons": 5,
+      "weight_floor": 0.05
+    },
+    "sanity_a": {
+      "approach_hz_mean": 3.263,
+      "avoid_hz_mean": 1.2,
+      "by_bucket": {
+        "ge1.0": {
+          "max": 5.1429,
+          "mean": 2.475,
+          "min": -0.967,
+          "n": 49,
+          "sd": 1.2142
+        },
+        "lt0.25": {
+          "max": 5.1429,
+          "mean": 1.5219,
+          "min": -1.9341,
+          "n": 53,
+          "sd": 1.5492
+        },
+        "lt0.5": {
+          "max": 5.7143,
+          "mean": 2.7531,
+          "min": 0.0,
+          "n": 41,
+          "sd": 1.1172
+        },
+        "lt1.0": {
+          "max": 5.1429,
+          "mean": 1.7151,
+          "min": -2.9011,
+          "n": 57,
+          "sd": 1.9551
+        }
+      },
+      "by_hand_type": {
+        "Flush": {
+          "max": 5.1429,
+          "mean": 3.7033,
+          "min": 0.9231,
+          "n": 8,
+          "sd": 1.3516
+        },
+        "Four of a Kind": {
+          "max": 4.5714,
+          "mean": 3.1429,
+          "min": 1.7143,
+          "n": 2,
+          "sd": 1.4286
+        },
+        "Full House": {
+          "max": 5.1429,
+          "mean": 2.1706,
+          "min": -2.5055,
+          "n": 42,
+          "sd": 1.8403
+        },
+        "High Card": {
+          "max": 3.033,
+          "mean": 1.8269,
+          "min": 0.0,
+          "n": 16,
+          "sd": 1.0331
+        },
+        "Pair": {
+          "max": 4.5714,
+          "mean": 1.0696,
+          "min": -1.9341,
+          "n": 33,
+          "sd": 1.4539
+        },
+        "Straight": {
+          "max": 4.5714,
+          "mean": 2.522,
+          "min": -1.3626,
+          "n": 24,
+          "sd": 1.2522
+        },
+        "Straight Flush": {
+          "max": 4.0,
+          "mean": 2.6593,
+          "min": 1.3187,
+          "n": 2,
+          "sd": 1.3407
+        },
+        "Three of a Kind": {
+          "max": 2.8571,
+          "mean": 1.7099,
+          "min": -1.3626,
+          "n": 10,
+          "sd": 1.2288
+        },
+        "Two Pair": {
+          "max": 5.7143,
+          "mean": 2.1908,
+          "min": -2.9011,
+          "n": 63,
+          "sd": 1.5371
+        }
+      },
+      "distinct_values": 32,
+      "kc_active_frac_mean": 0.0056,
+      "kc_active_per_state": 22.9,
+      "kc_always_on": 16,
+      "kc_input_dependent": 130,
+      "kc_never": 3934,
+      "mbon_hz_mean": 2.725,
+      "n": 200,
+      "quantum_hz": 2.1099,
+      "range_in_quanta": 4.08,
+      "raw_max": 5.7143,
+      "raw_mean": 2.0629,
+      "raw_min": -2.9011,
+      "raw_range": 8.6154,
+      "raw_sd": 1.6106
+    },
+    "sanity_b_panel": {
+      "punish": {
+        "direction_ok": false,
+        "eta": 0.05,
+        "kind": "punish",
+        "mean_delta_other": 0.0,
+        "mean_delta_self": 0.0,
+        "mean_specificity": 0.0,
+        "n_odors": 8,
+        "n_odors_more_than_others": 0,
+        "n_odors_right_direction": 0,
+        "n_trials": 20,
+        "per_odor": [
+          {
+            "bucket": "lt1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 0.8644,
+            "drive_before": 0.8644,
+            "hand_type": "Flush",
+            "index": 0,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": -0.8499,
+            "drive_before": -0.8499,
+            "hand_type": "Straight Flush",
+            "index": 2,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.5",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 1.26,
+            "drive_before": 1.26,
+            "hand_type": "Two Pair",
+            "index": 4,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 1.26,
+            "drive_before": 1.26,
+            "hand_type": "Full House",
+            "index": 9,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 0.2929,
+            "drive_before": 0.2929,
+            "hand_type": "Two Pair",
+            "index": 10,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": -1.4213,
+            "drive_before": -1.4213,
+            "hand_type": "Pair",
+            "index": 11,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 1.4358,
+            "drive_before": 1.4358,
+            "hand_type": "Full House",
+            "index": 20,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 0.8644,
+            "drive_before": 0.8644,
+            "hand_type": "High Card",
+            "index": 22,
+            "specificity": 0.0
+          }
+        ],
+        "sd_delta_self": 0.0,
+        "specificity_share": 0.0
+      },
+      "reward": {
+        "direction_ok": false,
+        "eta": 0.05,
+        "kind": "reward",
+        "mean_delta_other": 0.0,
+        "mean_delta_self": 0.0,
+        "mean_specificity": 0.0,
+        "n_odors": 8,
+        "n_odors_more_than_others": 0,
+        "n_odors_right_direction": 0,
+        "n_trials": 20,
+        "per_odor": [
+          {
+            "bucket": "lt1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 0.8644,
+            "drive_before": 0.8644,
+            "hand_type": "Flush",
+            "index": 0,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": -0.8499,
+            "drive_before": -0.8499,
+            "hand_type": "Straight Flush",
+            "index": 2,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.5",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 1.26,
+            "drive_before": 1.26,
+            "hand_type": "Two Pair",
+            "index": 4,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "ge1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 1.26,
+            "drive_before": 1.26,
+            "hand_type": "Full House",
+            "index": 9,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 0.2929,
+            "drive_before": 0.2929,
+            "hand_type": "Two Pair",
+            "index": 10,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": -1.4213,
+            "drive_before": -1.4213,
+            "hand_type": "Pair",
+            "index": 11,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt1.0",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 1.4358,
+            "drive_before": 1.4358,
+            "hand_type": "Full House",
+            "index": 20,
+            "specificity": 0.0
+          },
+          {
+            "bucket": "lt0.25",
+            "delta_other": 0.0,
+            "delta_self": 0.0,
+            "drive_after": 0.8644,
+            "drive_before": 0.8644,
+            "hand_type": "High Card",
+            "index": 22,
+            "specificity": 0.0
+          }
+        ],
+        "sd_delta_self": 0.0,
+        "specificity_share": 0.0
+      }
+    },
+    "valence": {
+      "approach_neurons": 35,
+      "approach_types": [
+        "MBON09",
+        "MBON11",
+        "MBON12",
+        "MBON14",
+        "MBON17",
+        "MBON20",
+        "MBON22",
+        "MBON23",
+        "MBON26",
+        "MBON27",
+        "MBON32",
+        "MBON33",
+        "MBON35"
+      ],
+      "avoid_neurons": 13,
+      "avoid_types": [
+        "MBON01",
+        "MBON02",
+        "MBON04",
+        "MBON06",
+        "MBON25",
+        "MBON30"
+      ],
+      "brief_agreement": {
+        "MBON01": {
+          "agree": true,
+          "brief": "avoid",
+          "nt_rule": "avoid"
+        },
+        "MBON02": {
+          "agree": true,
+          "brief": "avoid",
+          "nt_rule": "avoid"
+        },
+        "MBON03": {
+          "agree": false,
+          "brief": "approach",
+          "nt_rule": "avoid"
+        },
+        "MBON05": {
+          "agree": false,
+          "brief": "approach",
+          "nt_rule": "avoid"
+        },
+        "MBON11": {
+          "agree": true,
+          "brief": "approach",
+          "nt_rule": "approach"
+        },
+        "MBON12": {
+          "agree": true,
+          "brief": "approach",
+          "nt_rule": "approach"
+        },
+        "MBON13": {
+          "agree": false,
+          "brief": "avoid",
+          "nt_rule": "approach"
+        },
+        "MBON14": {
+          "agree": false,
+          "brief": "avoid",
+          "nt_rule": "approach"
+        },
+        "MBON18": {
+          "agree": false,
+          "brief": "avoid",
+          "nt_rule": "approach"
+        }
+      },
+      "n_mbon": 97,
+      "n_types": 37,
+      "pam_avoid_types": [
+        "MBON02"
+      ],
+      "ppl1_approach_types": [
+        "MBON09",
+        "MBON12",
+        "MBON17",
+        "MBON22",
+        "MBON23",
+        "MBON27"
+      ],
+      "scheme": "nt",
+      "unassigned_neurons": 49,
+      "unassigned_types": [
+        "MBON03",
+        "MBON05",
+        "MBON07",
+        "MBON10",
+        "MBON13",
+        "MBON15",
+        "MBON15-like",
+        "MBON16",
+        "MBON17-like",
+        "MBON18",
+        "MBON19",
+        "MBON21",
+        "MBON24",
+        "MBON25-like",
+        "MBON28",
+        "MBON29",
+        "MBON31",
+        "MBON34"
+      ]
+    },
+    "window_ms": 50.0
+  },
+  "wall_seconds": 1184.4
+}

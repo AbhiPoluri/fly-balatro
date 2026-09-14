@@ -1,0 +1,2466 @@
+{
+  "_comment": "Measured card positions vs the static model in pov_geometry.json, in pixels of the 2418x1570 reference canvas. Cases B and C come from outputs/realgame/balatro_fly.mov, whose Balatro canvas is 2418x1570 at scale 1.0, so no rescaling is applied.",
+  "canvas_in_mov": {
+    "rect": [
+      302,
+      196,
+      2418,
+      1570
+    ],
+    "scale": 1.0,
+    "registration_slop_px": [
+      2,
+      3
+    ]
+  },
+  "geometry": {
+    "reference_image": "balatro_fly_firsthand.png",
+    "n_reference": 8,
+    "fitted_pitch_px": 164.65,
+    "max_pitch_ratio": 1.0,
+    "fixed_pitch": true,
+    "pitch_px_by_n": {
+      "2": 164.65,
+      "3": 164.65,
+      "4": 164.65,
+      "5": 164.65,
+      "6": 164.65,
+      "7": 164.65,
+      "8": 164.65
+    },
+    "spread_pitch_px_by_n": {
+      "2": 225.42,
+      "3": 225.42,
+      "4": 225.42,
+      "5": 225.42,
+      "6": 225.42,
+      "7": 192.1,
+      "8": 164.65
+    }
+  },
+  "cases": {
+    "a0_reference_png": {
+      "band_mid_height": 1048.0,
+      "max_abs_dx_tilt_projected": 4.9,
+      "median_abs_dx_tilt_projected": 2.1,
+      "n_cards": 8,
+      "card_width_at_midheight": 211.0,
+      "measured_pitch": 164.65,
+      "model_pitch": 164.65,
+      "slots": [
+        {
+          "slot": 0,
+          "measured_centre_x": 750.5,
+          "measured_centre_x_tilt_projected": 753.1,
+          "dx_tilt_projected": -2.5,
+          "measured_centre_y": 1074.5,
+          "measured_top": 925,
+          "measured_bottom": 1224,
+          "measured_tilt_deg": -5.5,
+          "model_centre_x": 750.6,
+          "model_centre_y": 1074.7,
+          "model_box": [
+            637.9,
+            925.5,
+            225.4,
+            298.5
+          ],
+          "dx": 0.1,
+          "dy": 0.2,
+          "d_top": 0.5
+        },
+        {
+          "slot": 1,
+          "measured_centre_x": 919.5,
+          "measured_centre_x_tilt_projected": 920.1,
+          "dx_tilt_projected": -4.9,
+          "measured_centre_y": 1065.0,
+          "measured_top": 919,
+          "measured_bottom": 1211,
+          "measured_tilt_deg": -2.0,
+          "model_centre_x": 915.2,
+          "model_centre_y": 1065.0,
+          "model_box": [
+            802.5,
+            918.0,
+            225.4,
+            293.9
+          ],
+          "dx": -4.3,
+          "dy": -0.0,
+          "d_top": -1.0
+        },
+        {
+          "slot": 2,
+          "measured_centre_x": 1079.5,
+          "measured_centre_x_tilt_projected": 1079.8,
+          "dx_tilt_projected": 0.1,
+          "measured_centre_y": 1058.5,
+          "measured_top": 914,
+          "measured_bottom": 1203,
+          "measured_tilt_deg": -1.5,
+          "model_centre_x": 1079.9,
+          "model_centre_y": 1058.5,
+          "model_box": [
+            967.2,
+            913.0,
+            225.4,
+            290.9
+          ],
+          "dx": 0.4,
+          "dy": -0.0,
+          "d_top": -1.0
+        },
+        {
+          "slot": 3,
+          "measured_centre_x": 1241.5,
+          "measured_centre_x_tilt_projected": 1241.7,
+          "dx_tilt_projected": 2.8,
+          "measured_centre_y": 1056.0,
+          "measured_top": 911,
+          "measured_bottom": 1201,
+          "measured_tilt_deg": -1.5,
+          "model_centre_x": 1244.5,
+          "model_centre_y": 1055.2,
+          "model_box": [
+            1131.8,
+            910.5,
+            225.4,
+            289.4
+          ],
+          "dx": 3.0,
+          "dy": -0.8,
+          "d_top": -0.5
+        },
+        {
+          "slot": 4,
+          "measured_centre_x": 1407.5,
+          "measured_centre_x_tilt_projected": 1407.5,
+          "dx_tilt_projected": 1.7,
+          "measured_centre_y": 1055.5,
+          "measured_top": 910,
+          "measured_bottom": 1201,
+          "measured_tilt_deg": 0.0,
+          "model_centre_x": 1409.2,
+          "model_centre_y": 1055.2,
+          "model_box": [
+            1296.5,
+            910.5,
+            225.4,
+            289.4
+          ],
+          "dx": 1.7,
+          "dy": -0.3,
+          "d_top": 0.5
+        },
+        {
+          "slot": 5,
+          "measured_centre_x": 1570.5,
+          "measured_centre_x_tilt_projected": 1570.1,
+          "dx_tilt_projected": 3.8,
+          "measured_centre_y": 1058.0,
+          "measured_top": 910,
+          "measured_bottom": 1206,
+          "measured_tilt_deg": 2.5,
+          "model_centre_x": 1573.9,
+          "model_centre_y": 1058.5,
+          "model_box": [
+            1461.1,
+            913.0,
+            225.4,
+            290.9
+          ],
+          "dx": 3.4,
+          "dy": 0.5,
+          "d_top": 3.0
+        },
+        {
+          "slot": 6,
+          "measured_centre_x": 1739.5,
+          "measured_centre_x_tilt_projected": 1738.2,
+          "dx_tilt_projected": 0.3,
+          "measured_centre_y": 1063.0,
+          "measured_top": 915,
+          "measured_bottom": 1211,
+          "measured_tilt_deg": 5.0,
+          "model_centre_x": 1738.5,
+          "model_centre_y": 1065.0,
+          "model_box": [
+            1625.8,
+            918.0,
+            225.4,
+            293.9
+          ],
+          "dx": -1.0,
+          "dy": 2.0,
+          "d_top": 3.0
+        },
+        {
+          "slot": 7,
+          "measured_centre_x": 1906.5,
+          "measured_centre_x_tilt_projected": 1903.9,
+          "dx_tilt_projected": -0.7,
+          "measured_centre_y": 1075.0,
+          "measured_top": 926,
+          "measured_bottom": 1224,
+          "measured_tilt_deg": 5.5,
+          "model_centre_x": 1903.2,
+          "model_centre_y": 1074.7,
+          "model_box": [
+            1790.5,
+            925.5,
+            225.4,
+            298.5
+          ],
+          "dx": -3.3,
+          "dy": -0.3,
+          "d_top": -0.5
+        }
+      ],
+      "max_abs_dx": 4.3,
+      "median_abs_dx": 2.4,
+      "max_abs_dy": 2.0,
+      "median_abs_dy": 0.3,
+      "label": "A0 - the fitted reference screenshot",
+      "source": "balatro_fly_firsthand.png",
+      "band": [
+        860,
+        1236
+      ],
+      "lines": {
+        "n_lines": 9,
+        "x": [
+          645,
+          814,
+          974,
+          1136,
+          1302,
+          1465,
+          1634,
+          1801,
+          2012
+        ],
+        "gaps": [
+          169,
+          160,
+          162,
+          166,
+          163,
+          169,
+          167,
+          211
+        ],
+        "deg": [
+          -5.5,
+          -2.0,
+          -1.5,
+          -1.5,
+          0.0,
+          2.5,
+          5.0,
+          5.5,
+          6.0
+        ],
+        "votes": [
+          265,
+          272,
+          272,
+          275,
+          281,
+          275,
+          273,
+          272,
+          266
+        ],
+        "median_inner_gap": 166.0,
+        "gap_anomalies": [],
+        "n_cardwidth_gaps": 1,
+        "tilt_monotone": true,
+        "hough_saturated": []
+      },
+      "detector_only": {
+        "cards_detected": 8,
+        "cards_on_screen": 8,
+        "missed_slots": [],
+        "detector_pitch": 166.0,
+        "slots": [
+          {
+            "slot": 0,
+            "centre_x": 750.5,
+            "own_width": null,
+            "model_centre_x": 750.6,
+            "dx": 0.1
+          },
+          {
+            "slot": 1,
+            "centre_x": 919.5,
+            "own_width": null,
+            "model_centre_x": 915.2,
+            "dx": -4.3
+          },
+          {
+            "slot": 2,
+            "centre_x": 1079.5,
+            "own_width": null,
+            "model_centre_x": 1079.9,
+            "dx": 0.4
+          },
+          {
+            "slot": 3,
+            "centre_x": 1241.5,
+            "own_width": null,
+            "model_centre_x": 1244.5,
+            "dx": 3.0
+          },
+          {
+            "slot": 4,
+            "centre_x": 1407.5,
+            "own_width": null,
+            "model_centre_x": 1409.2,
+            "dx": 1.7
+          },
+          {
+            "slot": 5,
+            "centre_x": 1570.5,
+            "own_width": null,
+            "model_centre_x": 1573.9,
+            "dx": 3.4
+          },
+          {
+            "slot": 6,
+            "centre_x": 1739.5,
+            "own_width": null,
+            "model_centre_x": 1738.5,
+            "dx": -1.0
+          },
+          {
+            "slot": 7,
+            "centre_x": 1906.5,
+            "own_width": 211,
+            "model_centre_x": 1903.2,
+            "dx": -3.3
+          }
+        ],
+        "max_abs_dx": 4.3,
+        "median_abs_dx": 2.4
+      }
+    },
+    "a_settled_8": {
+      "label": "A - settled 8-card hand",
+      "source_frame": "seg1/s1_0013.png",
+      "t_sec": 19.225,
+      "identified_by": "8/8 counter on screen; border_lines() output identical to +-1 px over 37 consecutive frames (0.65 s), gaps 163-167 px",
+      "shipped_band": {
+        "band": [
+          860,
+          1236
+        ],
+        "lines": {
+          "n_lines": 9,
+          "x": [
+            647,
+            812,
+            975,
+            1139,
+            1303,
+            1470,
+            1634,
+            1800,
+            2016
+          ],
+          "gaps": [
+            165,
+            163,
+            164,
+            164,
+            167,
+            164,
+            166,
+            216
+          ],
+          "deg": [
+            -5.0,
+            -3.0,
+            -1.5,
+            -1.5,
+            -0.5,
+            2.5,
+            3.5,
+            5.5,
+            5.5
+          ],
+          "votes": [
+            266,
+            270,
+            272,
+            274,
+            276,
+            275,
+            278,
+            273,
+            268
+          ],
+          "median_inner_gap": 164.0,
+          "gap_anomalies": [],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": true,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 8,
+          "cards_on_screen": 8,
+          "missed_slots": [],
+          "detector_pitch": 164.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 755.0,
+              "own_width": null,
+              "model_centre_x": 750.6,
+              "dx": -4.4
+            },
+            {
+              "slot": 1,
+              "centre_x": 920.0,
+              "own_width": null,
+              "model_centre_x": 915.2,
+              "dx": -4.8
+            },
+            {
+              "slot": 2,
+              "centre_x": 1083.0,
+              "own_width": null,
+              "model_centre_x": 1079.9,
+              "dx": -3.1
+            },
+            {
+              "slot": 3,
+              "centre_x": 1247.0,
+              "own_width": null,
+              "model_centre_x": 1244.5,
+              "dx": -2.5
+            },
+            {
+              "slot": 4,
+              "centre_x": 1411.0,
+              "own_width": null,
+              "model_centre_x": 1409.2,
+              "dx": -1.8
+            },
+            {
+              "slot": 5,
+              "centre_x": 1578.0,
+              "own_width": null,
+              "model_centre_x": 1573.9,
+              "dx": -4.1
+            },
+            {
+              "slot": 6,
+              "centre_x": 1742.0,
+              "own_width": null,
+              "model_centre_x": 1738.5,
+              "dx": -3.5
+            },
+            {
+              "slot": 7,
+              "centre_x": 1908.0,
+              "own_width": 216,
+              "model_centre_x": 1903.2,
+              "dx": -4.8
+            }
+          ],
+          "max_abs_dx": 4.8,
+          "median_abs_dx": 3.8
+        },
+        "band_mid_height": 1048.0,
+        "max_abs_dx_tilt_projected": 6.7,
+        "median_abs_dx_tilt_projected": 3.0,
+        "n_cards": 8,
+        "card_width_at_midheight": 216.0,
+        "measured_pitch": 164.64,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 755.0,
+            "measured_centre_x_tilt_projected": 757.3,
+            "dx_tilt_projected": -6.7,
+            "measured_centre_y": 1074.5,
+            "measured_top": 925,
+            "measured_bottom": 1224,
+            "measured_tilt_deg": -5.0,
+            "model_centre_x": 750.6,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              637.9,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -4.4,
+            "dy": 0.2,
+            "d_top": 0.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 920.0,
+            "measured_centre_x_tilt_projected": 920.9,
+            "dx_tilt_projected": -5.6,
+            "measured_centre_y": 1064.5,
+            "measured_top": 918,
+            "measured_bottom": 1211,
+            "measured_tilt_deg": -3.0,
+            "model_centre_x": 915.2,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              802.5,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": -4.8,
+            "dy": 0.5,
+            "d_top": -0.0
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1083.0,
+            "measured_centre_x_tilt_projected": 1083.2,
+            "dx_tilt_projected": -3.3,
+            "measured_centre_y": 1057.0,
+            "measured_top": 913,
+            "measured_bottom": 1201,
+            "measured_tilt_deg": -1.5,
+            "model_centre_x": 1079.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              967.2,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": -3.1,
+            "dy": 1.5,
+            "d_top": -0.0
+          },
+          {
+            "slot": 3,
+            "measured_centre_x": 1247.0,
+            "measured_centre_x_tilt_projected": 1247.2,
+            "dx_tilt_projected": -2.6,
+            "measured_centre_y": 1055.5,
+            "measured_top": 911,
+            "measured_bottom": 1200,
+            "measured_tilt_deg": -1.5,
+            "model_centre_x": 1244.5,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1131.8,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": -2.5,
+            "dy": -0.3,
+            "d_top": -0.5
+          },
+          {
+            "slot": 4,
+            "measured_centre_x": 1411.0,
+            "measured_centre_x_tilt_projected": 1411.1,
+            "dx_tilt_projected": -1.9,
+            "measured_centre_y": 1054.5,
+            "measured_top": 910,
+            "measured_bottom": 1199,
+            "measured_tilt_deg": -0.5,
+            "model_centre_x": 1409.2,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1296.5,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": -1.8,
+            "dy": 0.7,
+            "d_top": 0.5
+          },
+          {
+            "slot": 5,
+            "measured_centre_x": 1578.0,
+            "measured_centre_x_tilt_projected": 1577.6,
+            "dx_tilt_projected": -3.7,
+            "measured_centre_y": 1057.5,
+            "measured_top": 911,
+            "measured_bottom": 1204,
+            "measured_tilt_deg": 2.5,
+            "model_centre_x": 1573.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              1461.1,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": -4.1,
+            "dy": 1.0,
+            "d_top": 2.0
+          },
+          {
+            "slot": 6,
+            "measured_centre_x": 1742.0,
+            "measured_centre_x_tilt_projected": 1741.0,
+            "dx_tilt_projected": -2.4,
+            "measured_centre_y": 1065.0,
+            "measured_top": 913,
+            "measured_bottom": 1217,
+            "measured_tilt_deg": 3.5,
+            "model_centre_x": 1738.5,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              1625.8,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": -3.5,
+            "dy": -0.0,
+            "d_top": 5.0
+          },
+          {
+            "slot": 7,
+            "measured_centre_x": 1908.0,
+            "measured_centre_x_tilt_projected": 1905.2,
+            "dx_tilt_projected": -2.0,
+            "measured_centre_y": 1077.0,
+            "measured_top": 926,
+            "measured_bottom": 1228,
+            "measured_tilt_deg": 5.5,
+            "model_centre_x": 1903.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1790.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -4.8,
+            "dy": -2.3,
+            "d_top": -0.5
+          }
+        ],
+        "max_abs_dx": 4.8,
+        "median_abs_dx": 3.8,
+        "max_abs_dy": 2.3,
+        "median_abs_dy": 0.6,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 164.65,
+          "max_abs_dx": 4.8,
+          "median_abs_dx": 3.8,
+          "dx": [
+            -4.4,
+            -4.8,
+            -3.1,
+            -2.5,
+            -1.8,
+            -4.1,
+            -3.5,
+            -4.8
+          ]
+        }
+      },
+      "wide_band": {
+        "band": [
+          700,
+          1250
+        ],
+        "lines": {
+          "n_lines": 9,
+          "x": [
+            641,
+            808,
+            973,
+            1137,
+            1302,
+            1473,
+            1638,
+            1807,
+            2023
+          ],
+          "gaps": [
+            167,
+            165,
+            164,
+            165,
+            171,
+            165,
+            169,
+            216
+          ],
+          "deg": [
+            -5.0,
+            -3.0,
+            -1.5,
+            -1.5,
+            -0.5,
+            2.5,
+            3.5,
+            5.5,
+            5.5
+          ],
+          "votes": [
+            266,
+            271,
+            272,
+            274,
+            277,
+            275,
+            278,
+            273,
+            268
+          ],
+          "median_inner_gap": 165.0,
+          "gap_anomalies": [],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": true,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 8,
+          "cards_on_screen": 8,
+          "missed_slots": [],
+          "detector_pitch": 165.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 749.0,
+              "own_width": null,
+              "model_centre_x": 750.6,
+              "dx": 1.6
+            },
+            {
+              "slot": 1,
+              "centre_x": 916.0,
+              "own_width": null,
+              "model_centre_x": 915.2,
+              "dx": -0.8
+            },
+            {
+              "slot": 2,
+              "centre_x": 1081.0,
+              "own_width": null,
+              "model_centre_x": 1079.9,
+              "dx": -1.1
+            },
+            {
+              "slot": 3,
+              "centre_x": 1245.0,
+              "own_width": null,
+              "model_centre_x": 1244.5,
+              "dx": -0.5
+            },
+            {
+              "slot": 4,
+              "centre_x": 1410.0,
+              "own_width": null,
+              "model_centre_x": 1409.2,
+              "dx": -0.8
+            },
+            {
+              "slot": 5,
+              "centre_x": 1581.0,
+              "own_width": null,
+              "model_centre_x": 1573.9,
+              "dx": -7.1
+            },
+            {
+              "slot": 6,
+              "centre_x": 1746.0,
+              "own_width": null,
+              "model_centre_x": 1738.5,
+              "dx": -7.5
+            },
+            {
+              "slot": 7,
+              "centre_x": 1915.0,
+              "own_width": 216,
+              "model_centre_x": 1903.2,
+              "dx": -11.8
+            }
+          ],
+          "max_abs_dx": 11.8,
+          "median_abs_dx": 1.4
+        },
+        "band_mid_height": 975.0,
+        "max_abs_dx_tilt_projected": 7.2,
+        "median_abs_dx_tilt_projected": 3.0,
+        "n_cards": 8,
+        "card_width_at_midheight": 216.0,
+        "measured_pitch": 166.39,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 749.0,
+            "measured_centre_x_tilt_projected": 757.7,
+            "dx_tilt_projected": -7.2,
+            "measured_centre_y": 1075.0,
+            "measured_top": 926,
+            "measured_bottom": 1224,
+            "measured_tilt_deg": -5.0,
+            "model_centre_x": 750.6,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              637.9,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 1.6,
+            "dy": -0.3,
+            "d_top": -0.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 916.0,
+            "measured_centre_x_tilt_projected": 920.7,
+            "dx_tilt_projected": -5.5,
+            "measured_centre_y": 1064.5,
+            "measured_top": 918,
+            "measured_bottom": 1211,
+            "measured_tilt_deg": -3.0,
+            "model_centre_x": 915.2,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              802.5,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": -0.8,
+            "dy": 0.5,
+            "d_top": -0.0
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1081.0,
+            "measured_centre_x_tilt_projected": 1083.2,
+            "dx_tilt_projected": -3.3,
+            "measured_centre_y": 1057.5,
+            "measured_top": 914,
+            "measured_bottom": 1201,
+            "measured_tilt_deg": -1.5,
+            "model_centre_x": 1079.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              967.2,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": -1.1,
+            "dy": 1.0,
+            "d_top": -1.0
+          },
+          {
+            "slot": 3,
+            "measured_centre_x": 1245.0,
+            "measured_centre_x_tilt_projected": 1247.1,
+            "dx_tilt_projected": -2.6,
+            "measured_centre_y": 1055.5,
+            "measured_top": 911,
+            "measured_bottom": 1200,
+            "measured_tilt_deg": -1.5,
+            "model_centre_x": 1244.5,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1131.8,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": -0.5,
+            "dy": -0.3,
+            "d_top": -0.5
+          },
+          {
+            "slot": 4,
+            "measured_centre_x": 1410.0,
+            "measured_centre_x_tilt_projected": 1410.7,
+            "dx_tilt_projected": -1.5,
+            "measured_centre_y": 1054.5,
+            "measured_top": 910,
+            "measured_bottom": 1199,
+            "measured_tilt_deg": -0.5,
+            "model_centre_x": 1409.2,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1296.5,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": -0.8,
+            "dy": 0.7,
+            "d_top": 0.5
+          },
+          {
+            "slot": 5,
+            "measured_centre_x": 1581.0,
+            "measured_centre_x_tilt_projected": 1577.4,
+            "dx_tilt_projected": -3.5,
+            "measured_centre_y": 1057.5,
+            "measured_top": 911,
+            "measured_bottom": 1204,
+            "measured_tilt_deg": 2.5,
+            "model_centre_x": 1573.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              1461.1,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": -7.1,
+            "dy": 1.0,
+            "d_top": 2.0
+          },
+          {
+            "slot": 6,
+            "measured_centre_x": 1746.0,
+            "measured_centre_x_tilt_projected": 1740.5,
+            "dx_tilt_projected": -2.0,
+            "measured_centre_y": 1065.0,
+            "measured_top": 913,
+            "measured_bottom": 1217,
+            "measured_tilt_deg": 3.5,
+            "model_centre_x": 1738.5,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              1625.8,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": -7.5,
+            "dy": -0.0,
+            "d_top": 5.0
+          },
+          {
+            "slot": 7,
+            "measured_centre_x": 1915.0,
+            "measured_centre_x_tilt_projected": 1905.2,
+            "dx_tilt_projected": -2.0,
+            "measured_centre_y": 1077.0,
+            "measured_top": 926,
+            "measured_bottom": 1228,
+            "measured_tilt_deg": 5.5,
+            "model_centre_x": 1903.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1790.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -11.8,
+            "dy": -2.3,
+            "d_top": -0.5
+          }
+        ],
+        "max_abs_dx": 11.8,
+        "median_abs_dx": 1.4,
+        "max_abs_dy": 2.3,
+        "median_abs_dy": 0.6,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 164.65,
+          "max_abs_dx": 11.8,
+          "median_abs_dx": 1.4,
+          "dx": [
+            1.6,
+            -0.8,
+            -1.1,
+            -0.5,
+            -0.8,
+            -7.1,
+            -7.5,
+            -11.8
+          ]
+        }
+      }
+    },
+    "b_short_3": {
+      "label": "B - settled 3-card hand",
+      "source_frame": "seg2/s2_0079.png",
+      "t_sec": 24.875,
+      "identified_by": "3/8 counter on screen; the three cards sit at exactly the same x for 25 consecutive frames (0.43 s) after a discard",
+      "shipped_band": {
+        "band": [
+          860,
+          1236
+        ],
+        "lines": {
+          "n_lines": 4,
+          "x": [
+            1053,
+            1218,
+            1383,
+            1593
+          ],
+          "gaps": [
+            165,
+            165,
+            210
+          ],
+          "deg": [
+            -2.5,
+            0.0,
+            2.5,
+            2.0
+          ],
+          "votes": [
+            269,
+            272,
+            272,
+            272
+          ],
+          "median_inner_gap": 165.0,
+          "gap_anomalies": [],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": true,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 3,
+          "cards_on_screen": 3,
+          "missed_slots": [],
+          "detector_pitch": 165.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 1158.0,
+              "own_width": null,
+              "model_centre_x": 1162.2,
+              "dx": 4.2
+            },
+            {
+              "slot": 1,
+              "centre_x": 1323.0,
+              "own_width": null,
+              "model_centre_x": 1326.9,
+              "dx": 3.9
+            },
+            {
+              "slot": 2,
+              "centre_x": 1488.0,
+              "own_width": 210,
+              "model_centre_x": 1491.5,
+              "dx": 3.5
+            }
+          ],
+          "max_abs_dx": 4.2,
+          "median_abs_dx": 3.9
+        },
+        "band_mid_height": 1048.0,
+        "max_abs_dx_tilt_projected": 4.2,
+        "median_abs_dx_tilt_projected": 3.9,
+        "n_cards": 3,
+        "card_width_at_midheight": 210.0,
+        "measured_pitch": 165.0,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 1158.0,
+            "measured_centre_x_tilt_projected": 1158.9,
+            "dx_tilt_projected": 3.3,
+            "measured_centre_y": 1068.0,
+            "measured_top": 921,
+            "measured_bottom": 1215,
+            "measured_tilt_deg": -2.5,
+            "model_centre_x": 1162.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1049.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 4.2,
+            "dy": 6.7,
+            "d_top": 4.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 1323.0,
+            "measured_centre_x_tilt_projected": 1323.0,
+            "dx_tilt_projected": 3.9,
+            "measured_centre_y": 1057.0,
+            "measured_top": 905,
+            "measured_bottom": 1209,
+            "measured_tilt_deg": 0.0,
+            "model_centre_x": 1326.9,
+            "model_centre_y": 1054.8,
+            "model_box": [
+              1214.2,
+              910.2,
+              225.4,
+              289.2
+            ],
+            "dx": 3.9,
+            "dy": -2.2,
+            "d_top": 5.2
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1488.0,
+            "measured_centre_x_tilt_projected": 1487.3,
+            "dx_tilt_projected": 4.2,
+            "measured_centre_y": 1064.0,
+            "measured_top": 905,
+            "measured_bottom": 1223,
+            "measured_tilt_deg": 2.5,
+            "model_centre_x": 1491.5,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1378.8,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 3.5,
+            "dy": 10.7,
+            "d_top": 20.5
+          }
+        ],
+        "max_abs_dx": 4.2,
+        "median_abs_dx": 3.9,
+        "max_abs_dy": 10.7,
+        "median_abs_dy": 6.7,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 225.42,
+          "max_abs_dx": 64.3,
+          "median_abs_dx": 56.5,
+          "dx": [
+            -56.5,
+            3.9,
+            64.3
+          ]
+        }
+      },
+      "wide_band": {
+        "band": [
+          700,
+          1250
+        ],
+        "lines": {
+          "n_lines": 4,
+          "x": [
+            1050,
+            1219,
+            1386,
+            1597
+          ],
+          "gaps": [
+            169,
+            167,
+            211
+          ],
+          "deg": [
+            -2.5,
+            0.5,
+            2.5,
+            2.5
+          ],
+          "votes": [
+            268,
+            274,
+            272,
+            273
+          ],
+          "median_inner_gap": 168.0,
+          "gap_anomalies": [],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": true,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 3,
+          "cards_on_screen": 3,
+          "missed_slots": [],
+          "detector_pitch": 168.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 1155.5,
+              "own_width": null,
+              "model_centre_x": 1162.2,
+              "dx": 6.7
+            },
+            {
+              "slot": 1,
+              "centre_x": 1324.5,
+              "own_width": null,
+              "model_centre_x": 1326.9,
+              "dx": 2.4
+            },
+            {
+              "slot": 2,
+              "centre_x": 1491.5,
+              "own_width": 211,
+              "model_centre_x": 1491.5,
+              "dx": 0.0
+            }
+          ],
+          "max_abs_dx": 6.7,
+          "median_abs_dx": 2.4
+        },
+        "band_mid_height": 975.0,
+        "max_abs_dx_tilt_projected": 3.9,
+        "median_abs_dx_tilt_projected": 3.1,
+        "n_cards": 3,
+        "card_width_at_midheight": 211.0,
+        "measured_pitch": 168.0,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 1155.5,
+            "measured_centre_x_tilt_projected": 1159.6,
+            "dx_tilt_projected": 2.7,
+            "measured_centre_y": 1068.0,
+            "measured_top": 921,
+            "measured_bottom": 1215,
+            "measured_tilt_deg": -2.5,
+            "model_centre_x": 1162.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1049.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 6.7,
+            "dy": 6.7,
+            "d_top": 4.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 1324.5,
+            "measured_centre_x_tilt_projected": 1323.8,
+            "dx_tilt_projected": 3.1,
+            "measured_centre_y": 1057.0,
+            "measured_top": 905,
+            "measured_bottom": 1209,
+            "measured_tilt_deg": 0.5,
+            "model_centre_x": 1326.9,
+            "model_centre_y": 1054.8,
+            "model_box": [
+              1214.2,
+              910.2,
+              225.4,
+              289.2
+            ],
+            "dx": 2.4,
+            "dy": -2.2,
+            "d_top": 5.2
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1491.5,
+            "measured_centre_x_tilt_projected": 1487.6,
+            "dx_tilt_projected": 3.9,
+            "measured_centre_y": 1064.0,
+            "measured_top": 905,
+            "measured_bottom": 1223,
+            "measured_tilt_deg": 2.5,
+            "model_centre_x": 1491.5,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1378.8,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 0.0,
+            "dy": 10.7,
+            "d_top": 20.5
+          }
+        ],
+        "max_abs_dx": 6.7,
+        "median_abs_dx": 2.4,
+        "max_abs_dy": 10.7,
+        "median_abs_dy": 6.7,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 225.42,
+          "max_abs_dx": 60.8,
+          "median_abs_dx": 54.0,
+          "dx": [
+            -54.0,
+            2.4,
+            60.8
+          ]
+        }
+      }
+    },
+    "b2_short_3_crosscheck": {
+      "label": "B (cross-check) - a second settled 3-card hand",
+      "source_frame": "seg1/s1_0091.png",
+      "t_sec": 20.592,
+      "identified_by": "a different 3-card hand ~4.3 s earlier, also static for 25 frames; included so case B does not rest on one frame",
+      "shipped_band": {
+        "band": [
+          860,
+          1236
+        ],
+        "lines": {
+          "n_lines": 4,
+          "x": [
+            1058,
+            1223,
+            1389,
+            1598
+          ],
+          "gaps": [
+            165,
+            166,
+            209
+          ],
+          "deg": [
+            -4.5,
+            1.0,
+            4.0,
+            3.5
+          ],
+          "votes": [
+            261,
+            270,
+            274,
+            271
+          ],
+          "median_inner_gap": 165.5,
+          "gap_anomalies": [],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": true,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 3,
+          "cards_on_screen": 3,
+          "missed_slots": [],
+          "detector_pitch": 165.5,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 1162.5,
+              "own_width": null,
+              "model_centre_x": 1162.2,
+              "dx": -0.3
+            },
+            {
+              "slot": 1,
+              "centre_x": 1327.5,
+              "own_width": null,
+              "model_centre_x": 1326.9,
+              "dx": -0.6
+            },
+            {
+              "slot": 2,
+              "centre_x": 1493.5,
+              "own_width": 209,
+              "model_centre_x": 1491.5,
+              "dx": -2.0
+            }
+          ],
+          "max_abs_dx": 2.0,
+          "median_abs_dx": 0.6
+        },
+        "band_mid_height": 1048.0,
+        "max_abs_dx_tilt_projected": 1.8,
+        "median_abs_dx_tilt_projected": 1.0,
+        "n_cards": 3,
+        "card_width_at_midheight": 209.0,
+        "measured_pitch": 165.5,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 1162.5,
+            "measured_centre_x_tilt_projected": 1164.0,
+            "dx_tilt_projected": -1.8,
+            "measured_centre_y": 1067.5,
+            "measured_top": 920,
+            "measured_bottom": 1215,
+            "measured_tilt_deg": -4.5,
+            "model_centre_x": 1162.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1049.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -0.3,
+            "dy": 7.2,
+            "d_top": 5.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 1327.5,
+            "measured_centre_x_tilt_projected": 1327.4,
+            "dx_tilt_projected": -0.5,
+            "measured_centre_y": 1055.0,
+            "measured_top": 904,
+            "measured_bottom": 1206,
+            "measured_tilt_deg": 1.0,
+            "model_centre_x": 1326.9,
+            "model_centre_y": 1054.8,
+            "model_box": [
+              1214.2,
+              910.2,
+              225.4,
+              289.2
+            ],
+            "dx": -0.6,
+            "dy": -0.2,
+            "d_top": 6.2
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1493.5,
+            "measured_centre_x_tilt_projected": 1492.5,
+            "dx_tilt_projected": -1.0,
+            "measured_centre_y": 1062.0,
+            "measured_top": 907,
+            "measured_bottom": 1217,
+            "measured_tilt_deg": 4.0,
+            "model_centre_x": 1491.5,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1378.8,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -2.0,
+            "dy": 12.7,
+            "d_top": 18.5
+          }
+        ],
+        "max_abs_dx": 2.0,
+        "median_abs_dx": 0.6,
+        "max_abs_dy": 12.7,
+        "median_abs_dy": 7.2,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 225.42,
+          "max_abs_dx": 61.0,
+          "median_abs_dx": 58.8,
+          "dx": [
+            -61.0,
+            -0.6,
+            58.8
+          ]
+        }
+      },
+      "wide_band": {
+        "band": [
+          700,
+          1250
+        ],
+        "lines": {
+          "n_lines": 4,
+          "x": [
+            1052,
+            1224,
+            1394,
+            1602
+          ],
+          "gaps": [
+            172,
+            170,
+            208
+          ],
+          "deg": [
+            -4.5,
+            1.0,
+            4.0,
+            3.5
+          ],
+          "votes": [
+            265,
+            270,
+            277,
+            271
+          ],
+          "median_inner_gap": 171.0,
+          "gap_anomalies": [],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": true,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 3,
+          "cards_on_screen": 3,
+          "missed_slots": [],
+          "detector_pitch": 171.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 1156.0,
+              "own_width": null,
+              "model_centre_x": 1162.2,
+              "dx": 6.2
+            },
+            {
+              "slot": 1,
+              "centre_x": 1328.0,
+              "own_width": null,
+              "model_centre_x": 1326.9,
+              "dx": -1.1
+            },
+            {
+              "slot": 2,
+              "centre_x": 1498.0,
+              "own_width": 208,
+              "model_centre_x": 1491.5,
+              "dx": -6.5
+            }
+          ],
+          "max_abs_dx": 6.5,
+          "median_abs_dx": 6.2
+        },
+        "band_mid_height": 975.0,
+        "max_abs_dx_tilt_projected": 1.1,
+        "median_abs_dx_tilt_projected": 0.4,
+        "n_cards": 3,
+        "card_width_at_midheight": 208.0,
+        "measured_pitch": 171.0,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 1156.0,
+            "measured_centre_x_tilt_projected": 1163.3,
+            "dx_tilt_projected": -1.1,
+            "measured_centre_y": 1067.5,
+            "measured_top": 920,
+            "measured_bottom": 1215,
+            "measured_tilt_deg": -4.5,
+            "model_centre_x": 1162.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1049.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 6.2,
+            "dy": 7.2,
+            "d_top": 5.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 1328.0,
+            "measured_centre_x_tilt_projected": 1326.6,
+            "dx_tilt_projected": 0.3,
+            "measured_centre_y": 1055.0,
+            "measured_top": 904,
+            "measured_bottom": 1206,
+            "measured_tilt_deg": 1.0,
+            "model_centre_x": 1326.9,
+            "model_centre_y": 1054.8,
+            "model_box": [
+              1214.2,
+              910.2,
+              225.4,
+              289.2
+            ],
+            "dx": -1.1,
+            "dy": -0.2,
+            "d_top": 6.2
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1498.0,
+            "measured_centre_x_tilt_projected": 1491.9,
+            "dx_tilt_projected": -0.4,
+            "measured_centre_y": 1062.0,
+            "measured_top": 907,
+            "measured_bottom": 1217,
+            "measured_tilt_deg": 4.0,
+            "model_centre_x": 1491.5,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1378.8,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -6.5,
+            "dy": 12.7,
+            "d_top": 18.5
+          }
+        ],
+        "max_abs_dx": 6.5,
+        "median_abs_dx": 6.2,
+        "max_abs_dy": 12.7,
+        "median_abs_dy": 7.2,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 225.42,
+          "max_abs_dx": 54.5,
+          "median_abs_dx": 54.3,
+          "dx": [
+            -54.5,
+            -1.1,
+            54.3
+          ]
+        }
+      }
+    },
+    "c_midslide_8": {
+      "label": "C - 8-card hand mid-animation",
+      "source_frame": "seg2/s2_0133.png",
+      "t_sec": 25.817,
+      "identified_by": "8/8 counter, but one card is still in the air mid-frame and the right-hand group has not closed up: gaps run 133-193 px against a settled 163-167",
+      "caveat": "READ 'detector_only', NOT the max/median in this block. Slot 4 here is a phantom: Shot.cards(8) chained slot 3's *right* border into it, so its 'measured centre' 1389.5 and 'measured centre y' 1133.5 are the middle of a gap, and the 78.3 px d_y is not a measurement of any card. What the detector really did: 7 of the 8 cards found, the one in the air missed, max |dx| 26.0 px (on the card squashed to 133 px), median 10.4 px.",
+      "shipped_band": {
+        "band": [
+          860,
+          1236
+        ],
+        "lines": {
+          "n_lines": 9,
+          "x": [
+            635,
+            801,
+            965,
+            1152,
+            1285,
+            1478,
+            1644,
+            1810,
+            2019
+          ],
+          "gaps": [
+            166,
+            164,
+            187,
+            133,
+            193,
+            166,
+            166,
+            209
+          ],
+          "deg": [
+            -6.5,
+            -4.0,
+            -2.5,
+            -2.0,
+            -2.0,
+            4.5,
+            6.0,
+            4.0,
+            3.5
+          ],
+          "votes": [
+            264,
+            270,
+            271,
+            257,
+            268,
+            267,
+            271,
+            275,
+            272
+          ],
+          "median_inner_gap": 166.0,
+          "gap_anomalies": [
+            {
+              "after_line": 2,
+              "gap": 187,
+              "vs_pitch": 21.0
+            },
+            {
+              "after_line": 3,
+              "gap": 133,
+              "vs_pitch": -33.0
+            },
+            {
+              "after_line": 4,
+              "gap": 193,
+              "vs_pitch": 27.0
+            }
+          ],
+          "n_cardwidth_gaps": 1,
+          "tilt_monotone": false,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 7,
+          "cards_on_screen": 8,
+          "missed_slots": [
+            4
+          ],
+          "detector_pitch": 166.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 739.5,
+              "own_width": null,
+              "model_centre_x": 750.6,
+              "dx": 11.1
+            },
+            {
+              "slot": 1,
+              "centre_x": 905.5,
+              "own_width": null,
+              "model_centre_x": 915.2,
+              "dx": 9.7
+            },
+            {
+              "slot": 2,
+              "centre_x": 1069.5,
+              "own_width": null,
+              "model_centre_x": 1079.9,
+              "dx": 10.4
+            },
+            {
+              "slot": 3,
+              "centre_x": 1218.5,
+              "own_width": 133,
+              "model_centre_x": 1244.5,
+              "dx": 26.0
+            },
+            {
+              "slot": 5,
+              "centre_x": 1582.5,
+              "own_width": null,
+              "model_centre_x": 1573.9,
+              "dx": -8.6
+            },
+            {
+              "slot": 6,
+              "centre_x": 1748.5,
+              "own_width": null,
+              "model_centre_x": 1738.5,
+              "dx": -10.0
+            },
+            {
+              "slot": 7,
+              "centre_x": 1914.5,
+              "own_width": 209,
+              "model_centre_x": 1903.2,
+              "dx": -11.3
+            }
+          ],
+          "max_abs_dx": 26.0,
+          "median_abs_dx": 10.4
+        },
+        "band_mid_height": 1048.0,
+        "max_abs_dx_tilt_projected": 16.7,
+        "median_abs_dx_tilt_projected": 8.9,
+        "n_cards": 8,
+        "card_width_at_midheight": 209.0,
+        "measured_pitch": 168.0,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 739.5,
+            "measured_centre_x_tilt_projected": 742.6,
+            "dx_tilt_projected": 8.0,
+            "measured_centre_y": 1075.0,
+            "measured_top": 925,
+            "measured_bottom": 1225,
+            "measured_tilt_deg": -6.5,
+            "model_centre_x": 750.6,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              637.9,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 11.1,
+            "dy": -0.3,
+            "d_top": 0.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 905.5,
+            "measured_centre_x_tilt_projected": 906.9,
+            "dx_tilt_projected": 8.3,
+            "measured_centre_y": 1068.0,
+            "measured_top": 922,
+            "measured_bottom": 1214,
+            "measured_tilt_deg": -4.0,
+            "model_centre_x": 915.2,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              802.5,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": 9.7,
+            "dy": -3.0,
+            "d_top": -4.0
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1069.5,
+            "measured_centre_x_tilt_projected": 1069.9,
+            "dx_tilt_projected": 10.0,
+            "measured_centre_y": 1058.0,
+            "measured_top": 911,
+            "measured_bottom": 1205,
+            "measured_tilt_deg": -2.5,
+            "model_centre_x": 1079.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              967.2,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": 10.4,
+            "dy": 0.5,
+            "d_top": 2.0
+          },
+          {
+            "slot": 3,
+            "measured_centre_x": 1256.5,
+            "measured_centre_x_tilt_projected": 1256.7,
+            "dx_tilt_projected": -12.1,
+            "measured_centre_y": 1052.5,
+            "measured_top": 907,
+            "measured_bottom": 1198,
+            "measured_tilt_deg": -2.0,
+            "model_centre_x": 1244.5,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1131.8,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": -12.0,
+            "dy": 2.7,
+            "d_top": 3.5
+          },
+          {
+            "slot": 4,
+            "measured_centre_x": 1389.5,
+            "measured_centre_x_tilt_projected": 1392.5,
+            "dx_tilt_projected": 16.7,
+            "measured_centre_y": 1133.5,
+            "measured_top": 1067,
+            "measured_bottom": 1200,
+            "measured_tilt_deg": -2.0,
+            "model_centre_x": 1409.2,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1296.5,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": 19.7,
+            "dy": -78.3,
+            "d_top": -156.5
+          },
+          {
+            "slot": 5,
+            "measured_centre_x": 1582.5,
+            "measured_centre_x_tilt_projected": 1581.3,
+            "dx_tilt_projected": -7.4,
+            "measured_centre_y": 1063.5,
+            "measured_top": 916,
+            "measured_bottom": 1211,
+            "measured_tilt_deg": 4.5,
+            "model_centre_x": 1573.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              1461.1,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": -8.6,
+            "dy": -5.0,
+            "d_top": -3.0
+          },
+          {
+            "slot": 6,
+            "measured_centre_x": 1748.5,
+            "measured_centre_x_tilt_projected": 1746.4,
+            "dx_tilt_projected": -7.9,
+            "measured_centre_y": 1068.0,
+            "measured_top": 918,
+            "measured_bottom": 1218,
+            "measured_tilt_deg": 6.0,
+            "model_centre_x": 1738.5,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              1625.8,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": -10.0,
+            "dy": -3.0,
+            "d_top": -0.0
+          },
+          {
+            "slot": 7,
+            "measured_centre_x": 1914.5,
+            "measured_centre_x_tilt_projected": 1912.6,
+            "dx_tilt_projected": -9.5,
+            "measured_centre_y": 1074.5,
+            "measured_top": 921,
+            "measured_bottom": 1228,
+            "measured_tilt_deg": 4.0,
+            "model_centre_x": 1903.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1790.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -11.3,
+            "dy": 0.2,
+            "d_top": 4.5
+          }
+        ],
+        "max_abs_dx": 19.7,
+        "median_abs_dx": 10.8,
+        "max_abs_dy": 78.3,
+        "median_abs_dy": 2.9,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 164.65,
+          "max_abs_dx": 19.7,
+          "median_abs_dx": 10.8,
+          "dx": [
+            11.1,
+            9.7,
+            10.4,
+            -12.0,
+            19.7,
+            -8.6,
+            -10.0,
+            -11.3
+          ]
+        }
+      },
+      "wide_band": {
+        "band": [
+          700,
+          1250
+        ],
+        "lines": {
+          "n_lines": 9,
+          "x": [
+            627,
+            796,
+            962,
+            1150,
+            1283,
+            1483,
+            1651,
+            1815,
+            2023
+          ],
+          "gaps": [
+            169,
+            166,
+            188,
+            133,
+            200,
+            168,
+            164,
+            208
+          ],
+          "deg": [
+            -6.5,
+            -4.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            4.5,
+            6.0,
+            4.0,
+            3.5
+          ],
+          "votes": [
+            264,
+            270,
+            271,
+            273,
+            268,
+            267,
+            270,
+            275,
+            272
+          ],
+          "median_inner_gap": 168.0,
+          "gap_anomalies": [
+            {
+              "after_line": 2,
+              "gap": 188,
+              "vs_pitch": 20.0
+            },
+            {
+              "after_line": 3,
+              "gap": 133,
+              "vs_pitch": -35.0
+            },
+            {
+              "after_line": 4,
+              "gap": 200,
+              "vs_pitch": 32.0
+            }
+          ],
+          "n_cardwidth_gaps": 2,
+          "tilt_monotone": false,
+          "hough_saturated": []
+        },
+        "detector_only": {
+          "cards_detected": 7,
+          "cards_on_screen": 8,
+          "missed_slots": [
+            4
+          ],
+          "detector_pitch": 168.0,
+          "slots": [
+            {
+              "slot": 0,
+              "centre_x": 731.0,
+              "own_width": null,
+              "model_centre_x": 750.6,
+              "dx": 19.6
+            },
+            {
+              "slot": 1,
+              "centre_x": 900.0,
+              "own_width": null,
+              "model_centre_x": 915.2,
+              "dx": 15.2
+            },
+            {
+              "slot": 2,
+              "centre_x": 1066.0,
+              "own_width": null,
+              "model_centre_x": 1079.9,
+              "dx": 13.9
+            },
+            {
+              "slot": 3,
+              "centre_x": 1216.5,
+              "own_width": 133,
+              "model_centre_x": 1244.5,
+              "dx": 28.0
+            },
+            {
+              "slot": 5,
+              "centre_x": 1587.0,
+              "own_width": null,
+              "model_centre_x": 1573.9,
+              "dx": -13.1
+            },
+            {
+              "slot": 6,
+              "centre_x": 1755.0,
+              "own_width": null,
+              "model_centre_x": 1738.5,
+              "dx": -16.5
+            },
+            {
+              "slot": 7,
+              "centre_x": 1919.0,
+              "own_width": 208,
+              "model_centre_x": 1903.2,
+              "dx": -15.8
+            }
+          ],
+          "max_abs_dx": 28.0,
+          "median_abs_dx": 15.8
+        },
+        "band_mid_height": 975.0,
+        "max_abs_dx_tilt_projected": 17.8,
+        "median_abs_dx_tilt_projected": 8.8,
+        "n_cards": 8,
+        "card_width_at_midheight": 208.0,
+        "measured_pitch": 170.08,
+        "model_pitch": 164.65,
+        "slots": [
+          {
+            "slot": 0,
+            "measured_centre_x": 731.0,
+            "measured_centre_x_tilt_projected": 742.5,
+            "dx_tilt_projected": 8.1,
+            "measured_centre_y": 1075.5,
+            "measured_top": 926,
+            "measured_bottom": 1225,
+            "measured_tilt_deg": -6.5,
+            "model_centre_x": 750.6,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              637.9,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": 19.6,
+            "dy": -0.8,
+            "d_top": -0.5
+          },
+          {
+            "slot": 1,
+            "measured_centre_x": 900.0,
+            "measured_centre_x_tilt_projected": 906.5,
+            "dx_tilt_projected": 8.7,
+            "measured_centre_y": 1068.0,
+            "measured_top": 922,
+            "measured_bottom": 1214,
+            "measured_tilt_deg": -4.0,
+            "model_centre_x": 915.2,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              802.5,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": 15.2,
+            "dy": -3.0,
+            "d_top": -4.0
+          },
+          {
+            "slot": 2,
+            "measured_centre_x": 1066.0,
+            "measured_centre_x_tilt_projected": 1068.9,
+            "dx_tilt_projected": 11.0,
+            "measured_centre_y": 1059.0,
+            "measured_top": 912,
+            "measured_bottom": 1206,
+            "measured_tilt_deg": -2.0,
+            "model_centre_x": 1079.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              967.2,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": 13.9,
+            "dy": -0.5,
+            "d_top": 1.0
+          },
+          {
+            "slot": 3,
+            "measured_centre_x": 1254.0,
+            "measured_centre_x_tilt_projected": 1256.7,
+            "dx_tilt_projected": -12.2,
+            "measured_centre_y": 1052.5,
+            "measured_top": 907,
+            "measured_bottom": 1198,
+            "measured_tilt_deg": -2.0,
+            "model_centre_x": 1244.5,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1131.8,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": -9.5,
+            "dy": 2.7,
+            "d_top": 3.5
+          },
+          {
+            "slot": 4,
+            "measured_centre_x": 1387.0,
+            "measured_centre_x_tilt_projected": 1391.4,
+            "dx_tilt_projected": 17.8,
+            "measured_centre_y": 1101.5,
+            "measured_top": 1003,
+            "measured_bottom": 1200,
+            "measured_tilt_deg": -2.0,
+            "model_centre_x": 1409.2,
+            "model_centre_y": 1055.2,
+            "model_box": [
+              1296.5,
+              910.5,
+              225.4,
+              289.4
+            ],
+            "dx": 22.2,
+            "dy": -46.3,
+            "d_top": -92.5
+          },
+          {
+            "slot": 5,
+            "measured_centre_x": 1587.0,
+            "measured_centre_x_tilt_projected": 1580.0,
+            "dx_tilt_projected": -6.1,
+            "measured_centre_y": 1064.0,
+            "measured_top": 916,
+            "measured_bottom": 1212,
+            "measured_tilt_deg": 4.5,
+            "model_centre_x": 1573.9,
+            "model_centre_y": 1058.5,
+            "model_box": [
+              1461.1,
+              913.0,
+              225.4,
+              290.9
+            ],
+            "dx": -13.1,
+            "dy": -5.5,
+            "d_top": -3.0
+          },
+          {
+            "slot": 6,
+            "measured_centre_x": 1755.0,
+            "measured_centre_x_tilt_projected": 1745.2,
+            "dx_tilt_projected": -6.7,
+            "measured_centre_y": 1068.0,
+            "measured_top": 918,
+            "measured_bottom": 1218,
+            "measured_tilt_deg": 6.0,
+            "model_centre_x": 1738.5,
+            "model_centre_y": 1065.0,
+            "model_box": [
+              1625.8,
+              918.0,
+              225.4,
+              293.9
+            ],
+            "dx": -16.5,
+            "dy": -3.0,
+            "d_top": -0.0
+          },
+          {
+            "slot": 7,
+            "measured_centre_x": 1919.0,
+            "measured_centre_x_tilt_projected": 1912.0,
+            "dx_tilt_projected": -8.9,
+            "measured_centre_y": 1074.5,
+            "measured_top": 921,
+            "measured_bottom": 1228,
+            "measured_tilt_deg": 4.0,
+            "model_centre_x": 1903.2,
+            "model_centre_y": 1074.7,
+            "model_box": [
+              1790.5,
+              925.5,
+              225.4,
+              298.5
+            ],
+            "dx": -15.8,
+            "dy": 0.2,
+            "d_top": 4.5
+          }
+        ],
+        "max_abs_dx": 22.2,
+        "median_abs_dx": 15.5,
+        "max_abs_dy": 46.3,
+        "median_abs_dy": 2.9,
+        "spread_pitch_model": {
+          "note": "the model before fixed_pitch: pitch spread to fill span, clamped at max_pitch_ratio card widths. Identical to the fixed-pitch model at n=8; this is what case B was measured against.",
+          "model_pitch": 164.65,
+          "max_abs_dx": 22.2,
+          "median_abs_dx": 15.5,
+          "dx": [
+            19.6,
+            15.2,
+            13.9,
+            -9.5,
+            22.2,
+            -13.1,
+            -16.5,
+            -15.8
+          ]
+        }
+      }
+    }
+  },
+  "failures": {
+    "seg1_t19.0-22.0s": {
+      "frames": 172,
+      "line_count_histogram": {
+        "0": 11,
+        "1": 4,
+        "2": 2,
+        "3": 6,
+        "4": 35,
+        "5": 22,
+        "6": 7,
+        "7": 7,
+        "8": 15,
+        "9": 63
+      },
+      "zero_line_frames": [
+        "s1_0040.png",
+        "s1_0104.png",
+        "s1_0105.png",
+        "s1_0106.png",
+        "s1_0113.png",
+        "s1_0114.png",
+        "s1_0123.png",
+        "s1_0130.png",
+        "s1_0131.png",
+        "s1_0132.png",
+        "s1_0140.png"
+      ],
+      "measure_failed_frames": [
+        "s1_0039.png",
+        "s1_0040.png",
+        "s1_0048.png",
+        "s1_0056.png",
+        "s1_0062.png",
+        "s1_0063.png",
+        "s1_0070.png",
+        "s1_0071.png",
+        "s1_0072.png",
+        "s1_0104.png",
+        "s1_0105.png",
+        "s1_0106.png",
+        "s1_0113.png",
+        "s1_0114.png",
+        "s1_0116.png",
+        "s1_0122.png",
+        "s1_0123.png",
+        "s1_0124.png",
+        "s1_0130.png",
+        "s1_0131.png",
+        "s1_0132.png",
+        "s1_0133.png",
+        "s1_0134.png",
+        "s1_0138.png",
+        "s1_0140.png",
+        "s1_0141.png",
+        "s1_0142.png",
+        "s1_0147.png"
+      ],
+      "clean_frames": 120
+    },
+    "seg2_t23.5-28.1s": {
+      "frames": 258,
+      "line_count_histogram": {
+        "0": 14,
+        "1": 3,
+        "2": 2,
+        "3": 4,
+        "4": 34,
+        "5": 11,
+        "6": 11,
+        "7": 14,
+        "8": 12,
+        "9": 152,
+        "10": 1
+      },
+      "zero_line_frames": [
+        "s2_0094.png",
+        "s2_0095.png",
+        "s2_0096.png",
+        "s2_0102.png",
+        "s2_0103.png",
+        "s2_0104.png",
+        "s2_0111.png",
+        "s2_0112.png",
+        "s2_0113.png",
+        "s2_0120.png",
+        "s2_0121.png",
+        "s2_0129.png",
+        "s2_0130.png",
+        "s2_0131.png"
+      ],
+      "measure_failed_frames": [
+        "s2_0036.png",
+        "s2_0037.png",
+        "s2_0043.png",
+        "s2_0044.png",
+        "s2_0051.png",
+        "s2_0052.png",
+        "s2_0053.png",
+        "s2_0059.png",
+        "s2_0060.png",
+        "s2_0061.png",
+        "s2_0094.png",
+        "s2_0095.png",
+        "s2_0096.png",
+        "s2_0102.png",
+        "s2_0103.png",
+        "s2_0104.png",
+        "s2_0105.png",
+        "s2_0106.png",
+        "s2_0107.png",
+        "s2_0108.png",
+        "s2_0109.png",
+        "s2_0111.png",
+        "s2_0112.png",
+        "s2_0113.png",
+        "s2_0114.png",
+        "s2_0116.png",
+        "s2_0119.png",
+        "s2_0120.png",
+        "s2_0121.png",
+        "s2_0123.png",
+        "s2_0125.png",
+        "s2_0126.png",
+        "s2_0129.png",
+        "s2_0130.png",
+        "s2_0131.png",
+        "s2_0132.png",
+        "s2_0140.png"
+      ],
+      "clean_frames": 189
+    },
+    "notes": [
+      "Case C: the card in the air is NOT detected. It is rotated far past the Hough sweep's +-9 deg and squashed horizontally by Balatro's move animation, so it casts no near-vertical outline. What Shot.cards(8) assigns to slot 4 is the *right* border of the card in slot 3, which has clear air to its right because its neighbour left; the 133 px and 193 px gaps around it are the tell.",
+      "Case C: cards in motion are drawn narrower than 211 px (the settled width). Shot.cards() takes one width from the rightmost pair and applies it to every slot, so 'centre = left + width/2' is biased for any squashed card even when its outline is found correctly.",
+      "The x a line reports is taken at BAND's mid height. The outlines are tilted, so widening BAND moves the reported centres: on case A the shipped band gives max |dx| 4.8 px and BAND=(700,1250) gives 11.8 px, purely from the band's mid height moving 73 px up. Projecting each line to its own card's mid height removes that ('tilt_projected').",
+      "Shot.cards() assumes a settled overlapping fan: n left borders plus one right border. That happens to hold for a short hand too, because Balatro keeps a constant ~165 px pitch and does not spread the fan -- but it is an assumption, not a check, and case C shows what it does when it is wrong: it chains a right border into a slot silently.",
+      "The zero-line frames are real blackouts, not empty tables. seg2/s2_0094.png has three cards plus a fourth arriving (the counter reads 4/8) and border_lines() returns nothing. It is not the colour mask: that frame has 15739 outline pixels against 13984 on the settled 3-card frame that works. It is the sweep. The best any column collects is 110 votes out of ~376 rows, against 272 when settled, because cards in a deal are rotated well past the +-9 deg the Hough shears over, so no shear straightens them. Raising HOUGH_DEG would cost time quadratically and start finding face-card art.",
+      "Balatro does NOT spread a short hand: the measured pitch is 165 px at n=3 exactly as it is at n=8. The model as it stood when this was measured spread it to min(card_w, (span-card_w)/(n-1)) = 225.4 px for every n from 3 to 6 and 192 px at n=7, so the boxes walked outwards from the real cards by (pitch_model - 165)*(k - (n-1)/2): 56-64 px on the end slots of a 3-card hand. That was a model error, not a detector error -- the detector found all three cards to a pixel. pov_geometry.json has since gained fixed_pitch, which brings the same frames to ~4 px; 'spread_pitch_model' in each case keeps the before number so the claim is checkable.",
+      "pc.render() draws its pink measured line with the slant inverted: the Hough shears row r right by tan(deg)*(r-mid), so the outline that piles into bin X runs x(y) = X - tan(deg)*(y-mid), and render draws x(y) = X + tan(deg)*(y-mid). Checked against the raw mask: slot 0 of the reference screenshot is at x=638 at y=960 and x=661 at y=1210 with deg=-5.5. Cosmetic -- it affects only the pink line's lean in outputs/pov/overlay_calibration_check*.png, not any fitted number -- and is left alone here rather than silently rewriting those images.",
+      "Screen capture is not timed here. The game is not running and this measurement is offline on recorded pixels, so the numbers below are the detector only."
+    ]
+  },
+  "timing": {
+    "repeats": 7,
+    "png_decode_ms": 58.41,
+    "shot_init_ms": 98.75,
+    "shot_init_minus_decode_ms": 40.34,
+    "border_lines_ms": 33.02,
+    "full_snap_ms": 135.48,
+    "snap_minus_decode_ms": 77.06
+  },
+  "recommendation": {
+    "pitch": {
+      "status": "already applied -- pov_geometry.json carries fixed_pitch and HandGeometry.pitch() honours it",
+      "measured_pitch_px_at_n3": 165.0,
+      "fitted_pitch_px_at_n8": 164.65,
+      "equivalent_max_pitch_ratio": 0.7304,
+      "why": "Balatro keeps a constant centre-to-centre pitch whatever the hand size and centres the shorter fan; spreading it to fill span put the end cards of a 3-card hand 56-64 px off."
+    },
+    "arc_still_open": {
+      "status": "not applied, and not enough material to fit",
+      "what": "arc_lift / arc_shrink are indexed by u across the fan, so a 3-card hand gets the full parabola over three slots. Measured, the end cards of both 3-card hands sit 7-13 px BELOW where the model puts their box centre, so the arc is too deep at small n.",
+      "why_not_fitted": "the only settled short hands in the 28 s recording are two 3-card ones. One value of n cannot separate 'arc scales with n' from 'arc is a fixed pixel amount'."
+    },
+    "detector_cost": {
+      "status": "throttle, do not run per repaint",
+      "what": "the overlay pumps its event queue every 0.1 s; a full snap is ~81 ms of Python on top of an unmeasured screen capture. Shot.__init__'s per-column loop (44 ms) is the larger half and is vectorisable; border_lines() is 36 ms."
+    }
+  }
+}

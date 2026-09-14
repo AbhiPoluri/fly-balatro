@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flybalatro"
+version = "0.1.0"
+description = "The MaleCNS v1.0 connectome, run as a frozen leaky integrate-and-fire network, playing Balatro"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Abhiram Poluri" }]
+keywords = ["connectomics", "drosophila", "malecns", "mushroom-body", "balatro"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Intended Audience :: Science/Research",
+]
+
+# Lower bounds are the versions these results were produced on (see the table in
+# docs/REPRODUCE.md); they are not upper-bounded because nothing here pins a
+# behaviour to a patch release. `pylatro` is deliberately absent: it is built
+# locally from the patched vendor/balatro-rs checkout, not installed from PyPI.
+# See patches/README.md and docs/REPRODUCE.md.
+dependencies = [
+  "numpy>=2.4",
+  "numba>=0.67",
+  "pandas>=3.0",
+  "pyarrow>=25.0",
+  "scikit-learn>=1.9",
+  "torch>=2.14",
+]
+
+[project.optional-dependencies]
+# the live dashboard / viewer (python -m flybalatro.viewer.server)
+viewer = [
+  "fastapi>=0.141",
+  "uvicorn>=0.52",
+  "pillow>=12.3",
+]
+# the real-game overlay and window capture; macOS only
+realgame = [
+  "pyobjc-framework-quartz>=12.2",
+  "pyobjc-framework-cocoa>=12.2",
+]
+# scripts/figures.py
+figures = [
+  "matplotlib>=3.11",
+  "pillow>=12.3",
+]
+dev = [
+  "pytest>=9.1",
+  "joblib>=1.6",
+]
+
+[tool.setuptools]
+packages = ["flybalatro", "flybalatro.realgame", "flybalatro.viewer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

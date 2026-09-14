@@ -1,0 +1,22 @@
+collecting calibration hands ...
+  200 hands, 137 odours
+== real wiring ==
+  raw drive -5.455..7.803 Hz (11.67 quanta), KC active 211.5, MBON 14.27 Hz
+  bias -1.0764  T 1.0538  explore 0.201  naive P(play) 0.543, 30% of odours near-deterministic
+    naive P(play) by bucket: {'ge1.0': 0.6828, 'lt0.25': 0.393, 'lt0.5': 0.635, 'lt1.0': 0.4955}
+    panel punish: dself -2.329+-1.284  dother -2.462  specificity +0.133 (-6% of the effect)  direction_ok=True  7/8 right way
+    panel reward: dself +9.195+-1.650  dother +7.860  specificity +1.335 (15% of the effect)  direction_ok=True  8/8 right way
+  conditioning: A=High Card/lt0.25  B=Full House/ge1.0
+    punish: dA +0.0000 (+0.0q) dB -1.3636 (-1.2q) specific=False
+    reward: dA +11.5909 (+10.2q) dB +8.2576 (+7.3q) specific=True
+    window 50 ms: range 8.94 Hz, punish dself -2.33 (spec +0.13), reward dself +9.20 (spec +1.34)
+    window 150 ms: range 8.64 Hz, punish dself -3.91 (spec -0.17), reward dself +15.24 (spec +1.17)
+    window 300 ms: range 6.67 Hz, punish dself -4.41 (spec -0.34), reward dself +16.40 (spec +0.54)
+  bounds ok=True min_ratio=0.0500 at_floor=0.037
+== shuffled wiring ==
+  raw drive -2.901..5.714 Hz (4.08 quanta), KC active 22.9, MBON 2.73 Hz
+  bias -2.1686  T 0.5836  explore 0.197  naive P(play) 0.496, 36% of odours near-deterministic
+    naive P(play) by bucket: {'ge1.0': 0.5819, 'lt0.25': 0.3571, 'lt0.5': 0.6433, 'lt1.0': 0.444}
+    panel punish: dself +0.000+-0.000  dother +0.000  specificity +0.000 (0% of the effect)  direction_ok=False  0/8 right way
+    panel reward: dself +0.000+-0.000  dother +0.000  specificity +0.000 (0% of the effect)  direction_ok=False  0/8 right way
+wrote /Users/abhipoluri/fly-balatro/outputs/plast/probe.json and /Users/abhipoluri/fly-balatro/outputs/plast/calib.json in 1184.4s

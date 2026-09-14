@@ -1,0 +1,108 @@
+[api] http://127.0.0.1:12346 health={'status': 'ok'}
+[brain] loading MaleCNS graph (threshold=5)...
+[brain] condition=real n=146271 window=50ms populations={'ORN': 2639, 'ALPN': 686, 'KC': 4064, 'MBON': 97, 'DN': 1314} feature_version=2 encoding=glomerular32 (315 bits, 32 to the brain, 32 whole glomeruli, 2075 receptor neurons, tuning apl2, 283 bits not sent)
+[policy] mode=brain (FLY DECIDES)
+[policy] bc3/real_alpn_kc_dn_mlp.npz over ALPN+KC+DN spikes (state encoding v2, encoding glomerular32)
+[run] starting RED deck / WHITE stake
+[  1] BLIND_SELECT   score=0/300 h=4 d=4 $=4 -> select_blind (select the blind) | DN 0.0Hz KC 0.0Hz
+[  2] SELECTING_HAND score=0/300 h=4 d=4 $=4 -> select_card[0] (select hand slot 0) | DN 10.6Hz KC 1.5Hz
+[  3] SELECTING_HAND score=0/300 h=4 d=4 $=4 -> select_card[4] (select hand slot 4) | DN 9.8Hz KC 1.4Hz
+[  4] SELECTING_HAND score=0/300 h=4 d=4 $=4 -> select_card[3] (select hand slot 3) | DN 9.8Hz KC 1.4Hz
+[  5] SELECTING_HAND score=0/300 h=4 d=4 $=4 -> select_card[5] (select hand slot 5) | DN 9.8Hz KC 1.4Hz
+[  6] SELECTING_HAND score=0/300 h=4 d=4 $=4 -> select_card[6] (select hand slot 6) | DN 9.8Hz KC 1.4Hz
+[  7] SELECTING_HAND score=0/300 h=4 d=4 $=4 -> discard (discard hand slots [0, 3, 4, 5, 6]) | DN 9.8Hz KC 1.4Hz
+[  8] SELECTING_HAND score=0/300 h=4 d=3 $=4 -> select_card[0] (select hand slot 0) | DN 4.7Hz KC 1.4Hz
+[  9] SELECTING_HAND score=0/300 h=4 d=3 $=4 -> select_card[1] (select hand slot 1) | DN 4.7Hz KC 1.3Hz
+[ 10] SELECTING_HAND score=0/300 h=4 d=3 $=4 -> select_card[3] (select hand slot 3) | DN 4.9Hz KC 1.4Hz
+[ 11] SELECTING_HAND score=0/300 h=4 d=3 $=4 -> select_card[4] (select hand slot 4) | DN 4.9Hz KC 1.4Hz
+[ 12] SELECTING_HAND score=0/300 h=4 d=3 $=4 -> play (play hand slots [0, 1, 3, 4]) | DN 4.8Hz KC 1.8Hz
+[ 13] SELECTING_HAND score=108/300 h=3 d=3 $=4 -> select_card[2] (select hand slot 2) | DN 6.5Hz KC 1.2Hz
+[ 14] SELECTING_HAND score=108/300 h=3 d=3 $=4 -> select_card[3] (select hand slot 3) | DN 5.3Hz KC 1.2Hz
+[ 15] SELECTING_HAND score=108/300 h=3 d=3 $=4 -> select_card[4] (select hand slot 4) | DN 5.4Hz KC 1.4Hz
+[ 16] SELECTING_HAND score=108/300 h=3 d=3 $=4 -> select_card[5] (select hand slot 5) | DN 5.4Hz KC 1.4Hz
+[ 17] SELECTING_HAND score=108/300 h=3 d=3 $=4 -> play (play hand slots [2, 3, 4, 5]) | DN 5.3Hz KC 1.5Hz
+[ 18] SELECTING_HAND score=204/300 h=2 d=3 $=4 -> select_card[4] (select hand slot 4) | DN 6.0Hz KC 1.1Hz
+[ 19] SELECTING_HAND score=204/300 h=2 d=3 $=4 -> select_card[5] (select hand slot 5) | DN 4.9Hz KC 1.3Hz
+[ 20] SELECTING_HAND score=204/300 h=2 d=3 $=4 -> select_card[6] (select hand slot 6) | DN 6.2Hz KC 1.2Hz
+[ 21] SELECTING_HAND score=204/300 h=2 d=3 $=4 -> select_card[7] (select hand slot 7) | DN 6.2Hz KC 1.2Hz
+[ 22] SELECTING_HAND score=204/300 h=2 d=3 $=4 -> play (play hand slots [4, 5, 6, 7]) | DN 5.0Hz KC 1.4Hz
+[ 23] SELECTING_HAND score=264/300 h=1 d=3 $=4 -> select_card[1] (select hand slot 1) | DN 5.4Hz KC 1.4Hz
+[ 24] SELECTING_HAND score=264/300 h=1 d=3 $=4 -> select_card[2] (select hand slot 2) | DN 4.0Hz KC 1.4Hz
+[ 25] SELECTING_HAND score=264/300 h=1 d=3 $=4 -> select_card[3] (select hand slot 3) | DN 4.0Hz KC 1.4Hz
+[ 26] SELECTING_HAND score=264/300 h=1 d=3 $=4 -> select_card[4] (select hand slot 4) | DN 4.0Hz KC 1.4Hz
+[ 27] SELECTING_HAND score=264/300 h=1 d=3 $=4 -> select_card[5] (select hand slot 5) | DN 4.0Hz KC 1.4Hz
+[ 28] SELECTING_HAND score=264/300 h=1 d=3 $=4 -> discard (discard hand slots [1, 2, 3, 4, 5]) | DN 4.0Hz KC 1.4Hz
+[ 29] SELECTING_HAND score=264/300 h=1 d=2 $=4 -> select_card[5] (select hand slot 5) | DN 4.8Hz KC 1.3Hz
+[ 30] SELECTING_HAND score=264/300 h=1 d=2 $=4 -> select_card[6] (select hand slot 6) | DN 5.6Hz KC 1.4Hz
+[ 31] SELECTING_HAND score=264/300 h=1 d=2 $=4 -> play (play hand slots [5, 6]) | DN 5.0Hz KC 1.2Hz
+[ 32] ROUND_EVAL     score=300/0 h=0 d=2 $=4 -> cash_out (cash out) | DN 0.0Hz KC 0.0Hz
+[ 33] SHOP           score=0/0 h=4 d=4 $=7 -> next_round (leave the shop) | DN 0.0Hz KC 0.0Hz
+[ 34] BLIND_SELECT   score=0/450 h=4 d=4 $=7 -> select_blind (select the blind) | DN 0.0Hz KC 0.0Hz
+[ 35] SELECTING_HAND score=0/450 h=4 d=4 $=7 -> select_card[3] (select hand slot 3) | DN 4.5Hz KC 1.3Hz
+[ 36] SELECTING_HAND score=0/450 h=4 d=4 $=7 -> select_card[4] (select hand slot 4) | DN 4.6Hz KC 1.2Hz
+[ 37] SELECTING_HAND score=0/450 h=4 d=4 $=7 -> select_card[5] (select hand slot 5) | DN 4.6Hz KC 1.2Hz
+[ 38] SELECTING_HAND score=0/450 h=4 d=4 $=7 -> select_card[6] (select hand slot 6) | DN 4.6Hz KC 1.2Hz
+[ 39] SELECTING_HAND score=0/450 h=4 d=4 $=7 -> select_card[7] (select hand slot 7) | DN 4.6Hz KC 1.2Hz
+[ 40] SELECTING_HAND score=0/450 h=4 d=4 $=7 -> play (play hand slots [3, 4, 5, 6, 7]) | DN 4.4Hz KC 1.4Hz
+[ 41] SELECTING_HAND score=200/450 h=3 d=4 $=7 -> select_card[0] (select hand slot 0) | DN 4.7Hz KC 1.4Hz
+[ 42] SELECTING_HAND score=200/450 h=3 d=4 $=7 -> select_card[1] (select hand slot 1) | DN 4.7Hz KC 1.3Hz
+[ 43] SELECTING_HAND score=200/450 h=3 d=4 $=7 -> select_card[3] (select hand slot 3) | DN 4.9Hz KC 1.4Hz
+[ 44] SELECTING_HAND score=200/450 h=3 d=4 $=7 -> select_card[4] (select hand slot 4) | DN 4.9Hz KC 1.4Hz
+[ 45] SELECTING_HAND score=200/450 h=3 d=4 $=7 -> play (play hand slots [0, 1, 3, 4]) | DN 4.8Hz KC 1.8Hz
+[ 46] SELECTING_HAND score=320/450 h=2 d=4 $=7 -> select_card[2] (select hand slot 2) | DN 5.0Hz KC 1.4Hz
+[ 47] SELECTING_HAND score=320/450 h=2 d=4 $=7 -> select_card[4] (select hand slot 4) | DN 5.9Hz KC 1.3Hz
+[ 48] SELECTING_HAND score=320/450 h=2 d=4 $=7 -> select_card[5] (select hand slot 5) | DN 5.9Hz KC 1.3Hz
+[ 49] SELECTING_HAND score=320/450 h=2 d=4 $=7 -> select_card[6] (select hand slot 6) | DN 5.9Hz KC 1.3Hz
+[ 50] SELECTING_HAND score=320/450 h=2 d=4 $=7 -> select_card[7] (select hand slot 7) | DN 5.9Hz KC 1.3Hz
+[ 51] SELECTING_HAND score=320/450 h=2 d=4 $=7 -> play (play hand slots [2, 4, 5, 6, 7]) | DN 4.6Hz KC 1.5Hz
+[ 52] ROUND_EVAL     score=580/0 h=1 d=4 $=7 -> cash_out (cash out) | DN 0.0Hz KC 0.0Hz
+[ 53] SHOP           score=0/0 h=4 d=4 $=10 -> next_round (leave the shop) | DN 0.0Hz KC 0.0Hz
+[ 54] BLIND_SELECT   score=0/600 h=4 d=4 $=10 -> select_blind (select the blind) | DN 0.0Hz KC 0.0Hz
+[ 55] SELECTING_HAND score=0/600 h=4 d=4 $=10 -> select_card[0] (select hand slot 0) | DN 10.0Hz KC 1.3Hz
+[ 56] SELECTING_HAND score=0/600 h=4 d=4 $=10 -> select_card[1] (select hand slot 1) | DN 9.8Hz KC 1.3Hz
+[ 57] SELECTING_HAND score=0/600 h=4 d=4 $=10 -> select_card[2] (select hand slot 2) | DN 9.8Hz KC 1.3Hz
+[ 58] SELECTING_HAND score=0/600 h=4 d=4 $=10 -> select_card[3] (select hand slot 3) | DN 9.8Hz KC 1.3Hz
+[ 59] SELECTING_HAND score=0/600 h=4 d=4 $=10 -> discard (discard hand slots [0, 1, 2, 3]) | DN 9.8Hz KC 1.3Hz
+[ 60] SELECTING_HAND score=0/600 h=4 d=3 $=10 -> select_card[2] (select hand slot 2) | DN 4.4Hz KC 1.3Hz
+[ 61] SELECTING_HAND score=0/600 h=4 d=3 $=10 -> select_card[3] (select hand slot 3) | DN 4.3Hz KC 1.1Hz
+[ 62] SELECTING_HAND score=0/600 h=4 d=3 $=10 -> select_card[4] (select hand slot 4) | DN 4.4Hz KC 1.3Hz
+[ 63] SELECTING_HAND score=0/600 h=4 d=3 $=10 -> select_card[5] (select hand slot 5) | DN 4.5Hz KC 1.4Hz
+[ 64] SELECTING_HAND score=0/600 h=4 d=3 $=10 -> select_card[6] (select hand slot 6) | DN 4.5Hz KC 1.4Hz
+[ 65] SELECTING_HAND score=0/600 h=4 d=3 $=10 -> play (play hand slots [2, 3, 4, 5, 6]) | DN 5.1Hz KC 2.0Hz
+[ 66] SELECTING_HAND score=220/600 h=3 d=3 $=10 -> select_card[0] (select hand slot 0) | DN 10.0Hz KC 1.3Hz
+[ 67] SELECTING_HAND score=220/600 h=3 d=3 $=10 -> select_card[1] (select hand slot 1) | DN 9.8Hz KC 1.3Hz
+[ 68] SELECTING_HAND score=220/600 h=3 d=3 $=10 -> select_card[2] (select hand slot 2) | DN 9.8Hz KC 1.3Hz
+[ 69] SELECTING_HAND score=220/600 h=3 d=3 $=10 -> select_card[3] (select hand slot 3) | DN 9.8Hz KC 1.3Hz
+[ 70] SELECTING_HAND score=220/600 h=3 d=3 $=10 -> discard (discard hand slots [0, 1, 2, 3]) | DN 9.8Hz KC 1.3Hz
+[ 71] SELECTING_HAND score=220/600 h=3 d=2 $=10 -> select_card[3] (select hand slot 3) | DN 6.0Hz KC 1.4Hz
+[ 72] SELECTING_HAND score=220/600 h=3 d=2 $=10 -> select_card[4] (select hand slot 4) | DN 4.9Hz KC 1.3Hz
+[ 73] SELECTING_HAND score=220/600 h=3 d=2 $=10 -> select_card[5] (select hand slot 5) | DN 6.0Hz KC 1.3Hz
+[ 74] SELECTING_HAND score=220/600 h=3 d=2 $=10 -> select_card[6] (select hand slot 6) | DN 6.0Hz KC 1.3Hz
+[ 75] SELECTING_HAND score=220/600 h=3 d=2 $=10 -> select_card[7] (select hand slot 7) | DN 5.6Hz KC 1.4Hz
+[ 76] SELECTING_HAND score=220/600 h=3 d=2 $=10 -> play (play hand slots [3, 4, 5, 6, 7]) | DN 5.2Hz KC 1.9Hz
+[ 77] SELECTING_HAND score=420/600 h=2 d=2 $=10 -> select_card[0] (select hand slot 0) | DN 4.9Hz KC 1.2Hz
+[ 78] SELECTING_HAND score=420/600 h=2 d=2 $=10 -> select_card[4] (select hand slot 4) | DN 4.0Hz KC 1.2Hz
+[ 79] SELECTING_HAND score=420/600 h=2 d=2 $=10 -> select_card[3] (select hand slot 3) | DN 4.0Hz KC 1.2Hz
+[ 80] SELECTING_HAND score=420/600 h=2 d=2 $=10 -> select_card[5] (select hand slot 5) | DN 4.0Hz KC 1.2Hz
+[ 81] SELECTING_HAND score=420/600 h=2 d=2 $=10 -> select_card[6] (select hand slot 6) | DN 4.0Hz KC 1.2Hz
+[ 82] SELECTING_HAND score=420/600 h=2 d=2 $=10 -> discard (discard hand slots [0, 3, 4, 5, 6]) | DN 4.0Hz KC 1.2Hz
+[ 83] SELECTING_HAND score=420/600 h=2 d=1 $=10 -> select_card[0] (select hand slot 0) | DN 4.9Hz KC 1.2Hz
+[ 84] SELECTING_HAND score=420/600 h=2 d=1 $=10 -> select_card[4] (select hand slot 4) | DN 4.0Hz KC 1.2Hz
+[ 85] SELECTING_HAND score=420/600 h=2 d=1 $=10 -> select_card[3] (select hand slot 3) | DN 4.0Hz KC 1.2Hz
+[ 86] SELECTING_HAND score=420/600 h=2 d=1 $=10 -> select_card[5] (select hand slot 5) | DN 4.0Hz KC 1.2Hz
+[ 87] SELECTING_HAND score=420/600 h=2 d=1 $=10 -> select_card[6] (select hand slot 6) | DN 4.0Hz KC 1.2Hz
+[ 88] SELECTING_HAND score=420/600 h=2 d=1 $=10 -> discard (discard hand slots [0, 3, 4, 5, 6]) | DN 4.0Hz KC 1.2Hz
+[ 89] SELECTING_HAND score=420/600 h=2 d=0 $=10 -> select_card[0] (select hand slot 0) | DN 4.3Hz KC 1.1Hz
+[ 90] SELECTING_HAND score=420/600 h=2 d=0 $=10 -> select_card[1] (select hand slot 1) | DN 4.6Hz KC 1.0Hz
+[ 91] SELECTING_HAND score=420/600 h=2 d=0 $=10 -> select_card[4] (select hand slot 4) | DN 4.6Hz KC 1.0Hz
+[ 92] SELECTING_HAND score=420/600 h=2 d=0 $=10 -> select_card[5] (select hand slot 5) | DN 4.6Hz KC 1.0Hz
+[ 93] SELECTING_HAND score=420/600 h=2 d=0 $=10 -> select_card[3] (select hand slot 3) | DN 4.6Hz KC 1.0Hz
+[ 94] SELECTING_HAND score=420/600 h=2 d=0 $=10 -> play (play hand slots [0, 1, 3, 4, 5]) | DN 4.6Hz KC 1.0Hz
+[ 95] SELECTING_HAND score=436/600 h=1 d=0 $=10 -> select_card[0] (select hand slot 0) | DN 10.5Hz KC 1.3Hz
+[ 96] SELECTING_HAND score=436/600 h=1 d=0 $=10 -> select_card[1] (select hand slot 1) | DN 9.8Hz KC 1.3Hz
+[ 97] SELECTING_HAND score=436/600 h=1 d=0 $=10 -> select_card[2] (select hand slot 2) | DN 9.8Hz KC 1.3Hz
+[ 98] SELECTING_HAND score=436/600 h=1 d=0 $=10 -> select_card[3] (select hand slot 3) | DN 9.8Hz KC 1.3Hz
+[ 99] SELECTING_HAND score=436/600 h=1 d=0 $=10 -> select_card[4] (select hand slot 4) | DN 9.8Hz KC 1.3Hz
+[100] SELECTING_HAND score=436/600 h=1 d=0 $=10 -> play (play hand slots [0, 1, 2, 3, 4]) | DN 9.8Hz KC 1.3Hz
+[run] game_over_lose after 100 decisions
+EXIT=0

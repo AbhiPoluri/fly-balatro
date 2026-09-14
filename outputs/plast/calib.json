@@ -1,0 +1,1873 @@
+{
+  "args": {
+    "eta": 0.05,
+    "explore": 0.2,
+    "explore_floor": 0.0,
+    "n_calib": 200,
+    "out": "/Users/abhipoluri/fly-balatro/outputs/plast/probe.json",
+    "trials": 20,
+    "valence": "nt",
+    "window_ms": null,
+    "window_scan": "50,150,300"
+  },
+  "calibration_hands": [
+    {
+      "best_score": 284,
+      "best_type_name": "Flush",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 1140914208,
+      "plays_before": 4
+    },
+    {
+      "best_score": 284,
+      "best_type_name": "Flush",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 300,
+      "odor": 1140866592,
+      "plays_before": 4
+    },
+    {
+      "best_score": 1120,
+      "best_type_name": "Straight Flush",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 300,
+      "odor": 2214620928,
+      "plays_before": 4
+    },
+    {
+      "best_score": 1120,
+      "best_type_name": "Straight Flush",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 300,
+      "odor": 2214608640,
+      "plays_before": 4
+    },
+    {
+      "best_score": 120,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 604071940,
+      "plays_before": 4
+    },
+    {
+      "best_score": 116,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 330,
+      "odor": 604006916,
+      "plays_before": 3
+    },
+    {
+      "best_score": 116,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 330,
+      "odor": 603987460,
+      "plays_before": 3
+    },
+    {
+      "best_score": 76,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 214,
+      "odor": 604080644,
+      "plays_before": 2
+    },
+    {
+      "best_score": 76,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 2,
+      "needed": 214,
+      "odor": 603987460,
+      "plays_before": 2
+    },
+    {
+      "best_score": 240,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 214,
+      "odor": 2214633024,
+      "plays_before": 2
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 335596548,
+      "plays_before": 4
+    },
+    {
+      "best_score": 56,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 504,
+      "odor": 335562754,
+      "plays_before": 3
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 448,
+      "odor": 335585282,
+      "plays_before": 2
+    },
+    {
+      "best_score": 28,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 388,
+      "odor": 335611906,
+      "plays_before": 1
+    },
+    {
+      "best_score": 100,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 604086788,
+      "plays_before": 4
+    },
+    {
+      "best_score": 348,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 300,
+      "odor": 2214711872,
+      "plays_before": 4
+    },
+    {
+      "best_score": 348,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 300,
+      "odor": 2214608448,
+      "plays_before": 4
+    },
+    {
+      "best_score": 348,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 300,
+      "odor": 2214608448,
+      "plays_before": 4
+    },
+    {
+      "best_score": 352,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 300,
+      "odor": 2214639168,
+      "plays_before": 4
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 335564802,
+      "plays_before": 4
+    },
+    {
+      "best_score": 360,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 1140880960,
+      "plays_before": 4
+    },
+    {
+      "best_score": 360,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 450,
+      "odor": 1140866624,
+      "plays_before": 4
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 2,
+      "needed": 90,
+      "odor": 335544833,
+      "plays_before": 3
+    },
+    {
+      "best_score": 308,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 75,
+      "odor": 2214700560,
+      "plays_before": 2
+    },
+    {
+      "best_score": 332,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 75,
+      "odor": 2214713408,
+      "plays_before": 2
+    },
+    {
+      "best_score": 324,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 1140880912,
+      "plays_before": 4
+    },
+    {
+      "best_score": 80,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 400,
+      "odor": 335590404,
+      "plays_before": 3
+    },
+    {
+      "best_score": 280,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 400,
+      "odor": 1140910656,
+      "plays_before": 3
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 120,
+      "odor": 1140921860,
+      "plays_before": 2
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 120,
+      "odor": 1140858372,
+      "plays_before": 2
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 120,
+      "odor": 2214633024,
+      "plays_before": 2
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 120,
+      "odor": 2214608448,
+      "plays_before": 2
+    },
+    {
+      "best_score": 48,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 335553538,
+      "plays_before": 4
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 252,
+      "odor": 335546369,
+      "plays_before": 3
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 237,
+      "odor": 335609857,
+      "plays_before": 2
+    },
+    {
+      "best_score": 280,
+      "best_type_name": "Flush",
+      "bucket_name": "ge1.0",
+      "discards_before": 4,
+      "needed": 221,
+      "odor": 2214669856,
+      "plays_before": 1
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 604067344,
+      "plays_before": 4
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 603995664,
+      "plays_before": 4
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 230,
+      "odor": 335577089,
+      "plays_before": 3
+    },
+    {
+      "best_score": 56,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 214,
+      "odor": 604047362,
+      "plays_before": 2
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 158,
+      "odor": 335545345,
+      "plays_before": 1
+    },
+    {
+      "best_score": 120,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 158,
+      "odor": 1140934148,
+      "plays_before": 1
+    },
+    {
+      "best_score": 280,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 1140910608,
+      "plays_before": 4
+    },
+    {
+      "best_score": 104,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 4,
+      "needed": 20,
+      "odor": 2214646276,
+      "plays_before": 3
+    },
+    {
+      "best_score": 104,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 20,
+      "odor": 2214600196,
+      "plays_before": 3
+    },
+    {
+      "best_score": 332,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 20,
+      "odor": 2214633024,
+      "plays_before": 3
+    },
+    {
+      "best_score": 332,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 20,
+      "odor": 2214608448,
+      "plays_before": 3
+    },
+    {
+      "best_score": 332,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 20,
+      "odor": 2214608448,
+      "plays_before": 3
+    },
+    {
+      "best_score": 84,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 335654916,
+      "plays_before": 4
+    },
+    {
+      "best_score": 280,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 1140923968,
+      "plays_before": 4
+    },
+    {
+      "best_score": 44,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 170,
+      "odor": 604013570,
+      "plays_before": 3
+    },
+    {
+      "best_score": 44,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 2,
+      "needed": 170,
+      "odor": 603982338,
+      "plays_before": 3
+    },
+    {
+      "best_score": 44,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 1,
+      "needed": 170,
+      "odor": 603982338,
+      "plays_before": 3
+    },
+    {
+      "best_score": 104,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 170,
+      "odor": 1140951556,
+      "plays_before": 3
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 66,
+      "odor": 2214646788,
+      "plays_before": 2
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 335561218,
+      "plays_before": 4
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 540,
+      "odor": 335593474,
+      "plays_before": 3
+    },
+    {
+      "best_score": 320,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 540,
+      "odor": 1140911168,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 220,
+      "odor": 1140890116,
+      "plays_before": 2
+    },
+    {
+      "best_score": 260,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 96,
+      "odor": 2214671888,
+      "plays_before": 1
+    },
+    {
+      "best_score": 264,
+      "best_type_name": "Flush",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 1140882464,
+      "plays_before": 4
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 4,
+      "needed": 36,
+      "odor": 2214598658,
+      "plays_before": 3
+    },
+    {
+      "best_score": 112,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 36,
+      "odor": 2214667780,
+      "plays_before": 3
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 1140866576,
+      "plays_before": 4
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 1140866576,
+      "plays_before": 4
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 450,
+      "odor": 1140866576,
+      "plays_before": 4
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 450,
+      "odor": 1140866576,
+      "plays_before": 4
+    },
+    {
+      "best_score": 308,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 450,
+      "odor": 1140880912,
+      "plays_before": 4
+    },
+    {
+      "best_score": 256,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 142,
+      "odor": 2214681664,
+      "plays_before": 3
+    },
+    {
+      "best_score": 40,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 335547394,
+      "plays_before": 4
+    },
+    {
+      "best_score": 292,
+      "best_type_name": "Full House",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 600,
+      "odor": 604096064,
+      "plays_before": 4
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 328,
+      "odor": 604058116,
+      "plays_before": 3
+    },
+    {
+      "best_score": 36,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 244,
+      "odor": 335561218,
+      "plays_before": 2
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 216,
+      "odor": 604053506,
+      "plays_before": 1
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 335613954,
+      "plays_before": 4
+    },
+    {
+      "best_score": 56,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 240,
+      "odor": 335610370,
+      "plays_before": 3
+    },
+    {
+      "best_score": 171,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 240,
+      "odor": 1140857352,
+      "plays_before": 3
+    },
+    {
+      "best_score": 120,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 69,
+      "odor": 2214696964,
+      "plays_before": 2
+    },
+    {
+      "best_score": 120,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 69,
+      "odor": 2214600196,
+      "plays_before": 2
+    },
+    {
+      "best_score": 180,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 604004872,
+      "plays_before": 4
+    },
+    {
+      "best_score": 180,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 603983368,
+      "plays_before": 4
+    },
+    {
+      "best_score": 336,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 450,
+      "odor": 1140923968,
+      "plays_before": 4
+    },
+    {
+      "best_score": 64,
+      "best_type_name": "Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 114,
+      "odor": 1140855298,
+      "plays_before": 3
+    },
+    {
+      "best_score": 189,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 114,
+      "odor": 2214598152,
+      "plays_before": 3
+    },
+    {
+      "best_score": 332,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 114,
+      "odor": 2214694464,
+      "plays_before": 3
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 335629316,
+      "plays_before": 4
+    },
+    {
+      "best_score": 272,
+      "best_type_name": "Full House",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 600,
+      "odor": 604020288,
+      "plays_before": 4
+    },
+    {
+      "best_score": 272,
+      "best_type_name": "Full House",
+      "bucket_name": "lt0.5",
+      "discards_before": 2,
+      "needed": 600,
+      "odor": 603995712,
+      "plays_before": 4
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 2,
+      "needed": 328,
+      "odor": 335585282,
+      "plays_before": 3
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 2,
+      "needed": 268,
+      "odor": 335552513,
+      "plays_before": 2
+    },
+    {
+      "best_score": 171,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 268,
+      "odor": 1140920840,
+      "plays_before": 2
+    },
+    {
+      "best_score": 672,
+      "best_type_name": "Four of a Kind",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 268,
+      "odor": 2214628992,
+      "plays_before": 2
+    },
+    {
+      "best_score": 180,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 1140957192,
+      "plays_before": 4
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 4,
+      "needed": 120,
+      "odor": 2214640144,
+      "plays_before": 3
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 120,
+      "odor": 2214608400,
+      "plays_before": 3
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 120,
+      "odor": 2214608400,
+      "plays_before": 3
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 120,
+      "odor": 2214608400,
+      "plays_before": 3
+    },
+    {
+      "best_score": 64,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 335547394,
+      "plays_before": 4
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 386,
+      "odor": 335545345,
+      "plays_before": 3
+    },
+    {
+      "best_score": 36,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 371,
+      "odor": 335618050,
+      "plays_before": 2
+    },
+    {
+      "best_score": 60,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 335,
+      "odor": 335578114,
+      "plays_before": 1
+    },
+    {
+      "best_score": 120,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 335,
+      "odor": 604016132,
+      "plays_before": 1
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 1140882448,
+      "plays_before": 4
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 300,
+      "odor": 1140866576,
+      "plays_before": 4
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 80,
+      "odor": 2214635012,
+      "plays_before": 3
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 80,
+      "odor": 2214600196,
+      "plays_before": 3
+    },
+    {
+      "best_score": 288,
+      "best_type_name": "Flush",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 1140960288,
+      "plays_before": 4
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 162,
+      "odor": 1140902404,
+      "plays_before": 3
+    },
+    {
+      "best_score": 28,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 66,
+      "odor": 603997186,
+      "plays_before": 2
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 38,
+      "odor": 603987969,
+      "plays_before": 1
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 3,
+      "needed": 38,
+      "odor": 2214693380,
+      "plays_before": 1
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 38,
+      "odor": 2214600196,
+      "plays_before": 1
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Full House",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 604081728,
+      "plays_before": 4
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Full House",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 600,
+      "odor": 603995712,
+      "plays_before": 4
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Full House",
+      "bucket_name": "lt0.5",
+      "discards_before": 2,
+      "needed": 600,
+      "odor": 603995712,
+      "plays_before": 4
+    },
+    {
+      "best_score": 28,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 2,
+      "needed": 336,
+      "odor": 335553026,
+      "plays_before": 3
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 1,
+      "needed": 336,
+      "odor": 604048900,
+      "plays_before": 3
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 0,
+      "needed": 336,
+      "odor": 603987460,
+      "plays_before": 3
+    },
+    {
+      "best_score": 336,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 252,
+      "odor": 2214711872,
+      "plays_before": 2
+    },
+    {
+      "best_score": 96,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 604064260,
+      "plays_before": 4
+    },
+    {
+      "best_score": 112,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 204,
+      "odor": 1140942852,
+      "plays_before": 3
+    },
+    {
+      "best_score": 112,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 204,
+      "odor": 1140858372,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 204,
+      "odor": 1140929028,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 204,
+      "odor": 1140858372,
+      "plays_before": 3
+    },
+    {
+      "best_score": 264,
+      "best_type_name": "Flush",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 80,
+      "odor": 2214652960,
+      "plays_before": 2
+    },
+    {
+      "best_score": 288,
+      "best_type_name": "Flush",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 80,
+      "odor": 2214640672,
+      "plays_before": 2
+    },
+    {
+      "best_score": 135,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 604029960,
+      "plays_before": 4
+    },
+    {
+      "best_score": 116,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 315,
+      "odor": 604035076,
+      "plays_before": 3
+    },
+    {
+      "best_score": 116,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 315,
+      "odor": 603987460,
+      "plays_before": 3
+    },
+    {
+      "best_score": 700,
+      "best_type_name": "Four of a Kind",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 315,
+      "odor": 2214646912,
+      "plays_before": 3
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 604106768,
+      "plays_before": 4
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 380,
+      "odor": 335631364,
+      "plays_before": 3
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 380,
+      "odor": 335552004,
+      "plays_before": 3
+    },
+    {
+      "best_score": 68,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 288,
+      "odor": 335619588,
+      "plays_before": 2
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 2,
+      "needed": 288,
+      "odor": 604010500,
+      "plays_before": 2
+    },
+    {
+      "best_score": 260,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 288,
+      "odor": 1140967952,
+      "plays_before": 2
+    },
+    {
+      "best_score": 260,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 288,
+      "odor": 1140866576,
+      "plays_before": 2
+    },
+    {
+      "best_score": 116,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 28,
+      "odor": 2214693892,
+      "plays_before": 1
+    },
+    {
+      "best_score": 135,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 604055560,
+      "plays_before": 4
+    },
+    {
+      "best_score": 135,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 300,
+      "odor": 603983368,
+      "plays_before": 4
+    },
+    {
+      "best_score": 56,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 165,
+      "odor": 604013570,
+      "plays_before": 3
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 109,
+      "odor": 335552513,
+      "plays_before": 2
+    },
+    {
+      "best_score": 48,
+      "best_type_name": "Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 93,
+      "odor": 1140948994,
+      "plays_before": 1
+    },
+    {
+      "best_score": 28,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 335585282,
+      "plays_before": 4
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 272,
+      "odor": 335544833,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 272,
+      "odor": 604066308,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 2,
+      "needed": 272,
+      "odor": 603987460,
+      "plays_before": 3
+    },
+    {
+      "best_score": 324,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 148,
+      "odor": 2214701632,
+      "plays_before": 2
+    },
+    {
+      "best_score": 100,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 335567364,
+      "plays_before": 4
+    },
+    {
+      "best_score": 100,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 335552004,
+      "plays_before": 4
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 3,
+      "needed": 350,
+      "odor": 604031492,
+      "plays_before": 3
+    },
+    {
+      "best_score": 272,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 350,
+      "odor": 1140891200,
+      "plays_before": 3
+    },
+    {
+      "best_score": 272,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 350,
+      "odor": 1140866624,
+      "plays_before": 3
+    },
+    {
+      "best_score": 272,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 350,
+      "odor": 1140866624,
+      "plays_before": 3
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 0,
+      "needed": 78,
+      "odor": 335545345,
+      "plays_before": 2
+    },
+    {
+      "best_score": 280,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 63,
+      "odor": 2214713360,
+      "plays_before": 1
+    },
+    {
+      "best_score": 153,
+      "best_type_name": "Three of a Kind",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 604029960,
+      "plays_before": 4
+    },
+    {
+      "best_score": 324,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 600,
+      "odor": 1140874816,
+      "plays_before": 4
+    },
+    {
+      "best_score": 336,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 600,
+      "odor": 1140897344,
+      "plays_before": 4
+    },
+    {
+      "best_score": 336,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 600,
+      "odor": 1140866624,
+      "plays_before": 4
+    },
+    {
+      "best_score": 264,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 332,
+      "odor": 1140974144,
+      "plays_before": 3
+    },
+    {
+      "best_score": 296,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 332,
+      "odor": 1140891200,
+      "plays_before": 3
+    },
+    {
+      "best_score": 52,
+      "best_type_name": "Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 36,
+      "odor": 2214604802,
+      "plays_before": 2
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 335544833,
+      "plays_before": 4
+    },
+    {
+      "best_score": 28,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 284,
+      "odor": 335618050,
+      "plays_before": 3
+    },
+    {
+      "best_score": 28,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 284,
+      "odor": 335547394,
+      "plays_before": 3
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 256,
+      "odor": 335544833,
+      "plays_before": 2
+    },
+    {
+      "best_score": 48,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 241,
+      "odor": 335626242,
+      "plays_before": 1
+    },
+    {
+      "best_score": 324,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 241,
+      "odor": 2214637120,
+      "plays_before": 1
+    },
+    {
+      "best_score": 324,
+      "best_type_name": "Full House",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 241,
+      "odor": 2214608448,
+      "plays_before": 1
+    },
+    {
+      "best_score": 372,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 1140911168,
+      "plays_before": 4
+    },
+    {
+      "best_score": 372,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 1140866624,
+      "plays_before": 4
+    },
+    {
+      "best_score": 372,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 450,
+      "odor": 1140866624,
+      "plays_before": 4
+    },
+    {
+      "best_score": 372,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 450,
+      "odor": 1140866624,
+      "plays_before": 4
+    },
+    {
+      "best_score": 372,
+      "best_type_name": "Full House",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 450,
+      "odor": 1140866624,
+      "plays_before": 4
+    },
+    {
+      "best_score": 72,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 78,
+      "odor": 1140935172,
+      "plays_before": 3
+    },
+    {
+      "best_score": 108,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 6,
+      "odor": 2214650372,
+      "plays_before": 2
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 335544833,
+      "plays_before": 4
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 600,
+      "odor": 335599620,
+      "plays_before": 4
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 534,
+      "odor": 335667204,
+      "plays_before": 3
+    },
+    {
+      "best_score": 16,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 432,
+      "odor": 335609857,
+      "plays_before": 2
+    },
+    {
+      "best_score": 36,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 416,
+      "odor": 335642626,
+      "plays_before": 1
+    },
+    {
+      "best_score": 80,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.5",
+      "discards_before": 4,
+      "needed": 300,
+      "odor": 604019716,
+      "plays_before": 4
+    },
+    {
+      "best_score": 112,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 4,
+      "needed": 220,
+      "odor": 1140904964,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 3,
+      "needed": 220,
+      "odor": 1140878340,
+      "plays_before": 3
+    },
+    {
+      "best_score": 124,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 220,
+      "odor": 1140858372,
+      "plays_before": 3
+    },
+    {
+      "best_score": 312,
+      "best_type_name": "Flush",
+      "bucket_name": "ge1.0",
+      "discards_before": 2,
+      "needed": 96,
+      "odor": 2214713376,
+      "plays_before": 2
+    },
+    {
+      "best_score": 316,
+      "best_type_name": "Straight",
+      "bucket_name": "ge1.0",
+      "discards_before": 1,
+      "needed": 96,
+      "odor": 2214681616,
+      "plays_before": 2
+    },
+    {
+      "best_score": 15,
+      "best_type_name": "High Card",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 450,
+      "odor": 335546369,
+      "plays_before": 4
+    },
+    {
+      "best_score": 40,
+      "best_type_name": "Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 450,
+      "odor": 335613954,
+      "plays_before": 4
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 2,
+      "needed": 450,
+      "odor": 335559172,
+      "plays_before": 4
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 2,
+      "needed": 358,
+      "odor": 1140943888,
+      "plays_before": 3
+    },
+    {
+      "best_score": 220,
+      "best_type_name": "Straight",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 358,
+      "odor": 1140866576,
+      "plays_before": 3
+    },
+    {
+      "best_score": 104,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 1,
+      "needed": 138,
+      "odor": 1140965892,
+      "plays_before": 2
+    },
+    {
+      "best_score": 104,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt1.0",
+      "discards_before": 0,
+      "needed": 138,
+      "odor": 1140858372,
+      "plays_before": 2
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "ge1.0",
+      "discards_before": 0,
+      "needed": 34,
+      "odor": 2214671364,
+      "plays_before": 1
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 4,
+      "needed": 600,
+      "odor": 335580676,
+      "plays_before": 4
+    },
+    {
+      "best_score": 92,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 600,
+      "odor": 335552004,
+      "plays_before": 4
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 508,
+      "odor": 335651844,
+      "plays_before": 3
+    },
+    {
+      "best_score": 88,
+      "best_type_name": "Two Pair",
+      "bucket_name": "lt0.25",
+      "discards_before": 3,
+      "needed": 420,
+      "odor": 335631364,
+      "plays_before": 2
+    }
+  ],
+  "per_wiring": {
+    "real": {
+      "bias": -1.076420135603789,
+      "calibration": {
+        "bias": -1.076420135603789,
+        "explore_achieved": 0.2013149696945575,
+        "explore_floor": 0.0,
+        "explore_target": 0.2,
+        "n": 200,
+        "play_bias_p": 0.55,
+        "raw_max": 7.803030303030303,
+        "raw_median": 1.2878787878787872,
+        "raw_min": -5.454545454545457,
+        "raw_p16": -0.9090909090909101,
+        "raw_p84": 3.7242424242424255,
+        "raw_sd": 2.2788634336281848,
+        "temperature": 1.0537595027913855
+      },
+      "decider": {
+        "bias": -1.076420135603789,
+        "explore_floor": 0.0,
+        "n_approach": 66,
+        "n_avoid": 24,
+        "play_bias_p": 0.55,
+        "temperature": 1.0537595027913855,
+        "window_ms": 50.0
+      },
+      "temperature": 1.0537595027913855
+    },
+    "shuffled": {
+      "bias": -2.1685985964055057,
+      "calibration": {
+        "bias": -2.1685985964055057,
+        "explore_achieved": 0.19740919111934374,
+        "explore_floor": 0.0,
+        "explore_target": 0.2,
+        "n": 200,
+        "play_bias_p": 0.55,
+        "raw_max": 5.7142857142857135,
+        "raw_median": 2.2857142857142856,
+        "raw_min": -2.9010989010989015,
+        "raw_p16": 0.6839560439560437,
+        "raw_p84": 3.428571428571429,
+        "raw_sd": 1.6105587479937022,
+        "temperature": 0.5836212858038813
+      },
+      "decider": {
+        "bias": -2.1685985964055057,
+        "explore_floor": 0.0,
+        "n_approach": 35,
+        "n_avoid": 13,
+        "play_bias_p": 0.55,
+        "temperature": 0.5836212858038813,
+        "window_ms": 50.0
+      },
+      "temperature": 0.5836212858038813
+    }
+  }
+}

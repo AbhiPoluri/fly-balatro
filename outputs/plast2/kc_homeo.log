@@ -1,0 +1,21 @@
+[ 0] k=4    active 0.0540 (220/state)  r>0.5  197 (0.0485)  r>0.3  245 (0.0603)  in-band  130  silent 3299  flips 0.00  71s
+[ 1] k=4    active 0.0612 (249/state)  r>0.5  154 (0.0379)  r>0.3  269 (0.0662)  in-band  371  silent 2655  flips 0.11  71s
+[ 2] k=3    active 0.0833 (339/state)  r>0.5  214 (0.0527)  r>0.3  403 (0.0992)  in-band  546  silent 2157  flips 0.27  69s
+[ 3] k=3    active 0.0778 (316/state)  r>0.5  179 (0.0440)  r>0.3  367 (0.0903)  in-band  613  silent 2116  flips 0.38  70s
+[ 4] k=2    active 0.0793 (322/state)  r>0.5  175 (0.0431)  r>0.3  386 (0.0950)  in-band  604  silent 2110  flips 0.39  68s
+[ 5] k=2    active 0.0737 (299/state)  r>0.5  155 (0.0381)  r>0.3  330 (0.0812)  in-band  656  silent 2104  flips 0.39  68s
+[ 6] k=1.5  active 0.0757 (308/state)  r>0.5  167 (0.0411)  r>0.3  366 (0.0901)  in-band  682  silent 2093  flips 0.39  68s
+[ 7] k=1.5  active 0.0570 (232/state)  r>0.5   36 (0.0089)  r>0.3  154 (0.0379)  in-band  788  silent 1945  flips 0.35  68s
+[ 8] k=1    active 0.0637 (259/state)  r>0.5   76 (0.0187)  r>0.3  244 (0.0600)  in-band  873  silent 1941  flips 0.36  68s
+[ 9] k=1    active 0.0464 (188/state)  r>0.5   25 (0.0062)  r>0.3   56 (0.0138)  in-band 1082  silent 1843  flips 0.29  68s
+converged at iteration 9: frac(r>0.3) = 0.0138 < 0.02
+
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/kc_homeo.json and /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json
+final: active 0.0648 (263/state), r>0.5 71 (0.0175), r>0.3 220 (0.0541), silent 1769, offsets -6.7..+21.1 mV
+resumed at iteration 10
+[10] k=0.6  active 0.0648 (263/state)  r>0.5   71 (0.0175)  r>0.3  220 (0.0541)  in-band 1119  silent 1769  flips 0.29  68s
+[11] k=0.6  active 0.0454 (184/state)  r>0.5   19 (0.0047)  r>0.3   34 (0.0084)  in-band 1463  silent 1599  flips 0.24  68s
+converged at iteration 11: frac(r>0.3) = 0.0084 < 0.02 (last update not applied)
+
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/kc_homeo.json and /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json
+final: active 0.0454 (184/state), r>0.5 19 (0.0047), r>0.3 34 (0.0084), silent 1599, offsets -6.7..+21.4 mV

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fly plays Balatro &mdash; MaleCNS brain scan</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0b0d'/%3E%3Ccircle cx='8' cy='8' r='3.2' fill='%23d99a2b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <h1>FLY &rarr; BALATRO<span class="sub">MaleCNS v1.0 &middot; brain scan</span></h1>
+  <div id="head-mode">connecting&hellip;</div>
+  <div class="controls">
+    <button id="btn-play" class="primary">PAUSE</button>
+    <button id="btn-step">STEP</button>
+    <button id="btn-reset">RESET</button>
+    <span class="ctl-label">speed</span>
+    <select id="sel-speed">
+      <option value="0.5">0.5&times;</option>
+      <option value="1" selected>1&times;</option>
+      <option value="2">2&times;</option>
+      <option value="4">4&times;</option>
+    </select>
+    <span class="ctl-label" id="lbl-cond">wiring</span>
+    <select id="sel-cond">
+      <option value="real" selected>real</option>
+      <option value="shuffled">shuffled</option>
+    </select>
+    <span class="ctl-label" id="lbl-learn" hidden>learning</span>
+    <select id="sel-learn" hidden>
+      <option value="on" selected>on</option>
+      <option value="off">off</option>
+    </select>
+  </div>
+</header>
+
+<!-- The cards are on the real Balatro window and nowhere else. This page draws
+     one thing: the brain that is deciding, and what changed inside it. -->
+<main>
+  <section id="brain">
+    <div id="legend" class="overlay"></div>
+    <div id="brain-title" class="overlay">
+      <div><span class="k">neurons drawn</span> <span id="bt-points">&mdash;</span></div>
+      <div><span class="k">edges</span> <span id="bt-edges">&mdash;</span></div>
+      <div><span class="k">synapses</span> <span id="bt-syn">&mdash;</span></div>
+      <div><span class="k">drag to orbit &middot; scroll to zoom</span></div>
+    </div>
+    <div id="clock" class="overlay">
+      <span class="big" id="ck-spikes">&mdash;</span>
+      <span id="ck-label">neurons spiking in this 50&nbsp;ms window</span>
+      <div class="bar" id="ck-ticks"></div>
+      <div class="note" id="ck-note">&mdash;</div>
+    </div>
+  </section>
+
+  <aside id="panel">
+    <!-- The real Balatro window, captured and streamed into this page, with the
+         fly's amber outline drawn on the captured pixels. Both the pixels and
+         the card rects come out of the same game, so the box is on the card by
+         construction rather than by a fit. Hidden unless the server is
+         capturing (--source realgame, without --no-game-view). -->
+    <div class="sect" id="game-sect" hidden>
+      <div class="hd">
+        <span>the real game <span class="mb-tag" id="game-align">&mdash;</span></span>
+        <span class="r" id="game-sub">&mdash;</span>
+      </div>
+      <div id="game-frame">
+        <canvas id="game-canvas"></canvas>
+        <div id="game-msg">waiting for the first frame&hellip;</div>
+        <div id="game-stale" hidden>&mdash;</div>
+      </div>
+      <div id="game-verdict">
+        <span class="act" id="game-act">&mdash;</span>
+        <span class="hl" id="game-headline">&mdash;</span>
+      </div>
+      <div class="mb-note" id="game-note">&mdash;</div>
+    </div>
+
+    <!-- The mushroom body: the decision, the dopamine and the synapses. Shown
+         whenever the fly is deciding for itself, whether that is this process's
+         own learning loop or a real game it is following. -->
+    <div class="sect" id="mb-sect" hidden>
+      <div class="hd">
+        <span>mushroom body <span class="mb-tag" id="mb-tag">&mdash;</span></span>
+        <span class="r" id="mb-sub">&mdash;</span>
+      </div>
+
+      <div id="mb-drive">
+        <div class="dr app">
+          <span class="k">approach</span>
+          <span class="m"><i id="mb-app-bar"></i></span>
+          <span class="v" id="mb-app">&mdash;</span>
+        </div>
+        <div class="dr avo">
+          <span class="k">avoid</span>
+          <span class="m"><i id="mb-avo-bar"></i></span>
+          <span class="v" id="mb-avo">&mdash;</span>
+        </div>
+        <div class="dr net">
+          <span class="k">P(play)</span>
+          <span class="m"><i id="mb-p-bar"></i></span>
+          <span class="v" id="mb-p">&mdash;</span>
+        </div>
+        <div class="mb-line" id="mb-drive-note">&mdash;</div>
+        <div class="mb-formula" id="mb-formula">&mdash;</div>
+      </div>
+
+      <div id="mb-verdict">
+        <div class="act" id="mb-act">&mdash;</div>
+        <div class="out">
+          <div id="mb-outcome">&mdash;</div>
+          <div class="sub" id="mb-hand">&mdash;</div>
+        </div>
+      </div>
+
+      <div class="da" id="mb-da">
+        <span class="dot" id="mb-da-dot"></span>
+        <span class="lb" id="mb-da-text">no pulse</span>
+        <span class="ct" id="mb-da-count">&mdash;</span>
+      </div>
+
+      <div class="mb-block">
+        <div class="mb-hd"><span>KC &rarr; MBON synapses</span><span class="r" id="mb-w-sub">&mdash;</span></div>
+        <div class="mb-stats" id="mb-wstats"></div>
+        <canvas id="mb-wspark" width="600" height="40"></canvas>
+        <div class="mb-note">mean weight as a fraction of where it started &middot; dashed line is 1.0</div>
+      </div>
+
+      <div class="mb-block">
+        <div class="mb-hd">
+          <span>P(play) by score situation</span>
+          <span class="r">rolling</span>
+        </div>
+        <div class="mb-buckets" id="mb-buckets"></div>
+        <div class="mb-note" id="mb-bk-note">&mdash;</div>
+      </div>
+
+      <div class="mb-block">
+        <div class="mb-hd"><span>reward rate</span><span class="r" id="mb-rr-sub">&mdash;</span></div>
+        <canvas id="mb-rspark" width="600" height="40"></canvas>
+      </div>
+    </div>
+
+    <!-- Readout modes only. In the mushroom-body modes there is no readout at
+         all, and this panel is hidden rather than fed a stand-in. -->
+    <div class="sect" id="ro-sect">
+      <div class="hd"><span id="ro-title">readout &middot; top 5 legal actions</span><span class="r" id="ro-sub">&mdash;</span></div>
+      <div class="bars" id="ro-bars"></div>
+    </div>
+
+    <div class="sect">
+      <div class="hd"><span id="bits-title">sensory input</span><span class="r" id="bits-sub">&mdash;</span></div>
+      <div id="glom-wrap" hidden>
+        <div id="glom"></div>
+        <div class="glom-note" id="glom-note"></div>
+      </div>
+      <div id="bits-wrap">
+        <canvas id="bits" width="588" height="110"></canvas>
+        <div class="bits-key" id="bits-key"></div>
+      </div>
+    </div>
+
+    <div class="sect">
+      <div class="hd"><span>population rates</span><span class="r">mean Hz &middot; 50&nbsp;ms window</span></div>
+      <div id="pipe"></div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div id="caveat"></div>
+  <div id="footline">
+    <div class="txt" id="foot-text">&mdash;</div>
+    <div class="stats">
+      <span>ep <b id="st-ep">0</b></span>
+      <span>W/L <b id="st-wl">0/0</b></span>
+      <span>act <b id="st-act">0</b></span>
+      <span>sim <b id="st-ms">0</b>ms</span>
+      <span>rss <b id="st-rss">0</b>MB</span>
+      <span><b id="st-fps">0</b>fps</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

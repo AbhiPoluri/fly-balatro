@@ -1,0 +1,6 @@
+== real_eta0.02_s0 (eta_r=0.02 eta_p=0.0763) ==
+   clear 0.267 -> 0.167 | chips 803 -> 768 | P(play|legal) 0.519 -> 0.743 | joint var 0.068556 -> 0.0256 | train reward 0.484 | 421s
+== real_eta0.02_s1 (eta_r=0.02 eta_p=0.0763) ==
+   clear 0.433 -> 0.217 | chips 834 -> 801 | P(play|legal) 0.514 -> 0.761 | joint var 0.03893 -> 0.033173 | train reward 0.515 | 386s
+== real_eta0.02_s2 (eta_r=0.02 eta_p=0.0763) ==
+   clear 0.283 -> 0.350 | chips 730 -> 851 | P(play|legal) 0.534 -> 0.759 | joint var 0.048929 -> 0.026578 | train reward 0.507 | 390s

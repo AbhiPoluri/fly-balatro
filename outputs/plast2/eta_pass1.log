@@ -1,0 +1,29 @@
+reward eta 0.02: per-pulse |d| N1=0.6345  N5=0.2841  N20=0.1648
+reward eta 0.05: per-pulse |d| N1=0.8902  N5=0.4451  N20=0.2330
+punish eta 0.05: per-pulse |d| N1=0.8712  N5=0.3144  N20=0.0885
+punish eta 0.07: per-pulse |d| N1=0.9564  N5=0.3163  N20=0.0743
+punish eta 0.1: per-pulse |d| N1=0.9754  N5=0.2614  N20=0.1226
+punish eta 0.14: per-pulse |d| N1=0.9848  N5=0.2235  N20=0.2126
+punish eta 0.2: per-pulse |d| N1=0.9470  N5=0.3163  N20=0.1364
+punish eta 0.28: per-pulse |d| N1=1.5530  N5=0.4413  N20=0.1506
+punish eta 0.4: per-pulse |d| N1=0.9186  N5=0.4867  N20=0.1525
+punish eta 0.6: per-pulse |d| N1=0.9754  N5=0.7936  N20=0.1525
+punish eta 0.9: per-pulse |d| N1=1.6098  N5=0.6098  N20=0.1525
+
+chosen: {
+  "0.02": {
+    "eta_reward": 0.02,
+    "eta_punish": 0.0731,
+    "ratio": 3.6568,
+    "how": "log-log interpolation on the grid",
+    "matched_at_n_pulses": 5
+  },
+  "0.05": {
+    "eta_reward": 0.05,
+    "eta_punish": 0.2888,
+    "ratio": 5.7769,
+    "how": "log-log interpolation on the grid",
+    "matched_at_n_pulses": 5
+  }
+}
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json in 298s

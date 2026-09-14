@@ -1,0 +1,21 @@
+encoding=glomerular32 spec=apl2_tonic_vth0 from /Users/abhipoluri/fly-balatro/outputs/mb2/tuned_config.json
+  tuning={'apl_scale': 2.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 0.0} tonic 30 mV window 50 ms brain_seed 1
+outputs/bc3/states.npz: 150,037 states, 315 features, feature_version=2
+encoding glomerular32: the brain sees 32 of 315 bits (283 not sent)
+150,037 states -> 4,962 unique input vectors (96.7% duplicates)
+rough single-condition estimate at 50.0 ms, 4 workers, perfect scaling: 2 min
+[real] 4,962 unique states, 20 chunks of 250; 0 rows already on disk, 4,962 to do
+[real] 250/4,962 rows  0.4 min  9.6 states/s  ETA 8.2 min  workers RSS 1090 MB
+[real] 500/4,962 rows  0.4 min  19.2 states/s  ETA 3.9 min  workers RSS 1090 MB
+[real] 750/4,962 rows  0.4 min  28.3 states/s  ETA 2.5 min  workers RSS 1090 MB
+[real] 4,962/4,962 rows  2.2 min  38.0 states/s  ETA 0.0 min  workers RSS 1121 MB
+[real] assembling ...
+[real] wrote outputs/bc3/feats_real.npz (4 MB) in 2.2 min
+[shuffled] 4,962 unique states, 20 chunks of 250; 0 rows already on disk, 4,962 to do
+[shuffled] 250/4,962 rows  0.3 min  12.9 states/s  ETA 6.1 min  workers RSS 1354 MB
+[shuffled] 500/4,962 rows  0.3 min  24.6 states/s  ETA 3.0 min  workers RSS 1355 MB
+[shuffled] 750/4,962 rows  0.4 min  33.4 states/s  ETA 2.1 min  workers RSS 1356 MB
+[shuffled] 4,962/4,962 rows  1.8 min  47.0 states/s  ETA 0.0 min  workers RSS 1372 MB
+[shuffled] assembling ...
+[shuffled] wrote outputs/bc3/feats_shuffled.npz (1 MB) in 1.8 min
+done

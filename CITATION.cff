@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: >-
+  If you use this work, cite it, and cite the MaleCNS v1.0 release it depends
+  on. Take the canonical citation for MaleCNS from the publisher record at the
+  DOI below; the entry here carries the identifier only, not a transcribed
+  author list.
+title: "fly-balatro: the MaleCNS connectome as a frozen reservoir playing Balatro"
+abstract: >-
+  The complete male Drosophila connectome (MaleCNS v1.0), brain-only, run as a
+  frozen leaky integrate-and-fire network that plays Balatro. Poker hand
+  analysis is computed outside the brain and relayed in as an odour on 32
+  olfactory glomeruli; the action is then produced either by a trained readout
+  on spike counts, or with no trained action readout at all, by the fly's own
+  mushroom-body output neurons under dopamine-gated KC-to-MBON depression driven
+  by the chips the game pays. Includes a degree-, weight- and subtype-preserving
+  rewiring control of the antennal-lobe-to-Kenyon-cell calyx, a preregistered
+  2x2 plasticity experiment, and the fly clearing ante 1 of the real Steam game
+  through a mod.
+type: software
+authors:
+  - family-names: Poluri
+    given-names: Abhiram
+version: "0.1.0"
+date-released: "2026-09-14"
+keywords:
+  - connectomics
+  - Drosophila
+  - MaleCNS
+  - mushroom body
+  - reservoir computing
+  - synaptic plasticity
+references:
+  - type: data
+    title: "MaleCNS v1.0 — the complete male Drosophila melanogaster CNS connectome"
+    doi: "10.1016/j.cell.2026.08.015"
+    year: 2026
+    url: "https://male-cns.janelia.org/download/"
+    notes: >-
+      The dataset this project runs on. See docs/DATA.md for the exact files,
+      the brain-only filtering applied here, and the licence position.
+    authors:
+      - name: "Janelia FlyEM / Google Research"
+  - type: article
+    title: >-
+      A leaky integrate-and-fire computational model based on the connectome of
+      the entire adult Drosophila brain
+    year: 2024
+    notes: >-
+      Shiu et al. The LIF constants and the per-synapse conductance used here.
+      Cited at each claim in RESULTS.md and outputs/*/REPORT.md.
+    authors:
+      - name: "Shiu, P. K. and colleagues"
+  - type: article
+    title: >-
+      Mushroom body output neurons encode valence and guide memory-based action
+      selection in Drosophila
+    doi: "10.7554/eLife.04580"
+    journal: "eLife"
+    year: 2014
+    notes: "Aso et al. The valence rule over MBON pools used by the plasticity fly."
+    authors:
+      - name: "Aso, Y. and colleagues"
+  - type: article
+    title: "Random convergence of olfactory inputs in the Drosophila mushroom body"
+    journal: "Nature"
+    year: 2013
+    notes: >-
+      Caron, Ruta, Abbott and Axel. The prior the calyx rewiring null agrees
+      with; see outputs/calyx/REPORT.md.
+    authors:
+      - name: "Caron, S. J. C. and colleagues"

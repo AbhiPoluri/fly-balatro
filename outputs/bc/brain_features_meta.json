@@ -1,0 +1,44 @@
+{
+  "real": {
+    "condition": "real",
+    "window_ms": 50.0,
+    "brain_seed": 1,
+    "shuffle_seed": null,
+    "fm_seed": 0,
+    "neurons_per_feature": 10,
+    "threshold": 5,
+    "n_unique": 139375,
+    "workers": 6,
+    "chunk": 250,
+    "wall_seconds": 3748.0,
+    "states_per_second": 37.19,
+    "worker_rss_peak_mb": 1540.7,
+    "pop_sizes": {
+      "ALPN": 686,
+      "KC": 4064,
+      "DN": 1314
+    },
+    "extended_with_sensory": true
+  },
+  "shuffled": {
+    "condition": "shuffled",
+    "window_ms": 50.0,
+    "brain_seed": 1,
+    "shuffle_seed": 0,
+    "fm_seed": 0,
+    "neurons_per_feature": 10,
+    "threshold": 5,
+    "n_unique": 139375,
+    "workers": 6,
+    "chunk": 250,
+    "wall_seconds": 2576.6,
+    "states_per_second": 54.09,
+    "worker_rss_peak_mb": 628.6,
+    "pop_sizes": {
+      "ALPN": 686,
+      "KC": 4064,
+      "DN": 1314
+    },
+    "extended_with_sensory": true
+  }
+}

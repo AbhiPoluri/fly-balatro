@@ -1,0 +1,136 @@
+{
+  "stop_reason": "game_over_lose",
+  "mode": "plastic",
+  "hands": 7,
+  "decisions": 7,
+  "wall_seconds": 1.2,
+  "condition": "real",
+  "policy_mode": "plastic",
+  "policy_detail": "MBON approach - avoidance drive, no trained action readout; KC -> MBON synapses depressed by dopamine computed from chips",
+  "policy_uses_brain": true,
+  "blinds_attempted": [
+    "Small Blind"
+  ],
+  "best_round_score": 353,
+  "dopamine": {
+    "reward": 0,
+    "punish": 1,
+    "none": 6
+  },
+  "fly": {
+    "kc": 4064,
+    "kc_mbon_edges": 33496,
+    "kc_ref": 2.0,
+    "weight_floor": 0.05,
+    "reward_edges": 10886,
+    "reward_mbons": 16,
+    "punish_edges": 13582,
+    "punish_mbons": 46,
+    "config": "/Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json",
+    "operating_point": {
+      "bias": -2.6159665471207854,
+      "temperature": 0.8383112790300333,
+      "explore_floor": 0.1,
+      "play_bias_p": 0.55,
+      "eta_reward": 0.05,
+      "eta_punish": 0.1907,
+      "source": "/Users/abhipoluri/fly-balatro/outputs/plast2/run_real_eta0.05_s0.json",
+      "eta_source": "/Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json (ratio 3.8132)"
+    },
+    "n_approach_mbons": 66,
+    "n_avoid_mbons": 24,
+    "window_ms": 50.0,
+    "learning": true,
+    "warm_started": false
+  },
+  "weights": {
+    "n_synapses": 33496,
+    "frac_changed": 0.01424,
+    "n_changed": 477,
+    "mean_ratio": 0.998463,
+    "min_ratio": 0.8093,
+    "frac_at_floor": 0.0,
+    "n_at_floor": 0,
+    "n_reward_pulses": 0,
+    "n_punish_pulses": 1
+  },
+  "learning": {
+    "n_hands": 7,
+    "reward_rate": 0.0,
+    "p_play": 0.5714,
+    "buckets": {
+      "lt0.25": {
+        "n": 7,
+        "plays": 4,
+        "p_play": 0.5714
+      },
+      "lt0.5": {
+        "n": 0,
+        "plays": 0,
+        "p_play": NaN
+      },
+      "lt1.0": {
+        "n": 0,
+        "plays": 0,
+        "p_play": NaN
+      },
+      "ge1.0": {
+        "n": 0,
+        "plays": 0,
+        "p_play": NaN
+      }
+    },
+    "reward_spark": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mean_ratio_spark": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.998463
+    ],
+    "frac_changed_spark": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.01424
+    ],
+    "rolling_window": 50
+  },
+  "final": {
+    "raw_state": "GAME_OVER",
+    "stage": 7,
+    "ante": 1,
+    "round": 1,
+    "blind": "Small Blind",
+    "blind_type": "SMALL",
+    "score": 353,
+    "required_score": 3000,
+    "plays": 0,
+    "discards": 0,
+    "money": 4,
+    "n_jokers": 0,
+    "hand": [],
+    "selected_indices": [],
+    "screen": {
+      "width": 2418.0,
+      "height": 1570.0,
+      "pixel_width": 2418.0,
+      "pixel_height": 1570.0,
+      "dpi_scale": 1.0,
+      "unit": 73.0
+    }
+  }
+}

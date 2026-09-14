@@ -1,0 +1,230 @@
+diff --git a/core/src/card.rs b/core/src/card.rs
+index bd49196..3b94fc2 100644
+--- a/core/src/card.rs
++++ b/core/src/card.rs
+@@ -1,7 +1,7 @@
+ #[cfg(feature = "colored")]
+ use colored::Colorize;
+ #[cfg(feature = "python")]
+-use pyo3::pyclass;
++use pyo3::{pyclass, pymethods};
+ use std::{
+     fmt,
+     sync::atomic::{AtomicUsize, Ordering},
+@@ -110,6 +110,101 @@ impl Card {
+     }
+ }
+ 
++// Python getters. `Card` is a `pyclass` but had no `pymethods`, so it
++// reached Python as an opaque object. `rank_index`/`suit_index` are the
++// ergonomic path: `Value`/`Suit` are `pyclass(eq)` without `eq_int`, so
++// Python cannot turn them into integers on its own.
++#[cfg(feature = "python")]
++#[pymethods]
++impl Card {
++    #[getter]
++    fn get_value(&self) -> Value {
++        self.value
++    }
++
++    #[getter]
++    fn get_suit(&self) -> Suit {
++        self.suit
++    }
++
++    #[getter]
++    fn get_id(&self) -> usize {
++        self.id
++    }
++
++    #[getter]
++    fn get_edition(&self) -> Edition {
++        self.edition
++    }
++
++    #[getter]
++    fn get_enhancement(&self) -> Option<Enhancement> {
++        self.enhancement
++    }
++
++    #[getter]
++    fn get_seal(&self) -> Option<Seal> {
++        self.seal
++    }
++
++    /// 0..=12 for Two..=Ace.
++    #[getter]
++    fn get_rank_index(&self) -> usize {
++        match self.value {
++            Value::Two => 0,
++            Value::Three => 1,
++            Value::Four => 2,
++            Value::Five => 3,
++            Value::Six => 4,
++            Value::Seven => 5,
++            Value::Eight => 6,
++            Value::Nine => 7,
++            Value::Ten => 8,
++            Value::Jack => 9,
++            Value::Queen => 10,
++            Value::King => 11,
++            Value::Ace => 12,
++        }
++    }
++
++    /// 0..=3 for Spade, Club, Heart, Diamond.
++    #[getter]
++    fn get_suit_index(&self) -> usize {
++        match self.suit {
++            Suit::Spade => 0,
++            Suit::Club => 1,
++            Suit::Heart => 2,
++            Suit::Diamond => 3,
++        }
++    }
++
++    /// Base chip contribution of this rank.
++    #[getter]
++    fn get_chips(&self) -> usize {
++        self.chips()
++    }
++
++    #[getter]
++    fn get_is_face_card(&self) -> bool {
++        self.is_face_card()
++    }
++
++    /// Enhancement name, or `None`. Convenience for Python callers that
++    /// only want a string and not the `Enhancement` pyclass.
++    #[getter]
++    fn get_enhancement_name(&self) -> Option<String> {
++        self.enhancement.map(|e| format!("{:?}", e))
++    }
++
++    fn __repr__(&self) -> String {
++        card_display(self)
++    }
++
++    fn __str__(&self) -> String {
++        format!("{}", self)
++    }
++}
++
+ impl fmt::Debug for Card {
+     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+         #[cfg(feature = "colored")]
+diff --git a/core/src/generator.rs b/core/src/generator.rs
+index a549d89..0f0e8cc 100644
+--- a/core/src/generator.rs
++++ b/core/src/generator.rs
+@@ -645,9 +645,13 @@ impl Game {
+     }
+ 
+     fn unmask_action_space_use_consumable(&self, space: &mut ActionSpace) {
++        // Must mirror `Game::use_consumable`'s validation exactly, or the mask
++        // offers actions the handler then rejects with `InvalidAction`. It
++        // previously diverged twice: `PackOpen` was missing from this guard,
++        // and a hand-touching Tarot/Spectral was unmasked outside a Blind.
+         if matches!(
+             self.stage,
+-            Stage::End(_) | Stage::TarotHand(_) | Stage::SpectralHand(_)
++            Stage::End(_) | Stage::TarotHand(_) | Stage::SpectralHand(_) | Stage::PackOpen()
+         ) {
+             return;
+         }
+@@ -656,23 +660,17 @@ impl Game {
+             let valid = match c {
+                 Consumable::Planet(_) => true,
+                 Consumable::Tarot(t) => {
+-                    if !t.requires_targets() {
+-                        true
+-                    } else if self.stage.is_blind() {
+-                        selected_count >= t.min_targets() && selected_count <= t.max_targets()
+-                    } else {
+-                        true
+-                    }
++                    !t.requires_hand()
++                        || (self.stage.is_blind()
++                            && selected_count >= t.min_targets()
++                            && selected_count <= t.max_targets())
+                 }
+                 // Same eligibility shape as Tarot above.
+                 Consumable::Spectral(s) => {
+-                    if !s.requires_targets() {
+-                        true
+-                    } else if self.stage.is_blind() {
+-                        selected_count >= s.min_targets() && selected_count <= s.max_targets()
+-                    } else {
+-                        true
+-                    }
++                    !s.requires_hand()
++                        || (self.stage.is_blind()
++                            && selected_count >= s.min_targets()
++                            && selected_count <= s.max_targets())
+                 }
+             };
+             if valid {
+diff --git a/pylatro/src/lib.rs b/pylatro/src/lib.rs
+index 992997f..8ac562c 100644
+--- a/pylatro/src/lib.rs
++++ b/pylatro/src/lib.rs
+@@ -39,6 +39,14 @@ impl GameEngine {
+         self.game.handle_action_index(index)
+     }
+ 
++    /// Resolve an action-space index into the concrete `Action` it means in
++    /// the current state, without taking it. Errors if the index is masked
++    /// (illegal) or out of range.
++    fn to_action(&self, index: usize) -> Result<Action, GameError> {
++        let space = self.game.gen_action_space();
++        Ok(space.to_action(index, &self.game)?)
++    }
++
+     #[getter]
+     fn state(&self) -> GameState {
+         GameState {
+@@ -115,6 +123,36 @@ impl GameState {
+     fn money(&self) -> usize {
+         self.game.money
+     }
++    /// Current ante (1..=8).
++    #[getter]
++    fn ante(&self) -> usize {
++        self.game.ante_current as usize
++    }
++    /// Ante the run ends at (win condition).
++    #[getter]
++    fn ante_end(&self) -> usize {
++        self.game.ante_end as usize
++    }
++    /// Blind currently selected, as 0=Small, 1=Big, 2=Boss, or `None`
++    /// before any blind is chosen this ante.
++    #[getter]
++    fn blind(&self) -> Option<usize> {
++        self.game.blind.map(|b| match b {
++            balatro_rs::stage::Blind::Small => 0,
++            balatro_rs::stage::Blind::Big => 1,
++            balatro_rs::stage::Blind::Boss => 2,
++        })
++    }
++    /// Pending cash-out reward, set when a blind is cleared.
++    #[getter]
++    fn reward(&self) -> usize {
++        self.game.reward
++    }
++    /// Hand size dealt each round (config baseline plus voucher effects).
++    #[getter]
++    fn hand_size(&self) -> usize {
++        self.game.hand_size()
++    }
+     /// Vouchers redeemed this run, in purchase order.
+     #[getter]
+     fn vouchers(&self) -> Vec<Voucher> {
+@@ -148,6 +186,7 @@ fn seed_from_str(s: &str) -> u64 {
+ 
+ #[pymodule]
+ fn pylatro(m: &Bound<'_, PyModule>) -> PyResult<()> {
++    m.add_class::<Card>()?;
+     m.add_class::<Config>()?;
+     m.add_class::<GameEngine>()?;
+     m.add_class::<GameState>()?;

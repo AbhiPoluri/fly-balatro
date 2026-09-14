@@ -1,0 +1,370 @@
+=== 17:19:31 feats_real.npz complete ===
+  row 0: ok  (1995 active units)
+  row 34843: ok  (2227 active units)
+  row 69687: ok  (2384 active units)
+  row 104530: ok  (2204 active units)
+  row 139374: ok  (2439 active units)
+[real] 5/5 rows reproduce exactly
+device = mps
+split: {"train": 109309, "val": 12018, "test": 28734, "episodes": {"total": 2671, "test": 534, "val": 214}, "train_heuristic_frac": 0.7387, "val_heuristic_frac": 0.7438, "test_heuristic_frac": 0.6863}
+priors: {
+  "most_frequent_legal_label_top1": 0.35591981624556274,
+  "most_frequent_legal_label_top1_nontrivial": 0.3355234812580784,
+  "majority_label_top1": 0.1751235470174706,
+  "trivial_state_fraction": 0.030695343495510546,
+  "uniform_random_legal_top1": 0.19882159401892122,
+  "n_test": 28734
+}
+real_alpn_kc_dn effective (non-constant) width: 3490/6064
+[real_alpn_kc_dn] d=6064 effective=3490 (9s to build)
+    real_alpn_kc_dn / linear
+      ep00 loss 1.3801 val 0.4782
+      ep01 loss 1.2356 val 0.4731
+      ep02 loss 1.2001 val 0.4692
+      ep03 loss 1.1841 val 0.4542
+      ep04 loss 1.1702 val 0.4529
+      ep05 loss 1.1553 val 0.4533
+      ep06 loss 1.1435 val 0.4603
+      ep07 loss 1.1332 val 0.4606
+      ep08 loss 1.1195 val 0.4616
+      ep09 loss 1.1071 val 0.4644
+      ep10 loss 1.0960 val 0.4617
+      ep11 loss 1.0863 val 0.4621
+      ep12 loss 1.0784 val 0.4643
+      ep13 loss 1.0720 val 0.4613
+      ep14 loss 1.0679 val 0.4617
+      test top1 0.4729  nontrivial 0.4561970415050984  (87s)
+    real_alpn_kc_dn / mlp
+      ep00 loss 1.2974 val 0.5027
+      ep01 loss 1.1088 val 0.5009
+      ep02 loss 0.9559 val 0.4865
+      ep03 loss 0.7553 val 0.4740
+      ep04 loss 0.5247 val 0.4648
+      ep05 loss 0.3197 val 0.4532
+      ep06 loss 0.1740 val 0.4529
+      ep07 loss 0.0917 val 0.4606
+      ep08 loss 0.0543 val 0.4613
+      ep09 loss 0.0383 val 0.4592
+      ep10 loss 0.0308 val 0.4619
+      ep11 loss 0.0267 val 0.4598
+      ep12 loss 0.0243 val 0.4600
+      ep13 loss 0.0229 val 0.4601
+      ep14 loss 0.0222 val 0.4607
+      test top1 0.5025  nontrivial 0.48678730432284933  (94s)
+[real_dn] d=1314 effective=676 (1s to build)
+    real_dn / linear
+      ep00 loss 1.5927 val 0.3754
+      ep01 loss 1.4978 val 0.3905
+      ep02 loss 1.4785 val 0.3921
+      ep03 loss 1.4695 val 0.3915
+      ep04 loss 1.4635 val 0.3899
+      ep05 loss 1.4587 val 0.3883
+      ep06 loss 1.4549 val 0.3891
+      ep07 loss 1.4519 val 0.3898
+      ep08 loss 1.4484 val 0.3907
+      ep09 loss 1.4454 val 0.3904
+      ep10 loss 1.4428 val 0.3907
+      ep11 loss 1.4402 val 0.3898
+      ep12 loss 1.4384 val 0.3908
+      ep13 loss 1.4367 val 0.3910
+      ep14 loss 1.4358 val 0.3910
+      test top1 0.3925  nontrivial 0.3732227488151659  (37s)
+    real_dn / mlp
+      ep00 loss 1.5069 val 0.3947
+      ep01 loss 1.4302 val 0.4031
+      ep02 loss 1.3966 val 0.3986
+      ep03 loss 1.3598 val 0.3992
+      ep04 loss 1.3149 val 0.3833
+      ep05 loss 1.2649 val 0.3906
+      ep06 loss 1.2105 val 0.3832
+      ep07 loss 1.1571 val 0.3858
+      ep08 loss 1.1062 val 0.3827
+      ep09 loss 1.0617 val 0.3814
+      ep10 loss 1.0251 val 0.3781
+      ep11 loss 0.9971 val 0.3739
+      ep12 loss 0.9767 val 0.3749
+      ep13 loss 0.9631 val 0.3732
+      ep14 loss 0.9560 val 0.3751
+      test top1 0.4005  nontrivial 0.3815165876777251  (41s)
+[rand_proj_matched] d=3490 effective=3490 (4s to build)
+    rand_proj_matched / linear
+      ep00 loss 1.1361 val 0.5721
+      ep01 loss 1.0141 val 0.5746
+      ep02 loss 0.9704 val 0.5766
+      ep03 loss 0.9418 val 0.5741
+      ep04 loss 0.9188 val 0.5731
+      ep05 loss 0.9006 val 0.5680
+      ep06 loss 0.8836 val 0.5676
+      ep07 loss 0.8691 val 0.5778
+      ep08 loss 0.8551 val 0.5800
+      ep09 loss 0.8425 val 0.5845
+      ep10 loss 0.8317 val 0.5830
+      ep11 loss 0.8219 val 0.5838
+      ep12 loss 0.8142 val 0.5839
+      ep13 loss 0.8079 val 0.5843
+      ep14 loss 0.8037 val 0.5840
+      test top1 0.5717  nontrivial 0.5581286801665949  (70s)
+    rand_proj_matched / mlp
+      ep00 loss 1.0282 val 0.6135
+      ep01 loss 0.8223 val 0.6177
+      ep02 loss 0.6648 val 0.6217
+      ep03 loss 0.5147 val 0.6187
+      ep04 loss 0.3907 val 0.6231
+      ep05 loss 0.2838 val 0.6225
+      ep06 loss 0.1979 val 0.6263
+      ep07 loss 0.1324 val 0.6298
+      ep08 loss 0.0865 val 0.6325
+      ep09 loss 0.0592 val 0.6276
+      ep10 loss 0.0446 val 0.6301
+      ep11 loss 0.0366 val 0.6316
+      ep12 loss 0.0323 val 0.6316
+      ep13 loss 0.0299 val 0.6326
+      ep14 loss 0.0286 val 0.6316
+      test top1 0.6210  nontrivial 0.6090047393364929  (92s)
+wrote /Users/abhipoluri/fly-balatro/outputs/bc/train_metrics.json
+=== 17:27:03 real-wiring readouts trained ===
+=== 18:02:45 feats_shuffled.npz complete ===
+  row 0: ok  (8 active units)
+  row 34843: ok  (79 active units)
+  row 69687: ok  (111 active units)
+  row 104530: ok  (80 active units)
+  row 139374: ok  (120 active units)
+[shuffled] 5/5 rows reproduce exactly
+device = mps
+split: {"train": 109309, "val": 12018, "test": 28734, "episodes": {"total": 2671, "test": 534, "val": 214}, "train_heuristic_frac": 0.7387, "val_heuristic_frac": 0.7438, "test_heuristic_frac": 0.6863}
+priors: {
+  "most_frequent_legal_label_top1": 0.35591981624556274,
+  "most_frequent_legal_label_top1_nontrivial": 0.3355234812580784,
+  "majority_label_top1": 0.1751235470174706,
+  "trivial_state_fraction": 0.030695343495510546,
+  "uniform_random_legal_top1": 0.19882159401892122,
+  "n_test": 28734
+}
+real_alpn_kc_dn effective (non-constant) width: 3490/6064
+[shuf_alpn_kc_dn] d=6064 effective=1493 (3s to build)
+    shuf_alpn_kc_dn / linear
+      ep00 loss 1.3765 val 0.5284
+      ep01 loss 1.1878 val 0.5398
+      ep02 loss 1.1441 val 0.5416
+      ep03 loss 1.1220 val 0.5487
+      ep04 loss 1.1084 val 0.5451
+      ep05 loss 1.0990 val 0.5473
+      ep06 loss 1.0901 val 0.5508
+      ep07 loss 1.0834 val 0.5513
+      ep08 loss 1.0773 val 0.5495
+      ep09 loss 1.0715 val 0.5530
+      ep10 loss 1.0665 val 0.5507
+      ep11 loss 1.0616 val 0.5508
+      ep12 loss 1.0580 val 0.5523
+      ep13 loss 1.0552 val 0.5519
+      ep14 loss 1.0536 val 0.5519
+      test top1 0.5451  nontrivial 0.5306620709464311  (41s)
+    shuf_alpn_kc_dn / mlp
+      ep00 loss 1.2061 val 0.5681
+      ep01 loss 1.0025 val 0.5776
+      ep02 loss 0.8924 val 0.5806
+      ep03 loss 0.7840 val 0.5768
+      ep04 loss 0.6778 val 0.5680
+      ep05 loss 0.5813 val 0.5706
+      ep06 loss 0.4978 val 0.5592
+      ep07 loss 0.4303 val 0.5612
+      ep08 loss 0.3751 val 0.5622
+      ep09 loss 0.3324 val 0.5588
+      ep10 loss 0.3009 val 0.5590
+      ep11 loss 0.2776 val 0.5592
+      ep12 loss 0.2617 val 0.5601
+      ep13 loss 0.2517 val 0.5593
+      ep14 loss 0.2463 val 0.5590
+      test top1 0.5748  nontrivial 0.5612882378285222  (48s)
+[shuf_dn] d=1314 effective=708 (1s to build)
+    shuf_dn / linear
+      ep00 loss 1.4413 val 0.5000
+      ep01 loss 1.2667 val 0.5110
+      ep02 loss 1.2266 val 0.5172
+      ep03 loss 1.2063 val 0.5229
+      ep04 loss 1.1945 val 0.5200
+      ep05 loss 1.1862 val 0.5241
+      ep06 loss 1.1796 val 0.5269
+      ep07 loss 1.1743 val 0.5269
+      ep08 loss 1.1698 val 0.5270
+      ep09 loss 1.1660 val 0.5270
+      ep10 loss 1.1628 val 0.5265
+      ep11 loss 1.1597 val 0.5263
+      ep12 loss 1.1576 val 0.5262
+      ep13 loss 1.1560 val 0.5265
+      ep14 loss 1.1550 val 0.5263
+      test top1 0.5285  nontrivial 0.5135717363205515  (19s)
+    shuf_dn / mlp
+      ep00 loss 1.2808 val 0.5389
+      ep01 loss 1.0997 val 0.5443
+      ep02 loss 1.0254 val 0.5540
+      ep03 loss 0.9521 val 0.5562
+      ep04 loss 0.8811 val 0.5487
+      ep05 loss 0.8160 val 0.5493
+      ep06 loss 0.7545 val 0.5431
+      ep07 loss 0.7021 val 0.5448
+      ep08 loss 0.6580 val 0.5439
+      ep09 loss 0.6217 val 0.5374
+      ep10 loss 0.5932 val 0.5381
+      ep11 loss 0.5715 val 0.5380
+      ep12 loss 0.5564 val 0.5380
+      ep13 loss 0.5463 val 0.5369
+      ep14 loss 0.5409 val 0.5374
+      test top1 0.5532  nontrivial 0.5390995260663507  (24s)
+wrote /Users/abhipoluri/fly-balatro/outputs/bc/train_metrics.json
+=== 18:05:13 shuffled-wiring readouts trained ===
+[references] 2 readouts x 1000 episodes = 2000 jobs, wiring=None
+[references] 100/2000 episodes  0.0 min  ETA 0.1 min
+[references] 200/2000 episodes  0.0 min  ETA 0.0 min
+[references] 300/2000 episodes  0.0 min  ETA 0.0 min
+[references] 400/2000 episodes  0.0 min  ETA 0.0 min
+[references] 500/2000 episodes  0.0 min  ETA 0.0 min
+[references] 600/2000 episodes  0.0 min  ETA 0.0 min
+[references] 700/2000 episodes  0.0 min  ETA 0.0 min
+[references] 800/2000 episodes  0.0 min  ETA 0.0 min
+[references] 900/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1000/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1100/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1200/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1300/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1400/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1500/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1600/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1700/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1800/2000 episodes  0.0 min  ETA 0.0 min
+[references] 1900/2000 episodes  0.0 min  ETA 0.0 min
+[references] 2000/2000 episodes  0.0 min  ETA 0.0 min
+  random/-: clear 0.000  chips 98  len 30.7  skip 0.025  trunc 0.000  cache 0.0
+  heuristic/-: clear 0.165  chips 931  len 81.6  skip 0.000  trunc 0.000  cache 0.0
+[nobrain] 6 readouts x 1000 episodes = 6000 jobs, wiring=None
+[nobrain] 300/6000 episodes  0.0 min  ETA 0.9 min
+[nobrain] 600/6000 episodes  0.1 min  ETA 0.8 min
+[nobrain] 900/6000 episodes  0.1 min  ETA 0.8 min
+[nobrain] 1200/6000 episodes  0.2 min  ETA 0.8 min
+[nobrain] 1500/6000 episodes  0.3 min  ETA 0.9 min
+[nobrain] 1800/6000 episodes  0.4 min  ETA 0.9 min
+[nobrain] 2100/6000 episodes  0.4 min  ETA 0.8 min
+[nobrain] 2400/6000 episodes  0.4 min  ETA 0.6 min
+[nobrain] 2700/6000 episodes  0.4 min  ETA 0.5 min
+[nobrain] 3000/6000 episodes  0.4 min  ETA 0.4 min
+[nobrain] 3300/6000 episodes  0.5 min  ETA 0.4 min
+[nobrain] 3600/6000 episodes  0.5 min  ETA 0.3 min
+[nobrain] 3900/6000 episodes  0.5 min  ETA 0.3 min
+[nobrain] 4200/6000 episodes  0.5 min  ETA 0.2 min
+[nobrain] 4500/6000 episodes  0.5 min  ETA 0.2 min
+[nobrain] 4800/6000 episodes  0.5 min  ETA 0.1 min
+[nobrain] 5100/6000 episodes  0.5 min  ETA 0.1 min
+[nobrain] 5400/6000 episodes  0.5 min  ETA 0.1 min
+[nobrain] 5700/6000 episodes  0.5 min  ETA 0.0 min
+[nobrain] 6000/6000 episodes  0.5 min  ETA 0.0 min
+  rand_proj/linear: clear 0.000  chips 156  len 44.9  skip 0.000  trunc 0.000  cache 0.0
+  rand_proj/mlp: clear 0.000  chips 265  len 52.2  skip 0.000  trunc 0.000  cache 0.0
+  rand_proj_matched/linear: clear 0.000  chips 154  len 45.8  skip 0.000  trunc 0.000  cache 0.0
+  rand_proj_matched/mlp: clear 0.000  chips 246  len 50.6  skip 0.000  trunc 0.000  cache 0.0
+  raw_bits/linear: clear 0.000  chips 149  len 48.9  skip 0.000  trunc 0.000  cache 0.0
+  raw_bits/mlp: clear 0.000  chips 316  len 56.3  skip 0.000  trunc 0.000  cache 0.0
+[real] 4 readouts x 1000 episodes = 4000 jobs, wiring=real
+Process SpawnPoolWorker-13:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 199, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 410, in _send_bytes
+    self._send(header + buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 199, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 410, in _send_bytes
+    self._send(header + buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-16:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 199, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 410, in _send_bytes
+    self._send(header + buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 199, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 410, in _send_bytes
+    self._send(header + buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-18:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 199, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 410, in _send_bytes
+    self._send(header + buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/queues.py", line 377, in put
+    self._writer.send_bytes(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 199, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 410, in _send_bytes
+    self._send(header + buf)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

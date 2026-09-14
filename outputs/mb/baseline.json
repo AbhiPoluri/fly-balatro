@@ -1,0 +1,668 @@
+{
+  "tag": "baseline",
+  "settings": {
+    "threshold": 5,
+    "n_inputs": 200,
+    "n_features": 180,
+    "neurons_per_feature": 10,
+    "active_frac": 0.2,
+    "window_ms": 50.0,
+    "drive_mv": 30.0,
+    "v_jitter_mv": 6.9,
+    "dataset_seed": 0,
+    "brain_seed": 1,
+    "late_from_ms": 15,
+    "mn9_window_ms": 200.0,
+    "feature_map": {
+      "n_features": 180,
+      "neurons_per_feature": 10,
+      "grouping": "random",
+      "seed": 0,
+      "drive_mv": 30.0,
+      "n_orn_available": 2639,
+      "n_driven_neurons": 1800,
+      "extended_with_sensory": false,
+      "orn_first": false,
+      "n_true_orn": 2639
+    },
+    "machine": "arm64 python 3.11.3"
+  },
+  "dataset": {
+    "n_samples": 200,
+    "n_features": 180,
+    "active_frac": 0.2,
+    "seed": 7,
+    "label_A": {
+      "kind": "count of bits in a random 12-bit group >= k",
+      "group": [
+        142,
+        14,
+        39,
+        25,
+        125,
+        59,
+        40,
+        22,
+        112,
+        108,
+        160,
+        49
+      ],
+      "k": 3,
+      "positive_rate": 0.41
+    },
+    "label_B": {
+      "kind": "random Gaussian-weighted linear threshold on 10 bits",
+      "group": [
+        15,
+        63,
+        12,
+        166,
+        161,
+        39,
+        156,
+        135,
+        78,
+        28
+      ],
+      "weights": [
+        0.5209670911744256,
+        0.025334085312409577,
+        -0.14926554740167064,
+        -0.7070365274367162,
+        -0.661155089478635,
+        -0.016719886388297467,
+        0.8479919418390162,
+        0.23457928981047885,
+        0.15040945599703365,
+        0.7369301892493507
+      ],
+      "threshold": 0.1456824351996668,
+      "positive_rate": 0.5
+    },
+    "mean_bits_active": 35.41
+  },
+  "graph": {
+    "neurons": 146271,
+    "edges_csr": 5146572,
+    "w_syn": 0.275,
+    "threshold": 5
+  },
+  "selectors": {
+    "KC": {
+      "selector": "class == \"Kenyon_Cell\"",
+      "count": 4064,
+      "types": [
+        "KC",
+        "KCa'b'-ap1",
+        "KCa'b'-ap2",
+        "KCa'b'-m",
+        "KCab-c",
+        "KCab-m",
+        "KCab-p",
+        "KCab-s",
+        "KCg",
+        "KCg-d",
+        "KCg-m",
+        "KCg-s1",
+        "KCg-s2",
+        "KCg-s3",
+        "KCg-s4"
+      ],
+      "classes": [
+        "Kenyon_Cell"
+      ],
+      "superclasses": [
+        "cb_intrinsic"
+      ],
+      "sides": [
+        "L",
+        "R"
+      ],
+      "signs": [
+        1.0
+      ],
+      "body_ids": null
+    },
+    "MBON": {
+      "selector": "class == \"MBON\"",
+      "count": 97,
+      "types": [
+        "MBON01",
+        "MBON02",
+        "MBON03",
+        "MBON04",
+        "MBON05",
+        "MBON06",
+        "MBON07",
+        "MBON09",
+        "MBON10",
+        "MBON11",
+        "MBON12",
+        "MBON13",
+        "MBON14",
+        "MBON15",
+        "MBON15-like",
+        "MBON16",
+        "MBON17",
+        "MBON17-like",
+        "MBON18",
+        "MBON19"
+      ],
+      "classes": [
+        "MBON"
+      ],
+      "superclasses": [
+        "cb_intrinsic"
+      ],
+      "sides": [
+        "L",
+        "R"
+      ],
+      "signs": [
+        -1.0,
+        1.0
+      ],
+      "body_ids": null
+    },
+    "ALPN": {
+      "selector": "class == \"ALPN\"",
+      "count": 686,
+      "types": [
+        "",
+        "CB0650",
+        "CB1296_a",
+        "CB2004",
+        "CB2561",
+        "CB2589",
+        "CB2703",
+        "CB2711",
+        "CB2772",
+        "CB3228",
+        "CB3383",
+        "CB3447",
+        "DA1_lPN",
+        "DA1_vPN",
+        "DA2_lPN",
+        "DA3_adPN",
+        "DA4l_adPN",
+        "DA4m_adPN",
+        "DC1_adPN",
+        "DC2_adPN"
+      ],
+      "classes": [
+        "ALPN"
+      ],
+      "superclasses": [
+        "cb_intrinsic"
+      ],
+      "sides": [
+        "L",
+        "R"
+      ],
+      "signs": [
+        -1.0,
+        1.0
+      ],
+      "body_ids": null
+    },
+    "ORN": {
+      "selector": "superclass == \"cb_sensory\" and class == \"olfactory\"",
+      "count": 2639,
+      "types": [
+        "",
+        "ORN_D",
+        "ORN_DA1",
+        "ORN_DA2",
+        "ORN_DA3",
+        "ORN_DA4l",
+        "ORN_DA4m",
+        "ORN_DC1",
+        "ORN_DC2",
+        "ORN_DC3",
+        "ORN_DC4",
+        "ORN_DL1",
+        "ORN_DL2d",
+        "ORN_DL2v",
+        "ORN_DL3",
+        "ORN_DL4",
+        "ORN_DL5",
+        "ORN_DM1",
+        "ORN_DM2",
+        "ORN_DM3"
+      ],
+      "classes": [
+        "olfactory"
+      ],
+      "superclasses": [
+        "cb_sensory"
+      ],
+      "sides": [
+        "L",
+        "R",
+        "unknown"
+      ],
+      "signs": [
+        1.0
+      ],
+      "body_ids": null
+    },
+    "DN": {
+      "selector": "superclass == \"descending_neuron\"",
+      "count": 1314,
+      "types": [
+        "",
+        "CB0429",
+        "DNa01",
+        "DNa02",
+        "DNa03",
+        "DNa04",
+        "DNa05",
+        "DNa06",
+        "DNa07",
+        "DNa08",
+        "DNa09",
+        "DNa10",
+        "DNa11",
+        "DNa13",
+        "DNa14",
+        "DNa15",
+        "DNa16",
+        "DNae001",
+        "DNae002",
+        "DNae003"
+      ],
+      "classes": [
+        ""
+      ],
+      "superclasses": [
+        "descending_neuron"
+      ],
+      "sides": [
+        "L",
+        "M",
+        "R"
+      ],
+      "signs": [
+        -1.0,
+        0.0,
+        1.0
+      ],
+      "body_ids": null
+    },
+    "APL": {
+      "selector": "type == \"APL\"",
+      "count": 2,
+      "types": [
+        "APL"
+      ],
+      "classes": [
+        ""
+      ],
+      "superclasses": [
+        "cb_intrinsic"
+      ],
+      "sides": [
+        "L",
+        "R"
+      ],
+      "signs": [
+        -1.0
+      ],
+      "body_ids": [
+        10540,
+        10977
+      ]
+    },
+    "GRN": {
+      "selector": "type.startswith(\"LB\")",
+      "count": 165,
+      "types": [
+        "LB1a",
+        "LB1b",
+        "LB1c",
+        "LB1d",
+        "LB1e",
+        "LB2a",
+        "LB2b",
+        "LB2c",
+        "LB2d",
+        "LB3",
+        "LB3a",
+        "LB3b",
+        "LB3c",
+        "LB3d",
+        "LB4a",
+        "LB4b"
+      ],
+      "classes": [
+        "gustatory"
+      ],
+      "superclasses": [
+        "cb_sensory"
+      ],
+      "sides": [
+        "L",
+        "R"
+      ],
+      "signs": [
+        0.0,
+        1.0
+      ],
+      "body_ids": null
+    },
+    "MN9": {
+      "selector": "type == \"MN9\"",
+      "count": 2,
+      "types": [
+        "MN9"
+      ],
+      "classes": [
+        ""
+      ],
+      "superclasses": [
+        "cb_motor"
+      ],
+      "sides": [
+        "L",
+        "R"
+      ],
+      "signs": [
+        1.0
+      ],
+      "body_ids": [
+        10331,
+        16949
+      ]
+    }
+  },
+  "result": {
+    "tuning": {
+      "apl_scale": 1.0,
+      "alpn_kc_scale": 1.0,
+      "kc_vth_offset_mv": 0.0,
+      "kc_bias_mv": 0.0
+    },
+    "tuning_label": "apl1_pnkc1_vth0_bias0",
+    "tuning_info": {
+      "tuning": {
+        "apl_scale": 1.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0
+      },
+      "is_default": true,
+      "populations": {
+        "APL": 2,
+        "KC": 4064,
+        "ALPN": 686
+      },
+      "apl_body_ids": [
+        10540,
+        10977
+      ]
+    },
+    "window_ms": 50.0,
+    "drive_mv": 30.0,
+    "n_inputs": 200,
+    "sim_seconds": 25.2,
+    "KC": {
+      "mean_active_fraction": 0.3794,
+      "std_active_fraction": 0.0175,
+      "min_active_fraction": 0.3187,
+      "max_active_fraction": 0.436,
+      "mean_active_cells": 1541.8,
+      "mean_pairwise_jaccard": 0.8911,
+      "jaccard_bernoulli_reference": 0.2341,
+      "always_on_fraction": 0.3757,
+      "always_on_cells": 1527,
+      "never_on_fraction": 0.5079,
+      "mean_rate_hz": 15.21,
+      "mean_rate_hz_active_only": 40.09,
+      "nonzero_variance_cells": 1982,
+      "population": 4064,
+      "n_inputs": 200
+    },
+    "KC_late_from_ms": 15,
+    "KC_late": {
+      "mean_active_fraction": 0.3672,
+      "std_active_fraction": 0.0157,
+      "min_active_fraction": 0.3123,
+      "max_active_fraction": 0.4176,
+      "mean_active_cells": 1492.3,
+      "mean_pairwise_jaccard": 0.898,
+      "jaccard_bernoulli_reference": 0.2249,
+      "always_on_fraction": 0.3654,
+      "always_on_cells": 1485,
+      "never_on_fraction": 0.5317,
+      "mean_rate_hz": 18.55,
+      "mean_rate_hz_active_only": 50.52,
+      "nonzero_variance_cells": 1891,
+      "population": 4064,
+      "n_inputs": 200
+    },
+    "MBON": {
+      "population": 97,
+      "mean_rate_hz": 61.06,
+      "mean_fraction_active": 0.6172,
+      "mean_spikes_per_input": 296.1,
+      "nonzero_variance_cells": 70
+    },
+    "ALPN": {
+      "population": 686,
+      "mean_rate_hz": 73.97,
+      "mean_fraction_active": 0.7219,
+      "mean_spikes_per_input": 2537.2,
+      "nonzero_variance_cells": 536
+    },
+    "ORN": {
+      "population": 2639,
+      "mean_rate_hz": 15.27,
+      "mean_fraction_active": 0.136,
+      "mean_spikes_per_input": 2015.0,
+      "nonzero_variance_cells": 1809
+    },
+    "DN": {
+      "population": 1314,
+      "mean_rate_hz": 7.5,
+      "mean_fraction_active": 0.2087,
+      "mean_spikes_per_input": 492.6,
+      "nonzero_variance_cells": 509
+    },
+    "APL": {
+      "population": 2,
+      "mean_rate_hz": 317.55,
+      "mean_fraction_active": 1.0,
+      "mean_spikes_per_input": 31.8,
+      "nonzero_variance_cells": 2
+    },
+    "kc_profile": {
+      "per_ms_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.23,
+        10.11,
+        44.6,
+        56.97,
+        20.72,
+        34.77,
+        65.81,
+        32.55,
+        46.2,
+        73.4,
+        66.8,
+        98.06,
+        113.67,
+        74.16,
+        108.8,
+        95.85,
+        48.96,
+        82.75,
+        83.19,
+        55.37,
+        80.76,
+        76.35,
+        71.26,
+        81.07,
+        56.39,
+        65.78,
+        84.55,
+        58.7,
+        71.32,
+        89.25,
+        65.84,
+        76.89,
+        78.37,
+        61.84,
+        80.91,
+        72.59,
+        60.05,
+        84.93,
+        68.67,
+        59.6,
+        81.81,
+        67.72,
+        64.61,
+        82.29,
+        65.62,
+        70.66
+      ],
+      "first_spike_ms": 5,
+      "peak_ms": 17,
+      "peak_per_ms": 113.67,
+      "total": 3090.8,
+      "spikes_first_15ms": 452.2,
+      "spikes_after_15ms": 2638.6,
+      "fraction_in_first_15ms": 0.1463,
+      "mean_per_ms_first_10": 16.74,
+      "mean_per_ms_last_10": 70.59
+    },
+    "brain_profile": {
+      "per_ms_mean": [
+        55.46,
+        68.62,
+        78.19,
+        106.52,
+        130.3,
+        166.97,
+        200.1,
+        279.94,
+        293.93,
+        349.96,
+        407.89,
+        385.64,
+        421.25,
+        444.6,
+        444.77,
+        540.08,
+        568.96,
+        540.56,
+        619.15,
+        605.47,
+        512.98,
+        546.4,
+        544.09,
+        513.07,
+        546.43,
+        563.26,
+        567.26,
+        569.26,
+        525.14,
+        528.61,
+        544.05,
+        526.63,
+        542.38,
+        547.06,
+        514.09,
+        517.23,
+        488.44,
+        460.99,
+        498.01,
+        485.62,
+        472.19,
+        514.1,
+        490.1,
+        456.89,
+        489.38,
+        477.0,
+        464.57,
+        491.15,
+        478.23,
+        471.49
+      ],
+      "first_spike_ms": 1,
+      "peak_ms": 19,
+      "peak_per_ms": 619.15,
+      "total": 22054.5,
+      "spikes_first_15ms": 3834.1,
+      "spikes_after_15ms": 18220.3,
+      "fraction_in_first_15ms": 0.1738,
+      "mean_per_ms_first_10": 173.0,
+      "mean_per_ms_last_10": 480.51
+    },
+    "brain_total_spikes_per_input": 22054.5,
+    "mn9": {
+      "window_ms": 200.0,
+      "drive_mv": 30.0,
+      "n_grn": 165,
+      "n_mn9": 2,
+      "mn9_body_ids": [
+        10331,
+        16949
+      ],
+      "matched_control": "165 random ORNs at 30.0 mV, seed 0",
+      "sugar_grn_drive": {
+        "mn9_spikes": [
+          1,
+          0
+        ],
+        "mn9_spikes_total": 1,
+        "mn9_rate_hz": 2.5,
+        "grn_rate_hz": 126.61,
+        "brain_spikes": 78475,
+        "neurons_firing": 9743
+      },
+      "no_drive": {
+        "mn9_spikes": [
+          0,
+          0
+        ],
+        "mn9_spikes_total": 0,
+        "mn9_rate_hz": 0.0,
+        "grn_rate_hz": 0.0,
+        "brain_spikes": 0,
+        "neurons_firing": 0
+      },
+      "matched_orn_control": {
+        "mn9_spikes": [
+          7,
+          0
+        ],
+        "mn9_spikes_total": 7,
+        "mn9_rate_hz": 17.5,
+        "grn_rate_hz": 0.0,
+        "brain_spikes": 85547,
+        "neurons_firing": 9644
+      },
+      "olfactory_control": {
+        "mn9_spikes": [
+          8,
+          0
+        ],
+        "mn9_spikes_total": 8,
+        "mn9_rate_hz": 20.0,
+        "grn_rate_hz": 0.0,
+        "brain_spikes": 94163,
+        "neurons_firing": 10131
+      },
+      "verdict": {
+        "mn9_responds_to_sugar": true,
+        "silent_without_drive": true,
+        "sugar_selective": false,
+        "summary": "sugar 1 spikes / no-drive 0 / matched-ORN 7 / 1800-ORN 8"
+      }
+    }
+  }
+}

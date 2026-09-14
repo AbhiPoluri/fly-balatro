@@ -1,0 +1,144 @@
+{
+  "calyx_rw1_kc": {
+    "n_episodes": 400,
+    "clear_rate": 0.3825,
+    "wins": 153,
+    "chips_mean": 930.1325,
+    "chips_median": 991.0,
+    "chips_max": 1632,
+    "episode_len_mean": 81.545,
+    "episode_len_median": 83.0,
+    "truncated_fraction": 0.0,
+    "rounds_reached_mean": 1.765,
+    "skip_blind_fraction": 0.0,
+    "total_steps": 32618,
+    "action_histogram_top10": {
+      "select_card[4]": 3460,
+      "select_card[1]": 3416,
+      "select_card[3]": 3391,
+      "play": 3388,
+      "select_card[0]": 3356,
+      "select_card[2]": 3321,
+      "select_card[5]": 2918,
+      "select_card[6]": 2766,
+      "discard": 2121,
+      "select_card[7]": 1963
+    },
+    "n_distinct_actions_used": 13,
+    "wall_seconds": 3145.3,
+    "cache_hit_rate": 0.8310442087191121,
+    "hand_evidence": {
+      "plays": 3388,
+      "discards": 2121,
+      "selects": 24591,
+      "plays_that_were_the_best_subset": 0.8164108618654073,
+      "selects_on_a_best_subset_slot": 0.547070066284413,
+      "played_hand_types": {
+        "High Card": 358,
+        "Pair": 428,
+        "Two Pair": 1129,
+        "Three of a Kind": 265,
+        "Straight": 381,
+        "Flush": 307,
+        "Full House": 490,
+        "Four of a Kind": 30
+      },
+      "played_hand_type_fractions": {
+        "High Card": 0.1057,
+        "Pair": 0.1263,
+        "Two Pair": 0.3332,
+        "Three of a Kind": 0.0782,
+        "Straight": 0.1125,
+        "Flush": 0.0906,
+        "Full House": 0.1446,
+        "Four of a Kind": 0.0089
+      },
+      "discarded_hand_types": {
+        "High Card": 2013,
+        "Pair": 104,
+        "Two Pair": 4
+      }
+    }
+  },
+  "calyx_rw1_dn": {
+    "n_episodes": 400,
+    "clear_rate": 0.0325,
+    "wins": 13,
+    "chips_mean": 511.115,
+    "chips_median": 474.0,
+    "chips_max": 1476,
+    "episode_len_mean": 65.51,
+    "episode_len_median": 65.0,
+    "truncated_fraction": 0.0,
+    "rounds_reached_mean": 0.965,
+    "skip_blind_fraction": 0.0,
+    "total_steps": 26204,
+    "action_histogram_top10": {
+      "select_card[1]": 3003,
+      "select_card[2]": 2958,
+      "select_card[0]": 2950,
+      "select_card[3]": 2850,
+      "select_card[4]": 2830,
+      "play": 2794,
+      "select_card[5]": 2371,
+      "select_card[6]": 2002,
+      "discard": 1572,
+      "select_card[7]": 1316
+    },
+    "n_distinct_actions_used": 13,
+    "wall_seconds": 151.7,
+    "cache_hit_rate": 0.9482521752404213,
+    "hand_evidence": {
+      "plays": 2794,
+      "discards": 1572,
+      "selects": 20280,
+      "plays_that_were_the_best_subset": 0.36721546170365066,
+      "selects_on_a_best_subset_slot": 0.5038954635108481,
+      "played_hand_types": {
+        "High Card": 605,
+        "Pair": 747,
+        "Two Pair": 847,
+        "Three of a Kind": 214,
+        "Straight": 137,
+        "Flush": 97,
+        "Full House": 136,
+        "Four of a Kind": 11
+      },
+      "played_hand_type_fractions": {
+        "High Card": 0.2165,
+        "Pair": 0.2674,
+        "Two Pair": 0.3031,
+        "Three of a Kind": 0.0766,
+        "Straight": 0.049,
+        "Flush": 0.0347,
+        "Full House": 0.0487,
+        "Four of a Kind": 0.0039
+      },
+      "discarded_hand_types": {
+        "High Card": 1464,
+        "Pair": 103,
+        "Two Pair": 2,
+        "Three of a Kind": 3
+      }
+    }
+  },
+  "_config": {
+    "variant": "homeo",
+    "condition": "rw1",
+    "episodes": 400,
+    "seed0": 100000,
+    "ante_end": 1,
+    "max_steps": 200,
+    "teacher": "v2",
+    "cache_cap": 6000,
+    "tuning_keys": [
+      "alpn_kc_scale",
+      "apl_scale",
+      "kc_bias_mv",
+      "kc_input_norm",
+      "kc_kc_scale",
+      "kc_vth_offset_mv",
+      "kc_vth_offsets"
+    ]
+  }
+}

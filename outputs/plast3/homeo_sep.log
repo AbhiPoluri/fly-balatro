@@ -1,0 +1,16 @@
+[ 0] k=4    active 0.0585 (238/odour)  r>0.5  182  r>0.3  292  in-band   74  silent 3464  flips 0.00  6s
+[ 1] k=4    active 0.0667 (271/odour)  r>0.5  108  r>0.3  296  in-band  220  silent 2831  flips 0.18  6s
+[ 2] k=3    active 0.0921 (374/odour)  r>0.5  143  r>0.3  450  in-band  364  silent 2352  flips 0.40  6s
+[ 3] k=3    active 0.0709 (288/odour)  r>0.5  143  r>0.3  332  in-band  437  silent 2541  flips 0.44  6s
+[ 4] k=2    active 0.0603 (245/odour)  r>0.5   43  r>0.3  211  in-band  506  silent 2510  flips 0.36  6s
+[ 5] k=2    active 0.0842 (342/odour)  r>0.5  132  r>0.3  371  in-band  505  silent 2264  flips 0.40  6s
+[ 6] k=1.5  active 0.0860 (350/odour)  r>0.5  131  r>0.3  364  in-band  506  silent 2221  flips 0.48  6s
+[ 7] k=1.5  active 0.0556 (226/odour)  r>0.5   26  r>0.3  139  in-band  578  silent 2384  flips 0.40  6s
+[ 8] k=1    active 0.1021 (415/odour)  r>0.5  135  r>0.3  519  in-band  625  silent 1960  flips 0.46  6s
+[ 9] k=1    active 0.0565 (230/odour)  r>0.5   83  r>0.3  128  in-band  689  silent 2326  flips 0.41  6s
+[10] k=0.75 active 0.1024 (416/odour)  r>0.5   41  r>0.3  465  in-band  760  silent 1724  flips 0.43  6s
+[11] k=0.5  active 0.0497 (202/odour)  r>0.5   26  r>0.3   53  in-band  755  silent 2283  flips 0.38  12s
+converged at iteration 11: frac(r>0.3) = 0.0130 (last update not applied)
+
+wrote /Users/abhipoluri/fly-balatro/outputs/plast3/kc_homeo_sep.json and /Users/abhipoluri/fly-balatro/outputs/plast3/tuned_config_sep.json
+final: active 0.0497 (202/odour), r>0.5 26, r>0.3 53, silent 2283, offsets -6.7..+19.9 mV

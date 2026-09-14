@@ -1,0 +1,89 @@
+{
+  "label": "9-way best hand type",
+  "n_hands": 200,
+  "n_patterns": 137,
+  "plast": {
+    "kc_active_frac": 0.052,
+    "kc_active_per_state": 211.5,
+    "kc_always_on": 188,
+    "kc_always_on_frac": 0.0463,
+    "kc_hand_type": {
+      "accuracy": 0.96,
+      "grouped": 0.94,
+      "n": 200,
+      "n_features": 630,
+      "n_groups": 137,
+      "permuted": 0.255
+    },
+    "kc_input_dependent": 552,
+    "kcbin_hand_type": {
+      "accuracy": 0.965,
+      "grouped": 0.96,
+      "n": 200,
+      "n_features": 552,
+      "n_groups": 137,
+      "permuted": 0.255
+    },
+    "mbon_hand_type": {
+      "accuracy": 0.635,
+      "grouped": 0.375,
+      "n": 200,
+      "n_features": 55,
+      "n_groups": 137,
+      "permuted": 0.19
+    },
+    "mbon_hz": 14.274,
+    "mbon_varying": 41,
+    "tuning": {
+      "alpn_kc_scale": 1.0,
+      "apl_kc_only": 1.0,
+      "apl_mbon_scale": 0.1,
+      "apl_scale": 2.0,
+      "kc_bias_mv": 0.0,
+      "kc_input_norm": 0.0,
+      "kc_kc_scale": 1.0,
+      "kc_vth_offset_mv": 0.0
+    }
+  },
+  "spec": {
+    "kc_active_frac": 0.0452,
+    "kc_active_per_state": 183.5,
+    "kc_always_on": 166,
+    "kc_always_on_frac": 0.0408,
+    "kc_hand_type": {
+      "accuracy": 0.97,
+      "grouped": 0.94,
+      "n": 200,
+      "n_features": 591,
+      "n_groups": 137,
+      "permuted": 0.235
+    },
+    "kc_input_dependent": 524,
+    "kcbin_hand_type": {
+      "accuracy": 0.97,
+      "grouped": 0.955,
+      "n": 200,
+      "n_features": 524,
+      "n_groups": 137,
+      "permuted": 0.235
+    },
+    "mbon_hand_type": {
+      "accuracy": 0.61,
+      "grouped": 0.375,
+      "n": 200,
+      "n_features": 41,
+      "n_groups": 137,
+      "permuted": 0.22
+    },
+    "mbon_hz": 8.637,
+    "mbon_varying": 33,
+    "tuning": {
+      "alpn_kc_scale": 1.0,
+      "apl_scale": 2.0,
+      "kc_bias_mv": 0.0,
+      "kc_input_norm": 0.0,
+      "kc_kc_scale": 1.0,
+      "kc_vth_offset_mv": 0.0
+    }
+  }
+}

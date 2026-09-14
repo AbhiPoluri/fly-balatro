@@ -1,0 +1,7 @@
+baselines:
+  always_play          clear 0.000 chips 519 joint var 0.0
+  always_discard       clear 0.400 chips 868 joint var 0.0
+  teacher_dig          clear 0.700 chips 1088 joint var 0.163436
+  bucket_ge1           clear 0.383 chips 833 joint var 0.1875
+  bucket_ge_lt1        clear 0.633 chips 1001 joint var 0.244898
+  bucket_ge_lt1_lt05   clear 0.500 chips 1000 joint var 0.154195

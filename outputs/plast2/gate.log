@@ -1,0 +1,139 @@
+conditioning panel: 200 hands from seeds 300000+
+
+== baseline_plast ==
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+   KC active 0.0538 (219/state), r>0.5 192 (0.0472), r>0.3 242 (0.0595), responsive 769
+   decode grouped 0.986 (plain 0.984, permuted 0.12)
+   MBON 14.09 Hz, drive -5.68..+10.15 Hz (13.93 quanta), reward-side 13.02 Hz, 3/16 silent
+   punish  dself -2.329 dother -2.462 specificity +0.133 (-6%)  dir_ok=True 7/8
+   reward  dself +9.195 dother +7.860 specificity +1.335 (15%)  dir_ok=True 8/8
+   verdict: (i)FAIL  (ii)PASS  (iii)PASS  (iv)PASS  (v)FAIL  ALL=FAIL
+
+== kc_homeostasis ==
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+   KC active 0.0436 (177/state), r>0.5 16 (0.0039), r>0.3 31 (0.0076), responsive 2457
+   decode grouped 0.996 (plain 0.998, permuted 0.134)
+   MBON 13.18 Hz, drive -5.91..+10.30 Hz (14.27 quanta), reward-side 11.72 Hz, 0/16 silent
+   punish  dself -1.051 dother +0.039 specificity -1.090 (104%)  dir_ok=True 7/8
+   reward  dself +4.659 dother +1.343 specificity +3.316 (71%)  dir_ok=True 8/8
+   verdict: (i)PASS  (ii)PASS  (iii)PASS  (iv)PASS  (v)PASS  ALL=PASS
+
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/gate.json in 302s

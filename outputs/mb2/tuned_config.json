@@ -1,0 +1,206 @@
+{
+  "tuning": {
+    "apl_scale": 2.0,
+    "alpn_kc_scale": 1.0,
+    "kc_vth_offset_mv": 0.0,
+    "kc_bias_mv": 0.0,
+    "kc_kc_scale": 1.0,
+    "kc_input_norm": 0.0
+  },
+  "drive": {
+    "mode": "tonic",
+    "tonic_mv": 30.0,
+    "poisson_hz": 100.0,
+    "poisson_kick_mv": 68.75
+  },
+  "encoding": {
+    "kind": "glomerular",
+    "n_features": 32,
+    "source": "flybalatro.features_v2 relay block (bits 0-31)",
+    "dropped": "the 283 v1 state bits are not encoded",
+    "map_class": "flybalatro.encode.GlomerularMap",
+    "assignment": [
+      {
+        "bit": 0,
+        "glomerulus": "ORN_VM7d",
+        "n_orn": 36
+      },
+      {
+        "bit": 1,
+        "glomerulus": "ORN_DA4m",
+        "n_orn": 35
+      },
+      {
+        "bit": 2,
+        "glomerulus": "ORN_DC3",
+        "n_orn": 35
+      },
+      {
+        "bit": 3,
+        "glomerulus": "ORN_DM5",
+        "n_orn": 35
+      },
+      {
+        "bit": 4,
+        "glomerulus": "ORN_DA3",
+        "n_orn": 34
+      },
+      {
+        "bit": 5,
+        "glomerulus": "ORN_VA4",
+        "n_orn": 34
+      },
+      {
+        "bit": 6,
+        "glomerulus": "ORN_VC3",
+        "n_orn": 34
+      },
+      {
+        "bit": 7,
+        "glomerulus": "ORN_VM5v",
+        "n_orn": 34
+      },
+      {
+        "bit": 8,
+        "glomerulus": "ORN_VM6v",
+        "n_orn": 34
+      },
+      {
+        "bit": 9,
+        "glomerulus": "ORN_V",
+        "n_orn": 55
+      },
+      {
+        "bit": 10,
+        "glomerulus": "ORN_DM2",
+        "n_orn": 54
+      },
+      {
+        "bit": 11,
+        "glomerulus": "ORN_DA2",
+        "n_orn": 48
+      },
+      {
+        "bit": 12,
+        "glomerulus": "ORN_VL2p",
+        "n_orn": 45
+      },
+      {
+        "bit": 13,
+        "glomerulus": "ORN_DL5",
+        "n_orn": 43
+      },
+      {
+        "bit": 14,
+        "glomerulus": "ORN_VM3",
+        "n_orn": 43
+      },
+      {
+        "bit": 15,
+        "glomerulus": "ORN_VM2",
+        "n_orn": 41
+      },
+      {
+        "bit": 16,
+        "glomerulus": "ORN_VC4",
+        "n_orn": 38
+      },
+      {
+        "bit": 17,
+        "glomerulus": "ORN_VL2a",
+        "n_orn": 98
+      },
+      {
+        "bit": 18,
+        "glomerulus": "ORN_VM5d",
+        "n_orn": 84
+      },
+      {
+        "bit": 19,
+        "glomerulus": "ORN_DL1",
+        "n_orn": 83
+      },
+      {
+        "bit": 20,
+        "glomerulus": "ORN_VA2",
+        "n_orn": 83
+      },
+      {
+        "bit": 21,
+        "glomerulus": "ORN_VL1",
+        "n_orn": 82
+      },
+      {
+        "bit": 22,
+        "glomerulus": "ORN_VM4",
+        "n_orn": 78
+      },
+      {
+        "bit": 23,
+        "glomerulus": "ORN_DM1",
+        "n_orn": 74
+      },
+      {
+        "bit": 24,
+        "glomerulus": "ORN_DM3",
+        "n_orn": 63
+      },
+      {
+        "bit": 25,
+        "glomerulus": "ORN_VA6",
+        "n_orn": 63
+      },
+      {
+        "bit": 26,
+        "glomerulus": "ORN_DL4",
+        "n_orn": 62
+      },
+      {
+        "bit": 27,
+        "glomerulus": "ORN_DM6",
+        "n_orn": 58
+      },
+      {
+        "bit": 28,
+        "glomerulus": "ORN_DA1",
+        "n_orn": 204
+      },
+      {
+        "bit": 29,
+        "glomerulus": "ORN_VA1d",
+        "n_orn": 132
+      },
+      {
+        "bit": 30,
+        "glomerulus": "ORN_VA1v",
+        "n_orn": 130
+      },
+      {
+        "bit": 31,
+        "glomerulus": "ORN_DL3",
+        "n_orn": 103
+      }
+    ]
+  },
+  "window_ms": 50.0,
+  "brain_seed": 1,
+  "v_jitter_mv": 6.9,
+  "label": "apl2_tonic_vth0",
+  "gate": {
+    "checks": {
+      "jaccard_ratio": false,
+      "always_on": true,
+      "kc_probe": true,
+      "mbon": true
+    },
+    "passed": false,
+    "n_passed": 3,
+    "criteria": {
+      "jaccard_ratio_max": 0.5,
+      "always_on_max": 0.05,
+      "probe_margin_min": 0.15,
+      "mbon_rate_max": 30.0,
+      "mbon_varying_min": 20
+    }
+  }
+}

@@ -1,0 +1,31 @@
+reward eta 0.02: per-pulse |d| N1=0.6192  N5=0.2391
+reward eta 0.05: per-pulse |d| N1=0.8531  N5=0.3439
+punish eta 0.05: per-pulse |d| N1=0.8333  N5=0.2740
+punish eta 0.07: per-pulse |d| N1=0.8663  N5=0.2701
+punish eta 0.1: per-pulse |d| N1=0.8630  N5=0.2793
+punish eta 0.14: per-pulse |d| N1=0.9585  N5=0.2899
+punish eta 0.2: per-pulse |d| N1=1.0639  N5=0.3531
+punish eta 0.28: per-pulse |d| N1=1.3999  N5=0.4012
+punish eta 0.4: per-pulse |d| N1=1.4163  N5=0.4697
+punish eta 0.6: per-pulse |d| N1=1.3636  N5=0.5863
+punish eta 0.9: per-pulse |d| N1=1.9664  N5=0.5428
+
+chosen: {
+  "0.02": {
+    "eta_reward": 0.02,
+    "eta_punish": 0.05,
+    "ratio": 2.5,
+    "how": "target 0.23913 at or below the grid minimum",
+    "matched_at_n_pulses": 5,
+    "n_odors": 23
+  },
+  "0.05": {
+    "eta_reward": 0.05,
+    "eta_punish": 0.1907,
+    "ratio": 3.8132,
+    "how": "log-log interpolation on the monotone envelope of the grid",
+    "matched_at_n_pulses": 5,
+    "n_odors": 23
+  }
+}
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json in 346s

@@ -1,0 +1,1721 @@
+{
+  "tag": "w100_d12_jit2",
+  "settings": {
+    "threshold": 5,
+    "window_ms": 100.0,
+    "drive_mv": 12.0,
+    "v_jitter_mv": 2.0,
+    "persistent": false,
+    "grouping": "random",
+    "seed": 0,
+    "dt_ms": 0.1,
+    "shuffle_seed": 1234,
+    "C_grid": [
+      0.003,
+      0.03,
+      0.3,
+      3.0,
+      30.0,
+      300.0
+    ],
+    "cv": "StratifiedKFold(5, shuffle=True, random_state=seed)",
+    "readout_transform": "log1p(spike_counts) -> StandardScaler -> LogisticRegression(L2)",
+    "feature_map": {
+      "n_features": 180,
+      "neurons_per_feature": 10,
+      "grouping": "random",
+      "seed": 0,
+      "drive_mv": 12.0,
+      "n_orn_available": 2639,
+      "n_driven_neurons": 1800,
+      "extended_with_sensory": false
+    },
+    "n_glomerular_channels": 144,
+    "machine": "arm64 python 3.11.3",
+    "sim_seconds": {
+      "real": 109.9,
+      "shuffled": 40.3
+    }
+  },
+  "dataset": {
+    "n_samples": 600,
+    "n_features": 180,
+    "active_frac": 0.2,
+    "seed": 7,
+    "label_A": {
+      "kind": "count of bits in a random 12-bit group >= k",
+      "group": [
+        12,
+        85,
+        156,
+        162,
+        129,
+        7,
+        20,
+        114,
+        87,
+        103,
+        121,
+        16
+      ],
+      "k": 3,
+      "positive_rate": 0.4067
+    },
+    "label_B": {
+      "kind": "random Gaussian-weighted linear threshold on 10 bits",
+      "group": [
+        143,
+        55,
+        145,
+        48,
+        6,
+        42,
+        83,
+        21,
+        141,
+        158
+      ],
+      "weights": [
+        0.07105249047166119,
+        -1.243857152530424,
+        -0.28764300724985203,
+        0.3951561072048455,
+        0.2671012582402145,
+        0.11192578072443338,
+        1.4743517624304825,
+        -2.278679693804983,
+        -0.22131236829445775,
+        -0.5051507871645625
+      ],
+      "threshold": -0.15025987782279654,
+      "positive_rate": 0.4967
+    },
+    "mean_bits_active": 35.87
+  },
+  "graph": {
+    "threshold": 5,
+    "w_syn": 0.275,
+    "cache_version": 2,
+    "edge_rows_total": 151856684,
+    "edge_rows_ge_threshold": 7622864,
+    "edges_dropped_by_threshold": 144233820,
+    "edges_both_endpoints_in_brain": 5195818,
+    "edges_dropped_endpoint_outside_brain": 2427046,
+    "edges_dropped_unknown_pre_sign": 49246,
+    "edges": 5146572,
+    "synapses_retained": 70855239,
+    "annotation_rows": 211577,
+    "dropped_no_superclass": 44877,
+    "dropped_vnc_superclass": 20429,
+    "dropped_glia": 11864,
+    "neurons": 146271,
+    "sign_tiers": {
+      "ground_truth": 75324,
+      "consensus_nt": 69035,
+      "celltype_predicted_nt": 299
+    },
+    "neurons_unknown_sign": 1613,
+    "build_seconds": 5.7,
+    "edges_csr": 5146572
+  },
+  "populations": {
+    "ORN": 2639,
+    "ALPN": 686,
+    "KC": 4064,
+    "MBON": 97,
+    "CX": 2950,
+    "DN": 1314
+  },
+  "glomerular_channels": [
+    "ORN_DA1|L",
+    "ORN_DA1|R",
+    "ORN_DA1|unknown",
+    "ORN_DA2|L",
+    "ORN_DA2|R",
+    "ORN_DA2|unknown",
+    "ORN_DA3|L",
+    "ORN_DA3|R",
+    "ORN_DA3|unknown",
+    "ORN_DA4l|L",
+    "ORN_DA4l|R",
+    "ORN_DA4l|unknown",
+    "ORN_DA4m|L",
+    "ORN_DA4m|R",
+    "ORN_DA4m|unknown",
+    "ORN_DC1|L",
+    "ORN_DC1|R",
+    "ORN_DC2|L",
+    "ORN_DC2|R",
+    "ORN_DC3|L",
+    "ORN_DC3|R",
+    "ORN_DC3|unknown",
+    "ORN_DC4|L",
+    "ORN_DC4|R",
+    "ORN_DL1|L",
+    "ORN_DL1|R",
+    "ORN_DL1|unknown",
+    "ORN_DL2d|L",
+    "ORN_DL2d|R",
+    "ORN_DL2v|L",
+    "ORN_DL2v|R",
+    "ORN_DL3|L",
+    "ORN_DL3|R",
+    "ORN_DL3|unknown",
+    "ORN_DL4|L",
+    "ORN_DL4|R",
+    "ORN_DL4|unknown",
+    "ORN_DL5|L",
+    "ORN_DL5|R",
+    "ORN_DL5|unknown",
+    "ORN_DM1|L",
+    "ORN_DM1|R",
+    "ORN_DM2|L",
+    "ORN_DM2|R",
+    "ORN_DM2|unknown",
+    "ORN_DM3|L",
+    "ORN_DM3|R",
+    "ORN_DM3|unknown",
+    "ORN_DM4|L",
+    "ORN_DM4|R",
+    "ORN_DM5|L",
+    "ORN_DM5|R",
+    "ORN_DM5|unknown",
+    "ORN_DM6|L",
+    "ORN_DM6|R",
+    "ORN_DM6|unknown",
+    "ORN_DP1l|L",
+    "ORN_DP1l|R",
+    "ORN_DP1l|unknown",
+    "ORN_DP1m|L",
+    "ORN_DP1m|R",
+    "ORN_D|L",
+    "ORN_D|R",
+    "ORN_VA1d|L",
+    "ORN_VA1d|R",
+    "ORN_VA1d|unknown",
+    "ORN_VA1v|L",
+    "ORN_VA1v|R",
+    "ORN_VA1v|unknown",
+    "ORN_VA2|L",
+    "ORN_VA2|R",
+    "ORN_VA2|unknown",
+    "ORN_VA3|L",
+    "ORN_VA3|R",
+    "ORN_VA3|unknown",
+    "ORN_VA4|L",
+    "ORN_VA4|R",
+    "ORN_VA5|L",
+    "ORN_VA5|R",
+    "ORN_VA5|unknown",
+    "ORN_VA6|L",
+    "ORN_VA6|R",
+    "ORN_VA6|unknown",
+    "ORN_VA7l|L",
+    "ORN_VA7l|R",
+    "ORN_VA7l|unknown",
+    "ORN_VA7m|L",
+    "ORN_VA7m|R",
+    "ORN_VA7m|unknown",
+    "ORN_VC1|L",
+    "ORN_VC1|R",
+    "ORN_VC1|unknown",
+    "ORN_VC2|L",
+    "ORN_VC2|R",
+    "ORN_VC3|L",
+    "ORN_VC3|R",
+    "ORN_VC3|unknown",
+    "ORN_VC4|L",
+    "ORN_VC4|R",
+    "ORN_VC4|unknown",
+    "ORN_VC5|L",
+    "ORN_VC5|R",
+    "ORN_VL1|L",
+    "ORN_VL1|R",
+    "ORN_VL2a|L",
+    "ORN_VL2a|R",
+    "ORN_VL2a|unknown",
+    "ORN_VL2p|L",
+    "ORN_VL2p|R",
+    "ORN_VL2p|unknown",
+    "ORN_VM1|L",
+    "ORN_VM1|R",
+    "ORN_VM1|unknown",
+    "ORN_VM2|L",
+    "ORN_VM2|R",
+    "ORN_VM2|unknown",
+    "ORN_VM3|L",
+    "ORN_VM3|R",
+    "ORN_VM3|unknown",
+    "ORN_VM4|L",
+    "ORN_VM4|R",
+    "ORN_VM4|unknown",
+    "ORN_VM5d|L",
+    "ORN_VM5d|R",
+    "ORN_VM5d|unknown",
+    "ORN_VM5v|L",
+    "ORN_VM5v|R",
+    "ORN_VM6l|L",
+    "ORN_VM6l|R",
+    "ORN_VM6m|L",
+    "ORN_VM6m|R",
+    "ORN_VM6m|unknown",
+    "ORN_VM6v|L",
+    "ORN_VM6v|R",
+    "ORN_VM6v|unknown",
+    "ORN_VM7d|L",
+    "ORN_VM7d|R",
+    "ORN_VM7v|L",
+    "ORN_VM7v|R",
+    "ORN_V|L",
+    "ORN_V|R",
+    "|L",
+    "|R",
+    "|unknown"
+  ],
+  "firing": {
+    "real": {
+      "ORN": {
+        "population": 2639,
+        "ever_firing": 1802,
+        "fraction_ever_firing": 0.6828,
+        "nonzero_variance": 1802,
+        "fraction_nonzero_variance": 0.6828,
+        "mean_firing_per_sample": 363.1,
+        "mean_total_spikes_per_sample": 859.2
+      },
+      "ALPN": {
+        "population": 686,
+        "ever_firing": 539,
+        "fraction_ever_firing": 0.7857,
+        "nonzero_variance": 530,
+        "fraction_nonzero_variance": 0.7726,
+        "mean_firing_per_sample": 484.2,
+        "mean_total_spikes_per_sample": 4099.7
+      },
+      "KC": {
+        "population": 4064,
+        "ever_firing": 1681,
+        "fraction_ever_firing": 0.4136,
+        "nonzero_variance": 1680,
+        "fraction_nonzero_variance": 0.4134,
+        "mean_firing_per_sample": 1364.1,
+        "mean_total_spikes_per_sample": 4321.0
+      },
+      "MBON": {
+        "population": 97,
+        "ever_firing": 70,
+        "fraction_ever_firing": 0.7216,
+        "nonzero_variance": 70,
+        "fraction_nonzero_variance": 0.7216,
+        "mean_firing_per_sample": 64.3,
+        "mean_total_spikes_per_sample": 468.0
+      },
+      "CX": {
+        "population": 2950,
+        "ever_firing": 867,
+        "fraction_ever_firing": 0.2939,
+        "nonzero_variance": 699,
+        "fraction_nonzero_variance": 0.2369,
+        "mean_firing_per_sample": 680.0,
+        "mean_total_spikes_per_sample": 1012.0
+      },
+      "DN": {
+        "population": 1314,
+        "ever_firing": 464,
+        "fraction_ever_firing": 0.3531,
+        "nonzero_variance": 462,
+        "fraction_nonzero_variance": 0.3516,
+        "mean_firing_per_sample": 243.1,
+        "mean_total_spikes_per_sample": 623.0
+      }
+    },
+    "shuffled": {
+      "ORN": {
+        "population": 2639,
+        "ever_firing": 1806,
+        "fraction_ever_firing": 0.6844,
+        "nonzero_variance": 1806,
+        "fraction_nonzero_variance": 0.6844,
+        "mean_firing_per_sample": 359.4,
+        "mean_total_spikes_per_sample": 1790.2
+      },
+      "ALPN": {
+        "population": 686,
+        "ever_firing": 39,
+        "fraction_ever_firing": 0.0569,
+        "nonzero_variance": 39,
+        "fraction_nonzero_variance": 0.0569,
+        "mean_firing_per_sample": 3.1,
+        "mean_total_spikes_per_sample": 5.7
+      },
+      "KC": {
+        "population": 4064,
+        "ever_firing": 50,
+        "fraction_ever_firing": 0.0123,
+        "nonzero_variance": 50,
+        "fraction_nonzero_variance": 0.0123,
+        "mean_firing_per_sample": 3.5,
+        "mean_total_spikes_per_sample": 6.0
+      },
+      "MBON": {
+        "population": 97,
+        "ever_firing": 36,
+        "fraction_ever_firing": 0.3711,
+        "nonzero_variance": 36,
+        "fraction_nonzero_variance": 0.3711,
+        "mean_firing_per_sample": 4.1,
+        "mean_total_spikes_per_sample": 7.9
+      },
+      "CX": {
+        "population": 2950,
+        "ever_firing": 120,
+        "fraction_ever_firing": 0.0407,
+        "nonzero_variance": 120,
+        "fraction_nonzero_variance": 0.0407,
+        "mean_firing_per_sample": 9.3,
+        "mean_total_spikes_per_sample": 18.9
+      },
+      "DN": {
+        "population": 1314,
+        "ever_firing": 163,
+        "fraction_ever_firing": 0.124,
+        "nonzero_variance": 163,
+        "fraction_nonzero_variance": 0.124,
+        "mean_firing_per_sample": 10.7,
+        "mean_total_spikes_per_sample": 18.7
+      }
+    }
+  },
+  "results": {
+    "A": {
+      "majority_class_rate": 0.5933,
+      "conditions": {
+        "raw_bits": {
+          "best_acc": 0.9,
+          "best_std": 0.0337,
+          "best_C": 30.0,
+          "n_used_features": 180,
+          "n_total_features": 180,
+          "per_C": {
+            "0.003": {
+              "mean": 0.7683,
+              "std": 0.0133
+            },
+            "0.03": {
+              "mean": 0.8633,
+              "std": 0.0194
+            },
+            "0.3": {
+              "mean": 0.8883,
+              "std": 0.0327
+            },
+            "3.0": {
+              "mean": 0.8967,
+              "std": 0.0382
+            },
+            "30.0": {
+              "mean": 0.9,
+              "std": 0.0337
+            },
+            "300.0": {
+              "mean": 0.9,
+              "std": 0.0376
+            }
+          }
+        },
+        "glomerular_ceiling": {
+          "best_acc": 0.775,
+          "best_std": 0.0412,
+          "best_C": 0.3,
+          "n_used_features": 144,
+          "n_total_features": 144,
+          "per_C": {
+            "0.003": {
+              "mean": 0.675,
+              "std": 0.0274
+            },
+            "0.03": {
+              "mean": 0.7367,
+              "std": 0.018
+            },
+            "0.3": {
+              "mean": 0.775,
+              "std": 0.0412
+            },
+            "3.0": {
+              "mean": 0.7483,
+              "std": 0.0207
+            },
+            "30.0": {
+              "mean": 0.7267,
+              "std": 0.0186
+            },
+            "300.0": {
+              "mean": 0.7283,
+              "std": 0.0155
+            }
+          }
+        },
+        "real:ORN": {
+          "best_acc": 0.895,
+          "best_std": 0.0336,
+          "best_C": 3.0,
+          "n_used_features": 1802,
+          "n_total_features": 2639,
+          "per_C": {
+            "0.003": {
+              "mean": 0.8633,
+              "std": 0.0194
+            },
+            "0.03": {
+              "mean": 0.885,
+              "std": 0.0322
+            },
+            "0.3": {
+              "mean": 0.8933,
+              "std": 0.0378
+            },
+            "3.0": {
+              "mean": 0.895,
+              "std": 0.0336
+            },
+            "30.0": {
+              "mean": 0.8883,
+              "std": 0.0215
+            },
+            "300.0": {
+              "mean": 0.8867,
+              "std": 0.0187
+            }
+          }
+        },
+        "real:ALPN": {
+          "best_acc": 0.6283,
+          "best_std": 0.0256,
+          "best_C": 0.003,
+          "n_used_features": 539,
+          "n_total_features": 686,
+          "per_C": {
+            "0.003": {
+              "mean": 0.6283,
+              "std": 0.0256
+            },
+            "0.03": {
+              "mean": 0.5983,
+              "std": 0.0266
+            },
+            "0.3": {
+              "mean": 0.59,
+              "std": 0.0244
+            },
+            "3.0": {
+              "mean": 0.5817,
+              "std": 0.0291
+            },
+            "30.0": {
+              "mean": 0.5817,
+              "std": 0.0232
+            },
+            "300.0": {
+              "mean": 0.575,
+              "std": 0.0247
+            }
+          }
+        },
+        "real:KC": {
+          "best_acc": 0.5817,
+          "best_std": 0.0347,
+          "best_C": 0.003,
+          "n_used_features": 1681,
+          "n_total_features": 4064,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5817,
+              "std": 0.0347
+            },
+            "0.03": {
+              "mean": 0.565,
+              "std": 0.037
+            },
+            "0.3": {
+              "mean": 0.5517,
+              "std": 0.0207
+            },
+            "3.0": {
+              "mean": 0.5483,
+              "std": 0.0193
+            },
+            "30.0": {
+              "mean": 0.5433,
+              "std": 0.0314
+            },
+            "300.0": {
+              "mean": 0.5517,
+              "std": 0.0448
+            }
+          }
+        },
+        "real:MBON": {
+          "best_acc": 0.5767,
+          "best_std": 0.0097,
+          "best_C": 0.003,
+          "n_used_features": 70,
+          "n_total_features": 97,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5767,
+              "std": 0.0097
+            },
+            "0.03": {
+              "mean": 0.5567,
+              "std": 0.0461
+            },
+            "0.3": {
+              "mean": 0.5583,
+              "std": 0.0217
+            },
+            "3.0": {
+              "mean": 0.5683,
+              "std": 0.0238
+            },
+            "30.0": {
+              "mean": 0.5683,
+              "std": 0.0238
+            },
+            "300.0": {
+              "mean": 0.5683,
+              "std": 0.0238
+            }
+          }
+        },
+        "real:CX": {
+          "best_acc": 0.5767,
+          "best_std": 0.0536,
+          "best_C": 0.003,
+          "n_used_features": 867,
+          "n_total_features": 2950,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5767,
+              "std": 0.0536
+            },
+            "0.03": {
+              "mean": 0.54,
+              "std": 0.0748
+            },
+            "0.3": {
+              "mean": 0.5283,
+              "std": 0.0712
+            },
+            "3.0": {
+              "mean": 0.5283,
+              "std": 0.0581
+            },
+            "30.0": {
+              "mean": 0.5167,
+              "std": 0.0717
+            },
+            "300.0": {
+              "mean": 0.5333,
+              "std": 0.0594
+            }
+          }
+        },
+        "real:DN": {
+          "best_acc": 0.6067,
+          "best_std": 0.0232,
+          "best_C": 0.003,
+          "n_used_features": 464,
+          "n_total_features": 1314,
+          "per_C": {
+            "0.003": {
+              "mean": 0.6067,
+              "std": 0.0232
+            },
+            "0.03": {
+              "mean": 0.5867,
+              "std": 0.0529
+            },
+            "0.3": {
+              "mean": 0.5433,
+              "std": 0.0585
+            },
+            "3.0": {
+              "mean": 0.535,
+              "std": 0.0539
+            },
+            "30.0": {
+              "mean": 0.535,
+              "std": 0.0581
+            },
+            "300.0": {
+              "mean": 0.555,
+              "std": 0.0609
+            }
+          }
+        },
+        "real:MBON+CX": {
+          "best_acc": 0.5633,
+          "best_std": 0.0356,
+          "best_C": 0.003,
+          "n_used_features": 937,
+          "n_total_features": 3047,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5633,
+              "std": 0.0356
+            },
+            "0.03": {
+              "mean": 0.5567,
+              "std": 0.041
+            },
+            "0.3": {
+              "mean": 0.5433,
+              "std": 0.0439
+            },
+            "3.0": {
+              "mean": 0.5367,
+              "std": 0.0327
+            },
+            "30.0": {
+              "mean": 0.5317,
+              "std": 0.037
+            },
+            "300.0": {
+              "mean": 0.5483,
+              "std": 0.0226
+            }
+          }
+        },
+        "real:DN+MBON+CX": {
+          "best_acc": 0.5817,
+          "best_std": 0.0455,
+          "best_C": 0.003,
+          "n_used_features": 1401,
+          "n_total_features": 4361,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5817,
+              "std": 0.0455
+            },
+            "0.03": {
+              "mean": 0.55,
+              "std": 0.0431
+            },
+            "0.3": {
+              "mean": 0.5483,
+              "std": 0.0322
+            },
+            "3.0": {
+              "mean": 0.5533,
+              "std": 0.0327
+            },
+            "30.0": {
+              "mean": 0.5383,
+              "std": 0.0488
+            },
+            "300.0": {
+              "mean": 0.54,
+              "std": 0.0487
+            }
+          }
+        },
+        "shuffled:ORN": {
+          "best_acc": 0.9,
+          "best_std": 0.038,
+          "best_C": 3.0,
+          "n_used_features": 1806,
+          "n_total_features": 2639,
+          "per_C": {
+            "0.003": {
+              "mean": 0.8633,
+              "std": 0.0194
+            },
+            "0.03": {
+              "mean": 0.8883,
+              "std": 0.04
+            },
+            "0.3": {
+              "mean": 0.895,
+              "std": 0.0397
+            },
+            "3.0": {
+              "mean": 0.9,
+              "std": 0.038
+            },
+            "30.0": {
+              "mean": 0.8867,
+              "std": 0.0208
+            },
+            "300.0": {
+              "mean": 0.8867,
+              "std": 0.0239
+            }
+          }
+        },
+        "shuffled:ALPN": {
+          "best_acc": 0.625,
+          "best_std": 0.0337,
+          "best_C": 0.03,
+          "n_used_features": 39,
+          "n_total_features": 686,
+          "per_C": {
+            "0.003": {
+              "mean": 0.6,
+              "std": 0.0139
+            },
+            "0.03": {
+              "mean": 0.625,
+              "std": 0.0337
+            },
+            "0.3": {
+              "mean": 0.62,
+              "std": 0.0446
+            },
+            "3.0": {
+              "mean": 0.62,
+              "std": 0.041
+            },
+            "30.0": {
+              "mean": 0.62,
+              "std": 0.041
+            },
+            "300.0": {
+              "mean": 0.62,
+              "std": 0.041
+            }
+          }
+        },
+        "shuffled:KC": {
+          "best_acc": 0.6467,
+          "best_std": 0.0187,
+          "best_C": 0.03,
+          "n_used_features": 50,
+          "n_total_features": 4064,
+          "per_C": {
+            "0.003": {
+              "mean": 0.6083,
+              "std": 0.0139
+            },
+            "0.03": {
+              "mean": 0.6467,
+              "std": 0.0187
+            },
+            "0.3": {
+              "mean": 0.6233,
+              "std": 0.0266
+            },
+            "3.0": {
+              "mean": 0.6233,
+              "std": 0.0335
+            },
+            "30.0": {
+              "mean": 0.6233,
+              "std": 0.0335
+            },
+            "300.0": {
+              "mean": 0.6217,
+              "std": 0.0306
+            }
+          }
+        },
+        "shuffled:MBON": {
+          "best_acc": 0.655,
+          "best_std": 0.0282,
+          "best_C": 0.03,
+          "n_used_features": 36,
+          "n_total_features": 97,
+          "per_C": {
+            "0.003": {
+              "mean": 0.6067,
+              "std": 0.0232
+            },
+            "0.03": {
+              "mean": 0.655,
+              "std": 0.0282
+            },
+            "0.3": {
+              "mean": 0.64,
+              "std": 0.0291
+            },
+            "3.0": {
+              "mean": 0.6383,
+              "std": 0.0344
+            },
+            "30.0": {
+              "mean": 0.64,
+              "std": 0.0331
+            },
+            "300.0": {
+              "mean": 0.64,
+              "std": 0.0331
+            }
+          }
+        },
+        "shuffled:CX": {
+          "best_acc": 0.575,
+          "best_std": 0.0158,
+          "best_C": 0.003,
+          "n_used_features": 120,
+          "n_total_features": 2950,
+          "per_C": {
+            "0.003": {
+              "mean": 0.575,
+              "std": 0.0158
+            },
+            "0.03": {
+              "mean": 0.5483,
+              "std": 0.0399
+            },
+            "0.3": {
+              "mean": 0.5283,
+              "std": 0.044
+            },
+            "3.0": {
+              "mean": 0.5183,
+              "std": 0.0498
+            },
+            "30.0": {
+              "mean": 0.52,
+              "std": 0.0529
+            },
+            "300.0": {
+              "mean": 0.5133,
+              "std": 0.043
+            }
+          }
+        },
+        "shuffled:DN": {
+          "best_acc": 0.62,
+          "best_std": 0.0172,
+          "best_C": 0.003,
+          "n_used_features": 163,
+          "n_total_features": 1314,
+          "per_C": {
+            "0.003": {
+              "mean": 0.62,
+              "std": 0.0172
+            },
+            "0.03": {
+              "mean": 0.6083,
+              "std": 0.0342
+            },
+            "0.3": {
+              "mean": 0.6,
+              "std": 0.0535
+            },
+            "3.0": {
+              "mean": 0.5767,
+              "std": 0.047
+            },
+            "30.0": {
+              "mean": 0.5817,
+              "std": 0.037
+            },
+            "300.0": {
+              "mean": 0.5767,
+              "std": 0.0426
+            }
+          }
+        },
+        "shuffled:MBON+CX": {
+          "best_acc": 0.6133,
+          "best_std": 0.0272,
+          "best_C": 0.003,
+          "n_used_features": 156,
+          "n_total_features": 3047,
+          "per_C": {
+            "0.003": {
+              "mean": 0.6133,
+              "std": 0.0272
+            },
+            "0.03": {
+              "mean": 0.5933,
+              "std": 0.0266
+            },
+            "0.3": {
+              "mean": 0.5783,
+              "std": 0.0531
+            },
+            "3.0": {
+              "mean": 0.5667,
+              "std": 0.0575
+            },
+            "30.0": {
+              "mean": 0.565,
+              "std": 0.0653
+            },
+            "300.0": {
+              "mean": 0.5617,
+              "std": 0.0627
+            }
+          }
+        },
+        "shuffled:DN+MBON+CX": {
+          "best_acc": 0.63,
+          "best_std": 0.0155,
+          "best_C": 0.003,
+          "n_used_features": 319,
+          "n_total_features": 4361,
+          "per_C": {
+            "0.003": {
+              "mean": 0.63,
+              "std": 0.0155
+            },
+            "0.03": {
+              "mean": 0.6283,
+              "std": 0.0364
+            },
+            "0.3": {
+              "mean": 0.6017,
+              "std": 0.0551
+            },
+            "3.0": {
+              "mean": 0.555,
+              "std": 0.0609
+            },
+            "30.0": {
+              "mean": 0.5367,
+              "std": 0.0686
+            },
+            "300.0": {
+              "mean": 0.5483,
+              "std": 0.0636
+            }
+          }
+        },
+        "permuted_label:real:DN": {
+          "best_acc": 0.585,
+          "best_std": 0.0097,
+          "best_C": 0.003,
+          "n_used_features": 464,
+          "n_total_features": 1314,
+          "per_C": {
+            "0.003": {
+              "mean": 0.585,
+              "std": 0.0097
+            },
+            "0.03": {
+              "mean": 0.5217,
+              "std": 0.0227
+            },
+            "0.3": {
+              "mean": 0.5167,
+              "std": 0.0303
+            },
+            "3.0": {
+              "mean": 0.5167,
+              "std": 0.0425
+            },
+            "30.0": {
+              "mean": 0.5183,
+              "std": 0.0314
+            },
+            "300.0": {
+              "mean": 0.5217,
+              "std": 0.0367
+            }
+          }
+        },
+        "permuted_label:raw_bits": {
+          "best_acc": 0.555,
+          "best_std": 0.036,
+          "best_C": 0.003,
+          "n_used_features": 180,
+          "n_total_features": 180,
+          "per_C": {
+            "0.003": {
+              "mean": 0.555,
+              "std": 0.036
+            },
+            "0.03": {
+              "mean": 0.51,
+              "std": 0.0406
+            },
+            "0.3": {
+              "mean": 0.48,
+              "std": 0.0574
+            },
+            "3.0": {
+              "mean": 0.47,
+              "std": 0.0552
+            },
+            "30.0": {
+              "mean": 0.4717,
+              "std": 0.0574
+            },
+            "300.0": {
+              "mean": 0.4717,
+              "std": 0.0574
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "majority_class_rate": 0.5033,
+      "conditions": {
+        "raw_bits": {
+          "best_acc": 0.8533,
+          "best_std": 0.0306,
+          "best_C": 3.0,
+          "n_used_features": 180,
+          "n_total_features": 180,
+          "per_C": {
+            "0.003": {
+              "mean": 0.8067,
+              "std": 0.0436
+            },
+            "0.03": {
+              "mean": 0.8417,
+              "std": 0.0354
+            },
+            "0.3": {
+              "mean": 0.8517,
+              "std": 0.0413
+            },
+            "3.0": {
+              "mean": 0.8533,
+              "std": 0.0306
+            },
+            "30.0": {
+              "mean": 0.8517,
+              "std": 0.0331
+            },
+            "300.0": {
+              "mean": 0.8417,
+              "std": 0.0346
+            }
+          }
+        },
+        "glomerular_ceiling": {
+          "best_acc": 0.745,
+          "best_std": 0.0427,
+          "best_C": 0.03,
+          "n_used_features": 144,
+          "n_total_features": 144,
+          "per_C": {
+            "0.003": {
+              "mean": 0.73,
+              "std": 0.0542
+            },
+            "0.03": {
+              "mean": 0.745,
+              "std": 0.0427
+            },
+            "0.3": {
+              "mean": 0.74,
+              "std": 0.0458
+            },
+            "3.0": {
+              "mean": 0.73,
+              "std": 0.0382
+            },
+            "30.0": {
+              "mean": 0.7233,
+              "std": 0.042
+            },
+            "300.0": {
+              "mean": 0.7133,
+              "std": 0.0464
+            }
+          }
+        },
+        "real:ORN": {
+          "best_acc": 0.8517,
+          "best_std": 0.0442,
+          "best_C": 0.03,
+          "n_used_features": 1802,
+          "n_total_features": 2639,
+          "per_C": {
+            "0.003": {
+              "mean": 0.84,
+              "std": 0.0367
+            },
+            "0.03": {
+              "mean": 0.8517,
+              "std": 0.0442
+            },
+            "0.3": {
+              "mean": 0.8483,
+              "std": 0.0347
+            },
+            "3.0": {
+              "mean": 0.8433,
+              "std": 0.0309
+            },
+            "30.0": {
+              "mean": 0.8317,
+              "std": 0.0331
+            },
+            "300.0": {
+              "mean": 0.825,
+              "std": 0.035
+            }
+          }
+        },
+        "real:ALPN": {
+          "best_acc": 0.605,
+          "best_std": 0.0507,
+          "best_C": 0.003,
+          "n_used_features": 539,
+          "n_total_features": 686,
+          "per_C": {
+            "0.003": {
+              "mean": 0.605,
+              "std": 0.0507
+            },
+            "0.03": {
+              "mean": 0.5833,
+              "std": 0.0738
+            },
+            "0.3": {
+              "mean": 0.5817,
+              "std": 0.0536
+            },
+            "3.0": {
+              "mean": 0.5683,
+              "std": 0.0556
+            },
+            "30.0": {
+              "mean": 0.5717,
+              "std": 0.0602
+            },
+            "300.0": {
+              "mean": 0.57,
+              "std": 0.0625
+            }
+          }
+        },
+        "real:KC": {
+          "best_acc": 0.5267,
+          "best_std": 0.047,
+          "best_C": 30.0,
+          "n_used_features": 1681,
+          "n_total_features": 4064,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5233,
+              "std": 0.049
+            },
+            "0.03": {
+              "mean": 0.515,
+              "std": 0.042
+            },
+            "0.3": {
+              "mean": 0.5167,
+              "std": 0.0462
+            },
+            "3.0": {
+              "mean": 0.5117,
+              "std": 0.0455
+            },
+            "30.0": {
+              "mean": 0.5267,
+              "std": 0.047
+            },
+            "300.0": {
+              "mean": 0.5233,
+              "std": 0.0476
+            }
+          }
+        },
+        "real:MBON": {
+          "best_acc": 0.5083,
+          "best_std": 0.0418,
+          "best_C": 0.003,
+          "n_used_features": 70,
+          "n_total_features": 97,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5083,
+              "std": 0.0418
+            },
+            "0.03": {
+              "mean": 0.5067,
+              "std": 0.0097
+            },
+            "0.3": {
+              "mean": 0.4967,
+              "std": 0.0155
+            },
+            "3.0": {
+              "mean": 0.4967,
+              "std": 0.0215
+            },
+            "30.0": {
+              "mean": 0.4983,
+              "std": 0.0193
+            },
+            "300.0": {
+              "mean": 0.4983,
+              "std": 0.0193
+            }
+          }
+        },
+        "real:CX": {
+          "best_acc": 0.49,
+          "best_std": 0.0178,
+          "best_C": 0.003,
+          "n_used_features": 867,
+          "n_total_features": 2950,
+          "per_C": {
+            "0.003": {
+              "mean": 0.49,
+              "std": 0.0178
+            },
+            "0.03": {
+              "mean": 0.48,
+              "std": 0.0125
+            },
+            "0.3": {
+              "mean": 0.485,
+              "std": 0.0133
+            },
+            "3.0": {
+              "mean": 0.4883,
+              "std": 0.0239
+            },
+            "30.0": {
+              "mean": 0.4817,
+              "std": 0.0232
+            },
+            "300.0": {
+              "mean": 0.4783,
+              "std": 0.0208
+            }
+          }
+        },
+        "real:DN": {
+          "best_acc": 0.5683,
+          "best_std": 0.0481,
+          "best_C": 0.03,
+          "n_used_features": 464,
+          "n_total_features": 1314,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5467,
+              "std": 0.0513
+            },
+            "0.03": {
+              "mean": 0.5683,
+              "std": 0.0481
+            },
+            "0.3": {
+              "mean": 0.5517,
+              "std": 0.0413
+            },
+            "3.0": {
+              "mean": 0.5433,
+              "std": 0.0501
+            },
+            "30.0": {
+              "mean": 0.5317,
+              "std": 0.0493
+            },
+            "300.0": {
+              "mean": 0.545,
+              "std": 0.034
+            }
+          }
+        },
+        "real:MBON+CX": {
+          "best_acc": 0.4883,
+          "best_std": 0.0227,
+          "best_C": 0.3,
+          "n_used_features": 937,
+          "n_total_features": 3047,
+          "per_C": {
+            "0.003": {
+              "mean": 0.4817,
+              "std": 0.0314
+            },
+            "0.03": {
+              "mean": 0.485,
+              "std": 0.0162
+            },
+            "0.3": {
+              "mean": 0.4883,
+              "std": 0.0227
+            },
+            "3.0": {
+              "mean": 0.4817,
+              "std": 0.0318
+            },
+            "30.0": {
+              "mean": 0.4783,
+              "std": 0.0272
+            },
+            "300.0": {
+              "mean": 0.455,
+              "std": 0.0314
+            }
+          }
+        },
+        "real:DN+MBON+CX": {
+          "best_acc": 0.54,
+          "best_std": 0.0249,
+          "best_C": 0.003,
+          "n_used_features": 1401,
+          "n_total_features": 4361,
+          "per_C": {
+            "0.003": {
+              "mean": 0.54,
+              "std": 0.0249
+            },
+            "0.03": {
+              "mean": 0.53,
+              "std": 0.0282
+            },
+            "0.3": {
+              "mean": 0.5317,
+              "std": 0.0232
+            },
+            "3.0": {
+              "mean": 0.52,
+              "std": 0.0239
+            },
+            "30.0": {
+              "mean": 0.505,
+              "std": 0.0301
+            },
+            "300.0": {
+              "mean": 0.505,
+              "std": 0.0277
+            }
+          }
+        },
+        "shuffled:ORN": {
+          "best_acc": 0.855,
+          "best_std": 0.0443,
+          "best_C": 0.03,
+          "n_used_features": 1806,
+          "n_total_features": 2639,
+          "per_C": {
+            "0.003": {
+              "mean": 0.8367,
+              "std": 0.036
+            },
+            "0.03": {
+              "mean": 0.855,
+              "std": 0.0443
+            },
+            "0.3": {
+              "mean": 0.8483,
+              "std": 0.0314
+            },
+            "3.0": {
+              "mean": 0.8317,
+              "std": 0.0416
+            },
+            "30.0": {
+              "mean": 0.83,
+              "std": 0.0301
+            },
+            "300.0": {
+              "mean": 0.8267,
+              "std": 0.0295
+            }
+          }
+        },
+        "shuffled:ALPN": {
+          "best_acc": 0.53,
+          "best_std": 0.0277,
+          "best_C": 0.03,
+          "n_used_features": 39,
+          "n_total_features": 686,
+          "per_C": {
+            "0.003": {
+              "mean": 0.515,
+              "std": 0.0286
+            },
+            "0.03": {
+              "mean": 0.53,
+              "std": 0.0277
+            },
+            "0.3": {
+              "mean": 0.5217,
+              "std": 0.0113
+            },
+            "3.0": {
+              "mean": 0.5233,
+              "std": 0.0178
+            },
+            "30.0": {
+              "mean": 0.5233,
+              "std": 0.0178
+            },
+            "300.0": {
+              "mean": 0.5233,
+              "std": 0.0178
+            }
+          }
+        },
+        "shuffled:KC": {
+          "best_acc": 0.515,
+          "best_std": 0.0536,
+          "best_C": 3.0,
+          "n_used_features": 50,
+          "n_total_features": 4064,
+          "per_C": {
+            "0.003": {
+              "mean": 0.49,
+              "std": 0.0702
+            },
+            "0.03": {
+              "mean": 0.5067,
+              "std": 0.0531
+            },
+            "0.3": {
+              "mean": 0.5133,
+              "std": 0.0531
+            },
+            "3.0": {
+              "mean": 0.515,
+              "std": 0.0536
+            },
+            "30.0": {
+              "mean": 0.515,
+              "std": 0.0536
+            },
+            "300.0": {
+              "mean": 0.515,
+              "std": 0.0536
+            }
+          }
+        },
+        "shuffled:MBON": {
+          "best_acc": 0.5267,
+          "best_std": 0.0322,
+          "best_C": 0.03,
+          "n_used_features": 36,
+          "n_total_features": 97,
+          "per_C": {
+            "0.003": {
+              "mean": 0.515,
+              "std": 0.0286
+            },
+            "0.03": {
+              "mean": 0.5267,
+              "std": 0.0322
+            },
+            "0.3": {
+              "mean": 0.51,
+              "std": 0.0286
+            },
+            "3.0": {
+              "mean": 0.5083,
+              "std": 0.0307
+            },
+            "30.0": {
+              "mean": 0.5083,
+              "std": 0.0307
+            },
+            "300.0": {
+              "mean": 0.5083,
+              "std": 0.0307
+            }
+          }
+        },
+        "shuffled:CX": {
+          "best_acc": 0.4933,
+          "best_std": 0.0442,
+          "best_C": 30.0,
+          "n_used_features": 120,
+          "n_total_features": 2950,
+          "per_C": {
+            "0.003": {
+              "mean": 0.4833,
+              "std": 0.0329
+            },
+            "0.03": {
+              "mean": 0.4783,
+              "std": 0.051
+            },
+            "0.3": {
+              "mean": 0.4817,
+              "std": 0.0445
+            },
+            "3.0": {
+              "mean": 0.49,
+              "std": 0.0416
+            },
+            "30.0": {
+              "mean": 0.4933,
+              "std": 0.0442
+            },
+            "300.0": {
+              "mean": 0.4933,
+              "std": 0.0448
+            }
+          }
+        },
+        "shuffled:DN": {
+          "best_acc": 0.555,
+          "best_std": 0.0547,
+          "best_C": 0.003,
+          "n_used_features": 163,
+          "n_total_features": 1314,
+          "per_C": {
+            "0.003": {
+              "mean": 0.555,
+              "std": 0.0547
+            },
+            "0.03": {
+              "mean": 0.5533,
+              "std": 0.0356
+            },
+            "0.3": {
+              "mean": 0.5517,
+              "std": 0.0359
+            },
+            "3.0": {
+              "mean": 0.5533,
+              "std": 0.0344
+            },
+            "30.0": {
+              "mean": 0.5533,
+              "std": 0.0272
+            },
+            "300.0": {
+              "mean": 0.5517,
+              "std": 0.0276
+            }
+          }
+        },
+        "shuffled:MBON+CX": {
+          "best_acc": 0.4967,
+          "best_std": 0.0187,
+          "best_C": 30.0,
+          "n_used_features": 156,
+          "n_total_features": 3047,
+          "per_C": {
+            "0.003": {
+              "mean": 0.4817,
+              "std": 0.0122
+            },
+            "0.03": {
+              "mean": 0.4867,
+              "std": 0.034
+            },
+            "0.3": {
+              "mean": 0.4883,
+              "std": 0.0301
+            },
+            "3.0": {
+              "mean": 0.49,
+              "std": 0.0226
+            },
+            "30.0": {
+              "mean": 0.4967,
+              "std": 0.0187
+            },
+            "300.0": {
+              "mean": 0.4967,
+              "std": 0.0172
+            }
+          }
+        },
+        "shuffled:DN+MBON+CX": {
+          "best_acc": 0.54,
+          "best_std": 0.0347,
+          "best_C": 0.003,
+          "n_used_features": 319,
+          "n_total_features": 4361,
+          "per_C": {
+            "0.003": {
+              "mean": 0.54,
+              "std": 0.0347
+            },
+            "0.03": {
+              "mean": 0.51,
+              "std": 0.0266
+            },
+            "0.3": {
+              "mean": 0.505,
+              "std": 0.0569
+            },
+            "3.0": {
+              "mean": 0.53,
+              "std": 0.0393
+            },
+            "30.0": {
+              "mean": 0.5317,
+              "std": 0.0396
+            },
+            "300.0": {
+              "mean": 0.525,
+              "std": 0.0316
+            }
+          }
+        },
+        "permuted_label:real:DN": {
+          "best_acc": 0.5133,
+          "best_std": 0.0375,
+          "best_C": 30.0,
+          "n_used_features": 464,
+          "n_total_features": 1314,
+          "per_C": {
+            "0.003": {
+              "mean": 0.5017,
+              "std": 0.0276
+            },
+            "0.03": {
+              "mean": 0.5083,
+              "std": 0.0274
+            },
+            "0.3": {
+              "mean": 0.5067,
+              "std": 0.0281
+            },
+            "3.0": {
+              "mean": 0.4983,
+              "std": 0.0281
+            },
+            "30.0": {
+              "mean": 0.5133,
+              "std": 0.0375
+            },
+            "300.0": {
+              "mean": 0.5033,
+              "std": 0.0371
+            }
+          }
+        },
+        "permuted_label:raw_bits": {
+          "best_acc": 0.485,
+          "best_std": 0.0244,
+          "best_C": 0.3,
+          "n_used_features": 180,
+          "n_total_features": 180,
+          "per_C": {
+            "0.003": {
+              "mean": 0.4567,
+              "std": 0.0339
+            },
+            "0.03": {
+              "mean": 0.46,
+              "std": 0.0305
+            },
+            "0.3": {
+              "mean": 0.485,
+              "std": 0.0244
+            },
+            "3.0": {
+              "mean": 0.4833,
+              "std": 0.0303
+            },
+            "30.0": {
+              "mean": 0.4833,
+              "std": 0.0293
+            },
+            "300.0": {
+              "mean": 0.4833,
+              "std": 0.0293
+            }
+          }
+        }
+      }
+    }
+  }
+}

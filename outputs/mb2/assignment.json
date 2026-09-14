@@ -1,0 +1,393 @@
+{
+  "provenance": {
+    "rule": "32 largest ORN_* types; the 9 smallest of them go to best_type (the 9-way label), the rest are dealt largest-first to score_vs_needed, selected_type, selected_is_best, best_mask",
+    "n_orn_types_available": 53,
+    "n_types_used": 32,
+    "dropped_types": [
+      "ORN_DA4l",
+      "ORN_DP1l",
+      "ORN_VM1",
+      "ORN_DC1",
+      "ORN_DM4",
+      "ORN_VC2",
+      "ORN_DP1m",
+      "ORN_VC5",
+      "ORN_VA3",
+      "ORN_VA7l",
+      "ORN_VC1",
+      "ORN_D",
+      "ORN_VM6m",
+      "ORN_VM7v",
+      "ORN_VA7m",
+      "ORN_DC4",
+      "ORN_DL2v",
+      "ORN_DC2",
+      "ORN_VA5",
+      "ORN_DL2d",
+      "ORN_VM6l"
+    ],
+    "block_of_bit": [
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_type",
+      "best_mask",
+      "best_mask",
+      "best_mask",
+      "best_mask",
+      "best_mask",
+      "best_mask",
+      "best_mask",
+      "best_mask",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_type",
+      "selected_is_best",
+      "score_vs_needed",
+      "score_vs_needed",
+      "score_vs_needed",
+      "score_vs_needed"
+    ],
+    "block_size_range": {
+      "best_type": [
+        34,
+        36
+      ],
+      "best_mask": [
+        38,
+        55
+      ],
+      "selected_type": [
+        62,
+        98
+      ],
+      "selected_is_best": [
+        58,
+        58
+      ],
+      "score_vs_needed": [
+        103,
+        204
+      ]
+    },
+    "total_orns_mapped": 2075
+  },
+  "bits": [
+    {
+      "bit": 0,
+      "feature": "best_high_card",
+      "glomerulus": "ORN_VM7d",
+      "n_orn": 36,
+      "block": "best_type"
+    },
+    {
+      "bit": 1,
+      "feature": "best_pair",
+      "glomerulus": "ORN_DA4m",
+      "n_orn": 35,
+      "block": "best_type"
+    },
+    {
+      "bit": 2,
+      "feature": "best_two_pair",
+      "glomerulus": "ORN_DC3",
+      "n_orn": 35,
+      "block": "best_type"
+    },
+    {
+      "bit": 3,
+      "feature": "best_three_of_a_kind",
+      "glomerulus": "ORN_DM5",
+      "n_orn": 35,
+      "block": "best_type"
+    },
+    {
+      "bit": 4,
+      "feature": "best_straight",
+      "glomerulus": "ORN_DA3",
+      "n_orn": 34,
+      "block": "best_type"
+    },
+    {
+      "bit": 5,
+      "feature": "best_flush",
+      "glomerulus": "ORN_VA4",
+      "n_orn": 34,
+      "block": "best_type"
+    },
+    {
+      "bit": 6,
+      "feature": "best_full_house",
+      "glomerulus": "ORN_VC3",
+      "n_orn": 34,
+      "block": "best_type"
+    },
+    {
+      "bit": 7,
+      "feature": "best_four_of_a_kind",
+      "glomerulus": "ORN_VM5v",
+      "n_orn": 34,
+      "block": "best_type"
+    },
+    {
+      "bit": 8,
+      "feature": "best_straight_flush",
+      "glomerulus": "ORN_VM6v",
+      "n_orn": 34,
+      "block": "best_type"
+    },
+    {
+      "bit": 9,
+      "feature": "best_slot0",
+      "glomerulus": "ORN_V",
+      "n_orn": 55,
+      "block": "best_mask"
+    },
+    {
+      "bit": 10,
+      "feature": "best_slot1",
+      "glomerulus": "ORN_DM2",
+      "n_orn": 54,
+      "block": "best_mask"
+    },
+    {
+      "bit": 11,
+      "feature": "best_slot2",
+      "glomerulus": "ORN_DA2",
+      "n_orn": 48,
+      "block": "best_mask"
+    },
+    {
+      "bit": 12,
+      "feature": "best_slot3",
+      "glomerulus": "ORN_VL2p",
+      "n_orn": 45,
+      "block": "best_mask"
+    },
+    {
+      "bit": 13,
+      "feature": "best_slot4",
+      "glomerulus": "ORN_DL5",
+      "n_orn": 43,
+      "block": "best_mask"
+    },
+    {
+      "bit": 14,
+      "feature": "best_slot5",
+      "glomerulus": "ORN_VM3",
+      "n_orn": 43,
+      "block": "best_mask"
+    },
+    {
+      "bit": 15,
+      "feature": "best_slot6",
+      "glomerulus": "ORN_VM2",
+      "n_orn": 41,
+      "block": "best_mask"
+    },
+    {
+      "bit": 16,
+      "feature": "best_slot7",
+      "glomerulus": "ORN_VC4",
+      "n_orn": 38,
+      "block": "best_mask"
+    },
+    {
+      "bit": 17,
+      "feature": "sel_high_card",
+      "glomerulus": "ORN_VL2a",
+      "n_orn": 98,
+      "block": "selected_type"
+    },
+    {
+      "bit": 18,
+      "feature": "sel_pair",
+      "glomerulus": "ORN_VM5d",
+      "n_orn": 84,
+      "block": "selected_type"
+    },
+    {
+      "bit": 19,
+      "feature": "sel_two_pair",
+      "glomerulus": "ORN_DL1",
+      "n_orn": 83,
+      "block": "selected_type"
+    },
+    {
+      "bit": 20,
+      "feature": "sel_three_of_a_kind",
+      "glomerulus": "ORN_VA2",
+      "n_orn": 83,
+      "block": "selected_type"
+    },
+    {
+      "bit": 21,
+      "feature": "sel_straight",
+      "glomerulus": "ORN_VL1",
+      "n_orn": 82,
+      "block": "selected_type"
+    },
+    {
+      "bit": 22,
+      "feature": "sel_flush",
+      "glomerulus": "ORN_VM4",
+      "n_orn": 78,
+      "block": "selected_type"
+    },
+    {
+      "bit": 23,
+      "feature": "sel_full_house",
+      "glomerulus": "ORN_DM1",
+      "n_orn": 74,
+      "block": "selected_type"
+    },
+    {
+      "bit": 24,
+      "feature": "sel_four_of_a_kind",
+      "glomerulus": "ORN_DM3",
+      "n_orn": 63,
+      "block": "selected_type"
+    },
+    {
+      "bit": 25,
+      "feature": "sel_straight_flush",
+      "glomerulus": "ORN_VA6",
+      "n_orn": 63,
+      "block": "selected_type"
+    },
+    {
+      "bit": 26,
+      "feature": "sel_none",
+      "glomerulus": "ORN_DL4",
+      "n_orn": 62,
+      "block": "selected_type"
+    },
+    {
+      "bit": 27,
+      "feature": "sel_is_best",
+      "glomerulus": "ORN_DM6",
+      "n_orn": 58,
+      "block": "selected_is_best"
+    },
+    {
+      "bit": 28,
+      "feature": "best_vs_needed_lt0.25",
+      "glomerulus": "ORN_DA1",
+      "n_orn": 204,
+      "block": "score_vs_needed"
+    },
+    {
+      "bit": 29,
+      "feature": "best_vs_needed_lt0.5",
+      "glomerulus": "ORN_VA1d",
+      "n_orn": 132,
+      "block": "score_vs_needed"
+    },
+    {
+      "bit": 30,
+      "feature": "best_vs_needed_lt1.0",
+      "glomerulus": "ORN_VA1v",
+      "n_orn": 130,
+      "block": "score_vs_needed"
+    },
+    {
+      "bit": 31,
+      "feature": "best_vs_needed_ge1.0",
+      "glomerulus": "ORN_DL3",
+      "n_orn": 103,
+      "block": "score_vs_needed"
+    }
+  ],
+  "map": {
+    "kind": "glomerular",
+    "n_features": 32,
+    "drive_mv": 30.0,
+    "type_names": [
+      "ORN_VM7d",
+      "ORN_DA4m",
+      "ORN_DC3",
+      "ORN_DM5",
+      "ORN_DA3",
+      "ORN_VA4",
+      "ORN_VC3",
+      "ORN_VM5v",
+      "ORN_VM6v",
+      "ORN_V",
+      "ORN_DM2",
+      "ORN_DA2",
+      "ORN_VL2p",
+      "ORN_DL5",
+      "ORN_VM3",
+      "ORN_VM2",
+      "ORN_VC4",
+      "ORN_VL2a",
+      "ORN_VM5d",
+      "ORN_DL1",
+      "ORN_VA2",
+      "ORN_VL1",
+      "ORN_VM4",
+      "ORN_DM1",
+      "ORN_DM3",
+      "ORN_VA6",
+      "ORN_DL4",
+      "ORN_DM6",
+      "ORN_DA1",
+      "ORN_VA1d",
+      "ORN_VA1v",
+      "ORN_DL3"
+    ],
+    "group_sizes": [
+      36,
+      35,
+      35,
+      35,
+      34,
+      34,
+      34,
+      34,
+      34,
+      55,
+      54,
+      48,
+      45,
+      43,
+      43,
+      41,
+      38,
+      98,
+      84,
+      83,
+      83,
+      82,
+      78,
+      74,
+      63,
+      63,
+      62,
+      58,
+      204,
+      132,
+      130,
+      103
+    ],
+    "n_driven_neurons": 2075,
+    "neurons_min": 34,
+    "neurons_max": 204
+  },
+  "dropped_from_the_fly": {
+    "v1_bits": 283,
+    "note": "the 283 v1 state bits are not encoded at all in mb2"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "n_states": 150061,
+  "n_episodes": 2671,
+  "n_heuristic_episodes": 1336,
+  "n_random_episodes": 1335,
+  "seed0_heur": 0,
+  "seed0_rand": 500000,
+  "ante_end": 1,
+  "max_steps": 500,
+  "mask_noop_actions": true,
+  "wall_seconds": 5.4,
+  "episode_records_head": [
+    {
+      "episode": 0,
+      "seed": 0,
+      "behaviour": 0,
+      "steps": 102,
+      "win": false,
+      "chips": 1148
+    },
+    {
+      "episode": 1,
+      "seed": 500000,
+      "behaviour": 1,
+      "steps": 36,
+      "win": false,
+      "chips": 50
+    },
+    {
+      "episode": 2,
+      "seed": 1,
+      "behaviour": 0,
+      "steps": 107,
+      "win": false,
+      "chips": 1121
+    },
+    {
+      "episode": 3,
+      "seed": 500001,
+      "behaviour": 1,
+      "steps": 30,
+      "win": false,
+      "chips": 52
+    },
+    {
+      "episode": 4,
+      "seed": 2,
+      "behaviour": 0,
+      "steps": 94,
+      "win": true,
+      "chips": 1119
+    }
+  ],
+  "unique_feature_vectors": 139375,
+  "duplicate_fraction": 0.0712,
+  "mean_bits_active": 35.94,
+  "label_entropy_bits": 3.484,
+  "top_labels": [
+    [
+      0,
+      25119
+    ],
+    [
+      1,
+      19447
+    ],
+    [
+      2,
+      15608
+    ],
+    [
+      70,
+      14481
+    ],
+    [
+      3,
+      12923
+    ],
+    [
+      4,
+      11878
+    ],
+    [
+      5,
+      11095
+    ],
+    [
+      6,
+      10776
+    ]
+  ],
+  "majority_label_rate": 0.1674
+}

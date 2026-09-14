@@ -1,0 +1,272 @@
+{
+  "window_ms": 200.0,
+  "drive_mv": 30.0,
+  "n_seeds": 5,
+  "n_grn": 165,
+  "n_mn9": 2,
+  "mn9_body_ids": [
+    10331,
+    16949
+  ],
+  "note": "tonic drive is deterministic (one run); Poisson is repeated over noise seeds because MN9 is a two-neuron readout",
+  "settings": {
+    "apl1_tonic": {
+      "mode": "tonic",
+      "apl_scale": 1.0,
+      "runs": [
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 7,
+          "grn_rate_hz": 126.61,
+          "brain_spikes": 78475
+        }
+      ],
+      "sugar": {
+        "mean": 1.0,
+        "min": 1,
+        "max": 1
+      },
+      "matched_orn": {
+        "mean": 7.0,
+        "min": 7,
+        "max": 7
+      },
+      "no_drive": {
+        "mean": 0.0,
+        "max": 0
+      },
+      "grn_rate_hz": 126.61,
+      "sugar_selective": false
+    },
+    "apl1_poisson": {
+      "mode": "poisson",
+      "apl_scale": 1.0,
+      "runs": [
+        {
+          "sugar_grn_drive": 4,
+          "no_drive": 0,
+          "matched_orn_control": 4,
+          "grn_rate_hz": 82.21,
+          "brain_spikes": 72828
+        },
+        {
+          "sugar_grn_drive": 4,
+          "no_drive": 0,
+          "matched_orn_control": 5,
+          "grn_rate_hz": 80.39,
+          "brain_spikes": 73075
+        },
+        {
+          "sugar_grn_drive": 3,
+          "no_drive": 0,
+          "matched_orn_control": 5,
+          "grn_rate_hz": 85.3,
+          "brain_spikes": 72666
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 6,
+          "grn_rate_hz": 81.36,
+          "brain_spikes": 73720
+        },
+        {
+          "sugar_grn_drive": 4,
+          "no_drive": 0,
+          "matched_orn_control": 4,
+          "grn_rate_hz": 85.88,
+          "brain_spikes": 75312
+        }
+      ],
+      "sugar": {
+        "mean": 3.2,
+        "min": 1,
+        "max": 4
+      },
+      "matched_orn": {
+        "mean": 4.8,
+        "min": 4,
+        "max": 6
+      },
+      "no_drive": {
+        "mean": 0.0,
+        "max": 0
+      },
+      "grn_rate_hz": 83.03,
+      "sugar_selective": false
+    },
+    "apl2_tonic": {
+      "mode": "tonic",
+      "apl_scale": 2.0,
+      "runs": [
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 5,
+          "grn_rate_hz": 126.7,
+          "brain_spikes": 66147
+        }
+      ],
+      "sugar": {
+        "mean": 1.0,
+        "min": 1,
+        "max": 1
+      },
+      "matched_orn": {
+        "mean": 5.0,
+        "min": 5,
+        "max": 5
+      },
+      "no_drive": {
+        "mean": 0.0,
+        "max": 0
+      },
+      "grn_rate_hz": 126.7,
+      "sugar_selective": false
+    },
+    "apl2_poisson": {
+      "mode": "poisson",
+      "apl_scale": 2.0,
+      "runs": [
+        {
+          "sugar_grn_drive": 3,
+          "no_drive": 0,
+          "matched_orn_control": 3,
+          "grn_rate_hz": 82.24,
+          "brain_spikes": 59983
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 4,
+          "grn_rate_hz": 80.33,
+          "brain_spikes": 60141
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 5,
+          "grn_rate_hz": 85.33,
+          "brain_spikes": 59225
+        },
+        {
+          "sugar_grn_drive": 2,
+          "no_drive": 0,
+          "matched_orn_control": 7,
+          "grn_rate_hz": 81.36,
+          "brain_spikes": 60632
+        },
+        {
+          "sugar_grn_drive": 2,
+          "no_drive": 0,
+          "matched_orn_control": 11,
+          "grn_rate_hz": 85.88,
+          "brain_spikes": 60947
+        }
+      ],
+      "sugar": {
+        "mean": 1.8,
+        "min": 1,
+        "max": 3
+      },
+      "matched_orn": {
+        "mean": 6.0,
+        "min": 3,
+        "max": 11
+      },
+      "no_drive": {
+        "mean": 0.0,
+        "max": 0
+      },
+      "grn_rate_hz": 83.03,
+      "sugar_selective": false
+    },
+    "apl5_tonic": {
+      "mode": "tonic",
+      "apl_scale": 5.0,
+      "runs": [
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 6,
+          "grn_rate_hz": 126.82,
+          "brain_spikes": 63172
+        }
+      ],
+      "sugar": {
+        "mean": 1.0,
+        "min": 1,
+        "max": 1
+      },
+      "matched_orn": {
+        "mean": 6.0,
+        "min": 6,
+        "max": 6
+      },
+      "no_drive": {
+        "mean": 0.0,
+        "max": 0
+      },
+      "grn_rate_hz": 126.82,
+      "sugar_selective": false
+    },
+    "apl5_poisson": {
+      "mode": "poisson",
+      "apl_scale": 5.0,
+      "runs": [
+        {
+          "sugar_grn_drive": 2,
+          "no_drive": 0,
+          "matched_orn_control": 2,
+          "grn_rate_hz": 82.18,
+          "brain_spikes": 57706
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 3,
+          "grn_rate_hz": 80.33,
+          "brain_spikes": 55881
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 3,
+          "grn_rate_hz": 85.33,
+          "brain_spikes": 56996
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 8,
+          "grn_rate_hz": 81.42,
+          "brain_spikes": 56901
+        },
+        {
+          "sugar_grn_drive": 1,
+          "no_drive": 0,
+          "matched_orn_control": 4,
+          "grn_rate_hz": 85.85,
+          "brain_spikes": 57383
+        }
+      ],
+      "sugar": {
+        "mean": 1.2,
+        "min": 1,
+        "max": 2
+      },
+      "matched_orn": {
+        "mean": 4.0,
+        "min": 2,
+        "max": 8
+      },
+      "no_drive": {
+        "mean": 0.0,
+        "max": 0
+      },
+      "grn_rate_hz": 83.02,
+      "sugar_selective": false
+    }
+  }
+}

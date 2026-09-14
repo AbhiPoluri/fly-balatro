@@ -1,0 +1,31 @@
+{
+  "rss_mb_by_stage": {
+    "import": 96.4,
+    "graph_loaded": 199.9,
+    "real_brain": 250.0,
+    "after_real_windows": 251.3,
+    "plus_shuffled_brain": 301.0,
+    "peak": 301.0
+  },
+  "timings": {
+    "real_50ms_per_window_s": 0.1056,
+    "real_20ms_per_window_s": 0.0181,
+    "shuffled_50ms_per_window_s": 0.0868,
+    "shuffled_20ms_per_window_s": 0.0188
+  },
+  "pop_sizes": {
+    "ALPN": 686,
+    "KC": 4064,
+    "DN": 1314
+  },
+  "feature_map": {
+    "n_features": 283,
+    "neurons_per_feature": 10,
+    "grouping": "random",
+    "seed": 0,
+    "drive_mv": 30.0,
+    "n_orn_available": 2830,
+    "n_driven_neurons": 2830,
+    "extended_with_sensory": true
+  }
+}

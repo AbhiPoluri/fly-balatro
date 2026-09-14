@@ -1,0 +1,293 @@
+{
+  "fit_image": "balatro_fly_firsthand.png",
+  "residuals": [
+    {
+      "image": "balatro_fly_firsthand.png",
+      "canvas": [
+        2418,
+        1570
+      ],
+      "extent": [
+        641,
+        2018
+      ],
+      "card_width_at_midheight": 211.0,
+      "cards": [
+        {
+          "slot": 0,
+          "measured_centre": 750.5,
+          "measured_top": 925,
+          "measured_bottom": 1224,
+          "measured_angle_deg": -5.5,
+          "modelled_box": [
+            637.9,
+            925.5,
+            225.4,
+            298.5
+          ],
+          "d_centre": 0.1,
+          "d_top": 0.5,
+          "d_bottom": -0.0
+        },
+        {
+          "slot": 1,
+          "measured_centre": 919.5,
+          "measured_top": 919,
+          "measured_bottom": 1211,
+          "measured_angle_deg": -2.0,
+          "modelled_box": [
+            802.5,
+            918.0,
+            225.4,
+            293.9
+          ],
+          "d_centre": -4.3,
+          "d_top": -1.0,
+          "d_bottom": 0.9
+        },
+        {
+          "slot": 2,
+          "measured_centre": 1079.5,
+          "measured_top": 914,
+          "measured_bottom": 1203,
+          "measured_angle_deg": -1.5,
+          "modelled_box": [
+            967.2,
+            913.0,
+            225.4,
+            290.9
+          ],
+          "d_centre": 0.4,
+          "d_top": -1.0,
+          "d_bottom": 0.9
+        },
+        {
+          "slot": 3,
+          "measured_centre": 1241.5,
+          "measured_top": 911,
+          "measured_bottom": 1201,
+          "measured_angle_deg": -1.5,
+          "modelled_box": [
+            1131.8,
+            910.5,
+            225.4,
+            289.4
+          ],
+          "d_centre": 3.0,
+          "d_top": -0.5,
+          "d_bottom": -1.1
+        },
+        {
+          "slot": 4,
+          "measured_centre": 1407.5,
+          "measured_top": 910,
+          "measured_bottom": 1201,
+          "measured_angle_deg": 0.0,
+          "modelled_box": [
+            1296.5,
+            910.5,
+            225.4,
+            289.4
+          ],
+          "d_centre": 1.7,
+          "d_top": 0.5,
+          "d_bottom": -1.1
+        },
+        {
+          "slot": 5,
+          "measured_centre": 1570.5,
+          "measured_top": 910,
+          "measured_bottom": 1206,
+          "measured_angle_deg": 2.5,
+          "modelled_box": [
+            1461.1,
+            913.0,
+            225.4,
+            290.9
+          ],
+          "d_centre": 3.4,
+          "d_top": 3.0,
+          "d_bottom": -2.1
+        },
+        {
+          "slot": 6,
+          "measured_centre": 1739.5,
+          "measured_top": 915,
+          "measured_bottom": 1211,
+          "measured_angle_deg": 5.0,
+          "modelled_box": [
+            1625.8,
+            918.0,
+            225.4,
+            293.9
+          ],
+          "d_centre": -1.0,
+          "d_top": 3.0,
+          "d_bottom": 0.9
+        },
+        {
+          "slot": 7,
+          "measured_centre": 1906.5,
+          "measured_top": 926,
+          "measured_bottom": 1224,
+          "measured_angle_deg": 5.5,
+          "modelled_box": [
+            1790.5,
+            925.5,
+            225.4,
+            298.5
+          ],
+          "d_centre": -3.3,
+          "d_top": -0.5,
+          "d_bottom": -0.0
+        }
+      ],
+      "max_abs_d_centre": 4.3,
+      "max_abs_d_top": 3.0
+    },
+    {
+      "image": "balatro_fly.png",
+      "canvas": [
+        2418,
+        1570
+      ],
+      "extent": [
+        637,
+        2011
+      ],
+      "card_width_at_midheight": 207.0,
+      "cards": [
+        {
+          "slot": 0,
+          "measured_centre": 745.5,
+          "measured_top": 926,
+          "measured_bottom": 1225,
+          "measured_angle_deg": -6.0,
+          "modelled_box": [
+            637.9,
+            925.5,
+            225.4,
+            298.5
+          ],
+          "d_centre": 5.1,
+          "d_top": -0.5,
+          "d_bottom": -1.0
+        },
+        {
+          "slot": 1,
+          "measured_centre": 909.5,
+          "measured_top": 917,
+          "measured_bottom": 1211,
+          "measured_angle_deg": -3.5,
+          "modelled_box": [
+            802.5,
+            918.0,
+            225.4,
+            293.9
+          ],
+          "d_centre": 5.7,
+          "d_top": 1.0,
+          "d_bottom": 0.9
+        },
+        {
+          "slot": 2,
+          "measured_centre": 1074.5,
+          "measured_top": 913,
+          "measured_bottom": 1201,
+          "measured_angle_deg": -1.5,
+          "modelled_box": [
+            967.2,
+            913.0,
+            225.4,
+            290.9
+          ],
+          "d_centre": 5.4,
+          "d_top": -0.0,
+          "d_bottom": 2.9
+        },
+        {
+          "slot": 3,
+          "measured_centre": 1271.5,
+          "measured_top": 907,
+          "measured_bottom": 1197,
+          "measured_angle_deg": 3.5,
+          "modelled_box": [
+            1131.8,
+            910.5,
+            225.4,
+            289.4
+          ],
+          "d_centre": -27.0,
+          "d_top": 3.5,
+          "d_bottom": 2.9
+        },
+        {
+          "slot": 4,
+          "measured_centre": 1401.5,
+          "measured_top": 913,
+          "measured_bottom": 1197,
+          "measured_angle_deg": -0.5,
+          "modelled_box": [
+            1296.5,
+            910.5,
+            225.4,
+            289.4
+          ],
+          "d_centre": 7.7,
+          "d_top": -2.5,
+          "d_bottom": 2.9
+        },
+        {
+          "slot": 5,
+          "measured_centre": 1567.5,
+          "measured_top": 913,
+          "measured_bottom": 1204,
+          "measured_angle_deg": 1.0,
+          "modelled_box": [
+            1461.1,
+            913.0,
+            225.4,
+            290.9
+          ],
+          "d_centre": 6.4,
+          "d_top": -0.0,
+          "d_bottom": -0.1
+        },
+        {
+          "slot": 6,
+          "measured_centre": 1733.5,
+          "measured_top": 913,
+          "measured_bottom": 1215,
+          "measured_angle_deg": 3.5,
+          "modelled_box": [
+            1625.8,
+            918.0,
+            225.4,
+            293.9
+          ],
+          "d_centre": 5.0,
+          "d_top": 5.0,
+          "d_bottom": -3.1
+        },
+        {
+          "slot": 7,
+          "measured_centre": 1902.5,
+          "measured_top": 923,
+          "measured_bottom": 1227,
+          "measured_angle_deg": 5.0,
+          "modelled_box": [
+            1790.5,
+            925.5,
+            225.4,
+            298.5
+          ],
+          "d_centre": 0.7,
+          "d_top": 2.5,
+          "d_bottom": -3.0
+        }
+      ],
+      "max_abs_d_centre": 27.0,
+      "max_abs_d_top": 5.0
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "_comment": "Balatro hand-fan geometry, as fractions of the game canvas. Fitted by scripts/pov_calibrate.py; see docs/POV.md. 'raise' is NOT measured -- the API never highlights the fly's virtual selection. 'fixed_pitch' records a MEASURED fact (scripts/pov_align_measure.py, outputs/pov/dynamic_align.json): with fewer than 8 cards Balatro does NOT spread the fan, it keeps the same centre-to-centre pitch and centres the shorter fan. Two independent 3-card hands measure a pitch of 165-171 px against the 8-card 164.65 px.",
+  "reference": {
+    "image": "balatro_fly_firsthand.png",
+    "width": 2418,
+    "height": 1570,
+    "n_cards": 8
+  },
+  "hand": {
+    "center_x": 0.548749,
+    "top_y": 0.58949,
+    "card_w": 0.093224,
+    "card_h": 0.190127,
+    "span": 0.569892,
+    "arc_lift": 0.009753,
+    "arc_shrink": 0.005917,
+    "raise": 0.03,
+    "max_pitch_ratio": 1.0,
+    "fixed_pitch": true
+  },
+  "fit": {
+    "pitch_px": 164.65,
+    "centre0_px": 750.58,
+    "box_w_px": 225.42,
+    "card_w_at_midheight_px": 211.0,
+    "top0_px": 925.5,
+    "bot0_px": 1224.0,
+    "arc_lift_px": 15.31,
+    "arc_drop_px": 24.6,
+    "fan_angle_min_deg": -5.5,
+    "fan_angle_max_deg": 5.5
+  }
+}

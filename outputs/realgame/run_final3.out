@@ -1,0 +1,29 @@
+[api] http://127.0.0.1:12346 health={'status': 'ok'}
+[fly] plast2 operating point from /Users/abhipoluri/fly-balatro/outputs/plast2/run_real_eta0.05_s0.json
+[fly] brain config /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json (label apl2_aplkc1_aplmb0.1_vtho4064)
+[fly] naive: every KC -> MBON synapse at its original weight
+[fly] 33496 KC -> MBON synapses (10886 PAM-gated, 13582 PPL1-gated), 66 approach / 24 avoid MBONs
+[fly] eta_reward=0.05 eta_punish=0.1907 (/Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json (ratio 3.8132))
+[spikes] mode=auto sidecar=/Users/abhipoluri/fly-balatro/outputs/realgame/spikes.bin (wanted now: True)
+[run] starting RED deck / WHITE stake
+[  1] SELECTING_HAND score=0/300 h=4 d=4 | Pair 60 vs 300 (lt0.25) | app 17.9 - avo 15.8 Hz -> P(play) 0.35 => DISCARD [3, 4, 5, 6, 7]
+      -> no pulse; chips 0 cleared=False lost=False | synapses changed 0.0% mean w/w0 1.0000
+[  2] SELECTING_HAND score=0/300 h=4 d=3 | Full House 372 vs 300 (ge1.0) | app 14.2 - avo 8.3 Hz -> P(play) 0.93 => PLAY [0, 1, 2, 3, 4]
+      -> DA+ reward; chips 372 cleared=True lost=False | synapses changed 0.9% mean w/w0 0.9998
+[  3] SELECTING_HAND score=0/450 h=4 d=4 | Two Pair 100 vs 450 (lt0.25) | app 21.5 - avo 17.5 Hz -> P(play) 0.81 => PLAY [2, 3, 4, 5]
+      -> no pulse; chips 100 cleared=False lost=False | synapses changed 0.9% mean w/w0 0.9998
+[  4] SELECTING_HAND score=100/450 h=3 d=4 | Three of a Kind 180 vs 350 (lt1.0) | app 10.9 - avo 11.7 Hz -> P(play) 0.07 => DISCARD [0, 4, 5, 6, 7]
+      -> no pulse; chips 0 cleared=False lost=False | synapses changed 0.9% mean w/w0 0.9998
+[  5] SELECTING_HAND score=100/450 h=3 d=3 | Full House 296 vs 350 (lt1.0) | app 16.7 - avo 15.8 Hz -> P(play) 0.15 => DISCARD [0, 4, 5]
+      -> no pulse; chips 0 cleared=False lost=False | synapses changed 0.9% mean w/w0 0.9998
+[  6] SELECTING_HAND score=100/450 h=3 d=2 | Full House 312 vs 350 (lt1.0) | app 14.2 - avo 20.0 Hz -> P(play) 0.05 => DISCARD [3, 6, 7]
+      -> no pulse; chips 0 cleared=False lost=False | synapses changed 0.9% mean w/w0 0.9998
+[  7] SELECTING_HAND score=100/450 h=3 d=1 | Full House 312 vs 350 (lt1.0) | app 13.0 - avo 18.3 Hz -> P(play) 0.05 => DISCARD [3, 4, 7]
+      -> no pulse; chips 0 cleared=False lost=False | synapses changed 0.9% mean w/w0 0.9998
+[  8] SELECTING_HAND score=100/450 h=3 d=0 | Full House 312 vs 350 (lt1.0) | app 13.0 - avo 18.3 Hz -> P(play) 0.05 => PLAY [0, 1, 2, 5, 6]
+      -> DA+ reward; chips 312 cleared=False lost=False | synapses changed 2.9% mean w/w0 0.9991
+[  9] SELECTING_HAND score=412/450 h=2 d=0 | Pair 56 vs 38 (ge1.0) | app 12.4 - avo 5.0 Hz -> P(play) 0.95 => PLAY [4, 5]
+      -> DA+ reward; chips 56 cleared=True lost=False | synapses changed 3.4% mean w/w0 0.9989
+[ 10] SELECTING_HAND score=0/600 h=4 d=4 | High Card 15 vs 600 (lt0.25) | app 22.7 - avo 17.5 Hz -> P(play) 0.91 => PLAY [0]
+      -> no pulse; chips 15 cleared=False lost=False | synapses changed 3.4% mean w/w0 0.9989
+[ 11] SELECTING_HAND score=15/600 h=3 d=4 | High Card 15 vs 585 (lt0.25) | app 22.7 - avo 17.5 Hz -> P(play) 0.91 => PLAY [0]

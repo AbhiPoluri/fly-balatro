@@ -1,0 +1,25 @@
+{
+  "shuffled": {
+    "condition": "shuffled",
+    "window_ms": 50.0,
+    "feature_version": 2,
+    "n_features": 315,
+    "brain_seed": 1,
+    "shuffle_seed": 0,
+    "fm_seed": 0,
+    "neurons_per_feature": 10,
+    "threshold": 5,
+    "n_unique": 138354,
+    "workers": 4,
+    "chunk": 250,
+    "wall_seconds": 3790.8,
+    "states_per_second": 36.5,
+    "worker_rss_peak_mb": 546.8,
+    "pop_sizes": {
+      "ALPN": 686,
+      "KC": 4064,
+      "DN": 1314
+    },
+    "extended_with_sensory": true
+  }
+}

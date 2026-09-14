@@ -1,0 +1,533 @@
+{
+  "baselines": {
+    "always_discard": {
+      "chips_mean": 834.6,
+      "clear_rate": 0.3825
+    },
+    "always_play": {
+      "chips_mean": 466.5,
+      "clear_rate": 0.0375
+    },
+    "bucket_ge1": {
+      "chips_mean": 833.4,
+      "clear_rate": 0.4025
+    },
+    "bucket_ge_lt1": {
+      "chips_mean": 962.0,
+      "clear_rate": 0.53
+    },
+    "bucket_ge_lt1_lt05": {
+      "chips_mean": 965.6,
+      "clear_rate": 0.4475
+    },
+    "teacher_dig": {
+      "chips_mean": 1096.4,
+      "clear_rate": 0.6725
+    }
+  },
+  "cells": {
+    "current_current": {
+      "dopamine_counts": [
+        {
+          "none": 615,
+          "punish": 81,
+          "reward": 504
+        },
+        {
+          "none": 653,
+          "punish": 85,
+          "reward": 462
+        },
+        {
+          "none": 623,
+          "punish": 90,
+          "reward": 487
+        }
+      ],
+      "encoding": "current",
+      "eta_punish": 0.1907,
+      "eta_reward": 0.05,
+      "greedy": {
+        "bucket_gradient": 0.4983,
+        "chips_mean": 794.1,
+        "clear_rate": 0.2233,
+        "clear_rate_per_run": [
+          0.1925,
+          0.245,
+          0.2325
+        ],
+        "joint_variance": 0.043036,
+        "p_play_when_legal": 0.7896,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": -0.0966,
+          "ci_lo": -0.2225,
+          "delta": -0.1592,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            -0.19,
+            -0.1375,
+            -0.15
+          ],
+          "significant": true
+        },
+        "vs_frozen": {
+          "ci_hi": -0.0033,
+          "ci_lo": -0.125,
+          "delta": -0.0642,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0396,
+          "per_run_delta": [
+            -0.095,
+            -0.0425,
+            -0.055
+          ],
+          "significant": true
+        }
+      },
+      "punishment": "current",
+      "runs": [
+        "current_current_s0",
+        "current_current_s1",
+        "current_current_s2"
+      ],
+      "sampled": {
+        "bucket_gradient": 0.424,
+        "chips_mean": 794.8,
+        "clear_rate": 0.2333,
+        "clear_rate_per_run": [
+          0.205,
+          0.2525,
+          0.2425
+        ],
+        "joint_variance": 0.028806,
+        "p_play_when_legal": 0.763,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": -0.0875,
+          "ci_lo": -0.21,
+          "delta": -0.1492,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            -0.1775,
+            -0.13,
+            -0.14
+          ],
+          "significant": true
+        },
+        "vs_frozen": {
+          "ci_hi": -0.07,
+          "ci_lo": -0.1875,
+          "delta": -0.1292,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            -0.1575,
+            -0.11,
+            -0.12
+          ],
+          "significant": true
+        }
+      },
+      "train_reward_rate": [
+        0.5508,
+        0.5162,
+        0.5293
+      ]
+    },
+    "current_separated": {
+      "dopamine_counts": [
+        {
+          "none": 615,
+          "punish": 94,
+          "reward": 491
+        },
+        {
+          "none": 601,
+          "punish": 109,
+          "reward": 490
+        },
+        {
+          "none": 617,
+          "punish": 109,
+          "reward": 474
+        }
+      ],
+      "encoding": "separated",
+      "eta_punish": 0.0797,
+      "eta_reward": 0.05,
+      "greedy": {
+        "bucket_gradient": 0.4073,
+        "chips_mean": 739.6,
+        "clear_rate": 0.195,
+        "clear_rate_per_run": [
+          0.33,
+          0.1275,
+          0.1275
+        ],
+        "joint_variance": 0.0736,
+        "p_play_when_legal": 0.835,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": -0.0583,
+          "ci_lo": -0.2975,
+          "delta": -0.1875,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0052,
+          "per_run_delta": [
+            -0.0525,
+            -0.255,
+            -0.255
+          ],
+          "significant": true
+        },
+        "vs_frozen": {
+          "ci_hi": 0.1467,
+          "ci_lo": -0.0775,
+          "delta": 0.0225,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.735,
+          "per_run_delta": [
+            0.1575,
+            -0.045,
+            -0.045
+          ],
+          "significant": false
+        }
+      },
+      "punishment": "current",
+      "runs": [
+        "current_separated_s0",
+        "current_separated_s1",
+        "current_separated_s2"
+      ],
+      "sampled": {
+        "bucket_gradient": 0.4162,
+        "chips_mean": 782.0,
+        "clear_rate": 0.21,
+        "clear_rate_per_run": [
+          0.2525,
+          0.19,
+          0.1875
+        ],
+        "joint_variance": 0.034378,
+        "p_play_when_legal": 0.7751,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": -0.1058,
+          "ci_lo": -0.2375,
+          "delta": -0.1725,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            -0.13,
+            -0.1925,
+            -0.195
+          ],
+          "significant": true
+        },
+        "vs_frozen": {
+          "ci_hi": 0.0517,
+          "ci_lo": -0.0667,
+          "delta": -0.0075,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.8004,
+          "per_run_delta": [
+            0.035,
+            -0.0275,
+            -0.03
+          ],
+          "significant": false
+        }
+      },
+      "train_reward_rate": [
+        0.5147,
+        0.5109,
+        0.4969
+      ]
+    },
+    "omission_current": {
+      "dopamine_counts": [
+        {
+          "none": 374,
+          "punish": 346,
+          "reward": 480
+        },
+        {
+          "none": 411,
+          "punish": 329,
+          "reward": 460
+        },
+        {
+          "none": 381,
+          "punish": 316,
+          "reward": 503
+        }
+      ],
+      "encoding": "current",
+      "eta_punish": 0.1907,
+      "eta_reward": 0.05,
+      "greedy": {
+        "bucket_gradient": 0.5363,
+        "chips_mean": 815.8,
+        "clear_rate": 0.2642,
+        "clear_rate_per_run": [
+          0.265,
+          0.25,
+          0.2775
+        ],
+        "joint_variance": 0.073295,
+        "p_play_when_legal": 0.7585,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": -0.0567,
+          "ci_lo": -0.18,
+          "delta": -0.1183,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            -0.1175,
+            -0.1325,
+            -0.105
+          ],
+          "significant": true
+        },
+        "vs_frozen": {
+          "ci_hi": 0.0358,
+          "ci_lo": -0.0825,
+          "delta": -0.0233,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.4366,
+          "per_run_delta": [
+            -0.0225,
+            -0.0375,
+            -0.01
+          ],
+          "significant": false
+        }
+      },
+      "punishment": "omission",
+      "runs": [
+        "omission_current_s0",
+        "omission_current_s1",
+        "omission_current_s2"
+      ],
+      "sampled": {
+        "bucket_gradient": 0.4676,
+        "chips_mean": 821.7,
+        "clear_rate": 0.2717,
+        "clear_rate_per_run": [
+          0.28,
+          0.2425,
+          0.2925
+        ],
+        "joint_variance": 0.044853,
+        "p_play_when_legal": 0.7255,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": -0.0483,
+          "ci_lo": -0.1742,
+          "delta": -0.1108,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            -0.1025,
+            -0.14,
+            -0.09
+          ],
+          "significant": true
+        },
+        "vs_frozen": {
+          "ci_hi": -0.0292,
+          "ci_lo": -0.1542,
+          "delta": -0.0908,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0058,
+          "per_run_delta": [
+            -0.0825,
+            -0.12,
+            -0.07
+          ],
+          "significant": true
+        }
+      },
+      "train_reward_rate": [
+        0.5811,
+        0.583,
+        0.6142
+      ]
+    },
+    "omission_separated": {
+      "dopamine_counts": [
+        {
+          "none": 419,
+          "punish": 258,
+          "reward": 523
+        },
+        {
+          "none": 418,
+          "punish": 276,
+          "reward": 506
+        },
+        {
+          "none": 389,
+          "punish": 266,
+          "reward": 545
+        }
+      ],
+      "encoding": "separated",
+      "eta_punish": 0.0797,
+      "eta_reward": 0.05,
+      "greedy": {
+        "bucket_gradient": 0.938,
+        "chips_mean": 920.7,
+        "clear_rate": 0.4067,
+        "clear_rate_per_run": [
+          0.4475,
+          0.325,
+          0.4475
+        ],
+        "joint_variance": 0.124985,
+        "p_play_when_legal": 0.6461,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": 0.1125,
+          "ci_lo": -0.0725,
+          "delta": 0.0242,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.6184,
+          "per_run_delta": [
+            0.065,
+            -0.0575,
+            0.065
+          ],
+          "significant": false
+        },
+        "vs_frozen": {
+          "ci_hi": 0.32,
+          "ci_lo": 0.1408,
+          "delta": 0.2342,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            0.275,
+            0.1525,
+            0.275
+          ],
+          "significant": true
+        }
+      },
+      "punishment": "omission",
+      "runs": [
+        "omission_separated_s0",
+        "omission_separated_s1",
+        "omission_separated_s2"
+      ],
+      "sampled": {
+        "bucket_gradient": 0.8309,
+        "chips_mean": 939.0,
+        "clear_rate": 0.4133,
+        "clear_rate_per_run": [
+          0.425,
+          0.355,
+          0.46
+        ],
+        "joint_variance": 0.091255,
+        "p_play_when_legal": 0.6398,
+        "passes_prereg": false,
+        "vs_always_discard": {
+          "ci_hi": 0.1092,
+          "ci_lo": -0.0483,
+          "delta": 0.0308,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.4566,
+          "per_run_delta": [
+            0.0425,
+            -0.0275,
+            0.0775
+          ],
+          "significant": false
+        },
+        "vs_frozen": {
+          "ci_hi": 0.2692,
+          "ci_lo": 0.12,
+          "delta": 0.1958,
+          "n_runs": 3,
+          "n_seeds": 400,
+          "p_two_sided": 0.0,
+          "per_run_delta": [
+            0.2075,
+            0.1375,
+            0.2425
+          ],
+          "significant": true
+        }
+      },
+      "train_reward_rate": [
+        0.6697,
+        0.6471,
+        0.672
+      ]
+    }
+  },
+  "decision_rule": "a cell succeeds only if, under greedy evaluation, its paired delta beats its own frozen control AND beats always-discard, both with a 95% two-way clustered CI excluding 0 (PREREGISTRATION.md section 5)",
+  "eval_seeds": {
+    "n": 400,
+    "seed0": 400000
+  },
+  "frozen": {
+    "current": {
+      "greedy": {
+        "bucket_gradient": 0.0361,
+        "chips_mean": 735.4,
+        "clear_rate": 0.2875,
+        "p_play_when_legal": 0.4382
+      },
+      "sampled": {
+        "bucket_gradient": 0.0537,
+        "chips_mean": 786.5,
+        "clear_rate": 0.3625,
+        "p_play_when_legal": 0.4969
+      }
+    },
+    "separated": {
+      "greedy": {
+        "bucket_gradient": -0.6163,
+        "chips_mean": 588.1,
+        "clear_rate": 0.1725,
+        "p_play_when_legal": 0.5193
+      },
+      "sampled": {
+        "bucket_gradient": -0.4731,
+        "chips_mean": 623.1,
+        "clear_rate": 0.2175,
+        "p_play_when_legal": 0.4928
+      }
+    }
+  },
+  "primary_mode": "greedy",
+  "verdict": {
+    "any_cell_passes": false,
+    "cells_beating_always_discard_greedy": [],
+    "cells_beating_frozen_greedy": [
+      "omission_separated"
+    ]
+  }
+}

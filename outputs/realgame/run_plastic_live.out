@@ -1,0 +1,23 @@
+[api] http://127.0.0.1:12346 health={'status': 'ok'}
+[fly] plast2 operating point from /Users/abhipoluri/fly-balatro/outputs/plast2/run_real_eta0.05_s0.json
+[fly] brain config /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json (label apl2_aplkc1_aplmb0.1_vtho4064)
+[fly] naive: every KC -> MBON synapse at its original weight
+[fly] 33496 KC -> MBON synapses (10886 PAM-gated, 13582 PPL1-gated), 66 approach / 24 avoid MBONs
+[fly] eta_reward=0.05 eta_punish=0.1907 (/Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json (ratio 3.8132))
+[spikes] mode=on sidecar=/Users/abhipoluri/fly-balatro/outputs/realgame/spikes.bin (wanted now: True)
+[run] starting RED deck / WHITE stake
+[  1] SELECTING_HAND score=0/300 h=4 d=4 | Flush 304 vs 300 (ge1.0) | app 12.4 - avo 8.3 Hz -> P(play) 0.82 => PLAY [1, 2, 3, 4, 7]
+      -> DA+ reward; chips 304 cleared=True lost=False | synapses changed 1.2% mean w/w0 0.9997
+[  2] SELECTING_HAND score=0/450 h=4 d=4 | Two Pair 112 vs 450 (lt0.25) | app 25.2 - avo 15.8 Hz -> P(play) 0.95 => PLAY [1, 2, 3, 4]
+      -> no pulse; chips 112 cleared=False lost=False | synapses changed 1.2% mean w/w0 0.9997
+[  3] SELECTING_HAND score=112/450 h=3 d=4 | Two Pair 88 vs 338 (lt0.5) | app 9.1 - avo 9.2 Hz -> P(play) 0.08 => DISCARD [0, 3, 4, 5]
+      -> no pulse; chips 0 cleared=False lost=False | synapses changed 1.2% mean w/w0 0.9997
+[  4] SELECTING_HAND score=112/450 h=3 d=3 | Two Pair 88 vs 338 (lt0.5) | app 14.2 - avo 7.5 Hz -> P(play) 0.94 => PLAY [2, 3, 6, 7]
+      -> no pulse; chips 88 cleared=False lost=False | synapses changed 1.2% mean w/w0 0.9997
+[  5] SELECTING_HAND score=200/450 h=2 d=3 | High Card 15 vs 250 (lt0.25) | app 22.4 - avo 18.3 Hz -> P(play) 0.82 => PLAY [0]
+      -> no pulse; chips 15 cleared=False lost=False | synapses changed 1.2% mean w/w0 0.9997
+[  6] SELECTING_HAND score=215/450 h=1 d=3 | High Card 15 vs 235 (lt0.25) | app 22.4 - avo 18.3 Hz -> P(play) 0.82 => PLAY [0]
+      -> DA- punish; chips 15 cleared=False lost=True | synapses changed 3.5% mean w/w0 0.9972
+[run] game_over_lose after 6 hands (1 reward, 1 punishment pulses)
+[fly] weights written to outputs/realgame/weights_live.npz
+[fly] 1175/33496 KC -> MBON synapses changed (3.5%), mean w/w0 0.99725, 0 at the floor; 1 reward and 1 punishment pulses

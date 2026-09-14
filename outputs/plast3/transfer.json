@@ -1,0 +1,2495 @@
+{
+  "anchors": [
+    {
+      "bucket": 2,
+      "hand_type": 7,
+      "index": 27,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 3,
+      "hand_type": 8,
+      "index": 4,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 3,
+      "hand_type": 0,
+      "index": 498,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 2,
+      "hand_type": 2,
+      "index": 351,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 3,
+      "hand_type": 3,
+      "index": 306,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 2,
+      "hand_type": 5,
+      "index": 99,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 3,
+      "hand_type": 7,
+      "index": 9,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 3,
+      "hand_type": 4,
+      "index": 230,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 1,
+      "hand_type": 3,
+      "index": 311,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 0,
+      "hand_type": 0,
+      "index": 488,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 0,
+      "hand_type": 3,
+      "index": 253,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 3,
+      "hand_type": 2,
+      "index": 356,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 0,
+      "hand_type": 2,
+      "index": 336,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 1,
+      "hand_type": 2,
+      "index": 430,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 2,
+      "hand_type": 4,
+      "index": 223,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    },
+    {
+      "bucket": 2,
+      "hand_type": 1,
+      "index": 466,
+      "n_bucket_variants": 3,
+      "n_hand_type_variants": 8
+    }
+  ],
+  "conditions": {
+    "current": {
+      "calibration": {
+        "bias": -2.6159665471207854,
+        "explore_achieved": 0.20068746902330445,
+        "explore_floor": 0.1,
+        "explore_target": 0.2,
+        "n": 200,
+        "play_bias_p": 0.55,
+        "raw_max": 9.848484848484848,
+        "raw_median": 2.8030303030303045,
+        "raw_min": -5.0,
+        "raw_p16": 0.3666666666666667,
+        "raw_p84": 5.49090909090909,
+        "raw_sd": 2.5931042169622778,
+        "temperature": 0.8383112790300333
+      },
+      "config": "outputs/plast2/tuned_config.json",
+      "mean_delta_self": {
+        "punish": -1.8419,
+        "reward": 4.8106
+      },
+      "per_anchor": [
+        {
+          "anchor": 27,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.5303,
+            6.2121,
+            4.9242
+          ],
+          "delta_self": 5.9091,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.5455,
+            1.8182,
+            -0.5303,
+            4.4697,
+            0.3788,
+            1.1364,
+            4.8485,
+            4.0152
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 4,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            4.2424,
+            6.0606,
+            0.7576
+          ],
+          "delta_self": 7.9545,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.7424,
+            0.6818,
+            1.0606,
+            0.6061,
+            3.1061,
+            2.197,
+            4.3939,
+            -0.5303
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 498,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.4394,
+            5.0,
+            3.1061
+          ],
+          "delta_self": 5.5303,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.3182,
+            0.303,
+            3.7121,
+            4.0909,
+            3.7121,
+            0.8333,
+            0.303,
+            -0.9848
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 351,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.3636,
+            2.803,
+            5.0758
+          ],
+          "delta_self": 7.2727,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.6515,
+            1.4394,
+            -1.4394,
+            2.0455,
+            1.4394,
+            -0.1515,
+            0.0,
+            -2.0455
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 306,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.1364,
+            5.303,
+            0.2273
+          ],
+          "delta_self": 7.6515,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.6061,
+            3.1818,
+            -1.1364,
+            4.6212,
+            1.0606,
+            0.7576,
+            4.0909,
+            -0.3788
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 99,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            2.0455,
+            0.5303,
+            1.5152
+          ],
+          "delta_self": 2.8788,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.1364,
+            3.7879,
+            2.5,
+            0.5303,
+            1.5152,
+            3.7879,
+            6.1364,
+            1.7424
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 9,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.5909,
+            8.1061,
+            5.0
+          ],
+          "delta_self": 6.5909,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.4545,
+            3.1061,
+            -1.4394,
+            4.0152,
+            4.7727,
+            4.6212,
+            1.8939,
+            1.1364
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 230,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            4.0152,
+            0.5303,
+            3.4091
+          ],
+          "delta_self": 4.8485,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            5.9091,
+            5.2273,
+            1.1364,
+            2.8788,
+            8.2576,
+            2.197,
+            3.9394,
+            1.3636
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 311,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.0606,
+            1.0606,
+            2.9545
+          ],
+          "delta_self": 6.7424,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            2.2727,
+            -0.9091,
+            0.2273,
+            2.803,
+            2.0455,
+            3.3333,
+            -0.6818,
+            2.0455
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 488,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            3.6364,
+            6.3636,
+            5.6818
+          ],
+          "delta_self": 3.0303,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.2273,
+            -2.9545,
+            -0.6061,
+            -1.5909,
+            2.8788,
+            0.6061,
+            6.4394,
+            1.8182
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 253,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.0758,
+            3.4091,
+            3.7121
+          ],
+          "delta_self": 0.1515,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.9697,
+            2.1212,
+            -0.4545,
+            1.2121,
+            3.1818,
+            0.6818,
+            1.6667,
+            0.6818
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 356,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.2121,
+            5.1515,
+            1.1364
+          ],
+          "delta_self": 1.0606,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            2.0455,
+            4.0909,
+            0.7576,
+            8.5606,
+            1.7424,
+            0.5303,
+            0.9091,
+            0.6061
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 336,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.3788,
+            1.8182,
+            2.2727
+          ],
+          "delta_self": 4.4697,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            6.5909,
+            -1.5152,
+            2.4242,
+            -1.6667,
+            1.2879,
+            5.303,
+            0.5303,
+            4.9242
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 430,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.5303,
+            -0.2273,
+            5.2273
+          ],
+          "delta_self": 5.9848,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.5909,
+            2.0455,
+            -0.1515,
+            -2.6515,
+            0.9091,
+            0.6061,
+            3.0303,
+            -1.0606
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 223,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.0606,
+            2.8788,
+            4.6212
+          ],
+          "delta_self": 4.2424,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.4394,
+            2.6515,
+            2.8788,
+            5.6818,
+            3.2576,
+            5.0,
+            2.8788,
+            3.9394
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 466,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.9697,
+            5.1515,
+            5.4545
+          ],
+          "delta_self": 2.6515,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.3939,
+            2.2727,
+            -0.1515,
+            2.1212,
+            3.1061,
+            8.0303,
+            0.6818,
+            4.6212
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 27,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.5152,
+            1.7424,
+            -1.4394
+          ],
+          "delta_self": -4.1667,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.197,
+            0.9848,
+            -2.4242,
+            1.8182,
+            -2.0455,
+            -0.6061,
+            1.0606,
+            1.6667
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 4,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            2.2727,
+            -4.7727,
+            0.3788
+          ],
+          "delta_self": -1.5152,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -3.3333,
+            -2.197,
+            -0.5303,
+            0.0758,
+            1.2121,
+            1.8182,
+            2.197,
+            -3.7121
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 498,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.1364,
+            -0.303,
+            0.0758
+          ],
+          "delta_self": -3.0303,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -5.0,
+            -0.1515,
+            4.5455,
+            1.1364,
+            -0.6061,
+            0.3788,
+            -2.9545,
+            -0.6061
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 351,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.5909,
+            -2.197,
+            -0.9091
+          ],
+          "delta_self": 0.0,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.4394,
+            -1.6667,
+            -6.2879,
+            -1.0606,
+            -0.6061,
+            0.6061,
+            -0.9091,
+            -2.6515
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 306,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.303,
+            2.2727,
+            -3.6364
+          ],
+          "delta_self": 0.1515,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -0.5303,
+            -0.8333,
+            -0.303,
+            -0.0758,
+            -0.0758,
+            -0.2273,
+            -0.9091,
+            -1.3636
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 99,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.6667,
+            -0.6061,
+            0.6061
+          ],
+          "delta_self": -1.8182,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.8182,
+            2.0455,
+            0.303,
+            -2.1212,
+            -3.1818,
+            -0.9091,
+            1.2879,
+            -0.0758
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 9,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -2.1212,
+            0.0,
+            0.3788
+          ],
+          "delta_self": -0.7576,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -0.9091,
+            0.0,
+            -2.2727,
+            1.7424,
+            1.5909,
+            2.0455,
+            -0.2273,
+            0.0758
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 230,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            3.4091,
+            0.2273,
+            -0.9091
+          ],
+          "delta_self": -0.0758,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.6515,
+            -1.5152,
+            0.303,
+            -3.4848,
+            -1.2879,
+            -0.6818,
+            -0.8333,
+            -0.6061
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 311,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.8333,
+            -2.1212,
+            -1.2879
+          ],
+          "delta_self": -1.2121,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -0.6061,
+            -2.9545,
+            -1.2121,
+            0.8333,
+            -2.5758,
+            -2.5,
+            2.2727,
+            0.0
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 488,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.303,
+            2.5758,
+            -0.0758
+          ],
+          "delta_self": -1.0606,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.1212,
+            1.6667,
+            -2.9545,
+            -3.1818,
+            1.8939,
+            -2.5,
+            0.6061,
+            -1.5152
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 253,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -2.1212,
+            -0.303,
+            -2.4242
+          ],
+          "delta_self": -6.6667,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.6667,
+            0.0,
+            -2.0455,
+            -1.9697,
+            -4.0909,
+            -0.4545,
+            -2.4242,
+            -2.3485
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 356,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            3.1818,
+            -0.4545,
+            -1.1364
+          ],
+          "delta_self": -0.8333,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.9091,
+            -1.2121,
+            -0.303,
+            -4.0909,
+            0.0,
+            1.9697,
+            0.2273,
+            -0.9091
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 336,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.6061,
+            2.1212,
+            0.2273
+          ],
+          "delta_self": -1.7424,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.8333,
+            -5.7576,
+            1.4394,
+            -4.9242,
+            -1.2121,
+            1.1364,
+            -2.6515,
+            -2.0455
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 430,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            5.3788,
+            -3.5606,
+            2.4242
+          ],
+          "delta_self": -0.1515,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.0455,
+            0.0,
+            0.9848,
+            -3.1061,
+            0.6061,
+            -2.803,
+            0.5303,
+            -0.4545
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 223,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -2.1212,
+            -6.4394,
+            -2.8788
+          ],
+          "delta_self": -2.9545,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.0606,
+            -2.9545,
+            -0.303,
+            -2.7273,
+            0.0,
+            3.4091,
+            -1.8182,
+            -2.0455
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 466,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            2.2727,
+            0.5303,
+            1.8939
+          ],
+          "delta_self": -3.6364,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.8182,
+            -6.8182,
+            -1.8939,
+            -2.9545,
+            -0.6061,
+            -1.5152,
+            -2.0455,
+            -0.2273
+          ],
+          "kind": "punish"
+        }
+      ],
+      "summary": {
+        "punish_bucket_only": {
+          "mean_abs_delta_probe": 1.703,
+          "mean_abs_delta_self": 1.8608,
+          "mean_relative_spread": -1.5194,
+          "median_relative_spread": 0.0715,
+          "n": 48,
+          "n_anchors": 16,
+          "sd": 10.545,
+          "spread_ratio_of_means": 0.9152
+        },
+        "punish_hand_type_only": {
+          "mean_abs_delta_probe": 1.6525,
+          "mean_abs_delta_self": 1.8608,
+          "mean_relative_spread": 1.6141,
+          "median_relative_spread": 0.3034,
+          "n": 128,
+          "n_anchors": 16,
+          "sd": 6.6885,
+          "spread_ratio_of_means": 0.888
+        },
+        "reward_bucket_only": {
+          "mean_abs_delta_probe": 2.9577,
+          "mean_abs_delta_self": 4.8106,
+          "mean_relative_spread": 1.678,
+          "median_relative_spread": 0.6858,
+          "n": 48,
+          "n_anchors": 16,
+          "sd": 4.6282,
+          "spread_ratio_of_means": 0.6148
+        },
+        "reward_hand_type_only": {
+          "mean_abs_delta_probe": 2.3976,
+          "mean_abs_delta_self": 4.8106,
+          "mean_relative_spread": 1.1086,
+          "median_relative_spread": 0.4345,
+          "n": 128,
+          "n_anchors": 16,
+          "sd": 2.8425,
+          "spread_ratio_of_means": 0.4984
+        }
+      }
+    },
+    "separated": {
+      "calibration": {
+        "bias": -1.7121077985870423,
+        "explore_achieved": 0.19645259728156886,
+        "explore_floor": 0.1,
+        "explore_target": 0.2,
+        "n": 200,
+        "play_bias_p": 0.55,
+        "raw_max": 6.742424242424241,
+        "raw_median": 1.8939393939393945,
+        "raw_min": -2.7272727272727266,
+        "raw_p16": -1.212121212121211,
+        "raw_p84": 4.6212121212121176,
+        "raw_sd": 2.515160385845985,
+        "temperature": 0.8148637694499797
+      },
+      "config": "outputs/plast3/tuned_config_sep.json",
+      "mean_delta_self": {
+        "punish": -2.2964,
+        "reward": 4.6686
+      },
+      "per_anchor": [
+        {
+          "anchor": 27,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.2879,
+            2.9545,
+            2.2727
+          ],
+          "delta_self": 3.6364,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            5.1515,
+            6.0606,
+            3.5606,
+            4.7727,
+            3.5606,
+            3.4848,
+            1.4394,
+            3.5606
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 4,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.6061,
+            1.5909,
+            1.9697
+          ],
+          "delta_self": 1.7424,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.8939,
+            3.3333,
+            -0.8333,
+            2.803,
+            2.0455,
+            0.7576,
+            3.1061,
+            2.8788
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 498,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.8939,
+            2.197,
+            3.0303
+          ],
+          "delta_self": 5.6061,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            3.9394,
+            -0.8333,
+            1.9697,
+            0.9091,
+            2.3485,
+            2.2727,
+            1.9697,
+            0.0
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 351,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.9697,
+            3.8636,
+            3.0303
+          ],
+          "delta_self": 6.2879,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            6.2121,
+            6.0606,
+            3.4091,
+            2.5,
+            1.2121,
+            1.4394,
+            0.1515,
+            3.4848
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 306,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.2879,
+            0.6061,
+            3.1061
+          ],
+          "delta_self": 3.1061,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            2.7273,
+            1.5909,
+            -1.6667,
+            0.6061,
+            1.2121,
+            3.1061,
+            2.2727,
+            0.0
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 99,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.7576,
+            2.803,
+            2.1212
+          ],
+          "delta_self": 4.8485,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.8485,
+            6.0606,
+            3.8636,
+            4.2424,
+            2.4242,
+            1.4394,
+            0.7576,
+            4.0909
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 9,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.9091,
+            0.9848,
+            -0.6818
+          ],
+          "delta_self": 6.0606,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.8939,
+            1.2879,
+            -0.8333,
+            2.803,
+            1.2121,
+            1.2121,
+            2.2727,
+            -0.9091
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 230,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            4.5455,
+            -0.2273,
+            -0.0758
+          ],
+          "delta_self": 1.5152,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.8939,
+            4.5455,
+            -0.8333,
+            1.9697,
+            0.9091,
+            1.9697,
+            2.2727,
+            0.0
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 311,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -2.1212,
+            1.1364,
+            1.7424
+          ],
+          "delta_self": 2.0455,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            3.5606,
+            7.5758,
+            5.9848,
+            4.9242,
+            2.9545,
+            1.1364,
+            1.2879,
+            0.0758
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 488,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            3.5606,
+            2.9545,
+            2.197
+          ],
+          "delta_self": 3.0303,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            5.9848,
+            5.7576,
+            0.2273,
+            9.0909,
+            4.5455,
+            1.5909,
+            6.8182,
+            7.3485
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 253,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.303,
+            1.1364,
+            0.5303
+          ],
+          "delta_self": 4.3182,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.8485,
+            5.6818,
+            3.2576,
+            7.803,
+            5.6818,
+            0.4545,
+            5.0,
+            5.0
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 356,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            2.5758,
+            3.5606,
+            -0.6061
+          ],
+          "delta_self": 2.8788,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.9697,
+            3.7121,
+            1.6667,
+            0.9091,
+            0.0,
+            2.8788,
+            1.9697,
+            -0.9091
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 336,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            4.5455,
+            1.8939,
+            1.2121
+          ],
+          "delta_self": 6.8182,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            2.4242,
+            4.8485,
+            1.1364,
+            5.9091,
+            5.6818,
+            1.0606,
+            3.7121,
+            7.0455
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 430,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.7424,
+            2.9545,
+            1.2879
+          ],
+          "delta_self": 7.5758,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.697,
+            7.3485,
+            2.1212,
+            4.0152,
+            5.303,
+            1.3636,
+            1.8939,
+            0.9848
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 223,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            3.6364,
+            0.0,
+            0.6061
+          ],
+          "delta_self": 5.3788,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            6.2121,
+            6.9697,
+            3.5606,
+            5.6818,
+            3.4848,
+            0.9091,
+            0.1515,
+            4.0909
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 466,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.0,
+            0.6818,
+            1.2121
+          ],
+          "delta_self": 9.8485,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            5.3788,
+            3.8636,
+            5.3788,
+            2.803,
+            3.4848,
+            0.9091,
+            -0.3788,
+            4.0909
+          ],
+          "kind": "reward"
+        },
+        {
+          "anchor": 27,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.4545,
+            0.0,
+            -1.4394
+          ],
+          "delta_self": -1.5152,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            4.6212,
+            -1.8182,
+            -0.4545,
+            -2.803,
+            -0.2273,
+            -0.6061,
+            -1.7424,
+            -1.1364
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 4,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.6061,
+            0.8333,
+            -1.8939
+          ],
+          "delta_self": -1.5909,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.8182,
+            1.5152,
+            -0.6061,
+            -3.7121,
+            -0.303,
+            -0.6061,
+            0.6061,
+            -1.8182
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 498,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.3788,
+            0.303,
+            0.9848
+          ],
+          "delta_self": -3.4091,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.3636,
+            -1.2121,
+            -0.7576,
+            0.0,
+            -0.9091,
+            0.6061,
+            -1.2121,
+            -1.4394
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 351,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.5303,
+            2.6515,
+            -0.6061
+          ],
+          "delta_self": -2.1212,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.0606,
+            0.1515,
+            -2.803,
+            -2.7273,
+            0.6061,
+            -1.5152,
+            -2.1212,
+            -0.5303
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 306,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.303,
+            -0.9848,
+            0.303
+          ],
+          "delta_self": -1.6667,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.803,
+            1.3636,
+            -1.2121,
+            -0.8333,
+            -0.303,
+            0.6061,
+            -1.2121,
+            -1.4394
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 99,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.4394,
+            3.1061,
+            -0.6818
+          ],
+          "delta_self": 0.0758,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.9091,
+            0.4545,
+            -2.1212,
+            -0.303,
+            -0.2273,
+            -0.6061,
+            -0.9091,
+            -1.5152
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 9,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.4394,
+            -0.2273,
+            -0.303
+          ],
+          "delta_self": -5.6061,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.803,
+            1.3636,
+            -1.2121,
+            -0.7576,
+            -0.8333,
+            -0.9091,
+            0.303,
+            -2.0455
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 230,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -2.2727,
+            0.6818,
+            -2.4242
+          ],
+          "delta_self": -0.5303,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.803,
+            0.303,
+            -1.2121,
+            -0.7576,
+            -0.9091,
+            0.6061,
+            -1.2121,
+            -1.4394
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 311,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.5303,
+            -0.9091,
+            -0.8333
+          ],
+          "delta_self": -4.8485,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -0.8333,
+            -1.7424,
+            0.0758,
+            0.5303,
+            1.3636,
+            -2.6515,
+            0.0,
+            -5.2273
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 488,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.2121,
+            3.1818,
+            -1.5909
+          ],
+          "delta_self": -3.1818,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.7424,
+            -0.4545,
+            -2.6515,
+            2.6515,
+            -0.9091,
+            -1.5152,
+            1.0606,
+            0.2273
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 253,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -1.2879,
+            -0.8333,
+            -0.5303
+          ],
+          "delta_self": -2.9545,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.303,
+            -3.6364,
+            -2.0455,
+            1.7424,
+            -0.9848,
+            -1.5152,
+            1.0606,
+            1.2879
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 356,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            1.0606,
+            2.3485,
+            0.9848
+          ],
+          "delta_self": -4.697,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -1.5152,
+            0.303,
+            -1.1364,
+            -0.8333,
+            -0.6061,
+            1.4394,
+            -1.1364,
+            -1.7424
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 336,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.9848,
+            -1.8939,
+            -0.6061
+          ],
+          "delta_self": -4.0909,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.9091,
+            -3.1061,
+            -1.8182,
+            1.0606,
+            -1.7424,
+            -3.0303,
+            -2.3485,
+            2.5
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 430,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.9091,
+            -0.6818,
+            -2.1212
+          ],
+          "delta_self": -0.8333,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            -2.197,
+            -3.2576,
+            -2.803,
+            0.9848,
+            1.3636,
+            -3.8636,
+            -1.2121,
+            -2.8788
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 223,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            0.303,
+            0.9091,
+            -1.1364
+          ],
+          "delta_self": 0.0758,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            0.9091,
+            0.1515,
+            -1.5909,
+            -2.803,
+            -0.6061,
+            -1.7424,
+            -0.9091,
+            0.6061
+          ],
+          "kind": "punish"
+        },
+        {
+          "anchor": 466,
+          "bucket_hamming": [
+            2,
+            2,
+            2
+          ],
+          "bucket_only": [
+            -0.6061,
+            -1.7424,
+            0.0758
+          ],
+          "delta_self": 0.1515,
+          "hand_type_hamming": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "hand_type_only": [
+            1.2121,
+            -1.0606,
+            -2.803,
+            0.0758,
+            1.2121,
+            -0.303,
+            -0.9091,
+            0.6061
+          ],
+          "kind": "punish"
+        }
+      ],
+      "summary": {
+        "punish_bucket_only": {
+          "mean_abs_delta_probe": 1.0858,
+          "mean_abs_delta_self": 2.3343,
+          "mean_relative_spread": 0.2416,
+          "median_relative_spread": 0.0817,
+          "n": 48,
+          "n_anchors": 16,
+          "sd": 7.5108,
+          "spread_ratio_of_means": 0.4652
+        },
+        "punish_hand_type_only": {
+          "mean_abs_delta_probe": 1.3844,
+          "mean_abs_delta_self": 2.3343,
+          "mean_relative_spread": -0.7404,
+          "median_relative_spread": 0.2762,
+          "n": 128,
+          "n_anchors": 16,
+          "sd": 6.2687,
+          "spread_ratio_of_means": 0.5931
+        },
+        "reward_bucket_only": {
+          "mean_abs_delta_probe": 1.8119,
+          "mean_abs_delta_self": 4.6686,
+          "mean_relative_spread": 0.4032,
+          "median_relative_spread": 0.3306,
+          "n": 48,
+          "n_anchors": 16,
+          "sd": 0.585,
+          "spread_ratio_of_means": 0.3881
+        },
+        "reward_hand_type_only": {
+          "mean_abs_delta_probe": 3.0717,
+          "mean_abs_delta_self": 4.6686,
+          "mean_relative_spread": 0.7775,
+          "median_relative_spread": 0.6248,
+          "n": 128,
+          "n_anchors": 16,
+          "sd": 0.7365,
+          "spread_ratio_of_means": 0.658
+        }
+      }
+    }
+  },
+  "eta": 0.05,
+  "n_anchors": 16,
+  "n_pulses": 20,
+  "note": "relative spread = delta(probe) / delta(anchor) on play_drive; 1.0 means the conditioning transferred completely. bucket_only holds the whole relay pattern fixed and changes only the score bucket; hand_type_only holds the bucket and changes the hand type.",
+  "wall_seconds": 590.2
+}

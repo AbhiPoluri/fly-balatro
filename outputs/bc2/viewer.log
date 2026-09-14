@@ -1,0 +1,44 @@
+2026-09-13 03:32:11,292 INFO    flyviewer: graph: 146271 neurons, 5146572 edges (0.1s)
+2026-09-13 03:32:11,297 INFO    flyviewer: soma cloud: 123930 of 146271 neurons drawn (20156 no soma, 2185 outside the brain box)
+2026-09-13 03:32:11,555 INFO    flyviewer: brain[real] ready in 0.3s
+2026-09-13 03:32:11,563 INFO    flyviewer: policy for real wiring: brain_readout (6,064-d log1p spike counts from ALPN + KC + DN)
+2026-09-13 03:32:11,563 INFO    flyviewer:   policy note: using bc2/models/real_alpn_kc_dn_mlp.npz (feature_version 2, 1x256 ReLU readout)
+2026-09-13 03:32:11,583 INFO    flyviewer: encoding v2: 315 bits -> 3150 driven neurons (orn_first=True)
+2026-09-13 03:32:11,583 INFO    flyviewer: ready: http://127.0.0.1:8767  (policy=brain_readout, condition=real, RSS 309 MB)
+/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:780: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:784: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [5249]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8767 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59471 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59471 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59472 - "GET /static/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59472 - "GET /static/neurons.bin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59473 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59675 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59676 - "GET /static/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59675 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59693 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59693 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59696 - "GET /static/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59721 - "GET /static/neurons.bin HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59723 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5249]

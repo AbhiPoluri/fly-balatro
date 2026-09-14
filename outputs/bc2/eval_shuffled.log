@@ -1,0 +1,59 @@
+=== 04:30 shuffled features done ===
+[shuffled] feature_version=2 n_features=315 window=50ms orn_first=True
+  row 0: ok  (2 active units)
+  row 46117: ok  (84 active units)
+  row 92235: ok  (119 active units)
+  row 138353: ok  (65 active units)
+[shuffled] 4/4 rows reproduce exactly
+device = mps
+states: 150,037  feature_version=2  bits=315
+split: {"train": 108505, "val": 12250, "test": 29282, "episodes": {"total": 2719, "test": 544, "val": 218}, "train_heuristic_frac": 0.7288, "val_heuristic_frac": 0.7536, "test_heuristic_frac": 0.6946}
+priors: {
+  "most_frequent_legal_label_top1": 0.3540400245884844,
+  "most_frequent_legal_label_top1_nontrivial": 0.3287792760823279,
+  "majority_label_top1": 0.16009835393757257,
+  "trivial_state_fraction": 0.037634041390615394,
+  "uniform_random_legal_top1": 0.2049387158046061,
+  "n_test": 29282
+}
+real_alpn_kc_dn effective (non-constant) width: 3696/6064
+[shuf_alpn_kc_dn] d=6064 effective=1534 (2s to build)
+    shuf_alpn_kc_dn / linear
+      test top1 0.6040  nontrivial 0.5884669978708303  (25s)
+    shuf_alpn_kc_dn / mlp
+      test top1 0.6840  nontrivial 0.6716820440028389  (28s)
+[shuf_dn] d=1314 effective=726 (0s to build)
+    shuf_dn / linear
+      test top1 0.5778  nontrivial 0.5612491128459901  (14s)
+    shuf_dn / mlp
+      test top1 0.6510  nontrivial 0.6373314407381121  (16s)
+wrote outputs/bc2/train_metrics.json
+=== 04:31 shuffled readouts trained ===
+feature_version=2 n_features=315 teacher=v2 bc_dir=outputs/bc2
+[shuffled] 4 readouts x 400 episodes = 1600 jobs, wiring=shuffled
+[shuffled] 80/1600 episodes  1.0 min  ETA 19.1 min
+[shuffled] 160/1600 episodes  1.9 min  ETA 17.3 min
+[shuffled] 240/1600 episodes  2.9 min  ETA 16.3 min
+[shuffled] 320/1600 episodes  3.8 min  ETA 15.3 min
+[shuffled] 400/1600 episodes  4.8 min  ETA 14.4 min
+  shuf_alpn_kc_dn/linear: clear 0.000  chips 238  len 39.2  skip 0.0000  trunc 0.000  cache 0.043
+[shuffled] 480/1600 episodes  6.0 min  ETA 14.1 min
+[shuffled] 560/1600 episodes  7.4 min  ETA 13.7 min
+[shuffled] 640/1600 episodes  8.8 min  ETA 13.2 min
+[shuffled] 720/1600 episodes  10.1 min  ETA 12.3 min
+[shuffled] 800/1600 episodes  11.4 min  ETA 11.4 min
+  shuf_alpn_kc_dn/mlp: clear 0.020  chips 404  len 54.5  skip 0.0000  trunc 0.000  cache 0.073
+[shuffled] 880/1600 episodes  12.4 min  ETA 10.1 min
+[shuffled] 960/1600 episodes  13.4 min  ETA 8.9 min
+[shuffled] 1040/1600 episodes  14.3 min  ETA 7.7 min
+[shuffled] 1120/1600 episodes  15.1 min  ETA 6.5 min
+[shuffled] 1200/1600 episodes  16.0 min  ETA 5.3 min
+  shuf_dn/linear: clear 0.000  chips 226  len 38.9  skip 0.0000  trunc 0.000  cache 0.087
+[shuffled] 1280/1600 episodes  17.1 min  ETA 4.3 min
+[shuffled] 1360/1600 episodes  18.2 min  ETA 3.2 min
+[shuffled] 1440/1600 episodes  19.3 min  ETA 2.1 min
+[shuffled] 1520/1600 episodes  20.4 min  ETA 1.1 min
+[shuffled] 1600/1600 episodes  21.4 min  ETA 0.0 min
+  shuf_dn/mlp: clear 0.007  chips 317  len 45.9  skip 0.0000  trunc 0.000  cache 0.075
+wrote outputs/bc2/eval.json
+=== 04:53 shuffled eval done ===

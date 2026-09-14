@@ -1,0 +1,739 @@
+{
+  "n_inputs": 60,
+  "window_ms": 50.0,
+  "drive_mv": 30.0,
+  "brain_seed": 1,
+  "v_jitter_mv": 6.9,
+  "dataset": {
+    "mean_bits_active": 35.83,
+    "n_features": 180
+  },
+  "kc_input_sources": {
+    "n_kc": 4064,
+    "by_source": {
+      "ALPN": {
+        "edges": 19980,
+        "signed_mv_total": 105842.3,
+        "signed_mv_per_kc": 26.044
+      },
+      "Kenyon_Cell": {
+        "edges": 33247,
+        "signed_mv_total": 58226.3,
+        "signed_mv_per_kc": 14.327
+      },
+      "type:APL": {
+        "edges": 4104,
+        "signed_mv_total": -53701.5,
+        "signed_mv_per_kc": -13.214
+      },
+      "DAN": {
+        "edges": 5624,
+        "signed_mv_total": 9941.0,
+        "signed_mv_per_kc": 2.446
+      },
+      "type:DPM": {
+        "edges": 3273,
+        "signed_mv_total": 8430.1,
+        "signed_mv_per_kc": 2.074
+      },
+      "type:MB-C1": {
+        "edges": 1869,
+        "signed_mv_total": -3953.1,
+        "signed_mv_per_kc": -0.973
+      },
+      "type:LHPV3c1": {
+        "edges": 352,
+        "signed_mv_total": 1854.9,
+        "signed_mv_per_kc": 0.456
+      },
+      "type:LHPV12a1": {
+        "edges": 651,
+        "signed_mv_total": -1154.7,
+        "signed_mv_per_kc": -0.284
+      },
+      "type:aMe12": {
+        "edges": 115,
+        "signed_mv_total": 443.9,
+        "signed_mv_per_kc": 0.109
+      },
+      "MBON": {
+        "edges": 262,
+        "signed_mv_total": -410.6,
+        "signed_mv_per_kc": -0.101
+      },
+      "type:PLP095": {
+        "edges": 70,
+        "signed_mv_total": 372.9,
+        "signed_mv_per_kc": 0.092
+      },
+      "type:MeVP41": {
+        "edges": 50,
+        "signed_mv_total": 270.3,
+        "signed_mv_per_kc": 0.067
+      },
+      "type:LoVP42": {
+        "edges": 52,
+        "signed_mv_total": 248.3,
+        "signed_mv_per_kc": 0.061
+      },
+      "type:LHCENT1": {
+        "edges": 137,
+        "signed_mv_total": -231.6,
+        "signed_mv_per_kc": -0.057
+      },
+      "unlabeled": {
+        "edges": 63,
+        "signed_mv_total": 223.0,
+        "signed_mv_per_kc": 0.055
+      },
+      "type:aMe26": {
+        "edges": 84,
+        "signed_mv_total": 202.1,
+        "signed_mv_per_kc": 0.05
+      },
+      "type:CL258": {
+        "edges": 39,
+        "signed_mv_total": 195.8,
+        "signed_mv_per_kc": 0.048
+      },
+      "type:LoVP97": {
+        "edges": 19,
+        "signed_mv_total": 193.9,
+        "signed_mv_per_kc": 0.048
+      },
+      "type:MeVP36": {
+        "edges": 38,
+        "signed_mv_total": 177.1,
+        "signed_mv_per_kc": 0.044
+      },
+      "type:AVLP043": {
+        "edges": 30,
+        "signed_mv_total": 171.3,
+        "signed_mv_per_kc": 0.042
+      },
+      "type:SLP360_d": {
+        "edges": 40,
+        "signed_mv_total": 155.4,
+        "signed_mv_per_kc": 0.038
+      },
+      "type:aMe20": {
+        "edges": 25,
+        "signed_mv_total": 139.4,
+        "signed_mv_per_kc": 0.034
+      },
+      "type:SLP360_b": {
+        "edges": 28,
+        "signed_mv_total": 120.7,
+        "signed_mv_per_kc": 0.03
+      },
+      "type:LHCENT8": {
+        "edges": 76,
+        "signed_mv_total": -120.2,
+        "signed_mv_per_kc": -0.03
+      },
+      "type:LoVP71": {
+        "edges": 28,
+        "signed_mv_total": 112.8,
+        "signed_mv_per_kc": 0.028
+      },
+      "type:SLP360_c": {
+        "edges": 29,
+        "signed_mv_total": 110.0,
+        "signed_mv_per_kc": 0.027
+      },
+      "type:SLP360_a": {
+        "edges": 23,
+        "signed_mv_total": 101.2,
+        "signed_mv_per_kc": 0.025
+      },
+      "type:PLP145": {
+        "edges": 20,
+        "signed_mv_total": 96.0,
+        "signed_mv_per_kc": 0.024
+      },
+      "type:LoVP107": {
+        "edges": 19,
+        "signed_mv_total": 94.9,
+        "signed_mv_per_kc": 0.023
+      },
+      "type:MeVP25": {
+        "edges": 24,
+        "signed_mv_total": 91.6,
+        "signed_mv_per_kc": 0.023
+      },
+      "type:MeVP43": {
+        "edges": 23,
+        "signed_mv_total": 87.2,
+        "signed_mv_per_kc": 0.021
+      },
+      "type:PLP120": {
+        "edges": 20,
+        "signed_mv_total": 83.1,
+        "signed_mv_per_kc": 0.02
+      },
+      "type:AN09B033": {
+        "edges": 22,
+        "signed_mv_total": 81.4,
+        "signed_mv_per_kc": 0.02
+      },
+      "type:LHCENT3": {
+        "edges": 43,
+        "signed_mv_total": -74.5,
+        "signed_mv_per_kc": -0.018
+      },
+      "type:LoVP100": {
+        "edges": 19,
+        "signed_mv_total": 74.5,
+        "signed_mv_per_kc": 0.018
+      },
+      "type:PVLP009": {
+        "edges": 18,
+        "signed_mv_total": 70.1,
+        "signed_mv_per_kc": 0.017
+      },
+      "type:LoVP65": {
+        "edges": 15,
+        "signed_mv_total": 65.7,
+        "signed_mv_per_kc": 0.016
+      },
+      "type:LoVP70": {
+        "edges": 15,
+        "signed_mv_total": 62.2,
+        "signed_mv_per_kc": 0.015
+      },
+      "type:MeVP50": {
+        "edges": 15,
+        "signed_mv_total": 59.7,
+        "signed_mv_per_kc": 0.015
+      },
+      "type:MeVPLo2": {
+        "edges": 20,
+        "signed_mv_total": 54.2,
+        "signed_mv_per_kc": 0.013
+      },
+      "type:MeVP45": {
+        "edges": 25,
+        "signed_mv_total": 47.8,
+        "signed_mv_per_kc": 0.012
+      },
+      "type:CL200": {
+        "edges": 11,
+        "signed_mv_total": 47.3,
+        "signed_mv_per_kc": 0.012
+      },
+      "type:MeVP30": {
+        "edges": 8,
+        "signed_mv_total": 47.3,
+        "signed_mv_per_kc": 0.012
+      },
+      "type:OA-VPM3": {
+        "edges": 21,
+        "signed_mv_total": 35.2,
+        "signed_mv_per_kc": 0.009
+      },
+      "type:LoVP66": {
+        "edges": 5,
+        "signed_mv_total": 33.8,
+        "signed_mv_per_kc": 0.008
+      },
+      "type:OA-VPM4": {
+        "edges": 21,
+        "signed_mv_total": 33.8,
+        "signed_mv_per_kc": 0.008
+      },
+      "type:LHCENT2": {
+        "edges": 19,
+        "signed_mv_total": -33.3,
+        "signed_mv_per_kc": -0.008
+      },
+      "type:LAL145": {
+        "edges": 17,
+        "signed_mv_total": 31.1,
+        "signed_mv_per_kc": 0.008
+      },
+      "type:CL063": {
+        "edges": 13,
+        "signed_mv_total": -29.4,
+        "signed_mv_per_kc": -0.007
+      },
+      "type:MeVP52": {
+        "edges": 10,
+        "signed_mv_total": 28.3,
+        "signed_mv_per_kc": 0.007
+      },
+      "type:LT43": {
+        "edges": 14,
+        "signed_mv_total": -27.0,
+        "signed_mv_per_kc": -0.007
+      },
+      "type:LoVP51": {
+        "edges": 7,
+        "signed_mv_total": 26.4,
+        "signed_mv_per_kc": 0.006
+      },
+      "type:CB3496": {
+        "edges": 4,
+        "signed_mv_total": 21.2,
+        "signed_mv_per_kc": 0.005
+      },
+      "type:LoVP38": {
+        "edges": 11,
+        "signed_mv_total": -20.6,
+        "signed_mv_per_kc": -0.005
+      },
+      "type:MeVP21": {
+        "edges": 8,
+        "signed_mv_total": 20.1,
+        "signed_mv_per_kc": 0.005
+      },
+      "type:SLP223": {
+        "edges": 7,
+        "signed_mv_total": 20.1,
+        "signed_mv_per_kc": 0.005
+      },
+      "type:aMe6a": {
+        "edges": 2,
+        "signed_mv_total": 19.5,
+        "signed_mv_per_kc": 0.005
+      },
+      "type:MeVP29": {
+        "edges": 6,
+        "signed_mv_total": 18.7,
+        "signed_mv_per_kc": 0.005
+      },
+      "type:LHCENT5": {
+        "edges": 10,
+        "signed_mv_total": -17.1,
+        "signed_mv_per_kc": -0.004
+      },
+      "type:MeVP47": {
+        "edges": 7,
+        "signed_mv_total": 17.0,
+        "signed_mv_per_kc": 0.004
+      },
+      "type:LoVP72": {
+        "edges": 2,
+        "signed_mv_total": 16.8,
+        "signed_mv_per_kc": 0.004
+      },
+      "type:SLP184": {
+        "edges": 2,
+        "signed_mv_total": 16.8,
+        "signed_mv_per_kc": 0.004
+      },
+      "type:CL002": {
+        "edges": 2,
+        "signed_mv_total": -13.8,
+        "signed_mv_per_kc": -0.003
+      },
+      "type:SLP438": {
+        "edges": 8,
+        "signed_mv_total": 13.8,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:LoVP102": {
+        "edges": 2,
+        "signed_mv_total": 12.4,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:LHPV8c1": {
+        "edges": 4,
+        "signed_mv_total": 12.1,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:CB3479": {
+        "edges": 3,
+        "signed_mv_total": 11.3,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:LoVP41": {
+        "edges": 3,
+        "signed_mv_total": 11.3,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:CB3724": {
+        "edges": 4,
+        "signed_mv_total": 10.5,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:LT79": {
+        "edges": 2,
+        "signed_mv_total": 10.2,
+        "signed_mv_per_kc": 0.003
+      },
+      "type:LoVP57": {
+        "edges": 2,
+        "signed_mv_total": 9.4,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:LoVCLo3": {
+        "edges": 6,
+        "signed_mv_total": 9.1,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:SLP359": {
+        "edges": 3,
+        "signed_mv_total": 8.2,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:LT75": {
+        "edges": 1,
+        "signed_mv_total": 7.7,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:LHAV2d1": {
+        "edges": 3,
+        "signed_mv_total": 6.9,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:MeVPMe4": {
+        "edges": 3,
+        "signed_mv_total": -6.9,
+        "signed_mv_per_kc": -0.002
+      },
+      "type:PLP156": {
+        "edges": 2,
+        "signed_mv_total": 6.3,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:WED182": {
+        "edges": 2,
+        "signed_mv_total": 6.3,
+        "signed_mv_per_kc": 0.002
+      },
+      "type:MeVP5": {
+        "edges": 3,
+        "signed_mv_total": 5.8,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:CB2733": {
+        "edges": 2,
+        "signed_mv_total": -5.2,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:OA-VUMa3": {
+        "edges": 3,
+        "signed_mv_total": 4.9,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LHPV7a2": {
+        "edges": 3,
+        "signed_mv_total": 4.7,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:CB3676": {
+        "edges": 2,
+        "signed_mv_total": -4.4,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:LoVP37": {
+        "edges": 1,
+        "signed_mv_total": -4.4,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:SLP321": {
+        "edges": 1,
+        "signed_mv_total": 4.1,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:CB0656": {
+        "edges": 1,
+        "signed_mv_total": 3.9,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LAL043_e": {
+        "edges": 2,
+        "signed_mv_total": -3.6,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:LHPV6m1": {
+        "edges": 1,
+        "signed_mv_total": -3.6,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:LT67": {
+        "edges": 2,
+        "signed_mv_total": 3.6,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LoVP96": {
+        "edges": 1,
+        "signed_mv_total": -3.6,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:CRE012": {
+        "edges": 2,
+        "signed_mv_total": -3.3,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:SLP098": {
+        "edges": 2,
+        "signed_mv_total": -3.3,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:CB1551": {
+        "edges": 1,
+        "signed_mv_total": 3.0,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:CL357": {
+        "edges": 2,
+        "signed_mv_total": 3.0,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LHPV6c1": {
+        "edges": 1,
+        "signed_mv_total": 3.0,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:MeVP3": {
+        "edges": 2,
+        "signed_mv_total": 3.0,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:aMe9": {
+        "edges": 1,
+        "signed_mv_total": 3.0,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LHMB1": {
+        "edges": 2,
+        "signed_mv_total": -2.8,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:PLP186": {
+        "edges": 1,
+        "signed_mv_total": -2.8,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:MeVPMe3": {
+        "edges": 1,
+        "signed_mv_total": -2.5,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:PLP004": {
+        "edges": 1,
+        "signed_mv_total": -2.5,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:CL064": {
+        "edges": 1,
+        "signed_mv_total": -2.2,
+        "signed_mv_per_kc": -0.001
+      },
+      "type:IB115": {
+        "edges": 1,
+        "signed_mv_total": 2.2,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LC27": {
+        "edges": 1,
+        "signed_mv_total": 2.2,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:VES017": {
+        "edges": 1,
+        "signed_mv_total": 2.2,
+        "signed_mv_per_kc": 0.001
+      },
+      "type:LAL043_c": {
+        "edges": 1,
+        "signed_mv_total": -1.9,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:LHPV6j1": {
+        "edges": 1,
+        "signed_mv_total": 1.9,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:PLP131": {
+        "edges": 1,
+        "signed_mv_total": -1.9,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:SMP165": {
+        "edges": 1,
+        "signed_mv_total": -1.9,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:mALD3": {
+        "edges": 1,
+        "signed_mv_total": -1.9,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:AVLP257": {
+        "edges": 1,
+        "signed_mv_total": 1.7,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:CL368": {
+        "edges": 1,
+        "signed_mv_total": -1.7,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:GNG304": {
+        "edges": 1,
+        "signed_mv_total": -1.7,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:LHCENT4": {
+        "edges": 1,
+        "signed_mv_total": -1.7,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:LHPV5h4": {
+        "edges": 1,
+        "signed_mv_total": 1.7,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:PLP069": {
+        "edges": 1,
+        "signed_mv_total": -1.7,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:PLP231": {
+        "edges": 1,
+        "signed_mv_total": 1.7,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:SLP381": {
+        "edges": 1,
+        "signed_mv_total": -1.7,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:CL133": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:CL317": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:CRE075": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:DN1a": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:LAL100": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:LHPV9b1": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:LoVP46": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:MeVP33": {
+        "edges": 1,
+        "signed_mv_total": 1.4,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:PLP177": {
+        "edges": 1,
+        "signed_mv_total": 1.4,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:SLP122": {
+        "edges": 1,
+        "signed_mv_total": 1.4,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:SMP146": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:SMP157": {
+        "edges": 1,
+        "signed_mv_total": 1.4,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:WED092": {
+        "edges": 1,
+        "signed_mv_total": 1.4,
+        "signed_mv_per_kc": 0.0
+      },
+      "type:WEDPN12": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      },
+      "type:aMe22": {
+        "edges": 1,
+        "signed_mv_total": -1.4,
+        "signed_mv_per_kc": -0.0
+      }
+    }
+  },
+  "runs": {
+    "default": {
+      "tuning": {
+        "apl_scale": 1.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "delivered_conductance_mean_mv": 31.78,
+      "between_kc_sd_mv": 110.77,
+      "within_kc_sd_across_inputs_mv": 11.33,
+      "between_over_within": 9.78,
+      "corr_firing_frequency_with_mean_input": 0.804,
+      "kc_active_fraction": 0.38,
+      "always_on_fraction": 0.3772,
+      "seconds": 15.2
+    },
+    "apl2": {
+      "tuning": {
+        "apl_scale": 2.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "delivered_conductance_mean_mv": -127.26,
+      "between_kc_sd_mv": 133.33,
+      "within_kc_sd_across_inputs_mv": 14.49,
+      "between_over_within": 9.2,
+      "corr_firing_frequency_with_mean_input": 0.448,
+      "kc_active_fraction": 0.0781,
+      "always_on_fraction": 0.0701,
+      "seconds": 14.8
+    }
+  },
+  "alpn_code": {
+    "mean_count_per_cell": 3.703,
+    "cv_of_total_across_inputs": 0.0313,
+    "mean_per_cell_cv_across_inputs": 0.4621,
+    "note": "a near-zero CV of the total means every input drives the antennal lobe about equally hard: 36 of 180 bits active puts 360 ORNs into all ~54 glomeruli, so no ALPN is silent for any input"
+  },
+  "timing": {
+    "first_kc_spike_ms": {
+      "mean": 5.8,
+      "min": 5,
+      "max": 7
+    },
+    "first_apl_spike_ms": {
+      "mean": 5.88,
+      "min": 5,
+      "max": 7
+    },
+    "synaptic_delay_ms": 1.8,
+    "note": "APL is driven by the Kenyon cells, so its inhibition cannot reach them before first_apl_spike + 1.8 ms delay. Everything the KCs do before that is APL-free whatever apl_scale is."
+  }
+}

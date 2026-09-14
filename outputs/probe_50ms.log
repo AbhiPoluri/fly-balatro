@@ -1,0 +1,115 @@
+dataset: {
+  "n_samples": 600,
+  "n_features": 180,
+  "active_frac": 0.2,
+  "seed": 7,
+  "label_A": {
+    "kind": "count of bits in a random 30-bit group >= k",
+    "group": [
+      125,
+      179,
+      11,
+      76,
+      18,
+      58,
+      168,
+      42,
+      163,
+      139,
+      10,
+      93,
+      148,
+      102,
+      78,
+      164,
+      147,
+      107,
+      49,
+      6,
+      114,
+      146,
+      175,
+      112,
+      84,
+      14,
+      56,
+      143,
+      116,
+      109
+    ],
+    "k": 6,
+    "positive_rate": 0.5683
+  },
+  "label_B": {
+    "kind": "random +-1 linear threshold on 10 bits
+feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 2639, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+
+simulating real wiring (50.0 ms window, drive 30.0 mV, persistent=False) ...
+    [real] 150/600  15s
+    [real] 300/600  30s
+    [real] 450/600  45s
+    [real] 600/600  60s
+  real: 60s
+simulating shuffled wiring ...
+    [shuf] 150/600  11s
+    [shuf] 300/600  22s
+    [shuf] 450/600  34s
+    [shuf] 600/600  45s
+  shuffled: 45s
+
+label A  (chance 0.5683)
+  raw_bits                 acc 0.8517 (C=3.0)
+  real:DN                  acc 0.58 (C=0.003, 543/1314 cols)
+  real:MBON                acc 0.63 (C=0.003, 71/97 cols)
+  real:CX                  acc 0.5633 (C=0.003, 1013/2950 cols)
+  real:MBON+CX             acc 0.6083 (C=0.003, 1084/3047 cols)
+  real:DN+MBON+CX          acc 0.615 (C=0.003, 1627/4361 cols)
+  shuffled:DN              acc 0.6783 (C=0.003, 580/1314 cols)
+  shuffled:MBON            acc 0.645 (C=0.03, 66/97 cols)
+  shuffled:CX              acc 0.6983 (C=0.03, 653/2950 cols)
+  shuffled:MBON+CX         acc 0.71 (C=0.03, 719/3047 cols)
+  shuffled:DN+MBON+CX      acc 0.7133 (C=0.3, 1299/4361 cols)
+
+label B  (chance 0.5333)
+  raw_bits                 acc 0.9117 (C=3.0)
+  real:DN                  acc 0.5983 (C=0.003, 543/1314 cols)
+  real:MBON                acc 0.5383 (C=0.003, 71/97 cols)
+  real:CX                  acc 0.5433 (C=0.3, 1013/2950 cols)
+  real:MBON+CX             acc 0.54 (C=0.3, 1084/3047 cols)
+  real:DN+MBON+CX          acc 0.5867 (C=0.003, 1627/4361 cols)
+  shuffled:DN              acc 0.6517 (C=0.003, 580/1314 cols)
+  shuffled:MBON            acc 0.6317 (C=0.003, 66/97 cols)
+  shuffled:CX              acc 0.715 (C=3.0, 653/2950 cols)
+  shuffled:MBON+CX         acc 0.7117 (C=0.003, 719/3047 cols)
+  shuffled:DN+MBON+CX      acc 0.73 (C=0.03, 1299/4361 cols)
+
+firing (real): {
+  "DN": {
+    "population": 1314,
+    "ever_firing": 543,
+    "fraction_ever_firing": 0.4132,
+    "nonzero_variance": 539,
+    "fraction_nonzero_variance": 0.4102,
+    "mean_firing_per_sample": 275.2,
+    "mean_total_spikes_per_sample": 493.8
+  },
+  "MBON": {
+    "population": 97,
+    "ever_firing": 71,
+    "fraction_ever_firing": 0.732,
+    "nonzero_variance": 71,
+    "fraction_nonzero_variance": 0.732,
+    "mean_firing_per_sample": 59.8,
+    "mean_total_spikes_per_sample": 297.8
+  },
+  "CX": {
+    "population": 2950,
+    "ever_firing": 1013,
+    "fraction_ever_firing": 0.3434,
+    "nonzero_variance": 858,
+    "fraction_nonzero_variance": 0.2908,
+    "mean_firing_per_sample": 605.8,
+    "mean_total_spikes_per_sample": 765.9
+  }
+}
+wrote /Users/abhipoluri/fly-balatro/outputs/brain_probe.json

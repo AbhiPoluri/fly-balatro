@@ -1,0 +1,9 @@
+Downloading cpython-3.13.12-macos-aarch64-none (download) (16.9MiB)
+ Downloaded cpython-3.13.12-macos-aarch64-none (download)
+   Building balatrobot @ file:///Users/abhipoluri/fly-balatro/vendor/balatrobot
+      Built balatrobot @ file:///Users/abhipoluri/fly-balatro/vendor/balatrobot
+Installed 15 packages in 21ms
+Starting Balatro on port 12346...
+Waiting for health check on 127.0.0.1:12346...
+Balatro started (PID: 12024)
+Balatro running on port 12346. Press Ctrl+C to stop.

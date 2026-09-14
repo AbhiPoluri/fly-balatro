@@ -1,0 +1,31 @@
+{
+  "stop_reason": "ante_cleared",
+  "decisions": 76,
+  "wall_seconds": 160.7,
+  "condition": "real",
+  "policy_mode": "brain",
+  "policy_detail": "bc3/real_alpn_kc_dn_mlp.npz over ALPN+KC+DN spikes (state encoding v2, encoding glomerular32)",
+  "policy_uses_brain": true,
+  "blinds_attempted": [
+    "Small Blind",
+    "Big Blind",
+    "The Hook"
+  ],
+  "best_round_score": 644,
+  "final": {
+    "raw_state": "ROUND_EVAL",
+    "stage": 4,
+    "ante": 2,
+    "round": 3,
+    "blind": "",
+    "blind_type": "",
+    "score": 644,
+    "required_score": 0,
+    "plays": 3,
+    "discards": 2,
+    "money": 10,
+    "n_jokers": 0,
+    "hand": [],
+    "selected_indices": []
+  }
+}

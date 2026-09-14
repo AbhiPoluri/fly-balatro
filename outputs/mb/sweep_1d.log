@@ -1,0 +1,70 @@
+7 settings x 200 inputs
+[1/7] apl1_pnkc1_vth0_bias0 -- cached, skipping
+[2/7] apl1_pnkc1_vth2_bias0 -- cached, skipping
+[3/7] {'apl_scale': 1.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 4.0, 'kc_bias_mv': 0.0}
+    [apl1_pnkc1_vth4_bias0] 50/200  6s
+    [apl1_pnkc1_vth4_bias0] 100/200  13s
+    [apl1_pnkc1_vth4_bias0] 150/200  19s
+    [apl1_pnkc1_vth4_bias0] 200/200  25s
+  apl1_pnkc1_vth4_bias0
+    KC active fraction 0.2315 (941/4064)  Jaccard 0.8512 (Bernoulli ref 0.1309)  always-on 0.2308 (938)
+    KC rate 6.82 Hz   first KC spike 11 ms   peak 19 ms   3% of KC spikes in first 15 ms
+    MBON 32.75 Hz   ALPN 74.13 Hz   APL 280.60 Hz   brain 19890 spikes/input
+    MN9: sugar 2 spikes / no-drive 0 / matched-ORN 5 / 1800-ORN 11
+[4/7] {'apl_scale': 1.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 6.0, 'kc_bias_mv': 0.0}
+    [apl1_pnkc1_vth6_bias0] 50/200  6s
+    [apl1_pnkc1_vth6_bias0] 100/200  13s
+    [apl1_pnkc1_vth6_bias0] 150/200  19s
+    [apl1_pnkc1_vth6_bias0] 200/200  25s
+  apl1_pnkc1_vth6_bias0
+    KC active fraction 0.1672 (679/4064)  Jaccard 0.8223 (Bernoulli ref 0.0912)  always-on 0.1658 (674)
+    KC rate 4.51 Hz   first KC spike 12 ms   peak 23 ms   1% of KC spikes in first 15 ms
+    MBON 22.22 Hz   ALPN 74.26 Hz   APL 264.90 Hz   brain 19299 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 4 / 1800-ORN 8
+[5/7] {'apl_scale': 1.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 8.0, 'kc_bias_mv': 0.0}
+    [apl1_pnkc1_vth8_bias0] 50/200  6s
+    [apl1_pnkc1_vth8_bias0] 100/200  13s
+    [apl1_pnkc1_vth8_bias0] 150/200  19s
+    [apl1_pnkc1_vth8_bias0] 200/200  25s
+  apl1_pnkc1_vth8_bias0
+    KC active fraction 0.1210 (492/4064)  Jaccard 0.8176 (Bernoulli ref 0.0644)  always-on 0.1198 (487)
+    KC rate 3.03 Hz   first KC spike 14 ms   peak 26 ms   0% of KC spikes in first 15 ms
+    MBON 16.78 Hz   ALPN 74.36 Hz   APL 256.95 Hz   brain 18953 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 7 / 1800-ORN 10
+[6/7] {'apl_scale': 1.0, 'alpn_kc_scale': 0.5, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0}
+    [apl1_pnkc0.5_vth0_bias0] 50/200  6s
+    [apl1_pnkc0.5_vth0_bias0] 100/200  13s
+    [apl1_pnkc0.5_vth0_bias0] 150/200  19s
+    [apl1_pnkc0.5_vth0_bias0] 200/200  25s
+  apl1_pnkc0.5_vth0_bias0
+    KC active fraction 0.0159 (64/4064)  Jaccard 0.6226 (Bernoulli ref 0.008)  always-on 0.0150 (61)
+    KC rate 0.37 Hz   first KC spike 6 ms   peak 24 ms   8% of KC spikes in first 15 ms
+    MBON 9.51 Hz   ALPN 74.54 Hz   APL 230.75 Hz   brain 18376 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 7 / 1800-ORN 5
+[7/7] {'apl_scale': 1.0, 'alpn_kc_scale': 0.25, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0}
+    [apl1_pnkc0.25_vth0_bias0] 50/200  6s
+    [apl1_pnkc0.25_vth0_bias0] 100/200  13s
+    [apl1_pnkc0.25_vth0_bias0] 150/200  19s
+    [apl1_pnkc0.25_vth0_bias0] 200/200  25s
+  apl1_pnkc0.25_vth0_bias0
+    KC active fraction 0.0000 (0/4064)  Jaccard 0.0000 (Bernoulli ref 0.0)  always-on 0.0000 (0)
+    KC rate 0.00 Hz   first KC spike None ms   peak 1 ms   0% of KC spikes in first 15 ms
+    MBON 9.37 Hz   ALPN 74.57 Hz   APL 221.55 Hz   brain 18303 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 4 / 1800-ORN 5
+
+total 136s
+setting                         KCfrac  always    Jacc    ref   KCHz  MBONHz  ALPNHz  MN9
+-----------------------------------------------------------------------------------------
+apl1_pnkc1_vth0_bias0           0.3794  0.3757  0.8911  0.234  15.21   61.06   73.97    1
+apl2_pnkc1_vth0_bias0           0.0775  0.0716  0.6253  0.040   2.15   11.13   72.94    1
+apl5_pnkc1_vth0_bias0           0.0284  0.0229  0.3908  0.014   0.57    7.02   69.04    1
+apl10_pnkc1_vth0_bias0          0.0282  0.0226  0.3870  0.014   0.56    4.34   61.25    1
+apl20_pnkc1_vth0_bias0          0.0282  0.0226  0.3870  0.014   0.56    2.11   50.35    1
+apl50_pnkc1_vth0_bias0          0.0282  0.0226  0.3870  0.014   0.56    0.91   39.54    1
+apl1_pnkc1_vth2_bias0           0.2986  0.3024  0.8788  0.175  10.11   44.64   74.13    1
+apl1_pnkc1_vth4_bias0           0.2315  0.2308  0.8512  0.131   6.82   32.75   74.13    2
+apl1_pnkc1_vth6_bias0           0.1672  0.1658  0.8223  0.091   4.51   22.22   74.26    1
+apl1_pnkc1_vth8_bias0           0.1210  0.1198  0.8176  0.064   3.03   16.78   74.36    1
+apl1_pnkc0.5_vth0_bias0         0.0159  0.0150  0.6226  0.008   0.37    9.51   74.54    1
+apl1_pnkc0.25_vth0_bias0        0.0000  0.0000  0.0000  0.000   0.00    9.37   74.57    1
+wrote /Users/abhipoluri/fly-balatro/outputs/mb/sweep.json

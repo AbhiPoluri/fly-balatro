@@ -1,0 +1,800 @@
+{
+  "conditions": {
+    "baseline_plast": {
+      "decider": {
+        "bias": -1.7610962515566653,
+        "explore_floor": 0.0,
+        "n_approach": 66,
+        "n_avoid": 24,
+        "play_bias_p": 0.55,
+        "temperature": 1.0395326929171855,
+        "window_ms": 50.0
+      },
+      "measure": {
+        "decode": {
+          "kc_binary": {
+            "accuracy": 0.982,
+            "grouped": 0.982,
+            "n": 500,
+            "n_features": 697,
+            "n_groups": 500,
+            "permuted": 0.148
+          },
+          "kc_counts": {
+            "accuracy": 0.984,
+            "grouped": 0.986,
+            "n": 500,
+            "n_features": 769,
+            "n_groups": 500,
+            "permuted": 0.12
+          }
+        },
+        "kc": {
+          "active_frac": 0.05382,
+          "active_per_state": 218.7,
+          "active_per_state_sd": 28.2,
+          "frac_r_gt_0_3": 0.05955,
+          "frac_r_gt_0_5": 0.04724,
+          "kc_spikes_per_state": 323.0,
+          "mean_rate": 0.05382,
+          "median_rate_of_responsive": 0.088,
+          "n_in_band": 123,
+          "n_kc": 4064,
+          "n_r_eq_1": 72,
+          "n_r_gt_0_3": 242,
+          "n_r_gt_0_5": 192,
+          "n_responsive": 769,
+          "n_silent": 3295,
+          "rate_percentiles": {
+            "100": 1.0,
+            "50": 0.0,
+            "75": 0.0,
+            "90": 0.0714,
+            "95": 0.47,
+            "99": 1.0
+          }
+        },
+        "mbon": {
+          "approach_hz_mean": 14.7,
+          "avoid_hz_mean": 12.67,
+          "drive_distinct": 145,
+          "drive_max": 10.1515,
+          "drive_min": -5.6818,
+          "drive_range": 15.8333,
+          "drive_sd": 2.5722,
+          "mean_hz": 14.094,
+          "n_mbon": 97,
+          "n_silent": 38,
+          "n_varying": 47,
+          "quantum_hz": 1.1364,
+          "range_in_quanta": 13.93,
+          "reward_side_hz_max": 60.04,
+          "reward_side_hz_mean": 13.0225,
+          "reward_side_n": 16,
+          "reward_side_n_silent": 3,
+          "reward_side_types": [
+            "MBON01",
+            "MBON02",
+            "MBON03",
+            "MBON04",
+            "MBON05",
+            "MBON06",
+            "MBON07"
+          ]
+        }
+      },
+      "specificity": {
+        "punish": {
+          "direction_ok": true,
+          "eta": 0.05,
+          "kind": "punish",
+          "mean_delta_other": -2.4621,
+          "mean_delta_self": -2.3295,
+          "mean_specificity": 0.1326,
+          "n_odors": 8,
+          "n_odors_more_than_others": 4,
+          "n_odors_right_direction": 7,
+          "n_trials": 20,
+          "per_odor": [
+            {
+              "bucket": "lt1.0",
+              "delta_other": -2.6299,
+              "delta_self": -2.4242,
+              "drive_after": -5.6247,
+              "drive_before": -3.2005,
+              "hand_type": "Flush",
+              "index": 0,
+              "specificity": 0.2056
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": -1.8615,
+              "delta_self": -3.7879,
+              "drive_after": -2.3672,
+              "drive_before": 1.4207,
+              "hand_type": "Straight Flush",
+              "index": 2,
+              "specificity": -1.9264
+            },
+            {
+              "bucket": "lt0.5",
+              "delta_other": -2.3593,
+              "delta_self": -3.0303,
+              "drive_after": -2.1399,
+              "drive_before": 0.8904,
+              "hand_type": "Two Pair",
+              "index": 4,
+              "specificity": -0.671
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": -2.0671,
+              "delta_self": -2.3485,
+              "drive_after": -1.4581,
+              "drive_before": 0.8904,
+              "hand_type": "Full House",
+              "index": 9,
+              "specificity": -0.2814
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": -2.9654,
+              "delta_self": -1.1364,
+              "drive_after": -2.8217,
+              "drive_before": -1.6853,
+              "hand_type": "Two Pair",
+              "index": 10,
+              "specificity": 1.829
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": -3.2251,
+              "delta_self": -1.7424,
+              "drive_after": 0.2844,
+              "drive_before": 2.0268,
+              "hand_type": "Pair",
+              "index": 11,
+              "specificity": 1.4827
+            },
+            {
+              "bucket": "lt1.0",
+              "delta_other": -2.0887,
+              "delta_self": -4.1667,
+              "drive_after": -5.4732,
+              "drive_before": -1.3066,
+              "hand_type": "Full House",
+              "index": 20,
+              "specificity": -2.0779
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": -2.5,
+              "delta_self": 0.0,
+              "drive_after": -2.6702,
+              "drive_before": -2.6702,
+              "hand_type": "High Card",
+              "index": 22,
+              "specificity": 2.5
+            }
+          ],
+          "sd_delta_self": 1.2844,
+          "specificity_share": -0.0569
+        },
+        "reward": {
+          "direction_ok": true,
+          "eta": 0.05,
+          "kind": "reward",
+          "mean_delta_other": 7.8599,
+          "mean_delta_self": 9.1951,
+          "mean_specificity": 1.3352,
+          "n_odors": 8,
+          "n_odors_more_than_others": 6,
+          "n_odors_right_direction": 8,
+          "n_trials": 20,
+          "per_odor": [
+            {
+              "bucket": "lt1.0",
+              "delta_other": 7.013,
+              "delta_self": 11.5909,
+              "drive_after": 8.3904,
+              "drive_before": -3.2005,
+              "hand_type": "Flush",
+              "index": 0,
+              "specificity": 4.5779
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": 8.5281,
+              "delta_self": 8.5606,
+              "drive_after": 9.9813,
+              "drive_before": 1.4207,
+              "hand_type": "Straight Flush",
+              "index": 2,
+              "specificity": 0.0325
+            },
+            {
+              "bucket": "lt0.5",
+              "delta_other": 8.2684,
+              "delta_self": 9.3182,
+              "drive_after": 10.2086,
+              "drive_before": 0.8904,
+              "hand_type": "Two Pair",
+              "index": 4,
+              "specificity": 1.0498
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": 8.2792,
+              "delta_self": 7.803,
+              "drive_after": 8.6934,
+              "drive_before": 0.8904,
+              "hand_type": "Full House",
+              "index": 9,
+              "specificity": -0.4762
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 8.6472,
+              "delta_self": 8.7121,
+              "drive_after": 7.0268,
+              "drive_before": -1.6853,
+              "hand_type": "Two Pair",
+              "index": 10,
+              "specificity": 0.0649
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 7.9545,
+              "delta_self": 6.4394,
+              "drive_after": 8.4662,
+              "drive_before": 2.0268,
+              "hand_type": "Pair",
+              "index": 11,
+              "specificity": -1.5152
+            },
+            {
+              "bucket": "lt1.0",
+              "delta_other": 7.9113,
+              "delta_self": 9.5455,
+              "drive_after": 8.2389,
+              "drive_before": -1.3066,
+              "hand_type": "Full House",
+              "index": 20,
+              "specificity": 1.6342
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 6.2771,
+              "delta_self": 11.5909,
+              "drive_after": 8.9207,
+              "drive_before": -2.6702,
+              "hand_type": "High Card",
+              "index": 22,
+              "specificity": 5.3139
+            }
+          ],
+          "sd_delta_self": 1.6502,
+          "specificity_share": 0.1452
+        }
+      },
+      "tuning_info_kc_mbon": {},
+      "tuning_info_kc_vth": {},
+      "verdict": {
+        "all_pass": false,
+        "i_always_on": {
+          "frac_r_gt_0_3": 0.05955,
+          "frac_r_gt_0_5": 0.04724,
+          "limits": [
+            0.02,
+            0.05
+          ],
+          "pass_": false
+        },
+        "ii_active_frac": {
+          "active_frac": 0.05382,
+          "pass_": true,
+          "range": [
+            0.03,
+            0.1
+          ]
+        },
+        "iii_decode": {
+          "binary_grouped": 0.982,
+          "grouped_accuracy": 0.986,
+          "limit": 0.85,
+          "pass_": true,
+          "permuted": 0.12,
+          "plain_accuracy": 0.984
+        },
+        "iv_mbon": {
+          "drive_max": 10.1515,
+          "drive_min": -5.6818,
+          "drive_range_hz": 15.8333,
+          "pass_": true,
+          "quantum_hz": 1.1364,
+          "reward_side_hz_mean": 13.0225,
+          "reward_side_n": 16,
+          "reward_side_n_silent": 3
+        },
+        "v_specificity": {
+          "delta_other": {
+            "punish": -2.4621,
+            "reward": 7.8599
+          },
+          "delta_self": {
+            "punish": -2.3295,
+            "reward": 9.1951
+          },
+          "direction_ok": {
+            "punish": true,
+            "reward": true
+          },
+          "limit": 0.5,
+          "pass_": false,
+          "specificity_share": {
+            "punish": -0.0569,
+            "reward": 0.1452
+          }
+        }
+      }
+    },
+    "kc_homeostasis": {
+      "decider": {
+        "bias": -2.4384908995359145,
+        "explore_floor": 0.0,
+        "n_approach": 66,
+        "n_avoid": 24,
+        "play_bias_p": 0.55,
+        "temperature": 1.250352473669527,
+        "window_ms": 50.0
+      },
+      "measure": {
+        "decode": {
+          "kc_binary": {
+            "accuracy": 0.998,
+            "grouped": 0.996,
+            "n": 500,
+            "n_features": 2457,
+            "n_groups": 500,
+            "permuted": 0.126
+          },
+          "kc_counts": {
+            "accuracy": 0.998,
+            "grouped": 0.996,
+            "n": 500,
+            "n_features": 2457,
+            "n_groups": 500,
+            "permuted": 0.134
+          }
+        },
+        "kc": {
+          "active_frac": 0.0436,
+          "active_per_state": 177.2,
+          "active_per_state_sd": 93.6,
+          "frac_r_gt_0_3": 0.00763,
+          "frac_r_gt_0_5": 0.00394,
+          "kc_spikes_per_state": 197.4,
+          "mean_rate": 0.0436,
+          "median_rate_of_responsive": 0.066,
+          "n_in_band": 1382,
+          "n_kc": 4064,
+          "n_r_eq_1": 0,
+          "n_r_gt_0_3": 31,
+          "n_r_gt_0_5": 16,
+          "n_responsive": 2457,
+          "n_silent": 1607,
+          "rate_percentiles": {
+            "100": 0.79,
+            "50": 0.016,
+            "75": 0.074,
+            "90": 0.11,
+            "95": 0.132,
+            "99": 0.2627
+          }
+        },
+        "mbon": {
+          "approach_hz_mean": 14.296,
+          "avoid_hz_mean": 11.547,
+          "drive_distinct": 145,
+          "drive_max": 10.303,
+          "drive_min": -5.9091,
+          "drive_range": 16.2121,
+          "drive_sd": 2.7622,
+          "mean_hz": 13.179,
+          "n_mbon": 97,
+          "n_silent": 23,
+          "n_varying": 68,
+          "quantum_hz": 1.1364,
+          "range_in_quanta": 14.27,
+          "reward_side_hz_max": 44.56,
+          "reward_side_hz_mean": 11.72,
+          "reward_side_n": 16,
+          "reward_side_n_silent": 0,
+          "reward_side_types": [
+            "MBON01",
+            "MBON02",
+            "MBON03",
+            "MBON04",
+            "MBON05",
+            "MBON06",
+            "MBON07"
+          ]
+        }
+      },
+      "specificity": {
+        "punish": {
+          "direction_ok": true,
+          "eta": 0.05,
+          "kind": "punish",
+          "mean_delta_other": 0.0392,
+          "mean_delta_self": -1.0511,
+          "mean_specificity": -1.0904,
+          "n_odors": 8,
+          "n_odors_more_than_others": 6,
+          "n_odors_right_direction": 7,
+          "n_trials": 20,
+          "per_odor": [
+            {
+              "bucket": "lt1.0",
+              "delta_other": 0.1515,
+              "delta_self": -0.303,
+              "drive_after": -1.2264,
+              "drive_before": -0.9233,
+              "hand_type": "Flush",
+              "index": 0,
+              "specificity": -0.4545
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": -0.5195,
+              "delta_self": -2.7273,
+              "drive_after": -4.3324,
+              "drive_before": -1.6052,
+              "hand_type": "Straight Flush",
+              "index": 2,
+              "specificity": -2.2078
+            },
+            {
+              "bucket": "lt0.5",
+              "delta_other": 0.2381,
+              "delta_self": -0.0758,
+              "drive_after": 1.5767,
+              "drive_before": 1.6524,
+              "hand_type": "Two Pair",
+              "index": 4,
+              "specificity": -0.3139
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": -0.2597,
+              "delta_self": -0.1515,
+              "drive_after": -0.0142,
+              "drive_before": 0.1373,
+              "hand_type": "Full House",
+              "index": 9,
+              "specificity": 0.1082
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": -0.0433,
+              "delta_self": -3.1061,
+              "drive_after": -3.4233,
+              "drive_before": -0.3173,
+              "hand_type": "Two Pair",
+              "index": 10,
+              "specificity": -3.0628
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 0.0325,
+              "delta_self": 2.8788,
+              "drive_after": 3.6221,
+              "drive_before": 0.7433,
+              "hand_type": "Pair",
+              "index": 11,
+              "specificity": 2.8463
+            },
+            {
+              "bucket": "lt1.0",
+              "delta_other": 0.4113,
+              "delta_self": -3.3333,
+              "drive_after": -1.9082,
+              "drive_before": 1.4251,
+              "hand_type": "Full House",
+              "index": 20,
+              "specificity": -3.7446
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 0.303,
+              "delta_self": -1.5909,
+              "drive_after": 0.0615,
+              "drive_before": 1.6524,
+              "hand_type": "High Card",
+              "index": 22,
+              "specificity": -1.8939
+            }
+          ],
+          "sd_delta_self": 1.946,
+          "specificity_share": 1.0373
+        },
+        "reward": {
+          "direction_ok": true,
+          "eta": 0.05,
+          "kind": "reward",
+          "mean_delta_other": 1.3433,
+          "mean_delta_self": 4.6591,
+          "mean_specificity": 3.3158,
+          "n_odors": 8,
+          "n_odors_more_than_others": 7,
+          "n_odors_right_direction": 8,
+          "n_trials": 20,
+          "per_odor": [
+            {
+              "bucket": "lt1.0",
+              "delta_other": 0.79,
+              "delta_self": 4.8485,
+              "drive_after": 3.9251,
+              "drive_before": -0.9233,
+              "hand_type": "Flush",
+              "index": 0,
+              "specificity": 4.0584
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": 2.0779,
+              "delta_self": 7.1212,
+              "drive_after": 5.5161,
+              "drive_before": -1.6052,
+              "hand_type": "Straight Flush",
+              "index": 2,
+              "specificity": 5.0433
+            },
+            {
+              "bucket": "lt0.5",
+              "delta_other": 1.0173,
+              "delta_self": 0.5303,
+              "drive_after": 2.1827,
+              "drive_before": 1.6524,
+              "hand_type": "Two Pair",
+              "index": 4,
+              "specificity": -0.487
+            },
+            {
+              "bucket": "ge1.0",
+              "delta_other": 1.6342,
+              "delta_self": 6.4394,
+              "drive_after": 6.5767,
+              "drive_before": 0.1373,
+              "hand_type": "Full House",
+              "index": 9,
+              "specificity": 4.8052
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 1.2013,
+              "delta_self": 6.9697,
+              "drive_after": 6.6524,
+              "drive_before": -0.3173,
+              "hand_type": "Two Pair",
+              "index": 10,
+              "specificity": 5.7684
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 0.9848,
+              "delta_self": 5.1515,
+              "drive_after": 5.8948,
+              "drive_before": 0.7433,
+              "hand_type": "Pair",
+              "index": 11,
+              "specificity": 4.1667
+            },
+            {
+              "bucket": "lt1.0",
+              "delta_other": 2.197,
+              "delta_self": 4.4697,
+              "drive_after": 5.8948,
+              "drive_before": 1.4251,
+              "hand_type": "Full House",
+              "index": 20,
+              "specificity": 2.2727
+            },
+            {
+              "bucket": "lt0.25",
+              "delta_other": 0.8442,
+              "delta_self": 1.7424,
+              "drive_after": 3.3948,
+              "drive_before": 1.6524,
+              "hand_type": "High Card",
+              "index": 22,
+              "specificity": 0.8983
+            }
+          ],
+          "sd_delta_self": 2.2483,
+          "specificity_share": 0.7117
+        }
+      },
+      "tuning_info_kc_mbon": {},
+      "tuning_info_kc_vth": {
+        "max_mv": 21.3648,
+        "mean_mv": -2.1235,
+        "min_mv": -6.7443,
+        "n_kc": 4064,
+        "n_nonzero": 4031,
+        "sd_mv": 3.128,
+        "vth_max": -23.6352,
+        "vth_min": -51.7443
+      },
+      "verdict": {
+        "all_pass": true,
+        "i_always_on": {
+          "frac_r_gt_0_3": 0.00763,
+          "frac_r_gt_0_5": 0.00394,
+          "limits": [
+            0.02,
+            0.05
+          ],
+          "pass_": true
+        },
+        "ii_active_frac": {
+          "active_frac": 0.0436,
+          "pass_": true,
+          "range": [
+            0.03,
+            0.1
+          ]
+        },
+        "iii_decode": {
+          "binary_grouped": 0.996,
+          "grouped_accuracy": 0.996,
+          "limit": 0.85,
+          "pass_": true,
+          "permuted": 0.134,
+          "plain_accuracy": 0.998
+        },
+        "iv_mbon": {
+          "drive_max": 10.303,
+          "drive_min": -5.9091,
+          "drive_range_hz": 16.2121,
+          "pass_": true,
+          "quantum_hz": 1.1364,
+          "reward_side_hz_mean": 11.72,
+          "reward_side_n": 16,
+          "reward_side_n_silent": 0
+        },
+        "v_specificity": {
+          "delta_other": {
+            "punish": 0.0392,
+            "reward": 1.3433
+          },
+          "delta_self": {
+            "punish": -1.0511,
+            "reward": 4.6591
+          },
+          "direction_ok": {
+            "punish": true,
+            "reward": true
+          },
+          "limit": 0.5,
+          "pass_": true,
+          "specificity_share": {
+            "punish": 1.0373,
+            "reward": 0.7117
+          }
+        }
+      }
+    }
+  },
+  "criteria": {
+    "i_frac_r_gt_0_3_max": 0.05,
+    "i_frac_r_gt_0_5_max": 0.02,
+    "ii_active_frac_range": [
+      0.03,
+      0.1
+    ],
+    "iii_min_grouped_accuracy": 0.85,
+    "iv": "drive range > one quantum and MBON01-07 not all silent",
+    "v_min_specificity_share": 0.5
+  },
+  "gate_set": "the 500 HELD-OUT patterns; the calibration 500 never appear here",
+  "panel": {
+    "eta": 0.05,
+    "n_hands": 200,
+    "odors": [
+      {
+        "bucket": "lt1.0",
+        "hand_type": "Flush",
+        "index": 0
+      },
+      {
+        "bucket": "ge1.0",
+        "hand_type": "Straight Flush",
+        "index": 2
+      },
+      {
+        "bucket": "lt0.5",
+        "hand_type": "Two Pair",
+        "index": 4
+      },
+      {
+        "bucket": "ge1.0",
+        "hand_type": "Full House",
+        "index": 9
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "Two Pair",
+        "index": 10
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "Pair",
+        "index": 11
+      },
+      {
+        "bucket": "lt1.0",
+        "hand_type": "Full House",
+        "index": 20
+      },
+      {
+        "bucket": "lt0.25",
+        "hand_type": "High Card",
+        "index": 22
+      }
+    ],
+    "rng_seed": 7,
+    "seed0": 300000,
+    "trials": 20
+  },
+  "patterns": {
+    "calib_bucket_counts": [
+      62,
+      126,
+      146,
+      166
+    ],
+    "calib_hand_type_counts": [
+      13,
+      48,
+      119,
+      83,
+      70,
+      68,
+      65,
+      28,
+      6
+    ],
+    "columns": "features_packed[:, :32] = the features_v2 relay block",
+    "dedup_note": "'responds to 5-10% of odours' is a statement about the odour set, so each distinct pattern counts once rather than once per time the game dealt it",
+    "deduplicated": true,
+    "distinct_patterns": 1173,
+    "filter": "relay block non-zero AND sel_none bit (26) on AND episode >= 1000",
+    "gate_bucket_counts": [
+      63,
+      139,
+      143,
+      155
+    ],
+    "gate_hand_type_counts": [
+      13,
+      48,
+      119,
+      83,
+      70,
+      69,
+      65,
+      27,
+      6
+    ],
+    "n_calib": 500,
+    "n_gate": 500,
+    "n_spare": 173,
+    "rows_matching": 17974,
+    "seed_disjointness": "bc2 episodes come from seeds 0-1359 (heuristic teacher) and 500000-501358 (random), disjoint from the plasticity calib (300000+), train (200000+) and eval (100000-100059) seeds by construction",
+    "source": "outputs/bc2/states.npz",
+    "split_seed": 20260913,
+    "stratified_by": "best hand type (relay bits 0-8)"
+  },
+  "wall_seconds": 302.1
+}

@@ -1,0 +1,2433 @@
+{
+  "meta": {
+    "n_states": 2000,
+    "window_ms": 50.0,
+    "split_ms": 15.0,
+    "drive_mv": 30.0,
+    "poisson_hz": 100.0,
+    "poisson_kick_mv": 68.75,
+    "brain_seed": 1,
+    "v_jitter_mv": 6.9,
+    "noise_base": 5000,
+    "encoding": "glomerular: 32 relay bits -> 32 ORN types, 283 v1 bits dropped",
+    "assignment": [
+      {
+        "bit": 0,
+        "glomerulus": "ORN_VM7d",
+        "n_orn": 36
+      },
+      {
+        "bit": 1,
+        "glomerulus": "ORN_DA4m",
+        "n_orn": 35
+      },
+      {
+        "bit": 2,
+        "glomerulus": "ORN_DC3",
+        "n_orn": 35
+      },
+      {
+        "bit": 3,
+        "glomerulus": "ORN_DM5",
+        "n_orn": 35
+      },
+      {
+        "bit": 4,
+        "glomerulus": "ORN_DA3",
+        "n_orn": 34
+      },
+      {
+        "bit": 5,
+        "glomerulus": "ORN_VA4",
+        "n_orn": 34
+      },
+      {
+        "bit": 6,
+        "glomerulus": "ORN_VC3",
+        "n_orn": 34
+      },
+      {
+        "bit": 7,
+        "glomerulus": "ORN_VM5v",
+        "n_orn": 34
+      },
+      {
+        "bit": 8,
+        "glomerulus": "ORN_VM6v",
+        "n_orn": 34
+      },
+      {
+        "bit": 9,
+        "glomerulus": "ORN_V",
+        "n_orn": 55
+      },
+      {
+        "bit": 10,
+        "glomerulus": "ORN_DM2",
+        "n_orn": 54
+      },
+      {
+        "bit": 11,
+        "glomerulus": "ORN_DA2",
+        "n_orn": 48
+      },
+      {
+        "bit": 12,
+        "glomerulus": "ORN_VL2p",
+        "n_orn": 45
+      },
+      {
+        "bit": 13,
+        "glomerulus": "ORN_DL5",
+        "n_orn": 43
+      },
+      {
+        "bit": 14,
+        "glomerulus": "ORN_VM3",
+        "n_orn": 43
+      },
+      {
+        "bit": 15,
+        "glomerulus": "ORN_VM2",
+        "n_orn": 41
+      },
+      {
+        "bit": 16,
+        "glomerulus": "ORN_VC4",
+        "n_orn": 38
+      },
+      {
+        "bit": 17,
+        "glomerulus": "ORN_VL2a",
+        "n_orn": 98
+      },
+      {
+        "bit": 18,
+        "glomerulus": "ORN_VM5d",
+        "n_orn": 84
+      },
+      {
+        "bit": 19,
+        "glomerulus": "ORN_DL1",
+        "n_orn": 83
+      },
+      {
+        "bit": 20,
+        "glomerulus": "ORN_VA2",
+        "n_orn": 83
+      },
+      {
+        "bit": 21,
+        "glomerulus": "ORN_VL1",
+        "n_orn": 82
+      },
+      {
+        "bit": 22,
+        "glomerulus": "ORN_VM4",
+        "n_orn": 78
+      },
+      {
+        "bit": 23,
+        "glomerulus": "ORN_DM1",
+        "n_orn": 74
+      },
+      {
+        "bit": 24,
+        "glomerulus": "ORN_DM3",
+        "n_orn": 63
+      },
+      {
+        "bit": 25,
+        "glomerulus": "ORN_VA6",
+        "n_orn": 63
+      },
+      {
+        "bit": 26,
+        "glomerulus": "ORN_DL4",
+        "n_orn": 62
+      },
+      {
+        "bit": 27,
+        "glomerulus": "ORN_DM6",
+        "n_orn": 58
+      },
+      {
+        "bit": 28,
+        "glomerulus": "ORN_DA1",
+        "n_orn": 204
+      },
+      {
+        "bit": 29,
+        "glomerulus": "ORN_VA1d",
+        "n_orn": 132
+      },
+      {
+        "bit": 30,
+        "glomerulus": "ORN_VA1v",
+        "n_orn": 130
+      },
+      {
+        "bit": 31,
+        "glomerulus": "ORN_DL3",
+        "n_orn": 103
+      }
+    ],
+    "graph": {
+      "neurons": 146271,
+      "edges_csr": 5146572,
+      "threshold": 5
+    },
+    "machine": "arm64 python 3.11.3"
+  },
+  "settings": {
+    "apl1_tonic_vth0": {
+      "config": {
+        "label": "apl1_tonic_vth0",
+        "apl_scale": 1.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 1.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.3421,
+          "std_active_fraction": 0.0172,
+          "min_active_fraction": 0.2938,
+          "max_active_fraction": 0.4062,
+          "mean_active_cells": 1390.3,
+          "mean_pairwise_jaccard": 0.7934,
+          "jaccard_bernoulli_reference": 0.2063,
+          "always_on_fraction": 0.3337,
+          "always_on_cells": 1356,
+          "never_on_fraction": 0.4252,
+          "mean_rate_hz": 12.73,
+          "mean_rate_hz_active_only": 37.22,
+          "nonzero_variance_cells": 2335,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.975
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.3405,
+          "std_active_fraction": 0.017,
+          "min_active_fraction": 0.2936,
+          "max_active_fraction": 0.4033,
+          "mean_active_cells": 1383.8,
+          "mean_pairwise_jaccard": 0.7962,
+          "jaccard_bernoulli_reference": 0.2052,
+          "always_on_fraction": 0.3324,
+          "always_on_cells": 1351,
+          "never_on_fraction": 0.4377,
+          "mean_rate_hz": 17.0,
+          "mean_rate_hz_active_only": 49.92,
+          "nonzero_variance_cells": 2284,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.8362,
+          "between": 0.788,
+          "ratio": 0.9424,
+          "mean_set_size": 1390.3,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.8383,
+          "between": 0.7909,
+          "ratio": 0.9435,
+          "mean_set_size": 1383.8,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 48.54,
+          "mean_fraction_active": 0.6158,
+          "mean_spikes_per_input": 235.4,
+          "nonzero_variance_cells": 71,
+          "fraction_of_cells_ever_firing": 0.732,
+          "cells_never_firing": 26,
+          "mean_per_cell_cv_across_states": 2.7387,
+          "total_count_mean": 235.4,
+          "total_count_cv": 0.0509,
+          "jaccard_by_type": {
+            "within": 0.9389,
+            "between": 0.9224,
+            "ratio": 0.9824,
+            "mean_set_size": 59.7,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 72.32,
+          "mean_fraction_active": 0.7066,
+          "mean_spikes_per_input": 2480.6,
+          "nonzero_variance_cells": 591,
+          "fraction_of_cells_ever_firing": 0.8834,
+          "cells_never_firing": 80,
+          "mean_per_cell_cv_across_states": 0.9861,
+          "total_count_mean": 2480.6,
+          "total_count_cv": 0.0274,
+          "jaccard_by_type": {
+            "within": 0.9238,
+            "between": 0.8808,
+            "ratio": 0.9534,
+            "mean_set_size": 484.7,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.73,
+          "mean_fraction_active": 0.1917,
+          "mean_spikes_per_input": 442.3,
+          "nonzero_variance_cells": 626,
+          "fraction_of_cells_ever_firing": 0.4764,
+          "cells_never_firing": 688,
+          "mean_per_cell_cv_across_states": 4.1267,
+          "total_count_mean": 442.3,
+          "total_count_cv": 0.2961,
+          "jaccard_by_type": {
+            "within": 0.6554,
+            "between": 0.5623,
+            "ratio": 0.8579,
+            "mean_set_size": 251.9,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.28,
+        "APL_mean_rate_hz": 301.88,
+        "brain_spikes_per_state": 21278.5,
+        "sim_seconds": 222.1,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              1,
+              0
+            ],
+            "mn9_spikes_total": 1,
+            "grn_rate_hz": 126.61,
+            "brain_spikes": 78475,
+            "neurons_firing": 9743
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              7,
+              0
+            ],
+            "mn9_spikes_total": 7,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 85547,
+            "neurons_firing": 9644
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 1 / no-drive 0 / matched-ORN 7"
+          }
+        }
+      },
+      "counts_file": "counts_apl1_tonic_vth0.npz"
+    },
+    "apl1_tonic_vth4": {
+      "config": {
+        "label": "apl1_tonic_vth4",
+        "apl_scale": 1.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 4.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 1.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 4.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.2034,
+          "std_active_fraction": 0.0174,
+          "min_active_fraction": 0.1503,
+          "max_active_fraction": 0.2751,
+          "mean_active_cells": 826.6,
+          "mean_pairwise_jaccard": 0.7158,
+          "jaccard_bernoulli_reference": 0.1132,
+          "always_on_fraction": 0.1922,
+          "always_on_cells": 781,
+          "never_on_fraction": 0.577,
+          "mean_rate_hz": 5.68,
+          "mean_rate_hz_active_only": 27.94,
+          "nonzero_variance_cells": 1707,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.945
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.2034,
+          "std_active_fraction": 0.0174,
+          "min_active_fraction": 0.1503,
+          "max_active_fraction": 0.2751,
+          "mean_active_cells": 826.6,
+          "mean_pairwise_jaccard": 0.7158,
+          "jaccard_bernoulli_reference": 0.1132,
+          "always_on_fraction": 0.1922,
+          "always_on_cells": 781,
+          "never_on_fraction": 0.577,
+          "mean_rate_hz": 8.08,
+          "mean_rate_hz_active_only": 39.74,
+          "nonzero_variance_cells": 1707,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.7645,
+          "between": 0.7096,
+          "ratio": 0.9282,
+          "mean_set_size": 826.6,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.7645,
+          "between": 0.7096,
+          "ratio": 0.9282,
+          "mean_set_size": 826.6,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 25.5,
+          "mean_fraction_active": 0.4905,
+          "mean_spikes_per_input": 123.7,
+          "nonzero_variance_cells": 64,
+          "fraction_of_cells_ever_firing": 0.6598,
+          "cells_never_firing": 33,
+          "mean_per_cell_cv_across_states": 2.4124,
+          "total_count_mean": 123.7,
+          "total_count_cv": 0.0967,
+          "jaccard_by_type": {
+            "within": 0.8617,
+            "between": 0.8464,
+            "ratio": 0.9822,
+            "mean_set_size": 47.6,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 72.49,
+          "mean_fraction_active": 0.7071,
+          "mean_spikes_per_input": 2486.3,
+          "nonzero_variance_cells": 591,
+          "fraction_of_cells_ever_firing": 0.8819,
+          "cells_never_firing": 81,
+          "mean_per_cell_cv_across_states": 0.8606,
+          "total_count_mean": 2486.3,
+          "total_count_cv": 0.0274,
+          "jaccard_by_type": {
+            "within": 0.9239,
+            "between": 0.8809,
+            "ratio": 0.9535,
+            "mean_set_size": 485.1,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.67,
+          "mean_fraction_active": 0.1923,
+          "mean_spikes_per_input": 438.3,
+          "nonzero_variance_cells": 634,
+          "fraction_of_cells_ever_firing": 0.4825,
+          "cells_never_firing": 680,
+          "mean_per_cell_cv_across_states": 4.4899,
+          "total_count_mean": 438.3,
+          "total_count_cv": 0.2943,
+          "jaccard_by_type": {
+            "within": 0.6537,
+            "between": 0.5598,
+            "ratio": 0.8563,
+            "mean_set_size": 252.7,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.27,
+        "APL_mean_rate_hz": 273.85,
+        "brain_spikes_per_state": 19601.0,
+        "sim_seconds": 252.7,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 126.52,
+            "brain_spikes": 73077,
+            "neurons_firing": 8774
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              5,
+              0
+            ],
+            "mn9_spikes_total": 5,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 76387,
+            "neurons_firing": 8810
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 2 / no-drive 0 / matched-ORN 5"
+          }
+        }
+      },
+      "counts_file": "counts_apl1_tonic_vth4.npz"
+    },
+    "apl1_poisson_vth0": {
+      "config": {
+        "label": "apl1_poisson_vth0",
+        "apl_scale": 1.0,
+        "drive": "poisson",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 1.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.3313,
+          "std_active_fraction": 0.0164,
+          "min_active_fraction": 0.2776,
+          "max_active_fraction": 0.3903,
+          "mean_active_cells": 1346.3,
+          "mean_pairwise_jaccard": 0.8045,
+          "jaccard_bernoulli_reference": 0.1985,
+          "always_on_fraction": 0.3233,
+          "always_on_cells": 1314,
+          "never_on_fraction": 0.4444,
+          "mean_rate_hz": 12.07,
+          "mean_rate_hz_active_only": 36.44,
+          "nonzero_variance_cells": 2255,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.976
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.3298,
+          "std_active_fraction": 0.0162,
+          "min_active_fraction": 0.2744,
+          "max_active_fraction": 0.3868,
+          "mean_active_cells": 1340.2,
+          "mean_pairwise_jaccard": 0.8069,
+          "jaccard_bernoulli_reference": 0.1974,
+          "always_on_fraction": 0.3226,
+          "always_on_cells": 1311,
+          "never_on_fraction": 0.4579,
+          "mean_rate_hz": 16.3,
+          "mean_rate_hz_active_only": 49.44,
+          "nonzero_variance_cells": 2200,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.8405,
+          "between": 0.7999,
+          "ratio": 0.9517,
+          "mean_set_size": 1346.3,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.8423,
+          "between": 0.8023,
+          "ratio": 0.9525,
+          "mean_set_size": 1340.2,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 46.8,
+          "mean_fraction_active": 0.6152,
+          "mean_spikes_per_input": 227.0,
+          "nonzero_variance_cells": 71,
+          "fraction_of_cells_ever_firing": 0.732,
+          "cells_never_firing": 26,
+          "mean_per_cell_cv_across_states": 2.4309,
+          "total_count_mean": 227.0,
+          "total_count_cv": 0.0519,
+          "jaccard_by_type": {
+            "within": 0.9378,
+            "between": 0.9228,
+            "ratio": 0.984,
+            "mean_set_size": 59.7,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 69.75,
+          "mean_fraction_active": 0.7002,
+          "mean_spikes_per_input": 2392.4,
+          "nonzero_variance_cells": 598,
+          "fraction_of_cells_ever_firing": 0.8892,
+          "cells_never_firing": 76,
+          "mean_per_cell_cv_across_states": 1.3745,
+          "total_count_mean": 2392.4,
+          "total_count_cv": 0.0246,
+          "jaccard_by_type": {
+            "within": 0.9267,
+            "between": 0.8882,
+            "ratio": 0.9584,
+            "mean_set_size": 480.3,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.71,
+          "mean_fraction_active": 0.1936,
+          "mean_spikes_per_input": 440.6,
+          "nonzero_variance_cells": 654,
+          "fraction_of_cells_ever_firing": 0.4977,
+          "cells_never_firing": 660,
+          "mean_per_cell_cv_across_states": 5.5947,
+          "total_count_mean": 440.6,
+          "total_count_cv": 0.2931,
+          "jaccard_by_type": {
+            "within": 0.6558,
+            "between": 0.5722,
+            "ratio": 0.8725,
+            "mean_set_size": 254.4,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 14.01,
+        "APL_mean_rate_hz": 297.37,
+        "brain_spikes_per_state": 19682.1,
+        "sim_seconds": 326.2,
+        "mn9": {
+          "mode": "poisson",
+          "window_ms": 200.0,
+          "drive": "Poisson 100.0 Hz, kick 68.75 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              4,
+              0
+            ],
+            "mn9_spikes_total": 4,
+            "grn_rate_hz": 82.21,
+            "brain_spikes": 72828,
+            "neurons_firing": 9325
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              4,
+              0
+            ],
+            "mn9_spikes_total": 4,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 82413,
+            "neurons_firing": 9381
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 4 / no-drive 0 / matched-ORN 4"
+          }
+        }
+      },
+      "counts_file": "counts_apl1_poisson_vth0.npz"
+    },
+    "apl1_poisson_vth4": {
+      "config": {
+        "label": "apl1_poisson_vth4",
+        "apl_scale": 1.0,
+        "drive": "poisson",
+        "kc_vth_offset_mv": 4.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 1.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 4.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.192,
+          "std_active_fraction": 0.0156,
+          "min_active_fraction": 0.1457,
+          "max_active_fraction": 0.2446,
+          "mean_active_cells": 780.3,
+          "mean_pairwise_jaccard": 0.7328,
+          "jaccard_bernoulli_reference": 0.1062,
+          "always_on_fraction": 0.1843,
+          "always_on_cells": 749,
+          "never_on_fraction": 0.6036,
+          "mean_rate_hz": 5.27,
+          "mean_rate_hz_active_only": 27.42,
+          "nonzero_variance_cells": 1603,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.96
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.192,
+          "std_active_fraction": 0.0156,
+          "min_active_fraction": 0.1457,
+          "max_active_fraction": 0.2446,
+          "mean_active_cells": 780.3,
+          "mean_pairwise_jaccard": 0.7328,
+          "jaccard_bernoulli_reference": 0.1062,
+          "always_on_fraction": 0.1843,
+          "always_on_cells": 749,
+          "never_on_fraction": 0.6036,
+          "mean_rate_hz": 7.51,
+          "mean_rate_hz_active_only": 39.09,
+          "nonzero_variance_cells": 1603,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.7714,
+          "between": 0.7279,
+          "ratio": 0.9436,
+          "mean_set_size": 780.3,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.7714,
+          "between": 0.7279,
+          "ratio": 0.9436,
+          "mean_set_size": 780.3,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 23.71,
+          "mean_fraction_active": 0.4692,
+          "mean_spikes_per_input": 115.0,
+          "nonzero_variance_cells": 63,
+          "fraction_of_cells_ever_firing": 0.6495,
+          "cells_never_firing": 34,
+          "mean_per_cell_cv_across_states": 2.3859,
+          "total_count_mean": 115.0,
+          "total_count_cv": 0.0951,
+          "jaccard_by_type": {
+            "within": 0.8415,
+            "between": 0.8264,
+            "ratio": 0.982,
+            "mean_set_size": 45.5,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 69.92,
+          "mean_fraction_active": 0.7009,
+          "mean_spikes_per_input": 2398.1,
+          "nonzero_variance_cells": 598,
+          "fraction_of_cells_ever_firing": 0.8878,
+          "cells_never_firing": 77,
+          "mean_per_cell_cv_across_states": 1.244,
+          "total_count_mean": 2398.1,
+          "total_count_cv": 0.0243,
+          "jaccard_by_type": {
+            "within": 0.9268,
+            "between": 0.8884,
+            "ratio": 0.9586,
+            "mean_set_size": 480.8,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.66,
+          "mean_fraction_active": 0.1947,
+          "mean_spikes_per_input": 437.9,
+          "nonzero_variance_cells": 658,
+          "fraction_of_cells_ever_firing": 0.5008,
+          "cells_never_firing": 656,
+          "mean_per_cell_cv_across_states": 5.8187,
+          "total_count_mean": 437.9,
+          "total_count_cv": 0.2925,
+          "jaccard_by_type": {
+            "within": 0.6537,
+            "between": 0.5695,
+            "ratio": 0.8711,
+            "mean_set_size": 255.8,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 14.01,
+        "APL_mean_rate_hz": 267.71,
+        "brain_spikes_per_state": 18072.6,
+        "sim_seconds": 290.3,
+        "mn9": {
+          "mode": "poisson",
+          "window_ms": 200.0,
+          "drive": "Poisson 100.0 Hz, kick 68.75 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              5,
+              0
+            ],
+            "mn9_spikes_total": 5,
+            "grn_rate_hz": 82.21,
+            "brain_spikes": 65905,
+            "neurons_firing": 8548
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 73879,
+            "neurons_firing": 8610
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": true,
+            "summary": "sugar 5 / no-drive 0 / matched-ORN 2"
+          }
+        }
+      },
+      "counts_file": "counts_apl1_poisson_vth4.npz"
+    },
+    "apl2_tonic_vth0": {
+      "config": {
+        "label": "apl2_tonic_vth0",
+        "apl_scale": 2.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 2.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0482,
+          "std_active_fraction": 0.0066,
+          "min_active_fraction": 0.0312,
+          "max_active_fraction": 0.0785,
+          "mean_active_cells": 196.0,
+          "mean_pairwise_jaccard": 0.542,
+          "jaccard_bernoulli_reference": 0.0247,
+          "always_on_fraction": 0.0406,
+          "always_on_cells": 165,
+          "never_on_fraction": 0.7815,
+          "mean_rate_hz": 1.41,
+          "mean_rate_hz_active_only": 29.3,
+          "nonzero_variance_cells": 888,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.842
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0437,
+          "std_active_fraction": 0.0053,
+          "min_active_fraction": 0.0276,
+          "max_active_fraction": 0.0659,
+          "mean_active_cells": 177.7,
+          "mean_pairwise_jaccard": 0.5915,
+          "jaccard_bernoulli_reference": 0.0224,
+          "always_on_fraction": 0.0391,
+          "always_on_cells": 159,
+          "never_on_fraction": 0.8435,
+          "mean_rate_hz": 1.81,
+          "mean_rate_hz_active_only": 41.36,
+          "nonzero_variance_cells": 636,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.6071,
+          "between": 0.5337,
+          "ratio": 0.8792,
+          "mean_set_size": 196.0,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.6469,
+          "between": 0.5845,
+          "ratio": 0.9034,
+          "mean_set_size": 177.7,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 8.61,
+          "mean_fraction_active": 0.2147,
+          "mean_spikes_per_input": 41.8,
+          "nonzero_variance_cells": 45,
+          "fraction_of_cells_ever_firing": 0.4639,
+          "cells_never_firing": 52,
+          "mean_per_cell_cv_across_states": 8.7371,
+          "total_count_mean": 41.8,
+          "total_count_cv": 0.1474,
+          "jaccard_by_type": {
+            "within": 0.7602,
+            "between": 0.7313,
+            "ratio": 0.9621,
+            "mean_set_size": 20.8,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 71.18,
+          "mean_fraction_active": 0.7005,
+          "mean_spikes_per_input": 2441.4,
+          "nonzero_variance_cells": 593,
+          "fraction_of_cells_ever_firing": 0.8819,
+          "cells_never_firing": 81,
+          "mean_per_cell_cv_across_states": 0.8688,
+          "total_count_mean": 2441.4,
+          "total_count_cv": 0.0284,
+          "jaccard_by_type": {
+            "within": 0.9196,
+            "between": 0.8753,
+            "ratio": 0.9519,
+            "mean_set_size": 480.5,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.65,
+          "mean_fraction_active": 0.1926,
+          "mean_spikes_per_input": 437.1,
+          "nonzero_variance_cells": 638,
+          "fraction_of_cells_ever_firing": 0.4855,
+          "cells_never_firing": 676,
+          "mean_per_cell_cv_across_states": 4.6776,
+          "total_count_mean": 437.1,
+          "total_count_cv": 0.2948,
+          "jaccard_by_type": {
+            "within": 0.651,
+            "between": 0.5565,
+            "ratio": 0.8548,
+            "mean_set_size": 253.1,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.27,
+        "APL_mean_rate_hz": 248.79,
+        "brain_spikes_per_state": 18400.3,
+        "sim_seconds": 243.2,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              1,
+              0
+            ],
+            "mn9_spikes_total": 1,
+            "grn_rate_hz": 126.7,
+            "brain_spikes": 66147,
+            "neurons_firing": 8677
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              5,
+              0
+            ],
+            "mn9_spikes_total": 5,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 66855,
+            "neurons_firing": 7586
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 1 / no-drive 0 / matched-ORN 5"
+          }
+        }
+      },
+      "counts_file": "counts_apl2_tonic_vth0.npz"
+    },
+    "apl2_tonic_vth4": {
+      "config": {
+        "label": "apl2_tonic_vth4",
+        "apl_scale": 2.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 4.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 2.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 4.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0227,
+          "std_active_fraction": 0.0043,
+          "min_active_fraction": 0.0121,
+          "max_active_fraction": 0.0406,
+          "mean_active_cells": 92.2,
+          "mean_pairwise_jaccard": 0.55,
+          "jaccard_bernoulli_reference": 0.0115,
+          "always_on_fraction": 0.0202,
+          "always_on_cells": 82,
+          "never_on_fraction": 0.8989,
+          "mean_rate_hz": 0.54,
+          "mean_rate_hz_active_only": 23.81,
+          "nonzero_variance_cells": 411,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.89
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0227,
+          "std_active_fraction": 0.0043,
+          "min_active_fraction": 0.0121,
+          "max_active_fraction": 0.0406,
+          "mean_active_cells": 92.2,
+          "mean_pairwise_jaccard": 0.55,
+          "jaccard_bernoulli_reference": 0.0115,
+          "always_on_fraction": 0.0202,
+          "always_on_cells": 82,
+          "never_on_fraction": 0.8989,
+          "mean_rate_hz": 0.77,
+          "mean_rate_hz_active_only": 33.86,
+          "nonzero_variance_cells": 411,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.6077,
+          "between": 0.5426,
+          "ratio": 0.8929,
+          "mean_set_size": 92.2,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.6077,
+          "between": 0.5426,
+          "ratio": 0.8929,
+          "mean_set_size": 92.2,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 8.06,
+          "mean_fraction_active": 0.1936,
+          "mean_spikes_per_input": 39.1,
+          "nonzero_variance_cells": 29,
+          "fraction_of_cells_ever_firing": 0.299,
+          "cells_never_firing": 68,
+          "mean_per_cell_cv_across_states": 5.2322,
+          "total_count_mean": 39.1,
+          "total_count_cv": 0.1604,
+          "jaccard_by_type": {
+            "within": 0.8051,
+            "between": 0.7758,
+            "ratio": 0.9637,
+            "mean_set_size": 18.8,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 71.36,
+          "mean_fraction_active": 0.7015,
+          "mean_spikes_per_input": 2447.7,
+          "nonzero_variance_cells": 593,
+          "fraction_of_cells_ever_firing": 0.8819,
+          "cells_never_firing": 81,
+          "mean_per_cell_cv_across_states": 0.8588,
+          "total_count_mean": 2447.7,
+          "total_count_cv": 0.0283,
+          "jaccard_by_type": {
+            "within": 0.9198,
+            "between": 0.8757,
+            "ratio": 0.9521,
+            "mean_set_size": 481.3,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.66,
+          "mean_fraction_active": 0.1927,
+          "mean_spikes_per_input": 437.3,
+          "nonzero_variance_cells": 633,
+          "fraction_of_cells_ever_firing": 0.4817,
+          "cells_never_firing": 681,
+          "mean_per_cell_cv_across_states": 4.5203,
+          "total_count_mean": 437.3,
+          "total_count_cv": 0.2922,
+          "jaccard_by_type": {
+            "within": 0.6523,
+            "between": 0.5583,
+            "ratio": 0.8559,
+            "mean_set_size": 253.3,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.27,
+        "APL_mean_rate_hz": 234.29,
+        "brain_spikes_per_state": 18241.5,
+        "sim_seconds": 230.1,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              1,
+              0
+            ],
+            "mn9_spikes_total": 1,
+            "grn_rate_hz": 126.64,
+            "brain_spikes": 66033,
+            "neurons_firing": 8058
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              4,
+              0
+            ],
+            "mn9_spikes_total": 4,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 67649,
+            "neurons_firing": 7588
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 1 / no-drive 0 / matched-ORN 4"
+          }
+        }
+      },
+      "counts_file": "counts_apl2_tonic_vth4.npz"
+    },
+    "apl2_poisson_vth0": {
+      "config": {
+        "label": "apl2_poisson_vth0",
+        "apl_scale": 2.0,
+        "drive": "poisson",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 2.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.045,
+          "std_active_fraction": 0.0064,
+          "min_active_fraction": 0.0288,
+          "max_active_fraction": 0.0837,
+          "mean_active_cells": 182.8,
+          "mean_pairwise_jaccard": 0.5673,
+          "jaccard_bernoulli_reference": 0.023,
+          "always_on_fraction": 0.0384,
+          "always_on_cells": 156,
+          "never_on_fraction": 0.7849,
+          "mean_rate_hz": 1.29,
+          "mean_rate_hz_active_only": 28.74,
+          "nonzero_variance_cells": 874,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.853
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0412,
+          "std_active_fraction": 0.0049,
+          "min_active_fraction": 0.0278,
+          "max_active_fraction": 0.0578,
+          "mean_active_cells": 167.6,
+          "mean_pairwise_jaccard": 0.6165,
+          "jaccard_bernoulli_reference": 0.0211,
+          "always_on_fraction": 0.0372,
+          "always_on_cells": 151,
+          "never_on_fraction": 0.843,
+          "mean_rate_hz": 1.68,
+          "mean_rate_hz_active_only": 40.8,
+          "nonzero_variance_cells": 638,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.6161,
+          "between": 0.5611,
+          "ratio": 0.9108,
+          "mean_set_size": 182.8,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.6587,
+          "between": 0.6111,
+          "ratio": 0.9277,
+          "mean_set_size": 167.6,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 8.19,
+          "mean_fraction_active": 0.2056,
+          "mean_spikes_per_input": 39.7,
+          "nonzero_variance_cells": 45,
+          "fraction_of_cells_ever_firing": 0.4639,
+          "cells_never_firing": 52,
+          "mean_per_cell_cv_across_states": 7.4329,
+          "total_count_mean": 39.7,
+          "total_count_cv": 0.1539,
+          "jaccard_by_type": {
+            "within": 0.7418,
+            "between": 0.7196,
+            "ratio": 0.9701,
+            "mean_set_size": 19.9,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 68.64,
+          "mean_fraction_active": 0.6946,
+          "mean_spikes_per_input": 2354.4,
+          "nonzero_variance_cells": 597,
+          "fraction_of_cells_ever_firing": 0.8892,
+          "cells_never_firing": 76,
+          "mean_per_cell_cv_across_states": 1.3727,
+          "total_count_mean": 2354.4,
+          "total_count_cv": 0.0252,
+          "jaccard_by_type": {
+            "within": 0.9222,
+            "between": 0.8831,
+            "ratio": 0.9576,
+            "mean_set_size": 476.5,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.64,
+          "mean_fraction_active": 0.1945,
+          "mean_spikes_per_input": 436.2,
+          "nonzero_variance_cells": 661,
+          "fraction_of_cells_ever_firing": 0.503,
+          "cells_never_firing": 653,
+          "mean_per_cell_cv_across_states": 5.8487,
+          "total_count_mean": 436.2,
+          "total_count_cv": 0.2936,
+          "jaccard_by_type": {
+            "within": 0.6521,
+            "between": 0.5679,
+            "ratio": 0.871,
+            "mean_set_size": 255.6,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 14.01,
+        "APL_mean_rate_hz": 242.84,
+        "brain_spikes_per_state": 16945.1,
+        "sim_seconds": 253.1,
+        "mn9": {
+          "mode": "poisson",
+          "window_ms": 200.0,
+          "drive": "Poisson 100.0 Hz, kick 68.75 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              3,
+              0
+            ],
+            "mn9_spikes_total": 3,
+            "grn_rate_hz": 82.24,
+            "brain_spikes": 59983,
+            "neurons_firing": 8252
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              3,
+              0
+            ],
+            "mn9_spikes_total": 3,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 65081,
+            "neurons_firing": 7542
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 3 / no-drive 0 / matched-ORN 3"
+          }
+        }
+      },
+      "counts_file": "counts_apl2_poisson_vth0.npz"
+    },
+    "apl2_poisson_vth4": {
+      "config": {
+        "label": "apl2_poisson_vth4",
+        "apl_scale": 2.0,
+        "drive": "poisson",
+        "kc_vth_offset_mv": 4.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 2.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 4.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0212,
+          "std_active_fraction": 0.004,
+          "min_active_fraction": 0.0116,
+          "max_active_fraction": 0.0394,
+          "mean_active_cells": 86.4,
+          "mean_pairwise_jaccard": 0.5762,
+          "jaccard_bernoulli_reference": 0.0107,
+          "always_on_fraction": 0.0189,
+          "always_on_cells": 77,
+          "never_on_fraction": 0.9102,
+          "mean_rate_hz": 0.5,
+          "mean_rate_hz_active_only": 23.39,
+          "nonzero_variance_cells": 365,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.892
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0212,
+          "std_active_fraction": 0.0039,
+          "min_active_fraction": 0.0116,
+          "max_active_fraction": 0.0394,
+          "mean_active_cells": 86.3,
+          "mean_pairwise_jaccard": 0.5763,
+          "jaccard_bernoulli_reference": 0.0107,
+          "always_on_fraction": 0.0189,
+          "always_on_cells": 77,
+          "never_on_fraction": 0.9104,
+          "mean_rate_hz": 0.71,
+          "mean_rate_hz_active_only": 33.29,
+          "nonzero_variance_cells": 364,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.6193,
+          "between": 0.5707,
+          "ratio": 0.9214,
+          "mean_set_size": 86.4,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.6194,
+          "between": 0.5708,
+          "ratio": 0.9215,
+          "mean_set_size": 86.3,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 7.78,
+          "mean_fraction_active": 0.1886,
+          "mean_spikes_per_input": 37.7,
+          "nonzero_variance_cells": 28,
+          "fraction_of_cells_ever_firing": 0.2887,
+          "cells_never_firing": 69,
+          "mean_per_cell_cv_across_states": 2.8872,
+          "total_count_mean": 37.7,
+          "total_count_cv": 0.1614,
+          "jaccard_by_type": {
+            "within": 0.7886,
+            "between": 0.7608,
+            "ratio": 0.9648,
+            "mean_set_size": 18.3,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 68.8,
+          "mean_fraction_active": 0.6955,
+          "mean_spikes_per_input": 2359.9,
+          "nonzero_variance_cells": 597,
+          "fraction_of_cells_ever_firing": 0.8892,
+          "cells_never_firing": 76,
+          "mean_per_cell_cv_across_states": 1.3952,
+          "total_count_mean": 2359.9,
+          "total_count_cv": 0.0251,
+          "jaccard_by_type": {
+            "within": 0.9227,
+            "between": 0.8838,
+            "ratio": 0.9579,
+            "mean_set_size": 477.1,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.65,
+          "mean_fraction_active": 0.1949,
+          "mean_spikes_per_input": 437.1,
+          "nonzero_variance_cells": 667,
+          "fraction_of_cells_ever_firing": 0.5076,
+          "cells_never_firing": 647,
+          "mean_per_cell_cv_across_states": 6.1884,
+          "total_count_mean": 437.1,
+          "total_count_cv": 0.2925,
+          "jaccard_by_type": {
+            "within": 0.6526,
+            "between": 0.5685,
+            "ratio": 0.8712,
+            "mean_set_size": 256.0,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 14.01,
+        "APL_mean_rate_hz": 227.99,
+        "brain_spikes_per_state": 16801.7,
+        "sim_seconds": 261.1,
+        "mn9": {
+          "mode": "poisson",
+          "window_ms": 200.0,
+          "drive": "Poisson 100.0 Hz, kick 68.75 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              3,
+              0
+            ],
+            "mn9_spikes_total": 3,
+            "grn_rate_hz": 82.18,
+            "brain_spikes": 60266,
+            "neurons_firing": 7718
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 65220,
+            "neurons_firing": 7494
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 3 / no-drive 0 / matched-ORN 2"
+          }
+        }
+      },
+      "counts_file": "counts_apl2_poisson_vth4.npz"
+    },
+    "apl5_tonic_vth0": {
+      "config": {
+        "label": "apl5_tonic_vth0",
+        "apl_scale": 5.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 5.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0059,
+          "std_active_fraction": 0.0034,
+          "min_active_fraction": 0.0005,
+          "max_active_fraction": 0.0413,
+          "mean_active_cells": 23.8,
+          "mean_pairwise_jaccard": 0.1824,
+          "jaccard_bernoulli_reference": 0.0029,
+          "always_on_fraction": 0.002,
+          "always_on_cells": 8,
+          "never_on_fraction": 0.8976,
+          "mean_rate_hz": 0.12,
+          "mean_rate_hz_active_only": 20.84,
+          "nonzero_variance_cells": 416,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.339
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0003,
+          "std_active_fraction": 0.0001,
+          "min_active_fraction": 0.0002,
+          "max_active_fraction": 0.001,
+          "mean_active_cells": 1.3,
+          "mean_pairwise_jaccard": 0.8023,
+          "jaccard_bernoulli_reference": 0.0002,
+          "always_on_fraction": 0.0002,
+          "always_on_cells": 1,
+          "never_on_fraction": 0.9983,
+          "mean_rate_hz": 0.02,
+          "mean_rate_hz_active_only": 48.7,
+          "nonzero_variance_cells": 7,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.2875,
+          "between": 0.1691,
+          "ratio": 0.5881,
+          "mean_set_size": 23.8,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.8126,
+          "between": 0.801,
+          "ratio": 0.9857,
+          "mean_set_size": 1.3,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 5.91,
+          "mean_fraction_active": 0.1494,
+          "mean_spikes_per_input": 28.7,
+          "nonzero_variance_cells": 35,
+          "fraction_of_cells_ever_firing": 0.3608,
+          "cells_never_firing": 62,
+          "mean_per_cell_cv_across_states": 8.2377,
+          "total_count_mean": 28.7,
+          "total_count_cv": 0.2189,
+          "jaccard_by_type": {
+            "within": 0.6571,
+            "between": 0.6069,
+            "ratio": 0.9236,
+            "mean_set_size": 14.5,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 67.17,
+          "mean_fraction_active": 0.6784,
+          "mean_spikes_per_input": 2304.1,
+          "nonzero_variance_cells": 594,
+          "fraction_of_cells_ever_firing": 0.8834,
+          "cells_never_firing": 80,
+          "mean_per_cell_cv_across_states": 1.1613,
+          "total_count_mean": 2304.1,
+          "total_count_cv": 0.0314,
+          "jaccard_by_type": {
+            "within": 0.9052,
+            "between": 0.8565,
+            "ratio": 0.9461,
+            "mean_set_size": 465.4,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.5,
+          "mean_fraction_active": 0.1895,
+          "mean_spikes_per_input": 427.1,
+          "nonzero_variance_cells": 635,
+          "fraction_of_cells_ever_firing": 0.4833,
+          "cells_never_firing": 679,
+          "mean_per_cell_cv_across_states": 4.8296,
+          "total_count_mean": 427.1,
+          "total_count_cv": 0.3053,
+          "jaccard_by_type": {
+            "within": 0.6456,
+            "between": 0.5513,
+            "ratio": 0.8539,
+            "mean_set_size": 249.0,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.28,
+        "APL_mean_rate_hz": 224.91,
+        "brain_spikes_per_state": 17555.7,
+        "sim_seconds": 220.1,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              1,
+              0
+            ],
+            "mn9_spikes_total": 1,
+            "grn_rate_hz": 126.82,
+            "brain_spikes": 63172,
+            "neurons_firing": 8315
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              6,
+              0
+            ],
+            "mn9_spikes_total": 6,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 64369,
+            "neurons_firing": 7389
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 1 / no-drive 0 / matched-ORN 6"
+          }
+        }
+      },
+      "counts_file": "counts_apl5_tonic_vth0.npz"
+    },
+    "apl5_tonic_vth4": {
+      "config": {
+        "label": "apl5_tonic_vth4",
+        "apl_scale": 5.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 4.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 5.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 4.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0002,
+          "std_active_fraction": 0.0001,
+          "min_active_fraction": 0.0,
+          "max_active_fraction": 0.0007,
+          "mean_active_cells": 1.0,
+          "mean_pairwise_jaccard": 0.8935,
+          "jaccard_bernoulli_reference": 0.0001,
+          "always_on_fraction": 0.0002,
+          "always_on_cells": 1,
+          "never_on_fraction": 0.998,
+          "mean_rate_hz": 0.01,
+          "mean_rate_hz_active_only": 20.64,
+          "nonzero_variance_cells": 8,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 1.0
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0002,
+          "std_active_fraction": 0.0001,
+          "min_active_fraction": 0.0,
+          "max_active_fraction": 0.0007,
+          "mean_active_cells": 1.0,
+          "mean_pairwise_jaccard": 0.8968,
+          "jaccard_bernoulli_reference": 0.0001,
+          "always_on_fraction": 0.0002,
+          "always_on_cells": 1,
+          "never_on_fraction": 0.999,
+          "mean_rate_hz": 0.01,
+          "mean_rate_hz_active_only": 29.49,
+          "nonzero_variance_cells": 4,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.8934,
+          "between": 0.8936,
+          "ratio": 1.0002,
+          "mean_set_size": 1.0,
+          "states_with_empty_set": 74
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.8969,
+          "between": 0.8968,
+          "ratio": 1.0,
+          "mean_set_size": 1.0,
+          "states_with_empty_set": 74
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 5.86,
+          "mean_fraction_active": 0.145,
+          "mean_spikes_per_input": 28.4,
+          "nonzero_variance_cells": 26,
+          "fraction_of_cells_ever_firing": 0.268,
+          "cells_never_firing": 71,
+          "mean_per_cell_cv_across_states": 2.7377,
+          "total_count_mean": 28.4,
+          "total_count_cv": 0.2202,
+          "jaccard_by_type": {
+            "within": 0.6775,
+            "between": 0.6297,
+            "ratio": 0.9294,
+            "mean_set_size": 14.1,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 67.28,
+          "mean_fraction_active": 0.6794,
+          "mean_spikes_per_input": 2307.8,
+          "nonzero_variance_cells": 590,
+          "fraction_of_cells_ever_firing": 0.8819,
+          "cells_never_firing": 81,
+          "mean_per_cell_cv_across_states": 1.0009,
+          "total_count_mean": 2307.8,
+          "total_count_cv": 0.0315,
+          "jaccard_by_type": {
+            "within": 0.9056,
+            "between": 0.8569,
+            "ratio": 0.9462,
+            "mean_set_size": 466.1,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.53,
+          "mean_fraction_active": 0.1902,
+          "mean_spikes_per_input": 429.3,
+          "nonzero_variance_cells": 635,
+          "fraction_of_cells_ever_firing": 0.4833,
+          "cells_never_firing": 679,
+          "mean_per_cell_cv_across_states": 4.7383,
+          "total_count_mean": 429.3,
+          "total_count_cv": 0.3042,
+          "jaccard_by_type": {
+            "within": 0.6466,
+            "between": 0.5524,
+            "ratio": 0.8542,
+            "mean_set_size": 249.9,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.28,
+        "APL_mean_rate_hz": 221.83,
+        "brain_spikes_per_state": 17554.8,
+        "sim_seconds": 216.1,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              1,
+              0
+            ],
+            "mn9_spikes_total": 1,
+            "grn_rate_hz": 127.0,
+            "brain_spikes": 61923,
+            "neurons_firing": 7684
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              5,
+              0
+            ],
+            "mn9_spikes_total": 5,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 63146,
+            "neurons_firing": 7141
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 1 / no-drive 0 / matched-ORN 5"
+          }
+        }
+      },
+      "counts_file": "counts_apl5_tonic_vth4.npz"
+    },
+    "apl5_poisson_vth0": {
+      "config": {
+        "label": "apl5_poisson_vth0",
+        "apl_scale": 5.0,
+        "drive": "poisson",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 5.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0047,
+          "std_active_fraction": 0.0039,
+          "min_active_fraction": 0.0002,
+          "max_active_fraction": 0.0495,
+          "mean_active_cells": 19.1,
+          "mean_pairwise_jaccard": 0.1742,
+          "jaccard_bernoulli_reference": 0.0024,
+          "always_on_fraction": 0.0015,
+          "always_on_cells": 6,
+          "never_on_fraction": 0.8942,
+          "mean_rate_hz": 0.1,
+          "mean_rate_hz_active_only": 21.1,
+          "nonzero_variance_cells": 430,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.319
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0003,
+          "std_active_fraction": 0.0001,
+          "min_active_fraction": 0.0002,
+          "max_active_fraction": 0.0017,
+          "mean_active_cells": 1.3,
+          "mean_pairwise_jaccard": 0.7715,
+          "jaccard_bernoulli_reference": 0.0002,
+          "always_on_fraction": 0.0002,
+          "always_on_cells": 1,
+          "never_on_fraction": 0.9973,
+          "mean_rate_hz": 0.02,
+          "mean_rate_hz_active_only": 48.29,
+          "nonzero_variance_cells": 11,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.2565,
+          "between": 0.1638,
+          "ratio": 0.6385,
+          "mean_set_size": 19.1,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.7831,
+          "between": 0.77,
+          "ratio": 0.9833,
+          "mean_set_size": 1.3,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 5.73,
+          "mean_fraction_active": 0.1475,
+          "mean_spikes_per_input": 27.8,
+          "nonzero_variance_cells": 35,
+          "fraction_of_cells_ever_firing": 0.3608,
+          "cells_never_firing": 62,
+          "mean_per_cell_cv_across_states": 6.7867,
+          "total_count_mean": 27.8,
+          "total_count_cv": 0.2128,
+          "jaccard_by_type": {
+            "within": 0.6417,
+            "between": 0.5971,
+            "ratio": 0.9305,
+            "mean_set_size": 14.3,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 64.49,
+          "mean_fraction_active": 0.6705,
+          "mean_spikes_per_input": 2211.9,
+          "nonzero_variance_cells": 600,
+          "fraction_of_cells_ever_firing": 0.8878,
+          "cells_never_firing": 77,
+          "mean_per_cell_cv_across_states": 1.415,
+          "total_count_mean": 2211.9,
+          "total_count_cv": 0.0283,
+          "jaccard_by_type": {
+            "within": 0.9064,
+            "between": 0.862,
+            "ratio": 0.951,
+            "mean_set_size": 460.0,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.48,
+          "mean_fraction_active": 0.1913,
+          "mean_spikes_per_input": 425.7,
+          "nonzero_variance_cells": 661,
+          "fraction_of_cells_ever_firing": 0.503,
+          "cells_never_firing": 653,
+          "mean_per_cell_cv_across_states": 5.9181,
+          "total_count_mean": 425.7,
+          "total_count_cv": 0.3095,
+          "jaccard_by_type": {
+            "within": 0.6465,
+            "between": 0.5617,
+            "ratio": 0.8688,
+            "mean_set_size": 251.3,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 14.01,
+        "APL_mean_rate_hz": 219.16,
+        "brain_spikes_per_state": 16106.7,
+        "sim_seconds": 253.1,
+        "mn9": {
+          "mode": "poisson",
+          "window_ms": 200.0,
+          "drive": "Poisson 100.0 Hz, kick 68.75 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 82.18,
+            "brain_spikes": 57706,
+            "neurons_firing": 7841
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 62745,
+            "neurons_firing": 7275
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 2 / no-drive 0 / matched-ORN 2"
+          }
+        }
+      },
+      "counts_file": "counts_apl5_poisson_vth0.npz"
+    },
+    "apl5_poisson_vth4": {
+      "config": {
+        "label": "apl5_poisson_vth4",
+        "apl_scale": 5.0,
+        "drive": "poisson",
+        "kc_vth_offset_mv": 4.0,
+        "kc_input_norm": 0.0
+      },
+      "tuning": {
+        "apl_scale": 5.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 4.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 0.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0003,
+          "std_active_fraction": 0.0001,
+          "min_active_fraction": 0.0,
+          "max_active_fraction": 0.0007,
+          "mean_active_cells": 1.0,
+          "mean_pairwise_jaccard": 0.9143,
+          "jaccard_bernoulli_reference": 0.0001,
+          "always_on_fraction": 0.0002,
+          "always_on_cells": 1,
+          "never_on_fraction": 0.997,
+          "mean_rate_hz": 0.01,
+          "mean_rate_hz_active_only": 20.51,
+          "nonzero_variance_cells": 12,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.667
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0002,
+          "std_active_fraction": 0.0001,
+          "min_active_fraction": 0.0,
+          "max_active_fraction": 0.0007,
+          "mean_active_cells": 1.0,
+          "mean_pairwise_jaccard": 0.9308,
+          "jaccard_bernoulli_reference": 0.0001,
+          "always_on_fraction": 0.0002,
+          "always_on_cells": 1,
+          "never_on_fraction": 0.999,
+          "mean_rate_hz": 0.01,
+          "mean_rate_hz_active_only": 29.32,
+          "nonzero_variance_cells": 4,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.9135,
+          "between": 0.9144,
+          "ratio": 1.001,
+          "mean_set_size": 1.0,
+          "states_with_empty_set": 39
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.9301,
+          "between": 0.9308,
+          "ratio": 1.0007,
+          "mean_set_size": 1.0,
+          "states_with_empty_set": 39
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 5.67,
+          "mean_fraction_active": 0.1437,
+          "mean_spikes_per_input": 27.5,
+          "nonzero_variance_cells": 26,
+          "fraction_of_cells_ever_firing": 0.268,
+          "cells_never_firing": 71,
+          "mean_per_cell_cv_across_states": 2.5895,
+          "total_count_mean": 27.5,
+          "total_count_cv": 0.2136,
+          "jaccard_by_type": {
+            "within": 0.6607,
+            "between": 0.6224,
+            "ratio": 0.9421,
+            "mean_set_size": 13.9,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 64.56,
+          "mean_fraction_active": 0.6712,
+          "mean_spikes_per_input": 2214.4,
+          "nonzero_variance_cells": 597,
+          "fraction_of_cells_ever_firing": 0.8863,
+          "cells_never_firing": 78,
+          "mean_per_cell_cv_across_states": 1.3513,
+          "total_count_mean": 2214.4,
+          "total_count_cv": 0.0285,
+          "jaccard_by_type": {
+            "within": 0.9065,
+            "between": 0.8624,
+            "ratio": 0.9513,
+            "mean_set_size": 460.4,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.49,
+          "mean_fraction_active": 0.1916,
+          "mean_spikes_per_input": 426.1,
+          "nonzero_variance_cells": 663,
+          "fraction_of_cells_ever_firing": 0.5053,
+          "cells_never_firing": 650,
+          "mean_per_cell_cv_across_states": 6.0797,
+          "total_count_mean": 426.1,
+          "total_count_cv": 0.308,
+          "jaccard_by_type": {
+            "within": 0.6471,
+            "between": 0.5623,
+            "ratio": 0.8689,
+            "mean_set_size": 251.8,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 14.0,
+        "APL_mean_rate_hz": 216.33,
+        "brain_spikes_per_state": 16094.8,
+        "sim_seconds": 254.3,
+        "mn9": {
+          "mode": "poisson",
+          "window_ms": 200.0,
+          "drive": "Poisson 100.0 Hz, kick 68.75 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 82.18,
+            "brain_spikes": 56979,
+            "neurons_firing": 7360
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              2,
+              0
+            ],
+            "mn9_spikes_total": 2,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 61712,
+            "neurons_firing": 7328
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 2 / no-drive 0 / matched-ORN 2"
+          }
+        }
+      },
+      "counts_file": "counts_apl5_poisson_vth4.npz"
+    },
+    "apl2_tonic_vth0_norm1": {
+      "config": {
+        "label": "apl2_tonic_vth0_norm1",
+        "apl_scale": 2.0,
+        "drive": "tonic",
+        "kc_vth_offset_mv": 0.0,
+        "kc_input_norm": 1.0
+      },
+      "tuning": {
+        "apl_scale": 2.0,
+        "alpn_kc_scale": 1.0,
+        "kc_vth_offset_mv": 0.0,
+        "kc_bias_mv": 0.0,
+        "kc_kc_scale": 1.0,
+        "kc_input_norm": 1.0
+      },
+      "sim": {
+        "KC": {
+          "mean_active_fraction": 0.0656,
+          "std_active_fraction": 0.0089,
+          "min_active_fraction": 0.0465,
+          "max_active_fraction": 0.1016,
+          "mean_active_cells": 266.5,
+          "mean_pairwise_jaccard": 0.5956,
+          "jaccard_bernoulli_reference": 0.0339,
+          "always_on_fraction": 0.0605,
+          "always_on_cells": 246,
+          "never_on_fraction": 0.7606,
+          "mean_rate_hz": 1.95,
+          "mean_rate_hz_active_only": 29.67,
+          "nonzero_variance_cells": 973,
+          "population": 4064,
+          "n_inputs": 2000,
+          "always_on_over_active": 0.922
+        },
+        "KC_late": {
+          "mean_active_fraction": 0.0603,
+          "std_active_fraction": 0.007,
+          "min_active_fraction": 0.0431,
+          "max_active_fraction": 0.0901,
+          "mean_active_cells": 245.2,
+          "mean_pairwise_jaccard": 0.6394,
+          "jaccard_bernoulli_reference": 0.0311,
+          "always_on_fraction": 0.0578,
+          "always_on_cells": 235,
+          "never_on_fraction": 0.8273,
+          "mean_rate_hz": 2.48,
+          "mean_rate_hz_active_only": 41.11,
+          "nonzero_variance_cells": 702,
+          "population": 4064,
+          "n_inputs": 2000
+        },
+        "KC_jaccard_by_type": {
+          "within": 0.6625,
+          "between": 0.5871,
+          "ratio": 0.8862,
+          "mean_set_size": 266.5,
+          "states_with_empty_set": 0
+        },
+        "KC_late_jaccard_by_type": {
+          "within": 0.6951,
+          "between": 0.6324,
+          "ratio": 0.9097,
+          "mean_set_size": 245.2,
+          "states_with_empty_set": 0
+        },
+        "MBON": {
+          "population": 97,
+          "mean_rate_hz": 8.05,
+          "mean_fraction_active": 0.1943,
+          "mean_spikes_per_input": 39.0,
+          "nonzero_variance_cells": 45,
+          "fraction_of_cells_ever_firing": 0.4639,
+          "cells_never_firing": 52,
+          "mean_per_cell_cv_across_states": 8.8176,
+          "total_count_mean": 39.0,
+          "total_count_cv": 0.1563,
+          "jaccard_by_type": {
+            "within": 0.75,
+            "between": 0.7147,
+            "ratio": 0.9529,
+            "mean_set_size": 18.8,
+            "states_with_empty_set": 0
+          }
+        },
+        "ALPN": {
+          "population": 686,
+          "mean_rate_hz": 71.17,
+          "mean_fraction_active": 0.7004,
+          "mean_spikes_per_input": 2441.1,
+          "nonzero_variance_cells": 589,
+          "fraction_of_cells_ever_firing": 0.8805,
+          "cells_never_firing": 82,
+          "mean_per_cell_cv_across_states": 0.8754,
+          "total_count_mean": 2441.1,
+          "total_count_cv": 0.0283,
+          "jaccard_by_type": {
+            "within": 0.9194,
+            "between": 0.8752,
+            "ratio": 0.952,
+            "mean_set_size": 480.5,
+            "states_with_empty_set": 0
+          }
+        },
+        "DN": {
+          "population": 1314,
+          "mean_rate_hz": 6.64,
+          "mean_fraction_active": 0.1926,
+          "mean_spikes_per_input": 436.2,
+          "nonzero_variance_cells": 636,
+          "fraction_of_cells_ever_firing": 0.484,
+          "cells_never_firing": 678,
+          "mean_per_cell_cv_across_states": 4.5289,
+          "total_count_mean": 436.2,
+          "total_count_cv": 0.2953,
+          "jaccard_by_type": {
+            "within": 0.6491,
+            "between": 0.5544,
+            "ratio": 0.8541,
+            "mean_set_size": 253.1,
+            "states_with_empty_set": 0
+          }
+        },
+        "ORN_mean_rate_hz": 21.28,
+        "APL_mean_rate_hz": 252.46,
+        "brain_spikes_per_state": 18491.4,
+        "sim_seconds": 209.2,
+        "mn9": {
+          "mode": "tonic",
+          "window_ms": 200.0,
+          "drive": "tonic 30.0 mV",
+          "n_grn": 165,
+          "matched_control": "165 random ORNs, seed 0",
+          "sugar_grn_drive": {
+            "mn9_spikes": [
+              1,
+              0
+            ],
+            "mn9_spikes_total": 1,
+            "grn_rate_hz": 126.85,
+            "brain_spikes": 66565,
+            "neurons_firing": 7949
+          },
+          "no_drive": {
+            "mn9_spikes": [
+              0,
+              0
+            ],
+            "mn9_spikes_total": 0,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 0,
+            "neurons_firing": 0
+          },
+          "matched_orn_control": {
+            "mn9_spikes": [
+              8,
+              0
+            ],
+            "mn9_spikes_total": 8,
+            "grn_rate_hz": 0.0,
+            "brain_spikes": 68680,
+            "neurons_firing": 7845
+          },
+          "verdict": {
+            "mn9_responds_to_sugar": true,
+            "silent_without_drive": true,
+            "sugar_selective": false,
+            "summary": "sugar 1 / no-drive 0 / matched-ORN 8"
+          }
+        }
+      },
+      "counts_file": "counts_apl2_tonic_vth0_norm1.npz"
+    }
+  }
+}

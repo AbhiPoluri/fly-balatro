@@ -1,0 +1,11 @@
+== current
+   reward_bucket_only         n=  48  median 0.6858  mean 1.678  ratio-of-means 0.6148
+   reward_hand_type_only      n= 128  median 0.4345  mean 1.1086  ratio-of-means 0.4984
+   punish_bucket_only         n=  48  median 0.0715  mean -1.5194  ratio-of-means 0.9152
+   punish_hand_type_only      n= 128  median 0.3034  mean 1.6141  ratio-of-means 0.888
+== separated
+   reward_bucket_only         n=  48  median 0.3306  mean 0.4032  ratio-of-means 0.3881
+   reward_hand_type_only      n= 128  median 0.6248  mean 0.7775  ratio-of-means 0.658
+   punish_bucket_only         n=  48  median 0.0817  mean 0.2416  ratio-of-means 0.4652
+   punish_hand_type_only      n= 128  median 0.2762  mean -0.7404  ratio-of-means 0.5931
+wrote /Users/abhipoluri/fly-balatro/outputs/plast3/transfer.json in 590s

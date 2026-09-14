@@ -1,0 +1,6 @@
+== frozen_s0 (eta_r=0 eta_p=0) ==
+   clear 0.267 -> 0.267 | chips 803 -> 803 | P(play|legal) 0.519 -> 0.519 | joint var 0.068556 -> 0.068556 | train reward 0.505 | 442s
+== frozen_s1 (eta_r=0 eta_p=0) ==
+   clear 0.433 -> 0.433 | chips 834 -> 834 | P(play|legal) 0.514 -> 0.514 | joint var 0.03893 -> 0.03893 | train reward 0.555 | 411s
+== frozen_s2 (eta_r=0 eta_p=0) ==
+   clear 0.283 -> 0.283 | chips 730 -> 730 | P(play|legal) 0.534 -> 0.534 | joint var 0.048929 -> 0.048929 | train reward 0.543 | 413s

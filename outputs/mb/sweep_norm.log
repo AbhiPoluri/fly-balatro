@@ -1,0 +1,131 @@
+8 settings x 200 inputs
+[1/8] {'apl_scale': 1.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 1.0}
+    [norm1] 50/200  6s
+    [norm1] 100/200  13s
+    [norm1] 150/200  19s
+    [norm1] 200/200  25s
+  norm1
+    KC active fraction 0.3572 (1452/4064)  Jaccard 0.8571 (Bernoulli ref 0.2174)  always-on 0.3558 (1446)
+    KC rate 12.96 Hz   first KC spike 5 ms   peak 17 ms   15% of KC spikes in first 15 ms
+    MBON 47.48 Hz   ALPN 74.04 Hz   APL 308.05 Hz   brain 21331 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 4 / 1800-ORN 7
+[2/8] {'apl_scale': 1.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 0.5}
+    [norm0.5] 50/200  6s
+    [norm0.5] 100/200  12s
+    [norm0.5] 150/200  19s
+    [norm0.5] 200/200  25s
+  norm0.5
+    KC active fraction 0.3761 (1529/4064)  Jaccard 0.8510 (Bernoulli ref 0.2316)  always-on 0.3733 (1517)
+    KC rate 12.85 Hz   first KC spike 5 ms   peak 20 ms   13% of KC spikes in first 15 ms
+    MBON 51.53 Hz   ALPN 74.04 Hz   APL 307.35 Hz   brain 21424 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 8 / 1800-ORN 9
+[3/8] {'apl_scale': 1.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 0.0, 'kc_input_norm': 1.0}
+    [kckc0_norm1] 50/200  6s
+    [kckc0_norm1] 100/200  13s
+    [kckc0_norm1] 150/200  19s
+    [kckc0_norm1] 200/200  25s
+  kckc0_norm1
+    KC active fraction 0.3272 (1330/4064)  Jaccard 0.8401 (Bernoulli ref 0.1956)  always-on 0.3255 (1323)
+    KC rate 11.45 Hz   first KC spike 5 ms   peak 17 ms   16% of KC spikes in first 15 ms
+    MBON 42.34 Hz   ALPN 74.08 Hz   APL 301.60 Hz   brain 20938 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 5 / 1800-ORN 9
+[4/8] {'apl_scale': 2.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 0.0, 'kc_input_norm': 1.0}
+    [apl2_kckc0_norm1] 50/200  6s
+    [apl2_kckc0_norm1] 100/200  12s
+    [apl2_kckc0_norm1] 150/200  18s
+    [apl2_kckc0_norm1] 200/200  24s
+  apl2_kckc0_norm1
+    KC active fraction 0.0874 (355/4064)  Jaccard 0.6668 (Bernoulli ref 0.0457)  always-on 0.0824 (335)
+    KC rate 2.40 Hz   first KC spike 5 ms   peak 8 ms   28% of KC spikes in first 15 ms
+    MBON 9.92 Hz   ALPN 72.93 Hz   APL 256.20 Hz   brain 18596 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 8 / 1800-ORN 5
+[5/8] {'apl_scale': 3.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 0.0, 'kc_input_norm': 1.0}
+    [apl3_kckc0_norm1] 50/200  6s
+    [apl3_kckc0_norm1] 100/200  12s
+    [apl3_kckc0_norm1] 150/200  19s
+    [apl3_kckc0_norm1] 200/200  25s
+  apl3_kckc0_norm1
+    KC active fraction 0.0397 (161/4064)  Jaccard 0.4593 (Bernoulli ref 0.0202)  always-on 0.0349 (142)
+    KC rate 0.89 Hz   first KC spike 5 ms   peak 8 ms   60% of KC spikes in first 15 ms
+    MBON 8.80 Hz   ALPN 71.76 Hz   APL 233.75 Hz   brain 18118 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 4 / 1800-ORN 7
+[6/8] {'apl_scale': 5.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 0.0, 'kc_input_norm': 1.0}
+    [apl5_kckc0_norm1] 50/200  6s
+    [apl5_kckc0_norm1] 100/200  13s
+    [apl5_kckc0_norm1] 150/200  19s
+    [apl5_kckc0_norm1] 200/200  25s
+  apl5_kckc0_norm1
+    KC active fraction 0.0261 (106/4064)  Jaccard 0.3522 (Bernoulli ref 0.0132)  always-on 0.0217 (88)
+    KC rate 0.52 Hz   first KC spike 5 ms   peak 8 ms   99% of KC spikes in first 15 ms
+    MBON 6.92 Hz   ALPN 69.05 Hz   APL 225.45 Hz   brain 17662 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 5 / 1800-ORN 8
+[7/8] {'apl_scale': 2.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 1.0}
+    [apl2_norm1] 50/200  6s
+    [apl2_norm1] 100/200  12s
+    [apl2_norm1] 150/200  19s
+    [apl2_norm1] 200/200  25s
+  apl2_norm1
+    KC active fraction 0.0907 (369/4064)  Jaccard 0.6745 (Bernoulli ref 0.0475)  always-on 0.0869 (353)
+    KC rate 2.54 Hz   first KC spike 5 ms   peak 8 ms   27% of KC spikes in first 15 ms
+    MBON 9.97 Hz   ALPN 72.90 Hz   APL 257.55 Hz   brain 18621 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 8 / 1800-ORN 4
+[8/8] {'apl_scale': 3.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 1.0}
+    [apl3_norm1] 50/200  6s
+    [apl3_norm1] 100/200  12s
+    [apl3_norm1] 150/200  19s
+    [apl3_norm1] 200/200  25s
+  apl3_norm1
+    KC active fraction 0.0406 (165/4064)  Jaccard 0.4632 (Bernoulli ref 0.0207)  always-on 0.0352 (143)
+    KC rate 0.91 Hz   first KC spike 5 ms   peak 8 ms   59% of KC spikes in first 15 ms
+    MBON 8.78 Hz   ALPN 71.75 Hz   APL 233.65 Hz   brain 18119 spikes/input
+    MN9: sugar 1 spikes / no-drive 0 / matched-ORN 4 / 1800-ORN 6
+
+total 215s
+setting                         KCfrac  always    Jacc    ref   KCHz  MBONHz  ALPNHz  MN9
+-----------------------------------------------------------------------------------------
+default                         0.3794  0.3757  0.8911  0.234  15.21   61.06   73.97    1
+apl2                            0.0775  0.0716  0.6253  0.040   2.15   11.13   72.94    1
+apl5                            0.0284  0.0229  0.3908  0.014   0.57    7.02   69.04    1
+apl10                           0.0282  0.0226  0.3870  0.014   0.56    4.34   61.25    1
+apl20                           0.0282  0.0226  0.3870  0.014   0.56    2.11   50.35    1
+apl50                           0.0282  0.0226  0.3870  0.014   0.56    0.91   39.54    1
+vth2                            0.2986  0.3024  0.8788  0.175  10.11   44.64   74.13    1
+vth4                            0.2315  0.2308  0.8512  0.131   6.82   32.75   74.13    2
+vth6                            0.1672  0.1658  0.8223  0.091   4.51   22.22   74.26    1
+vth8                            0.1210  0.1198  0.8176  0.064   3.03   16.78   74.36    1
+pnkc0.5                         0.0159  0.0150  0.6226  0.008   0.37    9.51   74.54    1
+pnkc0.25                        0.0000  0.0000  0.0000  0.000   0.00    9.37   74.57    1
+pnkc2                           0.8323  0.8339  0.9781  0.713  63.15  126.39   73.79    2
+pnkc3                           0.9024  0.9033  0.9934  0.822  92.23  145.23   73.71    1
+pnkc2_vth8                      0.6828  0.6853  0.9555  0.518  30.31   81.47   74.03    1
+pnkc2_vth12                     0.5989  0.6024  0.9429  0.427  22.38   68.69   74.05    3
+pnkc3_vth12                     0.8072  0.8081  0.9805  0.677  43.55   98.34   73.89    2
+pnkc3_vth16                     0.7700  0.7719  0.9743  0.626  35.88   88.36   73.99    1
+kckc0.5                         0.3679  0.3666  0.8914  0.225  14.52   59.57   73.99    2
+kckc0.25                        0.3625  0.3622  0.8880  0.221  14.22   58.88   74.01    2
+kckc0                           0.3577  0.3561  0.8858  0.218  13.95   58.32   74.00    1
+apl2_vth2                       0.0377  0.0362  0.7364  0.019   1.04    8.77   73.12    1
+apl2_vth4                       0.0260  0.0253  0.7127  0.013   0.65    8.66   73.25    1
+apl2_vth6                       0.0171  0.0157  0.6858  0.009   0.40    8.64   73.29    1
+apl3                            0.0365  0.0303  0.4378  0.019   0.81    8.93   71.87    1
+apl3_vth2                       0.0047  0.0042  0.6209  0.002   0.12    7.91   71.99    1
+apl3_vth4                       0.0026  0.0025  0.5305  0.001   0.06    7.93   72.01    1
+apl3_vth6                       0.0012  0.0010  0.5830  0.001   0.03    7.91   72.03    1
+apl5_vth2                       0.0003  0.0002  0.7322  0.000   0.01    6.41   69.30    1
+apl5_vth4                       0.0002  0.0002  1.0000  0.000   0.01    6.37   69.33    1
+apl5_vth6                       0.0002  0.0002  0.9801  0.000   0.00    6.37   69.33    1
+apl2_kckc0                      0.0764  0.0716  0.6205  0.040   2.12   11.09   72.95    1
+apl3_kckc0                      0.0363  0.0300  0.4368  0.018   0.80    8.93   71.88    1
+apl5_kckc0                      0.0284  0.0229  0.3907  0.014   0.57    7.04   69.04    1
+apl2_kckc0.25                   0.0765  0.0709  0.6219  0.040   2.12   11.08   72.95    1
+apl3_kckc0.25                   0.0363  0.0300  0.4374  0.018   0.81    8.94   71.87    1
+apl5_kckc0.25                   0.0284  0.0229  0.3907  0.014   0.57    7.03   69.05    1
+norm1                           0.3572  0.3558  0.8571  0.217  12.96   47.48   74.04    1
+norm0.5                         0.3761  0.3733  0.8510  0.232  12.85   51.53   74.04    1
+kckc0_norm1                     0.3272  0.3255  0.8401  0.196  11.45   42.34   74.08    1
+apl2_kckc0_norm1                0.0874  0.0824  0.6668  0.046   2.40    9.92   72.93    1
+apl3_kckc0_norm1                0.0397  0.0349  0.4593  0.020   0.89    8.80   71.76    1
+apl5_kckc0_norm1                0.0261  0.0217  0.3522  0.013   0.52    6.92   69.05    1
+apl2_norm1                      0.0907  0.0869  0.6745  0.048   2.54    9.97   72.90    1
+apl3_norm1                      0.0406  0.0352  0.4632  0.021   0.91    8.78   71.75    1
+wrote /Users/abhipoluri/fly-balatro/outputs/mb/sweep.json

@@ -1,0 +1,158 @@
+diff --git a/src/lua/utils/gamestate.lua b/src/lua/utils/gamestate.lua
+index a7cc2b9..385d044 100644
+--- a/src/lua/utils/gamestate.lua
++++ b/src/lua/utils/gamestate.lua
+@@ -316,6 +316,114 @@ local function extract_card_cost(card)
+   }
+ end
+ 
++-- ==========================================================================
++-- Card Screen Geometry Extractor  (fly-balatro addition, purely additive)
++-- ==========================================================================
++--
++-- Balatro is LOVE, and every card is a Moveable with two transforms in game
++-- units: `T` is the TARGET transform and `VT` is the VISIBLE one, which eases
++-- toward `T` over a few frames.  A card that is mid-deal, mid-discard or being
++-- raised by a hover is drawn at `VT`, not at `T` (engine/node.lua
++-- `draw_boundingrect` takes `self.VT or self.T`), so an overlay that wants to
++-- line up with what is ACTUALLY on screen has to read `VT`.
++--
++-- Game units become LOVE pixels the way `Node:put_focused_cursor` does it
++-- (engine/node.lua):
++--
++--     pixel = (transform.<x|y> + container.T.<x|y>) * (G.TILESCALE * G.TILESIZE)
++--     size  =  transform.<w|h>                      * (G.TILESCALE * G.TILESIZE)
++--
++-- with `container` defaulting to `G.ROOM`, and `VT.r` a rotation in radians
++-- about the rect's own centre.  `rect` below is that arithmetic already done;
++-- the raw `vt`, `t` and `room` tables are reported alongside it so a consumer
++-- can re-derive or re-fit the mapping without needing another change here.
++--
++-- Everything is optional and guarded: on any error this returns nil and the
++-- card object is exactly what it was before.
++
++---Screen rect for one card, in LOVE pixels, from its visible transform
++---@param card table The game card object
++---@return table? geometry {rect, vt, t, room, unit} or nil
++local function extract_card_geometry(card)
++  if not card or not G then
++    return nil
++  end
++  local vt = card.VT or card.T
++  if not vt or not vt.x or not vt.w then
++    return nil
++  end
++  local tilescale = G.TILESCALE or 1
++  local tilesize = G.TILESIZE or 1
++  local unit = tilescale * tilesize
++  local container = card.container or G.ROOM
++  local cx, cy = 0, 0
++  if container and container.T then
++    cx, cy = container.T.x or 0, container.T.y or 0
++  end
++
++  local geometry = {
++    -- The card's axis-aligned rect in LOVE pixels before rotation, plus the
++    -- rotation about its centre.  This is the quantity an overlay wants.
++    rect = {
++      x = (vt.x + cx) * unit,
++      y = (vt.y + cy) * unit,
++      w = (vt.w or 0) * unit,
++      h = (vt.h or 0) * unit,
++      r = vt.r or 0,
++    },
++    -- Raw transforms in game units, so the mapping above can be checked or
++    -- refitted on the Python side without touching this file again.
++    vt = { x = vt.x, y = vt.y, w = vt.w, h = vt.h, r = vt.r, scale = vt.scale },
++    unit = unit,
++  }
++  if card.T then
++    geometry.t = { x = card.T.x, y = card.T.y, w = card.T.w, h = card.T.h, r = card.T.r }
++  end
++  if container and container.T then
++    geometry.room = { x = cx, y = cy, w = container.T.w, h = container.T.h, r = container.T.r }
++  end
++  -- True while the visible transform has not caught up with the target, i.e.
++  -- the card is still moving.  A consumer can use it to know a frame is
++  -- animating rather than settled.
++  if card.T then
++    local dx = math.abs((vt.x or 0) - (card.T.x or 0))
++    local dy = math.abs((vt.y or 0) - (card.T.y or 0))
++    geometry.moving = (dx > 0.001 or dy > 0.001)
++  end
++  return geometry
++end
++
++---The screen/room frame the rects above live in
++---@return table? screen
++local function extract_screen()
++  if not G then
++    return nil
++  end
++  local screen = {
++    tilesize = G.TILESIZE,
++    tilescale = G.TILESCALE,
++    unit = (G.TILESCALE or 1) * (G.TILESIZE or 1),
++  }
++  if G.ROOM and G.ROOM.T then
++    screen.room = { x = G.ROOM.T.x, y = G.ROOM.T.y, w = G.ROOM.T.w, h = G.ROOM.T.h }
++  end
++  if love and love.graphics then
++    -- LOVE pixels (what the rects are in) and window points can differ by the
++    -- Retina backing-scale factor; the overlay is positioned in points, so it
++    -- needs both.
++    if love.graphics.getDimensions then
++      screen.width, screen.height = love.graphics.getDimensions()
++    end
++    if love.graphics.getPixelDimensions then
++      screen.pixel_width, screen.pixel_height = love.graphics.getPixelDimensions()
++    end
++    if love.graphics.getDPIScale then
++      screen.dpi_scale = love.graphics.getDPIScale()
++    end
++  end
++  return screen
++end
++
+ -- ==========================================================================
+ -- Card Extractor
+ -- ==========================================================================
+@@ -357,7 +465,7 @@ local function extract_card(card)
+     end
+   end
+ 
+-  return {
++  local extracted = {
+     id = card.sort_id or 0,
+     key = key,
+     set = set,
+@@ -367,6 +475,16 @@ local function extract_card(card)
+     state = extract_card_state(card),
+     cost = extract_card_cost(card),
+   }
++
++  -- Purely additive: where this card actually is on screen right now.  Guarded
++  -- with pcall so that any change in the game's internals costs the caller a
++  -- missing optional field and never a failed gamestate call.
++  local ok, geometry = pcall(extract_card_geometry, card)
++  if ok and geometry then
++    extracted.geometry = geometry
++  end
++
++  return extracted
+ end
+ 
+ -- ==========================================================================
+@@ -811,6 +929,12 @@ function gamestate.get_gamestate()
+     state_data.pack = extract_area(G.pack_cards)
+   end
+ 
++  -- Purely additive: the frame the per-card `geometry.rect` values live in.
++  local screen_ok, screen = pcall(extract_screen)
++  if screen_ok and screen then
++    state_data.screen = screen
++  end
++
+   return state_data
+ end
+ 

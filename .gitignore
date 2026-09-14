@@ -1,0 +1,36 @@
+# virtualenv
+.venv/
+
+# connectome source data (1.1 GB, re-downloadable from the URLs in
+# vendor/doomfly/doom/datasets.json) and its derived cache
+data/malecns_v1/*.feather
+data/connectome_v*.npz
+data/viewer_neurons.*
+
+# large intermediate artifacts: spike-count features and resumable chunks.
+# regenerate with scripts/bc_brain_features.py
+outputs/**/_parts/
+outputs/**/feats_*.npz
+outputs/**/counts_*.npz
+outputs/**/probe_counts.npz
+outputs/**/sample.npz
+outputs/realgame/spikes.bin
+outputs/realgame/*.mov
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# vendored upstream checkouts (clone per docs/REALGAME_INSTALL.md)
+vendor/
+
+# rewired connectome graphs (deterministic from a seed, see scripts/calyx_common.py)
+outputs/calyx/graph_rewired_*.npz
+
+# macOS
+.DS_Store
+
+# figures are TRACKED on purpose (scripts/figures.py regenerates them from
+# outputs/); only the 156 MB source screen recording is not, see the
+# outputs/realgame/*.mov rule above.

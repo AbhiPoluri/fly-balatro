@@ -1,0 +1,43 @@
+baselines:
+  always_play     clear 0.000 chips 519 hands 428
+  teacher_dig     clear 0.700 chips 1088 hands 829
+  always_discard  clear 0.400 chips 868 hands 1091
+  bucket_ge1      clear 0.383 chips 833 hands 977
+  bucket_ge_lt1   clear 0.633 chips 1001 hands 830
+  bucket_ge_lt1_lt05 clear 0.500 chips 1000 hands 778
+== real_eta0.02_s0 (real wiring, plasticity on) ==
+   clear 0.267 -> 0.050 | chips 774 -> 554 | P(play|legal) 0.542 -> 0.942 | train reward 0.419 | 225s
+== real_eta0.02_s1 (real wiring, plasticity on) ==
+   clear 0.400 -> 0.017 | chips 845 -> 537 | P(play|legal) 0.541 -> 0.948 | train reward 0.391 | 199s
+== real_eta0.02_s2 (real wiring, plasticity on) ==
+   clear 0.383 -> 0.050 | chips 852 -> 541 | P(play|legal) 0.497 -> 0.955 | train reward 0.428 | 198s
+== real_eta0.05_s0 (real wiring, plasticity on) ==
+   clear 0.267 -> 0.033 | chips 774 -> 552 | P(play|legal) 0.542 -> 0.941 | train reward 0.394 | 193s
+== real_eta0.05_s1 (real wiring, plasticity on) ==
+   clear 0.400 -> 0.017 | chips 845 -> 537 | P(play|legal) 0.541 -> 0.948 | train reward 0.387 | 198s
+== real_eta0.05_s2 (real wiring, plasticity on) ==
+   clear 0.383 -> 0.050 | chips 852 -> 541 | P(play|legal) 0.497 -> 0.955 | train reward 0.439 | 198s
+== real_eta0.1_s0 (real wiring, plasticity on) ==
+   clear 0.267 -> 0.033 | chips 774 -> 570 | P(play|legal) 0.542 -> 0.939 | train reward 0.394 | 195s
+== real_eta0.1_s1 (real wiring, plasticity on) ==
+   clear 0.400 -> 0.017 | chips 845 -> 537 | P(play|legal) 0.541 -> 0.948 | train reward 0.384 | 198s
+== real_eta0.1_s2 (real wiring, plasticity on) ==
+   clear 0.383 -> 0.050 | chips 852 -> 541 | P(play|legal) 0.497 -> 0.955 | train reward 0.411 | 198s
+== shuffled_eta0.05_s0 (degree-preserving wiring shuffle, same rule) ==
+   clear 0.450 -> 0.450 | chips 923 -> 923 | P(play|legal) 0.456 -> 0.456 | train reward 0.659 | 192s
+== shuffled_eta0.05_s1 (degree-preserving wiring shuffle, same rule) ==
+   clear 0.433 -> 0.433 | chips 900 -> 900 | P(play|legal) 0.456 -> 0.456 | train reward 0.622 | 173s
+== shuffled_eta0.05_s2 (degree-preserving wiring shuffle, same rule) ==
+   clear 0.367 -> 0.367 | chips 948 -> 948 | P(play|legal) 0.456 -> 0.456 | train reward 0.613 | 176s
+== frozen_s0 (frozen fly: same decision rule, no dopamine) ==
+   clear 0.267 -> 0.267 | chips 774 -> 774 | P(play|legal) 0.542 -> 0.542 | train reward 0.561 | 227s
+== frozen_s1 (frozen fly: same decision rule, no dopamine) ==
+   clear 0.400 -> 0.400 | chips 845 -> 845 | P(play|legal) 0.541 -> 0.541 | train reward 0.589 | 236s
+== frozen_s2 (frozen fly: same decision rule, no dopamine) ==
+   clear 0.383 -> 0.383 | chips 852 -> 852 | P(play|legal) 0.497 -> 0.497 | train reward 0.586 | 239s
+== specTuning_eta0.05_s0 (mb2 tuning exactly as chosen; reward arm lands on MBONs that never spike) ==
+   clear 0.383 -> 0.250 | chips 827 -> 829 | P(play|legal) 0.408 -> 0.380 | train reward 0.601 | 274s
+== briefValence_eta0.05_s0 (valence from the 9 compartments named in the brief instead of the Aso neurotransmitter rule) ==
+   clear 0.417 -> 0.333 | chips 869 -> 870 | P(play|legal) 0.565 -> 0.487 | train reward 0.587 | 264s
+== omission_eta0.05_s0 (flagged variant: an unrewarded PLAY also gets a full-strength PPL1 pulse (reward omission). Predicted before running to be insufficient: the measured gain is +9.2 Hz per reward pulse against -2.3 Hz per punishment pulse, so equal counts still drift to play) ==
+   clear 0.267 -> 0.033 | chips 774 -> 570 | P(play|legal) 0.542 -> 0.939 | train reward 0.394 | 197s

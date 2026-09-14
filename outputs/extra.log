@@ -1,0 +1,206 @@
+populations: ORN=2639  ALPN=686  KC=4064  MBON=97  CX=2950  DN=1314
+glomerular channels: 123
+feature map: {'n_features': 40, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 2639, 'n_driven_neurons': 400, 'extended_with_sensory': False}
+
+simulating real wiring (window 50.0 ms, drive 30.0 mV, v_jitter 6.9 mV, persistent=False) ...
+    [real] 200/600  17s
+    [real] 400/600  34s
+    [real] 600/600  51s
+  real: 51s
+simulating shuffled wiring ...
+    [shuf] 200/600  6s
+    [shuf] 400/600  12s
+    [shuf] 600/600  18s
+  shuffled: 18s
+
+label A  (majority-class rate 0.5617)
+  raw_bits                   acc 1.0
+  glomerular_ceiling         acc 1.0  (123 channels)
+  real:ORN                   acc 1.0 (406/2639 cols)
+  real:ALPN                  acc 0.8233 (526/686 cols)
+  real:KC                    acc 0.7883 (1781/4064 cols)
+  real:MBON                  acc 0.6817 (69/97 cols)
+  real:CX                    acc 0.5883 (1025/2950 cols)
+  real:DN                    acc 0.7083 (545/1314 cols)
+  real:MBON+CX               acc 0.6233 (1094/3047 cols)
+  real:DN+MBON+CX            acc 0.6917 (1639/4361 cols)
+  shuffled:ORN               acc 1.0 (424/2639 cols)
+  shuffled:ALPN              acc 0.6717 (55/686 cols)
+  shuffled:KC                acc 0.7383 (95/4064 cols)
+  shuffled:MBON              acc 0.7533 (45/97 cols)
+  shuffled:CX                acc 0.7667 (212/2950 cols)
+  shuffled:DN                acc 0.75 (221/1314 cols)
+  shuffled:MBON+CX           acc 0.7933 (257/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.795 (478/4361 cols)
+  PERMUTED real:DN           acc 0.5383   PERMUTED raw acc 0.54
+
+label B  (majority-class rate 0.5217)
+  raw_bits                   acc 0.9767
+  glomerular_ceiling         acc 0.9483  (123 channels)
+  real:ORN                   acc 0.9717 (406/2639 cols)
+  real:ALPN                  acc 0.74 (526/686 cols)
+  real:KC                    acc 0.635 (1781/4064 cols)
+  real:MBON                  acc 0.5483 (69/97 cols)
+  real:CX                    acc 0.5467 (1025/2950 cols)
+  real:DN                    acc 0.54 (545/1314 cols)
+  real:MBON+CX               acc 0.565 (1094/3047 cols)
+  real:DN+MBON+CX            acc 0.5567 (1639/4361 cols)
+  shuffled:ORN               acc 0.9717 (424/2639 cols)
+  shuffled:ALPN              acc 0.6033 (55/686 cols)
+  shuffled:KC                acc 0.7 (95/4064 cols)
+  shuffled:MBON              acc 0.7467 (45/97 cols)
+  shuffled:CX                acc 0.7167 (212/2950 cols)
+  shuffled:DN                acc 0.7983 (221/1314 cols)
+  shuffled:MBON+CX           acc 0.795 (257/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.815 (478/4361 cols)
+  PERMUTED real:DN           acc 0.5467   PERMUTED raw acc 0.4817
+
+firing (real):
+  ORN     406/2639  ever fire,   406 varying,    468.1 spikes/sample
+  ALPN    526/686   ever fire,   516 varying,   2204.0 spikes/sample
+  KC     1781/4064  ever fire,  1770 varying,   2250.7 spikes/sample
+  MBON     69/97    ever fire,    69 varying,    217.9 spikes/sample
+  CX     1025/2950  ever fire,  1015 varying,    695.4 spikes/sample
+  DN      545/1314  ever fire,   542 varying,    400.1 spikes/sample
+wrote outputs/probe_nf40.json
+### DONE nf40
+populations: ORN=2639  ALPN=686  KC=4064  MBON=97  CX=2950  DN=1314
+glomerular channels: 144
+feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 2639, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+
+simulating real wiring (window 50.0 ms, drive 30.0 mV, v_jitter 6.9 mV, persistent=False) ...
+    [real] 200/1500  21s
+    [real] 400/1500  41s
+    [real] 600/1500  61s
+    [real] 800/1500  82s
+    [real] 1000/1500  102s
+    [real] 1200/1500  123s
+    [real] 1400/1500  143s
+  real: 153s
+simulating shuffled wiring ...
+    [shuf] 200/1500  15s
+    [shuf] 400/1500  30s
+    [shuf] 600/1500  45s
+    [shuf] 800/1500  59s
+    [shuf] 1000/1500  75s
+    [shuf] 1200/1500  89s
+    [shuf] 1400/1500  104s
+  shuffled: 112s
+
+label A  (majority-class rate 0.5893)
+  raw_bits                   acc 0.9993
+  glomerular_ceiling         acc 0.816  (144 channels)
+  real:ORN                   acc 1.0 (1810/2639 cols)
+  real:ALPN                  acc 0.6673 (581/686 cols)
+  real:KC                    acc 0.6453 (2088/4064 cols)
+  real:MBON                  acc 0.5973 (71/97 cols)
+  real:CX                    acc 0.5913 (1034/2950 cols)
+  real:DN                    acc 0.61 (567/1314 cols)
+  real:MBON+CX               acc 0.6013 (1105/3047 cols)
+  real:DN+MBON+CX            acc 0.5987 (1672/4361 cols)
+  shuffled:ORN               acc 1.0 (1837/2639 cols)
+  shuffled:ALPN              acc 0.626 (242/686 cols)
+  shuffled:KC                acc 0.684 (363/4064 cols)
+  shuffled:MBON              acc 0.6647 (69/97 cols)
+  shuffled:CX                acc 0.678 (723/2950 cols)
+  shuffled:DN                acc 0.7307 (620/1314 cols)
+  shuffled:MBON+CX           acc 0.712 (792/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.758 (1412/4361 cols)
+  PERMUTED real:DN           acc 0.5593   PERMUTED raw acc 0.57
+
+label B  (majority-class rate 0.5093)
+  raw_bits                   acc 0.9613
+  glomerular_ceiling         acc 0.7533  (144 channels)
+  real:ORN                   acc 0.9587 (1810/2639 cols)
+  real:ALPN                  acc 0.6427 (581/686 cols)
+  real:KC                    acc 0.588 (2088/4064 cols)
+  real:MBON                  acc 0.5253 (71/97 cols)
+  real:CX                    acc 0.5333 (1034/2950 cols)
+  real:DN                    acc 0.5313 (567/1314 cols)
+  real:MBON+CX               acc 0.5293 (1105/3047 cols)
+  real:DN+MBON+CX            acc 0.5393 (1672/4361 cols)
+  shuffled:ORN               acc 0.96 (1837/2639 cols)
+  shuffled:ALPN              acc 0.5847 (242/686 cols)
+  shuffled:KC                acc 0.6667 (363/4064 cols)
+  shuffled:MBON              acc 0.5973 (69/97 cols)
+  shuffled:CX                acc 0.6547 (723/2950 cols)
+  shuffled:DN                acc 0.7107 (620/1314 cols)
+  shuffled:MBON+CX           acc 0.6613 (792/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.746 (1412/4361 cols)
+  PERMUTED real:DN           acc 0.514   PERMUTED raw acc 0.5133
+
+firing (real):
+  ORN    1810/2639  ever fire,  1810 varying,   2037.7 spikes/sample
+  ALPN    581/686   ever fire,   564 varying,   2540.9 spikes/sample
+  KC     2088/4064  ever fire,  2084 varying,   3106.4 spikes/sample
+  MBON     71/97    ever fire,    71 varying,    297.0 spikes/sample
+  CX     1034/2950  ever fire,   905 varying,    765.7 spikes/sample
+  DN      567/1314  ever fire,   566 varying,    495.9 spikes/sample
+wrote outputs/probe_n1500.json
+### DONE n1500
+populations: ORN=2639  ALPN=686  KC=4064  MBON=97  CX=2950  DN=1314
+glomerular channels: 144
+feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 12.0, 'n_orn_available': 2639, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+
+simulating real wiring (window 100.0 ms, drive 12.0 mV, v_jitter 2.0 mV, persistent=False) ...
+    [real] 200/600  37s
+    [real] 400/600  73s
+    [real] 600/600  110s
+  real: 110s
+simulating shuffled wiring ...
+    [shuf] 200/600  13s
+    [shuf] 400/600  27s
+    [shuf] 600/600  40s
+  shuffled: 40s
+
+label A  (majority-class rate 0.5933)
+  raw_bits                   acc 0.9
+  glomerular_ceiling         acc 0.775  (144 channels)
+  real:ORN                   acc 0.895 (1802/2639 cols)
+  real:ALPN                  acc 0.6283 (539/686 cols)
+  real:KC                    acc 0.5817 (1681/4064 cols)
+  real:MBON                  acc 0.5767 (70/97 cols)
+  real:CX                    acc 0.5767 (867/2950 cols)
+  real:DN                    acc 0.6067 (464/1314 cols)
+  real:MBON+CX               acc 0.5633 (937/3047 cols)
+  real:DN+MBON+CX            acc 0.5817 (1401/4361 cols)
+  shuffled:ORN               acc 0.9 (1806/2639 cols)
+  shuffled:ALPN              acc 0.625 (39/686 cols)
+  shuffled:KC                acc 0.6467 (50/4064 cols)
+  shuffled:MBON              acc 0.655 (36/97 cols)
+  shuffled:CX                acc 0.575 (120/2950 cols)
+  shuffled:DN                acc 0.62 (163/1314 cols)
+  shuffled:MBON+CX           acc 0.6133 (156/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.63 (319/4361 cols)
+  PERMUTED real:DN           acc 0.585   PERMUTED raw acc 0.555
+
+label B  (majority-class rate 0.5033)
+  raw_bits                   acc 0.8533
+  glomerular_ceiling         acc 0.745  (144 channels)
+  real:ORN                   acc 0.8517 (1802/2639 cols)
+  real:ALPN                  acc 0.605 (539/686 cols)
+  real:KC                    acc 0.5267 (1681/4064 cols)
+  real:MBON                  acc 0.5083 (70/97 cols)
+  real:CX                    acc 0.49 (867/2950 cols)
+  real:DN                    acc 0.5683 (464/1314 cols)
+  real:MBON+CX               acc 0.4883 (937/3047 cols)
+  real:DN+MBON+CX            acc 0.54 (1401/4361 cols)
+  shuffled:ORN               acc 0.855 (1806/2639 cols)
+  shuffled:ALPN              acc 0.53 (39/686 cols)
+  shuffled:KC                acc 0.515 (50/4064 cols)
+  shuffled:MBON              acc 0.5267 (36/97 cols)
+  shuffled:CX                acc 0.4933 (120/2950 cols)
+  shuffled:DN                acc 0.555 (163/1314 cols)
+  shuffled:MBON+CX           acc 0.4967 (156/3047 cols)
+  shuffled:DN+MBON+CX        acc 0.54 (319/4361 cols)
+  PERMUTED real:DN           acc 0.5133   PERMUTED raw acc 0.485
+
+firing (real):
+  ORN    1802/2639  ever fire,  1802 varying,    859.2 spikes/sample
+  ALPN    539/686   ever fire,   530 varying,   4099.7 spikes/sample
+  KC     1681/4064  ever fire,  1680 varying,   4321.0 spikes/sample
+  MBON     70/97    ever fire,    70 varying,    468.0 spikes/sample
+  CX      867/2950  ever fire,   699 varying,   1012.0 spikes/sample
+  DN      464/1314  ever fire,   462 varying,    623.0 spikes/sample
+wrote outputs/probe_w100_d12_jit2.json
+### DONE w100_d12_jit2

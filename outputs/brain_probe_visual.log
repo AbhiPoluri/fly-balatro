@@ -1,0 +1,157 @@
+graph: 146271 neurons, 5146572 edges (threshold 5)
+pools available: photoreceptor=6091  lamina_L2L3=3551  optic_excitatory=57734
+readouts: LC=4164  DN=1314
+dataset: 600 samples, mean bits active 35.87
+
+========================================================================
+pool photoreceptor: 6091 cells, selector: superclass=="ol_sensory" & class=="visual"  (identical to superclass=="ol_sensory" & type startswith "R"; the 7 HBeyelet cells in the 6,098-cell ol_sensory superclass are the only ones excluded)
+  feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 6091, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+  readouts: INPUT=1800  LC=4164  DN=1314
+  (type|side) channels over the driven cells: 19
+  propagation diagnostics (real wiring):
+    w=   50 drive=   30 driven=  330 spikes=   2294 ol_sensory:330 ol_intrinsic:0 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=  100 drive=   30 driven=  330 spikes=   4434 ol_sensory:330 ol_intrinsic:0 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=   50 drive=   60 driven=  330 spikes=   3630 ol_sensory:330 ol_intrinsic:0 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=  200 drive=  120 driven=  330 spikes=  19470 ol_sensory:330 ol_intrinsic:0 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=   50 drive=   30 driven= 1800 spikes=  12452 ol_sensory:1800 ol_intrinsic:0 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=  200 drive=  120 driven= 1800 spikes= 106200 ol_sensory:1800 ol_intrinsic:0 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+  simulating real wiring (window 50.0 ms, drive 30.0 mV) ...
+    [photoreceptor/real] 200/600  1s
+    [photoreceptor/real] 400/600  2s
+    [photoreceptor/real] 600/600  3s
+    real: 3s
+    [photoreceptor/shuf] 200/600  1s
+    [photoreceptor/shuf] 400/600  2s
+    [photoreceptor/shuf] 600/600  3s
+    shuffled: 3s
+
+  label A  (majority-class rate 0.5933)
+    raw_bits                 acc 0.9
+    channel_ceiling          acc 0.6267  (19 channels)
+    real:INPUT               acc 0.9017 (1800/1800 cols)
+    real:LC                  acc None (0/4164 cols)
+    real:DN                  acc None (0/1314 cols)
+    shuffled:INPUT           acc 0.9017 (1800/1800 cols)
+    shuffled:LC              acc None (0/4164 cols)
+    shuffled:DN              acc None (0/1314 cols)
+    PERMUTED real:DN         acc None   PERMUTED raw acc 0.555
+
+  label B  (majority-class rate 0.5033)
+    raw_bits                 acc 0.8533
+    channel_ceiling          acc 0.5217  (19 channels)
+    real:INPUT               acc 0.8517 (1800/1800 cols)
+    real:LC                  acc None (0/4164 cols)
+    real:DN                  acc None (0/1314 cols)
+    shuffled:INPUT           acc 0.8517 (1800/1800 cols)
+    shuffled:LC              acc None (0/4164 cols)
+    shuffled:DN              acc None (0/1314 cols)
+    PERMUTED real:DN         acc None   PERMUTED raw acc 0.485
+
+  intensity control (total active bits > median): {"real:INPUT": 0.8583, "real:LC": null, "real:DN": null, "PERMUTED real:DN": null}
+
+  no 100 ms rerun for photoreceptor: best real:DN lift over permuted = n/a (degenerate readout) (< 0.06)
+
+========================================================================
+pool lamina_L2L3: 3551 cells, selector: superclass=="ol_intrinsic" & type in {"L2","L3"}
+  feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 3551, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+  readouts: INPUT=1800  LC=4164  DN=1314
+  (type|side) channels over the driven cells: 4
+  propagation diagnostics (real wiring):
+    w=   50 drive=   30 driven=  330 spikes=   5160 ol_sensory:0 ol_intrinsic:1779 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=  100 drive=   30 driven=  330 spikes=  10492 ol_sensory:0 ol_intrinsic:1887 visual_projection:0 visual_centrifugal:0 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=   50 drive=   60 driven=  330 spikes=   9139 ol_sensory:0 ol_intrinsic:2580 visual_projection:3 visual_centrifugal:1 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=  200 drive=  120 driven=  330 spikes=  51397 ol_sensory:1 ol_intrinsic:3374 visual_projection:11 visual_centrifugal:3 cb_sensory:0 cb_intrinsic:0 descending_neuron:0 CX:0 MBON:0
+    w=   50 drive=   30 driven= 1800 spikes=  25109 ol_sensory:0 ol_intrinsic:8426 visual_projection:18 visual_centrifugal:28 cb_sensory:0 cb_intrinsic:454 descending_neuron:48 CX:89 MBON:6
+    w=  200 drive=  120 driven= 1800 spikes= 327896 ol_sensory:3 ol_intrinsic:14482 visual_projection:220 visual_centrifugal:138 cb_sensory:41 cb_intrinsic:8049 descending_neuron:326 CX:672 MBON:69
+  simulating real wiring (window 50.0 ms, drive 30.0 mV) ...
+    [lamina_L2L3/real] 200/600  17s
+    [lamina_L2L3/real] 400/600  34s
+    [lamina_L2L3/real] 600/600  50s
+    real: 50s
+    [lamina_L2L3/shuf] 200/600  25s
+    [lamina_L2L3/shuf] 400/600  50s
+    [lamina_L2L3/shuf] 600/600  78s
+    shuffled: 78s
+
+  label A  (majority-class rate 0.5933)
+    raw_bits                 acc 0.9
+    channel_ceiling          acc 0.63  (4 channels)
+    real:INPUT               acc 0.9017 (1800/1800 cols)
+    real:LC                  acc None (0/4164 cols)
+    real:DN                  acc 0.5983 (145/1314 cols)
+    shuffled:INPUT           acc 0.9017 (1800/1800 cols)
+    shuffled:LC              acc 0.72 (1289/4164 cols)
+    shuffled:DN              acc 0.6233 (654/1314 cols)
+    PERMUTED real:DN         acc 0.5933   PERMUTED raw acc 0.555
+
+  label B  (majority-class rate 0.5033)
+    raw_bits                 acc 0.8533
+    channel_ceiling          acc 0.57  (4 channels)
+    real:INPUT               acc 0.8533 (1800/1800 cols)
+    real:LC                  acc None (0/4164 cols)
+    real:DN                  acc 0.5083 (145/1314 cols)
+    shuffled:INPUT           acc 0.8517 (1800/1800 cols)
+    shuffled:LC              acc 0.65 (1289/4164 cols)
+    shuffled:DN              acc 0.6433 (654/1314 cols)
+    PERMUTED real:DN         acc 0.5017   PERMUTED raw acc 0.485
+
+  intensity control (total active bits > median): {"real:INPUT": 0.8567, "real:LC": null, "real:DN": 0.5633, "PERMUTED real:DN": 0.5633}
+
+  no 100 ms rerun for lamina_L2L3: best real:DN lift over permuted = 0.007 (< 0.06)
+
+========================================================================
+pool optic_excitatory: 57734 cells, selector: superclass=="ol_intrinsic" & sign>0  (sign is +1 for acetylcholine/dopamine/serotonin/octopamine per connectome.SIGN)
+  feature map: {'n_features': 180, 'neurons_per_feature': 10, 'grouping': 'random', 'seed': 0, 'drive_mv': 30.0, 'n_orn_available': 57734, 'n_driven_neurons': 1800, 'extended_with_sensory': False}
+  readouts: INPUT=1800  LC=4164  DN=1314
+  (type|side) channels over the driven cells: 124
+  propagation diagnostics (real wiring):
+    w=   50 drive=   30 driven=  330 spikes=   5637 ol_sensory:0 ol_intrinsic:772 visual_projection:64 visual_centrifugal:89 cb_sensory:0 cb_intrinsic:1659 descending_neuron:207 CX:316 MBON:11
+    w=  100 drive=   30 driven=  330 spikes=  20722 ol_sensory:0 ol_intrinsic:930 visual_projection:112 visual_centrifugal:121 cb_sensory:24 cb_intrinsic:6871 descending_neuron:271 CX:445 MBON:66
+    w=   50 drive=   60 driven=  330 spikes=   8755 ol_sensory:0 ol_intrinsic:1146 visual_projection:87 visual_centrifugal:102 cb_sensory:0 cb_intrinsic:2162 descending_neuron:280 CX:380 MBON:32
+    w=  200 drive=  120 driven=  330 spikes=  39554 ol_sensory:0 ol_intrinsic:1715 visual_projection:214 visual_centrifugal:147 cb_sensory:2 cb_intrinsic:3315 descending_neuron:339 CX:622 MBON:36
+    w=   50 drive=   30 driven= 1800 spikes=  21545 ol_sensory:0 ol_intrinsic:3635 visual_projection:184 visual_centrifugal:139 cb_sensory:2 cb_intrinsic:3072 descending_neuron:371 CX:478 MBON:26
+    w=  200 drive=  120 driven= 1800 spikes= 173305 ol_sensory:0 ol_intrinsic:7021 visual_projection:566 visual_centrifugal:168 cb_sensory:2 cb_intrinsic:4092 descending_neuron:420 CX:582 MBON:35
+  simulating real wiring (window 50.0 ms, drive 30.0 mV) ...
+    [optic_excitatory/real] 200/600  29s
+    [optic_excitatory/real] 400/600  58s
+    [optic_excitatory/real] 600/600  88s
+    real: 88s
+    [optic_excitatory/shuf] 200/600  13s
+    [optic_excitatory/shuf] 400/600  27s
+    [optic_excitatory/shuf] 600/600  41s
+    shuffled: 41s
+
+  label A  (majority-class rate 0.5933)
+    raw_bits                 acc 0.9
+    channel_ceiling          acc 0.76  (124 channels)
+    real:INPUT               acc 0.9 (1800/1800 cols)
+    real:LC                  acc 0.595 (35/4164 cols)
+    real:DN                  acc 0.6017 (677/1314 cols)
+    shuffled:INPUT           acc 0.9017 (1800/1800 cols)
+    shuffled:LC              acc 0.6433 (564/4164 cols)
+    shuffled:DN              acc 0.5733 (385/1314 cols)
+    PERMUTED real:DN         acc 0.5533   PERMUTED raw acc 0.555
+
+  label B  (majority-class rate 0.5033)
+    raw_bits                 acc 0.8533
+    channel_ceiling          acc 0.72  (124 channels)
+    real:INPUT               acc 0.855 (1800/1800 cols)
+    real:LC                  acc 0.525 (35/4164 cols)
+    real:DN                  acc 0.54 (677/1314 cols)
+    shuffled:INPUT           acc 0.855 (1800/1800 cols)
+    shuffled:LC              acc 0.6917 (564/4164 cols)
+    shuffled:DN              acc 0.68 (385/1314 cols)
+    PERMUTED real:DN         acc 0.505   PERMUTED raw acc 0.485
+
+  intensity control (total active bits > median): {"real:INPUT": 0.86, "real:LC": 0.5983, "real:DN": 0.6717, "PERMUTED real:DN": 0.4967}
+
+  no 100 ms rerun for optic_excitatory: best real:DN lift over permuted = 0.048 (< 0.06)
+
+========================================================================
+photoreceptor_w50|label_A: majority_class_rate=0.5933  permuted_real_DN=None  permuted_raw_bits=0.555  raw_bits=0.9  channel_ceiling=0.6267  real:INPUT=0.9017  shuffled:INPUT=0.9017  real:LC=None  shuffled:LC=None  real:DN=None  shuffled:DN=None  fraction_DN_ever_firing=0.0
+photoreceptor_w50|label_B: majority_class_rate=0.5033  permuted_real_DN=None  permuted_raw_bits=0.485  raw_bits=0.8533  channel_ceiling=0.5217  real:INPUT=0.8517  shuffled:INPUT=0.8517  real:LC=None  shuffled:LC=None  real:DN=None  shuffled:DN=None  fraction_DN_ever_firing=0.0
+lamina_L2L3_w50|label_A: majority_class_rate=0.5933  permuted_real_DN=0.5933  permuted_raw_bits=0.555  raw_bits=0.9  channel_ceiling=0.63  real:INPUT=0.9017  shuffled:INPUT=0.9017  real:LC=None  shuffled:LC=0.72  real:DN=0.5983  shuffled:DN=0.6233  fraction_DN_ever_firing=0.1104
+lamina_L2L3_w50|label_B: majority_class_rate=0.5033  permuted_real_DN=0.5017  permuted_raw_bits=0.485  raw_bits=0.8533  channel_ceiling=0.57  real:INPUT=0.8533  shuffled:INPUT=0.8517  real:LC=None  shuffled:LC=0.65  real:DN=0.5083  shuffled:DN=0.6433  fraction_DN_ever_firing=0.1104
+optic_excitatory_w50|label_A: majority_class_rate=0.5933  permuted_real_DN=0.5533  permuted_raw_bits=0.555  raw_bits=0.9  channel_ceiling=0.76  real:INPUT=0.9  shuffled:INPUT=0.9017  real:LC=0.595  shuffled:LC=0.6433  real:DN=0.6017  shuffled:DN=0.5733  fraction_DN_ever_firing=0.5152
+optic_excitatory_w50|label_B: majority_class_rate=0.5033  permuted_real_DN=0.505  permuted_raw_bits=0.485  raw_bits=0.8533  channel_ceiling=0.72  real:INPUT=0.855  shuffled:INPUT=0.855  real:LC=0.525  shuffled:LC=0.6917  real:DN=0.54  shuffled:DN=0.68  fraction_DN_ever_firing=0.5152
+wrote /Users/abhipoluri/fly-balatro/outputs/brain_probe_visual.json

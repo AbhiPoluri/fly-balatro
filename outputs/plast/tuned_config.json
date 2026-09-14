@@ -1,0 +1,210 @@
+{
+  "brain_seed": 1,
+  "derived_from": "outputs/mb2/tuned_config.json",
+  "deviation": "Two knobs added to the mb2 tuning, both about APL's non-Kenyon-cell output, because with the mb2 tuning exactly as chosen every glutamatergic PAM-compartment MBON (MBON01-07) is silent for every input: APL delivers -3198 mV to MBON01 and -3736 mV to MBON05 in one 50 ms window against 259 and 169 mV of Kenyon-cell excitation. APL is a non-spiking graded interneuron in vivo and this kernel has no graded transmission, so it fires at ~250 Hz and dumps its full synapse-count weight as spike-triggered inhibition. With the reward arm of the plasticity rule (depress KC -> avoidance MBON in PAM compartments) landing entirely on silent cells, the experiment would be a guaranteed null for a reason that has nothing to do with learning. apl_kc_only=1 restricts apl_scale=2 to APL -> KC (its documented sparsening role, 94% of its output weight); apl_mbon_scale=0.1 scales the 72 APL -> MBON synapses. The Kenyon-cell code is essentially unchanged: 212 vs 186 active per state, always-on 0.046 vs 0.042. The mb2 tuning is still run as a condition (tuning=spec) so the silenced-reward-arm result is on the record.",
+  "drive": {
+    "mode": "tonic",
+    "poisson_hz": 100.0,
+    "poisson_kick_mv": 68.75,
+    "tonic_mv": 30.0
+  },
+  "encoding": {
+    "assignment": [
+      {
+        "bit": 0,
+        "glomerulus": "ORN_VM7d",
+        "n_orn": 36
+      },
+      {
+        "bit": 1,
+        "glomerulus": "ORN_DA4m",
+        "n_orn": 35
+      },
+      {
+        "bit": 2,
+        "glomerulus": "ORN_DC3",
+        "n_orn": 35
+      },
+      {
+        "bit": 3,
+        "glomerulus": "ORN_DM5",
+        "n_orn": 35
+      },
+      {
+        "bit": 4,
+        "glomerulus": "ORN_DA3",
+        "n_orn": 34
+      },
+      {
+        "bit": 5,
+        "glomerulus": "ORN_VA4",
+        "n_orn": 34
+      },
+      {
+        "bit": 6,
+        "glomerulus": "ORN_VC3",
+        "n_orn": 34
+      },
+      {
+        "bit": 7,
+        "glomerulus": "ORN_VM5v",
+        "n_orn": 34
+      },
+      {
+        "bit": 8,
+        "glomerulus": "ORN_VM6v",
+        "n_orn": 34
+      },
+      {
+        "bit": 9,
+        "glomerulus": "ORN_V",
+        "n_orn": 55
+      },
+      {
+        "bit": 10,
+        "glomerulus": "ORN_DM2",
+        "n_orn": 54
+      },
+      {
+        "bit": 11,
+        "glomerulus": "ORN_DA2",
+        "n_orn": 48
+      },
+      {
+        "bit": 12,
+        "glomerulus": "ORN_VL2p",
+        "n_orn": 45
+      },
+      {
+        "bit": 13,
+        "glomerulus": "ORN_DL5",
+        "n_orn": 43
+      },
+      {
+        "bit": 14,
+        "glomerulus": "ORN_VM3",
+        "n_orn": 43
+      },
+      {
+        "bit": 15,
+        "glomerulus": "ORN_VM2",
+        "n_orn": 41
+      },
+      {
+        "bit": 16,
+        "glomerulus": "ORN_VC4",
+        "n_orn": 38
+      },
+      {
+        "bit": 17,
+        "glomerulus": "ORN_VL2a",
+        "n_orn": 98
+      },
+      {
+        "bit": 18,
+        "glomerulus": "ORN_VM5d",
+        "n_orn": 84
+      },
+      {
+        "bit": 19,
+        "glomerulus": "ORN_DL1",
+        "n_orn": 83
+      },
+      {
+        "bit": 20,
+        "glomerulus": "ORN_VA2",
+        "n_orn": 83
+      },
+      {
+        "bit": 21,
+        "glomerulus": "ORN_VL1",
+        "n_orn": 82
+      },
+      {
+        "bit": 22,
+        "glomerulus": "ORN_VM4",
+        "n_orn": 78
+      },
+      {
+        "bit": 23,
+        "glomerulus": "ORN_DM1",
+        "n_orn": 74
+      },
+      {
+        "bit": 24,
+        "glomerulus": "ORN_DM3",
+        "n_orn": 63
+      },
+      {
+        "bit": 25,
+        "glomerulus": "ORN_VA6",
+        "n_orn": 63
+      },
+      {
+        "bit": 26,
+        "glomerulus": "ORN_DL4",
+        "n_orn": 62
+      },
+      {
+        "bit": 27,
+        "glomerulus": "ORN_DM6",
+        "n_orn": 58
+      },
+      {
+        "bit": 28,
+        "glomerulus": "ORN_DA1",
+        "n_orn": 204
+      },
+      {
+        "bit": 29,
+        "glomerulus": "ORN_VA1d",
+        "n_orn": 132
+      },
+      {
+        "bit": 30,
+        "glomerulus": "ORN_VA1v",
+        "n_orn": 130
+      },
+      {
+        "bit": 31,
+        "glomerulus": "ORN_DL3",
+        "n_orn": 103
+      }
+    ],
+    "dropped": "the 283 v1 state bits are not encoded",
+    "kind": "glomerular",
+    "map_class": "flybalatro.encode.GlomerularMap",
+    "n_features": 32,
+    "source": "flybalatro.features_v2 relay block (bits 0-31)"
+  },
+  "gate": {
+    "checks": {
+      "always_on": true,
+      "jaccard_ratio": false,
+      "kc_probe": true,
+      "mbon": true
+    },
+    "criteria": {
+      "always_on_max": 0.05,
+      "jaccard_ratio_max": 0.5,
+      "mbon_rate_max": 30.0,
+      "mbon_varying_min": 20,
+      "probe_margin_min": 0.15
+    },
+    "n_passed": 3,
+    "passed": false
+  },
+  "label": "apl2_tonic_vth0",
+  "tuning": {
+    "alpn_kc_scale": 1.0,
+    "apl_kc_only": 1.0,
+    "apl_mbon_scale": 0.1,
+    "apl_scale": 2.0,
+    "kc_bias_mv": 0.0,
+    "kc_input_norm": 0.0,
+    "kc_kc_scale": 1.0,
+    "kc_vth_offset_mv": 0.0
+  },
+  "v_jitter_mv": 6.9,
+  "window_ms": 50.0
+}

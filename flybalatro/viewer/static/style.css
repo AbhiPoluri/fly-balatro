@@ -1,0 +1,556 @@
+/* Dark instrument panel: flat surfaces, hairline rules, one amber accent.
+   No glow effects outside the WebGL canvas -- the brain is the only bright thing. */
+
+:root {
+  --bg: #08090b;
+  --panel: #0e1014;
+  --panel-2: #12151a;
+  --line: #1f242c;
+  --line-soft: #171b21;
+  --text: #ccd2db;
+  --text-dim: #8b93a1;
+  --text-faint: #5b636f;
+  --amber: #d99a2b;
+  --amber-soft: #4a3616;
+  --cool: #59c8dd;
+  --teal: #47c4b4;
+  --warm: #e8743c;
+  --red: #d9604e;
+  --green: #5fae7a;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 100%);
+}
+
+header, main, footer { min-width: 0; max-width: 100%; }
+
+/* ---------------------------------------------------------------- header */
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 9px 16px 8px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+h1 .sub {
+  color: var(--text-faint);
+  font-family: var(--mono);
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 10px;
+}
+
+#head-mode {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+#head-mode b { color: var(--amber); font-weight: 500; }
+#head-mode .warn { color: var(--warm); }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+button, select {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 4px 9px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+button:hover, select:hover { border-color: #333a45; background: #171b22; }
+button:active { background: #1d222a; }
+button.primary { color: #12140f; background: var(--amber); border-color: var(--amber); font-weight: 600; }
+select { padding: 3px 4px; }
+.ctl-label { color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; font-size: 10px; }
+
+/* ------------------------------------------------------------------ main */
+/* The point cloud takes the window; the panel is a fixed narrow column beside
+   it. Not a split: at 1440px the cloud gets ~1100px and the panel 340px. */
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------------------------- brain */
+#brain {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border-right: 1px solid var(--line);
+  background: radial-gradient(ellipse at 50% 42%, #0d1117 0%, #08090b 72%);
+  overflow: hidden;
+  cursor: grab;
+}
+#brain.dragging { cursor: grabbing; }
+#brain canvas { display: block; max-width: 100%; }
+
+.overlay {
+  position: absolute;
+  pointer-events: none;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: var(--text-faint);
+}
+
+#legend { top: 12px; left: 14px; display: grid; gap: 2.5px; }
+#legend .row { display: flex; align-items: center; gap: 7px; }
+#legend .dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto; }
+#legend .name { color: var(--text-dim); min-width: 112px; }
+#legend .row.hl .dot { width: 9px; height: 9px; }
+#legend .n { color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
+#clock { bottom: 12px; left: 14px; line-height: 1.65; }
+#clock .big {
+  display: block;
+  font-size: 22px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+#clock .bar { display: flex; gap: 3px; margin: 5px 0 6px; }
+#clock .tick { width: 22px; height: 3px; background: #1c2129; }
+#clock .tick.on { background: var(--cool); }
+#clock .note { color: var(--text-faint); max-width: min(440px, 46vw); }
+
+#brain-title { top: 12px; right: 14px; text-align: right; color: var(--text-dim); }
+#brain-title .k { color: var(--text-faint); }
+
+/* ----------------------------------------------------------------- panel */
+/* One narrow column beside the cloud. It scrolls inside itself and never sets
+   the page's width or height, so the window can never gain a scrollbar. */
+#panel {
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 12px 14px 16px;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+/* `display: flex` on the parent does not reach the children, but `.sect` has no
+   display of its own, so the UA's [hidden] rule is enough -- stated anyway,
+   because two of these sections are toggled and a stuck one is a wrong page. */
+#panel > .sect[hidden] { display: none !important; }
+
+.sect { min-width: 0; }
+.sect > .hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 9.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+/* The right-hand note is live status, not a heading: it gets whatever room the
+   heading leaves and is clipped rather than allowed to reflow the block. */
+.sect > .hd .r {
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  text-transform: none;
+  min-width: 0;
+  flex: 0 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sect > .hd > span:first-child { flex: 0 0 auto; }
+
+/* readout */
+.bars { display: grid; gap: 4px; transition: opacity 0.18s; }
+.bars.stale { opacity: 0.32; }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) 46px; align-items: center; gap: 8px; }
+.bar .fill {
+  position: relative;
+  height: 17px;
+  background: #14181e;
+  min-width: 0;
+  overflow: hidden;
+}
+.bar .fill > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #242c36; transition: width 0.3s ease-out; }
+.bar .fill > span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+}
+.bar.chosen .fill > i { background: var(--amber-soft); }
+.bar.chosen .fill > span { color: var(--amber); }
+.bar .val { text-align: right; color: var(--text-faint); font-variant-numeric: tabular-nums; font-size: 10.5px; }
+.bar.chosen .val { color: var(--amber); }
+
+/* pipeline */
+#pipe { display: flex; align-items: stretch; gap: 0; }
+#pipe .p {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#pipe .arw { flex: 0 0 auto; align-self: center; color: #2c333d; font-size: 11px; }
+#pipe .nm { color: var(--text-dim); font-size: 10px; letter-spacing: 0.06em; }
+#pipe .hz { font-variant-numeric: tabular-nums; color: var(--text); font-size: 12px; }
+#pipe .hz i { color: var(--text-faint); font-style: normal; font-size: 9px; }
+#pipe .m { height: 4px; background: #15191f; overflow: hidden; }
+#pipe .m > i { display: block; height: 100%; width: 0; background: var(--teal); transition: width 0.22s ease-out; }
+#pipe .cnt { color: var(--text-faint); font-size: 9px; }
+
+/* bits */
+#bits { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.bits-key { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; color: var(--text-faint); font-size: 9.5px; }
+.bits-key i { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 1px; }
+
+/* ---------------------------------------- glomerular input (v3 encoding) */
+/* One chip per relay bit = one whole ORN glomerulus. Lit = that glomerulus is
+   being driven at 30 mV this step; dark = silent, which is the point of the
+   encoding (about 7 of 32 are on). */
+#glom { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; margin: 2px 0 5px; }
+#glom .gl {
+  padding: 2px 3px; border-radius: 2px; text-align: center;
+  background: #101619; border: 1px solid #1d262b;
+  color: var(--text-faint); font-size: 8.5px; letter-spacing: 0.02em;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#glom .gl.on { background: #2a1f06; border-color: var(--amber-soft); color: #f0c674; }
+#glom .gl .n { display: none; }
+.glom-note { color: var(--text-faint); font-size: 9px; line-height: 1.5; margin-bottom: 4px; }
+
+/* ---------------------------------------------------------------- footer */
+footer {
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+}
+#caveat {
+  display: none;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--amber-soft);
+  background: #1a1408;
+  color: #e3b25c;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+#caveat.on { display: block; }
+#caveat b { color: var(--amber); }
+#footline {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  padding: 7px 16px 8px;
+  color: var(--text-faint);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+}
+#footline .txt { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#footline .stats { flex: 0 0 auto; display: flex; gap: 14px; font-variant-numeric: tabular-nums; }
+#footline .stats b { color: var(--text-dim); font-weight: 400; }
+
+/* toast */
+#toast {
+  position: fixed;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  padding: 16px 30px;
+  background: rgba(10, 12, 15, 0.94);
+  border: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 17px;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  text-align: center;
+}
+#toast.on { opacity: 1; }
+#toast .s { display: block; margin-top: 6px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.02em; }
+#toast.win { border-color: var(--green); }
+#toast.lose { border-color: var(--red); }
+
+@media (max-width: 1100px) {
+  main { grid-template-columns: minmax(0, 1fr) 300px; }
+}
+
+/* ---------------------------------------------------------- mushroom body */
+/* The panel shown whenever the fly decides for itself. Same visual grammar as
+   the rest of the page -- flat meters, tabular numbers, one accent
+   colour per meaning -- with green/red reserved for the two dopamine arms so a
+   pulse is unmistakable. */
+#head-mode b.lrn-on { color: var(--green); }
+#head-mode b.lrn-off { color: var(--text-faint); }
+#legend .row.hl .name { color: var(--text); }
+
+.mb-tag {
+  white-space: nowrap;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  padding: 1px 5px;
+  margin-left: 5px;
+  border: 1px solid var(--amber-soft);
+  color: var(--amber);
+  text-transform: none;
+}
+
+#mb-drive { display: grid; gap: 4px; transition: opacity 0.18s; }
+#mb-drive.stale, #mb-verdict.stale { opacity: 0.32; }
+.dr { display: grid; grid-template-columns: 62px minmax(0, 1fr) 56px; align-items: center; gap: 8px; }
+.dr .k { color: var(--text-dim); font-size: 10.5px; }
+.dr .m { position: relative; height: 15px; background: #14181e; overflow: hidden; }
+.dr .m > i { position: absolute; inset: 0 auto 0 0; width: 0; transition: width 0.3s ease-out; }
+.dr .v { text-align: right; font-variant-numeric: tabular-nums; font-size: 11px; color: var(--text); }
+.dr.app .m > i { background: #7a5f1d; }
+.dr.app .v { color: #ffd479; }
+.dr.avo .m > i { background: #4a3a72; }
+.dr.avo .v { color: #b388ff; }
+.dr.net { margin-top: 3px; }
+.dr.net .k { color: var(--text); }
+.dr.net .m { height: 19px; }
+.dr.net .m > i { background: var(--amber-soft); }
+.dr.net .v { color: var(--amber); font-size: 13px; }
+/* The two numbers behind the bars above. Its own line, not the heading's right
+   slot: at 340px that slot is about 140px and ellipsises them away. */
+.mb-line {
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.mb-formula {
+  margin-top: 5px;
+  color: var(--text-faint);
+  font-size: 9.5px;
+  line-height: 1.5;
+}
+
+#mb-verdict {
+  margin-top: 9px;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  transition: opacity 0.18s;
+}
+#mb-verdict .act {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 7px 0 6px;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+}
+#mb-verdict .act.play { color: #12140f; background: var(--amber); border-color: var(--amber); }
+#mb-verdict .act.dig { color: var(--cool); border-color: #24404a; background: #0f1a1f; }
+#mb-verdict .act.explored::after {
+  content: "explored";
+  display: block;
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  opacity: 0.75;
+}
+#mb-verdict .out { min-width: 0; font-size: 11px; color: var(--text); line-height: 1.5; }
+#mb-verdict .out .sub { color: var(--text-faint); font-size: 10px; margin-top: 2px; }
+/* The pulse. Its own row under the verdict, because in a real game it arrives
+   on its own record, one beat after the decision it pays for. */
+#mb-sect > .da {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  background: #0c0f13;
+  font-size: 10.5px;
+  color: var(--text-dim);
+  transition: background 0.25s, border-color 0.25s;
+}
+#mb-sect > .da .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #232a33;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#mb-sect > .da .ct { margin-left: auto; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+#mb-sect > .da.reward { border-color: var(--green); background: #0d1a12; color: #7fd39a; }
+#mb-sect > .da.reward .dot { background: #3ddc84; box-shadow: 0 0 9px #3ddc84; }
+#mb-sect > .da.punish { border-color: var(--red); background: #1c0f0f; color: #e88f82; }
+#mb-sect > .da.punish .dot { background: #ef4444; box-shadow: 0 0 9px #ef4444; }
+
+.mb-block { margin-top: 10px; }
+.mb-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 5px;
+}
+.mb-hd .r { letter-spacing: 0.03em; text-transform: none; color: var(--text-faint); }
+.mb-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.mb-stats .ws { border: 1px solid var(--line-soft); background: #0c0f13; padding: 4px 6px; min-width: 0; }
+.mb-stats .ws .k { display: block; font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+.mb-stats .ws .v { display: block; font-size: 12px; color: var(--text); font-variant-numeric: tabular-nums; }
+.mb-stats .ws .s { display: block; font-size: 9px; color: var(--text-faint); }
+#mb-wspark, #mb-rspark { display: block; width: 100%; height: 40px; margin-top: 5px; background: #0c0f13; border: 1px solid var(--line-soft); }
+
+.mb-buckets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+.bk { display: grid; grid-template-rows: 54px auto auto auto; gap: 2px; text-align: center; }
+.bk .col { position: relative; background: #14181e; border: 1px solid var(--line-soft); }
+.bk .col > i {
+  position: absolute; inset: auto 0 0 0; height: 0;
+  background: var(--amber-soft);
+  border-top: 1px solid var(--amber);
+  transition: height 0.35s ease-out;
+}
+.bk .pv { font-size: 12px; color: var(--amber); font-variant-numeric: tabular-nums; }
+.bk .lb { font-size: 8.5px; color: var(--text-dim); letter-spacing: 0.01em; }
+.bk .n { font-size: 8.5px; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.mb-note { margin-top: 6px; font-size: 9px; line-height: 1.55; color: var(--text-faint); }
+
+#footline.wrap .txt { white-space: normal; overflow: visible; line-height: 1.5; }
+
+/* ------------------------------------------------------- the embedded game */
+/* The real Balatro window, captured and streamed into this page. The point
+   cloud is still the hero -- the game is a panel, not a split -- but 340px is
+   too narrow for Balatro's own UI text to be readable at all, so the column
+   widens to 500 whenever the capture is running and goes back to 340 when it is
+   not. At 1440 that still leaves the cloud ~940px. */
+body.gameview main { grid-template-columns: minmax(0, 1fr) 500px; }
+
+#game-frame {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  line-height: 0;
+}
+#game-canvas { display: block; width: 100%; height: auto; }
+
+/* The plain sentence that replaces the picture when there is nothing to show:
+   no game running, no permission, no frame yet. Never drawn over a frame -- a
+   frame that is present but old is labelled by #game-stale instead. */
+#game-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px 18px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  background: var(--panel-2);
+}
+#game-msg[hidden] { display: none; }
+
+#game-stale {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--warm);
+  background: rgba(8, 9, 11, 0.66);
+}
+#game-stale[hidden] { display: none; }
+
+#game-verdict {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 7px;
+  min-width: 0;
+}
+#game-verdict .act {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #12140f;
+  background: var(--amber);
+  border-radius: 2px;
+  padding: 2px 8px;
+}
+#game-verdict .act.idle { color: var(--text-faint); background: var(--panel-2); }
+#game-verdict .hl {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--amber);
+}
+#game-verdict .hl.ok { color: var(--green); }
+#game-note { margin-top: 3px; }

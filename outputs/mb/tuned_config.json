@@ -1,0 +1,250 @@
+{
+  "tuning": {
+    "apl_scale": 2.0,
+    "alpn_kc_scale": 1.0,
+    "kc_vth_offset_mv": 0.0,
+    "kc_bias_mv": 0.0,
+    "kc_kc_scale": 1.0,
+    "kc_input_norm": 0.0
+  },
+  "label": "apl2",
+  "note": "Calibration knobs for flybalatro.tuning.Tuning, NOT connectome data. Load with Tuning.from_dict(json.load(f)['tuning']) and pass to Brain(graph, tuning=...). Chosen by scripts/mb_pick.py from outputs/mb/sweep.json.",
+  "gates": {
+    "kc_active_fraction": [
+      0.05,
+      0.1
+    ],
+    "alpn_rate_tolerance": 0.1,
+    "mbon_min_rate_hz": 5.0,
+    "mbon_min_varying_cells": 40,
+    "mn9_no_drive_must_be_zero": true,
+    "mn9_sugar_response_must_be_nonzero": true
+  },
+  "brain": {
+    "seed": 1,
+    "v_jitter_mv": 6.9,
+    "window_ms": 50.0,
+    "drive_mv": 30.0,
+    "threshold": 5
+  },
+  "metrics": {
+    "label": "apl2",
+    "apl_scale": 2.0,
+    "alpn_kc_scale": 1.0,
+    "kc_vth_offset_mv": 0.0,
+    "kc_bias_mv": 0.0,
+    "kc_kc_scale": 1.0,
+    "kc_input_norm": 0.0,
+    "kc_active_fraction": 0.0775,
+    "kc_active_cells": 315.0,
+    "kc_jaccard": 0.6253,
+    "kc_jaccard_bernoulli_ref": 0.0403,
+    "kc_always_on_fraction": 0.0716,
+    "kc_always_on_cells": 291,
+    "kc_never_on_fraction": 0.8164,
+    "kc_rate_hz": 2.15,
+    "kc_varying_cells": 746,
+    "kc_active_fraction_late": 0.0513,
+    "kc_jaccard_late": 0.704,
+    "kc_first_spike_ms": 5,
+    "kc_peak_ms": 8,
+    "kc_fraction_first_15ms": 0.323,
+    "mbon_rate_hz": 11.13,
+    "alpn_rate_hz": 72.94,
+    "apl_rate_hz": 251.0,
+    "dn_rate_hz": 7.27,
+    "brain_spikes_per_input": 18550.3,
+    "mn9_sugar_spikes": 1,
+    "mn9_no_drive_spikes": 0,
+    "mn9_matched_orn_spikes": 5,
+    "sim_seconds": 24.4,
+    "mbon_varying_cells": 44
+  },
+  "baseline_metrics": {
+    "label": "default",
+    "apl_scale": 1.0,
+    "alpn_kc_scale": 1.0,
+    "kc_vth_offset_mv": 0.0,
+    "kc_bias_mv": 0.0,
+    "kc_kc_scale": 1.0,
+    "kc_input_norm": 0.0,
+    "kc_active_fraction": 0.3794,
+    "kc_active_cells": 1541.8,
+    "kc_jaccard": 0.8911,
+    "kc_jaccard_bernoulli_ref": 0.2341,
+    "kc_always_on_fraction": 0.3757,
+    "kc_always_on_cells": 1527,
+    "kc_never_on_fraction": 0.5079,
+    "kc_rate_hz": 15.21,
+    "kc_varying_cells": 1982,
+    "kc_active_fraction_late": 0.3672,
+    "kc_jaccard_late": 0.898,
+    "kc_first_spike_ms": 5,
+    "kc_peak_ms": 17,
+    "kc_fraction_first_15ms": 0.1463,
+    "mbon_rate_hz": 61.06,
+    "alpn_rate_hz": 73.97,
+    "apl_rate_hz": 317.55,
+    "dn_rate_hz": 7.5,
+    "brain_spikes_per_input": 22054.5,
+    "mn9_sugar_spikes": 1,
+    "mn9_no_drive_spikes": 0,
+    "mn9_matched_orn_spikes": 7,
+    "sim_seconds": 24.6,
+    "mbon_varying_cells": 70
+  },
+  "runners_up": [
+    "apl2_kckc0.25",
+    "apl2_kckc0",
+    "apl2_kckc0_norm1",
+    "apl2_norm1"
+  ],
+  "rejected": {
+    "apl10": [
+      "kc_active_fraction 0.0282 outside [0.05,0.1]",
+      "ALPN rate drift 0.172 > 0.1",
+      "MBON rate 4.34 < 5.0 Hz",
+      "MBON varying cells 25 < 40"
+    ],
+    "apl20": [
+      "kc_active_fraction 0.0282 outside [0.05,0.1]",
+      "ALPN rate drift 0.319 > 0.1",
+      "MBON rate 2.11 < 5.0 Hz",
+      "MBON varying cells 16 < 40"
+    ],
+    "apl2_vth2": [
+      "kc_active_fraction 0.0377 outside [0.05,0.1]",
+      "MBON varying cells 29 < 40"
+    ],
+    "apl2_vth4": [
+      "kc_active_fraction 0.026 outside [0.05,0.1]",
+      "MBON varying cells 25 < 40"
+    ],
+    "apl2_vth6": [
+      "kc_active_fraction 0.0171 outside [0.05,0.1]",
+      "MBON varying cells 25 < 40"
+    ],
+    "apl3": [
+      "kc_active_fraction 0.0365 outside [0.05,0.1]",
+      "MBON varying cells 37 < 40"
+    ],
+    "apl3_kckc0": [
+      "kc_active_fraction 0.0363 outside [0.05,0.1]",
+      "MBON varying cells 37 < 40"
+    ],
+    "apl3_kckc0.25": [
+      "kc_active_fraction 0.0363 outside [0.05,0.1]",
+      "MBON varying cells 37 < 40"
+    ],
+    "apl3_kckc0_norm1": [
+      "kc_active_fraction 0.0397 outside [0.05,0.1]",
+      "MBON varying cells 38 < 40"
+    ],
+    "apl3_norm1": [
+      "kc_active_fraction 0.0406 outside [0.05,0.1]",
+      "MBON varying cells 38 < 40"
+    ],
+    "apl3_vth2": [
+      "kc_active_fraction 0.0047 outside [0.05,0.1]",
+      "MBON varying cells 24 < 40"
+    ],
+    "apl3_vth4": [
+      "kc_active_fraction 0.0026 outside [0.05,0.1]",
+      "MBON varying cells 25 < 40"
+    ],
+    "apl3_vth6": [
+      "kc_active_fraction 0.0012 outside [0.05,0.1]",
+      "MBON varying cells 25 < 40"
+    ],
+    "apl5": [
+      "kc_active_fraction 0.0284 outside [0.05,0.1]",
+      "MBON varying cells 35 < 40"
+    ],
+    "apl50": [
+      "kc_active_fraction 0.0282 outside [0.05,0.1]",
+      "ALPN rate drift 0.465 > 0.1",
+      "MBON rate 0.91 < 5.0 Hz",
+      "MBON varying cells 14 < 40"
+    ],
+    "apl5_kckc0": [
+      "kc_active_fraction 0.0284 outside [0.05,0.1]",
+      "MBON varying cells 35 < 40"
+    ],
+    "apl5_kckc0.25": [
+      "kc_active_fraction 0.0284 outside [0.05,0.1]",
+      "MBON varying cells 35 < 40"
+    ],
+    "apl5_kckc0_norm1": [
+      "kc_active_fraction 0.0261 outside [0.05,0.1]",
+      "MBON varying cells 33 < 40"
+    ],
+    "apl5_vth2": [
+      "kc_active_fraction 0.0003 outside [0.05,0.1]",
+      "MBON varying cells 22 < 40"
+    ],
+    "apl5_vth4": [
+      "kc_active_fraction 0.0002 outside [0.05,0.1]",
+      "MBON varying cells 22 < 40"
+    ],
+    "apl5_vth6": [
+      "kc_active_fraction 0.0002 outside [0.05,0.1]",
+      "MBON varying cells 22 < 40"
+    ],
+    "kckc0": [
+      "kc_active_fraction 0.3577 outside [0.05,0.1]"
+    ],
+    "kckc0.25": [
+      "kc_active_fraction 0.3625 outside [0.05,0.1]"
+    ],
+    "kckc0.5": [
+      "kc_active_fraction 0.3679 outside [0.05,0.1]"
+    ],
+    "kckc0_norm1": [
+      "kc_active_fraction 0.3272 outside [0.05,0.1]"
+    ],
+    "norm0.5": [
+      "kc_active_fraction 0.3761 outside [0.05,0.1]"
+    ],
+    "norm1": [
+      "kc_active_fraction 0.3572 outside [0.05,0.1]"
+    ],
+    "pnkc0.25": [
+      "kc_active_fraction 0.0 outside [0.05,0.1]",
+      "MBON varying cells 25 < 40"
+    ],
+    "pnkc0.5": [
+      "kc_active_fraction 0.0159 outside [0.05,0.1]",
+      "MBON varying cells 27 < 40"
+    ],
+    "pnkc2": [
+      "kc_active_fraction 0.8323 outside [0.05,0.1]"
+    ],
+    "pnkc2_vth12": [
+      "kc_active_fraction 0.5989 outside [0.05,0.1]"
+    ],
+    "pnkc2_vth8": [
+      "kc_active_fraction 0.6828 outside [0.05,0.1]"
+    ],
+    "pnkc3": [
+      "kc_active_fraction 0.9024 outside [0.05,0.1]"
+    ],
+    "pnkc3_vth12": [
+      "kc_active_fraction 0.8072 outside [0.05,0.1]"
+    ],
+    "pnkc3_vth16": [
+      "kc_active_fraction 0.77 outside [0.05,0.1]"
+    ],
+    "vth2": [
+      "kc_active_fraction 0.2986 outside [0.05,0.1]"
+    ],
+    "vth4": [
+      "kc_active_fraction 0.2315 outside [0.05,0.1]"
+    ],
+    "vth6": [
+      "kc_active_fraction 0.1672 outside [0.05,0.1]"
+    ],
+    "vth8": [
+      "kc_active_fraction 0.121 outside [0.05,0.1]"
+    ]
+  }
+}

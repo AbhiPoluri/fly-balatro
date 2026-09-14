@@ -1,0 +1,41 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fly-viewer",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        ".venv/bin/python -m flybalatro.viewer.server --port 8765"
+      ],
+      "port": 8765
+    },
+    {
+      "name": "fly-viewer-8766",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        ".venv/bin/python -m flybalatro.viewer.server --port 8766"
+      ],
+      "port": 8766
+    },
+    {
+      "name": "fly-plastic-v1",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        ".venv/bin/python -m flybalatro.viewer.server --port 8768 --policy plastic --plastic-config v1 --learning on"
+      ],
+      "port": 8768
+    },
+    {
+      "name": "fly-plastic-v2",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        ".venv/bin/python -m flybalatro.viewer.server --port 8769 --policy plastic --plastic-config v2 --learning on"
+      ],
+      "port": 8769
+    }
+  ]
+}

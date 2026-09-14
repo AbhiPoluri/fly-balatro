@@ -1,0 +1,43 @@
+reward eta 0.02: N1=0.4578  N5=0.2609
+reward eta 0.05: N1=0.9947  N5=0.3531
+punish eta 0.05: N1=0.8959  N5=0.2931
+punish eta 0.07: N1=0.8926  N5=0.2589
+punish eta 0.1: N1=0.8169  N5=0.2694
+punish eta 0.14: N1=1.0244  N5=0.4420
+punish eta 0.2: N1=1.2055  N5=0.4144
+punish eta 0.28: N1=1.5711  N5=0.4704
+punish eta 0.4: N1=1.4460  N5=0.6877
+punish eta 0.6: N1=1.9829  N5=0.7167
+punish eta 0.9: N1=2.3781  N5=0.7708
+
+chosen: {
+  "0.02": {
+    "eta_reward": 0.02,
+    "eta_punish_raw": 0.05,
+    "ratio_raw": 2.5,
+    "how": "target 0.26087 at or below the grid minimum",
+    "bracketed": false,
+    "target_abs_per_pulse": 0.26087,
+    "ratio": 1.5943,
+    "eta_punish": 0.0319,
+    "capped": false,
+    "matched_at_n_pulses": 5,
+    "n_odors": 23,
+    "ratio_reference_eta_reward": 0.05
+  },
+  "0.05": {
+    "eta_reward": 0.05,
+    "eta_punish_raw": 0.0797,
+    "ratio_raw": 1.5943,
+    "how": "log-log interpolation on the monotone envelope of the grid",
+    "bracketed": true,
+    "target_abs_per_pulse": 0.353096,
+    "ratio": 1.5943,
+    "eta_punish": 0.0797,
+    "capped": false,
+    "matched_at_n_pulses": 5,
+    "n_odors": 23,
+    "ratio_reference_eta_reward": 0.05
+  }
+}
+wrote /Users/abhipoluri/fly-balatro/outputs/plast3/eta_calib_sep.json in 458s

@@ -1,0 +1,50 @@
+{
+  "stop_reason": "game_over_lose",
+  "decisions": 100,
+  "wall_seconds": 194.4,
+  "condition": "real",
+  "policy_mode": "brain",
+  "policy_detail": "bc3/real_alpn_kc_dn_mlp.npz over ALPN+KC+DN spikes (state encoding v2, encoding glomerular32)",
+  "policy_uses_brain": true,
+  "blinds_attempted": [
+    "Small Blind",
+    "Big Blind",
+    "The Goad"
+  ],
+  "best_round_score": 580,
+  "final": {
+    "raw_state": "GAME_OVER",
+    "stage": 7,
+    "ante": 1,
+    "round": 3,
+    "blind": "The Goad",
+    "blind_type": "BOSS",
+    "score": 441,
+    "required_score": 600,
+    "plays": 0,
+    "discards": 0,
+    "money": 10,
+    "n_jokers": 0,
+    "hand": [
+      {
+        "slot": 0,
+        "rank_index": 3,
+        "suit_index": 2,
+        "label": "Base Card"
+      },
+      {
+        "slot": 1,
+        "rank_index": 3,
+        "suit_index": 3,
+        "label": "Base Card"
+      },
+      {
+        "slot": 2,
+        "rank_index": 0,
+        "suit_index": 3,
+        "label": "Base Card"
+      }
+    ],
+    "selected_indices": []
+  }
+}

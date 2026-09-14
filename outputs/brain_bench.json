@@ -1,0 +1,204 @@
+{
+  "settings": {
+    "threshold": 5,
+    "windows": [
+      20.0,
+      50.0,
+      100.0
+    ],
+    "n_random": 50,
+    "active_frac": 0.3,
+    "drive_mv": 30.0,
+    "seed": 0,
+    "feature_map": {
+      "n_features": 180,
+      "neurons_per_feature": 10,
+      "grouping": "random",
+      "seed": 0,
+      "drive_mv": 30.0,
+      "n_orn_available": 2639,
+      "n_driven_neurons": 1800,
+      "extended_with_sensory": false
+    },
+    "dt_ms": 0.1,
+    "v_jitter_mv": 6.9,
+    "shuffle_seed": 1234,
+    "machine": "arm64 arm python 3.11.3"
+  },
+  "graph": {
+    "threshold": 5,
+    "w_syn": 0.275,
+    "cache_version": 2,
+    "edge_rows_total": 151856684,
+    "edge_rows_ge_threshold": 7622864,
+    "edges_dropped_by_threshold": 144233820,
+    "edges_both_endpoints_in_brain": 5195818,
+    "edges_dropped_endpoint_outside_brain": 2427046,
+    "edges_dropped_unknown_pre_sign": 49246,
+    "edges": 5146572,
+    "synapses_retained": 70855239,
+    "annotation_rows": 211577,
+    "dropped_no_superclass": 44877,
+    "dropped_vnc_superclass": 20429,
+    "dropped_glia": 11864,
+    "neurons": 146271,
+    "sign_tiers": {
+      "ground_truth": 75324,
+      "consensus_nt": 69035,
+      "celltype_predicted_nt": 299
+    },
+    "neurons_unknown_sign": 1613,
+    "build_seconds": 5.7,
+    "edges_csr": 5146572
+  },
+  "populations": {
+    "DN": 1314,
+    "MBON": 97,
+    "CX": 2950,
+    "ORN": 2639
+  },
+  "real": {
+    "windows": {
+      "20.0": {
+        "wall_ms_mean": 16.86,
+        "wall_ms_min": 15.86,
+        "wall_ms_max": 17.96,
+        "realtime_factor": 0.843,
+        "total_spikes_mean": 7788,
+        "dns_with_ge1_spike_mean": 171.6,
+        "dns_with_ge1_spike_range": [
+          148,
+          190
+        ],
+        "kernel_active_neurons_mean": 59866
+      },
+      "50.0": {
+        "wall_ms_mean": 103.95,
+        "wall_ms_min": 99.74,
+        "wall_ms_max": 107.99,
+        "realtime_factor": 2.079,
+        "total_spikes_mean": 25601,
+        "dns_with_ge1_spike_mean": 284.2,
+        "dns_with_ge1_spike_range": [
+          262,
+          305
+        ],
+        "kernel_active_neurons_mean": 94212
+      },
+      "100.0": {
+        "wall_ms_mean": 253.85,
+        "wall_ms_min": 246.98,
+        "wall_ms_max": 259.5,
+        "realtime_factor": 2.539,
+        "total_spikes_mean": 52800,
+        "dns_with_ge1_spike_mean": 313.0,
+        "dns_with_ge1_spike_range": [
+          301,
+          326
+        ],
+        "kernel_active_neurons_mean": 95893
+      }
+    },
+    "distinct_over_random_inputs": {
+      "n_inputs": 50,
+      "window_ms": 100.0,
+      "seconds": 12.7,
+      "DN": {
+        "population": 1314,
+        "distinct_ever_firing": 490,
+        "fraction_ever_firing": 0.3729,
+        "per_input_firing_mean": 314.9
+      },
+      "MBON": {
+        "population": 97,
+        "distinct_ever_firing": 68,
+        "fraction_ever_firing": 0.701,
+        "per_input_firing_mean": 65.4
+      },
+      "CX": {
+        "population": 2950,
+        "distinct_ever_firing": 1008,
+        "fraction_ever_firing": 0.3417,
+        "per_input_firing_mean": 726.1
+      },
+      "ORN": {
+        "population": 2639,
+        "distinct_ever_firing": 1811,
+        "fraction_ever_firing": 0.6862,
+        "per_input_firing_mean": 541.1
+      }
+    }
+  },
+  "shuffled": {
+    "windows": {
+      "20.0": {
+        "wall_ms_mean": 17.21,
+        "wall_ms_min": 15.27,
+        "wall_ms_max": 19.29,
+        "realtime_factor": 0.86,
+        "total_spikes_mean": 2518,
+        "dns_with_ge1_spike_mean": 31.0,
+        "dns_with_ge1_spike_range": [
+          24,
+          43
+        ],
+        "kernel_active_neurons_mean": 56430
+      },
+      "50.0": {
+        "wall_ms_mean": 95.99,
+        "wall_ms_min": 91.31,
+        "wall_ms_max": 101.1,
+        "realtime_factor": 1.92,
+        "total_spikes_mean": 9281,
+        "dns_with_ge1_spike_mean": 104.8,
+        "dns_with_ge1_spike_range": [
+          84,
+          120
+        ],
+        "kernel_active_neurons_mean": 97646
+      },
+      "100.0": {
+        "wall_ms_mean": 258.23,
+        "wall_ms_min": 246.03,
+        "wall_ms_max": 266.87,
+        "realtime_factor": 2.582,
+        "total_spikes_mean": 21066,
+        "dns_with_ge1_spike_mean": 175.2,
+        "dns_with_ge1_spike_range": [
+          158,
+          204
+        ],
+        "kernel_active_neurons_mean": 111624
+      }
+    },
+    "distinct_over_random_inputs": {
+      "n_inputs": 50,
+      "window_ms": 100.0,
+      "seconds": 11.9,
+      "DN": {
+        "population": 1314,
+        "distinct_ever_firing": 542,
+        "fraction_ever_firing": 0.4125,
+        "per_input_firing_mean": 138.4
+      },
+      "MBON": {
+        "population": 97,
+        "distinct_ever_firing": 66,
+        "fraction_ever_firing": 0.6804,
+        "per_input_firing_mean": 25.3
+      },
+      "CX": {
+        "population": 2950,
+        "distinct_ever_firing": 641,
+        "fraction_ever_firing": 0.2173,
+        "per_input_firing_mean": 128.4
+      },
+      "ORN": {
+        "population": 2639,
+        "distinct_ever_firing": 1837,
+        "fraction_ever_firing": 0.6961,
+        "per_input_firing_mean": 551.1
+      }
+    }
+  }
+}

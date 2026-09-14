@@ -1,0 +1,24 @@
+[rw2][ 0] k=4    active 0.0479 (195/state) r>0.5  163 r>0.3  224 in-band  116 silent 3352 71s
+[rw2][ 1] k=4    active 0.0530 (216/state) r>0.5  120 r>0.3  233 in-band  315 silent 2710 73s
+[rw2][ 2] k=3    active 0.0727 (295/state) r>0.5  172 r>0.3  352 in-band  459 silent 2317 77s
+[rw2][ 3] k=3    active 0.0589 (240/state) r>0.5  147 r>0.3  251 in-band  556 silent 2394 82s
+[rw2][ 4] k=2    active 0.0524 (213/state) r>0.5   78 r>0.3  166 in-band  631 silent 2336 89s
+[rw2][ 5] k=2    active 0.0645 (262/state) r>0.5  143 r>0.3  269 in-band  677 silent 2166 84s
+[rw2][ 6] k=1.5  active 0.0637 (259/state) r>0.5  146 r>0.3  246 in-band  696 silent 2178 94s
+[rw2][ 7] k=1.5  active 0.0471 (192/state) r>0.5   49 r>0.3  104 in-band  793 silent 2188 96s
+[rw2][ 8] k=1    active 0.0746 (303/state) r>0.5  137 r>0.3  326 in-band  872 silent 1925 87s
+[rw2][ 9] k=1    active 0.0448 (182/state) r>0.5   64 r>0.3   80 in-band 1032 silent 1990 87s
+[rw2] converged at iteration 9 (frac r>0.3 = 0.0197); last update not applied
+[rw2] wrote homeo_rw2.json and tuned_rw2.json  active 0.0448 r>0.3 0.0197 silent 1990 in 15.7 min
+[rw3][ 0] k=4    active 0.0470 (191/state) r>0.5  165 r>0.3  222 in-band  131 silent 3348 85s
+[rw3][ 1] k=4    active 0.0524 (213/state) r>0.5  124 r>0.3  223 in-band  317 silent 2738 90s
+[rw3][ 2] k=3    active 0.0726 (295/state) r>0.5  183 r>0.3  344 in-band  481 silent 2329 93s
+[rw3][ 3] k=3    active 0.0578 (235/state) r>0.5  131 r>0.3  251 in-band  615 silent 2341 92s
+[rw3][ 4] k=2    active 0.0494 (201/state) r>0.5   66 r>0.3  148 in-band  661 silent 2308 90s
+[rw3][ 5] k=2    active 0.0650 (264/state) r>0.5  143 r>0.3  275 in-band  713 silent 2130 92s
+[rw3][ 6] k=1.5  active 0.0620 (252/state) r>0.5  118 r>0.3  251 in-band  718 silent 2166 82s
+[rw3][ 7] k=1.5  active 0.0465 (189/state) r>0.5   45 r>0.3   92 in-band  798 silent 2136 84s
+[rw3][ 8] k=1    active 0.0719 (292/state) r>0.5  139 r>0.3  328 in-band  909 silent 1907 102s
+[rw3][ 9] k=1    active 0.0435 (177/state) r>0.5   43 r>0.3   71 in-band 1086 silent 2006 109s
+[rw3] converged at iteration 9 (frac r>0.3 = 0.0175); last update not applied
+[rw3] wrote homeo_rw3.json and tuned_rw3.json  active 0.0435 r>0.3 0.0175 silent 2006 in 16.8 min

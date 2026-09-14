@@ -1,0 +1,390 @@
+{
+  "dataset": {
+    "n_samples": 300,
+    "n_features": 180,
+    "active_frac": 0.2,
+    "seed": 7,
+    "label_A": {
+      "kind": "count of bits in a random 12-bit group >= k",
+      "group": [
+        55,
+        42,
+        95,
+        41,
+        47,
+        63,
+        145,
+        8,
+        146,
+        5,
+        10,
+        31
+      ],
+      "k": 3,
+      "positive_rate": 0.4933
+    },
+    "label_B": {
+      "kind": "random Gaussian-weighted linear threshold on 10 bits",
+      "group": [
+        4,
+        119,
+        121,
+        167,
+        158,
+        59,
+        9,
+        130,
+        3,
+        102
+      ],
+      "weights": [
+        -0.1238701828231771,
+        0.8127287780040366,
+        0.6692924042322979,
+        -1.2076655725364986,
+        1.1483433583957563,
+        0.9743439802968193,
+        0.005508917892815017,
+        0.7491126907278484,
+        -0.1324805989983529,
+        1.2653824786389265
+      ],
+      "threshold": 0.6802481790056838,
+      "positive_rate": 0.4967
+    },
+    "mean_bits_active": 35.63
+  },
+  "chance": {
+    "A": 0.5067,
+    "B": 0.5033
+  },
+  "raw_bits": {
+    "A": 0.8467,
+    "B": 0.8367
+  },
+  "n_samples": 300,
+  "results": [
+    {
+      "config": {
+        "name": "w20_d30_n10",
+        "window": 20.0,
+        "drive": 30.0,
+        "npf": 10
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 4.7,
+          "DN_frac_varying": 0.2374,
+          "DN_spikes_per_sample": 193.3,
+          "DN_acc_A": 0.56,
+          "DN_acc_B": 0.5633,
+          "MBON_frac_varying": 0.567,
+          "MBON_spikes_per_sample": 66.8,
+          "MBON_acc_A": 0.5733,
+          "MBON_acc_B": 0.4667,
+          "CX_frac_varying": 0.0241,
+          "CX_spikes_per_sample": 23.6,
+          "CX_acc_A": 0.59,
+          "CX_acc_B": 0.5067
+        },
+        "shuffled": {
+          "sim_seconds": 4.3,
+          "DN_frac_varying": 0.2024,
+          "DN_spikes_per_sample": 24.2,
+          "DN_acc_A": 0.5567,
+          "DN_acc_B": 0.63,
+          "MBON_frac_varying": 0.4845,
+          "MBON_spikes_per_sample": 6.6,
+          "MBON_acc_A": 0.4967,
+          "MBON_acc_B": 0.5533,
+          "CX_frac_varying": 0.079,
+          "CX_spikes_per_sample": 23.9,
+          "CX_acc_A": 0.6167,
+          "CX_acc_B": 0.6267
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w50_d30_n10",
+        "window": 50.0,
+        "drive": 30.0,
+        "npf": 10
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 31.3,
+          "DN_frac_varying": 0.3973,
+          "DN_spikes_per_sample": 493.5,
+          "DN_acc_A": 0.5133,
+          "DN_acc_B": 0.5667,
+          "MBON_frac_varying": 0.7216,
+          "MBON_spikes_per_sample": 297.2,
+          "MBON_acc_A": 0.5533,
+          "MBON_acc_B": 0.4833,
+          "CX_frac_varying": 0.2851,
+          "CX_spikes_per_sample": 766.7,
+          "CX_acc_A": 0.61,
+          "CX_acc_B": 0.5267
+        },
+        "shuffled": {
+          "sim_seconds": 22.0,
+          "DN_frac_varying": 0.4087,
+          "DN_spikes_per_sample": 95.8,
+          "DN_acc_A": 0.6433,
+          "DN_acc_B": 0.6567,
+          "MBON_frac_varying": 0.6598,
+          "MBON_spikes_per_sample": 23.3,
+          "MBON_acc_A": 0.4867,
+          "MBON_acc_B": 0.5133,
+          "CX_frac_varying": 0.2007,
+          "CX_spikes_per_sample": 87.2,
+          "CX_acc_A": 0.6233,
+          "CX_acc_B": 0.6067
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w50_d12_n10",
+        "window": 50.0,
+        "drive": 12.0,
+        "npf": 10
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 24.7,
+          "DN_frac_varying": 0.3851,
+          "DN_spikes_per_sample": 399.9,
+          "DN_acc_A": 0.6233,
+          "DN_acc_B": 0.5233,
+          "MBON_frac_varying": 0.6907,
+          "MBON_spikes_per_sample": 211.3,
+          "MBON_acc_A": 0.5867,
+          "MBON_acc_B": 0.5367,
+          "CX_frac_varying": 0.3363,
+          "CX_spikes_per_sample": 689.5,
+          "CX_acc_A": 0.55,
+          "CX_acc_B": 0.5533
+        },
+        "shuffled": {
+          "sim_seconds": 11.7,
+          "DN_frac_varying": 0.1712,
+          "DN_spikes_per_sample": 19.6,
+          "DN_acc_A": 0.5433,
+          "DN_acc_B": 0.5933,
+          "MBON_frac_varying": 0.433,
+          "MBON_spikes_per_sample": 5.6,
+          "MBON_acc_A": 0.47,
+          "MBON_acc_B": 0.52,
+          "CX_frac_varying": 0.0675,
+          "CX_spikes_per_sample": 20.9,
+          "CX_acc_A": 0.6267,
+          "CX_acc_B": 0.56
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w50_d9_n10",
+        "window": 50.0,
+        "drive": 9.0,
+        "npf": 10
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 22.5,
+          "DN_frac_varying": 0.3843,
+          "DN_spikes_per_sample": 357.8,
+          "DN_acc_A": 0.5767,
+          "DN_acc_B": 0.5667,
+          "MBON_frac_varying": 0.7526,
+          "MBON_spikes_per_sample": 206.8,
+          "MBON_acc_A": 0.5967,
+          "MBON_acc_B": 0.4633,
+          "CX_frac_varying": 0.3366,
+          "CX_spikes_per_sample": 644.6,
+          "CX_acc_A": 0.6033,
+          "CX_acc_B": 0.56
+        },
+        "shuffled": {
+          "sim_seconds": 10.0,
+          "DN_frac_varying": 0.124,
+          "DN_spikes_per_sample": 12.7,
+          "DN_acc_A": 0.5667,
+          "DN_acc_B": 0.6133,
+          "MBON_frac_varying": 0.3505,
+          "MBON_spikes_per_sample": 3.1,
+          "MBON_acc_A": 0.5333,
+          "MBON_acc_B": 0.54,
+          "CX_frac_varying": 0.0522,
+          "CX_spikes_per_sample": 15.1,
+          "CX_acc_A": 0.5533,
+          "CX_acc_B": 0.5
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w100_d12_n10",
+        "window": 100.0,
+        "drive": 12.0,
+        "npf": 10
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 70.1,
+          "DN_frac_varying": 0.4132,
+          "DN_spikes_per_sample": 786.1,
+          "DN_acc_A": 0.6267,
+          "DN_acc_B": 0.5567,
+          "MBON_frac_varying": 0.7216,
+          "MBON_spikes_per_sample": 563.0,
+          "MBON_acc_A": 0.5567,
+          "MBON_acc_B": 0.5233,
+          "CX_frac_varying": 0.3597,
+          "CX_spikes_per_sample": 1260.3,
+          "CX_acc_A": 0.5567,
+          "CX_acc_B": 0.4733
+        },
+        "shuffled": {
+          "sim_seconds": 32.4,
+          "DN_frac_varying": 0.1857,
+          "DN_spikes_per_sample": 33.5,
+          "DN_acc_A": 0.54,
+          "DN_acc_B": 0.58,
+          "MBON_frac_varying": 0.4536,
+          "MBON_spikes_per_sample": 10.9,
+          "MBON_acc_A": 0.4667,
+          "MBON_acc_B": 0.5267,
+          "CX_frac_varying": 0.0807,
+          "CX_spikes_per_sample": 34.4,
+          "CX_acc_A": 0.6133,
+          "CX_acc_B": 0.5267
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w50_d30_n4",
+        "window": 50.0,
+        "drive": 30.0,
+        "npf": 4
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 26.9,
+          "DN_frac_varying": 0.4132,
+          "DN_spikes_per_sample": 427.1,
+          "DN_acc_A": 0.63,
+          "DN_acc_B": 0.5933,
+          "MBON_frac_varying": 0.6804,
+          "MBON_spikes_per_sample": 233.7,
+          "MBON_acc_A": 0.5067,
+          "MBON_acc_B": 0.49,
+          "CX_frac_varying": 0.3071,
+          "CX_spikes_per_sample": 722.4,
+          "CX_acc_A": 0.5767,
+          "CX_acc_B": 0.5433
+        },
+        "shuffled": {
+          "sim_seconds": 12.8,
+          "DN_frac_varying": 0.207,
+          "DN_spikes_per_sample": 33.8,
+          "DN_acc_A": 0.5767,
+          "DN_acc_B": 0.4833,
+          "MBON_frac_varying": 0.5155,
+          "MBON_spikes_per_sample": 10.1,
+          "MBON_acc_A": 0.5433,
+          "MBON_acc_B": 0.4933,
+          "CX_frac_varying": 0.1017,
+          "CX_spikes_per_sample": 31.0,
+          "CX_acc_A": 0.5333,
+          "CX_acc_B": 0.53
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w50_pois50_n10",
+        "window": 50.0,
+        "drive": 0.0,
+        "npf": 10,
+        "poisson_hz": 50.0
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 30.9,
+          "DN_frac_varying": 0.4079,
+          "DN_spikes_per_sample": 418.7,
+          "DN_acc_A": 0.5167,
+          "DN_acc_B": 0.55,
+          "MBON_frac_varying": 0.6907,
+          "MBON_spikes_per_sample": 228.3,
+          "MBON_acc_A": 0.5433,
+          "MBON_acc_B": 0.51,
+          "CX_frac_varying": 0.3369,
+          "CX_spikes_per_sample": 693.5,
+          "CX_acc_A": 0.5667,
+          "CX_acc_B": 0.5067
+        },
+        "shuffled": {
+          "sim_seconds": 14.4,
+          "DN_frac_varying": 0.258,
+          "DN_spikes_per_sample": 23.2,
+          "DN_acc_A": 0.5567,
+          "DN_acc_B": 0.5467,
+          "MBON_frac_varying": 0.5361,
+          "MBON_spikes_per_sample": 6.3,
+          "MBON_acc_A": 0.44,
+          "MBON_acc_B": 0.5767,
+          "CX_frac_varying": 0.122,
+          "CX_spikes_per_sample": 22.9,
+          "CX_acc_A": 0.55,
+          "CX_acc_B": 0.5667
+        }
+      }
+    },
+    {
+      "config": {
+        "name": "w50_pois150_n10",
+        "window": 50.0,
+        "drive": 0.0,
+        "npf": 10,
+        "poisson_hz": 150.0
+      },
+      "conditions": {
+        "real": {
+          "sim_seconds": 35.4,
+          "DN_frac_varying": 0.4186,
+          "DN_spikes_per_sample": 478.3,
+          "DN_acc_A": 0.5767,
+          "DN_acc_B": 0.48,
+          "MBON_frac_varying": 0.7216,
+          "MBON_spikes_per_sample": 286.3,
+          "MBON_acc_A": 0.56,
+          "MBON_acc_B": 0.5233,
+          "CX_frac_varying": 0.2868,
+          "CX_spikes_per_sample": 739.9,
+          "CX_acc_A": 0.54,
+          "CX_acc_B": 0.5067
+        },
+        "shuffled": {
+          "sim_seconds": 25.1,
+          "DN_frac_varying": 0.4216,
+          "DN_spikes_per_sample": 79.7,
+          "DN_acc_A": 0.5867,
+          "DN_acc_B": 0.62,
+          "MBON_frac_varying": 0.6289,
+          "MBON_spikes_per_sample": 19.5,
+          "MBON_acc_A": 0.6267,
+          "MBON_acc_B": 0.5533,
+          "CX_frac_varying": 0.2119,
+          "CX_spikes_per_sample": 71.7,
+          "CX_acc_A": 0.5467,
+          "CX_acc_B": 0.5733
+        }
+      }
+    }
+  ]
+}

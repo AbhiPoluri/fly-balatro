@@ -1,0 +1,4 @@
+== omission_current_s1 (punish=omission enc=current eta_r=0.05 eta_p=0.1907) ==
+   greedy clear 0.250 P(play|legal) 0.767 grad 0.5237 | sampled clear 0.242 P(play|legal) 0.738 grad 0.4581 | 574s
+== omission_current_s2 (punish=omission enc=current eta_r=0.05 eta_p=0.1907) ==
+   greedy clear 0.278 P(play|legal) 0.757 grad 0.5444 | sampled clear 0.292 P(play|legal) 0.723 grad 0.4678 | 535s

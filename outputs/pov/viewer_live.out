@@ -1,0 +1,42 @@
+2026-09-13 18:59:10,306 INFO    flyviewer: graph: 146271 neurons, 5146572 edges (0.1s)
+2026-09-13 18:59:10,311 INFO    flyviewer: soma cloud: 123930 of 146271 neurons drawn (20156 no soma, 2185 outside the brain box)
+2026-09-13 18:59:10,353 INFO    flyviewer: encoding v2 / glomerular32: 32 bits -> 32 relay bits -> 32 whole ORN glomeruli (2075 receptor neurons), 0 bits not sent, tuning apl2
+2026-09-13 18:59:10,681 INFO    flyviewer: brain[real/glomerular32] ready in 0.3s
+2026-09-13 18:59:11,887 INFO    flyviewer: mushroom body: 66 approach / 24 avoid MBONs, 316 PAM / 16 PPL1 DANs, 33496 KC -> MBON synapses (1.2s)
+2026-09-13 18:59:11,888 INFO    flyviewer: real-game source: /Users/abhipoluri/fly-balatro/outputs/realgame/latest.json (live)
+2026-09-13 18:59:11,888 INFO    flyviewer: ready: http://127.0.0.1:8771  (source=realgame, policy=none, condition=real, RSS 780 MB)
+/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:1427: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:1431: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [22189]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8771 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60234 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60237 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60264 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60581 - "GET / HTTP/1.1" 200 OK
+2026-09-13 18:59:42,829 INFO    flyviewer: mushroom body: 33496 KC -> MBON synapses, matching the record
+INFO:     127.0.0.1:57854 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49534 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51649 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22189]

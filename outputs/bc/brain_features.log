@@ -1,0 +1,71 @@
+150,061 states -> 139,375 unique feature vectors (7.1% duplicates)
+rough single-condition estimate at 50.0 ms, 6 workers, perfect scaling: 37 min
+[real] 139,375 unique states, 558 chunks of 250; 0 rows already on disk, 139,375 to do
+[real] 250/139,375 rows  0.5 min  8.8 states/s  ETA 265.0 min  workers RSS 1541 MB
+[real] 500/139,375 rows  0.5 min  17.2 states/s  ETA 134.4 min  workers RSS 1541 MB
+[real] 750/139,375 rows  0.5 min  25.8 states/s  ETA 89.7 min  workers RSS 1541 MB
+[real] 5,000/139,375 rows  1.9 min  44.5 states/s  ETA 50.3 min  workers RSS 1132 MB
+[real] 10,000/139,375 rows  3.7 min  45.2 states/s  ETA 47.7 min  workers RSS 804 MB
+[real] 15,000/139,375 rows  5.5 min  45.5 states/s  ETA 45.6 min  workers RSS 848 MB
+[real] 20,000/139,375 rows  7.5 min  44.4 states/s  ETA 44.9 min  workers RSS 731 MB
+[real] 25,000/139,375 rows  10.0 min  41.8 states/s  ETA 45.6 min  workers RSS 437 MB
+[real] 30,000/139,375 rows  12.2 min  41.1 states/s  ETA 44.4 min  workers RSS 498 MB
+[real] 35,000/139,375 rows  15.1 min  38.7 states/s  ETA 45.0 min  workers RSS 429 MB
+[real] 40,000/139,375 rows  17.4 min  38.3 states/s  ETA 43.2 min  workers RSS 435 MB
+[real] 45,000/139,375 rows  19.5 min  38.4 states/s  ETA 40.9 min  workers RSS 432 MB
+[real] 50,000/139,375 rows  21.8 min  38.3 states/s  ETA 38.9 min  workers RSS 462 MB
+[real] 55,000/139,375 rows  24.2 min  37.9 states/s  ETA 37.2 min  workers RSS 497 MB
+[real] 60,000/139,375 rows  26.2 min  38.1 states/s  ETA 34.7 min  workers RSS 523 MB
+[real] 65,000/139,375 rows  28.3 min  38.3 states/s  ETA 32.3 min  workers RSS 544 MB
+[real] 70,000/139,375 rows  30.9 min  37.8 states/s  ETA 30.6 min  workers RSS 556 MB
+[real] 75,000/139,375 rows  33.0 min  37.8 states/s  ETA 28.4 min  workers RSS 483 MB
+[real] 80,000/139,375 rows  35.1 min  37.9 states/s  ETA 26.1 min  workers RSS 443 MB
+[real] 85,000/139,375 rows  37.6 min  37.6 states/s  ETA 24.1 min  workers RSS 471 MB
+[real] 90,000/139,375 rows  40.4 min  37.1 states/s  ETA 22.2 min  workers RSS 454 MB
+[real] 95,000/139,375 rows  42.6 min  37.1 states/s  ETA 19.9 min  workers RSS 473 MB
+[real] 100,000/139,375 rows  45.0 min  37.0 states/s  ETA 17.7 min  workers RSS 431 MB
+[real] 105,000/139,375 rows  47.2 min  37.1 states/s  ETA 15.4 min  workers RSS 431 MB
+[real] 110,000/139,375 rows  49.7 min  36.9 states/s  ETA 13.3 min  workers RSS 461 MB
+[real] 115,000/139,375 rows  52.2 min  36.7 states/s  ETA 11.1 min  workers RSS 384 MB
+[real] 120,000/139,375 rows  54.2 min  36.9 states/s  ETA 8.7 min  workers RSS 441 MB
+[real] 125,000/139,375 rows  56.6 min  36.8 states/s  ETA 6.5 min  workers RSS 456 MB
+[real] 130,000/139,375 rows  58.5 min  37.0 states/s  ETA 4.2 min  workers RSS 429 MB
+[real] 135,000/139,375 rows  60.6 min  37.1 states/s  ETA 2.0 min  workers RSS 463 MB
+[real] 139,375/139,375 rows  62.5 min  37.2 states/s  ETA 0.0 min  workers RSS 446 MB
+[real] assembling ...
+[real] wrote /Users/abhipoluri/fly-balatro/outputs/bc/feats_real.npz (229 MB) in 62.5 min
+[shuffled] 139,375 unique states, 558 chunks of 250; 0 rows already on disk, 139,375 to do
+[shuffled] 250/139,375 rows  0.6 min  7.0 states/s  ETA 330.2 min  workers RSS 609 MB
+[shuffled] 500/139,375 rows  0.6 min  14.0 states/s  ETA 165.7 min  workers RSS 619 MB
+[shuffled] 750/139,375 rows  0.6 min  20.8 states/s  ETA 111.2 min  workers RSS 629 MB
+[shuffled] 5,000/139,375 rows  2.5 min  33.6 states/s  ETA 66.6 min  workers RSS 371 MB
+[shuffled] 10,000/139,375 rows  4.3 min  38.6 states/s  ETA 55.9 min  workers RSS 424 MB
+[shuffled] 15,000/139,375 rows  6.2 min  40.5 states/s  ETA 51.2 min  workers RSS 311 MB
+[shuffled] 20,000/139,375 rows  8.5 min  39.4 states/s  ETA 50.5 min  workers RSS 476 MB
+[shuffled] 25,000/139,375 rows  9.8 min  42.5 states/s  ETA 44.9 min  workers RSS 430 MB
+[shuffled] 30,000/139,375 rows  11.2 min  44.7 states/s  ETA 40.7 min  workers RSS 446 MB
+[shuffled] 35,000/139,375 rows  12.9 min  45.3 states/s  ETA 38.4 min  workers RSS 466 MB
+[shuffled] 40,000/139,375 rows  14.3 min  46.8 states/s  ETA 35.4 min  workers RSS 492 MB
+[shuffled] 45,000/139,375 rows  15.6 min  48.1 states/s  ETA 32.7 min  workers RSS 511 MB
+[shuffled] 50,000/139,375 rows  17.2 min  48.4 states/s  ETA 30.8 min  workers RSS 519 MB
+[shuffled] 55,000/139,375 rows  18.6 min  49.3 states/s  ETA 28.5 min  workers RSS 524 MB
+[shuffled] 60,000/139,375 rows  19.9 min  50.1 states/s  ETA 26.4 min  workers RSS 503 MB
+[shuffled] 65,000/139,375 rows  21.5 min  50.3 states/s  ETA 24.6 min  workers RSS 516 MB
+[shuffled] 70,000/139,375 rows  22.9 min  51.0 states/s  ETA 22.7 min  workers RSS 516 MB
+[shuffled] 75,000/139,375 rows  24.3 min  51.5 states/s  ETA 20.8 min  workers RSS 525 MB
+[shuffled] 80,000/139,375 rows  25.9 min  51.5 states/s  ETA 19.2 min  workers RSS 530 MB
+[shuffled] 85,000/139,375 rows  27.2 min  52.0 states/s  ETA 17.4 min  workers RSS 481 MB
+[shuffled] 90,000/139,375 rows  28.7 min  52.3 states/s  ETA 15.7 min  workers RSS 502 MB
+[shuffled] 95,000/139,375 rows  30.2 min  52.5 states/s  ETA 14.1 min  workers RSS 488 MB
+[shuffled] 100,000/139,375 rows  31.5 min  52.9 states/s  ETA 12.4 min  workers RSS 502 MB
+[shuffled] 105,000/139,375 rows  33.0 min  53.0 states/s  ETA 10.8 min  workers RSS 502 MB
+[shuffled] 110,000/139,375 rows  34.5 min  53.2 states/s  ETA 9.2 min  workers RSS 515 MB
+[shuffled] 115,000/139,375 rows  35.9 min  53.4 states/s  ETA 7.6 min  workers RSS 503 MB
+[shuffled] 120,000/139,375 rows  37.4 min  53.5 states/s  ETA 6.0 min  workers RSS 530 MB
+[shuffled] 125,000/139,375 rows  38.9 min  53.6 states/s  ETA 4.5 min  workers RSS 487 MB
+[shuffled] 130,000/139,375 rows  40.3 min  53.8 states/s  ETA 2.9 min  workers RSS 483 MB
+[shuffled] 135,000/139,375 rows  41.8 min  53.8 states/s  ETA 1.4 min  workers RSS 476 MB
+[shuffled] 139,375/139,375 rows  42.9 min  54.1 states/s  ETA 0.0 min  workers RSS 459 MB
+[shuffled] assembling ...
+[shuffled] wrote /Users/abhipoluri/fly-balatro/outputs/bc/feats_shuffled.npz (25 MB) in 42.9 min
+done

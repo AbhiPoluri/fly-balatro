@@ -1,0 +1,14 @@
+== frozen_separated (punish=current enc=separated eta_r=0 eta_p=0) ==
+   greedy clear 0.172 P(play|legal) 0.519 grad -0.6163 | sampled clear 0.217 P(play|legal) 0.493 grad -0.4731 | 69s
+== current_separated_s0 (punish=current enc=separated eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.330 P(play|legal) 0.725 grad 0.7248 | sampled clear 0.253 P(play|legal) 0.734 grad 0.5118 | 270s
+== current_separated_s1 (punish=current enc=separated eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.128 P(play|legal) 0.890 grad 0.2485 | sampled clear 0.190 P(play|legal) 0.785 grad 0.3942 | 218s
+== current_separated_s2 (punish=current enc=separated eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.128 P(play|legal) 0.890 grad 0.2485 | sampled clear 0.188 P(play|legal) 0.806 grad 0.3427 | 206s
+== omission_separated_s0 (punish=omission enc=separated eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.425 P(play|legal) 0.627 grad 0.8552 | 219s
+== omission_separated_s1 (punish=omission enc=separated eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.325 P(play|legal) 0.677 grad 0.8239 | sampled clear 0.355 P(play|legal) 0.651 grad 0.7891 | 217s
+== omission_separated_s2 (punish=omission enc=separated eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.630 grad 0.99 | sampled clear 0.460 P(play|legal) 0.641 grad 0.8485 | 237s

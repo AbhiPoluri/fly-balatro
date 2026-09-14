@@ -1,0 +1,101 @@
+[references] 2 readouts x 400 episodes = 800 jobs, wiring=None
+[references] 40/800 episodes  0.0 min  ETA 0.0 min
+[references] 80/800 episodes  0.0 min  ETA 0.0 min
+[references] 120/800 episodes  0.0 min  ETA 0.0 min
+[references] 160/800 episodes  0.0 min  ETA 0.0 min
+[references] 200/800 episodes  0.0 min  ETA 0.0 min
+[references] 240/800 episodes  0.0 min  ETA 0.0 min
+[references] 280/800 episodes  0.0 min  ETA 0.0 min
+[references] 320/800 episodes  0.0 min  ETA 0.0 min
+[references] 360/800 episodes  0.0 min  ETA 0.0 min
+[references] 400/800 episodes  0.0 min  ETA 0.0 min
+  random/-: clear 0.000  chips 100  len 30.4  skip 0.0252  trunc 0.000  cache 0.000
+[references] 440/800 episodes  0.0 min  ETA 0.0 min
+[references] 480/800 episodes  0.0 min  ETA 0.0 min
+[references] 520/800 episodes  0.0 min  ETA 0.0 min
+[references] 560/800 episodes  0.0 min  ETA 0.0 min
+[references] 600/800 episodes  0.0 min  ETA 0.0 min
+[references] 640/800 episodes  0.0 min  ETA 0.0 min
+[references] 680/800 episodes  0.0 min  ETA 0.0 min
+[references] 720/800 episodes  0.0 min  ETA 0.0 min
+[references] 760/800 episodes  0.0 min  ETA 0.0 min
+[references] 800/800 episodes  0.0 min  ETA 0.0 min
+  heuristic/-: clear 0.168  chips 931  len 82.0  skip 0.0000  trunc 0.000  cache 0.000
+[nobrain] 6 readouts x 400 episodes = 2400 jobs, wiring=None
+[nobrain] 120/2400 episodes  0.0 min  ETA 0.2 min
+[nobrain] 240/2400 episodes  0.0 min  ETA 0.2 min
+[nobrain] 360/2400 episodes  0.0 min  ETA 0.2 min
+  rand_proj/linear: clear 0.000  chips 157  len 45.0  skip 0.0000  trunc 0.000  cache 0.000
+[nobrain] 480/2400 episodes  0.0 min  ETA 0.2 min
+[nobrain] 600/2400 episodes  0.1 min  ETA 0.2 min
+[nobrain] 720/2400 episodes  0.1 min  ETA 0.2 min
+  rand_proj/mlp: clear 0.000  chips 264  len 51.8  skip 0.0000  trunc 0.000  cache 0.000
+[nobrain] 840/2400 episodes  0.1 min  ETA 0.2 min
+[nobrain] 960/2400 episodes  0.1 min  ETA 0.1 min
+[nobrain] 1080/2400 episodes  0.1 min  ETA 0.1 min
+[nobrain] 1200/2400 episodes  0.1 min  ETA 0.1 min
+  rand_proj_matched/linear: clear 0.000  chips 155  len 46.1  skip 0.0000  trunc 0.000  cache 0.000
+[nobrain] 1320/2400 episodes  0.1 min  ETA 0.1 min
+[nobrain] 1440/2400 episodes  0.1 min  ETA 0.1 min
+[nobrain] 1560/2400 episodes  0.1 min  ETA 0.1 min
+  rand_proj_matched/mlp: clear 0.000  chips 248  len 51.0  skip 0.0000  trunc 0.000  cache 0.000
+[nobrain] 1680/2400 episodes  0.1 min  ETA 0.0 min
+[nobrain] 1800/2400 episodes  0.1 min  ETA 0.0 min
+[nobrain] 1920/2400 episodes  0.1 min  ETA 0.0 min
+  raw_bits/linear: clear 0.000  chips 148  len 48.4  skip 0.0000  trunc 0.000  cache 0.000
+[nobrain] 2040/2400 episodes  0.1 min  ETA 0.0 min
+[nobrain] 2160/2400 episodes  0.1 min  ETA 0.0 min
+[nobrain] 2280/2400 episodes  0.1 min  ETA 0.0 min
+[nobrain] 2400/2400 episodes  0.1 min  ETA 0.0 min
+  raw_bits/mlp: clear 0.000  chips 311  len 55.8  skip 0.0000  trunc 0.000  cache 0.000
+[real] 4 readouts x 400 episodes = 1600 jobs, wiring=real
+[real] 80/1600 episodes  1.9 min  ETA 36.9 min
+[real] 160/1600 episodes  3.4 min  ETA 30.9 min
+[real] 240/1600 episodes  5.1 min  ETA 28.8 min
+[real] 320/1600 episodes  6.6 min  ETA 26.3 min
+[real] 400/1600 episodes  8.0 min  ETA 24.1 min
+  real_alpn_kc_dn/linear: clear 0.000  chips 131  len 43.9  skip 0.0000  trunc 0.000  cache 0.023
+[real] 480/1600 episodes  9.6 min  ETA 22.4 min
+[real] 560/1600 episodes  11.0 min  ETA 20.4 min
+[real] 640/1600 episodes  12.3 min  ETA 18.5 min
+[real] 720/1600 episodes  13.7 min  ETA 16.7 min
+[real] 800/1600 episodes  15.1 min  ETA 15.1 min
+  real_alpn_kc_dn/mlp: clear 0.000  chips 126  len 42.3  skip 0.0000  trunc 0.000  cache 0.038
+[real] 880/1600 episodes  16.3 min  ETA 13.3 min
+[real] 960/1600 episodes  17.6 min  ETA 11.7 min
+[real] 1040/1600 episodes  18.9 min  ETA 10.2 min
+[real] 1120/1600 episodes  20.2 min  ETA 8.7 min
+[real] 1200/1600 episodes  21.5 min  ETA 7.2 min
+  real_dn/linear: clear 0.000  chips 145  len 39.0  skip 0.0000  trunc 0.000  cache 0.034
+[real] 1280/1600 episodes  22.8 min  ETA 5.7 min
+[real] 1360/1600 episodes  24.0 min  ETA 4.2 min
+[real] 1440/1600 episodes  25.3 min  ETA 2.8 min
+[real] 1520/1600 episodes  26.6 min  ETA 1.4 min
+[real] 1600/1600 episodes  27.9 min  ETA 0.0 min
+  real_dn/mlp: clear 0.000  chips 140  len 38.9  skip 0.0000  trunc 0.000  cache 0.033
+[shuffled] 4 readouts x 400 episodes = 1600 jobs, wiring=shuffled
+[shuffled] 80/1600 episodes  1.1 min  ETA 20.5 min
+[shuffled] 160/1600 episodes  2.1 min  ETA 18.5 min
+[shuffled] 240/1600 episodes  3.1 min  ETA 17.3 min
+[shuffled] 320/1600 episodes  4.0 min  ETA 16.0 min
+[shuffled] 400/1600 episodes  4.9 min  ETA 14.8 min
+  shuf_alpn_kc_dn/linear: clear 0.000  chips 146  len 44.2  skip 0.0000  trunc 0.000  cache 0.024
+[shuffled] 480/1600 episodes  5.9 min  ETA 13.7 min
+[shuffled] 560/1600 episodes  6.9 min  ETA 12.7 min
+[shuffled] 640/1600 episodes  7.9 min  ETA 11.9 min
+[shuffled] 720/1600 episodes  8.9 min  ETA 10.9 min
+[shuffled] 800/1600 episodes  9.9 min  ETA 9.9 min
+  shuf_alpn_kc_dn/mlp: clear 0.000  chips 158  len 46.1  skip 0.0000  trunc 0.000  cache 0.041
+[shuffled] 880/1600 episodes  10.9 min  ETA 8.9 min
+[shuffled] 960/1600 episodes  11.8 min  ETA 7.9 min
+[shuffled] 1040/1600 episodes  12.8 min  ETA 6.9 min
+[shuffled] 1120/1600 episodes  13.7 min  ETA 5.9 min
+[shuffled] 1200/1600 episodes  14.6 min  ETA 4.9 min
+  shuf_dn/linear: clear 0.000  chips 137  len 43.1  skip 0.0000  trunc 0.000  cache 0.033
+[shuffled] 1280/1600 episodes  15.5 min  ETA 3.9 min
+[shuffled] 1360/1600 episodes  16.5 min  ETA 2.9 min
+[shuffled] 1440/1600 episodes  17.3 min  ETA 1.9 min
+[shuffled] 1520/1600 episodes  18.2 min  ETA 1.0 min
+[shuffled] 1600/1600 episodes  19.1 min  ETA 0.0 min
+  shuf_dn/mlp: clear 0.000  chips 152  len 40.6  skip 0.0000  trunc 0.000  cache 0.039
+wrote /Users/abhipoluri/fly-balatro/outputs/bc/eval.json

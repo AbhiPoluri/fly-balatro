@@ -1,0 +1,19 @@
+== baseline_plast
+   reward_hamming_2_2           n=  24  relative spread 0.8411  (sd 0.3472)
+   reward_hamming_4_4           n=  24  relative spread 0.8389  (sd 0.3213)
+   reward_hamming_6_8           n=  24  relative spread 0.7627  (sd 0.3048)
+   reward_hamming_10_32         n=  24  relative spread 0.6669  (sd 0.2493)
+   punish_hamming_2_2           n=  24  relative spread -0.3313  (sd 6.6127)
+   punish_hamming_4_4           n=  24  relative spread -0.3329  (sd 5.4806)
+   punish_hamming_6_8           n=  24  relative spread 0.1487  (sd 3.9037)
+   punish_hamming_10_32         n=  24  relative spread -1.2098  (sd 6.2848)
+== kc_homeostasis
+   reward_hamming_2_2           n=  24  relative spread 1.3798  (sd 1.6623)
+   reward_hamming_4_4           n=  24  relative spread 1.3023  (sd 4.1697)
+   reward_hamming_6_8           n=  24  relative spread 0.6964  (sd 1.5093)
+   reward_hamming_10_32         n=  24  relative spread 0.0798  (sd 1.2801)
+   punish_hamming_2_2           n=  24  relative spread 0.5185  (sd 1.6155)
+   punish_hamming_4_4           n=  24  relative spread 0.4322  (sd 1.3571)
+   punish_hamming_6_8           n=  24  relative spread -0.1301  (sd 0.9014)
+   punish_hamming_10_32         n=  24  relative spread -0.1738  (sd 1.0197)
+wrote /Users/abhipoluri/fly-balatro/outputs/plast2/neighbour.json in 249s

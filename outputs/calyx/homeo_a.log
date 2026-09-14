@@ -1,0 +1,26 @@
+[real][ 0] k=4    active 0.0461 (187/state) r>0.5  169 r>0.3  214 in-band  121 silent 3350 71s
+[real][ 1] k=4    active 0.0514 (209/state) r>0.5  116 r>0.3  230 in-band  339 silent 2737 74s
+[real][ 2] k=3    active 0.0717 (291/state) r>0.5  176 r>0.3  340 in-band  482 silent 2306 77s
+[real][ 3] k=3    active 0.0591 (240/state) r>0.5  136 r>0.3  255 in-band  626 silent 2334 82s
+[real][ 4] k=2    active 0.0508 (207/state) r>0.5   64 r>0.3  159 in-band  627 silent 2279 89s
+[real][ 5] k=2    active 0.0631 (256/state) r>0.5  133 r>0.3  264 in-band  710 silent 2127 84s
+[real][ 6] k=1.5  active 0.0646 (263/state) r>0.5  135 r>0.3  256 in-band  726 silent 2122 95s
+[real][ 7] k=1.5  active 0.0448 (182/state) r>0.5   34 r>0.3   86 in-band  828 silent 2098 96s
+[real][ 8] k=1    active 0.0729 (296/state) r>0.5  125 r>0.3  312 in-band  898 silent 1884 87s
+[real][ 9] k=1    active 0.0446 (181/state) r>0.5   51 r>0.3   79 in-band 1093 silent 1949 87s
+[real] converged at iteration 9 (frac r>0.3 = 0.0194); last update not applied
+[real] wrote homeo_real.json and tuned_real.json  active 0.0446 r>0.3 0.0194 silent 1949 in 15.7 min
+[rw1][ 0] k=4    active 0.0479 (194/state) r>0.5  167 r>0.3  209 in-band  103 silent 3360 85s
+[rw1][ 1] k=4    active 0.0543 (221/state) r>0.5  136 r>0.3  243 in-band  326 silent 2797 90s
+[rw1][ 2] k=3    active 0.0703 (286/state) r>0.5  168 r>0.3  335 in-band  499 silent 2311 92s
+[rw1][ 3] k=3    active 0.0589 (240/state) r>0.5  148 r>0.3  251 in-band  615 silent 2353 92s
+[rw1][ 4] k=2    active 0.0502 (204/state) r>0.5   66 r>0.3  175 in-band  645 silent 2334 90s
+[rw1][ 5] k=2    active 0.0606 (246/state) r>0.5  126 r>0.3  249 in-band  729 silent 2163 92s
+[rw1][ 6] k=1.5  active 0.0622 (253/state) r>0.5  127 r>0.3  238 in-band  741 silent 2163 82s
+[rw1][ 7] k=1.5  active 0.0456 (185/state) r>0.5   45 r>0.3   96 in-band  889 silent 2084 84s
+[rw1][ 8] k=1    active 0.0701 (285/state) r>0.5  124 r>0.3  303 in-band  904 silent 1932 101s
+[rw1][ 9] k=1    active 0.0457 (186/state) r>0.5   65 r>0.3   93 in-band 1065 silent 1907 109s
+[rw1][10] k=0.75 active 0.0665 (270/state) r>0.5   50 r>0.3  235 in-band 1097 silent 1806 88s
+[rw1][11] k=0.5  active 0.0403 (164/state) r>0.5   17 r>0.3   25 in-band 1300 silent 1738 77s
+[rw1] converged at iteration 11 (frac r>0.3 = 0.0062); last update not applied
+[rw1] wrote homeo_rw1.json and tuned_rw1.json  active 0.0403 r>0.3 0.0062 silent 1738 in 19.5 min

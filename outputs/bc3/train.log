@@ -1,0 +1,306 @@
+device = mps
+states: 150,037  feature_version=2  encoding=glomerular32  bits into the readout=32 (of 315 encoded)
+split: {"train": 108505, "val": 12250, "test": 29282, "episodes": {"total": 2719, "test": 544, "val": 218}, "train_heuristic_frac": 0.7288, "val_heuristic_frac": 0.7536, "test_heuristic_frac": 0.6946}
+priors: {
+  "most_frequent_legal_label_top1": 0.3540400245884844,
+  "most_frequent_legal_label_top1_nontrivial": 0.3287792760823279,
+  "majority_label_top1": 0.16009835393757257,
+  "trivial_state_fraction": 0.037634041390615394,
+  "uniform_random_legal_top1": 0.2049387158046061,
+  "n_test": 29282
+}
+real_alpn_kc_dn effective (non-constant) width: 2254/6064
+[real_alpn_kc_dn] d=6064 effective=2254 (2s to build)
+    real_alpn_kc_dn / linear
+      ep00 loss 1.0060 val 0.7316
+      ep01 loss 0.8668 val 0.7388
+      ep02 loss 0.8378 val 0.7424
+      ep03 loss 0.8223 val 0.7481
+      ep04 loss 0.8110 val 0.7510
+      ep05 loss 0.8029 val 0.7541
+      ep06 loss 0.7947 val 0.7513
+      ep07 loss 0.7893 val 0.7577
+      ep08 loss 0.7826 val 0.7590
+      ep09 loss 0.7771 val 0.7571
+      ep10 loss 0.7717 val 0.7599
+      ep11 loss 0.7682 val 0.7648
+      ep12 loss 0.7648 val 0.7662
+      ep13 loss 0.7626 val 0.7669
+      ep14 loss 0.7610 val 0.7678
+      test top1 0.7460  nontrivial 0.7360894251242016  (28s)
+    real_alpn_kc_dn / mlp
+      ep00 loss 0.9005 val 0.7582
+      ep01 loss 0.7981 val 0.7578
+      ep02 loss 0.7776 val 0.7638
+      ep03 loss 0.7658 val 0.7622
+      ep04 loss 0.7566 val 0.7641
+      ep05 loss 0.7505 val 0.7612
+      ep06 loss 0.7444 val 0.7629
+      ep07 loss 0.7388 val 0.7651
+      ep08 loss 0.7333 val 0.7664
+      ep09 loss 0.7273 val 0.7704
+      ep10 loss 0.7220 val 0.7706
+      ep11 loss 0.7177 val 0.7713
+      ep12 loss 0.7133 val 0.7724
+      ep13 loss 0.7100 val 0.7731
+      ep14 loss 0.7076 val 0.7720
+      test top1 0.7484  nontrivial 0.7385379701916253  (29s)
+[real_kc] d=4064 effective=993 (1s to build)
+    real_kc / linear
+      ep00 loss 1.1379 val 0.6736
+      ep01 loss 0.9608 val 0.7032
+      ep02 loss 0.9246 val 0.7113
+      ep03 loss 0.9050 val 0.7166
+      ep04 loss 0.8922 val 0.7221
+      ep05 loss 0.8843 val 0.7274
+      ep06 loss 0.8770 val 0.7267
+      ep07 loss 0.8720 val 0.7276
+      ep08 loss 0.8671 val 0.7304
+      ep09 loss 0.8629 val 0.7326
+      ep10 loss 0.8595 val 0.7340
+      ep11 loss 0.8571 val 0.7302
+      ep12 loss 0.8551 val 0.7313
+      ep13 loss 0.8537 val 0.7335
+      ep14 loss 0.8529 val 0.7334
+      test top1 0.7085  nontrivial 0.697125621007807  (24s)
+    real_kc / mlp
+      ep00 loss 0.9624 val 0.7464
+      ep01 loss 0.8190 val 0.7587
+      ep02 loss 0.7923 val 0.7594
+      ep03 loss 0.7779 val 0.7659
+      ep04 loss 0.7653 val 0.7678
+      ep05 loss 0.7588 val 0.7687
+      ep06 loss 0.7517 val 0.7682
+      ep07 loss 0.7449 val 0.7675
+      ep08 loss 0.7394 val 0.7720
+      ep09 loss 0.7338 val 0.7683
+      ep10 loss 0.7282 val 0.7690
+      ep11 loss 0.7241 val 0.7730
+      ep12 loss 0.7201 val 0.7727
+      ep13 loss 0.7172 val 0.7746
+      ep14 loss 0.7152 val 0.7744
+      test top1 0.7495  nontrivial 0.7397444996451384  (25s)
+[real_mbon] d=97 effective=49 (0s to build)
+    real_mbon / linear
+      ep00 loss 1.6668 val 0.4189
+      ep01 loss 1.5571 val 0.4362
+      ep02 loss 1.5291 val 0.4357
+      ep03 loss 1.5177 val 0.4367
+      ep04 loss 1.5118 val 0.4368
+      ep05 loss 1.5085 val 0.4376
+      ep06 loss 1.5063 val 0.4362
+      ep07 loss 1.5049 val 0.4358
+      ep08 loss 1.5038 val 0.4341
+      ep09 loss 1.5031 val 0.4370
+      ep10 loss 1.5025 val 0.4369
+      ep11 loss 1.5020 val 0.4369
+      ep12 loss 1.5018 val 0.4372
+      ep13 loss 1.5016 val 0.4370
+      ep14 loss 1.5015 val 0.4370
+      test top1 0.4337  nontrivial 0.4116039744499645  (9s)
+    real_mbon / mlp
+      ep00 loss 1.5029 val 0.4813
+      ep01 loss 1.3699 val 0.5237
+      ep02 loss 1.3138 val 0.5420
+      ep03 loss 1.2786 val 0.5582
+      ep04 loss 1.2530 val 0.5652
+      ep05 loss 1.2345 val 0.5696
+      ep06 loss 1.2190 val 0.5847
+      ep07 loss 1.2070 val 0.5839
+      ep08 loss 1.1971 val 0.5897
+      ep09 loss 1.1889 val 0.5899
+      ep10 loss 1.1827 val 0.5973
+      ep11 loss 1.1784 val 0.5944
+      ep12 loss 1.1752 val 0.5979
+      ep13 loss 1.1734 val 0.5997
+      ep14 loss 1.1724 val 0.5991
+      test top1 0.5886  nontrivial 0.5724982256919802  (10s)
+[real_dn] d=1314 effective=654 (0s to build)
+    real_dn / linear
+      ep00 loss 1.2731 val 0.6107
+      ep01 loss 1.0996 val 0.6336
+      ep02 loss 1.0578 val 0.6467
+      ep03 loss 1.0353 val 0.6610
+      ep04 loss 1.0216 val 0.6608
+      ep05 loss 1.0102 val 0.6590
+      ep06 loss 1.0022 val 0.6722
+      ep07 loss 0.9963 val 0.6698
+      ep08 loss 0.9909 val 0.6727
+      ep09 loss 0.9868 val 0.6718
+      ep10 loss 0.9830 val 0.6731
+      ep11 loss 0.9804 val 0.6749
+      ep12 loss 0.9785 val 0.6742
+      ep13 loss 0.9772 val 0.6751
+      ep14 loss 0.9764 val 0.6767
+      test top1 0.6606  nontrivial 0.6473030518097942  (14s)
+    real_dn / mlp
+      ep00 loss 1.1152 val 0.6758
+      ep01 loss 0.9354 val 0.7082
+      ep02 loss 0.8797 val 0.7264
+      ep03 loss 0.8480 val 0.7322
+      ep04 loss 0.8274 val 0.7332
+      ep05 loss 0.8110 val 0.7352
+      ep06 loss 0.7972 val 0.7457
+      ep07 loss 0.7881 val 0.7438
+      ep08 loss 0.7763 val 0.7538
+      ep09 loss 0.7674 val 0.7526
+      ep10 loss 0.7596 val 0.7580
+      ep11 loss 0.7534 val 0.7618
+      ep12 loss 0.7482 val 0.7610
+      ep13 loss 0.7444 val 0.7639
+      ep14 loss 0.7418 val 0.7627
+      test top1 0.7396  nontrivial 0.7294180269694819  (16s)
+[raw_bits] d=32 effective=32 (0s to build)
+    raw_bits / linear
+      ep00 loss 1.5551 val 0.4931
+      ep01 loss 1.3613 val 0.5439
+      ep02 loss 1.3093 val 0.5525
+      ep03 loss 1.2878 val 0.5557
+      ep04 loss 1.2765 val 0.5569
+      ep05 loss 1.2697 val 0.5564
+      ep06 loss 1.2653 val 0.5563
+      ep07 loss 1.2624 val 0.5577
+      ep08 loss 1.2602 val 0.5569
+      ep09 loss 1.2588 val 0.5580
+      ep10 loss 1.2577 val 0.5571
+      ep11 loss 1.2570 val 0.5568
+      ep12 loss 1.2566 val 0.5567
+      ep13 loss 1.2563 val 0.5570
+      ep14 loss 1.2562 val 0.5569
+      test top1 0.5488  nontrivial 0.5311568488289568  (8s)
+    raw_bits / mlp
+      ep00 loss 1.1759 val 0.7206
+      ep01 loss 0.8999 val 0.7575
+      ep02 loss 0.8513 val 0.7646
+      ep03 loss 0.8296 val 0.7708
+      ep04 loss 0.8160 val 0.7687
+      ep05 loss 0.8063 val 0.7762
+      ep06 loss 0.7996 val 0.7710
+      ep07 loss 0.7946 val 0.7704
+      ep08 loss 0.7906 val 0.7793
+      ep09 loss 0.7876 val 0.7766
+      ep10 loss 0.7853 val 0.7753
+      ep11 loss 0.7837 val 0.7769
+      ep12 loss 0.7826 val 0.7793
+      ep13 loss 0.7817 val 0.7801
+      ep14 loss 0.7813 val 0.7807
+      test top1 0.7555  nontrivial 0.7459190915542938  (9s)
+[rand_proj_matched] d=2254 effective=2254 (2s to build)
+    rand_proj_matched / linear
+      ep00 loss 0.9381 val 0.7450
+      ep01 loss 0.8397 val 0.7400
+      ep02 loss 0.8213 val 0.7482
+      ep03 loss 0.8138 val 0.7488
+      ep04 loss 0.8055 val 0.7464
+      ep05 loss 0.7983 val 0.7567
+      ep06 loss 0.7922 val 0.7581
+      ep07 loss 0.7866 val 0.7663
+      ep08 loss 0.7799 val 0.7660
+      ep09 loss 0.7758 val 0.7630
+      ep10 loss 0.7694 val 0.7652
+      ep11 loss 0.7661 val 0.7743
+      ep12 loss 0.7627 val 0.7763
+      ep13 loss 0.7600 val 0.7800
+      ep14 loss 0.7583 val 0.7771
+      test top1 0.7541  nontrivial 0.7444641589779986  (22s)
+    rand_proj_matched / mlp
+      ep00 loss 0.8631 val 0.7537
+      ep01 loss 0.8003 val 0.7541
+      ep02 loss 0.7848 val 0.7605
+      ep03 loss 0.7762 val 0.7685
+      ep04 loss 0.7702 val 0.7622
+      ep05 loss 0.7632 val 0.7689
+      ep06 loss 0.7588 val 0.7718
+      ep07 loss 0.7538 val 0.7688
+      ep08 loss 0.7475 val 0.7722
+      ep09 loss 0.7421 val 0.7761
+      ep10 loss 0.7363 val 0.7709
+      ep11 loss 0.7318 val 0.7754
+      ep12 loss 0.7274 val 0.7793
+      ep13 loss 0.7237 val 0.7808
+      ep14 loss 0.7212 val 0.7814
+      test top1 0.7568  nontrivial 0.7473385379701917  (24s)
+wrote outputs/bc3/train_metrics.json
+device = mps
+states: 150,037  feature_version=2  encoding=glomerular32  bits into the readout=32 (of 315 encoded)
+split: {"train": 108505, "val": 12250, "test": 29282, "episodes": {"total": 2719, "test": 544, "val": 218}, "train_heuristic_frac": 0.7288, "val_heuristic_frac": 0.7536, "test_heuristic_frac": 0.6946}
+priors: {
+  "most_frequent_legal_label_top1": 0.3540400245884844,
+  "most_frequent_legal_label_top1_nontrivial": 0.3287792760823279,
+  "majority_label_top1": 0.16009835393757257,
+  "trivial_state_fraction": 0.037634041390615394,
+  "uniform_random_legal_top1": 0.2049387158046061,
+  "n_test": 29282
+}
+real_alpn_kc_dn effective (non-constant) width: 2254/6064
+[shuf_alpn_kc_dn] d=6064 effective=899 (1s to build)
+    shuf_alpn_kc_dn / linear
+      ep00 loss 1.1334 val 0.7010
+      ep01 loss 0.9437 val 0.7197
+      ep02 loss 0.9077 val 0.7237
+      ep03 loss 0.8895 val 0.7281
+      ep04 loss 0.8779 val 0.7295
+      ep05 loss 0.8694 val 0.7349
+      ep06 loss 0.8630 val 0.7340
+      ep07 loss 0.8584 val 0.7372
+      ep08 loss 0.8538 val 0.7414
+      ep09 loss 0.8503 val 0.7382
+      ep10 loss 0.8470 val 0.7418
+      ep11 loss 0.8448 val 0.7423
+      ep12 loss 0.8430 val 0.7425
+      ep13 loss 0.8416 val 0.7422
+      ep14 loss 0.8407 val 0.7418
+      test top1 0.7217  nontrivial 0.7107877927608233  (23s)
+    shuf_alpn_kc_dn / mlp
+      ep00 loss 0.9525 val 0.7478
+      ep01 loss 0.8184 val 0.7565
+      ep02 loss 0.7927 val 0.7527
+      ep03 loss 0.7783 val 0.7638
+      ep04 loss 0.7685 val 0.7576
+      ep05 loss 0.7609 val 0.7661
+      ep06 loss 0.7540 val 0.7647
+      ep07 loss 0.7482 val 0.7608
+      ep08 loss 0.7420 val 0.7665
+      ep09 loss 0.7364 val 0.7689
+      ep10 loss 0.7308 val 0.7655
+      ep11 loss 0.7266 val 0.7696
+      ep12 loss 0.7226 val 0.7709
+      ep13 loss 0.7196 val 0.7715
+      ep14 loss 0.7176 val 0.7720
+      test top1 0.7496  nontrivial 0.7397799858055358  (24s)
+[shuf_dn] d=1314 effective=482 (0s to build)
+    shuf_dn / linear
+      ep00 loss 1.2328 val 0.6607
+      ep01 loss 1.0222 val 0.6918
+      ep02 loss 0.9793 val 0.6980
+      ep03 loss 0.9588 val 0.7015
+      ep04 loss 0.9465 val 0.7077
+      ep05 loss 0.9379 val 0.7125
+      ep06 loss 0.9315 val 0.7078
+      ep07 loss 0.9270 val 0.7133
+      ep08 loss 0.9230 val 0.7118
+      ep09 loss 0.9201 val 0.7129
+      ep10 loss 0.9175 val 0.7144
+      ep11 loss 0.9158 val 0.7114
+      ep12 loss 0.9145 val 0.7136
+      ep13 loss 0.9135 val 0.7136
+      ep14 loss 0.9129 val 0.7134
+      test top1 0.6945  nontrivial 0.6825762952448545  (14s)
+    shuf_dn / mlp
+      ep00 loss 0.9982 val 0.7403
+      ep01 loss 0.8351 val 0.7594
+      ep02 loss 0.8044 val 0.7548
+      ep03 loss 0.7883 val 0.7658
+      ep04 loss 0.7775 val 0.7616
+      ep05 loss 0.7691 val 0.7647
+      ep06 loss 0.7618 val 0.7602
+      ep07 loss 0.7559 val 0.7620
+      ep08 loss 0.7498 val 0.7681
+      ep09 loss 0.7447 val 0.7686
+      ep10 loss 0.7393 val 0.7659
+      ep11 loss 0.7356 val 0.7691
+      ep12 loss 0.7321 val 0.7714
+      ep13 loss 0.7294 val 0.7722
+      ep14 loss 0.7277 val 0.7723
+      test top1 0.7490  nontrivial 0.7392122072391767  (14s)
+wrote outputs/bc3/train_metrics.json

@@ -1,0 +1,225 @@
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:1036: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:1036: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:1036: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+== spec ==
+   KC 183.5/state (0.0452), always-on 166 (0.0408), input-dependent 524
+   KC hand type 0.970 (grouped 0.94, permuted 0.235)  KCbin 0.970
+   MBON 8.64 Hz, 33 varying, hand type 0.610
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:1036: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:1036: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py:1036: UserWarning: The least populated class in y has only 2 members, which is less than n_splits=5.
+  warnings.warn(
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/Users/abhipoluri/fly-balatro/.venv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+== plast ==
+   KC 211.5/state (0.0520), always-on 188 (0.0463), input-dependent 552
+   KC hand type 0.960 (grouped 0.94, permuted 0.255)  KCbin 0.965
+   MBON 14.27 Hz, 41 varying, hand type 0.635
+wrote /Users/abhipoluri/fly-balatro/outputs/plast/kc_check.json

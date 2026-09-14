@@ -1,0 +1,222 @@
+{
+  "sample": {
+    "source": "outputs/bc2/states.npz",
+    "n_states_total": 150037,
+    "n_states_relay_active": 138337,
+    "n_sampled": 2000,
+    "seed": 11,
+    "stratification": "hand type only (bits 0-8); water-filled equal quotas",
+    "hand_type_available": {
+      "High Card": 8454,
+      "Pair": 35612,
+      "Two Pair": 50627,
+      "Three of a Kind": 5863,
+      "Straight": 11710,
+      "Flush": 8496,
+      "Full House": 16585,
+      "Four of a Kind": 854,
+      "Straight Flush": 136
+    },
+    "hand_type_quota": {
+      "High Card": 233,
+      "Pair": 233,
+      "Two Pair": 233,
+      "Three of a Kind": 233,
+      "Straight": 233,
+      "Flush": 233,
+      "Full House": 233,
+      "Four of a Kind": 233,
+      "Straight Flush": 136
+    },
+    "state_rows": [
+      5,
+      271,
+      278,
+      390,
+      704,
+      726,
+      729,
+      805,
+      811,
+      860,
+      1123,
+      1124,
+      1126,
+      1186,
+      1219,
+      1225,
+      1457,
+      1482,
+      1648,
+      1677,
+      "..."
+    ]
+  },
+  "labels": {
+    "hand_type_majority": 0.1165,
+    "hand_type_classes": {
+      "High Card": 233,
+      "Pair": 233,
+      "Two Pair": 233,
+      "Three of a Kind": 233,
+      "Straight": 233,
+      "Flush": 233,
+      "Full House": 233,
+      "Four of a Kind": 233,
+      "Straight Flush": 136
+    },
+    "sel_is_best_majority": 0.89,
+    "sel_is_best_positive_rate": 0.11,
+    "sel_is_best_positives": 220,
+    "sel_is_best_positives_per_hand_type": {
+      "High Card": 13,
+      "Pair": 11,
+      "Two Pair": 12,
+      "Three of a Kind": 32,
+      "Straight": 33,
+      "Flush": 31,
+      "Full House": 36,
+      "Four of a Kind": 36,
+      "Straight Flush": 16
+    },
+    "intensity_positive_rate": 0.4975
+  },
+  "glomeruli": {
+    "active_glomeruli_mean": 6.829,
+    "active_glomeruli_sd": 1.467,
+    "active_glomeruli_min": 4,
+    "active_glomeruli_max": 9,
+    "active_glomeruli_hist": {
+      "4": 220,
+      "5": 235,
+      "6": 212,
+      "7": 450,
+      "8": 767,
+      "9": 116
+    },
+    "silent_glomeruli_mean": 25.172,
+    "driven_orn_mean": 441.2,
+    "driven_orn_sd": 50.3,
+    "driven_orn_min": 242,
+    "driven_orn_max": 582,
+    "orns_mapped": 2075,
+    "orns_never_driven": 564,
+    "per_bit_on_rate": {
+      "best_high_card": 0.1165,
+      "best_pair": 0.1165,
+      "best_two_pair": 0.1165,
+      "best_three_of_a_kind": 0.1165,
+      "best_straight": 0.1165,
+      "best_flush": 0.1165,
+      "best_full_house": 0.1165,
+      "best_four_of_a_kind": 0.1165,
+      "best_straight_flush": 0.068,
+      "best_slot0": 0.5515,
+      "best_slot1": 0.558,
+      "best_slot2": 0.474,
+      "best_slot3": 0.467,
+      "best_slot4": 0.4115,
+      "best_slot5": 0.442,
+      "best_slot6": 0.4185,
+      "best_slot7": 0.396,
+      "sel_high_card": 0.563,
+      "sel_pair": 0.1055,
+      "sel_two_pair": 0.0185,
+      "sel_three_of_a_kind": 0.0455,
+      "sel_straight": 0.0165,
+      "sel_flush": 0.0155,
+      "sel_full_house": 0.018,
+      "sel_four_of_a_kind": 0.018,
+      "sel_straight_flush": 0.008,
+      "sel_none": 0.1915,
+      "sel_is_best": 0.11,
+      "best_vs_needed_lt0.25": 0.26,
+      "best_vs_needed_lt0.5": 0.1545,
+      "best_vs_needed_lt1.0": 0.2455,
+      "best_vs_needed_ge1.0": 0.34
+    },
+    "bits_never_on": []
+  },
+  "input_jaccard": {
+    "relay_bits": {
+      "within": 0.4331,
+      "between": 0.2099,
+      "ratio": 0.4846,
+      "n_pairs_within": 225404,
+      "n_pairs_between": 1773596,
+      "mean_set_size": 6.83
+    },
+    "driven_orns": {
+      "within": 0.4286,
+      "between": 0.216,
+      "ratio": 0.504,
+      "n_pairs_within": 225404,
+      "n_pairs_between": 1773596,
+      "mean_set_size": 441.22
+    }
+  },
+  "references": {
+    "relay_bits_32": {
+      "hand_type": {
+        "best_acc": 1.0,
+        "permuted_acc": 0.1105,
+        "n_used_features": 32
+      },
+      "sel_is_best": {
+        "best_acc": 1.0,
+        "permuted_acc": 0.89,
+        "n_used_features": 32
+      },
+      "intensity": {
+        "best_acc": 0.9895,
+        "permuted_acc": 0.483,
+        "n_used_features": 32
+      }
+    },
+    "bits_on_count_only": {
+      "hand_type": {
+        "best_acc": 0.5465,
+        "permuted_acc": 0.118,
+        "n_used_features": 1
+      },
+      "sel_is_best": {
+        "best_acc": 0.89,
+        "permuted_acc": 0.89,
+        "n_used_features": 1
+      },
+      "intensity": {
+        "best_acc": 0.842,
+        "permuted_acc": 0.5,
+        "n_used_features": 1
+      }
+    },
+    "driven_orn_count_only": {
+      "hand_type": {
+        "best_acc": 0.2665,
+        "permuted_acc": 0.1165,
+        "n_used_features": 1
+      },
+      "sel_is_best": {
+        "best_acc": 0.8905,
+        "permuted_acc": 0.89,
+        "n_used_features": 1
+      },
+      "intensity": {
+        "best_acc": 1.0,
+        "permuted_acc": 0.5045,
+        "n_used_features": 1
+      }
+    }
+  },
+  "c_grid": [
+    0.03,
+    0.3,
+    3.0
+  ],
+  "machine": "arm64 python 3.11.3",
+  "graph": {
+    "neurons": 146271,
+    "edges_csr": 5146572,
+    "threshold": 5
+  }
+}

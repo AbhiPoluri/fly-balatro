@@ -1,0 +1,489 @@
+{
+  "always_discard": {
+    "p_play_by_bucket": {
+      "ge1.0": {
+        "n": 117,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt0.25": {
+        "n": 181,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt0.5": {
+        "n": 155,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt1.0": {
+        "n": 223,
+        "p_play": 0.0,
+        "plays": 0
+      }
+    },
+    "p_play_by_hand_type": {
+      "Flush": {
+        "n": 97,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Four of a Kind": {
+        "n": 27,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Full House": {
+        "n": 197,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "High Card": {
+        "n": 17,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Pair": {
+        "n": 68,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Straight": {
+        "n": 60,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Straight Flush": {
+        "n": 6,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Three of a Kind": {
+        "n": 21,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Two Pair": {
+        "n": 183,
+        "p_play": 0.0,
+        "plays": 0
+      }
+    },
+    "summary": {
+      "chips_mean": 867.7833333333333,
+      "chips_sd": 280.07588802957594,
+      "clear_rate": 0.4,
+      "hands_per_game": 18.183333333333334,
+      "n_games": 60,
+      "n_hands": 1091,
+      "p_play": 0.38038496791934007,
+      "p_play_when_legal": 0.0,
+      "punish_rate": 0.08674698795180723,
+      "reward_rate": 0.7228915662650602,
+      "rounds_mean": 1.8166666666666667,
+      "truncated": 0
+    }
+  },
+  "always_play": {
+    "p_play_by_bucket": {
+      "ge1.0": {
+        "n": 65,
+        "p_play": 1.0,
+        "plays": 65
+      },
+      "lt0.25": {
+        "n": 206,
+        "p_play": 1.0,
+        "plays": 206
+      },
+      "lt0.5": {
+        "n": 88,
+        "p_play": 1.0,
+        "plays": 88
+      },
+      "lt1.0": {
+        "n": 69,
+        "p_play": 1.0,
+        "plays": 69
+      }
+    },
+    "p_play_by_hand_type": {
+      "Flush": {
+        "n": 30,
+        "p_play": 1.0,
+        "plays": 30
+      },
+      "Four of a Kind": {
+        "n": 2,
+        "p_play": 1.0,
+        "plays": 2
+      },
+      "Full House": {
+        "n": 9,
+        "p_play": 1.0,
+        "plays": 9
+      },
+      "High Card": {
+        "n": 54,
+        "p_play": 1.0,
+        "plays": 54
+      },
+      "Pair": {
+        "n": 164,
+        "p_play": 1.0,
+        "plays": 164
+      },
+      "Straight": {
+        "n": 41,
+        "p_play": 1.0,
+        "plays": 41
+      },
+      "Three of a Kind": {
+        "n": 14,
+        "p_play": 1.0,
+        "plays": 14
+      },
+      "Two Pair": {
+        "n": 114,
+        "p_play": 1.0,
+        "plays": 114
+      }
+    },
+    "summary": {
+      "chips_mean": 518.5333333333333,
+      "chips_sd": 313.58127424250887,
+      "clear_rate": 0.0,
+      "hands_per_game": 7.133333333333334,
+      "n_games": 60,
+      "n_hands": 428,
+      "p_play": 1.0,
+      "p_play_when_legal": 1.0,
+      "punish_rate": 0.14018691588785046,
+      "reward_rate": 0.40186915887850466,
+      "rounds_mean": 1.0833333333333333,
+      "truncated": 0
+    }
+  },
+  "bucket_ge1": {
+    "p_play_by_bucket": {
+      "ge1.0": {
+        "n": 49,
+        "p_play": 1.0,
+        "plays": 49
+      },
+      "lt0.25": {
+        "n": 188,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt0.5": {
+        "n": 144,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt1.0": {
+        "n": 236,
+        "p_play": 0.0,
+        "plays": 0
+      }
+    },
+    "p_play_by_hand_type": {
+      "Flush": {
+        "n": 81,
+        "p_play": 0.06172839506172839,
+        "plays": 5
+      },
+      "Four of a Kind": {
+        "n": 17,
+        "p_play": 0.8235294117647058,
+        "plays": 14
+      },
+      "Full House": {
+        "n": 175,
+        "p_play": 0.13142857142857142,
+        "plays": 23
+      },
+      "High Card": {
+        "n": 9,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Pair": {
+        "n": 66,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Straight": {
+        "n": 54,
+        "p_play": 0.1111111111111111,
+        "plays": 6
+      },
+      "Three of a Kind": {
+        "n": 16,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "Two Pair": {
+        "n": 199,
+        "p_play": 0.005025125628140704,
+        "plays": 1
+      }
+    },
+    "summary": {
+      "chips_mean": 832.5166666666667,
+      "chips_sd": 307.91478754501037,
+      "clear_rate": 0.38333333333333336,
+      "hands_per_game": 16.283333333333335,
+      "n_games": 60,
+      "n_hands": 977,
+      "p_play": 0.4186284544524053,
+      "p_play_when_legal": 0.07941653160453808,
+      "punish_rate": 0.09046454767726161,
+      "reward_rate": 0.7041564792176039,
+      "rounds_mean": 1.8166666666666667,
+      "truncated": 0
+    }
+  },
+  "bucket_ge_lt1": {
+    "p_play_by_bucket": {
+      "ge1.0": {
+        "n": 112,
+        "p_play": 1.0,
+        "plays": 112
+      },
+      "lt0.25": {
+        "n": 220,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt0.5": {
+        "n": 189,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt1.0": {
+        "n": 144,
+        "p_play": 1.0,
+        "plays": 144
+      }
+    },
+    "p_play_by_hand_type": {
+      "Flush": {
+        "n": 49,
+        "p_play": 0.7959183673469388,
+        "plays": 39
+      },
+      "Four of a Kind": {
+        "n": 10,
+        "p_play": 1.0,
+        "plays": 10
+      },
+      "Full House": {
+        "n": 107,
+        "p_play": 0.9065420560747663,
+        "plays": 97
+      },
+      "High Card": {
+        "n": 21,
+        "p_play": 0.09523809523809523,
+        "plays": 2
+      },
+      "Pair": {
+        "n": 124,
+        "p_play": 0.18548387096774194,
+        "plays": 23
+      },
+      "Straight": {
+        "n": 41,
+        "p_play": 0.6097560975609756,
+        "plays": 25
+      },
+      "Three of a Kind": {
+        "n": 33,
+        "p_play": 0.36363636363636365,
+        "plays": 12
+      },
+      "Two Pair": {
+        "n": 280,
+        "p_play": 0.17142857142857143,
+        "plays": 48
+      }
+    },
+    "summary": {
+      "chips_mean": 1000.6333333333333,
+      "chips_sd": 305.6552506047004,
+      "clear_rate": 0.6333333333333333,
+      "hands_per_game": 13.833333333333334,
+      "n_games": 60,
+      "n_hands": 830,
+      "p_play": 0.5072289156626506,
+      "p_play_when_legal": 0.3849624060150376,
+      "punish_rate": 0.052256532066508314,
+      "reward_rate": 0.8218527315914489,
+      "rounds_mean": 1.8666666666666667,
+      "truncated": 0
+    }
+  },
+  "bucket_ge_lt1_lt05": {
+    "p_play_by_bucket": {
+      "ge1.0": {
+        "n": 132,
+        "p_play": 1.0,
+        "plays": 132
+      },
+      "lt0.25": {
+        "n": 264,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt0.5": {
+        "n": 163,
+        "p_play": 1.0,
+        "plays": 163
+      },
+      "lt1.0": {
+        "n": 140,
+        "p_play": 1.0,
+        "plays": 140
+      }
+    },
+    "p_play_by_hand_type": {
+      "Flush": {
+        "n": 45,
+        "p_play": 1.0,
+        "plays": 45
+      },
+      "Four of a Kind": {
+        "n": 4,
+        "p_play": 1.0,
+        "plays": 4
+      },
+      "Full House": {
+        "n": 77,
+        "p_play": 1.0,
+        "plays": 77
+      },
+      "High Card": {
+        "n": 33,
+        "p_play": 0.09090909090909091,
+        "plays": 3
+      },
+      "Pair": {
+        "n": 180,
+        "p_play": 0.37777777777777777,
+        "plays": 68
+      },
+      "Straight": {
+        "n": 45,
+        "p_play": 1.0,
+        "plays": 45
+      },
+      "Three of a Kind": {
+        "n": 33,
+        "p_play": 0.8484848484848485,
+        "plays": 28
+      },
+      "Two Pair": {
+        "n": 282,
+        "p_play": 0.5851063829787234,
+        "plays": 165
+      }
+    },
+    "summary": {
+      "chips_mean": 1000.0833333333334,
+      "chips_sd": 304.6388731852118,
+      "clear_rate": 0.5,
+      "hands_per_game": 12.966666666666667,
+      "n_games": 60,
+      "n_hands": 778,
+      "p_play": 0.6606683804627249,
+      "p_play_when_legal": 0.6223175965665236,
+      "punish_rate": 0.058365758754863814,
+      "reward_rate": 0.7762645914396887,
+      "rounds_mean": 1.8166666666666667,
+      "truncated": 0
+    }
+  },
+  "eval_games": 60,
+  "eval_seed0": 100000,
+  "teacher_dig": {
+    "p_play_by_bucket": {
+      "ge1.0": {
+        "n": 143,
+        "p_play": 1.0,
+        "plays": 143
+      },
+      "lt0.25": {
+        "n": 260,
+        "p_play": 0.0,
+        "plays": 0
+      },
+      "lt0.5": {
+        "n": 176,
+        "p_play": 0.6931818181818182,
+        "plays": 122
+      },
+      "lt1.0": {
+        "n": 156,
+        "p_play": 0.9807692307692307,
+        "plays": 153
+      }
+    },
+    "p_play_by_hand_type": {
+      "Flush": {
+        "n": 44,
+        "p_play": 1.0,
+        "plays": 44
+      },
+      "Four of a Kind": {
+        "n": 4,
+        "p_play": 1.0,
+        "plays": 4
+      },
+      "Full House": {
+        "n": 90,
+        "p_play": 1.0,
+        "plays": 90
+      },
+      "High Card": {
+        "n": 28,
+        "p_play": 0.03571428571428571,
+        "plays": 1
+      },
+      "Pair": {
+        "n": 180,
+        "p_play": 0.2,
+        "plays": 36
+      },
+      "Straight": {
+        "n": 44,
+        "p_play": 1.0,
+        "plays": 44
+      },
+      "Three of a Kind": {
+        "n": 36,
+        "p_play": 0.8055555555555556,
+        "plays": 29
+      },
+      "Two Pair": {
+        "n": 309,
+        "p_play": 0.5501618122977346,
+        "plays": 170
+      }
+    },
+    "summary": {
+      "chips_mean": 1088.1833333333334,
+      "chips_sd": 289.5534775976433,
+      "clear_rate": 0.7,
+      "hands_per_game": 13.816666666666666,
+      "n_games": 60,
+      "n_hands": 829,
+      "p_play": 0.617611580217129,
+      "p_play_when_legal": 0.5687074829931973,
+      "punish_rate": 0.03515625,
+      "reward_rate": 0.876953125,
+      "rounds_mean": 1.9,
+      "truncated": 0
+    }
+  }
+}

@@ -1,0 +1,279 @@
+=== 18:00:26 waiting for the raw-variant features
+=== 18:10:27 have outputs/calyx/raw/real/feats_real.npz
+=== 18:25:57 have outputs/calyx/raw/rw1/feats_real.npz
+=== 18:38:57 have outputs/calyx/raw/rw2/feats_real.npz
+=== 18:52:58 have outputs/calyx/raw/rw3/feats_real.npz
+=== 18:52:58 probe raw
+[raw/real] present; skipping
+[raw/rw1]
+      kc     acc 0.994 grouped 0.992 perm 0.178 (12s)
+      kcbin  acc 0.988 grouped 0.992 perm 0.2 (2s)
+      dn     acc 0.602 grouped 0.6 perm 0.17 (3s)
+      alpn   acc 1.0 grouped 1.0 perm 0.18 (2s)
+      mbon   acc 0.322 grouped 0.316 perm 0.146 (0s)
+[raw/rw2]
+      kc     acc 0.986 grouped 0.992 perm 0.194 (2s)
+      kcbin  acc 0.984 grouped 0.99 perm 0.186 (2s)
+      dn     acc 0.626 grouped 0.598 perm 0.164 (3s)
+      alpn   acc 1.0 grouped 1.0 perm 0.178 (2s)
+      mbon   acc 0.302 grouped 0.296 perm 0.192 (1s)
+[raw/rw3]
+      kc     acc 0.99 grouped 0.992 perm 0.178 (2s)
+      kcbin  acc 0.986 grouped 0.986 perm 0.176 (2s)
+      dn     acc 0.634 grouped 0.602 perm 0.16 (3s)
+      alpn   acc 1.0 grouped 1.0 perm 0.16 (2s)
+      mbon   acc 0.34 grouped 0.332 perm 0.198 (0s)
+wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_raw.json
+=== 18:53:40 train raw
+[raw/real/kc] top1 0.7085 (d=993/4064, 38s)
+[raw/real/dn] top1 0.6606 (d=654/1314, 22s)
+[raw/rw1/kc] top1 0.7159 (d=965/4064, 34s)
+[raw/rw1/dn] top1 0.6573 (d=660/1314, 20s)
+[raw/rw2/kc] top1 0.7246 (d=992/4064, 32s)
+[raw/rw2/dn] top1 0.6616 (d=659/1314, 21s)
+[raw/rw3/kc] top1 0.7147 (d=967/4064, 33s)
+[raw/rw3/dn] top1 0.6620 (d=654/1314, 23s)
+=== 18:57:35 waiting for the per-KC homeostasis
+=== 18:57:35 have outputs/calyx/tuned_real.json
+=== 18:57:35 have outputs/calyx/tuned_rw1.json
+=== 18:57:35 have outputs/calyx/tuned_rw2.json
+=== 18:57:35 have outputs/calyx/tuned_rw3.json
+=== 18:57:35 features homeo
+[homeo/real] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
+[homeo/real] 1,250/4,962 rows 2.4 min  8.8/s  ETA 7.1 min
+[homeo/real] 2,500/4,962 rows 4.0 min  10.5/s  ETA 3.9 min
+[homeo/real] 3,750/4,962 rows 5.9 min  10.5/s  ETA 1.9 min
+[homeo/real] 4,962/4,962 rows 7.3 min  11.3/s  ETA 0.0 min
+[homeo/real] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/real/feats_real.npz (4 MB) in 7.3 min
+[homeo/rw1] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
+[homeo/rw1] 1,250/4,962 rows 2.2 min  9.6/s  ETA 6.5 min
+[homeo/rw1] 2,500/4,962 rows 3.5 min  11.9/s  ETA 3.5 min
+[homeo/rw1] 3,750/4,962 rows 5.8 min  10.8/s  ETA 1.9 min
+[homeo/rw1] 4,962/4,962 rows 7.2 min  11.5/s  ETA 0.0 min
+[homeo/rw1] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/rw1/feats_real.npz (4 MB) in 7.2 min
+[homeo/rw2] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
+[homeo/rw2] 1,250/4,962 rows 2.1 min  9.8/s  ETA 6.3 min
+[homeo/rw2] 2,500/4,962 rows 3.4 min  12.1/s  ETA 3.4 min
+[homeo/rw2] 3,750/4,962 rows 5.4 min  11.7/s  ETA 1.7 min
+[homeo/rw2] 4,962/4,962 rows 6.7 min  12.4/s  ETA 0.0 min
+[homeo/rw2] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/rw2/feats_real.npz (4 MB) in 6.7 min
+[homeo/rw3] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
+[homeo/rw3] 1,250/4,962 rows 1.9 min  10.8/s  ETA 5.7 min
+[homeo/rw3] 2,500/4,962 rows 3.2 min  12.9/s  ETA 3.2 min
+[homeo/rw3] 3,750/4,962 rows 5.2 min  12.1/s  ETA 1.7 min
+[homeo/rw3] 4,962/4,962 rows 6.5 min  12.8/s  ETA 0.0 min
+[homeo/rw3] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/rw3/feats_real.npz (4 MB) in 6.5 min
+=== 19:25:20 probe homeo
+[homeo/real]
+      kc     acc 1.0 grouped 1.0 perm 0.138 (4s)
+      kcbin  acc 1.0 grouped 1.0 perm 0.144 (6s)
+      dn     acc 0.652 grouped 0.676 perm 0.202 (4s)
+      alpn   acc 1.0 grouped 1.0 perm 0.154 (2s)
+      mbon   acc 0.602 grouped 0.6 perm 0.188 (1s)
+[homeo/rw1]
+      kc     acc 1.0 grouped 0.998 perm 0.178 (4s)
+      kcbin  acc 1.0 grouped 0.998 perm 0.176 (4s)
+      dn     acc 0.65 grouped 0.616 perm 0.164 (3s)
+      alpn   acc 1.0 grouped 1.0 perm 0.174 (2s)
+      mbon   acc 0.668 grouped 0.662 perm 0.194 (1s)
+[homeo/rw2]
+      kc     acc 1.0 grouped 1.0 perm 0.146 (3s)
+      kcbin  acc 1.0 grouped 1.0 perm 0.148 (3s)
+      dn     acc 0.642 grouped 0.638 perm 0.166 (3s)
+      alpn   acc 1.0 grouped 1.0 perm 0.18 (2s)
+      mbon   acc 0.678 grouped 0.668 perm 0.234 (0s)
+[homeo/rw3]
+      kc     acc 1.0 grouped 1.0 perm 0.174 (3s)
+      kcbin  acc 1.0 grouped 1.0 perm 0.168 (3s)
+      dn     acc 0.63 grouped 0.62 perm 0.178 (3s)
+      alpn   acc 1.0 grouped 1.0 perm 0.2 (2s)
+      mbon   acc 0.662 grouped 0.632 perm 0.208 (0s)
+wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_homeo.json
+=== 19:26:20 train homeo
+[homeo/real/kc] top1 0.7498 (d=2790/4064, 44s)
+[homeo/real/dn] top1 0.6587 (d=645/1314, 22s)
+[homeo/rw1/kc] top1 0.7491 (d=2896/4064, 44s)
+[homeo/rw1/dn] top1 0.6645 (d=651/1314, 22s)
+[homeo/rw2/kc] top1 0.7493 (d=2742/4064, 44s)
+[homeo/rw2/dn] top1 0.6660 (d=642/1314, 22s)
+[homeo/rw3/kc] top1 0.7478 (d=2755/4064, 44s)
+[homeo/rw3/dn] top1 0.6632 (d=645/1314, 23s)
+=== 19:30:59 live play, homeo
+[homeo/real] 2 readouts x 400 episodes = 800 jobs
+[homeo/real] 100/800  3.3 min  ETA 22.8 min
+[homeo/real] 200/800  5.1 min  ETA 15.3 min
+[homeo/real] 300/800  6.3 min  ETA 10.5 min
+[homeo/real] 400/800  7.2 min  ETA 7.2 min
+[homeo/real] 500/800  7.7 min  ETA 4.6 min
+[homeo/real] 600/800  8.0 min  ETA 2.7 min
+[homeo/real] 700/800  8.4 min  ETA 1.2 min
+[homeo/real] 800/800  8.7 min  ETA 0.0 min
+  calyx_real_kc: clear 0.380 chips 936 best-subset 0.7992346187812776
+  calyx_real_dn: clear 0.018 chips 495 best-subset 0.36156949028236157
+[homeo/rw1] 2 readouts x 400 episodes = 800 jobs
+[homeo/rw1] 100/800  3.3 min  ETA 22.8 min
+[homeo/rw1] 200/800  24.8 min  ETA 74.5 min
+[homeo/rw1] 300/800  25.7 min  ETA 42.8 min
+[homeo/rw1] 400/800  26.2 min  ETA 26.2 min
+[homeo/rw1] 500/800  26.6 min  ETA 16.0 min
+[homeo/rw1] 600/800  27.0 min  ETA 9.0 min
+[homeo/rw1] 700/800  27.3 min  ETA 3.9 min
+[homeo/rw1] 800/800  27.5 min  ETA 0.0 min
+  calyx_rw1_kc: clear 0.383 chips 930 best-subset 0.8164108618654073
+  calyx_rw1_dn: clear 0.033 chips 511 best-subset 0.36721546170365066
+[homeo/rw2] 2 readouts x 400 episodes = 800 jobs
+[homeo/rw2] 100/800  2.2 min  ETA 15.7 min
+[homeo/rw2] 200/800  3.4 min  ETA 10.2 min
+[homeo/rw2] 300/800  4.3 min  ETA 7.1 min
+[homeo/rw2] 400/800  4.8 min  ETA 4.8 min
+[homeo/rw2] 500/800  5.2 min  ETA 3.1 min
+[homeo/rw2] 600/800  5.5 min  ETA 1.8 min
+[homeo/rw2] 700/800  5.7 min  ETA 0.8 min
+[homeo/rw2] 800/800  5.9 min  ETA 0.0 min
+  calyx_rw2_kc: clear 0.357 chips 923 best-subset 0.7988676996424314
+  calyx_rw2_dn: clear 0.033 chips 501 best-subset 0.3527927927927928
+[homeo/rw3] 2 readouts x 400 episodes = 800 jobs
+[homeo/rw3] 100/800  2.4 min  ETA 16.5 min
+[homeo/rw3] 200/800  3.7 min  ETA 11.0 min
+[homeo/rw3] 300/800  4.5 min  ETA 7.5 min
+[homeo/rw3] 400/800  5.0 min  ETA 5.0 min
+[homeo/rw3] 500/800  5.4 min  ETA 3.3 min
+[homeo/rw3] 600/800  5.7 min  ETA 1.9 min
+[homeo/rw3] 700/800  6.0 min  ETA 0.9 min
+[homeo/rw3] 800/800  6.2 min  ETA 0.0 min
+  calyx_rw3_kc: clear 0.338 chips 916 best-subset 0.816884661117717
+  calyx_rw3_dn: clear 0.025 chips 502 best-subset 0.3564139941690962
+=== 20:19:21 live play, raw
+[raw/real] 2 readouts x 400 episodes = 800 jobs
+[raw/real] 100/800  2.1 min  ETA 15.0 min
+[raw/real] 200/800  3.3 min  ETA 10.0 min
+[raw/real] 300/800  4.2 min  ETA 7.0 min
+[raw/real] 400/800  4.7 min  ETA 4.7 min
+[raw/real] 500/800  5.1 min  ETA 3.1 min
+[raw/real] 600/800  5.4 min  ETA 1.8 min
+[raw/real] 700/800  5.6 min  ETA 0.8 min
+[raw/real] 800/800  5.8 min  ETA 0.0 min
+  calyx_real_kc: clear 0.265 chips 843 best-subset 0.6777251184834123
+  calyx_real_dn: clear 0.033 chips 514 best-subset 0.39313795568263044
+[raw/rw1] 2 readouts x 400 episodes = 800 jobs
+[raw/rw1] 100/800  2.2 min  ETA 15.4 min
+[raw/rw1] 200/800  3.4 min  ETA 10.1 min
+[raw/rw1] 300/800  4.2 min  ETA 6.9 min
+[raw/rw1] 400/800  4.7 min  ETA 4.7 min
+[raw/rw1] 500/800  5.1 min  ETA 3.0 min
+[raw/rw1] 600/800  5.3 min  ETA 1.8 min
+[raw/rw1] 700/800  5.6 min  ETA 0.8 min
+[raw/rw1] 800/800  5.8 min  ETA 0.0 min
+  calyx_rw1_kc: clear 0.247 chips 851 best-subset 0.7049522673031027
+  calyx_rw1_dn: clear 0.037 chips 494 best-subset 0.3811825957605058
+[raw/rw2] 2 readouts x 400 episodes = 800 jobs
+[raw/rw2] 100/800  2.1 min  ETA 15.0 min
+[raw/rw2] 200/800  3.3 min  ETA 9.9 min
+[raw/rw2] 300/800  4.1 min  ETA 6.8 min
+[raw/rw2] 400/800  4.7 min  ETA 4.7 min
+[raw/rw2] 500/800  5.1 min  ETA 3.0 min
+[raw/rw2] 600/800  5.3 min  ETA 1.8 min
+[raw/rw2] 700/800  5.5 min  ETA 0.8 min
+[raw/rw2] 800/800  5.8 min  ETA 0.0 min
+  calyx_rw2_kc: clear 0.250 chips 845 best-subset 0.7242962056303549
+  calyx_rw2_dn: clear 0.033 chips 489 best-subset 0.3633720930232558
+[raw/rw3] 2 readouts x 400 episodes = 800 jobs
+[raw/rw3] 100/800  2.1 min  ETA 14.9 min
+[raw/rw3] 200/800  3.3 min  ETA 9.9 min
+[raw/rw3] 300/800  4.0 min  ETA 6.7 min
+[raw/rw3] 400/800  4.6 min  ETA 4.6 min
+[raw/rw3] 500/800  4.9 min  ETA 3.0 min
+[raw/rw3] 600/800  5.2 min  ETA 1.7 min
+[raw/rw3] 700/800  5.5 min  ETA 0.8 min
+[raw/rw3] 800/800  5.6 min  ETA 0.0 min
+  calyx_rw3_kc: clear 0.275 chips 830 best-subset 0.7022574740695546
+  calyx_rw3_dn: clear 0.040 chips 512 best-subset 0.3935031376891842
+=== 20:42:18 paired stats homeo
+{
+  "kc": {
+    "imitation_top1": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 0.00108,
+      "min": 0.00055,
+      "max": 0.00201
+    },
+    "clear_rate": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 0.02083,
+      "min": -0.0025,
+      "max": 0.0425
+    },
+    "chips": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 13.425,
+      "min": 6.2525,
+      "max": 20.2525
+    }
+  },
+  "dn": {
+    "imitation_top1": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": -0.00587,
+      "min": -0.00731,
+      "max": -0.00447
+    },
+    "clear_rate": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": -0.0125,
+      "min": -0.015,
+      "max": -0.0075
+    },
+    "chips": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": -9.80917,
+      "min": -16.135,
+      "max": -6.5175
+    }
+  }
+}
+wrote /Users/abhipoluri/fly-balatro/outputs/calyx/paired_homeo.json
+=== 20:42:31 paired stats raw
+{
+  "kc": {
+    "imitation_top1": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": -0.00992,
+      "min": -0.01612,
+      "max": -0.00622
+    },
+    "clear_rate": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 0.0075,
+      "min": -0.01,
+      "max": 0.0175
+    },
+    "chips": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 1.12083,
+      "min": -7.98,
+      "max": 12.94
+    }
+  },
+  "dn": {
+    "imitation_top1": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 0.00026,
+      "min": -0.00147,
+      "max": 0.00324
+    },
+    "clear_rate": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": -0.00417,
+      "min": -0.0075,
+      "max": 0.0
+    },
+    "chips": {
+      "n_seeds": 3,
+      "mean_diff_real_minus_rewired": 16.00833,
+      "min": 2.2875,
+      "max": 25.5375
+    }
+  }
+}
+wrote /Users/abhipoluri/fly-balatro/outputs/calyx/paired_raw.json
+=== 20:42:42 CALYX RUN COMPLETE
