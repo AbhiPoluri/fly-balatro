@@ -1,0 +1,2 @@
+== D_s1 (reward=pace gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.343 P(play|legal) 0.721 grad 0.7364 | sampled clear 0.247 | terminal pulses 73 | 243s

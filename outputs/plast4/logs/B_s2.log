@@ -1,0 +1,2 @@
+== B_s2 (reward=pace gamma=None eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.048 P(play|legal) 0.994 grad 0.013 | sampled clear 0.135 | terminal pulses 0 | 235s

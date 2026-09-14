@@ -1,0 +1,43 @@
+weights outputs/plast4/weights_C80_s0.npz  bias -1.7121  temperature 0.8149  eta_punish 0.0797
+24 distinct separated odours; lt0.25: 3, lt0.5: 7, lt1.0: 6, ge1.0: 8
+
+== arm anchor: 1 target odour(s), 120 pulses at eta 0.0797
+   pulse             lt0.25              lt0.5              lt1.0              ge1.0
+       0        -3.253/0.00        +9.045/1.00        +4.513/1.00        +6.441/1.00
+      20        -3.253/0.00        +9.045/1.00        +4.513/1.00        +6.820/1.00
+      40        -3.253/0.00        +9.002/1.00        +4.513/1.00        +6.820/1.00
+      60        -3.253/0.00        +9.002/1.00        +4.513/1.00        +6.820/1.00
+      80        -3.253/0.00        +9.002/1.00        +4.513/1.00        +6.820/1.00
+     100        -3.253/0.00        +9.002/1.00        +4.513/1.00        +6.820/1.00
+     120        -3.253/0.00        +9.002/1.00        +4.513/1.00        +6.820/1.00
+   first pulse where the mean drive goes negative: {'lt0.25': 0, 'lt0.5': None, 'lt1.0': None, 'ge1.0': None}
+   reachable KC -> approach synapses before: {'n_edges': 1079, 'n_kc_active': 335, 'mean_ratio': 0.06299, 'frac_at_floor': 0.836, 'frac_unchanged': 0.0}
+   reachable KC -> approach synapses after:  {'n_edges': 1099, 'n_kc_active': 342, 'mean_ratio': 0.05, 'frac_at_floor': 1.0, 'frac_unchanged': 0.0}
+
+== arm bucket: 7 target odour(s), 120 pulses at eta 0.0797
+   pulse             lt0.25              lt0.5              lt1.0              ge1.0
+       0        -3.253/0.00        +9.045/1.00        +4.513/1.00        +6.441/1.00
+      20        -3.253/0.00        +8.591/1.00        +4.664/1.00        +6.299/1.00
+      40        -3.253/0.00        +8.775/1.00        +4.904/1.00        +6.489/1.00
+      60        -3.354/0.00        +8.699/1.00        +4.374/1.00        +6.754/1.00
+      80        -3.354/0.00        +8.353/1.00        +5.056/1.00        +6.773/1.00
+     100        -3.354/0.00        +8.645/1.00        +5.106/1.00        +6.858/1.00
+     120        -3.354/0.00        +8.494/1.00        +4.626/1.00        +6.527/1.00
+   first pulse where the mean drive goes negative: {'lt0.25': 0, 'lt0.5': None, 'lt1.0': None, 'ge1.0': None}
+   reachable KC -> approach synapses before: {'n_edges': 2171, 'n_kc_active': 660, 'mean_ratio': 0.30378, 'frac_at_floor': 0.4592, 'frac_unchanged': 0.0}
+   reachable KC -> approach synapses after:  {'n_edges': 2104, 'n_kc_active': 639, 'mean_ratio': 0.1481, 'frac_at_floor': 0.6041, 'frac_unchanged': 0.0}
+
+== arm bucket_from_naive: 7 target odour(s), 120 pulses at eta 0.0797
+   pulse             lt0.25              lt0.5              lt1.0              ge1.0
+       0        +1.747/1.00        -0.002/0.29        -2.470/0.33        +1.498/0.88
+      20        +1.141/0.67        -2.329/0.14        -3.076/0.00        +1.072/0.62
+      40        +1.672/1.00        -4.147/0.00        -2.861/0.17        -0.320/0.50
+      60        +1.394/0.67        -3.909/0.14        -3.240/0.17        +0.229/0.50
+      80        +1.646/0.67        -3.519/0.14        -2.571/0.17        -0.008/0.50
+     100        +1.571/1.00        -3.400/0.14        -3.227/0.00        -0.216/0.50
+     120        +2.404/1.00        -3.877/0.14        -3.164/0.00        -0.169/0.50
+   first pulse where the mean drive goes negative: {'lt0.25': None, 'lt0.5': 0, 'lt1.0': 0, 'ge1.0': 38}
+   reachable KC -> approach synapses before: {'n_edges': 2072, 'n_kc_active': 628, 'mean_ratio': 1.0, 'frac_at_floor': 0.0, 'frac_unchanged': 1.0}
+   reachable KC -> approach synapses after:  {'n_edges': 2004, 'n_kc_active': 604, 'mean_ratio': 0.30617, 'frac_at_floor': 0.2236, 'frac_unchanged': 0.002}
+
+wrote <repo>/outputs/plast4/capacity.json

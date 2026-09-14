@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "checks": {
+        "greedy_chips": true,
+        "greedy_clear_rate": true,
+        "greedy_cleared": true,
+        "sampled_chips": true,
+        "sampled_clear_rate": true,
+        "sampled_cleared": true
+      },
+      "failed": [],
+      "new": "outputs/plast4/run_frozen.json",
+      "old": "outputs/plast3/run_frozen_separated.json",
+      "status": "ok"
+    },
+    {
+      "checks": {
+        "greedy_chips": true,
+        "greedy_clear_rate": true,
+        "greedy_cleared": true,
+        "n_synapses_differing": 0,
+        "sampled_chips": true,
+        "sampled_clear_rate": true,
+        "sampled_cleared": true,
+        "weights_bit_identical": true
+      },
+      "failed": [],
+      "new": "outputs/plast4/run_A_s0.json",
+      "old": "outputs/plast3/run_omission_separated_s0.json",
+      "status": "ok"
+    },
+    {
+      "checks": {
+        "greedy_chips": true,
+        "greedy_clear_rate": true,
+        "greedy_cleared": true,
+        "n_synapses_differing": 0,
+        "sampled_chips": true,
+        "sampled_clear_rate": true,
+        "sampled_cleared": true,
+        "weights_bit_identical": true
+      },
+      "failed": [],
+      "new": "outputs/plast4/run_A_s1.json",
+      "old": "outputs/plast3/run_omission_separated_s1.json",
+      "status": "ok"
+    },
+    {
+      "checks": {
+        "greedy_chips": true,
+        "greedy_clear_rate": true,
+        "greedy_cleared": true,
+        "n_synapses_differing": 0,
+        "sampled_chips": true,
+        "sampled_clear_rate": true,
+        "sampled_cleared": true,
+        "weights_bit_identical": true
+      },
+      "failed": [],
+      "new": "outputs/plast4/run_A_s2.json",
+      "old": "outputs/plast3/run_omission_separated_s2.json",
+      "status": "ok"
+    }
+  ]
+}

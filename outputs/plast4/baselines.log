@@ -1,0 +1,7 @@
+baselines (400 games):
+  always_play          clear 0.037 chips 466
+  always_discard       clear 0.383 chips 835
+  teacher_dig          clear 0.672 chips 1096
+  bucket_ge1           clear 0.403 chips 833
+  bucket_ge_lt1        clear 0.530 chips 962
+  bucket_ge_lt1_lt05   clear 0.448 chips 966

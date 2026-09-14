@@ -1,0 +1,2 @@
+== frozen (reward=- gamma=- eta_r=0 eta_p=0) ==
+   greedy clear 0.172 P(play|legal) 0.519 grad -0.6163 | sampled clear 0.217 | terminal pulses 0 | 54s

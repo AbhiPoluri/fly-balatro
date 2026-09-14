@@ -1,0 +1,2 @@
+== C80_s1 (reward=share gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.445 | terminal pulses 52 | 242s

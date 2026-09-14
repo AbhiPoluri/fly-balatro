@@ -1,0 +1,2189 @@
+{
+  "baselines": {
+    "always_discard": 0.3825,
+    "always_play": 0.0375,
+    "bucket_ge1": 0.4025,
+    "bucket_ge_lt1": 0.53,
+    "bucket_ge_lt1_lt05": 0.4475,
+    "teacher_dig": 0.6725
+  },
+  "conditions": {
+    "A": {
+      "gamma": null,
+      "label": "baseline: v3 omission/separated, share reward",
+      "ledger": {
+        "ge1.0": {
+          "n_terminal_pulses": 0,
+          "net": 579.0,
+          "net_lower_bound": 579,
+          "p_play_greedy": 0.9967,
+          "p_play_sampled": 0.9499,
+          "plays": 587,
+          "punish_immediate": 4,
+          "punish_trace_weight": 0.0,
+          "reward": 583,
+          "rewarded_but_lost": 0
+        },
+        "lt0.25": {
+          "n_terminal_pulses": 0,
+          "net": -387.0,
+          "net_lower_bound": -387,
+          "p_play_greedy": 0.0587,
+          "p_play_sampled": 0.1189,
+          "plays": 387,
+          "punish_immediate": 387,
+          "punish_trace_weight": 0.0,
+          "reward": 0,
+          "rewarded_but_lost": 0
+        },
+        "lt0.5": {
+          "n_terminal_pulses": 0,
+          "net": 115.0,
+          "net_lower_bound": 115,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9451,
+          "plays": 747,
+          "punish_immediate": 316,
+          "punish_trace_weight": 0.0,
+          "reward": 431,
+          "rewarded_but_lost": 0
+        },
+        "lt1.0": {
+          "n_terminal_pulses": 0,
+          "net": 467.0,
+          "net_lower_bound": 467,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9503,
+          "plays": 653,
+          "punish_immediate": 93,
+          "punish_trace_weight": 0.0,
+          "reward": 560,
+          "rewarded_but_lost": 0
+        }
+      },
+      "modes": {
+        "greedy": {
+          "bucket_gradient": 0.938,
+          "chips_mean": 920.7,
+          "clear_rate": 0.4067,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.1725,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 100,
+              "b10": 77,
+              "n_discordant": 177,
+              "p_exact": 0.09792971039700368
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 51,
+              "b10": 112,
+              "n_discordant": 163,
+              "p_exact": 2.0052831067808572e-06
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9967,
+            "lt0.25": 0.0587,
+            "lt0.5": 1.0,
+            "lt1.0": 1.0
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.1761,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 0.99,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            }
+          ],
+          "p_play_when_legal": 0.6461,
+          "per_run_clear": [
+            0.4475,
+            0.325,
+            0.4475
+          ],
+          "vs_discard": {
+            "ci_hi": 0.1125,
+            "ci_lo": -0.0725,
+            "delta": 0.0242,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.6184,
+            "per_run_delta": [
+              0.065,
+              -0.0575,
+              0.065
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.32,
+            "ci_lo": 0.1408,
+            "delta": 0.2342,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.275,
+              0.1525,
+              0.275
+            ],
+            "significant": true
+          }
+        },
+        "sampled": {
+          "bucket_gradient": 0.8309,
+          "chips_mean": 939.0,
+          "clear_rate": 0.4133,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.2175,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 78,
+              "b10": 95,
+              "n_discordant": 173,
+              "p_exact": 0.22370496818590446
+            },
+            {
+              "b01": 98,
+              "b10": 87,
+              "n_discordant": 185,
+              "p_exact": 0.4623030339182505
+            },
+            {
+              "b01": 80,
+              "b10": 111,
+              "n_discordant": 191,
+              "p_exact": 0.029685116378403407
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 44,
+              "b10": 127,
+              "n_discordant": 171,
+              "p_exact": 1.5654765248120956e-10
+            },
+            {
+              "b01": 55,
+              "b10": 110,
+              "n_discordant": 165,
+              "p_exact": 2.227821511672589e-05
+            },
+            {
+              "b01": 44,
+              "b10": 141,
+              "n_discordant": 185,
+              "p_exact": 4.800674712135246e-13
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9499,
+            "lt0.25": 0.1189,
+            "lt0.5": 0.9451,
+            "lt1.0": 0.9503
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.9465,
+              "lt0.25": 0.0912,
+              "lt0.5": 0.9431,
+              "lt1.0": 0.9501
+            },
+            {
+              "ge1.0": 0.9563,
+              "lt0.25": 0.1673,
+              "lt0.5": 0.9481,
+              "lt1.0": 0.9505
+            },
+            {
+              "ge1.0": 0.9467,
+              "lt0.25": 0.0983,
+              "lt0.5": 0.944,
+              "lt1.0": 0.9502
+            }
+          ],
+          "p_play_when_legal": 0.6398,
+          "per_run_clear": [
+            0.425,
+            0.355,
+            0.46
+          ],
+          "vs_discard": {
+            "ci_hi": 0.1092,
+            "ci_lo": -0.0483,
+            "delta": 0.0308,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.4566,
+            "per_run_delta": [
+              0.0425,
+              -0.0275,
+              0.0775
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.2692,
+            "ci_lo": 0.12,
+            "delta": 0.1958,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.2075,
+              0.1375,
+              0.2425
+            ],
+            "significant": true
+          }
+        }
+      },
+      "n_runs": 3,
+      "name": "A",
+      "reward_rule": "share",
+      "trace_specificity": {
+        "n_pulses": 0,
+        "pulse_share": {},
+        "weight_share": {}
+      },
+      "train": {
+        "dopamine_counts": [
+          {
+            "none": 419,
+            "punish": 258,
+            "reward": 523
+          },
+          {
+            "none": 418,
+            "punish": 276,
+            "reward": 506
+          },
+          {
+            "none": 389,
+            "punish": 266,
+            "reward": 545
+          }
+        ],
+        "n_terminal_pulses": [
+          0,
+          0,
+          0
+        ],
+        "p_play_when_legal": [
+          0.618,
+          0.6217,
+          0.6539
+        ],
+        "reward_rule_agreement": [
+          {
+            "both": 518,
+            "flip_fraction": 0.06786,
+            "n_plays": 781,
+            "neither": 210,
+            "pace_only": 48,
+            "share_only": 5
+          },
+          {
+            "both": 500,
+            "flip_fraction": 0.06905,
+            "n_plays": 782,
+            "neither": 228,
+            "pace_only": 48,
+            "share_only": 6
+          },
+          {
+            "both": 535,
+            "flip_fraction": 0.05549,
+            "n_plays": 811,
+            "neither": 231,
+            "pace_only": 35,
+            "share_only": 10
+          }
+        ],
+        "trace_weight_delivered": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weight_mean_ratio": [
+          0.83813,
+          0.83452,
+          0.82985
+        ]
+      }
+    },
+    "B": {
+      "gamma": null,
+      "label": "pace reward: cumulative schedule, no re-baselining",
+      "ledger": {
+        "ge1.0": {
+          "n_terminal_pulses": 0,
+          "net": 590.0,
+          "net_lower_bound": 590,
+          "p_play_greedy": 0.9982,
+          "p_play_sampled": 0.9379,
+          "plays": 596,
+          "punish_immediate": 3,
+          "punish_trace_weight": 0.0,
+          "reward": 593,
+          "rewarded_but_lost": 0
+        },
+        "lt0.25": {
+          "n_terminal_pulses": 0,
+          "net": -463.0,
+          "net_lower_bound": -463,
+          "p_play_greedy": 0.5831,
+          "p_play_sampled": 0.4747,
+          "plays": 501,
+          "punish_immediate": 482,
+          "punish_trace_weight": 0.0,
+          "reward": 19,
+          "rewarded_but_lost": 0
+        },
+        "lt0.5": {
+          "n_terminal_pulses": 0,
+          "net": 247.0,
+          "net_lower_bound": 247,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9501,
+          "plays": 763,
+          "punish_immediate": 258,
+          "punish_trace_weight": 0.0,
+          "reward": 505,
+          "rewarded_but_lost": 0
+        },
+        "lt1.0": {
+          "n_terminal_pulses": 0,
+          "net": 439.0,
+          "net_lower_bound": 439,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9483,
+          "plays": 601,
+          "punish_immediate": 81,
+          "punish_trace_weight": 0.0,
+          "reward": 520,
+          "rewarded_but_lost": 0
+        }
+      },
+      "modes": {
+        "greedy": {
+          "bucket_gradient": 0.4151,
+          "chips_mean": 696.2,
+          "clear_rate": 0.2025,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.1725,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 138,
+              "b10": 30,
+              "n_discordant": 168,
+              "p_exact": 9.356563729642896e-18
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 149,
+              "b10": 15,
+              "n_discordant": 164,
+              "p_exact": 6.26631067466356e-29
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 57,
+              "b10": 33,
+              "n_discordant": 90,
+              "p_exact": 0.014866752945626244
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 61,
+              "b10": 11,
+              "n_discordant": 72,
+              "p_exact": 1.5488945360571046e-09
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9982,
+            "lt0.25": 0.5831,
+            "lt0.5": 1.0,
+            "lt1.0": 1.0
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.9947,
+              "lt0.25": 0.7623,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.987,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            }
+          ],
+          "p_play_when_legal": 0.8394,
+          "per_run_clear": [
+            0.1125,
+            0.4475,
+            0.0475
+          ],
+          "vs_discard": {
+            "ci_hi": 0.0525,
+            "ci_lo": -0.3492,
+            "delta": -0.18,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0938,
+            "per_run_delta": [
+              -0.27,
+              0.065,
+              -0.335
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.265,
+            "ci_lo": -0.1325,
+            "delta": 0.03,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.6994,
+            "per_run_delta": [
+              -0.06,
+              0.275,
+              -0.125
+            ],
+            "significant": false
+          }
+        },
+        "sampled": {
+          "bucket_gradient": 0.4632,
+          "chips_mean": 779.0,
+          "clear_rate": 0.2358,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.2175,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 130,
+              "b10": 46,
+              "n_discordant": 176,
+              "p_exact": 1.7753715701020167e-10
+            },
+            {
+              "b01": 87,
+              "b10": 94,
+              "n_discordant": 181,
+              "p_exact": 0.6557342476089654
+            },
+            {
+              "b01": 136,
+              "b10": 37,
+              "n_discordant": 173,
+              "p_exact": 1.6705633114727714e-14
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 72,
+              "b10": 54,
+              "n_discordant": 126,
+              "p_exact": 0.12957613928638628
+            },
+            {
+              "b01": 54,
+              "b10": 127,
+              "n_discordant": 181,
+              "p_exact": 5.825879754791359e-08
+            },
+            {
+              "b01": 75,
+              "b10": 42,
+              "n_discordant": 117,
+              "p_exact": 0.00292812834069717
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9379,
+            "lt0.25": 0.4747,
+            "lt0.5": 0.9501,
+            "lt1.0": 0.9483
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.9374,
+              "lt0.25": 0.5839,
+              "lt0.5": 0.9532,
+              "lt1.0": 0.945
+            },
+            {
+              "ge1.0": 0.9356,
+              "lt0.25": 0.195,
+              "lt0.5": 0.9429,
+              "lt1.0": 0.9532
+            },
+            {
+              "ge1.0": 0.9406,
+              "lt0.25": 0.6451,
+              "lt0.5": 0.9544,
+              "lt1.0": 0.9467
+            }
+          ],
+          "p_play_when_legal": 0.7557,
+          "per_run_clear": [
+            0.1725,
+            0.4,
+            0.135
+          ],
+          "vs_discard": {
+            "ci_hi": 0.01,
+            "ci_lo": -0.2725,
+            "delta": -0.1467,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0638,
+            "per_run_delta": [
+              -0.21,
+              0.0175,
+              -0.2475
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.175,
+            "ci_lo": -0.1025,
+            "delta": 0.0183,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.7956,
+            "per_run_delta": [
+              -0.045,
+              0.1825,
+              -0.0825
+            ],
+            "significant": false
+          }
+        }
+      },
+      "n_runs": 3,
+      "name": "B",
+      "reward_rule": "pace",
+      "trace_specificity": {
+        "n_pulses": 0,
+        "pulse_share": {},
+        "weight_share": {}
+      },
+      "train": {
+        "dopamine_counts": [
+          {
+            "none": 380,
+            "punish": 264,
+            "reward": 556
+          },
+          {
+            "none": 399,
+            "punish": 253,
+            "reward": 548
+          },
+          {
+            "none": 360,
+            "punish": 307,
+            "reward": 533
+          }
+        ],
+        "n_terminal_pulses": [
+          0,
+          0,
+          0
+        ],
+        "p_play_when_legal": [
+          0.6655,
+          0.6383,
+          0.6875
+        ],
+        "reward_rule_agreement": [
+          {
+            "both": 512,
+            "flip_fraction": 0.0622,
+            "n_plays": 820,
+            "neither": 257,
+            "pace_only": 44,
+            "share_only": 7
+          },
+          {
+            "both": 501,
+            "flip_fraction": 0.06742,
+            "n_plays": 801,
+            "neither": 246,
+            "pace_only": 47,
+            "share_only": 7
+          },
+          {
+            "both": 499,
+            "flip_fraction": 0.05238,
+            "n_plays": 840,
+            "neither": 297,
+            "pace_only": 34,
+            "share_only": 10
+          }
+        ],
+        "trace_weight_delivered": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weight_mean_ratio": [
+          0.83533,
+          0.83344,
+          0.82862
+        ]
+      }
+    },
+    "C100": {
+      "gamma": 1.0,
+      "label": "share reward + eligibility trace, gamma=1",
+      "ledger": {
+        "ge1.0": {
+          "n_terminal_pulses": 0,
+          "net": 607.0,
+          "net_lower_bound": 607,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9405,
+          "plays": 607,
+          "punish_immediate": 0,
+          "punish_trace_weight": 0.0,
+          "reward": 607,
+          "rewarded_but_lost": 0
+        },
+        "lt0.25": {
+          "n_terminal_pulses": 90,
+          "net": -500.0,
+          "net_lower_bound": -391,
+          "p_play_greedy": 0.0,
+          "p_play_sampled": 0.0926,
+          "plays": 301,
+          "punish_immediate": 301,
+          "punish_trace_weight": 199.0,
+          "reward": 0,
+          "rewarded_but_lost": 0
+        },
+        "lt0.5": {
+          "n_terminal_pulses": 126,
+          "net": -134.0,
+          "net_lower_bound": 19,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9499,
+          "plays": 745,
+          "punish_immediate": 300,
+          "punish_trace_weight": 279.0,
+          "reward": 445,
+          "rewarded_but_lost": 0
+        },
+        "lt1.0": {
+          "n_terminal_pulses": 104,
+          "net": 341.0,
+          "net_lower_bound": 379,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9428,
+          "plays": 633,
+          "punish_immediate": 75,
+          "punish_trace_weight": 142.0,
+          "reward": 558,
+          "rewarded_but_lost": 0
+        }
+      },
+      "modes": {
+        "greedy": {
+          "bucket_gradient": 1.0,
+          "chips_mean": 965.6,
+          "clear_rate": 0.4475,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.1725,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 1.0,
+            "lt0.25": 0.0,
+            "lt0.5": 1.0,
+            "lt1.0": 1.0
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            }
+          ],
+          "p_play_when_legal": 0.6312,
+          "per_run_clear": [
+            0.4475,
+            0.4475,
+            0.4475
+          ],
+          "vs_discard": {
+            "ci_hi": 0.13,
+            "ci_lo": 0.0,
+            "delta": 0.065,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0584,
+            "per_run_delta": [
+              0.065,
+              0.065,
+              0.065
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.3375,
+            "ci_lo": 0.21,
+            "delta": 0.275,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.275,
+              0.275,
+              0.275
+            ],
+            "significant": true
+          }
+        },
+        "sampled": {
+          "bucket_gradient": 0.8479,
+          "chips_mean": 963.9,
+          "clear_rate": 0.4325,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.2175,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 83,
+              "b10": 107,
+              "n_discordant": 190,
+              "p_exact": 0.09493839319796081
+            },
+            {
+              "b01": 79,
+              "b10": 96,
+              "n_discordant": 175,
+              "p_exact": 0.22637499879272155
+            },
+            {
+              "b01": 80,
+              "b10": 99,
+              "n_discordant": 179,
+              "p_exact": 0.17833858983964604
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 45,
+              "b10": 135,
+              "n_discordant": 180,
+              "p_exact": 1.2091917721160735e-11
+            },
+            {
+              "b01": 41,
+              "b10": 124,
+              "n_discordant": 165,
+              "p_exact": 6.801109272670437e-11
+            },
+            {
+              "b01": 43,
+              "b10": 128,
+              "n_discordant": 171,
+              "p_exact": 5.3002595578100746e-11
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9405,
+            "lt0.25": 0.0926,
+            "lt0.5": 0.9499,
+            "lt1.0": 0.9428
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.9354,
+              "lt0.25": 0.0989,
+              "lt0.5": 0.9484,
+              "lt1.0": 0.949
+            },
+            {
+              "ge1.0": 0.9554,
+              "lt0.25": 0.0795,
+              "lt0.5": 0.948,
+              "lt1.0": 0.9405
+            },
+            {
+              "ge1.0": 0.9305,
+              "lt0.25": 0.0995,
+              "lt0.5": 0.9532,
+              "lt1.0": 0.9388
+            }
+          ],
+          "p_play_when_legal": 0.6293,
+          "per_run_clear": [
+            0.4425,
+            0.425,
+            0.43
+          ],
+          "vs_discard": {
+            "ci_hi": 0.1125,
+            "ci_lo": -0.0133,
+            "delta": 0.05,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.1258,
+            "per_run_delta": [
+              0.06,
+              0.0425,
+              0.0475
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.2725,
+            "ci_lo": 0.1575,
+            "delta": 0.215,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.225,
+              0.2075,
+              0.2125
+            ],
+            "significant": true
+          }
+        }
+      },
+      "n_runs": 3,
+      "name": "C100",
+      "reward_rule": "share",
+      "trace_specificity": {
+        "n_pulses": 155,
+        "pulse_share": {
+          "ge1.0": 0.0,
+          "lt0.25": 0.5806,
+          "lt0.5": 0.8129,
+          "lt1.0": 0.671
+        },
+        "weight_share": {
+          "ge1.0": 0.0,
+          "lt0.25": 0.321,
+          "lt0.5": 0.45,
+          "lt1.0": 0.229
+        }
+      },
+      "train": {
+        "dopamine_counts": [
+          {
+            "none": 440,
+            "punish": 219,
+            "reward": 541
+          },
+          {
+            "none": 444,
+            "punish": 231,
+            "reward": 525
+          },
+          {
+            "none": 430,
+            "punish": 226,
+            "reward": 544
+          }
+        ],
+        "n_terminal_pulses": [
+          46,
+          52,
+          57
+        ],
+        "p_play_when_legal": [
+          0.5978,
+          0.5904,
+          0.6015
+        ],
+        "reward_rule_agreement": [
+          {
+            "both": 537,
+            "flip_fraction": 0.06316,
+            "n_plays": 760,
+            "neither": 175,
+            "pace_only": 44,
+            "share_only": 4
+          },
+          {
+            "both": 517,
+            "flip_fraction": 0.07672,
+            "n_plays": 756,
+            "neither": 181,
+            "pace_only": 50,
+            "share_only": 8
+          },
+          {
+            "both": 540,
+            "flip_fraction": 0.06104,
+            "n_plays": 770,
+            "neither": 183,
+            "pace_only": 43,
+            "share_only": 4
+          }
+        ],
+        "trace_weight_delivered": [
+          19378.0,
+          21434.0,
+          24208.0
+        ],
+        "weight_mean_ratio": [
+          0.81825,
+          0.82263,
+          0.8178
+        ]
+      }
+    },
+    "C50": {
+      "gamma": 0.5,
+      "label": "share reward + eligibility trace, gamma=0.5",
+      "ledger": {
+        "ge1.0": {
+          "n_terminal_pulses": 4,
+          "net": 586.0,
+          "net_lower_bound": 586,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.95,
+          "plays": 598,
+          "punish_immediate": 4,
+          "punish_trace_weight": 4.0,
+          "reward": 594,
+          "rewarded_but_lost": 0
+        },
+        "lt0.25": {
+          "n_terminal_pulses": 117,
+          "net": -436.2,
+          "net_lower_bound": -468,
+          "p_play_greedy": 0.0,
+          "p_play_sampled": 0.1175,
+          "plays": 351,
+          "punish_immediate": 351,
+          "punish_trace_weight": 85.2,
+          "reward": 0,
+          "rewarded_but_lost": 0
+        },
+        "lt0.5": {
+          "n_terminal_pulses": 141,
+          "net": -50.2,
+          "net_lower_bound": -53,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9482,
+          "plays": 724,
+          "punish_immediate": 318,
+          "punish_trace_weight": 138.2,
+          "reward": 406,
+          "rewarded_but_lost": 0
+        },
+        "lt1.0": {
+          "n_terminal_pulses": 110,
+          "net": 378.9,
+          "net_lower_bound": 362,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.938,
+          "plays": 618,
+          "punish_immediate": 73,
+          "punish_trace_weight": 93.1,
+          "reward": 545,
+          "rewarded_but_lost": 0
+        }
+      },
+      "modes": {
+        "greedy": {
+          "bucket_gradient": 1.0,
+          "chips_mean": 965.6,
+          "clear_rate": 0.4475,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.1725,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 1.0,
+            "lt0.25": 0.0,
+            "lt0.5": 1.0,
+            "lt1.0": 1.0
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            }
+          ],
+          "p_play_when_legal": 0.6312,
+          "per_run_clear": [
+            0.4475,
+            0.4475,
+            0.4475
+          ],
+          "vs_discard": {
+            "ci_hi": 0.13,
+            "ci_lo": 0.0,
+            "delta": 0.065,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0584,
+            "per_run_delta": [
+              0.065,
+              0.065,
+              0.065
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.3375,
+            "ci_lo": 0.21,
+            "delta": 0.275,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.275,
+              0.275,
+              0.275
+            ],
+            "significant": true
+          }
+        },
+        "sampled": {
+          "bucket_gradient": 0.8325,
+          "chips_mean": 944.7,
+          "clear_rate": 0.4308,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.2175,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 85,
+              "b10": 103,
+              "n_discordant": 188,
+              "p_exact": 0.21492179659284352
+            },
+            {
+              "b01": 78,
+              "b10": 100,
+              "n_discordant": 178,
+              "p_exact": 0.11523195131755455
+            },
+            {
+              "b01": 82,
+              "b10": 100,
+              "n_discordant": 182,
+              "p_exact": 0.2075033970186372
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 47,
+              "b10": 131,
+              "n_discordant": 178,
+              "p_exact": 2.2880685663222092e-10
+            },
+            {
+              "b01": 46,
+              "b10": 134,
+              "n_discordant": 180,
+              "p_exact": 3.599961156920952e-11
+            },
+            {
+              "b01": 43,
+              "b10": 127,
+              "n_discordant": 170,
+              "p_exact": 7.964576811457319e-11
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.95,
+            "lt0.25": 0.1175,
+            "lt0.5": 0.9482,
+            "lt1.0": 0.938
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.9421,
+              "lt0.25": 0.1415,
+              "lt0.5": 0.9474,
+              "lt1.0": 0.9333
+            },
+            {
+              "ge1.0": 0.9554,
+              "lt0.25": 0.1254,
+              "lt0.5": 0.9418,
+              "lt1.0": 0.9393
+            },
+            {
+              "ge1.0": 0.9524,
+              "lt0.25": 0.0858,
+              "lt0.5": 0.9555,
+              "lt1.0": 0.9413
+            }
+          ],
+          "p_play_when_legal": 0.6356,
+          "per_run_clear": [
+            0.4275,
+            0.4375,
+            0.4275
+          ],
+          "vs_discard": {
+            "ci_hi": 0.1075,
+            "ci_lo": -0.0117,
+            "delta": 0.0483,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.1276,
+            "per_run_delta": [
+              0.045,
+              0.055,
+              0.045
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.2675,
+            "ci_lo": 0.1575,
+            "delta": 0.2133,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.21,
+              0.22,
+              0.21
+            ],
+            "significant": true
+          }
+        }
+      },
+      "n_runs": 3,
+      "name": "C50",
+      "reward_rule": "share",
+      "trace_specificity": {
+        "n_pulses": 171,
+        "pulse_share": {
+          "ge1.0": 0.0234,
+          "lt0.25": 0.6842,
+          "lt0.5": 0.8246,
+          "lt1.0": 0.6433
+        },
+        "weight_share": {
+          "ge1.0": 0.0125,
+          "lt0.25": 0.2659,
+          "lt0.5": 0.4312,
+          "lt1.0": 0.2904
+        }
+      },
+      "train": {
+        "dopamine_counts": [
+          {
+            "none": 441,
+            "punish": 246,
+            "reward": 513
+          },
+          {
+            "none": 439,
+            "punish": 267,
+            "reward": 494
+          },
+          {
+            "none": 429,
+            "punish": 233,
+            "reward": 538
+          }
+        ],
+        "n_terminal_pulses": [
+          56,
+          59,
+          56
+        ],
+        "p_play_when_legal": [
+          0.5998,
+          0.5958,
+          0.6152
+        ],
+        "reward_rule_agreement": [
+          {
+            "both": 505,
+            "flip_fraction": 0.06456,
+            "n_plays": 759,
+            "neither": 205,
+            "pace_only": 41,
+            "share_only": 8
+          },
+          {
+            "both": 487,
+            "flip_fraction": 0.08804,
+            "n_plays": 761,
+            "neither": 207,
+            "pace_only": 60,
+            "share_only": 7
+          },
+          {
+            "both": 534,
+            "flip_fraction": 0.05577,
+            "n_plays": 771,
+            "neither": 194,
+            "pace_only": 39,
+            "share_only": 4
+          }
+        ],
+        "trace_weight_delivered": [
+          12209.94,
+          12122.0,
+          12419.5
+        ],
+        "weight_mean_ratio": [
+          0.8281,
+          0.8283,
+          0.82415
+        ]
+      }
+    },
+    "C80": {
+      "gamma": 0.8,
+      "label": "share reward + eligibility trace, gamma=0.8",
+      "ledger": {
+        "ge1.0": {
+          "n_terminal_pulses": 5,
+          "net": 602.6,
+          "net_lower_bound": 602,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9465,
+          "plays": 613,
+          "punish_immediate": 3,
+          "punish_trace_weight": 4.4,
+          "reward": 610,
+          "rewarded_but_lost": 0
+        },
+        "lt0.25": {
+          "n_terminal_pulses": 88,
+          "net": -432.3,
+          "net_lower_bound": -393,
+          "p_play_greedy": 0.0,
+          "p_play_sampled": 0.0947,
+          "plays": 305,
+          "punish_immediate": 305,
+          "punish_trace_weight": 127.3,
+          "reward": 0,
+          "rewarded_but_lost": 0
+        },
+        "lt0.5": {
+          "n_terminal_pulses": 134,
+          "net": -84.7,
+          "net_lower_bound": -9,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.947,
+          "plays": 727,
+          "punish_immediate": 301,
+          "punish_trace_weight": 209.7,
+          "reward": 426,
+          "rewarded_but_lost": 0
+        },
+        "lt1.0": {
+          "n_terminal_pulses": 103,
+          "net": 383.0,
+          "net_lower_bound": 405,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9451,
+          "plays": 650,
+          "punish_immediate": 71,
+          "punish_trace_weight": 125.0,
+          "reward": 579,
+          "rewarded_but_lost": 0
+        }
+      },
+      "modes": {
+        "greedy": {
+          "bucket_gradient": 1.0,
+          "chips_mean": 965.6,
+          "clear_rate": 0.4475,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.1725,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            },
+            {
+              "b01": 80,
+              "b10": 106,
+              "n_discordant": 186,
+              "p_exact": 0.06650043529883917
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            },
+            {
+              "b01": 42,
+              "b10": 152,
+              "n_discordant": 194,
+              "p_exact": 7.887937362218732e-16
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 1.0,
+            "lt0.25": 0.0,
+            "lt0.5": 1.0,
+            "lt1.0": 1.0
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.0,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            }
+          ],
+          "p_play_when_legal": 0.6312,
+          "per_run_clear": [
+            0.4475,
+            0.4475,
+            0.4475
+          ],
+          "vs_discard": {
+            "ci_hi": 0.13,
+            "ci_lo": 0.0,
+            "delta": 0.065,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0584,
+            "per_run_delta": [
+              0.065,
+              0.065,
+              0.065
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.3375,
+            "ci_lo": 0.21,
+            "delta": 0.275,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.275,
+              0.275,
+              0.275
+            ],
+            "significant": true
+          }
+        },
+        "sampled": {
+          "bucket_gradient": 0.8518,
+          "chips_mean": 953.9,
+          "clear_rate": 0.4308,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.2175,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 81,
+              "b10": 104,
+              "n_discordant": 185,
+              "p_exact": 0.10552229968115798
+            },
+            {
+              "b01": 79,
+              "b10": 104,
+              "n_discordant": 183,
+              "p_exact": 0.07575398776330051
+            },
+            {
+              "b01": 89,
+              "b10": 99,
+              "n_discordant": 188,
+              "p_exact": 0.511679618172334
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 45,
+              "b10": 134,
+              "n_discordant": 179,
+              "p_exact": 1.8201661704550982e-11
+            },
+            {
+              "b01": 44,
+              "b10": 135,
+              "n_discordant": 179,
+              "p_exact": 5.9821737377704896e-12
+            },
+            {
+              "b01": 50,
+              "b10": 126,
+              "n_discordant": 176,
+              "p_exact": 9.344724591562736e-09
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9465,
+            "lt0.25": 0.0947,
+            "lt0.5": 0.947,
+            "lt1.0": 0.9451
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.9496,
+              "lt0.25": 0.1027,
+              "lt0.5": 0.9398,
+              "lt1.0": 0.9498
+            },
+            {
+              "ge1.0": 0.9501,
+              "lt0.25": 0.1077,
+              "lt0.5": 0.9508,
+              "lt1.0": 0.9399
+            },
+            {
+              "ge1.0": 0.9398,
+              "lt0.25": 0.0738,
+              "lt0.5": 0.9504,
+              "lt1.0": 0.9456
+            }
+          ],
+          "p_play_when_legal": 0.6299,
+          "per_run_clear": [
+            0.44,
+            0.445,
+            0.4075
+          ],
+          "vs_discard": {
+            "ci_hi": 0.1108,
+            "ci_lo": -0.0167,
+            "delta": 0.0483,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.1482,
+            "per_run_delta": [
+              0.0575,
+              0.0625,
+              0.025
+            ],
+            "significant": false
+          },
+          "vs_frozen": {
+            "ci_hi": 0.2717,
+            "ci_lo": 0.1533,
+            "delta": 0.2133,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              0.2225,
+              0.2275,
+              0.19
+            ],
+            "significant": true
+          }
+        }
+      },
+      "n_runs": 3,
+      "name": "C80",
+      "reward_rule": "share",
+      "trace_specificity": {
+        "n_pulses": 158,
+        "pulse_share": {
+          "ge1.0": 0.0316,
+          "lt0.25": 0.557,
+          "lt0.5": 0.8481,
+          "lt1.0": 0.6519
+        },
+        "weight_share": {
+          "ge1.0": 0.0095,
+          "lt0.25": 0.273,
+          "lt0.5": 0.4495,
+          "lt1.0": 0.2679
+        }
+      },
+      "train": {
+        "dopamine_counts": [
+          {
+            "none": 447,
+            "punish": 238,
+            "reward": 515
+          },
+          {
+            "none": 438,
+            "punish": 225,
+            "reward": 537
+          },
+          {
+            "none": 420,
+            "punish": 217,
+            "reward": 563
+          }
+        ],
+        "n_terminal_pulses": [
+          50,
+          52,
+          56
+        ],
+        "p_play_when_legal": [
+          0.5873,
+          0.6018,
+          0.6192
+        ],
+        "reward_rule_agreement": [
+          {
+            "both": 509,
+            "flip_fraction": 0.07968,
+            "n_plays": 753,
+            "neither": 184,
+            "pace_only": 54,
+            "share_only": 6
+          },
+          {
+            "both": 531,
+            "flip_fraction": 0.06693,
+            "n_plays": 762,
+            "neither": 180,
+            "pace_only": 45,
+            "share_only": 6
+          },
+          {
+            "both": 558,
+            "flip_fraction": 0.06026,
+            "n_plays": 780,
+            "neither": 175,
+            "pace_only": 42,
+            "share_only": 5
+          }
+        ],
+        "trace_weight_delivered": [
+          16118.72,
+          16767.18,
+          18034.87
+        ],
+        "weight_mean_ratio": [
+          0.82565,
+          0.81942,
+          0.82215
+        ]
+      }
+    },
+    "D": {
+      "gamma": 0.8,
+      "label": "pace reward + eligibility trace, gamma=0.8",
+      "ledger": {
+        "ge1.0": {
+          "n_terminal_pulses": 3,
+          "net": 567.4,
+          "net_lower_bound": 568,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9443,
+          "plays": 575,
+          "punish_immediate": 2,
+          "punish_trace_weight": 3.6,
+          "reward": 573,
+          "rewarded_but_lost": 0
+        },
+        "lt0.25": {
+          "n_terminal_pulses": 177,
+          "net": -739.7,
+          "net_lower_bound": -662,
+          "p_play_greedy": 0.558,
+          "p_play_sampled": 0.5796,
+          "plays": 547,
+          "punish_immediate": 516,
+          "punish_trace_weight": 254.7,
+          "reward": 31,
+          "rewarded_but_lost": 0
+        },
+        "lt0.5": {
+          "n_terminal_pulses": 172,
+          "net": -35.7,
+          "net_lower_bound": 35,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9437,
+          "plays": 709,
+          "punish_immediate": 251,
+          "punish_trace_weight": 242.7,
+          "reward": 458,
+          "rewarded_but_lost": 0
+        },
+        "lt1.0": {
+          "n_terminal_pulses": 124,
+          "net": 252.6,
+          "net_lower_bound": 277,
+          "p_play_greedy": 1.0,
+          "p_play_sampled": 0.9469,
+          "plays": 615,
+          "punish_immediate": 107,
+          "punish_trace_weight": 148.4,
+          "reward": 508,
+          "rewarded_but_lost": 0
+        }
+      },
+      "modes": {
+        "greedy": {
+          "bucket_gradient": 0.442,
+          "chips_mean": 715.9,
+          "clear_rate": 0.2067,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.1725,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 149,
+              "b10": 15,
+              "n_discordant": 164,
+              "p_exact": 6.26631067466356e-29
+            },
+            {
+              "b01": 102,
+              "b10": 86,
+              "n_discordant": 188,
+              "p_exact": 0.2739199868727059
+            },
+            {
+              "b01": 117,
+              "b10": 56,
+              "n_discordant": 173,
+              "p_exact": 4.080097992284388e-06
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 61,
+              "b10": 11,
+              "n_discordant": 72,
+              "p_exact": 1.5488945360571046e-09
+            },
+            {
+              "b01": 44,
+              "b10": 112,
+              "n_discordant": 156,
+              "p_exact": 5.044015549363934e-08
+            },
+            {
+              "b01": 51,
+              "b10": 74,
+              "n_discordant": 125,
+              "p_exact": 0.04866218514586772
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 1.0,
+            "lt0.25": 0.558,
+            "lt0.5": 1.0,
+            "lt1.0": 1.0
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.987,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.2636,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            },
+            {
+              "ge1.0": 1.0,
+              "lt0.25": 0.4235,
+              "lt0.5": 1.0,
+              "lt1.0": 1.0
+            }
+          ],
+          "p_play_when_legal": 0.8274,
+          "per_run_clear": [
+            0.0475,
+            0.3425,
+            0.23
+          ],
+          "vs_discard": {
+            "ci_hi": -0.0317,
+            "ci_lo": -0.325,
+            "delta": -0.1758,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.013,
+            "per_run_delta": [
+              -0.335,
+              -0.04,
+              -0.1525
+            ],
+            "significant": true
+          },
+          "vs_frozen": {
+            "ci_hi": 0.175,
+            "ci_lo": -0.1125,
+            "delta": 0.0342,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.6496,
+            "per_run_delta": [
+              -0.125,
+              0.17,
+              0.0575
+            ],
+            "significant": false
+          }
+        },
+        "sampled": {
+          "bucket_gradient": 0.3646,
+          "chips_mean": 746.3,
+          "clear_rate": 0.185,
+          "discard_clear": 0.3825,
+          "frozen_clear": 0.2175,
+          "mcnemar_vs_discard": [
+            {
+              "b01": 143,
+              "b10": 34,
+              "n_discordant": 177,
+              "p_exact": 4.1932409290878426e-17
+            },
+            {
+              "b01": 117,
+              "b10": 63,
+              "n_discordant": 180,
+              "p_exact": 6.950540596854466e-05
+            },
+            {
+              "b01": 111,
+              "b10": 37,
+              "n_discordant": 148,
+              "p_exact": 8.746613299159052e-10
+            }
+          ],
+          "mcnemar_vs_frozen": [
+            {
+              "b01": 75,
+              "b10": 32,
+              "n_discordant": 107,
+              "p_exact": 3.918715378691485e-05
+            },
+            {
+              "b01": 60,
+              "b10": 72,
+              "n_discordant": 132,
+              "p_exact": 0.33838023893982416
+            },
+            {
+              "b01": 69,
+              "b10": 61,
+              "n_discordant": 130,
+              "p_exact": 0.539419552281719
+            }
+          ],
+          "p_play_by_bucket": {
+            "ge1.0": 0.9443,
+            "lt0.25": 0.5796,
+            "lt0.5": 0.9437,
+            "lt1.0": 0.9469
+          },
+          "p_play_by_bucket_per_run": [
+            {
+              "ge1.0": 0.954,
+              "lt0.25": 0.6585,
+              "lt0.5": 0.9448,
+              "lt1.0": 0.947
+            },
+            {
+              "ge1.0": 0.9377,
+              "lt0.25": 0.5494,
+              "lt0.5": 0.9453,
+              "lt1.0": 0.9486
+            },
+            {
+              "ge1.0": 0.9412,
+              "lt0.25": 0.5311,
+              "lt0.5": 0.9411,
+              "lt1.0": 0.9452
+            }
+          ],
+          "p_play_when_legal": 0.7941,
+          "per_run_clear": [
+            0.11,
+            0.2475,
+            0.1975
+          ],
+          "vs_discard": {
+            "ci_hi": -0.1142,
+            "ci_lo": -0.2825,
+            "delta": -0.1975,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.0,
+            "per_run_delta": [
+              -0.2725,
+              -0.135,
+              -0.185
+            ],
+            "significant": true
+          },
+          "vs_frozen": {
+            "ci_hi": 0.0475,
+            "ci_lo": -0.1125,
+            "delta": -0.0325,
+            "n_runs": 3,
+            "n_seeds": 400,
+            "p_two_sided": 0.462,
+            "per_run_delta": [
+              -0.1075,
+              0.03,
+              -0.02
+            ],
+            "significant": false
+          }
+        }
+      },
+      "n_runs": 3,
+      "name": "D",
+      "reward_rule": "pace",
+      "trace_specificity": {
+        "n_pulses": 220,
+        "pulse_share": {
+          "ge1.0": 0.0136,
+          "lt0.25": 0.8045,
+          "lt0.5": 0.7818,
+          "lt1.0": 0.5636
+        },
+        "weight_share": {
+          "ge1.0": 0.0055,
+          "lt0.25": 0.3922,
+          "lt0.5": 0.3737,
+          "lt1.0": 0.2286
+        }
+      },
+      "train": {
+        "dopamine_counts": [
+          {
+            "none": 397,
+            "punish": 319,
+            "reward": 484
+          },
+          {
+            "none": 372,
+            "punish": 289,
+            "reward": 539
+          },
+          {
+            "none": 385,
+            "punish": 268,
+            "reward": 547
+          }
+        ],
+        "n_terminal_pulses": [
+          77,
+          73,
+          70
+        ],
+        "p_play_when_legal": [
+          0.6423,
+          0.6717,
+          0.6629
+        ],
+        "reward_rule_agreement": [
+          {
+            "both": 454,
+            "flip_fraction": 0.04359,
+            "n_plays": 803,
+            "neither": 314,
+            "pace_only": 30,
+            "share_only": 5
+          },
+          {
+            "both": 489,
+            "flip_fraction": 0.06884,
+            "n_plays": 828,
+            "neither": 282,
+            "pace_only": 50,
+            "share_only": 7
+          },
+          {
+            "both": 509,
+            "flip_fraction": 0.05644,
+            "n_plays": 815,
+            "neither": 260,
+            "pace_only": 38,
+            "share_only": 8
+          }
+        ],
+        "trace_weight_delivered": [
+          25870.31,
+          24309.89,
+          24351.55
+        ],
+        "weight_mean_ratio": [
+          0.81844,
+          0.81129,
+          0.8124
+        ]
+      }
+    }
+  },
+  "decision": {
+    "any_condition_beat_always_discard": false,
+    "holm": {
+      "B": {
+        "p_holm": 0.1168,
+        "p_raw": 0.0938
+      },
+      "C80": {
+        "p_holm": 0.1168,
+        "p_raw": 0.0584
+      },
+      "D": {
+        "p_holm": 0.039,
+        "p_raw": 0.013
+      }
+    },
+    "novel_families": [
+      "B",
+      "C80",
+      "D"
+    ],
+    "verdicts": {
+      "A": {
+        "beats_discard_ci": false,
+        "beats_frozen": true,
+        "holm": null,
+        "success": null,
+        "verdict": "reference"
+      },
+      "B": {
+        "beats_discard_ci": false,
+        "beats_frozen": false,
+        "holm": {
+          "p_holm": 0.1168,
+          "p_raw": 0.0938
+        },
+        "success": false,
+        "verdict": "no effect"
+      },
+      "C100": {
+        "beats_discard_ci": false,
+        "beats_frozen": true,
+        "holm": null,
+        "success": null,
+        "verdict": "sensitivity only"
+      },
+      "C50": {
+        "beats_discard_ci": false,
+        "beats_frozen": true,
+        "holm": null,
+        "success": null,
+        "verdict": "sensitivity only"
+      },
+      "C80": {
+        "beats_discard_ci": false,
+        "beats_frozen": true,
+        "holm": {
+          "p_holm": 0.1168,
+          "p_raw": 0.0584
+        },
+        "success": false,
+        "verdict": "learned, still not competitive"
+      },
+      "D": {
+        "beats_discard_ci": false,
+        "beats_frozen": false,
+        "holm": {
+          "p_holm": 0.039,
+          "p_raw": 0.013
+        },
+        "success": false,
+        "verdict": "no effect"
+      }
+    }
+  },
+  "frozen": {
+    "greedy": 0.1725,
+    "sampled": 0.2175
+  }
+}

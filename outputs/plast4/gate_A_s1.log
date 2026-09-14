@@ -1,0 +1,2 @@
+== A_s1 (reward=share gamma=None eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.325 P(play|legal) 0.677 grad 0.8239 | sampled clear 0.355 | terminal pulses 0 | 246s

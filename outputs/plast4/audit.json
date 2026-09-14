@@ -1,0 +1,361 @@
+{
+  "pooled_reward_by_bucket": {
+    "ge1.0": {
+      "pace": 583,
+      "plays": 587,
+      "share": 583
+    },
+    "lt0.25": {
+      "pace": 21,
+      "plays": 387,
+      "share": 0
+    },
+    "lt0.5": {
+      "pace": 524,
+      "plays": 747,
+      "share": 431
+    },
+    "lt1.0": {
+      "pace": 556,
+      "plays": 653,
+      "share": 560
+    }
+  },
+  "runs": {
+    "omission_separated_s0": {
+      "reward": {
+        "flip_fraction": 0.06786,
+        "n_flips": 53,
+        "n_mismatch": 0,
+        "n_plays": 781,
+        "p0_values": [
+          4
+        ],
+        "per_bucket": {
+          "ge1.0": {
+            "pace": 198,
+            "plays": 199,
+            "rewarded_but_lost": 0,
+            "share": 198
+          },
+          "lt0.25": {
+            "pace": 10,
+            "plays": 133,
+            "rewarded_but_lost": 0,
+            "share": 0
+          },
+          "lt0.5": {
+            "pace": 173,
+            "plays": 236,
+            "rewarded_but_lost": 0,
+            "share": 139
+          },
+          "lt1.0": {
+            "pace": 185,
+            "plays": 213,
+            "rewarded_but_lost": 0,
+            "share": 186
+          }
+        },
+        "rewarded_but_lost": 0,
+        "share_punished_pace_rewarded": 48,
+        "share_reproduces_v3_reward": true,
+        "share_rewarded_pace_punished": 5
+      },
+      "trace": {
+        "immediate": {
+          "ge1.0": {
+            "punish": 1,
+            "reward": 198
+          },
+          "lt0.25": {
+            "punish": 133,
+            "reward": 0
+          },
+          "lt0.5": {
+            "punish": 97,
+            "reward": 139
+          },
+          "lt1.0": {
+            "punish": 27,
+            "reward": 186
+          }
+        },
+        "n_blinds": 254,
+        "n_lost_blinds": 57,
+        "net_with_trace": {
+          "0.5": {
+            "ge1.0": 196.0,
+            "lt0.25": -166.12,
+            "lt0.5": 4.62,
+            "lt1.0": 123.62
+          },
+          "0.8": {
+            "ge1.0": 196.0,
+            "lt0.25": -192.84,
+            "lt0.5": -19.07,
+            "lt1.0": 112.65
+          },
+          "1": {
+            "ge1.0": 196.0,
+            "lt0.25": -219.0,
+            "lt0.5": -42.0,
+            "lt1.0": 102.0
+          }
+        },
+        "plays_in_lost_blinds": 228,
+        "terminal_bucket": {
+          "ge1.0": 1,
+          "lt0.25": 12,
+          "lt0.5": 18,
+          "lt1.0": 26
+        },
+        "trace_weight": {
+          "0.5": {
+            "ge1.0": 1.0,
+            "lt0.25": 33.12,
+            "lt0.5": 37.38,
+            "lt1.0": 35.38
+          },
+          "0.8": {
+            "ge1.0": 1.0,
+            "lt0.25": 59.84,
+            "lt0.5": 61.07,
+            "lt1.0": 46.35
+          },
+          "1": {
+            "ge1.0": 1.0,
+            "lt0.25": 86.0,
+            "lt0.5": 84.0,
+            "lt1.0": 57.0
+          }
+        }
+      }
+    },
+    "omission_separated_s1": {
+      "reward": {
+        "flip_fraction": 0.06905,
+        "n_flips": 54,
+        "n_mismatch": 0,
+        "n_plays": 782,
+        "p0_values": [
+          4
+        ],
+        "per_bucket": {
+          "ge1.0": {
+            "pace": 195,
+            "plays": 196,
+            "rewarded_but_lost": 0,
+            "share": 195
+          },
+          "lt0.25": {
+            "pace": 7,
+            "plays": 134,
+            "rewarded_but_lost": 0,
+            "share": 0
+          },
+          "lt0.5": {
+            "pace": 166,
+            "plays": 242,
+            "rewarded_but_lost": 0,
+            "share": 131
+          },
+          "lt1.0": {
+            "pace": 180,
+            "plays": 210,
+            "rewarded_but_lost": 0,
+            "share": 180
+          }
+        },
+        "rewarded_but_lost": 0,
+        "share_punished_pace_rewarded": 48,
+        "share_reproduces_v3_reward": true,
+        "share_rewarded_pace_punished": 6
+      },
+      "trace": {
+        "immediate": {
+          "ge1.0": {
+            "punish": 1,
+            "reward": 195
+          },
+          "lt0.25": {
+            "punish": 134,
+            "reward": 0
+          },
+          "lt0.5": {
+            "punish": 111,
+            "reward": 131
+          },
+          "lt1.0": {
+            "punish": 30,
+            "reward": 180
+          }
+        },
+        "n_blinds": 254,
+        "n_lost_blinds": 59,
+        "net_with_trace": {
+          "0.5": {
+            "ge1.0": 193.0,
+            "lt0.25": -169.88,
+            "lt0.5": -20.88,
+            "lt1.0": 117.12
+          },
+          "0.8": {
+            "ge1.0": 193.0,
+            "lt0.25": -197.66,
+            "lt0.5": -48.98,
+            "lt1.0": 109.47
+          },
+          "1": {
+            "ge1.0": 193.0,
+            "lt0.25": -225.0,
+            "lt0.5": -76.0,
+            "lt1.0": 102.0
+          }
+        },
+        "plays_in_lost_blinds": 236,
+        "terminal_bucket": {
+          "ge1.0": 1,
+          "lt0.25": 14,
+          "lt0.5": 18,
+          "lt1.0": 26
+        },
+        "trace_weight": {
+          "0.5": {
+            "ge1.0": 1.0,
+            "lt0.25": 35.88,
+            "lt0.5": 40.88,
+            "lt1.0": 32.88
+          },
+          "0.8": {
+            "ge1.0": 1.0,
+            "lt0.25": 63.66,
+            "lt0.5": 68.98,
+            "lt1.0": 40.53
+          },
+          "1": {
+            "ge1.0": 1.0,
+            "lt0.25": 91.0,
+            "lt0.5": 96.0,
+            "lt1.0": 48.0
+          }
+        }
+      }
+    },
+    "omission_separated_s2": {
+      "reward": {
+        "flip_fraction": 0.05549,
+        "n_flips": 45,
+        "n_mismatch": 0,
+        "n_plays": 811,
+        "p0_values": [
+          4
+        ],
+        "per_bucket": {
+          "ge1.0": {
+            "pace": 190,
+            "plays": 192,
+            "rewarded_but_lost": 0,
+            "share": 190
+          },
+          "lt0.25": {
+            "pace": 4,
+            "plays": 120,
+            "rewarded_but_lost": 0,
+            "share": 0
+          },
+          "lt0.5": {
+            "pace": 185,
+            "plays": 269,
+            "rewarded_but_lost": 0,
+            "share": 161
+          },
+          "lt1.0": {
+            "pace": 191,
+            "plays": 230,
+            "rewarded_but_lost": 0,
+            "share": 194
+          }
+        },
+        "rewarded_but_lost": 0,
+        "share_punished_pace_rewarded": 35,
+        "share_reproduces_v3_reward": true,
+        "share_rewarded_pace_punished": 10
+      },
+      "trace": {
+        "immediate": {
+          "ge1.0": {
+            "punish": 2,
+            "reward": 190
+          },
+          "lt0.25": {
+            "punish": 120,
+            "reward": 0
+          },
+          "lt0.5": {
+            "punish": 108,
+            "reward": 161
+          },
+          "lt1.0": {
+            "punish": 36,
+            "reward": 194
+          }
+        },
+        "n_blinds": 258,
+        "n_lost_blinds": 70,
+        "net_with_trace": {
+          "0.5": {
+            "ge1.0": 186.0,
+            "lt0.25": -150.12,
+            "lt0.5": 1.25,
+            "lt1.0": 110.62
+          },
+          "0.8": {
+            "ge1.0": 186.0,
+            "lt0.25": -175.88,
+            "lt0.5": -35.01,
+            "lt1.0": 97.25
+          },
+          "1": {
+            "ge1.0": 186.0,
+            "lt0.25": -203.0,
+            "lt0.5": -69.0,
+            "lt1.0": 85.0
+          }
+        },
+        "plays_in_lost_blinds": 280,
+        "terminal_bucket": {
+          "ge1.0": 2,
+          "lt0.25": 13,
+          "lt0.5": 21,
+          "lt1.0": 34
+        },
+        "trace_weight": {
+          "0.5": {
+            "ge1.0": 2.0,
+            "lt0.25": 30.12,
+            "lt0.5": 51.75,
+            "lt1.0": 47.38
+          },
+          "0.8": {
+            "ge1.0": 2.0,
+            "lt0.25": 55.88,
+            "lt0.5": 88.01,
+            "lt1.0": 60.75
+          },
+          "1": {
+            "ge1.0": 2.0,
+            "lt0.25": 83.0,
+            "lt0.5": 122.0,
+            "lt1.0": 73.0
+          }
+        }
+      }
+    }
+  },
+  "source": [
+    "outputs/plast3/run_omission_separated_s0.json",
+    "outputs/plast3/run_omission_separated_s1.json",
+    "outputs/plast3/run_omission_separated_s2.json"
+  ]
+}

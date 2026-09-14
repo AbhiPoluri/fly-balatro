@@ -1,0 +1,60 @@
+== all cells done ==
+==> outputs/plast4/logs/B_s0.log <==
+== B_s0 (reward=pace gamma=None eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.113 P(play|legal) 0.893 grad 0.2323 | sampled clear 0.172 | terminal pulses 0 | 236s
+
+==> outputs/plast4/logs/B_s1.log <==
+== B_s1 (reward=pace gamma=None eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.400 | terminal pulses 0 | 240s
+
+==> outputs/plast4/logs/B_s2.log <==
+== B_s2 (reward=pace gamma=None eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.048 P(play|legal) 0.994 grad 0.013 | sampled clear 0.135 | terminal pulses 0 | 235s
+
+==> outputs/plast4/logs/C100_s0.log <==
+== C100_s0 (reward=share gamma=1.0 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.443 | terminal pulses 46 | 245s
+
+==> outputs/plast4/logs/C100_s1.log <==
+== C100_s1 (reward=share gamma=1.0 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.425 | terminal pulses 52 | 244s
+
+==> outputs/plast4/logs/C100_s2.log <==
+== C100_s2 (reward=share gamma=1.0 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.430 | terminal pulses 57 | 243s
+
+==> outputs/plast4/logs/C50_s0.log <==
+== C50_s0 (reward=share gamma=0.5 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.427 | terminal pulses 56 | 240s
+
+==> outputs/plast4/logs/C50_s1.log <==
+== C50_s1 (reward=share gamma=0.5 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.438 | terminal pulses 59 | 244s
+
+==> outputs/plast4/logs/C50_s2.log <==
+== C50_s2 (reward=share gamma=0.5 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.427 | terminal pulses 56 | 244s
+
+==> outputs/plast4/logs/C80_s0.log <==
+== C80_s0 (reward=share gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.440 | terminal pulses 50 | 244s
+
+==> outputs/plast4/logs/C80_s1.log <==
+== C80_s1 (reward=share gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.445 | terminal pulses 52 | 242s
+
+==> outputs/plast4/logs/C80_s2.log <==
+== C80_s2 (reward=share gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.448 P(play|legal) 0.631 grad 1.0 | sampled clear 0.407 | terminal pulses 56 | 237s
+
+==> outputs/plast4/logs/D_s0.log <==
+== D_s0 (reward=pace gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.048 P(play|legal) 0.994 grad 0.013 | sampled clear 0.110 | terminal pulses 77 | 238s
+
+==> outputs/plast4/logs/D_s1.log <==
+== D_s1 (reward=pace gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.343 P(play|legal) 0.721 grad 0.7364 | sampled clear 0.247 | terminal pulses 73 | 243s
+
+==> outputs/plast4/logs/D_s2.log <==
+== D_s2 (reward=pace gamma=0.8 eta_r=0.05 eta_p=0.0797) ==
+   greedy clear 0.230 P(play|legal) 0.767 grad 0.5765 | sampled clear 0.198 | terminal pulses 70 | 240s

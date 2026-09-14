@@ -1252,3 +1252,404 @@ the subtype-level structure that Zheng et al. (2022) found beyond Caron's
 randomness is **held fixed by this control, not tested by it**. The claim is
 narrower: given those subtype-level biases, the individual-Kenyon-cell identity
 of calyx wiring contributes nothing measurable in this model, on this task.
+
+
+# Plasticity v4: can any game-computable reward beat always-discard? (2026-09-14)
+
+v3 ended with a measured diagnosis rather than a result: the fly converged on the
+exact optimum of the reward it was given -- `chips_gained >= needed / plays_left`,
+"did this play earn its share" -- and that optimum *ties* always-discard. This
+round tests two replacement reward specifications against it. **The protocol, the
+primary outcome, the analysis and the decision rule were written down in
+`outputs/plast4/PREREGISTRATION.md` before any game here was played** (file
+timestamp 00:33:12; first run 00:35:35). Nothing under `outputs/bc*/`, `mb*/`,
+`plast/`, `plast2/`, `plast3/`, `calyx/`, `realgame/` or `pov/` was modified;
+`flybalatro/plasticity.py` and `scripts/plast_common.py` received additive
+changes only.
+
+**Nothing beats always-discard.** The eligibility trace produces the best learned
+fly in the project -- 0.448 greedy against a frozen control of 0.172,
+**identical in all three training seeds at all three trace lengths** -- and lands
+at +0.065 [**+0.000**, +0.130] against always-discard, p = 0.058, Holm-corrected
+0.117. That misses the bar fixed in advance by the width of a rounding, and a
+miss is a miss. The pace reward is measurably *worse* than the baseline, as the
+preregistration predicted from arithmetic before it was run.
+
+**And the reward is no longer what is stopping the fly.** A post-hoc probe
+(section 6, added after the result and marked as such) hands the system the best
+signal any reward or credit rule could produce -- punishment aimed at exactly the
+`lt0.5` odours -- and it still cannot reach the 0.530 policy: from the trained
+fly, 83.6% of the synapses such a pulse can touch are already at the weight
+floor and 120 more pulses move the drive by 0.5%; from a naive fly it drives
+`lt0.5` negative but drags `lt1.0` and `ge1.0` down with it. **The binding
+constraint is a capacity limit of depression-only KC -> MBON plasticity, not the
+reward specification and not credit assignment.**
+
+## 1. The off-by-one audit: there isn't one, and the arithmetic says more
+
+`state.plays` reads 4, 3, 2, 1 over a blind, so it counts the play about to be
+made and `share = needed / plays` is correct. Satisfying it exactly every play
+clears the blind exactly (`share_{k+1} = share_k`, and the four shares sum to
+`required`), and on the last play `plays = 1`, so the rule demands
+`chips >= needed`, i.e. it demands clearing. The `max(1, ctx.plays)` guard in
+`plast_common.resolve_outcome` is dead code on this harness; left untouched.
+
+**The sharper consequence, and the real finding of the audit.** Because the last
+play's share *is* the whole remaining requirement, `reward AND lost` is
+impossible by construction -- and it is 0 of 2,374 v3 training plays, and 0 in
+every v4 condition. So the gap v3 diagnosed, "paid its share but still lost the
+blind", **cannot be expressed by any immediate same-hand reward term at all.** It
+lives in the *earlier* plays of a blind later lost, and only a trace can reach
+them. That argument was not available to v3.
+
+## 2. The candidates, and the constraint every one of them is audited against
+
+Every condition is v3's winning cell -- `separated` encoding, `omission`
+immediate punishment, `eta_reward = 0.05` / `eta_punish = 0.0797`, 1,200 training
+decisions, 10% exploration floor, the same 400 paired evaluation seeds
+400000-400399. **Only the reward specification differs.**
+
+| cond | reward | trace | reads | hard constraint |
+|---|---|---|---|---|
+| A | share (v3, unchanged) | -- | `chips_gained`, `needed`, `plays`, terminal flags | admissible |
+| B | pace | -- | `required_score`, `score`, `plays`, `chips_gained`, terminal flags | admissible |
+| C | share | gamma 0.5 / 0.8 / 1.0 | the above, plus KC spike counts (the brain) and `lost` (the game) | admissible |
+| D | pace | gamma 0.8 (fixed in advance) | as B plus as C | admissible |
+
+No reward term consults `flybalatro/hands.py` about whether the action was
+*correct*; `hands.py` only enumerates and scores subsets, which is what produces
+the odour. `tests/test_plast4.py::test_no_reward_term_consults_the_hand_analyser`
+asserts this structurally over the reward path's source and signature.
+
+**Pace**, spelled out without division:
+`(score_before + chips) * P0 >= required * (P0 - plays + 1)`, with `P0` read from
+the game at each blind's first decision (4 in 100% of 1,024 observed blinds). It
+does not re-baseline: writing `delta` for the deficit against schedule, pace
+demands `chips >= required/P0 + delta` and share demands
+`chips >= required/P0 + delta/plays`, so pace is stricter when behind, looser when
+ahead, and identical on the first play of every blind.
+
+**The trace**: `trace <- min(1, gamma * trace + eligibility(kc_counts))` on each
+PLAY, reset at every blind boundary, and one extra PPL1 pulse against that trace
+when a blind is lost. PLAY decisions only (a DISCARD earns no dopamine anywhere in
+this project, and tracing discards would push the fly toward the degenerate
+always-discard policy); the losing play is hit twice when unrewarded; the same
+calibrated `eta_punish`; no new scalar. Trace length is justified against
+Galili et al. 2011 (a *Drosophila* olfactory trace survives a **15 s** gap),
+Handler et al. 2019 (mushroom-body plasticity is sensitive to the order and timing
+of odour and dopamine) and Cassenaer & Laurent 2012 (a neuromodulator arriving
+*after* Kenyon-cell spiking still gates the change). At roughly 10-20 s per
+Balatro hand, gamma 0.5 is a one-hand half-life and gamma 1.0 a flat trace over a
+~1 min blind; the sweep brackets the fly's range and the mapping to seconds is
+approximate and stated as such in the prereg.
+
+## 3. The provenance gate
+
+`plast4_common.play_game4` reimplements the game loop, because the pace rule needs
+`required_score` and the blind's starting play count and `plast_common.py` was
+additive-only this round. The preregistration gated the round on that
+reimplementation, and nothing else was launched until it passed:
+
+| v4 | v3 | greedy 400 | sampled 400 | chips | weights |
+|---|---|---|---|---|---|
+| `run_frozen` | `run_frozen_separated` | identical | identical | identical | (v3 saved none) |
+| `run_A_s0` | `run_omission_separated_s0` | identical | identical | identical | **0 of 33,496 synapses differ** |
+| `run_A_s1` | `run_omission_separated_s1` | identical | identical | identical | **0 of 33,496 differ** |
+| `run_A_s2` | `run_omission_separated_s2` | identical | identical | identical | **0 of 33,496 differ** |
+
+## 4. The result
+
+Intervals are 10,000-resample two-way cluster bootstraps over evaluation seed
+**and** training run, on the per-seed paired difference. Greedy is the primary
+mode.
+
+| cond | reward | gamma | mode | clear | per run | vs frozen [95% CI] | vs always-discard [95% CI] | p | P(play\|legal) | grad | chips |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A | share | -- | greedy | 0.407 | .448/.325/.448 | +0.234 [+0.141, +0.320] | +0.024 [-0.073, +0.113] | 0.618 | 0.646 | +0.938 | 921 |
+| A | share | -- | sampled | 0.413 | .425/.355/.460 | +0.196 [+0.120, +0.269] | +0.031 [-0.048, +0.109] | 0.457 | 0.640 | +0.831 | 939 |
+| B | pace | -- | greedy | 0.203 | .113/.448/.048 | +0.030 [-0.133, +0.265] | -0.180 [-0.349, +0.053] | 0.094 | 0.839 | +0.415 | 696 |
+| B | pace | -- | sampled | 0.236 | .172/.400/.135 | +0.018 [-0.103, +0.175] | -0.147 [-0.273, +0.010] | 0.064 | 0.756 | +0.463 | 779 |
+| **C50** | share | 0.5 | greedy | **0.448** | .448/.448/.448 | **+0.275 [+0.210, +0.338]** | +0.065 [+0.000, +0.130] | 0.058 | 0.631 | **+1.000** | 966 |
+| C50 | share | 0.5 | sampled | 0.431 | .427/.438/.427 | +0.213 [+0.158, +0.268] | +0.048 [-0.012, +0.108] | 0.128 | 0.636 | +0.833 | 945 |
+| **C80** | share | 0.8 | greedy | **0.448** | .448/.448/.448 | **+0.275 [+0.210, +0.338]** | +0.065 [+0.000, +0.130] | 0.058 | 0.631 | **+1.000** | 966 |
+| C80 | share | 0.8 | sampled | 0.431 | .440/.445/.407 | +0.213 [+0.153, +0.272] | +0.048 [-0.017, +0.111] | 0.148 | 0.630 | +0.852 | 954 |
+| **C100** | share | 1.0 | greedy | **0.448** | .448/.448/.448 | **+0.275 [+0.210, +0.338]** | +0.065 [+0.000, +0.130] | 0.058 | 0.631 | **+1.000** | 966 |
+| C100 | share | 1.0 | sampled | 0.433 | .443/.425/.430 | +0.215 [+0.158, +0.273] | +0.050 [-0.013, +0.113] | 0.126 | 0.629 | +0.848 | 964 |
+| D | pace | 0.8 | greedy | 0.207 | .048/.343/.230 | +0.034 [-0.113, +0.175] | -0.176 [-0.325, -0.032] | 0.013 | 0.827 | +0.442 | 716 |
+| D | pace | 0.8 | sampled | 0.185 | .110/.247/.198 | -0.033 [-0.113, +0.048] | **-0.198 [-0.283, -0.114]** | 0.000 | 0.794 | +0.365 | 746 |
+
+Shared frozen control (the reward only affects learning, so every condition has
+the same naive fly): greedy **0.1725**, sampled 0.2175. Baselines on the same 400
+games: always-discard **0.3825**, always-play 0.0375, `bucket_ge1` 0.4025,
+`bucket_ge_lt1_lt05` 0.4475, **`bucket_ge_lt1` 0.5300**, teacher-dig 0.6725.
+
+**The decision, against the rule fixed in advance.** Success required a positive
+greedy delta against the frozen control with a 95% clustered CI excluding 0,
+**and** a positive delta against always-discard with a CI excluding 0 and a
+Holm-corrected p < 0.05 across the three novel families `{B, C80, D}`.
+
+| condition | beats frozen | beats always-discard (CI) | p | Holm p | verdict |
+|---|---|---|---|---|---|
+| A | yes | no | 0.618 | -- | reference |
+| B | no | no | 0.094 | 0.117 | no effect |
+| C50 | yes | no | 0.058 | -- | sensitivity only |
+| **C80** | yes | **no** | 0.058 | 0.117 | **learned, still not competitive** |
+| C100 | yes | no | 0.058 | -- | sensitivity only |
+| D | no | no (**significantly worse**) | 0.013 | 0.039 | no effect |
+
+**No condition succeeds.** C's lower bound is exactly **+0.000** at the 2.5th
+percentile. D's Holm-corrected 0.039 is significance in the **wrong direction**:
+it is 0.176 worse than always-discard greedy and -0.198 [-0.283, -0.114] sampled.
+Exact McNemar per training run, greedy, never pooled: every C run is 106 / 80
+against always-discard (p = 0.067) and 152 / 42 against the frozen control
+(p = 7.9e-16).
+
+## 5. What each condition learned
+
+### B and D: the preregistered pace prediction came out right
+
+The prereg predicted, from re-scoring v3's 2,374 logged plays before any v4 run,
+that pace would reward **more** `lt0.5` plays than share (524 against 431) and
+would reintroduce reward on `lt0.25` (21 against 0), so B would be no better than
+A and probably worse. On its own trajectory B rewarded 505 of 763 `lt0.5` plays
+and 19 of 501 `lt0.25` plays, drove P(play | `lt0.25`) from 0.06 to **0.58** and
+P(play | legal) from 0.646 to 0.839, and scored 0.203. **Confirmed with the sign
+and the mechanism.** The two rules disagree on only 4.4-8.8% of plays per run, and
+that minority costs 0.24 clear rate because it sits exactly where the decision is
+marginal.
+
+### C: the trace does what it was predicted to do, and it is not enough
+
+Dopamine ledger, pooled over the three training runs. One lost blind fires **one**
+pulse over the union of that blind's recent plays, so the summed `gamma^k` weight
+is an **upper** bound on what a bucket receives and the number of pulses
+containing the bucket is a **lower** bound; both are shown.
+
+**C80** (`gamma = 0.8`), the prespecified central cell:
+
+| bucket | plays | reward | punish immediate | trace pulses | trace weight | rewarded-but-lost | net (lower) | net (upper) | P(play) greedy |
+|---|---|---|---|---|---|---|---|---|---|
+| `lt0.25` | 305 | 0 | 305 | 88 | 127.3 | 0 | -393 | -432 | **0.00** |
+| `lt0.5` | 727 | 426 | 301 | 134 | 209.7 | 0 | **-9** | **-85** | **1.00** |
+| `lt1.0` | 650 | 579 | 71 | 103 | 125.0 | 0 | +405 | +383 | 1.00 |
+| `ge1.0` | 613 | 610 | 3 | 5 | 4.4 | 0 | +602 | +603 | 1.00 |
+
+Against A's ledger, same reward, no trace:
+
+| bucket | A reward / punish | A net | A P(play) | C80 net (upper) | C80 P(play) |
+|---|---|---|---|---|---|
+| `lt0.25` | 0 / 387 | -387 | 0.06 | -432 | **0.00** |
+| `lt0.5` | 431 / 316 | **+115** | 1.00 | **-85** | 1.00 |
+| `lt1.0` | 560 / 93 | +467 | 1.00 | +383 | 1.00 |
+| `ge1.0` | 583 / 4 | +579 | 1.00 | +603 | 1.00 |
+
+The three preregistered predictions, scored honestly:
+
+1. **"gamma 0.8 and 1.0 flip `lt0.5` net-negative."** *Right on the ledger, wrong
+   on the behaviour.* `lt0.5` goes from +115 in A to -85 (C80) and -134 (C100) on
+   the upper bound -- and **P(play | lt0.5) stays 1.00 in all nine C runs.** The
+   signal flipped sign; the policy did not.
+2. **"`lt1.0` stays net-positive, so the fly converges on `play iff >= lt1.0`
+   = 0.530."** Half right. `lt1.0` does stay strongly positive (+383), but the fly
+   converged on `play iff >= lt0.5` = 0.448. The 0.530 policy appeared in no run.
+3. **"P(play | ge1.0) should not move, because a `ge1.0` hand clears the blind and
+   so cannot sit in a lost blind's trace."** *Right, and sharply:* `ge1.0` appears
+   in **0-3%** of terminal pulses against `lt0.5`'s 81-85%, and P(play | ge1.0) is
+   1.00 everywhere. The implementation check passes.
+
+**What the trace did buy: reproducibility.** A converged on the
+`bucket_ge_lt1_lt05` policy in **2 of 3** seeds -- its s1 run plays `lt0.25` 17.6%
+of the time and scores 0.325. **All 9** C runs converge on it, driving
+P(play | `lt0.25`) to exactly 0.000 in every seed at every gamma, and **all nine
+reproduce that hand-written baseline's 400 game outcomes bit-for-bit (0 of 400
+differ)**, with a bucket gradient of exactly +1.000. That is why C is 0.448 with
+zero spread across seeds where A is 0.407 with a spread of 0.12.
+
+### Why the trace could not go further: it is the least selective signal in the system
+
+| condition | terminal pulses | pulses containing `lt0.25` | `lt0.5` | `lt1.0` | `ge1.0` |
+|---|---|---|---|---|---|
+| C50 | 171 | 0.68 | 0.82 | 0.64 | 0.02 |
+| C80 | 158 | 0.56 | **0.85** | **0.65** | 0.03 |
+| C100 | 155 | 0.58 | 0.81 | 0.67 | 0.00 |
+| D | 220 | 0.80 | 0.78 | 0.56 | 0.01 |
+
+**85% of terminal pulses contain an `lt0.5` play and 65% contain an `lt1.0`
+play.** The two buckets the fly must separate to reach 0.530 are punished together
+by nearly every terminal pulse. The immediate omission rule is perfectly
+selective -- an `lt0.25` play earns an `lt0.25` punishment, which is why that
+bucket goes to exactly 0.000 -- and the terminal pulse is not selective at all,
+because a blind that was lost contains plays from every bucket in roughly the
+proportion the fly plays them. **Terminal credit supplies the right sign and
+cannot supply the right target**, and no setting of its strength or its decay
+changes that: all three gammas give 0.4475 to four decimal places.
+
+That was going to be this round's verdict. Section 6 is the probe that checks
+whether the *alternative* -- a perfectly targeted signal -- would have worked,
+and it shows that it would not, which moves the binding constraint one stage
+further back. The selectivity measurement above stands; it is no longer the
+explanation.
+
+## 6. Post-hoc probe: can this readout express the 0.530 policy at all?
+
+**Added after the result, labelled post-hoc everywhere it is quoted, and it
+changes the verdict below.** It is not a preregistered condition, it plays no
+game, it uses no labels and no outcomes, and it promotes nothing: it takes a
+trained fly, delivers punishment pulses against a bucket's *own* odours, and
+reads `play_drive` off the MBONs. Same category as v3's transfer probe.
+
+Section 5 concluded that terminal credit fails because it cannot target one
+bucket. That presumes the alternative -- that a *perfectly* selective punishment
+**would** put `lt0.5` below zero and leave `lt1.0` above it. The fly never
+demonstrated that. What it demonstrated was `lt0.25 -> 0.00` with `lt1.0` at
+1.00, a separation between **non-adjacent** buckets, which is an easier problem.
+So: give the system the best signal any reward or credit rule could ever produce
+-- 120 punishment pulses aimed at exactly the seven `lt0.5` odours seen at real
+decision points -- and watch what happens. `eta_punish = 0.0797`, the calibrated
+value, unchanged.
+
+Mean `play_drive` in Hz per bucket (a bucket is played when its drive is >= 0),
+24 distinct separated odours drawn from the calibration seed range:
+
+| arm | start | pulse 0 | pulse 120 | `lt0.5` reaches 0? | what happened to the others |
+|---|---|---|---|---|---|
+| one `lt0.5` odour | C80 weights | `lt0.5` **+9.045** | **+9.002** | **no** | nothing moves at all |
+| all 7 `lt0.5` odours | C80 weights | `lt0.5` **+9.045** | **+8.494** | **no** | `lt1.0` +4.51 -> +4.63, `ge1.0` +6.44 -> +6.53 |
+| all 7 `lt0.5` odours | naive weights | `lt0.5` -0.002 | **-3.877** | yes | **`ge1.0` +1.50 -> -0.17, crossing zero at pulse 38**; `lt1.0` -2.47 -> -3.16; `lt0.25` +1.75 -> **+2.40** |
+
+And the synapses those pulses can actually reach -- the KC -> **approach** MBON
+edges gated by the Kenyon cells the target odours drive, which is the only thing
+a punishment pulse can move:
+
+| arm | reachable edges | mean w/w0 before | at the floor before | mean w/w0 after | at the floor after |
+|---|---|---|---|---|---|
+| one `lt0.5` odour, C80 | 1,079 | **0.063** | **83.6%** | **0.050** | **100%** |
+| all 7, C80 | 2,171 | 0.304 | 45.9% | 0.148 | 60.4% |
+| all 7, naive | 2,072 | 1.000 | 0.0% | 0.306 | 22.4% |
+
+**Two things, and both of them are hard limits.**
+
+1. **From the trained fly the punishment arm is exhausted.** For a single
+   `lt0.5` odour, 83.6% of every synapse a punishment pulse can reach is already
+   pinned at the 5% weight floor, and 120 more pulses take that to **100%** while
+   the drive falls by **0.5%** and stays 9 Hz the wrong side of zero. The
+   remaining drive is not reachable by KC -> MBON depression at all: it is there
+   because the 426 *reward* pulses that bucket earned depressed its **avoid**
+   side, and a depression-only rule has no operation that puts that back. By the
+   time any terminal pulse arrives -- trace or not, gamma 0.5 or 1.0 -- there is
+   nothing left for it to depress. That is why all three gammas give 0.4475 to
+   four decimal places.
+
+2. **From a naive fly the punishment operation is not bucket-selective, even
+   when the signal is.** A perfectly targeted `lt0.5` punishment does drive
+   `lt0.5` from -0.002 to -3.877 -- and **`ge1.0` crosses zero with it, at pulse
+   38, ending at -0.17 from +1.50**, while `lt0.25` drifts the *wrong* way, up to
+   +2.40. `ge1.0` is the bucket that must always be played and its own odours
+   were never targeted; it fell anyway. `lt1.0` also falls (-2.47 to -3.16),
+   though it starts negative in the naive fly -- the naive separated fly's bucket
+   gradient is -0.62, as v3 reported -- so the informative casualty is `ge1.0`.
+   The four buckets have disjoint *glomerulus* ensembles by construction, but
+   their Kenyon-cell populations overlap enough that depressing one bucket's
+   approach pathway drags an unrelated bucket across the decision boundary.
+
+So the answer to the question in this section's title is **no**. Under a
+depression-only KC -> MBON rule read out by a fixed approach-minus-avoidance
+difference, `lt0.5 -> 0` with `lt1.0 -> 1` is not reachable from either end.
+
+## 7. Verdict
+
+Three candidate diagnoses were live at the start of this round. The round
+eliminates two of them and leaves the third, measured.
+
+**Not a reward-specification problem.** That was v3's diagnosis and it does not
+survive. Two replacement specifications were tested. The pace rule is measurably
+*worse* (0.203 against 0.407; -0.176 [-0.325, -0.032] against always-discard),
+exactly as this round's preregistration predicted from arithmetic before it ran.
+The eligibility trace -- the only mechanism that can reach "paid its share but
+still lost the blind", by the section 1 arithmetic -- flips that bucket's ledger
+from +115 to -85 and **does not change the policy at all**.
+
+**Not, in the end, a credit-assignment problem either -- though the trace is
+genuinely too blunt.** It is true and measured that 85% of terminal pulses
+contain an `lt0.5` play and 65% contain an `lt1.0` play, so terminal credit
+cannot target one bucket. But section 6 hands the system a *perfectly* targeted
+signal, which is the ceiling on what any credit rule could deliver, and it still
+cannot produce the 0.530 policy from either the trained or the naive fly -- from
+the naive fly it drags `ge1.0`, whose odours it never touched, across the
+decision boundary. Selectivity of the *signal* is not the binding constraint;
+the *operation* is not selective either, and it runs out first.
+
+**It is a capacity limit of depression-only plasticity at KC -> MBON.** The rule
+has one operation -- lower a weight -- it bottoms out at 5% of the original, and
+adjacent buckets share enough Kenyon cells that using it on one moves its
+neighbour. The fly can express `lt0.25 -> 0.00` while three buckets sit at 1.00,
+because `lt0.25` is the *extreme* of the axis and is the only bucket that earns
+zero rewards. It cannot express a cut *between* `lt0.5` and `lt1.0`, which is
+what 0.530 requires. 0.448 is not where the reward ran out. It is where the
+synapses did.
+
+This is a narrower claim than "the fly cannot learn Balatro", and it is the one
+the measurements support. It also says what a fifth round would have to change,
+and it is not the reward: a bidirectional rule (Handler et al. 2019 report
+DopR1/DopR2 directing depression **or** potentiation depending on timing) has the
+operation this one is missing. That was outside the frozen spec every round of
+this project has run under, and nothing here was changed to chase it.
+
+So the sentence this round earns:
+
+> **The fly reached the optimum of every reward we could compute from the game,
+> and that optimum is a tie with always-discard.** It reaches it now in every seed
+> rather than two in three, it earns more chips than always-discard (966 against
+> 835), and at +0.065 [+0.000, +0.130] it is not distinguishable from doing
+> nothing. The reward is no longer what is stopping it.
+
+Nothing was tuned after seeing a result. The gamma sweep was preregistered as a
+sweep; all three values are reported; all three give the same greedy number. The
+section 6 probe was added after the result, is marked as such, and promoted no
+condition -- it only changed the wording of this verdict, from a claim the data
+did not support to one it does.
+
+## 8. Two corrections to this section's own framing
+
+* **D's Holm-corrected p of 0.039 is significance in the wrong direction.** The
+  decision rule is one-sided (`D_discard > 0`) while the preregistered p is
+  two-sided, so a small p on a *negative* delta means D is reliably **worse**
+  than always-discard, not nearly better. No verdict changes -- D fails on the CI
+  direction regardless -- but the table row should not be read as a near-miss.
+* **The preregistration says a *Drosophila* olfactory trace "persists for at
+  least that long" of 15 s.** That overstates Galili et al. 2011, which tested a
+  15 s gap and found learning across it; it does not establish 15 s as a lower
+  bound on the trace. The correct statement is "survives a 15 s gap". The
+  preregistration is left unedited, because editing a preregistration after
+  seeing results is worse than carrying a correction beside it.
+* **A concurrent process running in the same working copy rewrote every file
+  under `outputs/` at 01:09:55, after this round's runs finished.** It was not
+  this round's work and it was cosmetic: `outputs/plast3/`'s numbers are
+  unchanged (`run_omission_separated_s0.json` still reports clear rate 0.4475
+  over 1,200 training records), the provenance gate of section 3 **re-passes
+  against the rewritten files on all four cells**, and `plast4_summary`
+  regenerates `summary.json` byte-identically afterwards. Recorded because
+  section 3's claim rests on those files.
+
+## 9. Artifacts
+
+`outputs/plast4/`: `PREREGISTRATION.md`, `audit.json`, `gate.json`,
+`gate_check.log`, `baselines4.json`, `run_{frozen,A,B,C50,C80,C100,D}_s*.json`
+(19), `weights_*.npz` (18), `summary.json`, `summary.md`, `capacity.json`,
+`capacity.log`, `logs/`.
+
+Code: `scripts/plast4_{common,audit,run,summary,capacity}.py`,
+`scripts/plast4_all.sh`,
+`tests/test_plast4.py` (38 tests), and one additive method on the learning rule,
+`flybalatro.plasticity.KcMbonPlasticity.deliver_eligibility`, which applies the
+identical depression step to a caller-maintained eligibility vector so the trace
+rule and the immediate rule cannot drift apart. Suite: 466 passed, 1 skipped.
+
+Reproduce:
+
+    python -m scripts.plast4_audit
+    python -m scripts.plast4_run --gate        # must pass before anything else
+    python -m scripts.plast4_run --baselines
+    bash scripts/plast4_all.sh
+    python -m scripts.plast4_summary
+    python -m scripts.plast4_capacity   # post-hoc, added after the result
