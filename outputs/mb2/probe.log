@@ -28,7 +28,7 @@
   apl1_tonic_vth4          DN.late.hand_type      acc 0.8525 grp 0.735 perm 0.107 margin 0.7455 cols 631 (7.5s)
   apl1_tonic_vth4          DN.late.sel_is_best    acc 0.9555 grp 0.9375 perm 0.876 margin 0.0795 cols 631 (3.4s)
   apl1_tonic_vth4          DN.late.intensity      acc 0.9115 grp 0.861 perm 0.525 margin 0.3865 cols 631 (3.3s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl1_poisson_vth0        KC.full.hand_type      acc 0.999 grp 0.999 perm 0.111 margin 0.888 cols 2258 (14.3s)
   apl1_poisson_vth0        KC.full.sel_is_best    acc 1.0 grp 1.0 perm 0.864 margin 0.136 cols 2258 (6.8s)
   apl1_poisson_vth0        KC.full.intensity      acc 0.9505 grp 0.9465 perm 0.4935 margin 0.457 cols 2258 (7.9s)
@@ -59,11 +59,11 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl1_poisson_vth0        DN.late.hand_type      acc 0.6225 grp 0.599 perm 0.111 margin 0.5115 cols 649 (7.0s)
   apl1_poisson_vth0        DN.late.sel_is_best    acc 0.911 grp 0.9065 perm 0.8725 margin 0.0385 cols 649 (3.4s)
   apl1_poisson_vth0        DN.late.intensity      acc 0.788 grp 0.7895 perm 0.512 margin 0.276 cols 649 (3.6s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl1_poisson_vth4        KC.full.hand_type      acc 0.996 grp 0.997 perm 0.1155 margin 0.8805 cols 1611 (12.0s)
   apl1_poisson_vth4        KC.full.sel_is_best    acc 1.0 grp 1.0 perm 0.861 margin 0.139 cols 1611 (5.4s)
   apl1_poisson_vth4        KC.full.intensity      acc 0.942 grp 0.933 perm 0.4915 margin 0.4505 cols 1611 (6.4s)
@@ -94,9 +94,9 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl1_poisson_vth4        DN.late.hand_type      acc 0.6055 grp 0.5745 perm 0.1115 margin 0.494 cols 653 (7.1s)
   apl1_poisson_vth4        DN.late.sel_is_best    acc 0.9105 grp 0.9105 perm 0.8685 margin 0.042 cols 653 (3.4s)
   apl1_poisson_vth4        DN.late.intensity      acc 0.7895 grp 0.786 perm 0.5195 margin 0.27 cols 653 (3.5s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl2_tonic_vth0          KC.full.hand_type      acc 1.0 grp 0.995 perm 0.1075 margin 0.8925 cols 888 (10.2s)
   apl2_tonic_vth0          KC.full.sel_is_best    acc 1.0 grp 1.0 perm 0.86 margin 0.14 cols 888 (3.8s)
   apl2_tonic_vth0          KC.full.intensity      acc 0.959 grp 0.94 perm 0.5105 margin 0.4485 cols 888 (4.1s)
@@ -127,10 +127,10 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl2_tonic_vth0          DN.late.hand_type      acc 0.8495 grp 0.7355 perm 0.108 margin 0.7415 cols 635 (7.7s)
   apl2_tonic_vth0          DN.late.sel_is_best    acc 0.959 grp 0.939 perm 0.878 margin 0.081 cols 635 (3.5s)
   apl2_tonic_vth0          DN.late.intensity      acc 0.9195 grp 0.863 perm 0.528 margin 0.3915 cols 635 (3.5s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl2_tonic_vth4          KC.full.hand_type      acc 0.9725 grp 0.938 perm 0.1165 margin 0.856 cols 411 (9.2s)
   apl2_tonic_vth4          KC.full.sel_is_best    acc 1.0 grp 1.0 perm 0.876 margin 0.124 cols 411 (2.8s)
   apl2_tonic_vth4          KC.full.intensity      acc 0.9165 grp 0.8715 perm 0.54 margin 0.3765 cols 411 (2.7s)
@@ -161,11 +161,11 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl2_tonic_vth4          DN.late.hand_type      acc 0.8425 grp 0.758 perm 0.1075 margin 0.735 cols 630 (7.5s)
   apl2_tonic_vth4          DN.late.sel_is_best    acc 0.9575 grp 0.9445 perm 0.876 margin 0.0815 cols 630 (3.3s)
   apl2_tonic_vth4          DN.late.intensity      acc 0.9185 grp 0.8535 perm 0.532 margin 0.3865 cols 630 (3.6s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl2_poisson_vth0        KC.full.hand_type      acc 0.995 grp 0.991 perm 0.1115 margin 0.8835 cols 874 (9.6s)
   apl2_poisson_vth0        KC.full.sel_is_best    acc 1.0 grp 1.0 perm 0.861 margin 0.139 cols 874 (3.8s)
   apl2_poisson_vth0        KC.full.intensity      acc 0.926 grp 0.9135 perm 0.504 margin 0.422 cols 874 (4.1s)
@@ -196,11 +196,11 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl2_poisson_vth0        DN.late.hand_type      acc 0.596 grp 0.5745 perm 0.121 margin 0.475 cols 657 (7.0s)
   apl2_poisson_vth0        DN.late.sel_is_best    acc 0.9105 grp 0.9055 perm 0.8675 margin 0.043 cols 657 (3.2s)
   apl2_poisson_vth0        DN.late.intensity      acc 0.791 grp 0.7825 perm 0.5045 margin 0.2865 cols 657 (3.6s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl2_poisson_vth4        KC.full.hand_type      acc 0.9235 grp 0.911 perm 0.1185 margin 0.805 cols 365 (9.0s)
   apl2_poisson_vth4        KC.full.sel_is_best    acc 0.998 grp 0.9985 perm 0.875 margin 0.123 cols 365 (2.9s)
   apl2_poisson_vth4        KC.full.intensity      acc 0.8635 grp 0.8565 perm 0.483 margin 0.3805 cols 365 (2.6s)
@@ -231,10 +231,10 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl2_poisson_vth4        DN.late.hand_type      acc 0.6015 grp 0.57 perm 0.1275 margin 0.474 cols 664 (6.8s)
   apl2_poisson_vth4        DN.late.sel_is_best    acc 0.9125 grp 0.908 perm 0.8625 margin 0.05 cols 664 (3.3s)
   apl2_poisson_vth4        DN.late.intensity      acc 0.791 grp 0.7915 perm 0.5045 margin 0.2865 cols 664 (3.4s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl5_tonic_vth0          KC.full.hand_type      acc 0.984 grp 0.968 perm 0.114 margin 0.87 cols 416 (9.7s)
   apl5_tonic_vth0          KC.full.sel_is_best    acc 1.0 grp 1.0 perm 0.8845 margin 0.1155 cols 416 (3.0s)
   apl5_tonic_vth0          KC.full.intensity      acc 0.936 grp 0.917 perm 0.497 margin 0.439 cols 416 (2.7s)
@@ -265,10 +265,10 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl5_tonic_vth0          DN.late.hand_type      acc 0.838 grp 0.7365 perm 0.1135 margin 0.7245 cols 633 (7.9s)
   apl5_tonic_vth0          DN.late.sel_is_best    acc 0.9545 grp 0.9465 perm 0.875 margin 0.0795 cols 633 (3.2s)
   apl5_tonic_vth0          DN.late.intensity      acc 0.9095 grp 0.8565 perm 0.509 margin 0.4005 cols 633 (3.5s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl5_tonic_vth4          KC.full.hand_type      acc 0.1355 grp 0.1285 perm 0.12 margin 0.0155 cols 8 (5.8s)
   apl5_tonic_vth4          KC.full.sel_is_best    acc 0.8905 grp 0.891 perm 0.89 margin 0.0005 cols 8 (0.9s)
   apl5_tonic_vth4          KC.full.intensity      acc 0.509 grp 0.5075 perm 0.5045 margin 0.0045 cols 8 (0.9s)
@@ -299,12 +299,12 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl5_tonic_vth4          DN.late.hand_type      acc 0.852 grp 0.753 perm 0.105 margin 0.747 cols 633 (8.0s)
   apl5_tonic_vth4          DN.late.sel_is_best    acc 0.959 grp 0.9425 perm 0.8715 margin 0.0875 cols 633 (3.4s)
   apl5_tonic_vth4          DN.late.intensity      acc 0.9085 grp 0.877 perm 0.511 margin 0.3975 cols 633 (3.7s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl5_poisson_vth0        KC.full.hand_type      acc 0.883 grp 0.8565 perm 0.105 margin 0.778 cols 430 (8.4s)
   apl5_poisson_vth0        KC.full.sel_is_best    acc 0.9985 grp 0.9985 perm 0.8815 margin 0.117 cols 430 (2.9s)
   apl5_poisson_vth0        KC.full.intensity      acc 0.897 grp 0.888 perm 0.5035 margin 0.3935 cols 430 (2.7s)
@@ -335,11 +335,11 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl5_poisson_vth0        DN.late.hand_type      acc 0.5825 grp 0.571 perm 0.1165 margin 0.466 cols 660 (7.1s)
   apl5_poisson_vth0        DN.late.sel_is_best    acc 0.911 grp 0.9085 perm 0.862 margin 0.049 cols 660 (3.5s)
   apl5_poisson_vth0        DN.late.intensity      acc 0.7725 grp 0.766 perm 0.507 margin 0.2655 cols 660 (3.5s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
   apl5_poisson_vth4        KC.full.hand_type      acc 0.1325 grp 0.135 perm 0.1145 margin 0.018 cols 12 (6.4s)
   apl5_poisson_vth4        KC.full.sel_is_best    acc 0.89 grp 0.891 perm 0.89 margin 0.0 cols 12 (0.9s)
   apl5_poisson_vth4        KC.full.intensity      acc 0.519 grp 0.518 perm 0.5055 margin 0.0135 cols 12 (0.9s)
@@ -370,6 +370,6 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
   apl5_poisson_vth4        DN.late.hand_type      acc 0.5875 grp 0.565 perm 0.122 margin 0.4655 cols 663 (6.6s)
   apl5_poisson_vth4        DN.late.sel_is_best    acc 0.9185 grp 0.9085 perm 0.8635 margin 0.055 cols 663 (3.5s)
   apl5_poisson_vth4        DN.late.intensity      acc 0.7795 grp 0.7665 perm 0.496 margin 0.2835 cols 663 (3.5s)
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
+wrote <repo>/outputs/mb2/probes.json
 PROBE LOOP DONE

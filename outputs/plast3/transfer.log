@@ -8,4 +8,4 @@
    reward_hand_type_only      n= 128  median 0.6248  mean 0.7775  ratio-of-means 0.658
    punish_bucket_only         n=  48  median 0.0817  mean 0.2416  ratio-of-means 0.4652
    punish_hand_type_only      n= 128  median 0.2762  mean -0.7404  ratio-of-means 0.5931
-wrote /Users/abhipoluri/fly-balatro/outputs/plast3/transfer.json in 590s
+wrote <repo>/outputs/plast3/transfer.json in 590s

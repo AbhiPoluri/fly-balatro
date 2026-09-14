@@ -9,4 +9,4 @@ real_eta0.05_s2: greedy 0.200 P(play|legal) 0.801 | sampled 0.250 P(play|legal) 
   always_discard   clear 0.400
   teacher_dig      clear 0.700
   bucket_ge_lt1    clear 0.633
-wrote /Users/abhipoluri/fly-balatro/outputs/plast3/eval_mode.json in 1763s
+wrote <repo>/outputs/plast3/eval_mode.json in 1763s

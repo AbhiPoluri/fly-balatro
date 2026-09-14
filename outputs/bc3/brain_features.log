@@ -1,4 +1,4 @@
-encoding=glomerular32 spec=apl2_tonic_vth0 from /Users/abhipoluri/fly-balatro/outputs/mb2/tuned_config.json
+encoding=glomerular32 spec=apl2_tonic_vth0 from <repo>/outputs/mb2/tuned_config.json
   tuning={'apl_scale': 2.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 0.0} tonic 30 mV window 50 ms brain_seed 1
 outputs/bc3/states.npz: 150,037 states, 315 features, feature_version=2
 encoding glomerular32: the brain sees 32 of 315 bits (283 not sent)

@@ -5,14 +5,14 @@
 2026-09-13 03:32:11,563 INFO    flyviewer:   policy note: using bc2/models/real_alpn_kc_dn_mlp.npz (feature_version 2, 1x256 ReLU readout)
 2026-09-13 03:32:11,583 INFO    flyviewer: encoding v2: 315 bits -> 3150 driven neurons (orn_first=True)
 2026-09-13 03:32:11,583 INFO    flyviewer: ready: http://127.0.0.1:8767  (policy=brain_readout, condition=real, RSS 309 MB)
-/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:780: DeprecationWarning: 
+<repo>/flybalatro/viewer/server.py:780: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:784: DeprecationWarning: 
+<repo>/flybalatro/viewer/server.py:784: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the

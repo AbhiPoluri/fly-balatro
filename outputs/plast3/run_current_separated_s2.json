@@ -2375,7 +2375,7 @@
     "reward_mbons": 16,
     "weight_floor": 0.05
   },
-  "saved_weights": "/Users/abhipoluri/fly-balatro/outputs/plast3/weights_current_separated_s2.npz",
+  "saved_weights": "<repo>/outputs/plast3/weights_current_separated_s2.npz",
   "seeds": {
     "calib": 300000,
     "train": 202000

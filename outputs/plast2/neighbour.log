@@ -16,4 +16,4 @@
    punish_hamming_4_4           n=  24  relative spread 0.4322  (sd 1.3571)
    punish_hamming_6_8           n=  24  relative spread -0.1301  (sd 0.9014)
    punish_hamming_10_32         n=  24  relative spread -0.1738  (sd 1.0197)
-wrote /Users/abhipoluri/fly-balatro/outputs/plast2/neighbour.json in 249s
+wrote <repo>/outputs/plast2/neighbour.json in 249s

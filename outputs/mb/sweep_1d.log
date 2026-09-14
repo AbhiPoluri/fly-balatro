@@ -67,4 +67,4 @@ apl1_pnkc1_vth6_bias0           0.1672  0.1658  0.8223  0.091   4.51   22.22   7
 apl1_pnkc1_vth8_bias0           0.1210  0.1198  0.8176  0.064   3.03   16.78   74.36    1
 apl1_pnkc0.5_vth0_bias0         0.0159  0.0150  0.6226  0.008   0.37    9.51   74.54    1
 apl1_pnkc0.25_vth0_bias0        0.0000  0.0000  0.0000  0.000   0.00    9.37   74.57    1
-wrote /Users/abhipoluri/fly-balatro/outputs/mb/sweep.json
+wrote <repo>/outputs/mb/sweep.json

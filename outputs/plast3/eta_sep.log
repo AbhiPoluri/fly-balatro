@@ -40,4 +40,4 @@ chosen: {
     "ratio_reference_eta_reward": 0.05
   }
 }
-wrote /Users/abhipoluri/fly-balatro/outputs/plast3/eta_calib_sep.json in 458s
+wrote <repo>/outputs/plast3/eta_calib_sep.json in 458s

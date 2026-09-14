@@ -80,7 +80,7 @@
       "reward_mbons": 16,
       "punish_edges": 13582,
       "punish_mbons": 46,
-      "config": "/Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json",
+      "config": "<repo>/outputs/plast2/tuned_config.json",
       "operating_point": {
         "bias": -2.6159665471207854,
         "temperature": 0.8383112790300333,
@@ -88,8 +88,8 @@
         "play_bias_p": 0.55,
         "eta_reward": 0.05,
         "eta_punish": 0.1907,
-        "source": "/Users/abhipoluri/fly-balatro/outputs/plast2/run_real_eta0.05_s0.json",
-        "eta_source": "/Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json (ratio 3.8132)"
+        "source": "<repo>/outputs/plast2/run_real_eta0.05_s0.json",
+        "eta_source": "<repo>/outputs/plast2/eta_calib.json (ratio 3.8132)"
       },
       "n_approach_mbons": 66,
       "n_avoid_mbons": 24,

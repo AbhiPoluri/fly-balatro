@@ -78,4 +78,4 @@ priors: {
       ep13 loss 0.0152 val 0.6387
       ep14 loss 0.0147 val 0.6388
       test top1 0.6327  nontrivial 0.6211044090191009  (102s)
-wrote /Users/abhipoluri/fly-balatro/outputs/bc/train_metrics.json
+wrote <repo>/outputs/bc/train_metrics.json

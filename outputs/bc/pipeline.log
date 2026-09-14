@@ -121,7 +121,7 @@ real_alpn_kc_dn effective (non-constant) width: 3490/6064
       ep13 loss 0.0299 val 0.6326
       ep14 loss 0.0286 val 0.6316
       test top1 0.6210  nontrivial 0.6090047393364929  (92s)
-wrote /Users/abhipoluri/fly-balatro/outputs/bc/train_metrics.json
+wrote <repo>/outputs/bc/train_metrics.json
 === 17:27:03 real-wiring readouts trained ===
 === 18:02:45 feats_shuffled.npz complete ===
   row 0: ok  (8 active units)
@@ -211,7 +211,7 @@ real_alpn_kc_dn effective (non-constant) width: 3490/6064
       ep13 loss 0.5463 val 0.5369
       ep14 loss 0.5409 val 0.5374
       test top1 0.5532  nontrivial 0.5390995260663507  (24s)
-wrote /Users/abhipoluri/fly-balatro/outputs/bc/train_metrics.json
+wrote <repo>/outputs/bc/train_metrics.json
 === 18:05:13 shuffled-wiring readouts trained ===
 [references] 2 readouts x 1000 episodes = 2000 jobs, wiring=None
 [references] 100/2000 episodes  0.0 min  ETA 0.1 min

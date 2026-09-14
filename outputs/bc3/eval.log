@@ -1,4 +1,4 @@
-glomerular spec apl2_tonic_vth0 from /Users/abhipoluri/fly-balatro/outputs/mb2/tuned_config.json: tuning={'apl_scale': 2.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 0.0, 'apl_kc_only': 0.0} tonic 30 mV
+glomerular spec apl2_tonic_vth0 from <repo>/outputs/mb2/tuned_config.json: tuning={'apl_scale': 2.0, 'alpn_kc_scale': 1.0, 'kc_vth_offset_mv': 0.0, 'kc_bias_mv': 0.0, 'kc_kc_scale': 1.0, 'kc_input_norm': 0.0, 'apl_kc_only': 0.0} tonic 30 mV
 feature_version=2 n_features=315 encoding=glomerular32 bits_to_brain=32 teacher=v2 bc_dir=outputs/bc3
 [references] 2 readouts x 400 episodes = 800 jobs, wiring=None
 [references] 40/800 episodes  0.0 min  ETA 0.1 min

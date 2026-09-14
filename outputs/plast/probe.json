@@ -4,7 +4,7 @@
     "explore": 0.2,
     "explore_floor": 0.0,
     "n_calib": 200,
-    "out": "/Users/abhipoluri/fly-balatro/outputs/plast/probe.json",
+    "out": "<repo>/outputs/plast/probe.json",
     "trials": 20,
     "valence": "nt",
     "window_ms": null,

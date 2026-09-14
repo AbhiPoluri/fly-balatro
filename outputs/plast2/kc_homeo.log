@@ -10,12 +10,12 @@
 [ 9] k=1    active 0.0464 (188/state)  r>0.5   25 (0.0062)  r>0.3   56 (0.0138)  in-band 1082  silent 1843  flips 0.29  68s
 converged at iteration 9: frac(r>0.3) = 0.0138 < 0.02
 
-wrote /Users/abhipoluri/fly-balatro/outputs/plast2/kc_homeo.json and /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json
+wrote <repo>/outputs/plast2/kc_homeo.json and <repo>/outputs/plast2/tuned_config.json
 final: active 0.0648 (263/state), r>0.5 71 (0.0175), r>0.3 220 (0.0541), silent 1769, offsets -6.7..+21.1 mV
 resumed at iteration 10
 [10] k=0.6  active 0.0648 (263/state)  r>0.5   71 (0.0175)  r>0.3  220 (0.0541)  in-band 1119  silent 1769  flips 0.29  68s
 [11] k=0.6  active 0.0454 (184/state)  r>0.5   19 (0.0047)  r>0.3   34 (0.0084)  in-band 1463  silent 1599  flips 0.24  68s
 converged at iteration 11: frac(r>0.3) = 0.0084 < 0.02 (last update not applied)
 
-wrote /Users/abhipoluri/fly-balatro/outputs/plast2/kc_homeo.json and /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json
+wrote <repo>/outputs/plast2/kc_homeo.json and <repo>/outputs/plast2/tuned_config.json
 final: active 0.0454 (184/state), r>0.5 19 (0.0047), r>0.3 34 (0.0084), silent 1599, offsets -6.7..+21.4 mV

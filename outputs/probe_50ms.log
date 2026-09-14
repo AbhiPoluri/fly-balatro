@@ -112,4 +112,4 @@ firing (real): {
     "mean_total_spikes_per_sample": 765.9
   }
 }
-wrote /Users/abhipoluri/fly-balatro/outputs/brain_probe.json
+wrote <repo>/outputs/brain_probe.json

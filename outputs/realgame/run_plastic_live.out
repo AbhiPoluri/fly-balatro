@@ -1,10 +1,10 @@
 [api] http://127.0.0.1:12346 health={'status': 'ok'}
-[fly] plast2 operating point from /Users/abhipoluri/fly-balatro/outputs/plast2/run_real_eta0.05_s0.json
-[fly] brain config /Users/abhipoluri/fly-balatro/outputs/plast2/tuned_config.json (label apl2_aplkc1_aplmb0.1_vtho4064)
+[fly] plast2 operating point from <repo>/outputs/plast2/run_real_eta0.05_s0.json
+[fly] brain config <repo>/outputs/plast2/tuned_config.json (label apl2_aplkc1_aplmb0.1_vtho4064)
 [fly] naive: every KC -> MBON synapse at its original weight
 [fly] 33496 KC -> MBON synapses (10886 PAM-gated, 13582 PPL1-gated), 66 approach / 24 avoid MBONs
-[fly] eta_reward=0.05 eta_punish=0.1907 (/Users/abhipoluri/fly-balatro/outputs/plast2/eta_calib.json (ratio 3.8132))
-[spikes] mode=on sidecar=/Users/abhipoluri/fly-balatro/outputs/realgame/spikes.bin (wanted now: True)
+[fly] eta_reward=0.05 eta_punish=0.1907 (<repo>/outputs/plast2/eta_calib.json (ratio 3.8132))
+[spikes] mode=on sidecar=<repo>/outputs/realgame/spikes.bin (wanted now: True)
 [run] starting RED deck / WHITE stake
 [  1] SELECTING_HAND score=0/300 h=4 d=4 | Flush 304 vs 300 (ge1.0) | app 12.4 - avo 8.3 Hz -> P(play) 0.82 => PLAY [1, 2, 3, 4, 7]
       -> DA+ reward; chips 304 cleared=True lost=False | synapses changed 1.2% mean w/w0 0.9997

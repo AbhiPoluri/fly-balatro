@@ -128,4 +128,4 @@ apl3_kckc0_norm1                0.0397  0.0349  0.4593  0.020   0.89    8.80   7
 apl5_kckc0_norm1                0.0261  0.0217  0.3522  0.013   0.52    6.92   69.05    1
 apl2_norm1                      0.0907  0.0869  0.6745  0.048   2.54    9.97   72.90    1
 apl3_norm1                      0.0406  0.0352  0.4632  0.021   0.91    8.78   71.75    1
-wrote /Users/abhipoluri/fly-balatro/outputs/mb/sweep.json
+wrote <repo>/outputs/mb/sweep.json

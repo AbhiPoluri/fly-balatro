@@ -98,4 +98,4 @@
 [shuffled] 1520/1600 episodes  18.2 min  ETA 1.0 min
 [shuffled] 1600/1600 episodes  19.1 min  ETA 0.0 min
   shuf_dn/mlp: clear 0.000  chips 152  len 40.6  skip 0.0000  trunc 0.000  cache 0.039
-wrote /Users/abhipoluri/fly-balatro/outputs/bc/eval.json
+wrote <repo>/outputs/bc/eval.json

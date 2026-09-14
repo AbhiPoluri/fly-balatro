@@ -102,4 +102,4 @@ Baselines on the same 500 held-out patterns: majority 0.2380, permuted labels on
 | dn | rw2 | -0.0073 [-0.0118, -0.0027] | -1.5 pp (1.8% vs 3.2%) | 0.2632 (7/13) | -6.5 [-42.6, 29.3] |
 | dn | rw3 | -0.0045 [-0.0088, -0.0001] | -0.8 pp (1.8% vs 2.5%) | 0.6072 (6/9) | -6.8 [-45.1, 32.5] |
 
-wrote /Users/abhipoluri/fly-balatro/outputs/calyx/tables_homeo.md
+wrote <repo>/outputs/calyx/tables_homeo.md

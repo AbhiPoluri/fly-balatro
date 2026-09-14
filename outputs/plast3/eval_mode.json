@@ -72738,7 +72738,7 @@
           "reward": 405
         },
         "n_edges": 33496,
-        "path": "/Users/abhipoluri/fly-balatro/outputs/plast3/v2retrain/weights_real_eta0.02_s0.npz",
+        "path": "<repo>/outputs/plast3/v2retrain/weights_real_eta0.02_s0.npz",
         "post": [
           66,
           126281,
@@ -244781,7 +244781,7 @@
           "reward": 434
         },
         "n_edges": 33496,
-        "path": "/Users/abhipoluri/fly-balatro/outputs/plast3/v2retrain/weights_real_eta0.02_s1.npz",
+        "path": "<repo>/outputs/plast3/v2retrain/weights_real_eta0.02_s1.npz",
         "post": [
           66,
           126281,
@@ -416834,7 +416834,7 @@
           "reward": 504
         },
         "n_edges": 33496,
-        "path": "/Users/abhipoluri/fly-balatro/outputs/plast2/weights_real_eta0.05_s0.npz",
+        "path": "<repo>/outputs/plast2/weights_real_eta0.05_s0.npz",
         "post": [
           66,
           126281,
@@ -588882,7 +588882,7 @@
           "reward": 462
         },
         "n_edges": 33496,
-        "path": "/Users/abhipoluri/fly-balatro/outputs/plast3/v2retrain/weights_real_eta0.05_s1.npz",
+        "path": "<repo>/outputs/plast3/v2retrain/weights_real_eta0.05_s1.npz",
         "post": [
           66,
           126281,
@@ -760925,7 +760925,7 @@
           "reward": 487
         },
         "n_edges": 33496,
-        "path": "/Users/abhipoluri/fly-balatro/outputs/plast3/v2retrain/weights_real_eta0.05_s2.npz",
+        "path": "<repo>/outputs/plast3/v2retrain/weights_real_eta0.05_s2.npz",
         "post": [
           66,
           126281,

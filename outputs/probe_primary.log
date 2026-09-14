@@ -63,4 +63,4 @@ firing (real):
   MBON     71/97    ever fire,    71 varying,    297.8 spikes/sample
   CX     1013/2950  ever fire,   858 varying,    765.9 spikes/sample
   DN      543/1314  ever fire,   539 varying,    493.8 spikes/sample
-wrote /Users/abhipoluri/fly-balatro/outputs/brain_probe.json
+wrote <repo>/outputs/brain_probe.json

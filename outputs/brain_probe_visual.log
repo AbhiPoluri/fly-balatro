@@ -154,4 +154,4 @@ lamina_L2L3_w50|label_A: majority_class_rate=0.5933  permuted_real_DN=0.5933  pe
 lamina_L2L3_w50|label_B: majority_class_rate=0.5033  permuted_real_DN=0.5017  permuted_raw_bits=0.485  raw_bits=0.8533  channel_ceiling=0.57  real:INPUT=0.8533  shuffled:INPUT=0.8517  real:LC=None  shuffled:LC=0.65  real:DN=0.5083  shuffled:DN=0.6433  fraction_DN_ever_firing=0.1104
 optic_excitatory_w50|label_A: majority_class_rate=0.5933  permuted_real_DN=0.5533  permuted_raw_bits=0.555  raw_bits=0.9  channel_ceiling=0.76  real:INPUT=0.9  shuffled:INPUT=0.9017  real:LC=0.595  shuffled:LC=0.6433  real:DN=0.6017  shuffled:DN=0.5733  fraction_DN_ever_firing=0.5152
 optic_excitatory_w50|label_B: majority_class_rate=0.5033  permuted_real_DN=0.505  permuted_raw_bits=0.485  raw_bits=0.8533  channel_ceiling=0.72  real:INPUT=0.855  shuffled:INPUT=0.855  real:LC=0.525  shuffled:LC=0.6917  real:DN=0.54  shuffled:DN=0.68  fraction_DN_ever_firing=0.5152
-wrote /Users/abhipoluri/fly-balatro/outputs/brain_probe_visual.json
+wrote <repo>/outputs/brain_probe_visual.json

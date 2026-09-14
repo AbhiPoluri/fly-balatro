@@ -286,12 +286,18 @@ what it looks like with the real game embedded in it.
 
 ## Licence
 
-**TODO — not chosen.** No licence is asserted for this repository yet, which
-means default copyright: you may read it, but not reuse it, until one is added.
-The vendored upstreams keep their own (`balatro-rs` is MIT); no connectome data
-and no Balatro asset is redistributed here — see
+MIT, see [`LICENSE`](LICENSE). Chosen to match the vendored upstreams, which
+are MIT themselves (`balatro-rs`, `balatrobot`), so the patches in
+[`patches/`](patches/) carry the same terms as the code they apply to.
+
+No connectome data and no Balatro asset is redistributed here — see
 [`docs/DATA.md`](docs/DATA.md) for the terms that attach to what you download
 yourself.
+
+Absolute paths in the artifacts under `outputs/` were redacted before the
+first public commit: the author's home directory is written as `<repo>` and
+`<home>`. Only the path prefix changed; no measurement, count or result was
+touched, and every JSON still parses.
 
 ## Citing
 

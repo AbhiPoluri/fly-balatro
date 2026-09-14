@@ -118,7 +118,7 @@
     [apl5_poisson_vth4] 1750/2000  224s
     [apl5_poisson_vth4] 2000/2000  254s
   KC active 0.0003 always-on 0.0002 (a/a 0.667) J between/within 1.001  MBON 5.67 Hz vary 26  ALPN CV 0.0285  254s
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/grid.json
+wrote <repo>/outputs/mb2/grid.json
 === apl2_tonic_vth0_norm1  {'label': 'apl2_tonic_vth0_norm1', 'apl_scale': 2.0, 'drive': 'tonic', 'kc_vth_offset_mv': 0.0, 'kc_input_norm': 1.0}
     [apl2_tonic_vth0_norm1] 250/2000  27s
     [apl2_tonic_vth0_norm1] 500/2000  53s
@@ -129,4 +129,4 @@ wrote /Users/abhipoluri/fly-balatro/outputs/mb2/grid.json
     [apl2_tonic_vth0_norm1] 1750/2000  183s
     [apl2_tonic_vth0_norm1] 2000/2000  209s
   KC active 0.0656 always-on 0.0605 (a/a 0.922) J between/within 0.8862  MBON 8.05 Hz vary 45  ALPN CV 0.0283  209s
-wrote /Users/abhipoluri/fly-balatro/outputs/mb2/grid.json
+wrote <repo>/outputs/mb2/grid.json

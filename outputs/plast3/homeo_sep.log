@@ -12,5 +12,5 @@
 [11] k=0.5  active 0.0497 (202/odour)  r>0.5   26  r>0.3   53  in-band  755  silent 2283  flips 0.38  12s
 converged at iteration 11: frac(r>0.3) = 0.0130 (last update not applied)
 
-wrote /Users/abhipoluri/fly-balatro/outputs/plast3/kc_homeo_sep.json and /Users/abhipoluri/fly-balatro/outputs/plast3/tuned_config_sep.json
+wrote <repo>/outputs/plast3/kc_homeo_sep.json and <repo>/outputs/plast3/tuned_config_sep.json
 final: active 0.0497 (202/odour), r>0.5 26, r>0.3 53, silent 2283, offsets -6.7..+19.9 mV

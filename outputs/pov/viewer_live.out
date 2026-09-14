@@ -3,16 +3,16 @@
 2026-09-13 18:59:10,353 INFO    flyviewer: encoding v2 / glomerular32: 32 bits -> 32 relay bits -> 32 whole ORN glomeruli (2075 receptor neurons), 0 bits not sent, tuning apl2
 2026-09-13 18:59:10,681 INFO    flyviewer: brain[real/glomerular32] ready in 0.3s
 2026-09-13 18:59:11,887 INFO    flyviewer: mushroom body: 66 approach / 24 avoid MBONs, 316 PAM / 16 PPL1 DANs, 33496 KC -> MBON synapses (1.2s)
-2026-09-13 18:59:11,888 INFO    flyviewer: real-game source: /Users/abhipoluri/fly-balatro/outputs/realgame/latest.json (live)
+2026-09-13 18:59:11,888 INFO    flyviewer: real-game source: <repo>/outputs/realgame/latest.json (live)
 2026-09-13 18:59:11,888 INFO    flyviewer: ready: http://127.0.0.1:8771  (source=realgame, policy=none, condition=real, RSS 780 MB)
-/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:1427: DeprecationWarning: 
+<repo>/flybalatro/viewer/server.py:1427: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:1431: DeprecationWarning: 
+<repo>/flybalatro/viewer/server.py:1431: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the

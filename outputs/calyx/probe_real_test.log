@@ -4,4 +4,4 @@
       dn     acc 0.646 grouped 0.62 perm 0.152 (3s)
       alpn   acc 1.0 grouped 1.0 perm 0.148 (2s)
       mbon   acc 0.316 grouped 0.298 perm 0.206 (1s)
-wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_raw.json
+wrote <repo>/outputs/calyx/probe_raw.json

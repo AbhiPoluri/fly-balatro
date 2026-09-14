@@ -2066,7 +2066,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_bytype.json"
+      "source_file": "<repo>/outputs/probe_bytype.json"
     },
     "d60_w50": {
       "tag": "d60_w50",
@@ -3788,7 +3788,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_d60.json"
+      "source_file": "<repo>/outputs/probe_d60.json"
     },
     "n1500_w50_d30": {
       "tag": "n1500_w50_d30",
@@ -5510,7 +5510,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_n1500.json"
+      "source_file": "<repo>/outputs/probe_n1500.json"
     },
     "nf40_w50_d30": {
       "tag": "nf40_w50_d30",
@@ -7211,7 +7211,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_nf40.json"
+      "source_file": "<repo>/outputs/probe_nf40.json"
     },
     "nf64_w50_d30": {
       "tag": "nf64_w50_d30",
@@ -8926,7 +8926,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_nf64.json"
+      "source_file": "<repo>/outputs/probe_nf64.json"
     },
     "persistent_w50_d30": {
       "tag": "persistent_w50_d30",
@@ -10648,7 +10648,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_persistent.json"
+      "source_file": "<repo>/outputs/probe_persistent.json"
     },
     "primary_w50_d30": {
       "tag": "primary_w50_d30",
@@ -12370,7 +12370,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_primary_w50_d30.json"
+      "source_file": "<repo>/outputs/probe_primary_w50_d30.json"
     },
     "w100_d12_jit2": {
       "tag": "w100_d12_jit2",
@@ -14092,7 +14092,7 @@
           }
         }
       },
-      "source_file": "/Users/abhipoluri/fly-balatro/outputs/probe_w100_d12_jit2.json"
+      "source_file": "<repo>/outputs/probe_w100_d12_jit2.json"
     }
   }
 }

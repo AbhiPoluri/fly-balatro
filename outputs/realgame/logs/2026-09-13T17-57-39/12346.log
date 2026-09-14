@@ -1,10 +1,10 @@
 INFO - [♥] Lovely 0.9.0
-INFO - [♥] Game directory is at "/Users/abhipoluri/Library/Application Support/Steam/steamapps/common/Balatro/Balatro.app/Contents/MacOS"
-INFO - [♥] Writing logs to "/Users/abhipoluri/Library/Application Support/Balatro/Mods/lovely/log"
-INFO - [♥] Using mod directory at "/Users/abhipoluri/Library/Application Support/Balatro/Mods"
+INFO - [♥] Game directory is at "<home>/Library/Application Support/Steam/steamapps/common/Balatro/Balatro.app/Contents/MacOS"
+INFO - [♥] Writing logs to "<home>/Library/Application Support/Balatro/Mods/lovely/log"
+INFO - [♥] Using mod directory at "<home>/Library/Application Support/Balatro/Mods"
 INFO - [♥] No blacklist.txt in Mods/lovely.
-INFO - [♥] Cleaning up dump directory at "/Users/abhipoluri/Library/Application Support/Balatro/Mods/lovely/dump"
-INFO - [♥] Cleaning up game-dump directory at "/Users/abhipoluri/Library/Application Support/Balatro/Mods/lovely/game-dump"
+INFO - [♥] Cleaning up dump directory at "<home>/Library/Application Support/Balatro/Mods/lovely/dump"
+INFO - [♥] Cleaning up game-dump directory at "<home>/Library/Application Support/Balatro/Mods/lovely/game-dump"
 INFO - [♥] Initialization complete in 42ms
 INFO - [♥] Applied 1 patch to '=[love "wrap_GraphicsShader.lua"]'
 INFO - [♥] Applied 1 patch to '=[lovely SMODS.preflight.core "src/preflight/core.lua"]'
@@ -12,12 +12,12 @@ INFO - [G] Failed to connect to the debug server
 INFO - [G] 2026-09-13 17:57:40 :: DEBUG :: DebugConsole :: Steamodded Debug Socket started !
 INFO - [G] [stage]	Loading APIs
 INFO - [G] [stage]	Processing Mod Files
-INFO - [G] /Users/abhipoluri/Library/Application Support/Balatro/Mods	balatrobot	1
+INFO - [G] <home>/Library/Application Support/Balatro/Mods	balatrobot	1
 INFO - [G] 2026-09-13 17:57:40 :: WARN  :: Utils :: Trailing dot found in version "1.~".
 INFO - [G] 2026-09-13 17:57:40 :: INFO  :: Loader :: Valid JSON file found
 INFO - [G] 2026-09-13 17:57:40 :: DEBUG :: loader :: Blacklist file does not exist
-INFO - [G] /Users/abhipoluri/Library/Application Support/Balatro/Mods	lovely	1
-INFO - [G] /Users/abhipoluri/Library/Application Support/Balatro/Mods	smods	1
+INFO - [G] <home>/Library/Application Support/Balatro/Mods	lovely	1
+INFO - [G] <home>/Library/Application Support/Balatro/Mods	smods	1
 INFO - [G] 2026-09-13 17:57:40 :: INFO  :: Steamodded :: Preflight loaded after 0.0022617916666667
 INFO - [♥] Applied 13 patches to 'main.lua'
 INFO - [♥] Applied 6 patches to 'engine/controller.lua'
@@ -48,7 +48,7 @@ INFO - [♥] Applied 9 patches to 'engine/sound_manager.lua'
 INFO - [♥] Applied 1 patch to 'engine/save_manager.lua'
 INFO - [♥] Applied 2 patches to 'flame.fs'
 INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.SETTINGS :: Patched love.update with dt=0.016666666666667
-INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.SERVER :: Loaded OpenRPC spec from /Users/abhipoluri/Library/Application Support/Balatro/Mods/balatrobot/src/lua/utils/openrpc.json
+INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.SERVER :: Loaded OpenRPC spec from <home>/Library/Application Support/Balatro/Mods/balatrobot/src/lua/utils/openrpc.json
 INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.SERVER :: HTTP server listening on http://127.0.0.1:12346
 INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.DISPATCHER :: Loading endpoint: src/lua/endpoints/health.lua
 INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.DISPATCHER :: Registered endpoint: health
@@ -126,7 +126,7 @@ INFO - [G] 2026-09-13 17:57:42 :: INFO  :: TIMER :: [0002] Injected Scoring_Para
 INFO - [G] 2026-09-13 17:57:42 :: INFO  :: TIMER :: [0003] Injected Scoring_Calculations in 0.007 ms
 INFO - [G] 2026-09-13 17:57:42 :: INFO  :: TIMER :: [0022] Injected Draw Step in 0.040 ms
 INFO - [G] 2026-09-13 17:57:42 :: INFO  :: TIMER :: [0000] Injected [INTERNAL] in 0.069 ms
-[S_API] SteamAPI_Init(): Loaded '/Users/abhipoluri/Library/Application Support/Steam/Steam.AppBundle/Steam/Contents/MacOS/steamclient.dylib' OK.
+[S_API] SteamAPI_Init(): Loaded '<home>/Library/Application Support/Steam/Steam.AppBundle/Steam/Contents/MacOS/steamclient.dylib' OK.
 Setting breakpad minidump AppID = 2379780
 SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561199008564685 [API loaded no]
 INFO - [G] 2026-09-13 17:57:42 :: DEBUG :: BB.SERVER :: Client connected

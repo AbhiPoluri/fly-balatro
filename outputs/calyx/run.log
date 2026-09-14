@@ -23,7 +23,7 @@
       dn     acc 0.634 grouped 0.602 perm 0.16 (3s)
       alpn   acc 1.0 grouped 1.0 perm 0.16 (2s)
       mbon   acc 0.34 grouped 0.332 perm 0.198 (0s)
-wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_raw.json
+wrote <repo>/outputs/calyx/probe_raw.json
 === 18:53:40 train raw
 [raw/real/kc] top1 0.7085 (d=993/4064, 38s)
 [raw/real/dn] top1 0.6606 (d=654/1314, 22s)
@@ -44,25 +44,25 @@ wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_raw.json
 [homeo/real] 2,500/4,962 rows 4.0 min  10.5/s  ETA 3.9 min
 [homeo/real] 3,750/4,962 rows 5.9 min  10.5/s  ETA 1.9 min
 [homeo/real] 4,962/4,962 rows 7.3 min  11.3/s  ETA 0.0 min
-[homeo/real] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/real/feats_real.npz (4 MB) in 7.3 min
+[homeo/real] wrote <repo>/outputs/calyx/homeo/real/feats_real.npz (4 MB) in 7.3 min
 [homeo/rw1] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
 [homeo/rw1] 1,250/4,962 rows 2.2 min  9.6/s  ETA 6.5 min
 [homeo/rw1] 2,500/4,962 rows 3.5 min  11.9/s  ETA 3.5 min
 [homeo/rw1] 3,750/4,962 rows 5.8 min  10.8/s  ETA 1.9 min
 [homeo/rw1] 4,962/4,962 rows 7.2 min  11.5/s  ETA 0.0 min
-[homeo/rw1] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/rw1/feats_real.npz (4 MB) in 7.2 min
+[homeo/rw1] wrote <repo>/outputs/calyx/homeo/rw1/feats_real.npz (4 MB) in 7.2 min
 [homeo/rw2] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
 [homeo/rw2] 1,250/4,962 rows 2.1 min  9.8/s  ETA 6.3 min
 [homeo/rw2] 2,500/4,962 rows 3.4 min  12.1/s  ETA 3.4 min
 [homeo/rw2] 3,750/4,962 rows 5.4 min  11.7/s  ETA 1.7 min
 [homeo/rw2] 4,962/4,962 rows 6.7 min  12.4/s  ETA 0.0 min
-[homeo/rw2] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/rw2/feats_real.npz (4 MB) in 6.7 min
+[homeo/rw2] wrote <repo>/outputs/calyx/homeo/rw2/feats_real.npz (4 MB) in 6.7 min
 [homeo/rw3] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
 [homeo/rw3] 1,250/4,962 rows 1.9 min  10.8/s  ETA 5.7 min
 [homeo/rw3] 2,500/4,962 rows 3.2 min  12.9/s  ETA 3.2 min
 [homeo/rw3] 3,750/4,962 rows 5.2 min  12.1/s  ETA 1.7 min
 [homeo/rw3] 4,962/4,962 rows 6.5 min  12.8/s  ETA 0.0 min
-[homeo/rw3] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/homeo/rw3/feats_real.npz (4 MB) in 6.5 min
+[homeo/rw3] wrote <repo>/outputs/calyx/homeo/rw3/feats_real.npz (4 MB) in 6.5 min
 === 19:25:20 probe homeo
 [homeo/real]
       kc     acc 1.0 grouped 1.0 perm 0.138 (4s)
@@ -88,7 +88,7 @@ wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_raw.json
       dn     acc 0.63 grouped 0.62 perm 0.178 (3s)
       alpn   acc 1.0 grouped 1.0 perm 0.2 (2s)
       mbon   acc 0.662 grouped 0.632 perm 0.208 (0s)
-wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_homeo.json
+wrote <repo>/outputs/calyx/probe_homeo.json
 === 19:26:20 train homeo
 [homeo/real/kc] top1 0.7498 (d=2790/4064, 44s)
 [homeo/real/dn] top1 0.6587 (d=645/1314, 22s)
@@ -231,7 +231,7 @@ wrote /Users/abhipoluri/fly-balatro/outputs/calyx/probe_homeo.json
     }
   }
 }
-wrote /Users/abhipoluri/fly-balatro/outputs/calyx/paired_homeo.json
+wrote <repo>/outputs/calyx/paired_homeo.json
 === 20:42:31 paired stats raw
 {
   "kc": {
@@ -275,5 +275,5 @@ wrote /Users/abhipoluri/fly-balatro/outputs/calyx/paired_homeo.json
     }
   }
 }
-wrote /Users/abhipoluri/fly-balatro/outputs/calyx/paired_raw.json
+wrote <repo>/outputs/calyx/paired_raw.json
 === 20:42:42 CALYX RUN COMPLETE

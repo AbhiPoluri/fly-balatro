@@ -19,4 +19,4 @@ collecting calibration hands ...
     naive P(play) by bucket: {'ge1.0': 0.5819, 'lt0.25': 0.3571, 'lt0.5': 0.6433, 'lt1.0': 0.444}
     panel punish: dself +0.000+-0.000  dother +0.000  specificity +0.000 (0% of the effect)  direction_ok=False  0/8 right way
     panel reward: dself +0.000+-0.000  dother +0.000  specificity +0.000 (0% of the effect)  direction_ok=False  0/8 right way
-wrote /Users/abhipoluri/fly-balatro/outputs/plast/probe.json and /Users/abhipoluri/fly-balatro/outputs/plast/calib.json in 1184.4s
+wrote <repo>/outputs/plast/probe.json and <repo>/outputs/plast/calib.json in 1184.4s

@@ -33,7 +33,7 @@ rough single-condition estimate at 50.0 ms, 6 workers, perfect scaling: 37 min
 [real] 135,000/139,375 rows  60.6 min  37.1 states/s  ETA 2.0 min  workers RSS 463 MB
 [real] 139,375/139,375 rows  62.5 min  37.2 states/s  ETA 0.0 min  workers RSS 446 MB
 [real] assembling ...
-[real] wrote /Users/abhipoluri/fly-balatro/outputs/bc/feats_real.npz (229 MB) in 62.5 min
+[real] wrote <repo>/outputs/bc/feats_real.npz (229 MB) in 62.5 min
 [shuffled] 139,375 unique states, 558 chunks of 250; 0 rows already on disk, 139,375 to do
 [shuffled] 250/139,375 rows  0.6 min  7.0 states/s  ETA 330.2 min  workers RSS 609 MB
 [shuffled] 500/139,375 rows  0.6 min  14.0 states/s  ETA 165.7 min  workers RSS 619 MB
@@ -67,5 +67,5 @@ rough single-condition estimate at 50.0 ms, 6 workers, perfect scaling: 37 min
 [shuffled] 135,000/139,375 rows  41.8 min  53.8 states/s  ETA 1.4 min  workers RSS 476 MB
 [shuffled] 139,375/139,375 rows  42.9 min  54.1 states/s  ETA 0.0 min  workers RSS 459 MB
 [shuffled] assembling ...
-[shuffled] wrote /Users/abhipoluri/fly-balatro/outputs/bc/feats_shuffled.npz (25 MB) in 42.9 min
+[shuffled] wrote <repo>/outputs/bc/feats_shuffled.npz (25 MB) in 42.9 min
 done

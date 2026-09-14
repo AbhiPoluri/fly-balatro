@@ -31,7 +31,7 @@
     "glomerular_spec": {
       "encoding": "glomerular32",
       "label": "apl2_tonic_vth0",
-      "source": "/Users/abhipoluri/fly-balatro/outputs/mb2/tuned_config.json",
+      "source": "<repo>/outputs/mb2/tuned_config.json",
       "n_features": 32,
       "type_names": [
         "ORN_VM7d",
@@ -114,7 +114,7 @@
     "glomerular_spec": {
       "encoding": "glomerular32",
       "label": "apl2_tonic_vth0",
-      "source": "/Users/abhipoluri/fly-balatro/outputs/mb2/tuned_config.json",
+      "source": "<repo>/outputs/mb2/tuned_config.json",
       "n_features": 32,
       "type_names": [
         "ORN_VM7d",

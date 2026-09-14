@@ -5,14 +5,14 @@
 2026-09-13 07:51:16,420 INFO    flyviewer: encoding v2 / glomerular32: 315 bits -> 32 relay bits -> 32 whole ORN glomeruli (2075 receptor neurons), 283 bits not sent, tuning apl2
 2026-09-13 07:51:16,733 INFO    flyviewer: brain[real/glomerular32] ready in 0.3s
 2026-09-13 07:51:16,733 INFO    flyviewer: ready: http://127.0.0.1:8767  (policy=brain_readout, condition=real, RSS 312 MB)
-/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:847: DeprecationWarning: 
+<repo>/flybalatro/viewer/server.py:847: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the
         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
         
   @app.on_event("startup")
-/Users/abhipoluri/fly-balatro/flybalatro/viewer/server.py:851: DeprecationWarning: 
+<repo>/flybalatro/viewer/server.py:851: DeprecationWarning: 
         on_event is deprecated, use lifespan event handlers instead.
 
         Read more about it in the

@@ -3,22 +3,22 @@
 [raw/real] 2,500/4,962 rows 6.6 min  6.4/s  ETA 6.5 min
 [raw/real] 3,750/4,962 rows 10.3 min  6.0/s  ETA 3.3 min
 [raw/real] 4,962/4,962 rows 13.9 min  5.9/s  ETA 0.0 min
-[raw/real] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/raw/real/feats_real.npz (4 MB) in 13.9 min
+[raw/real] wrote <repo>/outputs/calyx/raw/real/feats_real.npz (4 MB) in 13.9 min
 [raw/rw1] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
 [raw/rw1] 1,250/4,962 rows 3.9 min  5.3/s  ETA 11.6 min
 [raw/rw1] 2,500/4,962 rows 7.6 min  5.5/s  ETA 7.5 min
 [raw/rw1] 3,750/4,962 rows 11.4 min  5.5/s  ETA 3.7 min
 [raw/rw1] 4,962/4,962 rows 15.2 min  5.4/s  ETA 0.0 min
-[raw/rw1] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/raw/rw1/feats_real.npz (4 MB) in 15.2 min
+[raw/rw1] wrote <repo>/outputs/calyx/raw/rw1/feats_real.npz (4 MB) in 15.2 min
 [raw/rw2] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
 [raw/rw2] 1,250/4,962 rows 3.7 min  5.6/s  ETA 11.0 min
 [raw/rw2] 2,500/4,962 rows 7.0 min  5.9/s  ETA 6.9 min
 [raw/rw2] 3,750/4,962 rows 10.1 min  6.2/s  ETA 3.3 min
 [raw/rw2] 4,962/4,962 rows 13.3 min  6.2/s  ETA 0.0 min
-[raw/rw2] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/raw/rw2/feats_real.npz (4 MB) in 13.3 min
+[raw/rw2] wrote <repo>/outputs/calyx/raw/rw2/feats_real.npz (4 MB) in 13.3 min
 [raw/rw3] 4,962 unique patterns, 20 chunks to run (0 rows already on disk)
 [raw/rw3] 1,250/4,962 rows 3.2 min  6.4/s  ETA 9.6 min
 [raw/rw3] 2,500/4,962 rows 6.6 min  6.3/s  ETA 6.5 min
 [raw/rw3] 3,750/4,962 rows 10.2 min  6.2/s  ETA 3.3 min
 [raw/rw3] 4,962/4,962 rows 13.7 min  6.1/s  ETA 0.0 min
-[raw/rw3] wrote /Users/abhipoluri/fly-balatro/outputs/calyx/raw/rw3/feats_real.npz (4 MB) in 13.7 min
+[raw/rw3] wrote <repo>/outputs/calyx/raw/rw3/feats_real.npz (4 MB) in 13.7 min
