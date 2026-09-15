@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import struct
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -30,6 +31,12 @@ if str(ROOT) not in sys.path:
 OUTPUTS = ROOT / "outputs"
 FIGDIR = ROOT / "figures"
 DPI = 200
+
+# Every README figure is drawn on this canvas and saved without a tight-bbox
+# crop, so the PNG is exactly W_IN * DPI pixels wide and the scale GitHub
+# applies is known before anything is drawn rather than measured afterwards.
+W_IN = 11.2
+README_PX = 900
 
 from scripts import figstyle as S  # noqa: E402
 
@@ -101,16 +108,108 @@ def err_from(p: float, lo: float, hi: float) -> tuple[float, float]:
 # --------------------------------------------------------------------------- #
 # small drawing helpers
 # --------------------------------------------------------------------------- #
-def save(fig, name: str, svg: bool = True, tight: bool = True) -> None:
+def png_width(path: Path) -> int:
+    """Pixel width straight out of the PNG header."""
+    with path.open("rb") as fh:
+        return struct.unpack(">I", fh.read(24)[16:20])[0]
+
+
+def readme_px(size_pt: float, width_px: int) -> float:
+    """How many screen pixels `size_pt` becomes in a 900 px README column."""
+    return size_pt * (DPI / 72.0) * (README_PX / width_px)
+
+
+def _report_overflow(fig, name: str) -> None:
+    """Warn if anything sits outside the canvas, since no tight crop will save it."""
+    bb = fig.get_tightbbox(fig.canvas.get_renderer())
+    fw, fh = fig.get_size_inches()
+    eps = 0.02
+    over = []
+    if bb.x0 < -eps:
+        over.append(f"left {-bb.x0:.2f} in")
+    if bb.y0 < -eps:
+        over.append(f"bottom {-bb.y0:.2f} in")
+    if bb.x1 > fw + eps:
+        over.append(f"right {bb.x1 - fw:.2f} in")
+    if bb.y1 > fh + eps:
+        over.append(f"top {bb.y1 - fh:.2f} in")
+    if over:
+        print(f"    WARNING  {name} overflows the canvas: " + ", ".join(over))
+
+
+def save(
+    fig,
+    name: str,
+    svg: bool = True,
+    tight: bool = True,
+    sizes: dict[str, float] | None = None,
+) -> None:
+    """Write the figure, then report how large its type lands on GitHub.
+
+    `sizes` maps a label to the point size actually used for that class of text.
+    The measurement is taken from the written PNG's own header, so the numbers
+    printed are what a reader gets, not what the layout intended.
+    """
     FIGDIR.mkdir(exist_ok=True)
     png = FIGDIR / f"{name}.png"
-    kw = {} if tight else {"bbox_inches": None, "pad_inches": 0.0}
+    # `bbox_inches=None` would fall back to the rcParam, which is "tight"; the
+    # figure's own bbox is what pins the PNG to exactly W_IN * DPI pixels.
+    kw = {} if tight else {"bbox_inches": fig.bbox_inches, "pad_inches": 0.0}
     fig.savefig(png, dpi=DPI, **kw)
     if svg:
         fig.savefig(FIGDIR / f"{name}.svg", **kw)
+    if not tight:
+        _report_overflow(fig, name)
     plt.close(fig)
     size = png.stat().st_size / 1024
-    print(f"  wrote figures/{name}.png  ({size:,.0f} KB)" + ("  + .svg" if svg else ""))
+    w = png_width(png)
+    print(
+        f"  wrote figures/{name}.png  ({size:,.0f} KB, {w:,} px wide)"
+        + ("  + .svg" if svg else "")
+    )
+    if sizes:
+        parts = [f"{k} {pt:.1f}pt = {readme_px(pt, w):.1f}px" for k, pt in sizes.items()]
+        print(f"    at a {README_PX} px README column:  " + "   ".join(parts))
+
+
+def axes_in(fig, x: float, y: float, w: float, h: float):
+    """Place an axes by inches measured from the bottom-left of the canvas."""
+    fw, fh = fig.get_size_inches()
+    return fig.add_axes([x / fw, y / fh, w / fw, h / fh])
+
+
+def anchor_in(fig, x: float, y: float) -> tuple[float, float]:
+    """A figure-fraction point from inches, for legends placed outside an axes."""
+    fw, fh = fig.get_size_inches()
+    return (x / fw, y / fh)
+
+
+def under_legend(ax, fig, x: float, y: float, **kw):
+    """A legend pinned in figure inches, so it cannot drift when a panel resizes."""
+    kw.setdefault("labelcolor", S.MUTED)
+    kw.setdefault("fontsize", S.FS_LEGEND)
+    kw.setdefault("handlelength", 1.8)
+    kw.setdefault("columnspacing", 2.0)
+    kw.setdefault("labelspacing", 0.7)
+    kw.setdefault("borderpad", 0.0)
+    return ax.legend(
+        loc="upper left",
+        bbox_to_anchor=anchor_in(fig, x, y),
+        bbox_transform=fig.transFigure,
+        **kw,
+    )
+
+
+def readme_footer(fig, text: str, y_in: float = 0.11) -> None:
+    """The provenance/caveat block, wrapped to the README canvas width."""
+    _, fh = fig.get_size_inches()
+    S.footer(
+        fig,
+        text,
+        y=y_in / fh,
+        size=S.FS_FOOT,
+        width=S.wrap_cols(W_IN, S.FS_FOOT),
+    )
 
 
 def hbars(
@@ -123,6 +222,7 @@ def hbars(
     fmt: str = "{:.3f}",
     value_pad: float = 0.008,
     alpha: Sequence[float] | None = None,
+    label_size: float = S.FS_LABEL,
 ):
     y = np.arange(len(labels))[::-1]
     for i, (yy, v, c) in enumerate(zip(y, values, colors)):
@@ -147,11 +247,11 @@ def hbars(
             va="center",
             ha="left",
             color=S.TEXT,
-            fontsize=7.4,
+            fontsize=label_size,
             zorder=6,
         )
     ax.set_yticks(y)
-    ax.set_yticklabels(labels, fontsize=7.4)
+    ax.set_yticklabels(labels, fontsize=label_size)
     ax.set_ylim(y.min() - 0.7, y.max() + 0.7)
     return y
 
@@ -468,6 +568,14 @@ def fig_pipeline(src: Sources) -> None:
 # 2. the encoding reversal
 # =========================================================================== #
 def fig_encoding(src: Sources) -> None:
+    """The reversal, stacked so the two encodings share one x scale.
+
+    Side by side these panels were 13.6 in wide, which GitHub scales to 0.33 and
+    turns 6.6 pt body type into 6 px. Stacked on the 11.2 in canvas each panel
+    gets the full width, the legends spread onto one row instead of two columns
+    of wrapped text, and the bars line up under each other -- which is the
+    comparison the figure exists to make.
+    """
     old = src("mb/probe_tuned.json")
     new_ = src("mb2/probes.json")
     stats = src("mb2/input_stats.json")
@@ -484,11 +592,13 @@ def fig_encoding(src: Sources) -> None:
     n_new = stats["sample"]["n_sampled"]
     maj_new = stats["labels"]["hand_type_majority"]
 
-    fig, axes = plt.subplots(1, 2, figsize=(13.6, 5.8))
-    fig.subplots_adjust(left=0.115, right=0.985, top=0.815, bottom=0.315, wspace=0.40)
+    H = 8.7
+    LEFT, PW, PH = 2.05, 8.70, 1.80
+    LEG_H, GAP = 0.28, 0.34  # a two-line legend, and the space between panels
+    fig = plt.figure(figsize=(W_IN, H))
 
     # ---- panel A: random-receptor encoding -------------------------------- #
-    ax = axes[0]
+    ax = axes_in(fig, LEFT, H - 1.05 - PH, PW, PH)
     rows = [
         ("raw input bits", a_ref["raw_bits"], S.CYAN),
         ("ALPN  (686)", a["readouts"]["ALPN"], S.TEAL),
@@ -512,13 +622,12 @@ def fig_encoding(src: Sources) -> None:
                label=f"permuted labels, DN  {perm:.3f}")
     dn_int = a_int["readouts"]["DN"]["best_acc"]
     ax.plot([dn_int], [y[-1]], marker="D", ms=5.0, color=S.RED, zorder=7, ls="none",
-            label=f"the same DN spikes decode how many bits\nare on at {dn_int:.3f}"
+            label=f"the same DN spikes decode how many bits are on at {dn_int:.3f}"
                   " -- intensity, not identity")
     S.xgrid(ax)
     ax.set_xlabel("linear-probe accuracy, best of a 6-value C grid, 5-fold CV")
-    ax.legend(loc="upper left", bbox_to_anchor=(0.0, -0.165), ncols=2,
-              labelcolor=S.MUTED, fontsize=6.5, handlelength=1.8,
-              columnspacing=1.6, labelspacing=0.8, borderpad=0.0)
+    under_legend(fig=fig, ax=ax, x=LEFT, y=H - 1.05 - PH - 0.42, ncols=2,
+                 columnspacing=3.0)
     S.title(
         ax,
         "A · random-receptor encoding",
@@ -527,7 +636,8 @@ def fig_encoding(src: Sources) -> None:
     )
 
     # ---- panel B: glomerular encoding ------------------------------------- #
-    ax = axes[1]
+    B_TOP = H - 1.05 - PH - 0.42 - LEG_H - GAP - 1.05
+    ax = axes_in(fig, LEFT, B_TOP - PH, PW, PH)
     rows = [
         ("relay bits (input ceiling)", refs["relay_bits_32"]["hand_type"]["best_acc"], None, S.CYAN),
         ("ALPN  (686)", g["ALPN.full.hand_type"]["acc"], g["ALPN.full.hand_type"]["grouped_acc"], S.TEAL),
@@ -549,12 +659,11 @@ def fig_encoding(src: Sources) -> None:
             label="grouped CV, relay pattern as the group")
     dn_int = g["DN.full.intensity"]["acc"]
     ax.plot([dn_int], [y[-1]], marker="D", ms=5.0, color=S.RED, zorder=7, ls="none",
-            label=f"DN intensity probe {dn_int:.3f} -- still\nabove its identity score")
+            label=f"DN intensity probe {dn_int:.3f} -- still above its identity score")
     S.xgrid(ax)
     ax.set_xlabel("linear-probe accuracy, 9-way hand type")
-    ax.legend(loc="upper left", bbox_to_anchor=(0.0, -0.165), ncols=2,
-              labelcolor=S.MUTED, fontsize=6.5, handlelength=1.8,
-              columnspacing=1.6, labelspacing=0.8, borderpad=0.0)
+    under_legend(fig=fig, ax=ax, x=LEFT, y=B_TOP - PH - 0.42, ncols=2,
+                 columnspacing=3.0)
     S.title(
         ax,
         "B · glomerular encoding",
@@ -563,7 +672,7 @@ def fig_encoding(src: Sources) -> None:
         f"9-way hand type on {n_new:,} real game states.",
     )
 
-    S.footer(
+    readme_footer(
         fig,
         src.line(
             "The two panels are NOT a controlled comparison: the task changed too "
@@ -573,9 +682,11 @@ def fig_encoding(src: Sources) -> None:
             "probed here; under the random-receptor encoding the v1 gate probe put it "
             f"at {orn_old:.3f}, i.e. indistinguishable from the raw bits."
         ),
-        y=0.014,
     )
-    save(fig, "02_encoding_reversal")
+    save(fig, "02_encoding_reversal", tight=False, sizes={
+        "title": S.FS_TITLE, "subtitle": S.FS_SUB, "axis": S.FS_BODY,
+        "bar label": S.FS_LABEL, "legend": S.FS_LEGEND, "footer": S.FS_FOOT,
+    })
 
 
 # =========================================================================== #
@@ -589,7 +700,8 @@ class BCRow:
     note: str = ""
 
 
-def _bc_panel(ax, ev, rows: Sequence[BCRow], ceiling_key: str, title_main, title_sub,
+def _bc_panel(ax, fig, ev, rows: Sequence[BCRow], ceiling_key: str, title_main,
+              title_sub, legend_y: float, legend_x: float,
               flag: Callable[[str], bool] | None = None):
     labels, vals, errs, cols, alphas, keys = [], [], [], [], [], []
     for r in rows:
@@ -611,24 +723,38 @@ def _bc_panel(ax, ev, rows: Sequence[BCRow], ceiling_key: str, title_main, title
     ceil = ev[ceiling_key]
     cp, _, _ = wilson(int(ceil["wins"]), int(ceil["n_episodes"]))
     ax.axvline(cp, color=S.C_NOBRAIN, lw=1.0, ls=(0, (5, 3)), zorder=2,
-               label=f"no-brain ceiling  {cp:.3f}   (the same readout on the same bits,\n"
-                     "with the fly taken out of the loop)")
+               label=f"no-brain ceiling  {cp:.3f}   (the same readout on the same "
+                     "bits, with the fly taken out of the loop)")
     if flag is not None:
+        # a gutter of its own, clear of the longest tick label, so the mark
+        # cannot be read as part of the row it flags
+        dx = -(max(len(l) for l in labels) * S.CHAR_EM * S.FS_LABEL + 12)
         for yy, k in zip(y, keys):
             if flag(k):
-                ax.text(-0.008, yy, "!", transform=ax.get_yaxis_transform(),
-                        ha="right", va="center", color=S.RED, fontsize=8.5,
-                        weight="bold")
+                ax.annotate(
+                    "!", xy=(0, yy), xycoords=ax.get_yaxis_transform(),
+                    xytext=(dx, 0), textcoords="offset points",
+                    ha="center", va="center", color=S.RED,
+                    fontsize=S.FS_LABEL, weight="bold", annotation_clip=False,
+                )
     S.xgrid(ax)
     ax.set_xlim(0, max(0.78, max(vals) + 0.13))
     ax.set_xlabel(f"ante-1 clear rate, {ceil['n_episodes']} episodes, Wilson 95% CI")
-    ax.legend(loc="upper left", bbox_to_anchor=(0.0, -0.10), labelcolor=S.MUTED,
-              fontsize=6.5, handlelength=1.8, borderpad=0.0)
+    under_legend(fig=fig, ax=ax, x=legend_x, y=legend_y)
     S.title(ax, title_main, title_sub)
     return y
 
 
 def fig_behaviour_cloning(src: Sources) -> None:
+    """v2 above v3 on one shared x axis.
+
+    Side by side this was two 7 in columns carrying 16 and 20 rows of 7.4 pt
+    labels, which GitHub scaled to 6.3 px. Nothing here can be dropped -- every
+    row is either a baseline, a control or a readout the README argues from --
+    so the canvas narrows to 11.2 in and grows downwards instead: each panel now
+    spans the full width, the rows get a 0.20 in pitch, and stacking puts the
+    two encodings on the same x scale, which is the comparison being made.
+    """
     ev2 = src("bc2/eval.json")
     ev3 = src("bc3/eval.json")
 
@@ -655,32 +781,54 @@ def fig_behaviour_cloning(src: Sources) -> None:
         BCRow("real fly, DN only", "real_dn", S.ORANGE),
     ]
 
-    fig, axes = plt.subplots(1, 2, figsize=(14.2, 7.0))
-    fig.subplots_adjust(left=0.165, right=0.985, top=0.865, bottom=0.305, wspace=0.56)
+    PITCH = 0.20  # inches per bar, the floor at which 8 pt labels stay apart
+    n2 = sum(1 for r in rows2 for h in (("-",) if r.key.endswith("/-") else ("linear", "mlp"))
+             if (r.key if r.key.endswith("/-") else f"{r.key}/{h}") in ev2)
+    n3 = sum(1 for r in rows3 for h in (("-",) if r.key.endswith("/-") else ("linear", "mlp"))
+             if (r.key if r.key.endswith("/-") else f"{r.key}/{h}") in ev3)
+    PH2, PH3 = n2 * PITCH, n3 * PITCH
+
+    LEFT, PW = 2.85, 7.90
+    TOP_PAD, XLAB, LEG_H, GAP = 1.05, 0.42, 0.26, 0.34
+    CAVEAT_H, FOOT_H = 0.70, 0.95
+    H = (TOP_PAD + PH2 + XLAB + LEG_H + GAP
+         + TOP_PAD + PH3 + XLAB + LEG_H + GAP
+         + CAVEAT_H + FOOT_H)
+    fig = plt.figure(figsize=(W_IN, H))
+
+    a_bot = H - TOP_PAD - PH2
+    ax_a = axes_in(fig, LEFT, a_bot, PW, PH2)
     _bc_panel(
-        axes[0], ev2, rows2, "raw_bits/mlp",
+        ax_a, fig, ev2, rows2, "raw_bits/mlp",
         "v2 · relay bits on scattered receptors",
         "315 bits, 10 random ORNs each. The brain costs almost everything:\n"
         "the best real-wiring readout clears 0 blinds in 400 episodes.",
+        legend_y=a_bot - XLAB, legend_x=LEFT,
     )
+
+    b_bot = a_bot - XLAB - LEG_H - GAP - TOP_PAD - PH3
+    ax_b = axes_in(fig, LEFT, b_bot, PW, PH3)
     gap3 = ev3["raw_bits/mlp"]["clear_rate"] - ev3["real_alpn_kc_dn/mlp"]["clear_rate"]
     _bc_panel(
-        axes[1], ev3, rows3, "raw_bits/mlp",
+        ax_b, fig, ev3, rows3, "raw_bits/mlp",
         "v3 · one relay bit = one whole glomerulus",
         "32 bits, same states, same teacher, same held-out split, same eval seeds.\n"
         f"The brain now costs {gap3 * 100:.1f} points against its own no-brain control.",
+        legend_y=b_bot - XLAB, legend_x=LEFT,
         flag=lambda k: k.startswith("shuf_"),
     )
+
+    caveat_top = b_bot - XLAB - LEG_H - GAP
     fig.text(
-        0.035, 0.105,
+        0.30 / W_IN, caveat_top / H,
         "!  under the glomerular encoding the global degree-preserving shuffle is a "
-        "BROKEN control. It destroys the glomerular convergence the encoding\n"
-        "   depends on and leaves a near-silent network, so it compares a working "
-        "brain against a dead one. Rate table in RESULTS.md; figure 5 is the\n"
-        "   control that replaces it.",
-        ha="left", va="bottom", color=S.RED, fontsize=6.6, linespacing=1.7,
+        "BROKEN control. It destroys the glomerular convergence\n"
+        "   the encoding depends on and leaves a near-silent network, so it compares "
+        "a working brain against a dead one. Rate table in\n"
+        "   RESULTS.md; figure 5 is the control that replaces it.",
+        ha="left", va="top", color=S.RED, fontsize=S.FS_LEGEND, linespacing=1.7,
     )
-    S.footer(
+    readme_footer(
         fig,
         src.line(
             "Faint bars are the linear readout, solid bars the 1x256 MLP. Both are "
@@ -689,9 +837,12 @@ def fig_behaviour_cloning(src: Sources) -> None:
             "comparison with each other -- the encoding, the number of input bits and "
             "the brain's calibration all changed at once."
         ),
-        y=0.012,
     )
-    save(fig, "03_behaviour_cloning")
+    save(fig, "03_behaviour_cloning", tight=False, sizes={
+        "title": S.FS_TITLE, "subtitle": S.FS_SUB, "axis": S.FS_BODY,
+        "bar label": S.FS_LABEL, "legend": S.FS_LEGEND,
+        "retraction note": S.FS_LEGEND, "footer": S.FS_FOOT,
+    })
 
 
 # =========================================================================== #
@@ -716,6 +867,13 @@ def _pool_buckets(runs: Iterable[dict], mode: str = "greedy") -> dict[str, tuple
 
 
 def fig_plasticity(src: Sources) -> None:
+    """The 2x2 above the rule it produced.
+
+    The two panels shared a 14.2 in row, which GitHub scaled to 0.31. Stacked on
+    the 11.2 in canvas panel B gets the whole width -- five series across four
+    buckets is what needed the room -- and its legend spreads onto two rows
+    instead of three cramped columns.
+    """
     summary = src("plast3/summary.json")
     cells = summary["cells"]
     mode = summary["primary_mode"]
@@ -727,12 +885,17 @@ def fig_plasticity(src: Sources) -> None:
     cur_cur = [src(f"plast3/run_current_current_s{i}.json") for i in range(3)]
     om_sep = [src(f"plast3/run_omission_separated_s{i}.json") for i in range(3)]
 
-    fig = plt.figure(figsize=(14.2, 6.8))
-    gs = fig.add_gridspec(1, 2, width_ratios=[1.0, 1.30], wspace=0.30,
-                          left=0.135, right=0.985, top=0.825, bottom=0.295)
+    LEFT, PW = 1.75, 9.00
+    PH_A, PH_B = 1.95, 2.95
+    TOP_PAD, GAP = 1.05, 0.40
+    XLAB_A, XLAB_B, LEG_B = 0.66, 0.82, 0.72  # B's tick labels are two lines
+    FOOT_H = 1.55
+    H = TOP_PAD + PH_A + XLAB_A + GAP + TOP_PAD + PH_B + XLAB_B + LEG_B + FOOT_H
+    fig = plt.figure(figsize=(W_IN, H))
 
     # ---- panel A: the 2x2, each cell against its own frozen control -------- #
-    ax = fig.add_subplot(gs[0, 0])
+    a_bot = H - TOP_PAD - PH_A
+    ax = axes_in(fig, LEFT, a_bot, PW, PH_A)
     order = [
         ("current_current", "chips-only punishment\ncurrent encoding", S.SLATE),
         ("omission_current", "+ omission punishment\ncurrent encoding", S.PURPLE),
@@ -774,26 +937,22 @@ def fig_plasticity(src: Sources) -> None:
         "Each row is a learning fly minus the identical fly with dopamine\n"
         "switched off, on the same 400 games. 3 training seeds per cell.",
     )
-    ax.text(
-        0.985,
-        0.975,
+    ax.annotate(
         f"interaction contrast  {inter:+.3f}\n"
         "the effect is essentially all interaction",
-        transform=ax.transAxes,
-        ha="right",
-        va="top",
-        color=S.AMBER,
-        fontsize=7.2,
-        linespacing=1.7,
+        xy=(1, 1), xycoords="axes fraction", xytext=(-6, -8),
+        textcoords="offset points", ha="right", va="top",
+        color=S.AMBER, fontsize=S.FS_LABEL, linespacing=1.7,
     )
 
     # ---- panel B: P(play) by score bucket --------------------------------- #
-    ax = fig.add_subplot(gs[0, 1])
+    b_bot = a_bot - XLAB_A - GAP - TOP_PAD - PH_B
+    ax = axes_in(fig, LEFT, b_bot, PW, PH_B)
     series = [
         ("naive control, current enc.", _pool_buckets([frozen_cur], mode), S.SLATE, True),
-        ("learned: chips-only\n(the v2 fly)", _pool_buckets(cur_cur, mode), S.SLATE, False),
+        ("learned: chips-only (the v2 fly)", _pool_buckets(cur_cur, mode), S.SLATE, False),
         ("naive control, separated enc.", _pool_buckets([frozen_sep], mode), S.AMBER, True),
-        ("learned: omission + separated\n(the v3 fly)", _pool_buckets(om_sep, mode), S.AMBER, False),
+        ("learned: omission + separated (the v3 fly)", _pool_buckets(om_sep, mode), S.AMBER, False),
         (
             "v2 teacher (sees plays_left)",
             {b: (int(teacher["p_play_by_bucket"][b]["plays"]),
@@ -846,14 +1005,13 @@ def fig_plasticity(src: Sources) -> None:
             zorder=5,
         )
     ax.set_xticks(xs)
-    ax.set_xticklabels(BUCKET_LABELS, fontsize=7.0)
+    ax.set_xticklabels(BUCKET_LABELS, fontsize=S.FS_BODY)
     ax.set_ylim(0, 1.10)
     ax.set_yticks([0, 0.25, 0.5, 0.75, 1.0])
     S.ygrid(ax)
     ax.set_ylabel("P(play | the decision was legal)")
-    ax.legend(loc="upper left", bbox_to_anchor=(0.0, -0.155), ncols=3,
-              labelcolor=S.TEXT, fontsize=6.8, handlelength=1.2,
-              columnspacing=2.2, borderpad=0.0)
+    under_legend(fig=fig, ax=ax, x=LEFT, y=b_bot - XLAB_B, ncols=2,
+                 labelcolor=S.TEXT, handlelength=1.4, columnspacing=3.0)
     S.title(
         ax,
         "B · the rule forming",
@@ -864,7 +1022,7 @@ def fig_plasticity(src: Sources) -> None:
     counts = _pool_buckets(om_sep, mode)
     ax.set_xlabel("what the best available hand scores against the chips still needed")
 
-    S.footer(
+    readme_footer(
         fig,
         src.line(
             "Hollow bars are the naive control -- the identical fly with dopamine "
@@ -877,13 +1035,23 @@ def fig_plasticity(src: Sources) -> None:
             "always-discard; under the preregistered rule that is a miss, not a win."
         ),
     )
-    save(fig, "04_plasticity")
+    save(fig, "04_plasticity", tight=False, sizes={
+        "title": S.FS_TITLE, "subtitle": S.FS_SUB, "axis": S.FS_BODY,
+        "bar label": S.FS_LABEL, "legend": S.FS_LEGEND, "footer": S.FS_FOOT,
+    })
 
 
 # =========================================================================== #
 # 5. the calyx null
 # =========================================================================== #
 def fig_calyx(src: Sources) -> None:
+    """A and B keep their row, C moves under them and spreads sideways.
+
+    Three panels on a 14.4 in row put the body type at 6.2 px on GitHub. A and B
+    are both narrow row plots and survive half a 11.2 in canvas; panel C was the
+    one that could not, so it drops to a full-width band underneath where its
+    table and the retraction beside it both get their own column.
+    """
     praw = src("calyx/probe_raw.json")
     paired_raw = src("calyx/paired_raw.json")["paired"]
     paired_hom = src("calyx/paired_homeo.json")["paired"]
@@ -891,25 +1059,24 @@ def fig_calyx(src: Sources) -> None:
 
     seeds = ["rw1", "rw2", "rw3"]
 
-    fig = plt.figure(figsize=(14.4, 6.8))
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.10, 0.96, 1.00], wspace=0.40,
-                          left=0.125, right=0.985, top=0.805, bottom=0.235)
+    A_LEFT, A_W = 2.05, 3.55
+    B_LEFT, B_W = 6.70, 4.05
+    PH = 2.85
+    TOP_PAD, XLAB_B, LEG_A, GAP = 1.20, 0.62, 0.30, 0.45
+    C_H, FOOT_H = 2.45, 1.00
+    H = TOP_PAD + PH + XLAB_B + GAP + C_H + FOOT_H
+    fig = plt.figure(figsize=(W_IN, H))
+    row_bot = H - TOP_PAD - PH
 
     # ---- panel A: real sits inside the rewired band ----------------------- #
-    ax = fig.add_subplot(gs[0, 0])
-    measures = [
-        ("KC hand type, grouped CV", lambda d: d["decode_hand_type"]["kc"]["acc_grouped"], praw),
-        ("DN hand type, grouped CV", lambda d: d["decode_hand_type"]["dn"]["acc_grouped"], praw),
-        ("KC Jaccard between/within", lambda d: d["kc_code"]["jaccard"]["ratio"], praw),
-        ("KC imitation top-1", None, None),
-        ("KC clear rate", None, None),
-        ("KC clear rate, + homeostasis", None, None),
-    ]
+    ax = axes_in(fig, A_LEFT, row_bot, A_W, PH)
     rows = []
-    for name, fn, probe in measures[:3]:
-        real = fn(probe["real"])
-        rw = [fn(probe[s]) for s in seeds]
-        rows.append((name, real, rw))
+    for name, fn in (
+        ("KC hand type, grouped CV", lambda d: d["decode_hand_type"]["kc"]["acc_grouped"]),
+        ("DN hand type, grouped CV", lambda d: d["decode_hand_type"]["dn"]["acc_grouped"]),
+        ("KC Jaccard between/within", lambda d: d["kc_code"]["jaccard"]["ratio"]),
+    ):
+        rows.append((name, fn(praw["real"]), [fn(praw[s]) for s in seeds]))
     rows.append(
         (
             "KC imitation top-1",
@@ -940,31 +1107,31 @@ def fig_calyx(src: Sources) -> None:
         ax.plot(rw, [yy] * len(rw), marker="o", ms=4.0, ls="none",
                 color=S.C_REWIRED, zorder=3)
         ax.plot([real], [yy], marker="|", ms=15, mew=2.0, color=S.C_REAL, zorder=4)
-        ax.text(max(hi, real) + 0.022, yy, f"{real:.3f}", va="center",
-                color=S.TEXT, fontsize=7.2)
+        ax.text(max(hi, real) + 0.030, yy, f"{real:.3f}", va="center",
+                color=S.TEXT, fontsize=S.FS_LABEL)
     ax.set_yticks(ys)
-    ax.set_yticklabels([r[0] for r in rows], fontsize=7.2)
+    ax.set_yticklabels([r[0] for r in rows], fontsize=S.FS_LABEL)
     ax.set_ylim(ys.min() - 0.7, ys.max() + 0.7)
-    ax.set_xlim(0, 1.10)
+    ax.set_xlim(0, 1.22)
+    ax.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
     S.xgrid(ax)
     ax.plot([], [], marker="|", ms=11, mew=2.0, ls="none", color=S.C_REAL,
             label="real ALPN -> KC wiring")
     ax.plot([], [], marker="o", ms=4.0, ls="none", color=S.C_REWIRED,
             label="3 rewiring seeds (empirical null)")
-    ax.legend(loc="upper left", bbox_to_anchor=(0.0, -0.075), ncols=2,
-              labelcolor=S.MUTED, fontsize=6.6, handlelength=1.4,
-              columnspacing=1.6, borderpad=0.0)
+    under_legend(fig=fig, ax=ax, x=A_LEFT, y=row_bot - LEG_A, ncols=1,
+                 handlelength=1.4)
     S.title(
         ax,
         "A · real sits inside the null band",
         f"{rewiring['strata']['n_edges']:,} calyx edges resampled within "
         f"{rewiring['strata']['n_strata']} strata of\n"
-        "(hemisphere, KC subtype, synapse count, sign). Every degree and\n"
-        "weight preserved exactly.",
+        "(hemisphere, KC subtype, synapse count, sign).\n"
+        "Every degree and weight preserved exactly.",
     )
 
     # ---- panel B: paired differences, CIs crossing zero -------------------- #
-    ax = fig.add_subplot(gs[0, 1])
+    ax = axes_in(fig, B_LEFT, row_bot, B_W, PH)
     entries = []
     for variant, tag, table in (("raw", "", paired_raw), ("homeo", " + homeo", paired_hom)):
         for readout in ("kc", "dn"):
@@ -980,13 +1147,14 @@ def fig_calyx(src: Sources) -> None:
     for yy, (name, diff, lo, hi, col, p) in zip(ys, entries):
         ax.plot([lo, hi], [yy, yy], color=col, lw=1.2, alpha=0.75, zorder=3)
         ax.plot([diff], [yy], marker="o", ms=4.2, color=col, zorder=4)
-        ax.text(0.132, yy, f"p={p:.2f}", va="center", ha="right",
-                color=S.MUTED, fontsize=6.4)
+        ax.text(0.185, yy, f"p={p:.2f}", va="center", ha="right",
+                color=S.MUTED, fontsize=S.FS_LABEL)
     ax.axvline(0, color=S.BRIGHT, lw=0.9, zorder=2)
     ax.set_yticks(ys)
-    ax.set_yticklabels([e[0] for e in entries], fontsize=6.8)
+    ax.set_yticklabels([e[0] for e in entries], fontsize=S.FS_LABEL)
     ax.set_ylim(ys.min() - 0.7, ys.max() + 0.7)
-    ax.set_xlim(-0.135, 0.135)
+    ax.set_xlim(-0.135, 0.19)
+    ax.set_xticks([-0.10, -0.05, 0.0, 0.05, 0.10])
     S.xgrid(ax)
     ax.set_xlabel("clear rate, real minus rewired\n400 paired episode seeds, 95% CI")
     S.title(
@@ -998,16 +1166,19 @@ def fig_calyx(src: Sources) -> None:
     )
 
     # ---- panel C: the activity-matching table ----------------------------- #
-    ax = fig.add_subplot(gs[0, 2])
+    c_top = row_bot - XLAB_B - GAP
+    ax = axes_in(fig, 0.30, c_top - C_H, W_IN - 0.60, C_H)
     ax.axis("off")
-    ax.text(0, 1.0, "C · the control is fair before\n     any correction",
-            color=S.BRIGHT, fontsize=10, weight="bold", va="top", linespacing=1.45)
-    ax.text(
-        0, 0.885,
-        "The rewired networks land in the same activity\n"
-        "regime with no recalibration at all. Rates in Hz.",
-        color=S.MUTED, fontsize=7.6, va="top", linespacing=1.6,
-    )
+    ax.set_xlim(0, (W_IN - 0.60) * 100)  # 1 data unit == 1/100 inch
+    ax.set_ylim(0, C_H * 100)
+    top = C_H * 100
+
+    ax.text(0, top, "C · the control is fair before any correction",
+            color=S.BRIGHT, fontsize=S.FS_TITLE, weight="bold", va="top")
+    ax.text(0, top - 26,
+            "The rewired networks land in the same activity regime with no "
+            "recalibration at all. Rates in Hz.",
+            color=S.MUTED, fontsize=S.FS_SUB, va="top")
 
     def fmt_row(fn, fmt):
         return [fmt.format(fn(praw["real"]))] + [fmt.format(fn(praw[s])) for s in seeds]
@@ -1026,31 +1197,29 @@ def fig_calyx(src: Sources) -> None:
         ("non-constant channels",
          fmt_row(lambda d: d["activity"]["non_constant_channels_alpn_kc_dn"], "{:,}")),
     ]
-    x_cols = [0.60, 0.727, 0.854, 0.981]
+    x_cols = [235, 310, 385, 460]
     head = ["real", "rw1", "rw2", "rw3"]
-    y0 = 0.735
+    y0 = top - 62
     for x, h in zip(x_cols, head):
         ax.text(x, y0, h, color=S.C_REAL if h == "real" else S.C_REWIRED,
-                fontsize=8.0, ha="right", va="top", weight="bold")
-    ax.plot([0, 0.985], [y0 - 0.038, y0 - 0.038], color=S.RULE, lw=0.8)
+                fontsize=S.FS_LABEL, ha="right", va="top", weight="bold")
+    ax.plot([0, 470], [y0 - 14, y0 - 14], color=S.RULE, lw=0.8)
     for i, (name, vals) in enumerate(table):
-        yy = y0 - 0.082 - i * 0.072
-        ax.text(0, yy, name, color=S.TEXT, fontsize=7.8, va="top")
+        yy = y0 - 28 - i * 22
+        ax.text(0, yy, name, color=S.TEXT, fontsize=S.FS_LABEL, va="top")
         for x, v in zip(x_cols, vals):
             ax.text(x, yy, v, color=S.TEXT if x == x_cols[0] else S.MUTED,
-                    fontsize=7.8, ha="right", va="top")
+                    fontsize=S.FS_LABEL, ha="right", va="top")
     ax.text(
-        0, y0 - 0.082 - len(table) * 0.072 - 0.055,
-        "The global shuffle this control replaces left a\n"
-        "near-silent network and is retracted; the README\n"
-        "says why. Caron et al. 2013 make a near-null here\n"
-        "the expected result, not an indictment of the model.",
-        color=S.MUTED, fontsize=7.2, va="top", linespacing=1.7,
+        560, y0 + 4,
+        "The global shuffle this control replaces left a near-silent\n"
+        "network and is retracted; the README says why.\n\n"
+        "Caron et al. 2013 make a near-null here the expected result,\n"
+        "not an indictment of the model.",
+        color=S.MUTED, fontsize=S.FS_LEGEND, va="top", linespacing=1.7,
     )
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
 
-    S.footer(
+    readme_footer(
         fig,
         src.line(
             "Panel B intervals are Wald intervals on the paired difference computed "
@@ -1061,7 +1230,10 @@ def fig_calyx(src: Sources) -> None:
             "design, not tested by it."
         ),
     )
-    save(fig, "05_calyx_null")
+    save(fig, "05_calyx_null", tight=False, sizes={
+        "title": S.FS_TITLE, "subtitle": S.FS_SUB, "axis": S.FS_BODY,
+        "row label / table": S.FS_LABEL, "legend": S.FS_LEGEND, "footer": S.FS_FOOT,
+    })
 
 
 # --------------------------------------------------------------------------- #

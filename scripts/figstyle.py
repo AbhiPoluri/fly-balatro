@@ -48,6 +48,37 @@ C_CHANCE = "#3a3f49"
 
 MONO = ["SF Mono", "Menlo", "DejaVu Sans Mono", "monospace"]
 
+# --------------------------------------------------------------------------- #
+# type ladder
+# --------------------------------------------------------------------------- #
+# GitHub renders a README image into a column about 900 px wide, so a figure is
+# scaled by 900 / png_width and a point becomes
+#
+#     pt * (dpi / 72) * (900 / png_width)   pixels
+#
+# on the reader's screen. Every README figure is drawn 11.2 in wide at 200 dpi
+# with no tight-bbox crop, so the PNG is exactly 2240 px and one point is
+# 1.116 px. The sizes below are chosen against that: >= 12 px for a panel title
+# and >= 8.5 px for anything that carries content -- a tick, a bar label, a
+# legend entry, a caveat. `scripts.figures` prints the measured value for every
+# figure it writes, so this is checked on each run rather than asserted here.
+FS_TITLE = 11.0  # panel title        -> 12.3 px
+FS_SUB = 8.2  # title subtitle        ->  9.2 px
+FS_BODY = 8.2  # axis labels, ticks   ->  9.2 px
+FS_LABEL = 8.0  # bar labels, values  ->  8.9 px
+FS_LEGEND = 7.8  # legend, notes      ->  8.7 px
+FS_FOOT = 7.8  # provenance footer    ->  8.7 px
+
+# Advance width of one monospace character as a fraction of the font size,
+# measured from a rendered line rather than read off the font metrics, so it
+# already carries the small bbox padding matplotlib adds around a text artist.
+CHAR_EM = 0.65
+
+
+def wrap_cols(width_in: float, size_pt: float, margin_in: float = 0.30) -> int:
+    """How many monospace characters of `size_pt` fit across `width_in` inches."""
+    return max(20, int((width_in - margin_in) / (CHAR_EM * size_pt / 72.0)))
+
 
 def _available_mono() -> list[str]:
     installed = {f.name for f in font_manager.fontManager.ttflist}
@@ -88,11 +119,11 @@ def use_style() -> None:
             "ytick.major.width": 0.8,
             "text.color": TEXT,
             "font.family": fam,
-            "font.size": 8.0,
-            "axes.titlesize": 10.0,
-            "axes.labelsize": 8.0,
+            "font.size": FS_BODY,
+            "axes.titlesize": FS_TITLE,
+            "axes.labelsize": FS_BODY,
             "legend.frameon": False,
-            "legend.fontsize": 7.5,
+            "legend.fontsize": FS_LEGEND,
             "figure.dpi": 100,
             "lines.solid_capstyle": "butt",
             "patch.linewidth": 0.0,
@@ -101,14 +132,20 @@ def use_style() -> None:
     )
 
 
-def title(ax, text: str, sub: str | None = None) -> None:
+def title(
+    ax,
+    text: str,
+    sub: str | None = None,
+    size: float = FS_TITLE,
+    sub_size: float = FS_SUB,
+) -> None:
     """A left-aligned title with an optional dimmer block beneath it.
 
     Both are placed with point offsets from the top-left of the axes, so the
     gap between them does not change when the axes is resized.
     """
     sub_lines = sub.count("\n") + 1 if sub else 0
-    sub_h = sub_lines * 7.2 * 1.45
+    sub_h = sub_lines * sub_size * 1.45
     ax.annotate(
         text,
         xy=(0, 1),
@@ -118,7 +155,7 @@ def title(ax, text: str, sub: str | None = None) -> None:
         ha="left",
         va="bottom",
         color=BRIGHT,
-        fontsize=10,
+        fontsize=size,
         weight="bold",
         annotation_clip=False,
     )
@@ -132,7 +169,7 @@ def title(ax, text: str, sub: str | None = None) -> None:
             ha="left",
             va="bottom",
             color=MUTED,
-            fontsize=7.2,
+            fontsize=sub_size,
             linespacing=1.45,
             annotation_clip=False,
         )
@@ -160,15 +197,26 @@ def ygrid(ax) -> None:
     ax.xaxis.grid(False)
 
 
-def footer(fig, text: str, y: float = 0.012) -> None:
-    """Provenance line along the bottom edge: where every number came from."""
+def footer(
+    fig,
+    text: str,
+    y: float = 0.012,
+    size: float = 6.4,
+    width: int = 150,
+) -> None:
+    """Provenance line along the bottom edge: where every number came from.
+
+    This block carries caveats as well as file names, so on the README figures
+    it is drawn at `FS_FOOT` rather than the smaller default kept here for the
+    pipeline schematic.
+    """
     fig.text(
         0.012,
         y,
-        wrap(text, 150),
+        wrap(text, width),
         ha="left",
         va="bottom",
         color=MUTED,
-        fontsize=6.4,
+        fontsize=size,
         linespacing=1.6,
     )
