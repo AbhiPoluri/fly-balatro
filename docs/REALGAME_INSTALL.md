@@ -841,7 +841,7 @@ python -m pytest tests/test_realgame_adapter.py tests/test_realgame_loop.py \
 ```
 
 55 tests + 1 skipped, ~8 s, no game required. The whole project suite is
-`python -m pytest tests/ -q`: **246 passed, 1 skipped** (do not run bare
+`python -m pytest tests/ -q`: **466 passed, 1 skipped** (do not run bare
 `pytest` from the project root; it tries to collect `vendor/doomfly` and
 `vendor/fly-craftax`, which are separate projects and fail at import).
 

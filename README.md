@@ -276,7 +276,7 @@ note on which steps need the real game.
 ```bash
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -e ".[viewer,figures,dev]"
-python -m pytest                      # 428 passed, 1 skipped, ~31 s
+python -m pytest                      # 466 passed, 1 skipped, ~36 s
 python -m scripts.figures             # redraws every figure from outputs/
 python -m flybalatro.viewer.server --port 8767 --policy brain
 ```

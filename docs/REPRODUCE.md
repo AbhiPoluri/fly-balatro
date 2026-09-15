@@ -32,7 +32,7 @@ pip install -e ".[viewer,figures,dev]"      # add ,realgame on macOS for §7
 Then check it:
 
 ```bash
-python -m pytest            # 428 passed, 1 skipped in ~31 s
+python -m pytest            # 466 passed, 1 skipped in ~36 s
 ```
 
 The one skip (`pytest -rs` names it) is a v1-era test asserting that no brain
