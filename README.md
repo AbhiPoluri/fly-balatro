@@ -3,7 +3,12 @@
 </p>
 
 <p align="center"><sub>
-One browser window, nothing else on screen. Left, the 123,930 drawn somata of MaleCNS v1.0, lit by the recorded spikes of the 50 ms window the decision was taken in. Right, the real Balatro 1.0.1o window captured and streamed into the page, with the amber box drawn on the captured pixels, and under it the fly's own mushroom body. The box is a snapshot of one decision over a picture that is still moving, which is why it trails the cards once the game starts animating the hand away. Fifteen seconds of the <a href="RESULTS.md#the-learning-fly-on-the-real-game-and-an-overlay-that-tracks-the-cards-2026-09-13">learning fly</a> (<code>--plastic</code>) on the Small Blind of ante 1, recorded 2026-09-15 for this clip and not one of the runs tabulated in RESULTS.md. Hand 5: the best subset is Two Pair for 120 against the 188 still needed, P(play) is 18%, and the fly plays anyway because the call is sampled from it. The 120 chips pay a reward pulse that depresses 489 KC→MBON synapses, taking the run to 967 changed of 33,496.
+Left, the fly brain firing on the decision it just made. Right, the real
+Balatro window streamed into the same page, the fly's pick boxed, its
+mushroom body underneath. The box is a snapshot of one decision, so it trails
+once the cards move. Fifteen seconds of the
+<a href="RESULTS.md#the-learning-fly-on-the-real-game-and-an-overlay-that-tracks-the-cards-2026-09-13">learning fly</a>,
+recorded for this clip.
 </sub></p>
 
 # fly-balatro
