@@ -194,7 +194,7 @@ def fallback_out_scale(rate_calib: NDArray[np.float64],
     stage, so the credit a dopamine pulse can put on a broadly-tuned cell is
     scaled by how broadly tuned it is. Measured on the CALIBRATION patterns (the
     same set the thresholds were fitted on), applied once at ``Brain``
-    construction, and never changed while the network runs -- a calibration of
+    construction, and never changed while the network runs: a calibration of
     the output gain, not plasticity.
     """
     r = np.asarray(rate_calib, np.float64)

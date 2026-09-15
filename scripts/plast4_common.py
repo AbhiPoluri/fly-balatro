@@ -3,22 +3,22 @@
 See ``outputs/plast4/PREREGISTRATION.md``, written before any v4 game was played.
 
 v3 ended with a measured diagnosis rather than a result: the fly converged on the
-exact optimum of the reward it was given -- ``chips_gained >= needed / plays_left``,
-"did this play earn its share" -- and that optimum ties always-discard. This
+exact optimum of the reward it was given (``chips_gained >= needed / plays_left``,
+"did this play earn its share") and that optimum ties always-discard. This
 module holds the two things v4 varies, and nothing else:
 
 1. **The reward predicate.** ``share`` is v3's, unchanged. ``pace`` asks instead
    whether the *cumulative* round score after the play is at or above the linear
    schedule that clears the blind in the plays it started with, so a shortfall is
    not forgiven by re-baselining. Both read only ``required_score``, ``score``,
-   ``plays`` and ``chips_gained`` -- the game's own payouts and costs. Neither
+   ``plays`` and ``chips_gained``: the game's own payouts and costs. Neither
    consults :mod:`flybalatro.hands` about what the *right* play would have been;
    that constraint is the one this whole project runs under.
 
 2. **The eligibility trace.** The v3 audit in the preregistration shows that
-   ``reward AND lost`` is impossible by construction -- on the last play of a
+   ``reward AND lost`` is impossible by construction (on the last play of a
    blind the fair share *is* the whole remaining requirement, so a rewarded last
-   play has cleared -- and confirms it empirically (0 of 2,374 training plays).
+   play has cleared) and confirms it empirically (0 of 2,374 training plays).
    So "paid its share but still lost the blind" cannot be expressed by any
    immediate same-hand term at all: it lives in the *earlier* plays of a blind
    that was later lost, and only a trace can reach them.
@@ -27,8 +27,8 @@ module holds the two things v4 varies, and nothing else:
    :meth:`flybalatro.plasticity.KcMbonPlasticity.deliver_eligibility` when the
    blind is lost.
 
-Everything else -- the encoding, the immediate ``omission`` punishment, the
-calibrated etas, the decider, the 400 paired evaluation seeds -- is v3's and is
+Everything else (the encoding, the immediate ``omission`` punishment, the
+calibrated etas, the decider, the 400 paired evaluation seeds) is v3's and is
 imported, not re-specified. ``plast_common.py`` and ``plast3_common.py`` are
 imported unchanged.
 
@@ -159,7 +159,7 @@ class EligibilityTrace:
 
     Three choices are fixed by the preregistration and are not swept:
 
-    * only PLAY decisions enter the trace -- a DISCARD earns no dopamine anywhere
+    * only PLAY decisions enter the trace, because a DISCARD earns no dopamine anywhere
       in this project, and tracing discards would punish the odours the fly
       discarded on and push it toward the degenerate always-discard policy;
     * the trace resets at every blind boundary, so losing the Boss Blind cannot
@@ -218,8 +218,8 @@ class TraceRunner:
     """Per-record bookkeeping for the trace: reset at a blind, update, fire on loss.
 
     Separated from the training loop so the three rules the preregistration fixes
-    -- reset at every blind boundary, PLAY decisions only, one extra punishment
-    pulse **iff** the record carries ``lost`` -- are testable without a brain and
+    (reset at every blind boundary, PLAY decisions only, one extra punishment
+    pulse **iff** the record carries ``lost``) are testable without a brain and
     without a game. ``plast`` need only provide ``n_kc``, ``eligibility`` and
     ``deliver_eligibility``.
     """

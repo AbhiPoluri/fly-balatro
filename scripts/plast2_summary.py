@@ -4,7 +4,7 @@ Produces ``outputs/plast2/summary.json`` and prints the same content as markdown
 
 * the evaluation table (real learned per eta, frozen, and every reference policy);
 * P(play | hand type x score-vs-needed bucket) before vs after, plus the
-  across-cell variance for naive / learned / teacher -- the number that says
+  across-cell variance for naive / learned / teacher, the number that says
   whether what the fly learned is odour-specific or one global valence;
 * the learning curves, decimated;
 * the dopamine bookkeeping.
@@ -128,7 +128,7 @@ def teacher_alignment(cells: dict, teacher: dict, min_n: int = 5) -> dict:
     not whether it varies in the right direction: a fly that plays everything
     except one hand type has low variance and is useless, and one that varies
     arbitrarily has high variance and is also useless. This adds the direction.
-    Cells are weighted by how many decisions the fly actually faced in them.
+    Cells are weighted by how many decisions the fly faced in them.
     """
     keys = [k for k in cells
             if k in teacher and cells[k]["n"] >= min_n and teacher[k]["n"] >= min_n]

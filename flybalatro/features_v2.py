@@ -8,8 +8,8 @@ was that card identity is already ~gone two synapses in, so the readout learned
 
 v2 changes the question from "can the fly work out what a flush is" to "can the
 fly *relay* a hand type". :mod:`flybalatro.hands` computes the poker analysis in
-ordinary Python - **outside the brain, by code that is not biological in any
-sense** - and this module turns the answer into 32 extra binary channels which
+ordinary Python (**outside the brain, by code that is not biological in any
+sense**) and this module turns the answer into 32 extra binary channels which
 become tonic current on olfactory receptor neurons like every other bit. The
 brain is a relay for that analysis, not its author. Anything the readout gets
 right about hand types is information that survived the trip through the fly.

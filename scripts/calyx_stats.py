@@ -10,12 +10,12 @@ throws away most of the power (and, worse, understates the precision on a
 comparison where the two rows share their episode-to-episode variance almost
 entirely).
 
-* clear rate: exact McNemar on the 400 shared episode seeds -- the discordant
+* clear rate: exact McNemar on the 400 shared episode seeds; the discordant
   pairs (real cleared / rewired did not, and the reverse) are the whole evidence;
 * mean chips and imitation top-1: paired bootstrap, resampling **episodes**
   (never states: consecutive states inside a blind are near-duplicates);
 * across the three rewiring seeds, the spread is reported as a range, not as a
-  confidence interval -- three draws do not support one.
+  confidence interval, because three draws do not support one.
 """
 
 from __future__ import annotations

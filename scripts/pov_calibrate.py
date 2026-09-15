@@ -4,18 +4,18 @@
 What it does, in order:
 
 1. **Measure** the cards in a real screenshot, from pixels only. The cards are
-   *rotated* -- the fan runs -5.5 deg to +5.5 deg -- so a column-wise search for
+   *rotated* (the fan runs -5.5 deg to +5.5 deg) so a column-wise search for
    a card's left edge is ill-posed and finds face-card art instead. What is
    well posed is the card's **outline**, which Balatro draws in one flat colour
    (a light blue-grey, ~(186,196,212)): low saturation, clearly darker than the
    white body and lighter than the art. A small Hough transform over that mask
-   -- shear the band by tan(theta) for theta in -9..+9 deg, sum columns, keep
-   the peaks -- returns each card's left border as a *line*: its x at the band's
+   (shear the band by tan(theta) for theta in -9..+9 deg, sum columns, keep
+   the peaks) returns each card's left border as a *line*: its x at the band's
    mid-height plus its angle. The per-card top/bottom still come from the white
    mask's profile over that card's own columns.
 2. **Fit** ``left_k = left0 + pitch*k`` by least squares, and the parabolic arc
    ``top_k = top0 - lift*(1 - u^2)`` (``u`` = -1..1 across the fan), on
-   ``balatro_fly_firsthand.png`` -- a *settled* 8-card hand.
+   ``balatro_fly_firsthand.png``, a *settled* 8-card hand.
 3. **Check** the fitted parameters against every screenshot, including
    ``balatro_fly.png``, which caught the hand mid-slide (see ``docs/POV.md``),
    and write the residual table plus annotated PNGs to ``outputs/pov/``.
@@ -284,7 +284,7 @@ def residuals(geom: ov.HandGeometry, m: Measured) -> Dict[str, object]:
     """Modelled box vs measured card, per slot.
 
     ``d_centre`` is the honest headline: the horizontal offset between the box
-    and the card it is drawn on. Left edges are not comparable -- the cards are
+    and the card it is drawn on. Left edges are not comparable, because the cards are
     rotated, so a card's bounding-box left is not where its outline crosses
     mid-height, and the box is deliberately wider than the card.
     """
@@ -331,8 +331,8 @@ def render(ann: ov.Annotation, base: Image.Image,
            measured: Optional["Measured"] = None) -> Image.Image:
     """Draw an annotation onto a copy of a screenshot.
 
-    Same geometry the NSWindow uses -- ``build_annotation`` produced these
-    rects -- plus, in pink, what the pixels actually say: each card's measured
+    Same geometry the NSWindow uses (``build_annotation`` produced these
+    rects) plus, in pink, what the pixels say: each card's measured
     outline as the slanted line it is, and a tick at its measured centre.
     """
     im = base.convert("RGBA")
@@ -501,7 +501,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         # The check images are the calibration story: every measured card next
         # to its modelled box and the label the encoder produced for it. That is
         # the one place the dense view still earns its keep, so ask for it
-        # explicitly -- the live overlay's default is one box and no labels.
+        # explicitly; the live overlay's default is one box and no labels.
         ann = ov.build_annotation(record_for(shot.path.name), geom,
                                   shot.width, shot.height, source=shot.path.name,
                                   labels=True, all_cards=True)

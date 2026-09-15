@@ -15,7 +15,7 @@ optimiser recipe everywhere so the comparison is about the representation):
     raw_bits            the input bits themselves, no brain at all (283 under
                         --feature-version 1, 315 under 2, and **32** under
                         --encoding glomerular32, where only the relay block is
-                        sent to the fly -- so the no-brain control sees exactly
+                        sent to the fly, so the no-brain control sees exactly
                         what the fly saw)
     rand_proj           bits -> fixed Gaussian projection -> ReLU, 6000 units
     rand_proj_matched   same, width matched to the *effective* (non-constant)

@@ -9,7 +9,7 @@ Status as of 2026-09-13, Apple M2 Pro, macOS 26 (Darwin 25.6.0).
 > REPO=/path/to/fly-balatro          # or: REPO=$(git rev-parse --show-toplevel)
 > ```
 >
-> `$BAL` is the Balatro install, which really is an absolute macOS path; the
+> `$BAL` is the Balatro install, which is an absolute macOS path; the
 > default below is the Steam one and you can point it anywhere.
 
 ## TL;DR
@@ -17,7 +17,7 @@ Status as of 2026-09-13, Apple M2 Pro, macOS 26 (Darwin 25.6.0).
 **Working as of 2026-09-13.** Balatro `1.0.1o-FULL` is installed via Steam,
 Lovely 0.9.0 is injected, Steamodded and BalatroBot load, the API answers on
 `127.0.0.1:12346`, and the v3 glomerular readout has played three real-game
-runs — clearing 6 of 9 blinds, and **all of ante 1 in run 3**, with zero
+runs, clearing 6 of 9 blinds, and **all of ante 1 in run 3**, with zero
 rejected API calls. Two commands, section 4; results in `RESULTS.md`.
 
 Getting there needed one real fix: the adapter was offering the readout a
@@ -61,7 +61,7 @@ Support/Balatro/settings.jkr` is dated 2026-07-07 and is written locally by
 Balatro, and `1/save.jkr` holds a run from 2026-03-24. Those are save data, not
 an install.
 
-Do not read a Balatro version number off anything currently on disk — there is
+Do not read a Balatro version number off anything currently on disk; there is
 nothing to read it off. After installing, check it in the game's main-menu
 corner, or with:
 
@@ -97,7 +97,7 @@ This is the **complete** list. Three things, in two directories.
 | `~/Library/Application Support/Balatro/Mods/balatrobot/` | BalatroBot mod (`balatrobot.json`, `balatrobot.lua`, `src/lua/`) | `1.5.2` (vendored HEAD `e7c6db8`) | 39 | 2026-09-12 |
 | `~/Library/Application Support/Steam/steamapps/common/Balatro/liblovely.dylib` | Lovely Injector | `0.9.0`, arm64, sha256 `d0d5695d…78edf25` | 1 | 2026-09-13 |
 
-`run_lovely_macos.sh` was **not** placed — `balatrobot serve` sets
+`run_lovely_macos.sh` was **not** placed: `balatrobot serve` sets
 `DYLD_INSERT_LIBRARIES` itself, so the shell launcher is redundant.
 
 ### One local edit to the BalatroBot mod (2026-09-13)
@@ -111,7 +111,7 @@ This is the **complete** list. Three things, in two directories.
 
 It adds two optional output fields and changes nothing that already existed:
 
-* **`card.geometry`** on every extracted card — where that card is on screen
+* **`card.geometry`** on every extracted card: where that card is on screen
   *right now*, in LOVE pixels: `{rect: {x, y, w, h, r}, vt, t, room, unit,
   moving}`. Balatro is LÖVE, and every card is a `Moveable` with two transforms
   in game units: `T` is the target and `VT` is the **visible** one, which eases
@@ -122,13 +122,13 @@ It adds two optional output fields and changes nothing that already existed:
   `pixel = (VT.<x|y> + G.ROOM.T.<x|y>) * (G.TILESCALE * G.TILESIZE)`.
   The raw `vt`, `t`, `room` and `unit` values are reported alongside it so a
   consumer can re-derive or re-fit that mapping without another Lua change.
-* **`state.screen`** at the top level — `tilesize`, `tilescale`, `unit`, the
+* **`state.screen`** at the top level: `tilesize`, `tilescale`, `unit`, the
   room rect, and LÖVE's `getDimensions()` / `getPixelDimensions()` /
   `getDPIScale()`, because the overlay is positioned in window **points** and
   the rects above are in **pixels**, which differ by the Retina backing scale.
 
 Both are wrapped in `pcall` and both are optional: if the game's internals ever
-move, the field is simply absent and every existing endpoint behaves exactly as
+move, the field is absent and every existing endpoint behaves exactly as
 before. Nothing was removed, renamed or reordered, so the OpenRPC schema and
 every existing client keep working. The Python side treats a missing field as
 "fall back to the fitted static fan" (`flybalatro/realgame/overlay.py`,
@@ -148,7 +148,7 @@ cp vendor/balatrobot/src/lua/utils/gamestate.lua \
 
 (The full `rm -rf .../balatrobot` in the uninstall block below removes it too.)
 
-Nothing was re-signed. Nothing inside `Balatro.app` was modified — the dylib
+Nothing was re-signed. Nothing inside `Balatro.app` was modified; the dylib
 sits next to the bundle, not in it, which is where `platforms/macos.py` looks
 for it.
 
@@ -159,7 +159,7 @@ Support/Balatro/` was touched is no longer true:
 
 | Path | State after three runs |
 | --- | --- |
-| `1/` (the 2026-03-24 run) | **untouched** — `save.jkr` still dated 2026-09-11 |
+| `1/` (the 2026-03-24 run) | **untouched**; `save.jkr` still dated 2026-09-11 |
 | `2/profile.jkr` | rewritten; `2/` is the active profile and carries the fly's win/loss stats |
 | `settings.jkr` | rewritten by the game on exit (it stores the `serve` display flags) |
 | `M1/`, `config/`, `2/meta.jkr` | restored by Steam Cloud during the install; file mtimes are all from August, so the fly did not write them |
@@ -189,7 +189,7 @@ is contemporaneous with that BalatroBot commit and reports its version as
 `26.829.0` reports `26.829.0` and postdates the mod.
 
 If Steamodded reports a version or compatibility error against a current
-Balatro build, swap to the newer release — already downloaded, no network
+Balatro build, swap to the newer release, already downloaded, no network
 needed:
 
 ```bash
@@ -218,7 +218,7 @@ does not use it.
 The release does not publish checksums, so these are recorded from the bytes I
 downloaded rather than verified against upstream.
 
-`liblovely.dylib` belongs **in the game directory** — next to `Balatro.app`,
+`liblovely.dylib` belongs **in the game directory**, next to `Balatro.app`,
 not inside it. That is the only path `platforms/macos.py` will auto-detect, and
 it is the only thing this project ever writes under
 `~/Library/Application Support/Steam/steamapps/`. The copy in place there has
@@ -239,7 +239,7 @@ xattr -d com.apple.quarantine "$BAL/liblovely.dylib" 2>/dev/null || true
 | Check | Value |
 | --- | --- |
 | `Balatro.love` → `version.jkr` | `1.0.1o-FULL` (BalatroBot needs ≥ 1.0.1) |
-| `Info.plist` `CFBundleShortVersionString` | `11.5` — that is **LÖVE 11.5**, not a Balatro version |
+| `Info.plist` `CFBundleShortVersionString` | `11.5`, which is **LÖVE 11.5**, not a Balatro version |
 | `Info.plist` `CFBundleIdentifier` / `CFBundleExecutable` | `com.Balatro.localthunk` / `love` |
 | binary | `Balatro.app/Contents/MacOS/love`, Mach-O **universal** (x86_64 + arm64) |
 | `codesign -dvvv` on `love` | `flags=0x20002(adhoc,linker-signed)`, `Signature=adhoc`, `Sealed Resources=none`, no entitlements |
@@ -255,8 +255,8 @@ game's signature is exactly as Steam shipped it. Do not re-sign pre-emptively:
 an ad-hoc re-sign of a universal binary is a change to a file Steam owns and
 will be silently reverted by the next update anyway.
 
-The `xattr -d` is a no-op here — a `curl` download sets `com.apple.provenance`,
-not `com.apple.quarantine` — but it is harmless and costs nothing to keep.
+The `xattr -d` is a no-op here (a `curl` download sets `com.apple.provenance`,
+not `com.apple.quarantine`) but it is harmless and costs nothing to keep.
 
 `run_lovely_macos.sh` is **not** needed: `balatrobot serve` sets
 `DYLD_INSERT_LIBRARIES` itself and execs the LÖVE binary directly
@@ -264,7 +264,7 @@ not `com.apple.quarantine` — but it is harmless and costs nothing to keep.
 want to launch the game modded but without the bot.
 
 Steam does **not** need to be running: the launcher bypasses it, which is
-deliberate — `docs/cli.md` notes you cannot launch through Steam on macOS due
+deliberate: `docs/cli.md` notes you cannot launch through Steam on macOS due
 to a Steam client bug.
 
 ### If injection fails — diagnose in this order
@@ -329,9 +329,9 @@ fly from `RESULTS.md` "Plasticity v2": the decision is
 `mean rate(approach MBONs) - mean rate(avoid MBONs) + bias` over the fly's own
 mushroom-body output neurons, with **nothing fitted to actions, labels or
 outcomes**, and the chips the game pays deliver dopamine that depresses the
-eligible Kenyon-cell → MBON synapses. The operating point — the 4,064 per-KC
+eligible Kenyon-cell → MBON synapses. The operating point (the 4,064 per-KC
 homeostatic thresholds, `apl_kc_only`, `apl_mbon_scale`, and the two calibrated
-scalars `bias` and `temperature` — is **loaded** from `outputs/plast2/`, never
+scalars `bias` and `temperature`) is **loaded** from `outputs/plast2/`, never
 refitted, so a real-game run and the headless runs in `RESULTS.md` are the same
 fly. Useful flags:
 
@@ -352,7 +352,7 @@ python -m scripts.realgame_plastic_offline --hands 40                 # learning
 python -m scripts.realgame_plastic_offline --hands 40 --no-learning   # the control
 ```
 
-Everything but the game is the real thing there — the real client over real
+Everything but the game is the real thing there: the real client over real
 HTTP, the real adapter, the real connectome at the real operating point, the
 real loop. It is evidence that the loop closes, **not** evidence about how well
 the fly plays Balatro; see the script's own docstring.
@@ -376,7 +376,7 @@ INFO - [G] ... :: INFO  :: BB.BALATROBOT :: BalatroBot loaded - version 1.5.2
 ```
 
 Steamodded's mod list is the other confirmation, but that log line is the one
-to grep — it needs no screenshot and no window focus. One benign warning
+to grep; it needs no screenshot and no window focus. One benign warning
 appears and can be ignored: a `smods/lovely/calc_returns.toml` pattern patch
 against `functions/UI_definitions.lua` finds no match on 1.0.1o. It is
 cosmetic; the mod loads and every endpoint works.
@@ -422,7 +422,7 @@ decisions without ever playing a card.
 
 This was not the readout being weak. `outputs/bc3/eval.json` records
 `truncated_fraction: 0.0` for `real_alpn_kc_dn/mlp` over 400 headless
-episodes — it never runs out of steps there, because the deselect action does
+episodes; it never runs out of steps there, because the deselect action does
 not exist there. The mask was wrong.
 
 Two hypotheses were tested and rejected before the real one was found, which
@@ -430,10 +430,10 @@ is worth recording so nobody re-tests them:
 
 * *The real game sorts the hand rank-descending and `pylatro` does not, so the
   positional encoding is off-manifold.* True as an observation (`pylatro`
-  returns draw order — `[(4,3),(12,3),(3,3),(0,2),…]`), but **not** the cause:
+  returns draw order, `[(4,3),(12,3),(3,3),(0,2),…]`), but **not** the cause:
   replaying the stuck hand under the game's sorted order, an id-hash
   permutation, and four random permutations produced the identical 2-cycle in
-  all six. After the mask fix, all six reach a `discard`. Hand order really is
+  all six. After the mask fix, all six reach a `discard`. Hand order is
   harmless.
 * *`drive_bits` takes the wrong 32 of the 315 bits under `glomerular32`.* No:
   the relay block is the **leading** 32 bits (`flybalatro/glomerular.py`
@@ -443,7 +443,7 @@ is worth recording so nobody re-tests them:
 
 ### Original launch notes
 
-`uvx` fetches BalatroBot into its own environment — necessary because
+`uvx` fetches BalatroBot into its own environment, necessary because
 BalatroBot requires Python >=3.13 while this project's venv is 3.11. Nothing in
 `flybalatro/realgame/` imports it; the client is stdlib-only.
 
@@ -495,12 +495,12 @@ and give the game time to animate with `--pause 1.5` on the fly side.
 
 Both work on this machine. The API route is the better one:
 
-* **`screenshot` (API)** — writes wherever you point it. `screenshot.lua` uses
+* **`screenshot` (API)**: writes wherever you point it. `screenshot.lua` uses
   `nativefs.write` on the raw path, so an absolute path outside the LÖVE save
   directory is honoured, which is not true of plain `love.filesystem`. Needs no
   window id, no focus and no screen-recording permission, and captures the game
   canvas only.
-* **`screencapture -x` / `screencapture -v -V 28`** — both succeeded, so this
+* **`screencapture -x` / `screencapture -v -V 28`**: both succeeded, so this
   machine has already granted screen recording. The clip is the whole desktop
   (~164 MB for 28 s at retina), not just the game window.
 
@@ -542,7 +542,7 @@ screencapture -x "$REPO/outputs/realgame/desktop.png"
 
 ## 5. What the Python side does
 
-`flybalatro/realgame/client.py` — stdlib JSON-RPC 2.0 client. Method names
+`flybalatro/realgame/client.py`: stdlib JSON-RPC 2.0 client. Method names
 mirror `docs/api.md` exactly (`buy`, `sell`, `pack`, `rearrange`, `use`, `play`,
 …); the RPC method `set` is spelled `set_` because a method named `set` reads as
 the builtin. The "exactly one of these keys" methods also have unambiguous
@@ -556,13 +556,13 @@ One trap in the API itself: **`use` takes its hand targets as `cards`, but
 `src/lua/utils/openrpc.json`, so `src/lua/endpoints/pack.lua` is the source of
 truth for it. Both spellings are pinned by tests.
 
-`flybalatro/realgame/adapter.py` — `build_state()` turns a `gamestate` payload
+`flybalatro/realgame/adapter.py`: `build_state()` turns a `gamestate` payload
 into a duck-typed stand-in that `flybalatro.features.encode()` accepts
 unchanged; `legality_mask()` produces the 109-wide mask with
 `mask_noop_actions=True` semantics; `plan_action()` maps an action index onto
 the BalatroBot call.
 
-`flybalatro/realgame/play.py` — the loop, the readout loader (same npz layout
+`flybalatro/realgame/play.py`: the loop, the readout loader (same npz layout
 as `scripts/bc_train.py`'s `export_numpy`), and the logger.
 
 ### Two things worth knowing
@@ -574,7 +574,7 @@ both, the adapter carries the fly's selection itself and submits it at
 play/discard time. The game's own `card.state.highlight` is only ever read (to
 seed a selection), never written, because nothing in the API can set it.
 
-**`features.encode` reads less than you might assume.** Only `available`,
+**`features.encode` reads only part of the state.** Only `available`,
 `selected` (each card's `rank_index`, `suit_index`, `id`), `plays`, `discards`,
 `score`, `required_score`, `money`, `stage.int()` and `len(jokers)`. It does
 *not* read the deck, discard pile, enhancements, round or ante, so those are
@@ -616,9 +616,9 @@ through `SPECTRAL_PACK`, a pack-open state.
 
 Always masked, and `plan_action` refuses them:
 
-* `move_card_left/right` (24-69) and `sort_hand` (105, 106) — masked anyway
+* `move_card_left/right` (24-69) and `sort_hand` (105, 106): masked anyway
   under `mask_noop_actions=True`; reordering never changes what a hand scores.
-* `apply_tarot` (89) and `apply_spectral` (108) — pylatro staging steps for a
+* `apply_tarot` (89) and `apply_spectral` (108): pylatro staging steps for a
   targeting flow BalatroBot performs atomically inside `use` / `pack`.
 
 `buy_joker[i]` etc. are per-category slots in pylatro but a single array in
@@ -635,8 +635,8 @@ whatever index that is.
 | `heuristic` | — (`scripts/baseline_heuristic.HeuristicPolicy`) | no |
 
 Robustness: a rejected call (any of the four error names) is logged, the
-selection is dropped, and the loop re-reads the game rather than guessing —
-but `--max-errors` (default 5) consecutive rejections stop the run, so a
+selection is dropped, and the loop re-reads the game rather than guessing.
+But `--max-errors` (default 5) consecutive rejections stop the run, so a
 mask/game disagreement cannot spin forever. If `wait_until_stable` times out
 still inside an animation state, the loop stops with
 `stop_reason="stuck_in_<state>"` instead of burning a poll timeout per
@@ -673,12 +673,12 @@ Brain load is ~30 s and ~1.1 GB resident; the per-decision 50 ms window costs
 
 ## 6. Per-decision log schema
 
-`outputs/realgame/log.jsonl` — one JSON object per line, appended and flushed.
-`outputs/realgame/latest.json` — the newest record only, written to a temp file
+`outputs/realgame/log.jsonl`: one JSON object per line, appended and flushed.
+`outputs/realgame/latest.json`: the newest record only, written to a temp file
 and `os.replace`d, so a poller never sees a partial object. This is the
 subscribe mechanism for the viewer (poll or watch `latest.json`); no websocket,
 so no extra dependency and nothing bound to port 8765.
-`outputs/realgame/summary.json` — written once when the loop stops.
+`outputs/realgame/summary.json`: written once when the loop stops.
 
 `population_sizes` in the example below is illustrative; the real numbers come
 from the loaded graph (ALPN 686, KC 4064, DN 1314 per
@@ -744,8 +744,8 @@ A rejected call logs a shorter record instead:
 
 The learning fly decides once per **hand**, not once per action, so its log has
 two kinds of record, told apart by `kind`. Everything `overlay.parse_record`
-reads — `state.hand`, `state.selected_indices`, `state.blind`,
-`relayed_hand_analysis`, `action_name` — is in the same place and the same
+reads (`state.hand`, `state.selected_indices`, `state.blind`,
+`relayed_hand_analysis`, `action_name`) is in the same place and the same
 shape, so one overlay and one viewer read both kinds of run.
 
 ```jsonc
@@ -795,7 +795,7 @@ shape, so one overlay and one viewer read both kinds of run.
 
 Two things worth knowing about the timing. The pulse is delivered against the
 Kenyon cells of the window the **decision** was taken in, which by then is one
-loop iteration old — that is the coincidence the rule is about, and
+loop iteration old; that is the coincidence the rule is about, and
 `tests/test_realgame_plastic.py` asserts it. And **a discard never earns
 dopamine**: crediting a re-deal across a discard is delayed credit assignment
 and beyond a fly, so `dopamine` is `null` on every discard outcome.
@@ -805,7 +805,7 @@ numbers with deliberately different names, because both are merged into the one
 `mb` block and a collision silently overwrote one of them during development.
 For the same reason an empty bucket's `p_play` is `null`, never `NaN`:
 `json.dumps` writes a bare `NaN` for a float nan, which is not JSON and which
-the browser's `JSON.parse` rejects outright.
+the browser's `JSON.parse` rejects.
 
 `--plastic` also writes `weights.npz` (the learned KC → MBON weights, in
 `flybalatro.plasticity.WEIGHTS_FORMAT`) into the out dir when the run ends,
@@ -823,8 +823,8 @@ including on Ctrl-C.
 * In `ROUND_EVAL` and `SHOP` there is no blind with status `CURRENT` or
   `SELECT` (the beaten one is `DEFEATED`, the next is `UPCOMING`), so
   `required_score` is 0 and the score-ratio block lands in bucket 7 rather than
-  wherever pylatro would put it. Both are non-decision stages — the only legal
-  actions are `cash_out` and the shop set — so it cannot change play, but the
+  wherever pylatro would put it. Both are non-decision stages (the only legal
+  actions are `cash_out` and the shop set) so it cannot change play, but the
   bits differ from pylatro's there.
 * The real game shows the hand sorted (rank-descending by default) while
   pylatro does not. The encoding is positional in both, so this is harmless,
@@ -842,22 +842,22 @@ python -m pytest tests/test_realgame_adapter.py tests/test_realgame_loop.py \
 
 55 tests + 1 skipped, ~8 s, no game required. The whole project suite is
 `python -m pytest tests/ -q`: **246 passed, 1 skipped** (do not run bare
-`pytest` from the project root -- it tries to collect `vendor/doomfly` and
+`pytest` from the project root; it tries to collect `vendor/doomfly` and
 `vendor/fly-craftax`, which are separate projects and fail at import).
 
-* `test_realgame_adapter.py` (30) — synthetic BalatroBot payloads against
+* `test_realgame_adapter.py` (30): synthetic BalatroBot payloads against
   hand-computed bit indices; every rank and suit; stage table; the legality
   mask per stage including shop affordability; action routing. Includes the
-  invariant that **every action the mask allows, `plan_action` can perform** —
+  invariant that **every action the mask allows, `plan_action` can perform**,
   the thing that would otherwise crash mid-demo.
-* `test_realgame_loop.py` (14) — a real `http.server` speaking JSON-RPC with a
+* `test_realgame_loop.py` (14): a real `http.server` speaking JSON-RPC with a
   scripted fake game, driven by the real hand-aware heuristic, walking
   `BLIND_SELECT -> SELECTING_HAND -> ROUND_EVAL -> SHOP -> next_round`. Covers
   the client's transport and error mapping, the log schema (both encoding
   versions, including the relayed hand analysis), that a stale selection never
   survives a refill, and the exact wire form of every "exactly one of" method
   (including `pack`'s `targets` vs `use`'s `cards`).
-* `test_realgame_brain.py` (9) — the real spiking `Brain` and `FeatureMap` over
+* `test_realgame_brain.py` (9): the real spiking `Brain` and `FeatureMap` over
   a ~3.4k-neuron synthetic graph (MaleCNS is ~1.5 GB and was being used by the
   running experiment): spikes are produced, a given state is deterministic,
   distinct states give distinct features, `shuffled` differs from `real`, and
@@ -878,8 +878,8 @@ with three `flybalatro.viewer.server` instances (ports 8767-8769) each holding
 a MaleCNS graph. `play.py` adds another ~1.1 GB resident per run.
 
 **All three viewer servers died during the three real-game runs.** Nothing in
-this work signals them — the only `pkill` issued matched
-`flybalatro.realgame.play` — and no `memorystatus`/jetsam line was retained in
+this work signals them (the only `pkill` issued matched
+`flybalatro.realgame.play`), and no `memorystatus`/jetsam line was retained in
 `log show`, so the cause is not provable after the fact, but memory pressure is
 the obvious candidate: the kernel also shrank the swap file from 17.4 GB to
 12.3 GB, which is what happens after large processes exit. They were restarted
@@ -888,8 +888,8 @@ is gone, and cannot be recovered. The viewers only ever *read* `outputs/plast*`,
 so nothing on disk was affected.
 
 If you are going to run the demo and the viewers together, expect to need the
-headroom, and start the viewers first — `play.py` fails loudly if it cannot
-load, a viewer just disappears.
+headroom, and start the viewers first: `play.py` fails loudly if it cannot
+load, a viewer disappears.
 
 
 * `pyflakes` was installed into `.venv` to lint the new modules and then
@@ -905,8 +905,8 @@ load, a viewer just disappears.
   port-8767 viewer at the real game so the neuron cloud shows the live
   decisions next to the Balatro window. `latest.json` is the right subscribe
   point and the polling half is trivial, but the viewer's `Simulation.act()`
-  owns its own `BalatroEnv` and builds every frame — state panel, substeps,
-  decision — from that env. Mirroring means either (a) teaching `Simulation` to
+  owns its own `BalatroEnv` and builds every frame (state panel, substeps,
+  decision) from that env. Mirroring means either (a) teaching `Simulation` to
   accept an externally supplied bit vector and state summary instead of
   stepping its env, which touches `Simulation`, `GameLoop` and the frame
   contract the frontend reads, or (b) writing the 315 bits into `latest.json`
@@ -919,8 +919,8 @@ load, a viewer just disappears.
   packs) has unit tests but no live hours: `plan_action`'s shop branch resolves
   pylatro's per-category slots against BalatroBot's single `shop.cards` array,
   and that mapping has never been exercised on a shop the fly actually wanted
-  to buy from — the fly left the shop immediately in all three runs.
+  to buy from; the fly left the shop immediately in all three runs.
 * **The 28 s clip is a full-desktop capture.** Window-scoped recording
   (`screencapture -v -l <windowid>`) was not attempted; `GetWindowID` is not
   installed and the API exposes stills only. Crop in post if it matters.
-* **`run_lovely_macos.sh` still un-placed**, deliberately — see section 2.
+* **`run_lovely_macos.sh` still un-placed**, deliberately; see section 2.

@@ -43,7 +43,7 @@ for r in rows:
           f"{v['episode_len_mean']:>6.1f} {v['skip_blind_fraction']:>7.4f} "
           f"{v['truncated_fraction']:>6.3f} {(f'{ch:.2f}' if ch is not None else '-'):>6s}")
 
-# -- what the fly actually put on the table ---------------------------------
+# -- what the fly put on the table -----------------------------------------
 if any(isinstance(v, dict) and v.get("hand_evidence") for k, v in e.items() if k != "_config"):
     print("\n=== hand types played (relay bits, feature version 2) ===")
     print(f"  {'readout':28s} {'plays':>6s} {'=best':>7s} {'sel@best':>9s}  top hand types")

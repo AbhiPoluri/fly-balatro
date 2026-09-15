@@ -1,4 +1,4 @@
-"""Behaviour-cloning readouts for the calyx conditions -- linear only.
+"""Behaviour-cloning readouts for the calyx conditions, linear only.
 
 Same recipe as ``scripts/bc_train.py`` (same states, same episode split, same
 optimiser, same seeds: this module imports and calls that module's own
@@ -9,9 +9,9 @@ wiring and would only cost compute.
 
 Two readouts per condition:
 
-``kc``   the 4,064 Kenyon cells -- the population immediately downstream of the
+``kc``   the 4,064 Kenyon cells, the population immediately downstream of the
          rewired synapses, and the one the control is about;
-``dn``   the 1,314 descending neurons -- the fly's motor output, several synapses
+``dn``   the 1,314 descending neurons, the fly's motor output, several synapses
          further on.
 
 ``alpn_kc_dn`` is available but is *not* the discriminating readout: the antennal

@@ -9,7 +9,7 @@ distance-2 bin mixes bucket changes with best-slot-mask changes and it does not
 establish the claim.
 
 This one holds a real decision-point pattern fixed and changes **only** the score
-bucket -- one bucket bit off, one on, every other bit identical -- which is
+bucket, one bucket bit off, one on, every other bit identical, which is
 exactly the discrimination the task asks the fly to make. A hand-type-only
 contrast (bucket held, hand type changed) is measured on the same anchors, so
 "everything moves together" and "this axis moves together" can be told apart.

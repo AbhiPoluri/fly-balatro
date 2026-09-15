@@ -3,8 +3,8 @@
 One module every stage imports, so nothing in the pipeline can build a slightly
 different version of this encoding. It is the glomerular twin of
 ``encode.feature_map_for``: collection is unchanged (``outputs/bc2/states.npz``
-still holds 315-bit v2 rows), but only the leading 32 bits -- the hand-type relay
-block of :mod:`flybalatro.features_v2` -- ever reach the fly, and each of them
+still holds 315-bit v2 rows), but only the leading 32 bits (the hand-type relay
+block of :mod:`flybalatro.features_v2`) ever reach the fly, and each of them
 drives *every* olfactory receptor neuron of one glomerulus instead of 10
 scattered ones.
 
@@ -16,14 +16,14 @@ states: 6.8 of 32 glomeruli active per state, and a linear probe reads the 9-way
 hand type at 1.000 from the Kenyon cells and 0.842 from the descending neurons,
 against 0.598 / 0.610 before.
 
-The spec -- the glomerulus per bit, the tuning, the drive -- is read from
+The spec (the glomerulus per bit, the tuning, the drive) is read from
 ``outputs/mb2/tuned_config.json``, the file the gated sweep chose, and checked
 against :data:`GLOM32_TYPES` so a stage still works (and still agrees) if that
 file is ever moved. Nothing here is measured: ``apl_scale = 2`` is a calibration
 choice, documented in :mod:`flybalatro.tuning`.
 
 Populations stored for v3 are ALPN, KC, **MBON**, DN, in that order. MBON is new
-in v3: with a separable Kenyon-cell code there is finally a mushroom-body output
+in v3: with a separable Kenyon-cell code there is a mushroom-body output
 worth reading.
 """
 
@@ -127,7 +127,7 @@ def load_spec(path: Optional[Path] = None) -> GlomSpec:
     Cached, because every worker process asks for it once and the file never
     changes inside a run. Raises if the file disagrees with
     :data:`GLOM32_TYPES`, if the drive is not tonic, or if the block is not 32
-    bits wide -- all three would mean a stage is about to drive the wrong
+    bits wide. All three would mean a stage is about to drive the wrong
     receptors with the wrong calibration.
     """
     p = Path(path) if path is not None else TUNED_CONFIG_PATH
@@ -187,7 +187,7 @@ def brain_for(graph, wiring: str, spec: Optional[GlomSpec] = None,
 
     The tuning is handed to the ``Brain`` constructor, and ``Brain.shuffled``
     passes it down to the shuffled copy, where ``tuning.scale_out_edges`` walks
-    ``graph.ptr`` -- i.e. it scales APL's outgoing synapses **by presynaptic
+    ``graph.ptr``, i.e. it scales APL's outgoing synapses **by presynaptic
     identity**, which is exactly what a degree-preserving target permutation
     leaves intact.
     """

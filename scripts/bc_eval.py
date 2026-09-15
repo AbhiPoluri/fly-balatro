@@ -1,7 +1,7 @@
 """Stage 4: online evaluation with the fly brain in the loop.
 
 Each trained readout plays real episodes: the env's state bits drive the matching
-brain condition (stateless -- reset, one window, log1p counts), the readout scores
+brain condition (stateless: reset, one window, log1p counts), the readout scores
 the 109 actions, illegal ones are set to -inf, and argmax is played. Reference
 rows for ``random`` (uniform over the same masked action set) and the teacher
 (the cloning target) use the identical seeds.
@@ -12,7 +12,7 @@ tuned one from ``outputs/mb2/tuned_config.json`` and only the 32-bit relay block
 reaches it, so the brain-free rows are scored on those 32 bits too; the env still
 encodes all 315, which is what ``hand_evidence`` below reads.
 
-Under ``--feature-version 2`` every row also reports what the fly actually
+Under ``--feature-version 2`` every row also reports what the fly
 *played*: the histogram of poker hand types it put down, the fraction of plays
 where the selection was the best available subset, and the fraction of
 select_card actions that landed on a best-subset slot. Those come straight out of

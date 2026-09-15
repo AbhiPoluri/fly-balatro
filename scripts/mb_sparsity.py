@@ -1,4 +1,4 @@
-"""Is the Kenyon-cell code sparse? Measurement only -- no plasticity, no learning.
+"""Is the Kenyon-cell code sparse? Measurement only: no plasticity, no learning.
 
 For N random sparse binary inputs (the same generator ``scripts/brain_probe.py``
 uses: 180 bits, 20% active, 10 ORNs per bit, 30 mV tonic, one 50 ms window from
@@ -9,7 +9,7 @@ and reports:
     (ii)  mean pairwise Jaccard overlap of the active sets across inputs
           (reference: for independent Bernoulli-p sets, E[J] ~= p/(2-p))
     (iii) fraction of KCs that fire for more than half of all inputs ("always-on")
-    (iv)  KC spikes per millisecond, averaged over inputs -- the first ~10 ms are
+    (iv)  KC spikes per millisecond, averaged over inputs; the first ~10 ms are
           structurally APL-free, because APL is driven *by* the KCs and its
           feedback cannot arrive before the first KC volley has already happened
     (v)   MBON and ALPN mean rates
@@ -247,11 +247,11 @@ def mn9_check(brain: Brain, pops: dict, n_total: int, drive_mv: float = 30.0,
       sugar_grn_drive     all labellar GRNs at `drive_mv`
       no_drive            nothing driven (must be exactly 0 spikes everywhere)
       matched_orn_control the same *number* of randomly chosen ORNs at the same
-                          drive -- the control that matters, because "MN9 fires
+                          drive, the control that matters, because "MN9 fires
                           for sugar" is worthless if MN9 fires for any input of
                           comparable size
       olfactory_control   one of the real 180-bit probe inputs (1,800 ORNs), the
-                          drive the rest of this project actually uses
+                          drive the rest of this project uses
     """
     grn, mn9, orn = pops["GRN"], pops["MN9"], pops["ORN"]
     rng = np.random.default_rng(matched_seed)

@@ -1,6 +1,6 @@
 # Patches to vendored upstreams
 
-`vendor/` is gitignored — it holds upstream checkouts that you clone yourself
+`vendor/` is gitignored; it holds upstream checkouts that you clone yourself
 (see [`docs/REALGAME_INSTALL.md`](../docs/REALGAME_INSTALL.md)). Two of them are
 patched, and those patches are the part of this project that lives in someone
 else's tree. They are kept here so a fresh clone can reproduce them.
@@ -81,7 +81,7 @@ if !t.requires_targets() { true } else if self.stage.is_blind() { … } else { t
 
 Two divergences follow. `PackOpen` is missing from the mask's early return, and
 the `else { true }` arm unmasks a hand-touching Tarot or Spectral *outside* a
-Blind — where `Game::use_consumable` (`core/src/game.rs:1167`, which uses
+Blind, where `Game::use_consumable` (`core/src/game.rs:1167`, which uses
 `requires_hand()`) then rejects it as `InvalidAction`. So the mask offers an
 action the handler refuses, and a masked agent that trusts the mask crashes or
 stalls. We measured it at roughly **1 in 3,000 episodes** in ante-1 play; it
@@ -90,8 +90,8 @@ would be much more frequent in a run that reaches the shop often.
 The patch makes the mask a copy of the generator's own predicate, including
 `PackOpen`. It removes a divergence rather than introducing a rule, and the
 correct version is already in the file a few hundred lines above, which is the
-strongest argument for sending it upstream: the project already believes the
-patched logic, in the other half of the same pair.
+strongest argument for sending it upstream: the upstream code already implements
+the patched logic, in the other half of the same pair.
 
 ## `balatrobot-gamestate.patch` — 1 file, +125 / −1
 
@@ -100,8 +100,8 @@ so a failure degrades to the mod's existing behaviour instead of breaking the
 game.
 
 Balatro is LÖVE, and every card is a `Moveable` carrying a target transform `T`
-and a *visible* transform `VT` that eases toward it — `VT` is what the draw path
-actually uses. The patch reports, for each card in hand, the `VT`-derived screen
+and a *visible* transform `VT` that eases toward it; `VT` is what the draw path
+uses. The patch reports, for each card in hand, the `VT`-derived screen
 rectangle and rotation plus the room/tile scaling the game is currently using.
 
 This replaces a fitted static model of Balatro's card fan in

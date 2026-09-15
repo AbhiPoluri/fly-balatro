@@ -2,22 +2,22 @@
 
 The rule, the target, the deadband, the annealed gain schedule, the per-cell
 lower clamp and the stop criterion are all ``scripts/kc_homeo.py`` exactly as it
-shipped for v2 -- this script only swaps the odour map (four disjoint
+shipped for v2; this script only swaps the odour map (four disjoint
 ORN-balanced bucket ensembles instead of one glomerulus per relay bit) and the
 output paths, so ``outputs/plast2/`` is never written.
 
     offset_i += k * log((r_i + eps) / (target + eps))        target = 0.07
 
 ``r_i`` is the fraction of odours for which Kenyon cell ``i`` emits at least one
-spike. The update sees **only that** -- no labels, no reward, no MBONs, no
-readout -- which is why recalibrating for a new encoding is not a way of fitting
+spike. The update sees **only that**: no labels, no reward, no MBONs, no
+readout, which is why recalibrating for a new encoding is not a way of fitting
 the task.
 
 One honest difference from v2, forced by the encoding and declared in
 ``PREREGISTRATION.md`` section 3: the separated encoding drives receptors from 13
 of the 32 relay bits (9 hand types + 4 buckets), so the odour universe is 36
 patterns and the 500/500 calibration/held-out split of distinct 32-bit patterns
-collapses -- both halves project onto the same handful of odours. The calibration
+collapses, because both halves project onto the same handful of odours. The calibration
 set is therefore the distinct *effective* odours of the bc2 calibration half, and
 there is no held-out odour set to report the gate on. Stated, not hidden.
 

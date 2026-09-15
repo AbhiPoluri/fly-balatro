@@ -8,17 +8,17 @@ Why this exists
 target. Under the glomerular encoding that control is broken: glomerular
 convergence (~440 driven receptor neurons of one type onto the uniglomerular
 projection neurons of that glomerulus) is exactly what a global target
-permutation destroys, so the shuffled network barely fires -- ALPN 71.3 Hz real
-against 0.63 Hz shuffled -- and the comparison is between a working brain and a
+permutation destroys, so the shuffled network barely fires (ALPN 71.3 Hz real
+against 0.63 Hz shuffled) and the comparison is between a working brain and a
 near-dead one.
 
 This module builds the control that asks an answerable question instead: keep
 the sensory front end, the APL loop, KC -> KC, KC -> MBON and every dopaminergic
 edge **exactly as measured**, and randomise only *which* projection neurons
 converge on each Kenyon cell. That is the mushroom-body calyx, the one stage
-where the literature makes a prediction -- PN -> KC connectivity is reported as
+where the literature makes a prediction: PN -> KC connectivity is reported as
 largely random in vivo (Caron et al. 2013), with later work finding partial
-structure (Zheng et al. 2022) -- so a near-null validates the model against known
+structure (Zheng et al. 2022), so a near-null validates the model against known
 biology and a large effect is a finding.
 
 The rewiring
@@ -112,7 +112,7 @@ def stratum_keys(graph, ek: Dict[str, NDArray]) -> Tuple[NDArray[np.int64], List
 
     The synapse count is recovered from the weight (``sign * count * W_SYN``),
     and the sign is carried separately so the 24 GABAergic ALPN -> KC edges can
-    only ever swap with each other -- an inhibitory edge landing where an
+    only ever swap with each other; an inhibitory edge landing where an
     excitatory one was would change that KC's weighted input.
     """
     side = graph.side.astype(str)
@@ -251,7 +251,7 @@ def rewire_alpn_kc(graph, seed: int,
 
 
 def rewiring_depth(graph, ek: Dict[str, NDArray], new_post: NDArray) -> dict:
-    """How much of the calyx actually moved. A near-null needs this number."""
+    """How much of the calyx moved. A near-null needs this number."""
     old = ek["post"].astype(np.int64)
     new = np.asarray(new_post, np.int64)
     pre = ek["pre"].astype(np.int64)

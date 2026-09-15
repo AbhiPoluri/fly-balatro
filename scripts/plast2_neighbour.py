@@ -4,12 +4,12 @@ Gate criterion (v) measures specificity against a panel of eight *deliberately
 different* odours (one per hand-type x score-bucket pair), and the homeostatic code
 passes it: 71% of the reward effect and 104% of the punishment effect stay on the
 paired odour. That is the right test for "is the credit odour-specific at all", and
-the wrong test for "can this fly separate the decisions the game actually asks it
+the wrong test for "can this fly separate the decisions the game asks it
 to separate", because the decisions that matter are between *near* odours.
 
 The relay block puts the score-vs-needed bucket in 1 of its 32 bits. Two Pair that
 can clear the blind and Two Pair that cannot therefore differ in **two** bits (one
-bucket bit off, one on) out of the ~7 that are on -- and they are the pair the fly
+bucket bit off, one on) out of the ~7 that are on, and they are the pair the fly
 has to tell apart to stop wasting plays. This script measures the leak directly:
 condition one odour, then measure the change in every other held-out odour, binned
 by Hamming distance from the conditioned one.
@@ -46,7 +46,7 @@ def pick_anchors_and_probes(patterns: NDArray[np.float32], n_anchors: int,
     rng = np.random.default_rng(seed)
     P = patterns.astype(np.int8)
     out: List[dict] = []
-    # prefer anchors that actually have a distance-2 neighbour in the set
+    # prefer anchors that have a distance-2 neighbour in the set
     dist = (P[:, None, :] != P[None, :, :]).sum(axis=2)
     np.fill_diagonal(dist, 999)
     has_near = np.flatnonzero((dist == 2).any(axis=1))

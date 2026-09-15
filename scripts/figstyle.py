@@ -1,6 +1,6 @@
 """Shared plotting style for `scripts/figures.py`.
 
-Dark, monospace, restrained -- the same visual language as the live dashboard in
+Dark, monospace, restrained: the same visual language as the live dashboard in
 `outputs/pov/dashboard_embedded.png`, whose palette these constants were sampled
 from. Nothing here reads data or draws a figure; it only configures matplotlib.
 """
@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib import font_manager  # noqa: E402
 
 # --------------------------------------------------------------------------- #
-# palette -- sampled from outputs/pov/dashboard_embedded.png
+# palette, sampled from outputs/pov/dashboard_embedded.png
 # --------------------------------------------------------------------------- #
 BG = "#0e1013"  # panel background
 BG_DEEP = "#08090b"  # inset / well background

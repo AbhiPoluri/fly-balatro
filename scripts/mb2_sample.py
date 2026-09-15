@@ -9,8 +9,8 @@ Writes, before any simulation runs:
 
 The input Jaccard matters for reading the gate. The gate asks for
 between-hand-type / within-hand-type Jaccard of active KC sets below 0.5. If the
-*input* already sits near 1.0 -- the 32 relay bits of two states of different
-hand types overlap almost as much as two states of the same hand type -- then the
+*input* already sits near 1.0 (the 32 relay bits of two states of different
+hand types overlap almost as much as two states of the same hand type) then the
 gate is asking the mushroom body to *expand* a separation that is barely present
 at the receptors, not to preserve one. Measured here so the verdict can say which.
 """

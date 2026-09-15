@@ -6,10 +6,10 @@ external audit of v1/v2 found each of them either wrong or unestablished:
 
 1. **Evaluation mode.** ``plast_run.Runner._evaluate`` reuses the *training*
    decider, so with ``explore_floor = 0.1`` the published "greedy" evaluation was
-   really a floored-softmax **sample**. :class:`EvalFlyPolicy` does both, and
-   names which: ``greedy`` takes PLAY iff ``p >= 0.5`` -- equivalently iff
+   a floored-softmax **sample**. :class:`EvalFlyPolicy` does both, and
+   names which: ``greedy`` takes PLAY iff ``p >= 0.5`` (equivalently iff
    ``play_drive >= 0``, since ``p = e/2 + (1 - e) * sigmoid(d / T)`` crosses 0.5
-   exactly at ``d = 0`` for any floor ``e < 1`` -- and ``sampled`` draws
+   exactly at ``d = 0`` for any floor ``e < 1``) and ``sampled`` draws
    ``rng.random() < p`` as before.
 
 2. **The separated bucket encoding.** The v2 report blamed a "Hamming distance 2"
@@ -22,7 +22,7 @@ external audit of v1/v2 found each of them either wrong or unestablished:
 3. **The analysis.** v2 quoted ``z = 1.75 over 180 games`` for 3 training runs
    over 60 reused evaluation seeds, which treats the same game counted three
    times as three independent games. :func:`cluster_bootstrap` resamples both
-   clusters -- evaluation seed and training run -- and works on the *paired*
+   clusters (evaluation seed and training run) and works on the *paired*
    per-seed difference against a control evaluated on the same seeds.
 
 Nothing here mutates anything under ``outputs/plast``, ``outputs/plast2`` or
@@ -58,18 +58,18 @@ ENC_CURRENT: str = "current"
 ENC_SEPARATED: str = "separated"
 ENCODINGS: Tuple[str, ...] = (ENC_CURRENT, ENC_SEPARATED)
 
-#: Relay bits 0-8 -- the 9-way best-hand-type one-hot. Kept in both encodings, on
+#: Relay bits 0-8: the 9-way best-hand-type one-hot. Kept in both encodings, on
 #: the same nine small, tight glomeruli ``outputs/mb2`` chose so that *which*
 #: hand type is on changes the driven-ORN count by at most 2 cells.
 HAND_TYPE_BITS: Tuple[int, ...] = tuple(range(0, 9))
-#: Relay bits 28-31 -- ``best score vs what is still needed``, the axis that
+#: Relay bits 28-31: ``best score vs what is still needed``, the axis that
 #: decides the action.
 BUCKET_BITS: Tuple[int, ...] = (28, 29, 30, 31)
 #: Relay bits 9-27, dropped by the separated encoding. Measured over the 1,091
 #: decision points of the 60 standard evaluation games (``plast3_encoding``
 #: section of the report): bits 17-25 and 27 are **never** on, bit 26
 #: (``sel_none``) is on at **every** decision point, and bits 9-16 are the slot
-#: mask of the best subset -- which the harness selects itself whichever way the
+#: mask of the best subset, which the harness selects itself whichever way the
 #: fly decides, so it cannot change the value of PLAY vs DIG.
 DROPPED_BITS: Tuple[int, ...] = tuple(range(9, 28))
 
@@ -252,7 +252,7 @@ def build_setup3(encoding: str, cfg: dict, graph, valence_scheme: str = "nt",
 
 
 def effective_bits(encoding: str, bits: NDArray[np.float32]) -> NDArray[np.float32]:
-    """The relay bits this encoding actually drives receptors with."""
+    """The relay bits this encoding drives receptors with."""
     b = np.asarray(bits, np.float32)[:N_HAND_BLOCK].copy()
     if encoding == ENC_SEPARATED:
         b[list(DROPPED_BITS)] = 0.0
@@ -297,7 +297,7 @@ class EvalFlyPolicy:
         self.rng = rng
         #: Cache key. Under ``separated`` the dropped relay bits drive no
         #: receptor at all, so two patterns that differ only there are the same
-        #: odour and the key must say so -- otherwise the cache is merely
+        #: odour and the key must say so; otherwise the cache is merely
         #: correct-but-slow (28 odours stored as ~400 keys).
         self.encoding = encoding
         self.use_cache = bool(cache)
@@ -362,7 +362,7 @@ def dopamine_for(record: dict, punishment: str) -> Optional[str]:
     ``reward`` is untouched: a PLAY that cleared the blind or made its fair share
     ``needed / plays_left`` (:func:`plast_common.resolve_outcome`). ``current``
     punishment is the existing one, the terminal losing play. ``omission``
-    punishes **every** PLAY that was not rewarded -- the same game-computable
+    punishes **every** PLAY that was not rewarded: the same game-computable
     inequality with its negative branch wired up, and a strict superset of
     ``current`` because ``punish`` already implies ``not reward``. A DISCARD
     still earns nothing either way.
@@ -412,8 +412,8 @@ def cluster_bootstrap(runs: Sequence[Sequence[float]], control: Sequence[float],
     Both clusters are resampled with replacement, which is the correction the v2
     write-up's ``z = 1.75 over 180 games`` needs: the 180 were 60 distinct games
     counted three times, and the seed-to-seed variance of a 5-hand Balatro ante
-    dwarfs the run-to-run variance. Resampling three runs is coarse -- three
-    clusters cannot resolve much on their own -- so the per-run deltas are
+    dwarfs the run-to-run variance. Resampling three runs is coarse (three
+    clusters cannot resolve much on their own) so the per-run deltas are
     reported beside the interval rather than hidden inside it.
     """
     A = np.asarray([np.asarray(r, np.float64) for r in runs], np.float64)

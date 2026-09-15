@@ -1,10 +1,10 @@
 """Live play for the calyx conditions, with per-episode records kept for pairing.
 
-Identical to ``scripts/bc_eval.py`` in everything that matters -- same env, same
+Identical to ``scripts/bc_eval.py`` in everything that matters: same env, same
 400 episodes on seeds 100000-100399, same ante-1 cut, same masked-argmax policy,
 same ``reset -> one 50 ms window -> log1p counts`` brain call, and this module
-imports that module's worker functions rather than reimplementing them -- with
-two differences:
+imports that module's worker functions rather than reimplementing them. Two
+differences:
 
 * the brain is built from a calyx condition's graph (``real`` or ``rw<seed>``)
   and that condition's own calibration variant;

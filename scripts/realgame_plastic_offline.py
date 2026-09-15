@@ -96,8 +96,8 @@ class ScriptedGame:
     """A Balatro-shaped state machine that deals real cards and scores for real.
 
     One ante of three blinds. A played hand scores with
-    ``flybalatro.hands.best_subset`` over the submitted slots -- the same code
-    that tells the fly what its options are worth -- so "chips gained" is what
+    ``flybalatro.hands.best_subset`` over the submitted slots (the same code
+    that tells the fly what its options are worth) so "chips gained" is what
     Balatro would pay for that subset with no jokers.
 
     The card geometry the real mod now reports is emitted too, from a simple
@@ -153,7 +153,7 @@ class ScriptedGame:
 
         A plain arithmetic fan in LOVE pixels: eight cards across the middle of
         a 2418 x 1570 canvas with the same +/-5.5 degree tilt the real game
-        uses. Not a claim about real positions -- it exists so a consumer of
+        uses. Not a claim about real positions; it exists so a consumer of
         this log exercises the same parsing path as a real one.
         """
         out: List[Dict[str, object]] = []

@@ -1,9 +1,9 @@
 """The 2x2 table, with the paired / clustered uncertainty the preregistration fixed.
 
 Reads ``outputs/plast3/run_*.json`` and ``baselines3.json``, applies the two
-comparisons named in ``PREREGISTRATION.md`` section 5 -- against the cell's own
+comparisons named in ``PREREGISTRATION.md`` section 5 (against the cell's own
 frozen control and against always-discard, both on the same 400 evaluation
-seeds -- and writes ``outputs/plast3/summary.json`` plus a markdown table.
+seeds) and writes ``outputs/plast3/summary.json`` plus a markdown table.
 
 Run::
 

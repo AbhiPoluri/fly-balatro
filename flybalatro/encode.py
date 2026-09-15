@@ -3,19 +3,19 @@
 Each binary feature owns a disjoint group of ORNs. An active feature depolarises
 its group, exactly like doomfly's 30 mV retina drive.
 
-Bottleneck worth knowing: MaleCNS has 2,639 ORNs but only 54 glomerular types
+The bottleneck: MaleCNS has 2,639 ORNs but only 54 glomerular types
 (ORN_DA1, ORN_VA1d, ...). Every ORN of a type converges on the same handful of
-antennal-lobe projection neurons, so N features are ultimately projected into
+antennal-lobe projection neurons, so N features are projected into
 ~54 x 2 sides analog channels no matter how the groups are drawn.
 
-  grouping='random'  (default) -- each feature gets 10 ORNs scattered across
+  grouping='random'  (default): each feature gets 10 ORNs scattered across
       glomeruli, so each PN channel sees a random weighted sum of features:
       a random linear projection, which a linear readout can decode.
-  grouping='by_type' -- contiguous chunks within a glomerulus; features sharing a
+  grouping='by_type': contiguous chunks within a glomerulus; features sharing a
       glomerulus become nearly indistinguishable downstream, but a label defined
       as "count of bits in a group" maps onto one channel cleanly.
 
-``orn_first`` (v2 encoding) -- by default the ORNs and the overflow sensory
+``orn_first`` (v2 encoding): by default the ORNs and the overflow sensory
 neurons are pooled and then permuted *together*, so a low feature index is no
 more likely to sit on a real ORN than a high one: with 283 features only 93% of
 the 2,830 driven neurons are ORNs at all, spread uniformly. The v2 encoding puts

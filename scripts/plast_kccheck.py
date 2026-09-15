@@ -3,13 +3,13 @@
 `outputs/plast/tuned_config.json` adds two knobs to the mb2 tuning
 (``apl_kc_only``, ``apl_mbon_scale``) so the MBON output stage is not silent.
 Both only touch APL's output, and only ``apl_kc_only`` can reach the Kenyon cells
-at all -- but it does change the KC code slightly (APL's 6% non-KC output is no
+at all, but it does change the KC code slightly (APL's 6% non-KC output is no
 longer doubled, and some of that returns to the calyx indirectly), so the claim
 "the Kenyon-cell code is essentially unchanged" has to be measured, not asserted.
 
 Reports, for both tunings, on the same 200 calibration hands: KC active fraction,
 always-on fraction, input-dependent cell count, and 9-way hand-type decoding
-accuracy from the KC spike counts -- plain 5-fold and grouped by relay pattern,
+accuracy from the KC spike counts, plain 5-fold and grouped by relay pattern,
 against a permuted-label baseline. Same probe as `scripts/mb2_probe.py`.
 
 Run: ``python -m scripts.plast_kccheck``  (~1 min)

@@ -1,7 +1,7 @@
 """Activity matching + KC code statistics + linear decoding, per calyx condition.
 
 Everything here reads the stored ``log1p`` spike counts written by
-``scripts/calyx_feats.py`` -- no simulation -- and is measured on the **held-out**
+``scripts/calyx_feats.py`` (no simulation) and is measured on the **held-out**
 half of ``scripts/kc_homeo.py``'s odour split (the 500 ``gate`` patterns), never
 on the 500 ``calib`` patterns the per-KC thresholds were fitted to.
 

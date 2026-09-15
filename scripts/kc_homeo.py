@@ -28,7 +28,7 @@ sparse code: an individual KC responds to roughly 5-10% of odours (Turner et al.
 2008; Honegger et al. 2011; Lin et al. 2014). A synapse-count model inherits
 topology and a sign; it cannot inherit each cell's set point any more than it can
 inherit per-synapse efficacy. So this script calibrates it the way the animal
-arrives at it -- iteratively, from each cell's own measured response rate:
+arrives at it: iteratively, from each cell's own measured response rate:
 
     r_i         = fraction of CALIBRATION odours for which KC i emits >= 1 spike
     offset_i   += k * log((r_i + eps) / (target + eps))          target = 0.07
@@ -47,9 +47,9 @@ correction, applied per cell and reported: this kernel has ``v_rest = -52`` and 
 fixed per-neuron ``v0 = -52 + U(0, 6.9)`` mV, so a threshold pushed below a cell's
 own ``v0`` makes that cell fire on the first tick of *every* window regardless of
 the odour. That is the exact pathology homeostasis exists to remove, so the floor
-is ``max(-10, v0_i - V_TH + 0.25)`` -- "a spike threshold has to sit above the
+is ``max(-10, v0_i - V_TH + 0.25)``: "a spike threshold has to sit above the
 cell's own resting potential". With 3,683 of 4,064 Kenyon cells silent at the
-starting point, without this floor the loop drives essentially the whole
+starting point, without this floor the loop drives almost the whole
 population to -10 mV and manufactures ~3,600 always-on cells.
 
 The odour set
@@ -58,10 +58,10 @@ The odour set
 Real relay patterns, from ``outputs/bc2/states.npz`` (the behaviour-cloning state
 dump), first 32 columns = the ``features_v2`` relay block. Filtered to rows that
 are inside a blind with a hand (block non-zero) **and** have the ``sel_none`` bit
-on, so each pattern is a pattern the fly actually meets at a decision point, and
-restricted to episodes >= 1000. Deduplicated -- "responds to 5-10% of odours" is a
+on, so each pattern is a pattern the fly meets at a decision point, and
+restricted to episodes >= 1000. Deduplicated ("responds to 5-10% of odours" is a
 statement about the odour set, not about how often the game happens to deal each
-one -- then split stratified by hand type into 500 CALIBRATION and 500 HELD-OUT
+one), then split stratified by hand type into 500 CALIBRATION and 500 HELD-OUT
 patterns with a fixed seed. The bc2 episodes come from seeds 0-1359 (heuristic)
 and 500000-501358 (random), which are disjoint from the plasticity calibration
 (300000+), training (200000+) and evaluation (100000-100059) seeds by
@@ -110,7 +110,7 @@ OFFSET_HI: float = 30.0
 #: Largest move any single cell makes in one iteration, asymmetric on purpose.
 #: *Lowering* a threshold recruits a cell, and because Kenyon cells inhibit each
 #: other through APL every recruitment is also a change to every other cell's
-#: input -- move the whole population down several mV at once and the loop becomes
+#: input: move the whole population down several mV at once and the loop becomes
 #: a sequence of unrelated network states instead of a relaxation. *Raising* one
 #: is locally stabilising (it only removes that cell's own contribution), and it
 #: is the direction that has the most ground to cover, since a cell answering to

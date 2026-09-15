@@ -44,8 +44,8 @@ Readouts, all spike counts over the window:
   DN      superclass=="descending_neuron"  (1,314), the readout under test
 
 Also run: the "total active feature bits > median" intensity control on real:DN,
-and -- only if real:DN identity accuracy beats its permuted-label baseline by
->= 0.06 -- one rerun at a 100 ms window.
+and, only if real:DN identity accuracy beats its permuted-label baseline by
+>= 0.06, one rerun at a 100 ms window.
 """
 
 from __future__ import annotations
@@ -301,7 +301,7 @@ def main():
                             readouts, a.window)
         runs[f"{name}_w{int(a.window)}"] = block
 
-        # Conditional 100 ms rerun: only if the DNs actually beat chance here.
+        # Conditional 100 ms rerun: only if the DNs beat chance here.
         lift = []
         for lab in ys:
             c = block["results"][lab]["conditions"]

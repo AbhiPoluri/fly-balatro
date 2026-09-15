@@ -9,13 +9,13 @@ is a very good total-drive meter (``outputs/mb/REPORT.md`` section 8: KC decodes
 from 34 to 204 cells, so a careless assignment would let a 9-way hand-type probe
 succeed by reading ORN *count*. The rule below is designed against that:
 
-* the nine ``best_<hand type>`` bits -- the 9-way label -- get the nine smallest
+* the nine ``best_<hand type>`` bits, the 9-way label, get the nine smallest
   and tightest types (34-36 cells), so which hand type is active changes the
   total drive by at most 2 ORNs;
 * the remaining 23 types are dealt largest-first to the remaining blocks in the
   order ``best_vs_needed`` (4), ``sel_<type>`` (10), ``sel_is_best`` (1),
   ``best_slot`` (8), so the four outliers (204/132/130/103 cells) land on the
-  score-bucket block -- a nuisance dimension uncorrelated with either label.
+  score-bucket block, a nuisance dimension uncorrelated with either label.
 
 That order was not picked by taste. One confound cannot be removed inside this
 task: ``best_slot`` has exactly 1-5 bits on and *how many* is fixed by the hand
@@ -24,8 +24,8 @@ total driven-ORN count carries label information by construction. All 24 block
 orders were scored on the sampled states by how well the driven-ORN *count alone*
 (one feature, no brain, no glomerulus identity) predicts each label. The chosen
 order is simultaneously the best on all three summary numbers: count-only 9-way
-hand type 0.267 (worst order 0.492), count-only sel-is-best 0.890 -- exactly the
-majority-class floor, i.e. no leakage at all -- and the smallest driven-ORN
+hand type 0.267 (worst order 0.492), count-only sel-is-best 0.890 (exactly the
+majority-class floor, i.e. no leakage at all) and the smallest driven-ORN
 standard deviation (50.3 ORNs). Putting the 204-cell ORN_DA1 on the 1-bit
 ``sel_is_best`` block, which minimises within-block size *spread*, instead makes
 that label 0.994-decodable from total drive alone; that is the version this

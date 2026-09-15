@@ -30,7 +30,7 @@ of it new to this project):
     PN->KC drive gets its own scale.
 
 ``kc_vth_offset_mv``
-    KCs are famously high-threshold, low-input-resistance cells sitting near
+    KCs are high-threshold, low-input-resistance cells sitting near
     silence. A uniform -45 mV threshold for every neuron in the brain gives them
     no such property, so we allow raising v_th for KCs specifically.
 
@@ -43,7 +43,7 @@ of it new to this project):
     that circuit model, and at this strength it makes the calyx a positive-feedback
     amplifier whose winners are set by KC in-degree rather than by the input.
     (Whether those edges are real chemical synapses between KC axons or an
-    artefact of segmentation is not something this project can settle -- which is
+    artefact of segmentation is not something this project can settle, which is
     exactly why their gain is a free parameter here.)
 
 ``apl_kc_only``
@@ -60,8 +60,8 @@ of it new to this project):
 ``apl_mbon_scale``
     A separate gain on the 72 APL -> MBON synapses, because APL's effect on the
     MBONs is where this model is furthest from the animal. APL is a *non-spiking*
-    neuron in vivo -- a giant interneuron that releases GABA in a graded,
-    compartmentalised way (Lin et al. 2014; Amin et al. 2020) -- and this kernel
+    neuron in vivo, a giant interneuron that releases GABA in a graded,
+    compartmentalised way (Lin et al. 2014; Amin et al. 2020), and this kernel
     has no graded transmission, so it fires APL at ~250 Hz and delivers its full
     synapse-count weight as spike-triggered conductance. Measured in one 50 ms
     window at ``apl_scale = 2``: APL puts -3,198 mV into MBON01 and -3,736 mV into
@@ -89,7 +89,7 @@ of it new to this project):
     under (Litwin-Kumar et al. 2017; each KC samples ~6 random glomeruli and the
     model assumes comparable total drive), plus the observation that KCs
     homeostatically regulate their own excitability. It is applied **once at
-    construction from the connectome's own weights** -- a static calibration, not
+    construction from the connectome's own weights**, a static calibration, not
     plasticity: nothing about it changes while the network runs, and it does not
     depend on the input, the labels, or any measured activity.
 
@@ -103,19 +103,19 @@ of it new to this project):
     than half of *all* odours, so dopamine-gated depression assigns credit to the
     same cells whatever the fly smelled, and conditioning generalises completely.
     Raising or lowering every KC's threshold by the same amount changes how many
-    cells cross it, never which ones -- the same argument the ``kc_input_norm``
+    cells cross it, never which ones, the same argument the ``kc_input_norm``
     paragraph above makes.
 
     Real Kenyon cells do have individually set thresholds. KC excitability is
     under homeostatic control: the KC-intrinsic potassium conductances and the
     APL feedback loop together hold each cell near a set point, and the
-    population-level consequence is the textbook one -- an individual KC responds
+    population-level consequence is the textbook one: an individual KC responds
     to roughly 5-10% of odours, not to half of them (Turner et al. 2008; Honegger
     et al. 2011; Lin et al. 2014). That per-cell set point is a *property of the
     animal* a synapse-count model has no way to inherit, in exactly the way it has
     no way to inherit per-synapse efficacy. So it is calibrated the way the animal
     arrives at it: iteratively, from each cell's own measured response rate, with
-    no reference to the labels, the task, the reward, or the readout -- only to
+    no reference to the labels, the task, the reward, or the readout, only to
     "how often did I fire". See ``scripts/kc_homeo.py``.
 
     Mechanically: ``vth[kc[i]] += kc_vth_offsets[i]``. Stored as a tuple so
@@ -335,8 +335,8 @@ class Tuning:
         """Validate a per-KC vector against the KC population and return float32.
 
         The index is the KC's row in ``graph.kc_indices()``, which is
-        ``np.flatnonzero(cls == "Kenyon_Cell")`` -- the same expression ``apply``
-        uses to build ``kc`` -- so a length match is the whole contract. A
+        ``np.flatnonzero(cls == "Kenyon_Cell")``, the same expression ``apply``
+        uses to build ``kc``, so a length match is the whole contract. A
         mismatch is a hard error rather than a broadcast, because a silently
         misaligned offset vector would look exactly like a biological result.
         """

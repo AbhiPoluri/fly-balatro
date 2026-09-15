@@ -5,10 +5,10 @@
 (``pov_geometry.json``, fitted on one settled 8-card screenshot). This script
 asks the honest question a dynamic-alignment path needs answered first:
 
-(A) settled 8-card hand   -- what the model was fitted for
-(B) hand with n < 8 cards -- the model *extrapolates* here and has never been
+(A) settled 8-card hand   : what the model was fitted for
+(B) hand with n < 8 cards : the model *extrapolates* here and has never been
     checked, because every one of the 253 logged decisions has 8 cards or none
-(C) hand mid-animation    -- cards still sliding after a deal or a discard
+(C) hand mid-animation    : cards still sliding after a deal or a discard
 
 The detector is the one already in ``scripts/pov_calibrate.py``
 (:class:`Shot.border_lines`, a sheared-column Hough over Balatro's flat
@@ -18,11 +18,11 @@ frames, pairs its output into cards, compares against
 
 Frames for (B) and (C) come from ``outputs/realgame/balatro_fly.mov``, a
 full-desktop screen recording (3024x1964) of the fly playing. The Balatro window
-content inside it is **2418x1570 at scale 1.0** -- the same pixels as the
-reference canvas -- at desktop offset :data:`CANVAS_IN_MOV`, so measured pixels
+content inside it is **2418x1570 at scale 1.0** (the same pixels as the
+reference canvas) at desktop offset :data:`CANVAS_IN_MOV`, so measured pixels
 are already reference pixels and need no rescaling.
 
-Reproduce the frames first -- into a scratch dir, **not** the repo; they are
+Reproduce the frames first, into a scratch dir, **not** the repo; they are
 ~530 MB. 2 fps walks straight past a slide, so these are at the video's native
 rate, already cropped to a window around the game canvas::
 
@@ -139,8 +139,8 @@ def pair_lines(lines: Sequence[Tuple[int, float, int]],
 
     ``Shot.cards()`` assumes every card overlaps its neighbour, so the detector
     sees *n* left borders plus one right border. That is true of a settled
-    Balatro fan at any size -- the game keeps a constant ~165 px pitch and does
-    **not** spread a short hand -- but it is not true of a card with clear air
+    Balatro fan at any size (the game keeps a constant ~165 px pitch and does
+    **not** spread a short hand) but it is not true of a card with clear air
     on both sides, which shows both of its own borders. This returns the
     evidence either way so a failure can be named rather than silently chained.
     """
@@ -255,7 +255,7 @@ def scan_sequence(paths: Sequence[Path], scratch: Path,
     """Run the detector over a whole stretch of video and tabulate what it saw.
 
     One hand-picked frame flatters or damns a detector by accident; a run of
-    consecutive frames across a deal shows what it actually does. ``cards(n)``
+    consecutive frames across a deal shows what it does. ``cards(n)``
     is then tried for the ``n`` a settled fan would imply (``n_lines - 1``), and
     the frames where it raises are counted.
     """
@@ -314,7 +314,7 @@ def compare(geom: ov.HandGeometry, m: pc.Measured,
     """
     n = len(m.lefts)
     boxes = geom.hand_rects(n, width=width, height=height)
-    # Which band the Shot was measured with -- NOT whatever pc.BAND happens to
+    # Which band the Shot was measured with, NOT whatever pc.BAND happens to
     # be now, because the band() context manager has already put it back.
     used = bounds if bounds is not None else pc.BAND
     band_mid = (used[0] + used[1]) / 2.0
@@ -327,7 +327,7 @@ def compare(geom: ov.HandGeometry, m: pc.Measured,
         # height. The outline is tilted, so that is the card's centre only if
         # the band happens to be centred on the cards. Projecting the line down
         # to the card's own mid height removes the band's choice from the
-        # answer -- which is what a dynamic aligner should do.
+        # answer, which is what a dynamic aligner should do.
         #
         # The sign: the Hough shears row ``r`` right by ``tan(deg)*(r - mid)``
         # before accumulating, so a line that piles into bin ``X`` satisfies
@@ -426,7 +426,7 @@ def draw_check(base: Image.Image, geom: ov.HandGeometry, m: pc.Measured,
 
     Same look as ``outputs/pov/overlay_calibration_check*.png``; drawn directly
     rather than through ``build_annotation`` because most of these frames have
-    no matching log record -- they are *between* decisions.
+    no matching log record; they are *between* decisions.
     """
     im = base.convert("RGBA")
     layer = Image.new("RGBA", im.size, (0, 0, 0, 0))

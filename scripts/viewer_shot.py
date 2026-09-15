@@ -39,7 +39,7 @@ from typing import Dict, List, Optional, Sequence
 
 CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 
-#: Swiftshader so the point cloud actually rasterises in headless; the rest is
+#: Swiftshader so the point cloud rasterises in headless; the rest is
 #: the usual "this is a throwaway profile" set.
 CHROME_FLAGS: Sequence[str] = (
     "--headless=new",

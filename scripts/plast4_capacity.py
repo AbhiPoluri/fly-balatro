@@ -8,7 +8,7 @@ odours, and reads `play_drive` off the MBONs. Same category as
 
 Why it exists. v4 concluded that the fly stops at `play iff bucket >= lt0.5`
 (0.448) rather than `play iff bucket >= lt1.0` (0.530) because terminal credit
-cannot target one bucket -- 85% of terminal pulses contain an `lt0.5` play and
+cannot target one bucket: 85% of terminal pulses contain an `lt0.5` play and
 65% contain an `lt1.0` play. That conclusion presumes the alternative: that the
 approach-minus-avoidance drive *could* put `lt0.5` below zero and `lt1.0` above
 it if a perfectly selective signal existed. The fly never demonstrated that. It
@@ -16,14 +16,14 @@ demonstrated `lt0.25 -> 0` with `lt1.0` at 1, which is a separation between
 **non-adjacent** buckets.
 
 So this asks the question directly: drive the `lt0.5` odours down with a
-perfectly selective punishment -- the best any reinforcement could do -- and
+perfectly selective punishment, the best any reinforcement could do, and
 watch what happens to `lt1.0`.
 
 Two arms:
 
-* ``anchor`` -- pulses against **one** `lt0.5` odour's Kenyon-cell eligibility,
+* ``anchor``: pulses against **one** `lt0.5` odour's Kenyon-cell eligibility,
   which measures transfer;
-* ``bucket`` -- pulses cycling over **every** `lt0.5` odour, which is the
+* ``bucket``: pulses cycling over **every** `lt0.5` odour, which is the
   perfectly bucket-selective signal and therefore the ceiling on what any reward
   or credit rule could achieve at this stage.
 
@@ -96,11 +96,11 @@ def by_bucket(vals: Dict[int, float], table) -> Dict[str, dict]:
 
 
 def target_weight_stats(setup: K.Setup, table, targets: Sequence[int]) -> dict:
-    """State of the synapses a punishment pulse on ``targets`` can actually reach.
+    """State of the synapses a punishment pulse on ``targets`` can reach.
 
     The punish arm depresses KC -> **approach** MBON edges, gated by the Kenyon
     cells this odour drives. If those edges are already at ``WEIGHT_FLOOR``, no
-    further punishment can move the drive whatever its strength -- which is a
+    further punishment can move the drive whatever its strength, which is a
     different failure from not knowing which bucket to punish.
     """
     plast = setup.plast

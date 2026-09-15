@@ -3,7 +3,7 @@
 Task framing (stated here, in the report, and in the run logs)
 --------------------------------------------------------------
 
-The harness -- ordinary Python, not biological in any sense -- does everything
+The harness (ordinary Python, not biological in any sense) does everything
 except the choice:
 
 * :mod:`flybalatro.hands` enumerates all 218 subsets of the dealt cards,
@@ -11,7 +11,7 @@ except the choice:
   best one;
 * :mod:`flybalatro.features_v2` turns that answer into the 32-bit relay block,
   and :class:`flybalatro.encode.GlomerularMap` turns those 32 bits into tonic
-  current on 32 whole ORN glomeruli -- the "odour" of this hand;
+  current on 32 whole ORN glomeruli, the "odour" of this hand;
 * once the fly has chosen, the harness presses the ``select_card[i]`` keys and
   then ``play`` or ``discard``.
 
@@ -155,7 +155,7 @@ def make_decider(setup: Setup, explore_floor: float = 0.0) -> P.Decider:
 # hand-level game driving
 # --------------------------------------------------------------------------- #
 def dig_slots(available: Sequence[object], best_slots: Sequence[int]) -> Tuple[int, ...]:
-    """The worst cards outside the best subset -- what "dig" throws away.
+    """The worst cards outside the best subset: what "dig" throws away.
 
     Same rule as the v2 teacher's ``dig_target`` with nothing selected: lowest
     rank first, at most :data:`flybalatro.hands.MAX_SELECTED` cards.
@@ -234,7 +234,7 @@ def make_bucket_policy(play_buckets: Sequence[str]) -> Policy:
     The fly's odour carries the hand type, the best-subset mask and the
     score-vs-needed bucket, but **not** how many plays or discards are left. This
     is therefore the ceiling for any map from this odour to a binary action, and
-    the number the fly has to be measured against -- not the v2 teacher, which
+    the number the fly has to be measured against, not the v2 teacher, which
     reads ``plays_left`` directly.
     """
     keep = set(str(b) for b in play_buckets)
@@ -297,12 +297,12 @@ def resolve_outcome(ctx: HandContext, action: str, info: dict, done: bool) -> di
     The *only* definition of reward and punishment in the project, so the live
     viewer and the batch runs cannot drift apart:
 
-    * ``cleared`` -- the blind is over, or this play alone met what was needed;
-    * ``lost``    -- the run ended on this play and it was not a win or a
+    * ``cleared``: the blind is over, or this play alone met what was needed;
+    * ``lost``   : the run ended on this play and it was not a win or a
       truncation;
-    * ``reward``  -- a PLAY that cleared or paid its fair share
+    * ``reward`` : a PLAY that cleared or paid its fair share
       (``needed / plays_left``), which is the v2 teacher's inequality;
-    * ``punish``  -- a PLAY that lost the blind.
+    * ``punish`` : a PLAY that lost the blind.
 
     A DISCARD never produces either: crediting a re-deal across a discard is
     delayed credit assignment and beyond a fly.

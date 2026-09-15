@@ -14,7 +14,7 @@ concatenated per-action-kind sub-vectors whose lengths come only from
 ``Config`` (``available_max``, ``store_consumable_slots_max``,
 ``consumable_slots``, ``joker_slots``) plus two compile-time constants
 (2 pack slots, 5 pack contents). Nothing about the *runtime* state changes
-the layout - only which entries are unmasked. With the engine's default
+the layout, only which entries are unmasked. With the engine's default
 config the layout is 109 wide and is what :data:`ACTION_NAMES` describes.
 
 Card-relative indices (select / move) address a *slot position* in

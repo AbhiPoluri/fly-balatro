@@ -5,14 +5,14 @@ Both are re-analyses of the **already published** v3 training logs
 new condition: this is log arithmetic, which is why the preregistration is
 allowed to quote it and still be a preregistration.
 
-1. **The share inequality.** Confirms there is no off-by-one -- ``state.plays``
+1. **The share inequality.** Confirms there is no off-by-one (``state.plays``
    counts the play about to be made, so ``needed / plays`` demands clearing on
-   the last play -- and counts the plays where ``reward`` and ``lost`` are both
+   the last play) and counts the plays where ``reward`` and ``lost`` are both
    true, which the arithmetic says is impossible. Then re-scores every v3
    training play under the ``pace`` rule and reports the flips per bucket.
 
 2. **The trace target.** Groups plays by blind, marks blinds containing a ``lost``
-   hand, and sums ``gamma^k`` over their plays per bucket -- the weight a terminal
+   hand, and sums ``gamma^k`` over their plays per bucket: the weight a terminal
    pulse would have delivered on v3's own trajectory. Off-policy, and the sum
    ignores the clip at 1, so it is an upper bound and a direction, not a
    prediction of the converged ledger.

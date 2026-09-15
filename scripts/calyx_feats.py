@@ -1,8 +1,8 @@
 """Brain features for the calyx control: one condition x one calibration variant.
 
-Same stage as ``scripts/bc_brain_features.py`` and the same contract -- for every
+Same stage as ``scripts/bc_brain_features.py`` and the same contract (for every
 *unique* 32-bit relay pattern, ``reset -> drive -> one 50 ms window ->
-log1p(spike counts)`` for ALPN, KC, MBON, DN -- but over an arbitrary wiring
+log1p(spike counts)`` for ALPN, KC, MBON, DN) but over an arbitrary wiring
 condition (``real`` or a rewired graph ``rw<seed>``) and an arbitrary
 calibration variant:
 

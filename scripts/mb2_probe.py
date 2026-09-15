@@ -80,7 +80,7 @@ def probe_grouped(X: np.ndarray, y: np.ndarray, groups: np.ndarray,
 
 
 def balanced_acc(X: np.ndarray, y: np.ndarray, c: float, seed: int = 0) -> float:
-    """Balanced accuracy at one C -- the binary label is 11% positive."""
+    """Balanced accuracy at one C; the binary label is 11% positive."""
     keep = X.std(0) > 0
     if keep.sum() == 0:
         return float("nan")

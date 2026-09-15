@@ -5,7 +5,7 @@ Everything in this project except the Balatro engine comes from one dataset.
 ## MaleCNS v1.0
 
 The complete male *Drosophila melanogaster* central nervous system connectome,
-released 2026-09-03 by Janelia / FlyEM and Google Research — 166,700 neurons
+released 2026-09-03 by Janelia / FlyEM and Google Research: 166,700 neurons
 across brain and ventral nerve cord.
 
 | | |
@@ -25,14 +25,14 @@ https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connecto
   connectome-weights-male-cns-v1.0-minconf-0.5.feather      # 1.05 GB
 ```
 
-They belong in `data/malecns_v1/` and are gitignored — re-downloadable, and far
-too large to track. `flybalatro/connectome.py` reads them once and caches a
+They belong in `data/malecns_v1/` and are gitignored: re-downloadable, and too
+large to track. `flybalatro/connectome.py` reads them once and caches a
 derived signed CSR graph at `data/connectome_v2_t5.npz` (86 MB, also gitignored,
 `_CACHE_VERSION = 2`).
 
 **Licence.** The URLs above are served without a licence file alongside them,
 and the release notes on the portal are the authority. This repository ships
-**no** connectome data — only code that reads what you download yourself — so
+**no** connectome data, only code that reads what you download yourself, so
 whatever terms Janelia/FlyEM attach apply directly to you. Check the portal
 before redistributing anything derived from the raw files. If you cite the data,
 cite the *Cell* paper above.
@@ -45,7 +45,7 @@ Recorded in `Graph.meta` on every build and reproduced in
 | step | effect |
 |---|---|
 | keep entries with an assigned `superclass` | drops entries with none |
-| drop `superclass` starting with `vnc` | **brain only** — the ventral nerve cord is not simulated |
+| drop `superclass` starting with `vnc` | **brain only**: the ventral nerve cord is not simulated |
 | drop `status == "Glia"` | glia are not neurons |
 | **net effect of those three node filters** | 166,700 released entries → **146,271** simulated neurons |
 | keep edges with `weight >= 5` synapses | 5,146,572 edges retained |
@@ -66,10 +66,10 @@ threshold.** Every such value in this project is a parameter we chose, and
 
 Two of them, and they are not the same program:
 
-* **`pylatro` / `balatro-rs`** — a Rust reimplementation
+* **`pylatro` / `balatro-rs`**, a Rust reimplementation
   (<https://github.com/evanofslack/balatro-rs>, MIT), patched here; see
   `patches/README.md`. Every headless number in `RESULTS.md` comes from this.
-* **Balatro 1.0.1o** — the actual Steam game by LocalThunk, driven through the
+* **Balatro 1.0.1o**, the actual Steam game by LocalThunk, driven through the
   BalatroBot mod's JSON-RPC API. No game asset, binary or content is
   redistributed by this repository; you supply your own copy. Only the
   real-game section of `RESULTS.md` uses it.

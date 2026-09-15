@@ -13,8 +13,8 @@ Nothing in the main protocol may run until this passes:
 (c) **Weight bounds hold.** No KC -> MBON weight ever goes negative, above its
     original value, or below ``WEIGHT_FLOOR`` x original.
 
-It also freezes the two free numbers of the decision rule -- the bias and the
-softmax temperature -- **per wiring**, on 200 decision states drawn from
+It also freezes the two free numbers of the decision rule (the bias and the
+softmax temperature) **per wiring**, on 200 decision states drawn from
 calibration seeds that neither training nor evaluation ever sees, before any
 dopamine is delivered.
 

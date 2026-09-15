@@ -2,9 +2,9 @@
 
 See ``outputs/plast4/PREREGISTRATION.md``, written before any run here started.
 
-Every condition is v3's winning cell -- ``separated`` encoding, ``omission``
+Every condition is v3's winning cell (``separated`` encoding, ``omission``
 immediate punishment, ``eta_reward = 0.05`` / ``eta_punish = 0.0797``, 1,200
-training decisions, 10% exploration floor -- with **only** the reward
+training decisions, 10% exploration floor) with **only** the reward
 specification changed:
 
 | condition | reward | eligibility trace |

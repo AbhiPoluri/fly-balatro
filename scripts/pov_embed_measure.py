@@ -3,7 +3,7 @@
 
 The embedded game panel draws the mod-reported card rects onto a frame captured
 from the same window (``flybalatro/viewer/game_view.py``). Both come out of the
-same game, so there is no fit to be wrong -- but the *mod's* arithmetic from
+same game, so there is no fit to be wrong, but the *mod's* arithmetic from
 ``Card.VT`` to LOVE pixels had never been executed against real pixels until the
 panel existed, and this measures it.
 
@@ -12,7 +12,7 @@ Method, per settled hand:
 1. ask the running mod for the game state twice and keep it only if every card
    rect is stable between the reads (the hand is not mid-deal);
 2. capture the window at **full** resolution, crop the title bar. The content is
-   then 2418x1570 -- the same canvas ``scripts/pov_calibrate.py`` was tuned on,
+   then 2418x1570, the same canvas ``scripts/pov_calibrate.py`` was tuned on,
    so its outline detector applies unchanged;
 3. run that detector: each card's left border as a line, and the rightmost
    card's right border, which is where the measured card width comes from;

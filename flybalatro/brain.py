@@ -9,7 +9,7 @@ Shiu et al. 2024 constants from vendor/fly-craftax/flycraftax/brain.py:
 
 Brian2 refractory semantics reproduced from the reference: `v` and `g` carry
 `(unless refractory)`, so EVERY write to them is skipped while a neuron is
-refractory -- a synaptic `g += w` landing on a refractory target is dropped
+refractory: a synaptic `g += w` landing on a refractory target is dropped
 outright, not buffered. Reset runs after the synapse slot.
 
 `drive` is a tonic current expressed as mV of steady-state depolarisation above
@@ -175,7 +175,7 @@ class Brain:
         `ptr` and `weight` are untouched, so per-presynaptic out-degree, synapse
         counts and the sign attached to each presynaptic neuron are preserved;
         `post` as a multiset is unchanged, so every neuron keeps its exact
-        in-degree. Self-loops and parallel edges become possible -- acceptable
+        in-degree. Self-loops and parallel edges become possible, acceptable
         for a wiring control.
         """
         rng = np.random.default_rng(seed)

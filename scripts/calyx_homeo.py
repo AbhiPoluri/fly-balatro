@@ -15,8 +15,8 @@ Two deliberate differences from ``scripts/kc_homeo.py``, both recorded in the
 output JSON:
 
 * the base tuning is ``outputs/mb2/tuned_config.json`` (``apl_scale = 2``, tonic
-  30 mV) -- the v3 / ``outputs/bc3`` operating point this control is meant to
-  speak to -- rather than ``outputs/plast/tuned_config.json`` (which adds
+  30 mV), the v3 / ``outputs/bc3`` operating point this control is meant to
+  speak to, rather than ``outputs/plast/tuned_config.json`` (which adds
   ``apl_kc_only`` and ``apl_mbon_scale`` for the plasticity experiment);
 * the brain is built directly (``Brain`` + ``GlomerularMap``) instead of through
   ``plast_common.build_setup``, because the plastic KC -> MBON synapse table is

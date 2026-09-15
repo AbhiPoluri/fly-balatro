@@ -2,7 +2,7 @@
 in the descending neurons?
 
 N random sparse binary feature vectors, two synthetic labels, and a 5-fold CV
-logistic-regression linear probe under three conditions -- real wiring, shuffled
+logistic-regression linear probe under three conditions: real wiring, shuffled
 wiring, and the raw feature bits with no brain.
 
 Readouts are layered along the olfactory pathway so a failure can be localised:

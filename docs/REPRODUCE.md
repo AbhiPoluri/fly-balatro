@@ -1,15 +1,14 @@
 # Reproducing every headline number
 
-Clone to result. Runtimes below are **measured**, not estimated — they are read
-off the logs in `outputs/` that the runs themselves wrote — on the machine
+Clone to result. Runtimes below are **measured**, not estimated: they are read
+off the logs in `outputs/` that the runs themselves wrote, on the machine
 everything in `RESULTS.md` was produced on:
 
 > **Apple M2 Pro, 16 GB, macOS 26 (Darwin 25.6.0), CPython 3.11.3, `arm64`.**
 > Everything runs on CPU. Nothing needs a GPU; `torch` is used for the readout
 > MLP and runs fine on the CPU device.
 
-Two things this guide will keep saying, because they are the two ways to waste
-an afternoon here:
+Two ways to waste an afternoon here:
 
 * **The connectome download is 1.1 GB** and the first `Graph` build takes a
   couple of minutes; after that a cache at `data/connectome_v2_t5.npz` makes it
@@ -91,7 +90,7 @@ python -m pytest tests/test_env.py tests/test_hands.py -q      # 58 tests, ~2 s
 
 ## 3. Probes: does input identity reach the descending neurons?
 
-The v1 gate probe — the one behind "the fly brain garbles its input", and the
+The v1 gate probe: the one behind "the fly brain garbles its input", and the
 one the glomerular encoding later reverses.
 
 ```bash
@@ -101,7 +100,7 @@ python -m scripts.brain_probe_merge           # -> outputs/brain_probe.json
 
 (`brain_probe` takes `--n-samples`, `--window`, `--threshold`; the defaults are
 what produced the stored file. `--help` on any script in `scripts/` prints the
-full protocol it implements — several of them are long.)
+full protocol it implements; several of them are long.)
 
 Then the mushroom-body calibration that located the loss in the *input* rather
 than the network, and chose the operating point everything after v3 uses:
@@ -119,7 +118,7 @@ driven-ORN-count-only confound at 0.267. Figure 2.
 
 ## 4. Behaviour cloning (v1, v2, v3)
 
-One pipeline, three configurations. **v3 is the one to run** — it is 30× cheaper
+One pipeline, three configurations. **v3 is the one to run**: it is 30× cheaper
 than v2 because deduplicating on 32 bits instead of 315 collapses 138,354 inputs
 to 4,962 unique ones.
 
@@ -151,7 +150,7 @@ readout cleared **0**. Figure 3.
 
 ## 5. Plasticity: no trained action readout
 
-Per-Kenyon-cell homeostasis first (label-free — each cell sees only its own
+Per-Kenyon-cell homeostasis first (label-free: each cell sees only its own
 firing rate), then the pulse-gain calibration, then the runs.
 
 ```bash
@@ -166,7 +165,7 @@ python -m scripts.plast2_summary
 
 The preregistered 2×2 (**read
 [`outputs/plast3/PREREGISTRATION.md`](../outputs/plast3/PREREGISTRATION.md)
-first** — the protocol, primary outcome and decision rule were fixed before any
+first**; the protocol, primary outcome and decision rule were fixed before any
 of these games were played):
 
 ```bash
@@ -208,7 +207,7 @@ python -m scripts.calyx_stats  --variant raw   --conditions $C --readouts kc,dn
 python -m scripts.calyx_tables --variant raw   --conditions $C --readouts kc,dn
 ```
 
-`scripts/calyx_run.sh` is the same sequence for both variants, resumable — every
+`scripts/calyx_run.sh` is the same sequence for both variants, resumable: every
 stage skips work already on disk.
 
 The harness reproducing `outputs/bc3` **bit for bit** when the rewiring is
@@ -227,12 +226,12 @@ patched BalatroBot mod, and it is the only part of this project that cannot be
 reproduced headlessly.
 
 ```bash
-# terminal 1 — the game with the JSON-RPC API on 127.0.0.1:12346
+# terminal 1: the game with the JSON-RPC API on 127.0.0.1:12346
 uvx --from "$REPO/vendor/balatrobot" balatrobot serve \
     --gamespeed 1 --animation-fps 60 --no-reduced-motion \
     --logs-path "$REPO/outputs/realgame/logs"
 
-# terminal 2 — the fly
+# terminal 2: the fly
 python -m flybalatro.realgame.play --ante-end 1 --pause 1.5      # frozen v3 readout
 python -m flybalatro.realgame.plastic --hands 40                 # the learning fly
 ```
@@ -257,7 +256,7 @@ python -m scripts.realgame_plastic_offline --hands 40 --no-learning   # 0 synaps
 ## 8. Figures
 
 Every figure regenerates from the JSON already in `outputs/`. No simulation, no
-game, no training — it reads artefacts and draws them, and there is not a single
+game, no training: it reads artefacts and draws them, and there is not a single
 hand-typed result number in the script:
 
 ```bash
@@ -267,7 +266,7 @@ python -m scripts.figures --only 3 5
 ```
 
 The demo clip is cut from the 156 MB screen recording (gitignored, in
-`outputs/realgame/balatro_fly.mov` — the Big Blind of run 1, the one it lost at
+`outputs/realgame/balatro_fly.mov`, the Big Blind of run 1, the one it lost at
 407/450) with `ffmpeg`. The crop is the Balatro window only: the recording is of
 a whole desktop, and the first second of it is not the game, so both the crop
 rectangle and the `-ss 14.6` start offset are load-bearing.
@@ -317,7 +316,7 @@ the commands are run from the repository root.
 ## If a number does not reproduce
 
 Each artefact records the configuration that produced it under a `_config` /
-`settings` / `meta` key — seeds, window length, worker count, tuning dict. Diff
+`settings` / `meta` key: seeds, window length, worker count, tuning dict. Diff
 that against yours first. `scripts/bc_consistency_check.py` exists for exactly
 this: it rebuilds the stored `outputs/bc3` feature rows from a live tuned brain
 and asserts they match, for both wirings.

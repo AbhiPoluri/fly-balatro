@@ -28,7 +28,7 @@ so that rule assigns a valence to all 97 MBONs rather than to the ~9 that have
 been tested optogenetically. See :func:`mbon_valence_table`.
 
 **Compartment.** MaleCNS ``instance`` strings carry the Aso compartment name in
-parentheses -- ``MBON11(y1pedc>a/B)_L``, ``PAM08(y4)_R``, ``PPL101(y1ped)_L`` --
+parentheses (``MBON11(y1pedc>a/B)_L``, ``PAM08(y4)_R``, ``PPL101(y1ped)_L``),
 so the compartment names are annotation, not inference. The *gating* rule is
 stronger than name matching and does not need it: a KC -> MBON synapse is in the
 PAM (reward) compartment set if PAM neurons supply at least half of that MBON's
@@ -160,7 +160,8 @@ def compartment_dominance(
 
     ``post`` / ``weight`` are the *brain's* edge arrays, so the same rule applies
     unchanged to a shuffled brain (where the permutation scrambles which MBON
-    each dopaminergic neuron innervates -- exactly what the control is for).
+    each dopaminergic neuron innervates, which is exactly what the control is
+    for).
     """
     n = graph.n
     types = graph.type.astype(str)
@@ -266,7 +267,7 @@ def mbon_valence_table(graph, post, weight, scheme: str = "nt") -> MbonValence:
 
     ``scheme="nt"``: Aso et al. 2014's neurotransmitter rule over all 97 MBONs.
     ``scheme="brief"``: only the 9 compartments the task brief names, everything
-    else unassigned -- the robustness control for the valence choice.
+    else unassigned: the robustness control for the valence choice.
     """
     mbon = graph.mbon_indices()
     types = graph.type.astype(str)[mbon]
@@ -480,7 +481,7 @@ class KcMbonPlasticity:
         ``edge``
             index into ``brain.weight`` of every KC -> MBON edge, in the order
             :class:`KcMbonPlasticity` enumerates them. This is the alignment
-            key -- a loader that does not check it can put 33,496 numbers on the
+            key: a loader that does not check it can put 33,496 numbers on the
             wrong synapses and nothing will look broken.
         ``weight``
             the current (learned) weight of each of those edges.
@@ -489,7 +490,7 @@ class KcMbonPlasticity:
             floor / mean ratio" stay computable from the file alone and a run
             can be inspected without rebuilding the brain.
 
-        ``meta`` is any JSON-serialisable dict -- the calibrated ``bias`` and
+        ``meta`` is any JSON-serialisable dict; the calibrated ``bias`` and
         ``temperature`` of the :class:`Decider` that produced these weights
         belong here, because the weights are meaningless to a decision rule
         calibrated differently.
@@ -670,7 +671,7 @@ class Decider:
         slight play bias, as specified), i.e. the naive fly is near 50/50 and
         cannot win by being one-sided. ``temperature`` is chosen so the mean
         probability of taking the *minority* action over these same states is
-        ``explore`` -- the exploration rate.
+        ``explore``, the exploration rate.
         """
         r = np.asarray(list(raw), np.float64)
         if len(r) == 0:

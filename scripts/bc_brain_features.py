@@ -13,8 +13,8 @@ Two encodings, selected with ``--encoding``:
     bits drives 10 ORNs drawn at random across glomeruli. Records ALPN (686),
     KC (4064), DN (1314).
 ``glomerular32`` (v3)
-    ``flybalatro.glomerular``: only the leading 32 bits -- the hand-type relay
-    block -- reach the fly, each driving *every* ORN of one glomerulus, on a
+    ``flybalatro.glomerular``: only the leading 32 bits (the hand-type relay
+    block) reach the fly, each driving *every* ORN of one glomerulus, on a
     brain tuned per ``outputs/mb2/tuned_config.json`` (apl_scale 2, tonic 30 mV).
     The other 283 bits are dropped. Deduplication therefore runs on the 32 relay
     bits alone, which collapses 150,037 states to 4,962 inputs. Records ALPN,

@@ -35,7 +35,7 @@ MBON_VARYING_MIN = 20
 
 
 def input_dependent_kcs(lbl: str) -> dict:
-    """KCs whose firing actually depends on the input.
+    """KCs whose firing depends on the input.
 
     A KC->MBON plasticity rule modifies the synapses of the KCs that fired. If a
     KC fires for every state it contributes the same update every time, and if it

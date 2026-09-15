@@ -6,7 +6,7 @@ draws ``rng.random() < p``), and the v2 runs carry ``explore_floor = 0.1``. So
 every "greedy (no dopamine, frozen weights) at evaluation" number in
 ``outputs/plast2/REPORT.md`` and in the RESULTS.md v2 section is a **floored
 softmax sample**, not the greedy policy. With the learned low bucket sitting at
-P(play) = 0.545 -- 4.5 points above the threshold -- the two can differ a lot.
+P(play) = 0.545, 4.5 points above the threshold, the two can differ a lot.
 
 This script evaluates the v2 learned weights and the v2 frozen control **both**
 ways on the standard evaluation seeds (100000-100059, the ones the v2 table

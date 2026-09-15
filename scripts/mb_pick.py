@@ -5,12 +5,12 @@ Gates, in the order they are applied:
 
   sparsity   KC active fraction inside [--lo, --hi]              (target 5-10%)
   sanity     ALPN mean rate within --alpn-tol of the untuned
-             model's -- these knobs are supposed to calibrate the
+             model's, because these knobs are supposed to calibrate the
              mushroom body, and a drifting antennal-lobe rate means
              a knob is reaching outside it (APL sends ~6% of its
              output to non-KC targets, so a large apl_scale does)
   readable   MBON mean rate >= --mbon-hz and at least --mbon-var
-             MBON cells with nonzero variance across inputs -- an
+             MBON cells with nonzero variance across inputs; an
              MBON population that barely spikes has nothing for a
              downstream readout (or a plasticity rule) to use
   mn9        the no-drive control must still be exactly 0 spikes and MN9
@@ -19,7 +19,7 @@ Gates, in the order they are applied:
              whole brain into an ~80k-spike storm and MN9 is a few hops
              downstream of the mushroom body, so a KC-only knob moves it by
              a spike or two. (The untuned model already fails Shiu et al.'s
-             check on specificity -- see REPORT.md -- so this gate only
+             check on specificity, see REPORT.md, so this gate only
              checks that tuning did not make it worse.)
 
 Survivors are then ranked by the separability of the KC code: first the share of

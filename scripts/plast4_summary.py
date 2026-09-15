@@ -4,8 +4,8 @@ Reads every ``outputs/plast4/run_*.json`` plus ``baselines4.json`` and applies
 the rule fixed in ``outputs/plast4/PREREGISTRATION.md`` section 6:
 
 * primary outcome: ante-1 clear rate, **greedy**, on the 400 paired seeds;
-* two paired deltas per condition -- against the shared frozen control and
-  against always-discard -- each with a two-way cluster bootstrap over
+* two paired deltas per condition, against the shared frozen control and
+  against always-discard, each with a two-way cluster bootstrap over
   evaluation seeds **and** training runs;
 * exact McNemar per training run, never pooled across runs (they share seeds);
 * Holm correction across the three novel families ``{B, C80, D}`` on the

@@ -2,7 +2,7 @@
 
 Three things differ from ``outputs/plast``, and nothing else does:
 
-1. the fly is ``outputs/plast2/tuned_config.json`` -- the ``outputs/plast``
+1. the fly is ``outputs/plast2/tuned_config.json``: the ``outputs/plast``
    operating point plus the per-Kenyon-cell homeostatic thresholds from
    ``scripts/kc_homeo.py``;
 2. the punishment pulse carries its own ``eta`` (``scripts/plast2_eta.py``), so one

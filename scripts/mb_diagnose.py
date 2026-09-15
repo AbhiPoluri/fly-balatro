@@ -2,7 +2,7 @@
 
 Three measurements, all on the untuned model unless a tuning is passed:
 
-  1. Where a Kenyon cell's input comes from -- total signed conductance into the
+  1. Where a Kenyon cell's input comes from: total signed conductance into the
      KC population, broken down by presynaptic class. (ALPN is the biggest
      source, but KC -> KC recurrence is second.)
 
@@ -13,7 +13,7 @@ Three measurements, all on the untuned model unless a tuning is passed:
      (input-dependent: the part that could carry odour identity). A large
      between/within ratio means threshold crossing is decided by wiring, not by
      the stimulus, and no knob that rescales a pathway or shifts a threshold
-     uniformly can change which cells win -- only how many.
+     uniformly can change which cells win, only how many.
 
   3. How input-specific the antennal-lobe code is in the first place: the CV of
      the *total* ALPN spike count across inputs, and the per-cell CV.
@@ -67,7 +67,7 @@ def delivered_matrix(brain: Brain, fm, F, kc, kc_mask, kc_pos) -> np.ndarray:
     """(n_inputs, n_kc) total synaptic conductance delivered to each KC per input.
 
     Uses the brain's own (possibly tuned) weights and the spike counts it
-    actually produced, so it measures the drive the kernel saw.
+    produced, so it measures the drive the kernel saw.
     """
     D = np.zeros((len(F), len(kc)), np.float64)
     brain.warmup()

@@ -128,9 +128,9 @@ selection was the best available subset):
 | real DN, MLP             | 1641 | 0.010 | 60% | 35% |  2% | 2% |  0% | 0% |  0% |
 
 Partly. Every real-wiring readout above the descending neurons plays real hand
-types far more often than random - Pair 47% vs 22%, Two Pair 13-15% vs 2%, and
-it reaches trips, straights and flushes at all - but it finds the best available
-subset on only 11-14% of plays and never clears ante 1. The same readout trained
+types more often than random (Pair 47% vs 22%, Two Pair 13-15% vs 2%), and it
+reaches trips, straights and flushes at all. But it finds the best available
+subset on 11-14% of plays and never clears ante 1. The same readout trained
 on the same bits *without* the brain finds it on 93-95% and clears half the time.
 So the relay arrives degraded, not intact: enough to push the fly one rung up the
 hand ladder, not enough to play the hand it was told about.
@@ -171,12 +171,12 @@ resolve 0.0% vs 0.5% clear rates, though 1% vs 11% best-subset plays over
 jokers, no enhancements.
 
 Artifacts: `outputs/bc2/{baseline_heuristic_v2,collect_meta,train_metrics,eval}.json`,
-`outputs/bc2/viewer_v2.png` - the viewer running the v2 real-wiring readout, and
+`outputs/bc2/viewer_v2.png`, the viewer running the v2 real-wiring readout, and
 a picture of the failure mode rather than a success demo: the relay panel reads
 "best hand Pair · 44, best slots 1 3" while the readout's top action is
 `select_card[0]`, which is the 11% number above in one frame.
 `outputs/bc/*` untouched. Viewer:
-`python -m flybalatro.viewer.server --port 8767 --policy brain` - it prefers
+`python -m flybalatro.viewer.server --port 8767 --policy brain`. It prefers
 `outputs/bc2` models, switches to `encode_v2` when a model says
 `feature_version 2`, and shows the relayed analysis in its own panel labelled
 "computed outside the brain". Pipeline:
@@ -213,7 +213,7 @@ driven ORNs of 2,639.
 | DN, identity | 0.610 | 0.842 |
 
 Labels here are 9-way hand type and `sel_is_best` on real states, not the old
-synthetic bit-group labels, so the columns are not a controlled comparison -- the
+synthetic bit-group labels, so the columns are not a controlled comparison: the
 task got easier as well as the fly getting better. The controlled part: on *the
 same* 32-bit relay, an input leaving 25 of 32 glomeruli silent is decodable
 through the mushroom body and an input lighting all of them is not. Grouped CV
@@ -227,12 +227,12 @@ criterion (< 0.5; best 0.588 at `apl5` tonic). The mushroom body does blur the
 active set (driven ORNs go in at 0.504, KCs come out at 0.879 at `apl2`), but the
 binarised KC set still decodes hand type at 1.000 and the antennal lobe sits at
 0.95 on the same metric while decoding perfectly, so mean set overlap is not what
-decides separability here. `kc_input_norm = 1` fails again
-and slightly worse (denser, always-on 0.041 -> 0.061). Poisson drive does not
+decides separability here. `kc_input_norm = 1` fails again,
+and worse (denser, always-on 0.041 -> 0.061). Poisson drive does not
 restore MN9 sugar specificity (sugar 1.2-3.2 spikes vs 4.0-6.0 for 165 matched
 random ORNs) and is worse than tonic at every stage past the antennal lobe.
 
-Chosen: `outputs/mb2/tuned_config.json` -- `apl_scale = 2`, tonic 30 mV, no
+Chosen, in `outputs/mb2/tuned_config.json`: `apl_scale = 2`, tonic 30 mV, no
 threshold offset, 196 active KCs per state of which 146 are among the 838 whose
 activation is input-dependent. That is a substrate a KC -> MBON plasticity rule
 could use; the previous round had 837 cells firing for every input and identity at
@@ -246,10 +246,10 @@ v2 asked whether the fly could **relay** a hand type and the answer was "partly"
 the readout on real wiring found the best available subset on 11% of plays and
 never cleared ante 1, where the same readout without the brain found it on 93%.
 `outputs/mb2/REPORT.md` located the loss in the input, not the network, and fixed
-it: one relay bit = one whole ORN glomerulus. This is that encoding run through
-the behaviour-cloning pipeline, so the reservoir comparison -- real vs shuffled vs
-no brain -- finally happens under an input the mushroom body can do something
-with.
+it: one relay bit = one whole ORN glomerulus. This is that encoding run
+through the behaviour-cloning pipeline, so the reservoir comparison
+(real vs shuffled vs no brain) happens under an input the mushroom body
+can do something with.
 
 **Nothing was recollected.** `outputs/bc3/states.npz` is a symlink to the v2
 file: the same 150,037 states, the same v2 teacher labels, the same
@@ -279,7 +279,7 @@ code for it to read.
 Deduplicating on 32 bits instead of 315 is what makes the stage cheap: 4,962
 windows per wiring, 2.2 minutes on 4 workers against 63 minutes in v2. It also
 means the 11,700 states (7.8%) outside a blind, where the relay block is silent,
-collapse to **one** input -- an unlit antennal lobe and zero spikes -- so every
+collapse to **one** input, an unlit antennal lobe and zero spikes, so every
 brain readout emits the same logits there. `truncated_fraction` is 0.000 on every
 row, so that did not put anything in a loop.
 
@@ -369,7 +369,7 @@ best-subset plays 0.810 against 0.710. At the MLP they are tied because both are
 at the input's ceiling.
 
 On DN only, **no.** Shuffled still wins: 0.695 against 0.661 linear, 20.0%
-against 3.2% clear, and at the MLP 41.0% against 32.5% live -- about 2.5 standard
+against 3.2% clear, and at the MLP 41.0% against 32.5% live, about 2.5 standard
 errors at 400 episodes, so ahead but not decisive.
 
 The control also changed character, and that has to be said before the numbers
@@ -389,7 +389,7 @@ fires:
 
 Non-constant channels available to the readout: 2,254 real, 899 shuffled. The
 shuffled network is now close to a sparse direct receptor-to-descending-neuron
-projection with almost nothing in between -- which is the same "shuffling creates
+projection with almost nothing in between. That is the same "shuffling creates
 shortcuts" story as v1 and v2, except that under the old encoding the shortcuts
 were an *addition* to a working network and here they are nearly all that is
 left. That is why shuffled still wins at DN: a shortcut is the best thing a DN
@@ -415,7 +415,7 @@ The linear DN readout is transformed too (0.393 best-subset against 0.010) but
 clears only 3.2%, so "real player" is an MLP statement.
 
 Two smaller results. **KC only** reaches 0.750 / 39.2% / 0.803 best-subset, i.e.
-the full ALPN+KC+DN set adds nothing on top of the Kenyon cells alone -- the
+the full ALPN+KC+DN set adds nothing on top of the Kenyon cells alone: the
 mb2 probe that read hand type from KCs at 1.000 showing up in behaviour rather
 than in a classifier. **MBON only** is the weak link: 0.589 / 0% / 0.153, with 49
 of 97 cells non-constant. Note that `apl_scale = 2` scales every APL output
@@ -427,8 +427,8 @@ helps the MBON readout is not tested here.
 Not a controlled comparison with v2: the encoding, the number of input bits
 (315 -> 32), the brain's calibration (`apl_scale` 1 -> 2) and the recorded
 populations all changed at once. What *is* controlled is everything the labels
-depend on -- same states, same teacher, byte-identical episode split, same eval
-seeds -- and the real-vs-shuffled-vs-no-brain comparison inside this run, where
+depend on (same states, same teacher, byte-identical episode split, same eval
+seeds) and the real-vs-shuffled-vs-no-brain comparison inside this run, where
 only the wiring differs.
 
 The MLP rows are at the ceiling of a 32-bit input and cannot resolve wiring; 400
@@ -436,7 +436,7 @@ episodes does not separate 39.5% from 40.5%. The shuffled control is no longer
 rate-matched to the real brain (table above). The teacher, the `--play-share`
 threshold, ante 1 only, no jokers, no enhancements: all unchanged from v2. And
 the poker is still computed outside the brain by `flybalatro/hands.py`; the fly
-relays it, and this section measures how much of it survives the trip -- which is
+relays it, and this section measures how much of it survives the trip, which is
 now most of it.
 
 ## Artifacts
@@ -459,7 +459,7 @@ Viewer: `python -m flybalatro.viewer.server --port 8767 --policy brain`. It
 prefers `outputs/bc3` models and, within a run directory, orders candidates by
 held-out imitation top-1 from that run's `train_metrics.json`, so the screen
 shows the best-measured real-wiring readout rather than a hand-maintained
-favourite -- here `real_kc_mlp` (0.7495) over `real_alpn_kc_dn_mlp` (0.7484), a
+favourite: here `real_kc_mlp` (0.7495) over `real_alpn_kc_dn_mlp` (0.7484), a
 tie in both imitation and live play. The sensory panel draws the 32 relay bits as
 named glomeruli with their ORN counts, lights the ~6 that are driven, and marks
 the other 283 bits as not sent to the brain.
@@ -484,7 +484,7 @@ depression driven by chips.
 > these runs carry `explore_floor = 0.1`, so every "after" number here is a
 > floored-softmax sample. Both modes are now reported (`outputs/plast3/eval_mode.json`,
 > and the v2 table below). (2) **"No readout / nothing fitted" is too strong.**
-> There *is* a fixed readout -- `approach - avoid` over named MBON pools -- and
+> There *is* a fixed readout (`approach - avoid` over named MBON pools), and
 > the fly carries a calibrated bias, a calibrated softmax temperature, 4,064
 > per-Kenyon-cell thresholds (v2) and a calibrated per-pulse gain. What is absent
 > is a *trained action* readout: nothing is fitted to actions, labels or
@@ -512,9 +512,9 @@ before any dopamine (median state at P(play) = 0.55, exploration 20%) and frozen
 Reward = the play cleared the blind or gained >= `needed / plays_left`;
 punishment = the play lost the blind; discards get no dopamine ever.
 
-**Valence** is Aso et al. 2014 (eLife 04580) as a neurotransmitter rule --
-glutamatergic MBONs drive avoidance, GABAergic and cholinergic ones drive
-approach -- applied to MaleCNS's own `consensus_nt`: 24 avoid neurons, 66
+**Valence** is Aso et al. 2014 (eLife 04580) as a neurotransmitter rule
+(glutamatergic MBONs drive avoidance, GABAergic and cholinergic ones drive
+approach), applied to MaleCNS's own `consensus_nt`: 24 avoid neurons, 66
 approach, 7 unassigned. **This disagrees with the compartment lists in the task
 brief on 5 of the 9 types they name** (the brief's list looks like the
 memory-expression role, not the activation valence); the brief's assignment was
@@ -543,10 +543,10 @@ The mb2 tuning was run anyway as a condition.
 
 | check | result |
 |---|---|
-| (a) decision depends on the odour | **pass** -- raw drive spans -5.45..+7.80 Hz, 11.7 quantisation quanta, 85 distinct values over 137 odours |
-| (b) conditioning, direction | **pass** -- 20 punishment pulses lower the paired odour's drive by 2.33 Hz (7/8 odours), 20 reward pulses raise it by 9.20 Hz (8/8) |
-| (b) conditioning, specificity | **fail** -- unpaired odours move 85-105% as far; 70-75% of the weight change lands on the 188 Kenyon cells active on >50% of odours |
-| (c) weight bounds | **pass** -- never negative, never above original, min ratio exactly the 0.05 floor |
+| (a) decision depends on the odour | **pass**: raw drive spans -5.45..+7.80 Hz, 11.7 quantisation quanta, 85 distinct values over 137 odours |
+| (b) conditioning, direction | **pass**: 20 punishment pulses lower the paired odour's drive by 2.33 Hz (7/8 odours), 20 reward pulses raise it by 9.20 Hz (8/8) |
+| (b) conditioning, specificity | **fail**: unpaired odours move 85-105% as far; 70-75% of the weight change lands on the 188 Kenyon cells active on >50% of odours |
+| (c) weight bounds | **pass**: never negative, never above original, min ratio exactly the 0.05 floor |
 
 The naive fly is not neutral: its P(play) already runs 0.46 (`lt0.25`) to 0.69
 (`ge1.0`), so "before" is the frozen fly on identical games, not 0.5.
@@ -572,45 +572,45 @@ the teacher does: `lt0.25` 0.46 -> 0.95 (teacher 0.00) · `lt0.5` 0.63 -> 0.92
 every category ends between 0.93 and 1.00 (the two marginals are reported; the
 P(play | hand type x bucket) joint was not produced, and with every cell of both
 marginals flat it would add nothing). The bucket gradient goes 0.017 -> 0.033
-against 0.710 for the teacher. 0.948 is essentially the exploration ceiling: with
+against 0.710 for the teacher. 0.948 sits at the exploration ceiling: with
 `explore_floor = 0.1` the maximum P(play) is 0.95, so behavioural saturation is
 complete and the underlying drive is past it. That is also why the
-reward-omission run is bit-identical to `real_eta0.1_s0` -- both sit at p ~ 0.95
+reward-omission run is bit-identical to `real_eta0.1_s0`: both sit at p ~ 0.95
 for every hand, so the same eval RNG draws the same 478 actions. The learning
 curve is a step: P(play) hits its ceiling inside 150 hands and flattens while the
 reward rate *falls* from 0.40 to 0.36. eta is irrelevant (all three saturate), and 692 reward pulses
-against 230 punishments per run, at 4x the per-pulse gain, is the whole story.
+against 230 punishments per run, at 4x the per-pulse gain, accounts for it.
 
 ## Reading
 
 **The fly learned, and it learned the wrong thing.** P(play) 0.527 -> 0.948 in 9
 of 9 runs with zero movement in the frozen control is a real learning effect from
 a real biological rule with **no trained action readout** (a fixed MBON rule plus
-a calibrated bias, temperature and pulse gain -- see the correction above). But
+a calibrated bias, temperature and pulse gain; see the correction above). But
 the clear rate fell from 0.350 to
-0.033 -- worse than the naive fly, worse than always-discard, close to always-play,
-which is the worst policy in the game -- because the fly learned a single number
+0.033 (worse than the naive fly, worse than always-discard, close to always-play,
+which is the worst policy in the game) because the fly learned a single number
 for every odour. Only ~15% of the reward effect and ~0% of the punishment effect
 is odour-specific, and 15% of a +0.42 shift is the +0.02 of bucket gradient that
-actually appeared. The mushroom-body code at this operating point is sparse (5.2%)
+appeared. The mushroom-body code at this operating point is sparse (5.2%)
 and perfectly decodable (KC hand type 0.96) but **not specific**: 188 of the 211
 active cells are drawn from the same pool that responds to more than half of all
 odours (78 of them to every odour), and compartment-level credit assignment needs
 the opposite. `apl5`, the one mb2 setting with a specific code,
-has 18 active KCs -- too few to move an MBON at all.
+has 18 active KCs, too few to move an MBON at all.
 
-So: the plasticity rule works and the code it has to work on does not support it.
+The plasticity rule works and the code it has to work on does not support it.
 The most likely bottleneck is one stage on, at the *specificity* of the
 Kenyon-cell active set rather than at the encoding (fixed in the glomerular
 round). *Corrected:* the original wording, "the bottleneck moved one stage", was
-a diagnosis from a correlation -- unspecific credit, unspecific behaviour -- not
+a diagnosis from a correlation (unspecific credit, unspecific behaviour), not
 a measurement. v2 then intervened on exactly that and made the credit specific,
 which is the evidence for this sentence; it did not make the fly win, so
 "bottleneck" in the singular was wrong either way.
 
 Caveats. Because the harness plays the best subset and `hands.py` scores as the
 engine does, `chips_gained == best_score`, so `reward = 1` is exactly the v2
-teacher's fair-share inequality -- game-derived, but "the right thing" is defined
+teacher's fair-share inequality: game-derived, but "the right thing" is defined
 by the same rule the teacher uses. The shuffled control is uninformative: a global
 permutation leaves 664 KC -> MBON edges instead of 33,496, so it deletes the
 pathway rather than rewiring it (and pre == post exactly). 60 games resolves 0.03
@@ -639,34 +639,34 @@ pool responding to more than half of all odours, those cells took 70-75% of ever
 change, and conditioning generalised completely (unpaired odours moved 85-105% as far as
 the paired one). This round rebuilds the Kenyon-cell code.
 
-**What the intervention did, first, because it is the concrete result.** Giving each
+**What the intervention did.** Giving each
 Kenyon cell its own homeostatic threshold took the number of cells that *ever* respond
 from **769 to 2,457** while mean activity **fell** from 218.7 to 177.2 cells per odour,
 and the broadly-tuned pool collapsed 12x (192 -> 16 cells answering to more than half of
 all odours). Three times the participating population on less total spiking is a
-redistribution of the code, not an amplification of it, and it is the thing that made
+redistribution of the code, not an amplification of it, and it made
 dopamine-gated credit odour-specific (15% -> 71% on the reward arm). Hand-type decoding
 went *up*, 0.986 -> 0.996.
 
 *Corrected (v3):* this round did **not** change "nothing else". It also (a) gave the
 punishment pulse its own calibrated `eta` (a ~3.8x gain change on one arm) and (b)
 doubled training from 600 to 1,200 hands. So the homeostasis effect is isolated by the
-**conditioning** comparison -- same odours, same pulses, one fly with per-KC thresholds
-and one without -- and **not** by the gameplay comparison against `outputs/plast`,
+**conditioning** comparison (same odours, same pulses, one fly with per-KC thresholds
+and one without) and **not** by the gameplay comparison against `outputs/plast`,
 which differs in three ways at once.
 
 **The mechanism is per-cell homeostatic thresholds**, which the animal has and a
 synapse-count model cannot inherit: KC excitability is homeostatically regulated and a
 single Kenyon cell answers to ~5-10% of odours (Turner et al. 2008; Honegger et al. 2011;
 Lin et al. 2014). None of the existing knobs can produce that, because `apl_scale`,
-`alpn_kc_scale`, `kc_vth_offset_mv` and `kc_kc_scale` are population-wide rescalings --
+`alpn_kc_scale`, `kc_vth_offset_mv` and `kc_kc_scale` are population-wide rescalings:
 they change how many KCs cross threshold, never which, since between-KC input spread
 (SD 112.6 mV, set by in-degree) is 11.8x the within-KC across-odour spread. New knob
 `Tuning.kc_vth_offsets: float32[4064]`, indexed by `graph.kc_indices()`, defaults to a
 no-op, calibrated by `offset_i += k * log((r_i + eps)/(target + eps))` with target 0.07
 on 500 distinct real relay patterns from `outputs/bc2` (episodes >= 1000, decision-point
 patterns only, held-out half never touched). **The update sees only each cell's own
-firing rate** -- no labels, no reward, no MBONs, no readout. 12 iterations, annealed
+firing rate**: no labels, no reward, no MBONs, no readout. 12 iterations, annealed
 gain, deadband [0.04, 0.12], converged on the brief's criterion at iteration 11. Offsets
 end at -6.74 .. +21.36 mV (none at the +30 ceiling; 2,249 at their own floor).
 
@@ -694,7 +694,7 @@ Cells that ever respond 769 -> **2,457**; median rate of a responding cell 0.088
 **0.066**; MBONs that vary 47 -> 68 of 97. The fallback mechanism the brief allowed
 (scaling KC -> MBON output by residual response rate) is implemented and tested but
 **was not needed**. With 500 distinct patterns, "grouped by relay pattern" CV is 500
-groups of one -- the strictest form of the test.
+groups of one, the strictest form of the test.
 
 ## Pulse calibration (model calibration, not reward shaping)
 
@@ -702,7 +702,7 @@ The two arms of our own rule differed ~4x per pulse because the neurotransmitter
 gives 66 approach MBONs against 24 avoid ones, so one lost spike moves `play_drive` by
 0.30 vs 0.83 Hz. Frequency is left exactly as the game gives it; only the per-pulse gain
 is matched. Measured on a 23-odour panel at 5 pulses (an 8-odour first pass was
-non-monotone in eta -- quantisation, not signal): **eta_punish / eta_reward = 3.81**, so
+non-monotone in eta: quantisation, not signal): **eta_punish / eta_reward = 3.81**, so
 eta_punish = 0.0763 and 0.1907 for eta_reward 0.02 and 0.05.
 
 ## The rerun: 60 ante-1 games on seeds 100000-100059, 1,200 training hands, 3 seeds
@@ -736,19 +736,19 @@ Greedy does **not** change the conclusion, and it does not rescue it: the learne
 still below its own frozen control and still far below always-discard. Paired on the
 same games and bootstrapped with clusters on both the evaluation seed and the training
 run: learned minus frozen is **-0.089 [-0.217, +0.033]** greedy (p = 0.17) and
-**-0.083 [-0.222, +0.067]** sampled (p = 0.26) -- no resolvable movement either way;
+**-0.083 [-0.222, +0.067]** sampled (p = 0.26), no resolvable movement either way;
 learned minus always-discard is **-0.222 [-0.367, -0.083]** greedy (p = 0.003) and
--0.156 [-0.300, -0.011] sampled. What the mode *does* change is the level of both rows:
+-0.156 [-0.300, -0.011] sampled. The mode *does* change the level of both rows:
 the naive fly's 0.328 was itself a sampled number (its three eval RNGs give 0.267,
 0.433, 0.283 on the same 60 games), and greedy pulls the naive fly to 0.267 and the
 learned fly to 0.178. The learned low bucket sits at P(play) = 0.51-0.57, so greedy
-commits to *playing* most `lt0.25` odours where sampling threw about half of them away
--- which is why greedy is the harsher and more honest number here.
+commits to *playing* most `lt0.25` odours where sampling threw about half of them
+away. That is why greedy is the harsher and more honest number here.
 
 "bucket gradient" is P(play | ge1.0) - P(play | lt0.25), the one ordered axis the odour
 carries. P(play) by bucket, naive -> learned (eta 0.05): `lt0.25` 0.611 -> **0.545**,
 `lt0.5` 0.462 -> 0.912, `lt1.0` 0.381 -> 0.934, `ge1.0` 0.621 -> 0.949. **The lowest
-bucket moves down while the other three move up** -- in v1 all four went to 0.92-0.98.
+bucket moves down while the other three move up**. In v1 all four went to 0.92-0.98.
 The joint P(play | hand type x bucket) table shows the same thing per cell: Pair/lt0.25
 (389 decisions) 0.70 -> 0.52 where the teacher plays 0.00, Two Pair/lt0.5 (250) 0.40 ->
 0.93 where the teacher plays 0.76.
@@ -773,7 +773,7 @@ touched and 1.5% reached the floor, so the rule is not saturated either.
 **The fly learned something odour-specific this time.** Conditioning specificity 15% ->
 71% (reward) and -6% -> 104% (punish); behavioural bucket gradient +0.010 -> +0.404;
 per-cell correlation with what the situation deserves -0.065 -> +0.881; training reward
-rate up instead of down; frozen control unmoved. **No trained action readout** -- the
+rate up instead of down; frozen control unmoved. **No trained action readout**: the
 only mutable quantity *during learning* is the weight of 33,496 KC -> MBON synapses
 under a dopamine-gated depression rule driven by the game's chips. (What *is* fitted,
 before learning and without ever seeing an action or an outcome: the decision bias and
@@ -783,7 +783,7 @@ temperature, the 4,064 per-KC thresholds, and the per-pulse gain ratio.)
 than v1's 0.350 -> 0.033 collapse, but the fly is still at or below its naive starting
 point and well short of what reading the score bucket alone buys. *Corrected (v3): the
 original text quoted `z = 1.75 over 180 games`. There were 60 games, evaluated by three
-training runs -- the same 60 seeds counted three times -- so that z treats one game as
+training runs (the same 60 seeds counted three times), so that z treats one game as
 three independent observations and is not a valid interval. The paired, seed- and
 run-clustered version is in `outputs/plast3/eval_mode.json`. The "0.633 the score
 bucket alone buys" is also a 60-seed number from a search over three nested bucket
@@ -797,17 +797,17 @@ probe that could not support it, and neither establishes that the mushroom body 
 stopped being a limit.*
 (1) **Measured.** Punishment fires only on the *terminal* losing play, so of 282
 `lt0.25` plays in a training run, 0 were rewarded, 28 punished and **254 (90%) got no
-dopamine at all** -- the decision the fly most needs to change is invisible, and a
+dopamine at all**. The decision the fly most needs to change is invisible, and a
 depression-only rule has no way to undo drift it did not cause (reward outnumbers
 punishment 5:1 as a result).
 (2) **Not established.** `outputs/plast2/neighbour.json`: after homeostasis,
-conditioning transfer falls with odour distance as it should -- Hamming 2 / 4 / 6-8 /
+conditioning transfer falls with odour distance as it should: Hamming 2 / 4 / 6-8 /
 >=10 gives median relative spread 0.836 / 0.348 / 0.157 / 0.000, against a flat
 0.796 / 0.782 / 0.683 / 0.634 before. The v2 reading was that because the
 score-vs-needed bucket is **one bit of 32**, the two odours the fly must separate
 ("this Two Pair clears, that one doesn't") sit at Hamming distance 2 where transfer is
 still 0.80-0.84. But that probe's distance-2 bin was **arbitrary pairs of held-out
-patterns** -- mostly best-slot-mask changes, not bucket changes -- so it never measured
+patterns** (mostly best-slot-mask changes, not bucket changes), so it never measured
 the discrimination it was used to explain. The test that does hold a hand fixed and
 changes only its bucket is `outputs/plast3/transfer.json`; see the v3 section for what
 it found.
@@ -826,7 +826,7 @@ Artifacts: `outputs/plast2/REPORT.md` (full write-up), `tuned_config.json`,
 
 An external review of the two sections above found one bug in the evaluation, three
 overclaims, and one diagnosis the evidence did not support. This round fixes the bug,
-corrects the record in place above, measures the unsupported diagnosis properly, and
+corrects the record in place above, measures the unsupported diagnosis, and
 runs the rescue it implies. **The protocol, the primary outcome, the analysis and the
 decision rule were written down in `outputs/plast3/PREREGISTRATION.md` before any game
 here was played.** Nothing under `outputs/bc*/`, `outputs/mb*/`, `outputs/plast/` or
@@ -834,8 +834,8 @@ here was played.** Nothing under `outputs/bc*/`, `outputs/mb*/`, `outputs/plast/
 
 ## 1. The evaluation was a sample, not a greedy policy
 
-Covered in the corrections above and in `outputs/plast3/eval_mode.json`. The short
-version: greedy does **not** change the v2 conclusion. It moves the naive fly 0.328 ->
+Covered in the corrections above and in `outputs/plast3/eval_mode.json`. Greedy
+does **not** change the v2 conclusion. It moves the naive fly 0.328 ->
 0.267 and the learned fly 0.244 -> 0.178 on the same 60 games, leaving the learned-minus
 -naive gap at -0.089 [-0.217, +0.033] (it was -0.083 sampled), and widening the gap to
 always-discard from -0.156 to -0.222 [-0.367, -0.083]. Provenance: the v3 cell
@@ -848,7 +848,7 @@ column reproduces the published clear rates exactly.
 
 v2 blamed "Hamming distance 2" using a probe that binned *arbitrary* held-out patterns,
 so its distance-2 bin was mostly best-slot-mask changes. This one holds a real
-decision-point pattern fixed and changes **only** the score bucket -- 16 anchors, 20
+decision-point pattern fixed and changes **only** the score bucket: 16 anchors, 20
 pulses at eta 0.05, with a hand-type-only contrast on the same anchors.
 `relative spread = delta(probe)/delta(anchor)`; headline is the ratio of means, medians
 in brackets.
@@ -875,12 +875,12 @@ Four disjoint, ORN-count-balanced glomerulus ensembles for the four score bucket
 plasticity harness cannot use: bits 17-25 and 27 are **never** on at a decision point
 (0 of 1,091 in the 60 standard games), bit 26 is **always** on, and bits 9-16 name the
 cards the harness selects itself whichever way the fly decides. Per decision point the
-regime barely moves -- 6.77 vs 7.04 active glomeruli -- but the driven-ORN count goes
+regime barely moves (6.77 vs 7.04 active glomeruli), but the driven-ORN count goes
 from 430.5 (SD 49.7) to 475.6 (SD **1.3**), because `best_slot` carried the hand-type
 label in the total drive by construction and now nothing does. **Declared confound:
 factor B changes three things at once** (wider bucket channels, dead bits dropped,
 intensity cue removed); it is one intervention and no claim is made about which part did
-the work. The odour universe collapses to 9 x 4, of which 28 occur -- which is exactly
+the work. The odour universe collapses to 9 x 4, of which 28 occur, exactly
 the joint table v2 already reported, so nothing the fly's binary decision could use is
 lost.
 
@@ -893,7 +893,7 @@ odours 182 -> **26**, offsets -6.74 .. +19.92 mV. Its pulse-gain ratio is
 ## 4. The 2x2, 400 paired games (seeds 400000-400399), 3 training seeds per cell
 
 Reward unchanged everywhere. `omission` punishes **every** PLAY that did not make its
-fair share `needed / plays_left` -- the negative branch of the inequality that already
+fair share `needed / plays_left`, the negative branch of the inequality that already
 defines reward, computed from the game's own chips. It is engineered reward shaping
 computed from the game only; there is no teacher in it. It fires on 3-4x as many hands
 (258-346 punishment pulses per run against 81-109).
@@ -916,7 +916,7 @@ evaluation seed and the training run, on the per-seed paired difference.
 
 **The two factors are useless apart and large together.** Deltas against each cell's own
 frozen control, greedy: punishment alone -0.023, encoding alone +0.022, both **+0.234**.
-The interaction contrast is **+0.171** -- the effect is essentially all interaction,
+The interaction contrast is **+0.171**, so the effect is essentially all interaction,
 which is the mechanism H-AB predicted: the omission signal is what makes a wasted
 `lt0.25` play punishable at all, and the separated encoding is what keeps that
 punishment off the buckets the fly should still play.
@@ -924,7 +924,7 @@ punishment off the buckets the fly should still play.
 **What the winning cell learned.** Per run its greedy clear rate is 0.448 / 0.325 /
 0.448 and its mean chips 966 / 831 / 966 against always-discard's 835. Two of the three
 runs converge on one policy: `P(play) = 0.00` for `lt0.25` and ~1.00 for `lt0.5`,
-`lt1.0` and `ge1.0` -- the hand-written `bucket_ge_lt1_lt05` baseline, whose 400 game
+`lt1.0` and `ge1.0`, the hand-written `bucket_ge_lt1_lt05` baseline, whose 400 game
 outcomes they reproduce **bit-for-bit** (0 of 400 differ). The naive separated fly does the
 **opposite** (plays `lt0.25` 100% of the time, `lt0.5` 10%, bucket gradient **-0.62**),
 so this is a full inversion driven by chips alone. It is not a collapse to
@@ -939,15 +939,15 @@ A cell succeeded only if it beat **both** its frozen control and always-discard 
 (+0.234 [+0.141, +0.320]) and fails the second: +0.024 [-0.072, +0.113] against
 always-discard is a statistical tie.** It is the first configuration in this project
 where the fly's own learning rule produces a policy that is not worse than doing
-nothing -- it beats its own naive control by 0.234, beats the *other* encoding's naive
+nothing. It beats its own naive control by 0.234, beats the *other* encoding's naive
 control by +0.119 [+0.024, +0.208], earns more chips than always-discard (921 vs 835
-mean) and has a near-perfect bucket gradient -- but it does not clear more blinds than a
+mean) and has a near-perfect bucket gradient. But it does not clear more blinds than a
 fly that never plays until it must, and it sits **-0.123 [-0.217, -0.035]** against the
 best policy that reads only the score bucket (0.530).
 
 So the plasticity story **does not win, and it now fails for a reason that is measured
-rather than asserted -- and the reason is the reward, not the learning.** The dopamine
-ledger of the winning cell says it exactly:
+rather than asserted: the reward, not the learning.** The dopamine
+ledger of the winning cell:
 
 | bucket | plays | rewarded | punished | learned P(play), greedy |
 |---|---|---|---|---|
@@ -957,14 +957,14 @@ ledger of the winning cell says it exactly:
 | `ge1.0` | 199 | 198 | 1 | 1.00 |
 
 (v2's cell, same table, for contrast: `lt0.25` 282 plays, 0 rewarded, 28 punished and
-**254 with no dopamine at all** -- the omission signal is what turned those 254 into
+**254 with no dopamine at all**; the omission signal turned those 254 into
 133 punishments and drove P(play | lt0.25) from 0.54 to 0.00.)
 
 `lt0.5` comes out **net reward-positive** (139 vs 97), so the reward function *tells*
 the fly to play it, and the fly obeys. That is not a learning failure; it is the reward
 specification. `reward = chips_gained >= needed / plays_left` means "make your fair
 share of this blind", and with three or four plays left a hand scoring 0.25-0.5x what is
-still needed usually does make its share -- while still not clearing the blind. The fly
+still needed usually does make its share, while still not clearing the blind. The fly
 converged on the optimum of the signal it was given, and that optimum is
 `play iff bucket >= lt0.5`, i.e. `bucket_ge_lt1_lt05` at 0.448. Two of the three runs
 reproduce that hand-written baseline's 400 game outcomes **bit-for-bit** (0 of 400
@@ -975,7 +975,7 @@ thing" is defined by the same fair-share inequality the teacher uses; this round
 where that caveat becomes the binding constraint.
 
 Two claims elsewhere in this file should be read with the same caution. The 0.757 at
-line 289 is an MLP on the raw 32 relay bits -- an **achieved baseline**, not an
+line 289 is an MLP on the raw 32 relay bits, an **achieved baseline**, not an
 information-theoretic ceiling; and the "0.633 best odour-only policy" of the v1/v2
 sections was a search over three nested bucket policies on 60 seeds, which on 400 fresh
 seeds is 0.530.
@@ -996,8 +996,8 @@ session rewrote). Reproduce:
 # Real game: the fly on actual Balatro (2026-09-13)
 
 Everything above is `pylatro`, a Rust reimplementation. This is the same v3
-readout driving **Balatro 1.0.1o** itself — the Steam build, LÖVE 11.5, running
-in a window — through the BalatroBot mod's JSON-RPC API. Install and launch:
+readout driving **Balatro 1.0.1o** itself (the Steam build, LÖVE 11.5, running
+in a window) through the BalatroBot mod's JSON-RPC API. Install and launch:
 `docs/REALGAME_INSTALL.md`.
 
 Same weights, unchanged: `outputs/bc3/models/real_alpn_kc_dn_mlp.npz` over
@@ -1012,7 +1012,7 @@ for 222 decisions.
 
 The cause was in `flybalatro/realgame/adapter.py`, not in the readout.
 `legality_mask` allowed `select_card[i]` on an already-selected slot so the
-selection could be toggled off. **`pylatro` has no deselect** — once slot `i`
+selection could be toggled off. **`pylatro` has no deselect**: once slot `i`
 is selected its action leaves the mask until `play` or `discard` consumes the
 selection. So the adapter was offering the readout an action that does not
 exist in the action space it was trained and evaluated on, and the readout took
@@ -1028,7 +1028,7 @@ sorts the hand rank-descending while `pylatro` returns draw order, so the
 positional encoding is off-manifold. Replaying the stuck hand under the game's
 sorted order, an id-hash permutation of it, and four random permutations gave
 the **identical 2-cycle in all six**; after the mask fix all six reach a
-`discard`. Hand order is genuinely immaterial.
+`discard`. Hand order is immaterial.
 
 One smaller seam, same session: Lua has a single table type, so the mod emits
 `[]` for an empty object, and every base playing card arrives with
@@ -1040,18 +1040,18 @@ One smaller seam, same session: Lua has a single table type, so the mod emits
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Small, Big | **1 / 3** | Small 384 | lost the Big Blind at 407/450 | 77 | 134 s |
 | 2 | Small, Big, The Goad | **2 / 3** | Small 300, Big 580 | lost the boss at 441/600 | 100 | 194 s |
-| 3 | Small, Big, The Hook | **3 / 3 — ante 1 cleared** | Small 404, Big 529, Hook 644 | ante 2 reached | 76 | 161 s |
+| 3 | Small, Big, The Hook | **3 / 3, ante 1 cleared** | Small 404, Big 529, Hook 644 | ante 2 reached | 76 | 161 s |
 
 Run 3 beat The Hook (which discards two random cards from hand after every
 played hand) with a single four-card play for 644 against a 600 requirement.
 
 Across the three runs: **6 of 9 blinds cleared**, 27 hands played, 17 hands
-discarded, and **zero rejected API calls** — every action the mask allowed, the
+discarded, and **zero rejected API calls**: every action the mask allowed, the
 game accepted, which is the invariant `tests/test_realgame_adapter.py` asserts,
 now confirmed against the real thing. The fly bought nothing; it left the shop
 immediately in all five visits.
 
-Three runs is an existence proof, not a rate. It is far too small a sample to
+Three runs is an existence proof, not a rate. It is too small a sample to
 compare against the headless 39.5% ante-1 clear over 400 episodes, and no such
 comparison is claimed here.
 
@@ -1059,14 +1059,14 @@ comparison is claimed here.
 
 `outputs/realgame/`: `log.jsonl` (253 per-decision records, all three runs),
 `log_run{1,2,3}.jsonl`, `summary_run{1,2,3}.json`, `run{1,2,3}.out`,
-`logs/<ts>/12346.log` (the mod chain loading), and the evidence —
+`logs/<ts>/12346.log` (the mod chain loading), and the evidence:
 `balatro_fly.png` (Small Blind, round score 292/300, one hand and two discards
 left), `balatro_fly_round_eval.png`, `balatro_fly_shop.png`,
 `balatro_fly_firsthand.png`, and `balatro_fly.mov` (28 s, full desktop).
 
 Screenshots come from the API's own `screenshot` endpoint, which needs no
 window id and no screen-recording permission. Note that the fly's card
-selection is **virtual** — the API has no selection endpoint, so the adapter
+selection is **virtual**: the API has no selection endpoint, so the adapter
 carries the selection and submits the indices at play time. The cards are never
 highlighted on screen no matter how many `select_card` decisions have been
 made, so a screenshot is framed on game state, not on selection.
@@ -1084,13 +1084,13 @@ and a *mock* table.
 ## 1. `--plastic`: the fly whose synapses change drives real Balatro
 
 `flybalatro/realgame/play.py` drove the Steam build with the **frozen v3
-readout** — a scikit-learn model over brain spikes that never changes while it
+readout**, a scikit-learn model over brain spikes that never changes while it
 plays. `flybalatro/realgame/plastic.py` adds `--plastic`, which replaces it with
 the fly from "Plasticity v2" above:
 
 * the decision is `mean rate(approach MBONs) - mean rate(avoid MBONs) + bias`,
   a fixed rule over neurotransmitter-assigned pools of the fly's own MBONs, with
-  **no trained action readout** — nothing fitted to actions, labels or outcomes;
+  **no trained action readout**: nothing fitted to actions, labels or outcomes;
 * the only mutable state is the weight of the 33,496 KC → MBON synapses, moved
   by dopamine-gated depression driven by the chips the game pays;
 * the operating point is **loaded, not refitted**: the 4,064 per-Kenyon-cell
@@ -1102,7 +1102,7 @@ the fly from "Plasticity v2" above:
   point.
 
 The decision is per **hand**, not per action, so this is its own loop rather
-than a policy inside `play()` — which would have run four brain windows to
+than a policy inside `play()`, which would have run four brain windows to
 select four cards. It reuses `scripts/plast_common.py` (`build_setup`,
 `hand_context`, `dig_slots`, `resolve_outcome`) and `flybalatro/plasticity.py`
 unchanged; `resolve_outcome` in particular stays the **only** definition of
@@ -1115,7 +1115,7 @@ including on Ctrl-C; `--warm-start` loads
 started and the brief said not to relaunch it, so what is on the record is the
 same loop against `scripts/realgame_plastic_offline.py`: a real `http.server`
 speaking the mod's JSON-RPC dialect, dealing random hands from a real 52-card
-deck and scoring played hands with `flybalatro/hands.py` — Balatro's own rules,
+deck and scoring played hands with `flybalatro/hands.py`: Balatro's own rules,
 the same function that tells the fly what its options are worth. The real
 client, the real adapter, the real connectome, the real window, the real
 depression, the real loop; a simulated game, with no jokers and no blind
@@ -1130,13 +1130,13 @@ effects.
 The control is the point of that table: identical decisions, dopamine computed
 and logged, never delivered, and **not one synapse moves**. The third row exists
 because punishment fires only on the *terminal* losing play, so a run that keeps
-clearing never exercises that arm at all — the first row never lost, which is
+clearing never exercises that arm at all: the first row never lost, which is
 why its punish count is 0.
 
 Nothing here is a clear rate and none of it is comparable with the tables
 above: 30 hands against a simulated game is an existence proof that the loop
-closes — hand → odour → MBON drive → key press → chips → dopamine → weight
-change — and nothing more.
+closes (hand → odour → MBON drive → key press → chips → dopamine → weight
+change) and nothing more.
 
 Reproduce: `python -m scripts.realgame_plastic_offline --hands 40`, and
 `--no-learning` for the control.
@@ -1151,8 +1151,8 @@ toward it, and the draw path uses `VT`. ~120 additive, `pcall`-wrapped lines in
 the BalatroBot mod's `gamestate.lua` now report each hand card's `VT`-derived
 screen rect and rotation plus the room/tile scaling, and `overlay.aligned_rects`
 prefers them, falling back to the fitted fan when they are absent. Exact by
-construction, animation-accurate, and correct for any number of cards — there is
-no model left to be wrong.
+construction, animation-accurate, and correct for any number of cards. No model
+is left to be wrong.
 
 **Written, installed and unit-tested; never executed.** A Lua file is only read
 when the game launches, and the game has not launched since. What is verified is
@@ -1182,7 +1182,7 @@ and `outputs/mb*/` untouched.
 
 *Full report: `outputs/calyx/REPORT.md`. Run 2026-09-13.*
 
-The project's central claim -- that the evolved wiring helps -- rested on a
+The project's central claim, that the evolved wiring helps, rested on a
 degree-preserving *global* shuffle that, under the v3 glomerular encoding,
 compares a working brain against a near-dead one (ALPN 71.3 Hz real against 0.63
 Hz shuffled). That claim is retracted above. This is the control that replaces
@@ -1192,7 +1192,7 @@ it.
 19,980 edges from 686 projection neurons onto 4,064 Kenyon cells. Swap edge
 endpoints within strata of `(hemisphere, KC subtype, synapse count, sign)` --
 818 strata (median 8 edges, max 212, 202 singletons), spanning subtype cells
-from `L/KCg-m` at 4,387 edges down to `L/KCg-s3` at 4 -- rejecting self-loops
+from `L/KCg-m` at 4,387 edges down to `L/KCg-s3` at 4, rejecting self-loops
 and duplicates. Every in-degree, out-degree, in-weight, out-weight
 and per-projection-neuron subtype profile is preserved exactly; ORN -> ALPN, APL
 in both directions, KC -> KC, KC -> MBON and all dopaminergic wiring are
@@ -1204,7 +1204,7 @@ endpoints. Invariants are checked per seed and in `tests/test_calyx.py`.
 
 Two things make that statement worth more than the one it replaces. First, the
 harness reproduces `outputs/bc3` bit for bit when the rewiring is absent --
-imitation 0.7085 / 0.6606, clear rate 0.265 / 0.0325 -- so nothing is absorbing
+imitation 0.7085 / 0.6606, clear rate 0.265 / 0.0325, so nothing is absorbing
 the effect. Second, and unlike the global shuffle, the rewired networks land in
 the same activity regime *with no recalibration at all*: KC 1.33 Hz real against
 1.35-1.39 rewired, 1,893 non-constant readout channels against 1,882-1,889. The
@@ -1228,12 +1228,12 @@ the null does not depend on it.
 Across 400 episode seeds shared by all conditions, **none of the twelve paired
 clear-rate comparisons is significant** (exact McNemar, smallest p = 0.13). The
 three rewiring seeds give an empirical null band, and `real` sits inside it on
-every measure -- on KC imitation it sits *below* all three. DN decoding is below
+every measure; on KC imitation it sits *below* all three. DN decoding is below
 the bits-on count-only confound (0.664) in every condition, so it remains
 consistent with pure intensity encoding, as found earlier.
 
-For scale, in the same measurements a label-free recalibration -- per-KC
-homeostatic thresholds, no labels, no rewards -- moves `real` from 993 to 2,790
+For scale, in the same measurements a label-free recalibration (per-KC
+homeostatic thresholds, no labels, no rewards) moves `real` from 993 to 2,790
 effective Kenyon dimensions and from 26.5% to 38.0% clear, in every condition
 equally. Calibration matters; which Kenyon cell a projection neuron talks to
 does not.
@@ -1257,8 +1257,8 @@ of calyx wiring contributes nothing measurable in this model, on this task.
 # Plasticity v4: can any game-computable reward beat always-discard? (2026-09-14)
 
 v3 ended with a measured diagnosis rather than a result: the fly converged on the
-exact optimum of the reward it was given -- `chips_gained >= needed / plays_left`,
-"did this play earn its share" -- and that optimum *ties* always-discard. This
+exact optimum of the reward it was given (`chips_gained >= needed / plays_left`,
+"did this play earn its share") and that optimum *ties* always-discard. This
 round tests two replacement reward specifications against it. **The protocol, the
 primary outcome, the analysis and the decision rule were written down in
 `outputs/plast4/PREREGISTRATION.md` before any game here was played** (file
@@ -1268,17 +1268,17 @@ timestamp 00:33:12; first run 00:35:35). Nothing under `outputs/bc*/`, `mb*/`,
 changes only.
 
 **Nothing beats always-discard.** The eligibility trace produces the best learned
-fly in the project -- 0.448 greedy against a frozen control of 0.172,
-**identical in all three training seeds at all three trace lengths** -- and lands
+fly in the project (0.448 greedy against a frozen control of 0.172,
+**identical in all three training seeds at all three trace lengths**) and lands
 at +0.065 [**+0.000**, +0.130] against always-discard, p = 0.058, Holm-corrected
-0.117. That misses the bar fixed in advance by the width of a rounding, and a
-miss is a miss. The pace reward is measurably *worse* than the baseline, as the
+0.117. That misses the bar fixed in advance by the width of a rounding, and it is
+reported as a miss. The pace reward is measurably *worse* than the baseline, as the
 preregistration predicted from arithmetic before it was run.
 
 **And the reward is no longer what is stopping the fly.** A post-hoc probe
 (section 6, added after the result and marked as such) hands the system the best
-signal any reward or credit rule could produce -- punishment aimed at exactly the
-`lt0.5` odours -- and it still cannot reach the 0.530 policy: from the trained
+signal any reward or credit rule could produce (punishment aimed at exactly the
+`lt0.5` odours) and it still cannot reach the 0.530 policy: from the trained
 fly, 83.6% of the synapses such a pulse can touch are already at the weight
 floor and 120 more pulses move the drive by 0.5%; from a naive fly it drives
 `lt0.5` negative but drags `lt1.0` and `ge1.0` down with it. **The binding
@@ -1296,7 +1296,7 @@ clears the blind exactly (`share_{k+1} = share_k`, and the four shares sum to
 
 **The sharper consequence, and the real finding of the audit.** Because the last
 play's share *is* the whole remaining requirement, `reward AND lost` is
-impossible by construction -- and it is 0 of 2,374 v3 training plays, and 0 in
+impossible by construction, and it is 0 of 2,374 v3 training plays, and 0 in
 every v4 condition. So the gap v3 diagnosed, "paid its share but still lost the
 blind", **cannot be expressed by any immediate same-hand reward term at all.** It
 lives in the *earlier* plays of a blind later lost, and only a trace can reach
@@ -1304,7 +1304,7 @@ them. That argument was not available to v3.
 
 ## 2. The candidates, and the constraint every one of them is audited against
 
-Every condition is v3's winning cell -- `separated` encoding, `omission`
+Every condition is v3's winning cell: `separated` encoding, `omission`
 immediate punishment, `eta_reward = 0.05` / `eta_punish = 0.0797`, 1,200 training
 decisions, 10% exploration floor, the same 400 paired evaluation seeds
 400000-400399. **Only the reward specification differs.**
@@ -1443,22 +1443,22 @@ Against A's ledger, same reward, no trace:
 | `lt1.0` | 560 / 93 | +467 | 1.00 | +383 | 1.00 |
 | `ge1.0` | 583 / 4 | +579 | 1.00 | +603 | 1.00 |
 
-The three preregistered predictions, scored honestly:
+Scoring the three preregistered predictions:
 
 1. **"gamma 0.8 and 1.0 flip `lt0.5` net-negative."** *Right on the ledger, wrong
    on the behaviour.* `lt0.5` goes from +115 in A to -85 (C80) and -134 (C100) on
-   the upper bound -- and **P(play | lt0.5) stays 1.00 in all nine C runs.** The
+   the upper bound, and **P(play | lt0.5) stays 1.00 in all nine C runs.** The
    signal flipped sign; the policy did not.
 2. **"`lt1.0` stays net-positive, so the fly converges on `play iff >= lt1.0`
    = 0.530."** Half right. `lt1.0` does stay strongly positive (+383), but the fly
    converged on `play iff >= lt0.5` = 0.448. The 0.530 policy appeared in no run.
 3. **"P(play | ge1.0) should not move, because a `ge1.0` hand clears the blind and
-   so cannot sit in a lost blind's trace."** *Right, and sharply:* `ge1.0` appears
+   so cannot sit in a lost blind's trace."** *Right:* `ge1.0` appears
    in **0-3%** of terminal pulses against `lt0.5`'s 81-85%, and P(play | ge1.0) is
    1.00 everywhere. The implementation check passes.
 
 **What the trace did buy: reproducibility.** A converged on the
-`bucket_ge_lt1_lt05` policy in **2 of 3** seeds -- its s1 run plays `lt0.25` 17.6%
+`bucket_ge_lt1_lt05` policy in **2 of 3** seeds; its s1 run plays `lt0.25` 17.6%
 of the time and scores 0.325. **All 9** C runs converge on it, driving
 P(play | `lt0.25`) to exactly 0.000 in every seed at every gamma, and **all nine
 reproduce that hand-written baseline's 400 game outcomes bit-for-bit (0 of 400
@@ -1477,15 +1477,15 @@ zero spread across seeds where A is 0.407 with a spread of 0.12.
 **85% of terminal pulses contain an `lt0.5` play and 65% contain an `lt1.0`
 play.** The two buckets the fly must separate to reach 0.530 are punished together
 by nearly every terminal pulse. The immediate omission rule is perfectly
-selective -- an `lt0.25` play earns an `lt0.25` punishment, which is why that
-bucket goes to exactly 0.000 -- and the terminal pulse is not selective at all,
+selective (an `lt0.25` play earns an `lt0.25` punishment, which is why that
+bucket goes to exactly 0.000), and the terminal pulse is not selective at all,
 because a blind that was lost contains plays from every bucket in roughly the
 proportion the fly plays them. **Terminal credit supplies the right sign and
 cannot supply the right target**, and no setting of its strength or its decay
 changes that: all three gammas give 0.4475 to four decimal places.
 
 That was going to be this round's verdict. Section 6 is the probe that checks
-whether the *alternative* -- a perfectly targeted signal -- would have worked,
+whether the *alternative*, a perfectly targeted signal, would have worked,
 and it shows that it would not, which moves the binding constraint one stage
 further back. The selectivity measurement above stands; it is no longer the
 explanation.
@@ -1499,14 +1499,13 @@ trained fly, delivers punishment pulses against a bucket's *own* odours, and
 reads `play_drive` off the MBONs. Same category as v3's transfer probe.
 
 Section 5 concluded that terminal credit fails because it cannot target one
-bucket. That presumes the alternative -- that a *perfectly* selective punishment
+bucket. That presumes the alternative: that a *perfectly* selective punishment
 **would** put `lt0.5` below zero and leave `lt1.0` above it. The fly never
 demonstrated that. What it demonstrated was `lt0.25 -> 0.00` with `lt1.0` at
 1.00, a separation between **non-adjacent** buckets, which is an easier problem.
-So: give the system the best signal any reward or credit rule could ever produce
--- 120 punishment pulses aimed at exactly the seven `lt0.5` odours seen at real
-decision points -- and watch what happens. `eta_punish = 0.0797`, the calibrated
-value, unchanged.
+The probe gives the system the best signal any reward or credit rule could ever
+produce: 120 punishment pulses aimed at exactly the seven `lt0.5` odours seen at
+real decision points. `eta_punish = 0.0797`, the calibrated value, unchanged.
 
 Mean `play_drive` in Hz per bucket (a bucket is played when its drive is >= 0),
 24 distinct separated odours drawn from the calibration seed range:
@@ -1517,7 +1516,7 @@ Mean `play_drive` in Hz per bucket (a bucket is played when its drive is >= 0),
 | all 7 `lt0.5` odours | C80 weights | `lt0.5` **+9.045** | **+8.494** | **no** | `lt1.0` +4.51 -> +4.63, `ge1.0` +6.44 -> +6.53 |
 | all 7 `lt0.5` odours | naive weights | `lt0.5` -0.002 | **-3.877** | yes | **`ge1.0` +1.50 -> -0.17, crossing zero at pulse 38**; `lt1.0` -2.47 -> -3.16; `lt0.25` +1.75 -> **+2.40** |
 
-And the synapses those pulses can actually reach -- the KC -> **approach** MBON
+And the synapses those pulses can reach, the KC -> **approach** MBON
 edges gated by the Kenyon cells the target odours drive, which is the only thing
 a punishment pulse can move:
 
@@ -1536,23 +1535,23 @@ a punishment pulse can move:
    remaining drive is not reachable by KC -> MBON depression at all: it is there
    because the 426 *reward* pulses that bucket earned depressed its **avoid**
    side, and a depression-only rule has no operation that puts that back. By the
-   time any terminal pulse arrives -- trace or not, gamma 0.5 or 1.0 -- there is
+   time any terminal pulse arrives (trace or not, gamma 0.5 or 1.0) there is
    nothing left for it to depress. That is why all three gammas give 0.4475 to
    four decimal places.
 
 2. **From a naive fly the punishment operation is not bucket-selective, even
    when the signal is.** A perfectly targeted `lt0.5` punishment does drive
-   `lt0.5` from -0.002 to -3.877 -- and **`ge1.0` crosses zero with it, at pulse
+   `lt0.5` from -0.002 to -3.877, and **`ge1.0` crosses zero with it, at pulse
    38, ending at -0.17 from +1.50**, while `lt0.25` drifts the *wrong* way, up to
    +2.40. `ge1.0` is the bucket that must always be played and its own odours
    were never targeted; it fell anyway. `lt1.0` also falls (-2.47 to -3.16),
-   though it starts negative in the naive fly -- the naive separated fly's bucket
-   gradient is -0.62, as v3 reported -- so the informative casualty is `ge1.0`.
+   though it starts negative in the naive fly (the naive separated fly's bucket
+   gradient is -0.62, as v3 reported), so the informative casualty is `ge1.0`.
    The four buckets have disjoint *glomerulus* ensembles by construction, but
    their Kenyon-cell populations overlap enough that depressing one bucket's
    approach pathway drags an unrelated bucket across the decision boundary.
 
-So the answer to the question in this section's title is **no**. Under a
+This readout cannot express the 0.530 policy. Under a
 depression-only KC -> MBON rule read out by a fixed approach-minus-avoidance
 difference, `lt0.5 -> 0` with `lt1.0 -> 1` is not reachable from either end.
 
@@ -1565,28 +1564,27 @@ eliminates two of them and leaves the third, measured.
 survive. Two replacement specifications were tested. The pace rule is measurably
 *worse* (0.203 against 0.407; -0.176 [-0.325, -0.032] against always-discard),
 exactly as this round's preregistration predicted from arithmetic before it ran.
-The eligibility trace -- the only mechanism that can reach "paid its share but
-still lost the blind", by the section 1 arithmetic -- flips that bucket's ledger
+The eligibility trace, the only mechanism that can reach "paid its share but
+still lost the blind" by the section 1 arithmetic, flips that bucket's ledger
 from +115 to -85 and **does not change the policy at all**.
 
-**Not, in the end, a credit-assignment problem either -- though the trace is
-genuinely too blunt.** It is true and measured that 85% of terminal pulses
-contain an `lt0.5` play and 65% contain an `lt1.0` play, so terminal credit
+**Not, in the end, a credit-assignment problem either, though the trace is too
+blunt.** 85% of terminal pulses contain an `lt0.5` play and 65% contain an
+`lt1.0` play, and that is measured, so terminal credit
 cannot target one bucket. But section 6 hands the system a *perfectly* targeted
 signal, which is the ceiling on what any credit rule could deliver, and it still
-cannot produce the 0.530 policy from either the trained or the naive fly -- from
+cannot produce the 0.530 policy from either the trained or the naive fly; from
 the naive fly it drags `ge1.0`, whose odours it never touched, across the
 decision boundary. Selectivity of the *signal* is not the binding constraint;
 the *operation* is not selective either, and it runs out first.
 
 **It is a capacity limit of depression-only plasticity at KC -> MBON.** The rule
-has one operation -- lower a weight -- it bottoms out at 5% of the original, and
+has one operation, lowering a weight; it bottoms out at 5% of the original, and
 adjacent buckets share enough Kenyon cells that using it on one moves its
 neighbour. The fly can express `lt0.25 -> 0.00` while three buckets sit at 1.00,
 because `lt0.25` is the *extreme* of the axis and is the only bucket that earns
 zero rewards. It cannot express a cut *between* `lt0.5` and `lt1.0`, which is
-what 0.530 requires. 0.448 is not where the reward ran out. It is where the
-synapses did.
+what 0.530 requires. The synapses, not the reward, capped it at 0.448.
 
 This is a narrower claim than "the fly cannot learn Balatro", and it is the one
 the measurements support. It also says what a fifth round would have to change,
@@ -1595,18 +1593,16 @@ DopR1/DopR2 directing depression **or** potentiation depending on timing) has th
 operation this one is missing. That was outside the frozen spec every round of
 this project has run under, and nothing here was changed to chase it.
 
-So the sentence this round earns:
-
-> **The fly reached the optimum of every reward we could compute from the game,
-> and that optimum is a tie with always-discard.** It reaches it now in every seed
-> rather than two in three, it earns more chips than always-discard (966 against
-> 835), and at +0.065 [+0.000, +0.130] it is not distinguishable from doing
-> nothing. The reward is no longer what is stopping it.
+**The fly reached the optimum of every reward we could compute from the game,
+and that optimum is a tie with always-discard.** It reaches it now in every seed
+rather than two in three, it earns more chips than always-discard (966 against
+835), and at +0.065 [+0.000, +0.130] it is not distinguishable from doing
+nothing. The reward is no longer what is stopping it.
 
 Nothing was tuned after seeing a result. The gamma sweep was preregistered as a
 sweep; all three values are reported; all three give the same greedy number. The
 section 6 probe was added after the result, is marked as such, and promoted no
-condition -- it only changed the wording of this verdict, from a claim the data
+condition; it only changed the wording of this verdict, from a claim the data
 did not support to one it does.
 
 ## 8. Two corrections to this section's own framing
@@ -1614,8 +1610,8 @@ did not support to one it does.
 * **D's Holm-corrected p of 0.039 is significance in the wrong direction.** The
   decision rule is one-sided (`D_discard > 0`) while the preregistered p is
   two-sided, so a small p on a *negative* delta means D is reliably **worse**
-  than always-discard, not nearly better. No verdict changes -- D fails on the CI
-  direction regardless -- but the table row should not be read as a near-miss.
+  than always-discard, not nearly better. No verdict changes (D fails on the CI
+  direction regardless), but the table row should not be read as a near-miss.
 * **The preregistration says a *Drosophila* olfactory trace "persists for at
   least that long" of 15 s.** That overstates Galili et al. 2011, which tested a
   15 s gap and found learning across it; it does not establish 15 s as a lower
