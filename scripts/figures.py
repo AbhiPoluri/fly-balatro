@@ -173,7 +173,27 @@ def vline(ax, x: float, label: str, color: str = S.C_CHANCE, ls=(0, (4, 3)),
     )
 
 
-def box(ax, x, y, w, h, title, lines, accent=S.MUTED, fill=S.BG_DEEP, title_color=None):
+def node(
+    ax,
+    x,
+    y,
+    w,
+    h,
+    title,
+    lines=(),
+    accent=S.MUTED,
+    fill=S.BG_DEEP,
+    title_color=None,
+    title_size=11.0,
+    body_size=8.0,
+    pad=12,
+):
+    """A labelled box on the schematic axes, where 1 data unit == 1/100 inch.
+
+    Type sizes are parameters, not constants, because figure 1 has to stay
+    legible when GitHub renders it at ~900 px: at this canvas width that is a
+    scale factor of about 0.4, so nothing below ~7.5 pt survives the trip.
+    """
     ax.add_patch(
         FancyBboxPatch(
             (x, y),
@@ -182,30 +202,30 @@ def box(ax, x, y, w, h, title, lines, accent=S.MUTED, fill=S.BG_DEEP, title_colo
             boxstyle="round,pad=0,rounding_size=6",
             facecolor=fill,
             edgecolor=accent,
-            linewidth=0.9,
+            linewidth=1.0,
             zorder=3,
         )
     )
     ax.text(
-        x + 10,
-        y + h - 13,
+        x + pad,
+        y + h - pad,
         title,
         ha="left",
         va="top",
         color=title_color or accent,
-        fontsize=8.2,
+        fontsize=title_size,
         weight="bold",
         zorder=4,
     )
     if lines:
         ax.text(
-            x + 10,
-            y + h - 30,
+            x + pad,
+            y + h - pad - title_size * 2.1,
             "\n".join(lines),
             ha="left",
             va="top",
             color=S.MUTED,
-            fontsize=6.6,
+            fontsize=body_size,
             linespacing=1.6,
             zorder=4,
         )
@@ -229,14 +249,30 @@ def arrow(ax, p0, p1, color=S.RULE, lw=1.0, style="-|>", ls="-", rad=0.0, z=2):
     )
 
 
+def elbow(ax, pts, color=S.RULE, lw=1.0, ls="-", z=2):
+    """A right-angled polyline ending in an arrowhead on its last segment."""
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    ax.plot(xs[:-1], ys[:-1], color=color, lw=lw, ls=ls, zorder=z,
+            solid_capstyle="projecting")
+    arrow(ax, pts[-2], pts[-1], color=color, lw=lw, z=z)
+
+
 # =========================================================================== #
 # 1. pipeline schematic
 # =========================================================================== #
 def fig_pipeline(src: Sources) -> None:
+    """The flow, and the one boundary that matters.
+
+    Deliberately short of words. The fitted-versus-frozen accounting that used
+    to occupy a third of this canvas is a table in the README instead: prose
+    belongs there, and at README width it was unreadable here.
+    """
     cfg = src("bc3/eval.json")["_config"]
     stats = src("mb2/input_stats.json")
     pools = src("plast3/run_frozen_current.json")
     act = src("calyx/probe_raw.json")["real"]["activity"]
+    split = src("bc3/train_metrics.json")["_split"]
 
     graph = stats["graph"]
     glom = stats["glomeruli"]
@@ -244,84 +280,91 @@ def fig_pipeline(src: Sources) -> None:
     pl = pools["plasticity_pools"]
     dec = pools["decider"]
     om = pools["odour_map"]
+    held_in = split["train"] + split["val"]
 
-    # full-figure axes so 1 data unit == 1/100 inch and nothing overflows
-    W, H = 1520, 650
+    # every subset of size 1..5 of an 8-card hand -- a combinatorial fact about
+    # flybalatro.hands, derived here rather than typed in
+    n_subsets = sum(math.comb(8, k) for k in range(1, 6))
+
+    # full-figure axes so 1 data unit == 1/100 inch and nothing overflows.
+    # 11.2 in wide: at GitHub's ~900 px README width that is a 0.40 scale, so
+    # the 11 pt box titles land at ~13 px and the 8 pt body at ~9 px.
+    W, H = 1120, 900
     fig = plt.figure(figsize=(W / 100, H / 100))
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis("off")
 
-    ROW_Y, ROW_H = 332, 176
-    GTOP, GBOT = 602, 324
+    BX = 700  # the boundary
+    ROW_Y, ROW_H = 540, 140  # the stations either side of it
+    MID = ROW_Y + ROW_H / 2
 
-    ax.text(24, 640, "the pipeline, and where the boundary is",
-            color=S.BRIGHT, fontsize=13.5, weight="bold", va="top")
-    ax.text(24, 613,
-            "The fly is never shown a card. It is shown an odour that stands for an "
-            "already-solved hand, and it decides what to do about it.",
-            color=S.MUTED, fontsize=7.6, va="top")
+    ax.text(24, 892, "the pipeline, and where the boundary is",
+            color=S.BRIGHT, fontsize=15, weight="bold", va="top")
+    ax.text(24, 865,
+            "The fly is never shown a card. It is shown an odour that stands for "
+            "an already-solved hand, and it decides what to do about it.",
+            color=S.MUTED, fontsize=9, va="top")
+
+    # ---- the boundary ----------------------------------------------------- #
+    ax.plot([BX, BX], [50, 812], color=S.AMBER, lw=1.4, ls=(0, (3, 4)), zorder=2)
+    ax.text(BX, 820, "THE BOUNDARY", color=S.AMBER, fontsize=10.5, weight="bold",
+            ha="center", va="bottom")
+    ax.text(BX, 802, f"{n_bits} bits cross.  Nothing else does.", color=S.AMBER,
+            fontsize=8.5, ha="center", va="bottom", alpha=0.8)
+    ax.text(BX + 9, 505, "everything the fly is ever told", color=S.AMBER,
+            fontsize=7.5, rotation=90, ha="center", va="center", alpha=0.95)
 
     # ---- outside the brain ------------------------------------------------ #
-    ax.add_patch(FancyBboxPatch((14, GBOT), 686, GTOP - GBOT,
+    ax.add_patch(FancyBboxPatch((14, 520), 662, 268,
                                 boxstyle="round,pad=0,rounding_size=8",
                                 facecolor="#101418", edgecolor=S.RULE,
                                 linewidth=0.9, zorder=1))
-    ax.text(30, GTOP - 12, "COMPUTED OUTSIDE THE BRAIN", color=S.ORANGE,
-            fontsize=8.6, weight="bold", va="top")
-    ax.text(30, GTOP - 32,
+    ax.text(32, 772, "COMPUTED OUTSIDE THE BRAIN", color=S.ORANGE,
+            fontsize=11, weight="bold", va="top")
+    ax.text(32, 748,
             "ordinary Python, not biological in any sense.\n"
             "The poker is solved here, before anything reaches the fly.",
-            color=S.MUTED, fontsize=7.0, va="top", linespacing=1.6)
+            color=S.MUTED, fontsize=8.5, va="top", linespacing=1.6)
 
-    box(ax, 30, ROW_Y, 150, ROW_H, "Balatro",
-        ["the dealt hand,", "the blind, the chips", "still needed, plays", "and discards left"],
-        accent=S.SLATE, title_color=S.TEXT)
-    box(ax, 206, ROW_Y, 252, ROW_H, "flybalatro/hands.py",
-        ["enumerates all 218 subsets of",
-         "size 1-5 of the dealt cards,",
-         "classifies and scores each one",
-         "exactly as balatro-rs does,",
-         "picks the best subset"],
-        accent=S.ORANGE, title_color=S.ORANGE)
-    box(ax, 484, ROW_Y, 200, ROW_H, f"{n_bits} relay bits",
-        ["best hand type (9)",
-         "best-subset slot mask (8)",
-         "type the selection forms (10)",
-         "selection is the best (1)",
-         "score vs still-needed (4)"],
-        accent=S.ORANGE, title_color=S.TEXT)
-    arrow(ax, (180, ROW_Y + 72), (204, ROW_Y + 72), color=S.SLATE)
-    arrow(ax, (458, ROW_Y + 72), (482, ROW_Y + 72), color=S.ORANGE)
-
-    # ---- the boundary ----------------------------------------------------- #
-    ax.plot([710, 710], [40, 592], color=S.AMBER, lw=1.0, ls=(0, (3, 4)), zorder=2)
-    ax.text(702, 366, "everything the fly\nis ever told  ->", color=S.AMBER,
-            fontsize=7.8, ha="right", va="center", weight="bold", linespacing=1.7)
-    arrow(ax, (684, ROW_Y + 72), (738, ROW_Y + 72), color=S.AMBER, lw=1.3)
+    node(ax, 32, ROW_Y, 150, ROW_H, "Balatro",
+         ["the dealt hand,", "the blind, and the", "chips still needed"],
+         accent=S.SLATE, title_color=S.TEXT)
+    node(ax, 208, ROW_Y, 230, ROW_H, "flybalatro/hands.py",
+         [f"enumerates all {n_subsets} subsets",
+          "of the dealt cards, scores",
+          "each exactly as the engine",
+          "does, picks the best"],
+         accent=S.ORANGE, title_color=S.ORANGE)
+    node(ax, 464, ROW_Y, 180, ROW_H, f"{n_bits} relay bits",
+         ["best hand type, which", "cards, what's selected,", "score vs chips needed"],
+         accent=S.ORANGE, title_color=S.ORANGE)
+    arrow(ax, (182, MID), (206, MID), color=S.SLATE, lw=1.2)
+    arrow(ax, (438, MID), (462, MID), color=S.ORANGE, lw=1.2)
+    arrow(ax, (644, MID), (740, MID), color=S.AMBER, lw=2.0)
 
     # ---- inside the fly --------------------------------------------------- #
-    ax.add_patch(FancyBboxPatch((722, GBOT), 508, GTOP - GBOT,
+    ax.add_patch(FancyBboxPatch((724, 284), 382, 504,
                                 boxstyle="round,pad=0,rounding_size=8",
                                 facecolor="#0b0f14", edgecolor=S.RULE,
                                 linewidth=0.9, zorder=1))
-    ax.text(738, GTOP - 12, "MaleCNS v1.0  --  FROZEN", color=S.AMBER,
-            fontsize=8.6, weight="bold", va="top")
-    ax.text(738, GTOP - 32,
+    ax.text(742, 772, "MaleCNS v1.0  --  FROZEN", color=S.AMBER,
+            fontsize=11, weight="bold", va="top")
+    ax.text(742, 748,
             f"{graph['neurons']:,} neurons, {graph['edges_csr']:,} edges at >= "
-            f"{graph['threshold']} synapses, leaky integrate-and-fire.\n"
-            f"One {cfg['window_ms']:.0f} ms window from reset. No weight changes "
-            "anywhere on this path.",
-            color=S.MUTED, fontsize=7.0, va="top", linespacing=1.6)
+            f"{graph['threshold']} synapses,\n"
+            f"leaky integrate-and-fire, one {cfg['window_ms']:.0f} ms window from "
+            "reset.\nNo weight changes anywhere on this path.",
+            color=S.MUTED, fontsize=8.5, va="top", linespacing=1.6)
 
-    box(ax, 738, ROW_Y, 190, ROW_H, f"{n_bits} ORN glomeruli",
-        ["1 relay bit = 1 whole",
-         "olfactory receptor type",
-         f"{om['n_driven_neurons']:,} ORNs, {om['neurons_min']}-{om['neurons_max']} per type",
-         f"{glom['active_glomeruli_mean']:.1f} of {n_bits} lit per state",
-         f"{om['drive_mv']:.0f} mV tonic drive"],
-        accent=S.CYAN, title_color=S.CYAN)
+    node(ax, 742, ROW_Y, 348, ROW_H, f"{n_bits} ORN glomeruli",
+         ["1 relay bit = 1 whole olfactory receptor type.",
+          f"{om['n_driven_neurons']:,} ORNs, {om['neurons_min']}-{om['neurons_max']}"
+          " per type.",
+          f"{glom['active_glomeruli_mean']:.1f} of {n_bits} lit per state, "
+          f"{om['drive_mv']:.0f} mV tonic drive."],
+         accent=S.CYAN, title_color=S.CYAN)
 
     chain = [
         ("ALPN", act["alpn"]["n"], S.TEAL, f"{act['alpn']['mean_rate_hz']:.0f} Hz"),
@@ -329,112 +372,95 @@ def fig_pipeline(src: Sources) -> None:
         ("MBON", act["mbon"]["n"], S.AMBER, f"{act['mbon']['mean_rate_hz']:.1f} Hz"),
         ("descending", act["dn"]["n"], S.ORANGE, f"{act['dn']['mean_rate_hz']:.1f} Hz"),
     ]
-    x0, w, bh, gap = 956, 258, 34, 12
-    top = ROW_Y + ROW_H - 34
+    px, pw, ph, pgap = 742, 348, 42, 12
+    ptop = 502  # top of the first pill
     ys = []
     for i, (name, n, col, rate) in enumerate(chain):
-        y = top - i * (bh + gap)
+        y = ptop - i * (ph + pgap) - ph
         ys.append(y)
-        ax.add_patch(FancyBboxPatch((x0, y), w, bh,
+        ax.add_patch(FancyBboxPatch((px, y), pw, ph,
                                     boxstyle="round,pad=0,rounding_size=4",
                                     facecolor=S.BG_DEEP, edgecolor=col,
-                                    linewidth=0.9, zorder=3))
-        ax.text(x0 + 10, y + bh / 2, name, va="center", color=col, fontsize=7.6, zorder=4)
-        ax.text(x0 + w - 10, y + bh / 2, f"{n:,}    {rate}", va="center", ha="right",
-                color=S.MUTED, fontsize=6.8, zorder=4)
-        if i:
-            arrow(ax, (x0 + 20, y + bh + gap), (x0 + 20, y + bh),
-                  color=chain[i - 1][2], lw=0.9)
-    arrow(ax, (928, ROW_Y + 72), (954, top + bh / 2), color=S.CYAN, rad=-0.14)
+                                    linewidth=1.0, zorder=3))
+        ax.text(px + 12, y + ph / 2, name, va="center", color=col, fontsize=9.5,
+                zorder=4)
+        ax.text(px + pw - 12, y + ph / 2, f"{n:,}     {rate}", va="center",
+                ha="right", color=S.MUTED, fontsize=8.5, zorder=4)
+    arrow(ax, (px + 40, ROW_Y), (px + 40, ptop), color=S.CYAN, lw=1.2)
+    for i in range(1, len(chain)):
+        arrow(ax, (px + 40, ys[i - 1]), (px + 40, ys[i] + ph),
+              color=chain[i - 1][2], lw=1.2)
 
-    # ---- the two heads ---------------------------------------------------- #
-    hx, hw = 1256, 232
-    box(ax, hx, 434, hw, 168, "(a) trained readout",
-        ["linear or 1x256 MLP on",
-         "log1p spike counts.",
-         "",
-         "FITTED to the teacher's",
-         "actions by behaviour",
-         "cloning  (v1, v2, v3)."],
-        accent=S.SLATE, title_color=S.TEXT)
-    box(ax, hx, 208, hw, 202, "(b) MBON valence rule",
-        [f"mean rate({dec['n_approach']} approach MBONs)",
-         f"- mean rate({dec['n_avoid']} avoid MBONs)",
-         "+ bias, through a sigmoid.",
-         "",
-         "NO trained action readout.",
-         "Bias, temperature, per-KC",
-         "thresholds and pulse gain",
-         "are calibrated label-free."],
-        accent=S.AMBER, title_color=S.AMBER)
-    arrow(ax, (1214, ys[3] + bh / 2), (1254, 516), color=S.SLATE, rad=0.18)
-    arrow(ax, (1214, ys[2] + bh / 2), (1254, 340), color=S.AMBER, rad=-0.12)
-
-    box(ax, hx, 78, hw, 100, "action",
-        ["play the best subset,", "discard the junk and dig,", "or select a card"],
-        accent=S.GREEN, title_color=S.GREEN)
-    arrow(ax, (hx + hw / 2, 208), (hx + hw / 2, 180), color=S.AMBER)
-    ax.plot([hx + hw + 8, hx + hw + 8], [518, 128], color=S.SLATE, lw=0.9, zorder=2)
-    ax.plot([hx + hw, hx + hw + 8], [518, 518], color=S.SLATE, lw=0.9, zorder=2)
-    arrow(ax, (hx + hw + 8, 128), (hx + hw, 128), color=S.SLATE, lw=0.9)
-
-    # ---- dopamine loop ---------------------------------------------------- #
-    ax.add_patch(FancyBboxPatch((722, 66), 508, 166,
-                                boxstyle="round,pad=0,rounding_size=6",
-                                facecolor="#0b120e", edgecolor=S.GREEN,
-                                linewidth=0.9, zorder=1))
-    ax.text(738, 218, "DOPAMINE  --  the plasticity path only", color=S.GREEN,
-            fontsize=8.0, weight="bold", va="top")
-    ax.text(738, 198,
-            "the chips the game paid  ->  reward if the play made its fair\n"
-            "share, punishment if it did not  ->  PAM / PPL1 gate depression\n"
-            f"of {pl['kc_mbon_edges']:,} KC -> MBON synapses "
-            f"(floor {pl['weight_floor']:g}x, never negative,\n"
-            "never above original).\n\n"
-            "An imposed harness signal computed from the game,\n"
-            "not a signal the fly generates.",
-            color=S.MUTED, fontsize=6.8, va="top", linespacing=1.65)
-    arrow(ax, (1252, 122), (1232, 122), color=S.GREEN, style="-|>", lw=1.0)
-    kc_mbon_gap = (ys[2] + bh + ys[1]) / 2
-    ax.plot([942, 942], [232, kc_mbon_gap], color=S.GREEN, lw=1.0,
-            ls=(0, (3, 3)), zorder=2)
-    arrow(ax, (942, kc_mbon_gap), (954, kc_mbon_gap), color=S.GREEN, lw=1.0)
-    ax.text(934, 272, "depresses\nKC -> MBON", color=S.GREEN, fontsize=6.6,
-            va="center", ha="right", linespacing=1.6)
-
-    # ---- what is fitted, and where ---------------------------------------- #
-    calib = pools["calibration"]
-    split = src("bc3/train_metrics.json")["_split"]
-    ratio = src("plast2/eta_calib.json")["chosen"]["0.05"]["ratio"]
-    ax.add_patch(FancyBboxPatch((14, 66), 686, 246,
+    # ---- the two heads, side by side in one box --------------------------- #
+    hx, hy, hw, hh = 724, 96, 382, 176
+    ax.add_patch(FancyBboxPatch((hx, hy), hw, hh,
                                 boxstyle="round,pad=0,rounding_size=8",
-                                facecolor="#101418", edgecolor=S.RULE,
-                                linewidth=0.9, zorder=1))
-    ax.text(30, 298, "WHAT IS FITTED, AND WHERE", color=S.TEXT,
-            fontsize=8.2, weight="bold", va="top")
-    ax.text(30, 276,
-            "(a)  is a trained action readout: a classifier fitted to the teacher's "
-            f"chosen action\n     on {split['train'] + split['val']:,} held-in states. "
-            "Everything it gets right is information that\n"
-            "     survived the trip through the fly.\n\n"
-            "(b)  has NO trained action readout. Nothing in it is fitted to an action, "
-            "a label or\n     an outcome. These ARE calibrated, all label-free and all "
-            "before any learning:\n"
-            f"     the decision bias ({calib['bias']:.3f}) and softmax temperature "
-            f"({calib['temperature']:.3f}) from {calib['n']} hands;\n"
-            f"     {pl['kc']:,} per-Kenyon-cell homeostatic thresholds, each cell seeing "
-            "only its own\n"
-            f"     firing rate; and the punishment/reward per-pulse gain ratio "
-            f"({ratio:.2f}).\n\n"
-            "The connectome gives topology, synapse counts and a predicted sign per "
-            "neuron. It does not give\n"
-            "per-synapse efficacy or spike thresholds, so the APL gains and the uniform "
-            "-45 mV threshold\nare ours, not data.",
-            color=S.MUTED, fontsize=6.8, va="top", linespacing=1.62)
+                                facecolor="#0e1116", edgecolor=S.RULE,
+                                linewidth=0.9, zorder=3))
+    ax.text(hx + 14, hy + hh - 12, "then ONE OF TWO THINGS decides",
+            color=S.TEXT, fontsize=9.5, weight="bold", va="top", zorder=4)
+    lanes = [
+        (730, S.SLATE, S.TEXT, "(a) trained readout",
+         ["linear or 1x256 MLP on",
+          "log1p ALPN+KC+DN counts.",
+          "",
+          "FITTED to the teacher's",
+          f"actions on {held_in:,}",
+          "held-in states."]),
+        (924, S.AMBER, S.AMBER, "(b) MBON valence rule",
+         [f"mean rate({dec['n_approach']} approach)",
+          f"- mean rate({dec['n_avoid']} avoid)",
+          "+ bias, through a sigmoid.",
+          "",
+          "NO trained action readout.",
+          "4 label-free calibrations."]),
+    ]
+    for lx, rule, tcol, ltitle, lines in lanes:
+        ax.plot([lx, lx], [hy + 14, hy + hh - 34], color=rule, lw=2.0, zorder=4)
+        ax.text(lx + 10, hy + hh - 40, ltitle, color=tcol, fontsize=9.0,
+                weight="bold", va="top", zorder=4)
+        ax.text(lx + 10, hy + hh - 62, "\n".join(lines), color=S.MUTED,
+                fontsize=7.5, va="top", linespacing=1.6, zorder=4)
+    arrow(ax, (800, ys[3]), (800, hy + hh), color=S.SLATE, lw=1.2)
+    elbow(ax, [(1090, ys[2] + ph / 2), (1098, ys[2] + ph / 2), (1098, hy + hh)],
+          color=S.AMBER, lw=1.2)
+
+    # ---- the action, and the loop back to the game ------------------------ #
+    node(ax, 464, 129, 180, 110, "action",
+         ["play the best subset,", "discard and dig, or", "select a card"],
+         accent=S.GREEN, title_color=S.GREEN)
+    arrow(ax, (722, 184), (646, 184), color=S.GREEN, lw=1.4)
+    elbow(ax, [(464, 184), (450, 184), (450, 495), (107, 495), (107, ROW_Y - 2)],
+          color=S.SLATE_DIM, lw=0.9)
+    ax.text(115, 502, "the chosen action goes back to the game",
+            color=S.SLATE, fontsize=7.5, va="bottom")
+
+    # ---- dopamine: imposed from outside, reaching in ---------------------- #
+    ax.add_patch(FancyBboxPatch((32, 300), 400, 170,
+                                boxstyle="round,pad=0,rounding_size=8",
+                                facecolor="#0b120e", edgecolor=S.GREEN,
+                                linewidth=1.0, zorder=3))
+    ax.text(46, 456, "DOPAMINE  --  path (b) only", color=S.GREEN,
+            fontsize=10, weight="bold", va="top", zorder=4)
+    ax.text(46, 432,
+            "The chips the game paid become reward if the play made\n"
+            "its fair share and punishment if it did not, gating\n"
+            f"depression of {pl['kc_mbon_edges']:,} KC -> MBON synapses.\n\n"
+            "An imposed harness signal computed from the game,\n"
+            "not one the fly generates.",
+            color=S.MUTED, fontsize=8, va="top", linespacing=1.6, zorder=4)
+    dop_y = (ys[1] + ys[2] + ph) / 2
+    arrow(ax, (432, dop_y), (740, dop_y), color=S.GREEN, lw=1.2, ls=(0, (4, 3)))
+    ax.text(586, dop_y + 7, "depresses KC -> MBON", color=S.GREEN, fontsize=7.5,
+            ha="center", va="bottom")
 
     S.footer(fig, src.line(
-        "Every count on this diagram is read from the artefact that produced it; "
-        "nothing here is drawn to scale."), y=0.012)
+        "Orange marks what is computed outside the brain, green the harness "
+        "signals that cross into and out of it, and each population inside the "
+        "fly keeps the colour it has in the live dashboard. Counts and rates are "
+        "read from the artefact that produced them; nothing here is drawn to "
+        "scale. What is fitted and what is merely calibrated is tabulated in the "
+        "README, beside this figure."), y=0.010)
     save(fig, "01_pipeline", tight=False)
 
 
@@ -866,7 +892,7 @@ def fig_calyx(src: Sources) -> None:
     seeds = ["rw1", "rw2", "rw3"]
 
     fig = plt.figure(figsize=(14.4, 6.8))
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.02, 0.92, 1.06], wspace=0.46,
+    gs = fig.add_gridspec(1, 3, width_ratios=[1.10, 0.96, 1.00], wspace=0.40,
                           left=0.125, right=0.985, top=0.805, bottom=0.235)
 
     # ---- panel A: real sits inside the rewired band ----------------------- #
@@ -974,61 +1000,52 @@ def fig_calyx(src: Sources) -> None:
     # ---- panel C: the activity-matching table ----------------------------- #
     ax = fig.add_subplot(gs[0, 2])
     ax.axis("off")
-    ax.text(0, 1.0, "C · the control is fair before any correction",
-            color=S.BRIGHT, fontsize=10, weight="bold", va="top")
+    ax.text(0, 1.0, "C · the control is fair before\n     any correction",
+            color=S.BRIGHT, fontsize=10, weight="bold", va="top", linespacing=1.45)
     ax.text(
-        0, 0.945,
-        "Unlike the global shuffle this replaces, the rewired networks\n"
-        "land in the same activity regime with no recalibration at all.",
-        color=S.MUTED, fontsize=7.0, va="top", linespacing=1.6,
+        0, 0.885,
+        "The rewired networks land in the same activity\n"
+        "regime with no recalibration at all. Rates in Hz.",
+        color=S.MUTED, fontsize=7.6, va="top", linespacing=1.6,
     )
 
     def fmt_row(fn, fmt):
         return [fmt.format(fn(praw["real"]))] + [fmt.format(fn(praw[s])) for s in seeds]
 
     table = [
-        ("ALPN mean rate",
-         fmt_row(lambda d: d["activity"]["alpn"]["mean_rate_hz"], "{:.1f} Hz")),
-        ("KC mean rate",
-         fmt_row(lambda d: d["activity"]["kc"]["mean_rate_hz"], "{:.2f} Hz")),
-        ("KC active per state",
+        ("ALPN rate",
+         fmt_row(lambda d: d["activity"]["alpn"]["mean_rate_hz"], "{:.1f}")),
+        ("KC rate",
+         fmt_row(lambda d: d["activity"]["kc"]["mean_rate_hz"], "{:.2f}")),
+        ("KC active / state",
          fmt_row(lambda d: d["activity"]["kc"]["active_per_state"], "{:.0f}")),
-        ("MBON mean rate",
-         fmt_row(lambda d: d["activity"]["mbon"]["mean_rate_hz"], "{:.2f} Hz")),
-        ("DN mean rate",
-         fmt_row(lambda d: d["activity"]["dn"]["mean_rate_hz"], "{:.2f} Hz")),
+        ("MBON rate",
+         fmt_row(lambda d: d["activity"]["mbon"]["mean_rate_hz"], "{:.2f}")),
+        ("DN rate",
+         fmt_row(lambda d: d["activity"]["dn"]["mean_rate_hz"], "{:.2f}")),
         ("non-constant channels",
          fmt_row(lambda d: d["activity"]["non_constant_channels_alpn_kc_dn"], "{:,}")),
     ]
-    x_cols = [0.55, 0.69, 0.825, 0.96]
+    x_cols = [0.60, 0.727, 0.854, 0.981]
     head = ["real", "rw1", "rw2", "rw3"]
-    y0 = 0.85
+    y0 = 0.735
     for x, h in zip(x_cols, head):
         ax.text(x, y0, h, color=S.C_REAL if h == "real" else S.C_REWIRED,
-                fontsize=7.2, ha="right", va="top", weight="bold")
-    ax.plot([0, 0.97], [y0 - 0.035, y0 - 0.035], color=S.RULE, lw=0.8)
+                fontsize=8.0, ha="right", va="top", weight="bold")
+    ax.plot([0, 0.985], [y0 - 0.038, y0 - 0.038], color=S.RULE, lw=0.8)
     for i, (name, vals) in enumerate(table):
-        yy = y0 - 0.075 - i * 0.062
-        ax.text(0, yy, name, color=S.TEXT, fontsize=7.0, va="top")
+        yy = y0 - 0.082 - i * 0.072
+        ax.text(0, yy, name, color=S.TEXT, fontsize=7.8, va="top")
         for x, v in zip(x_cols, vals):
             ax.text(x, yy, v, color=S.TEXT if x == x_cols[0] else S.MUTED,
-                    fontsize=7.0, ha="right", va="top")
+                    fontsize=7.8, ha="right", va="top")
     ax.text(
-        0, y0 - 0.075 - len(table) * 0.062 - 0.055,
-        "For contrast, the global degree-preserving shuffle this\n"
-        "control replaces destroys the glomerular convergence the\n"
-        "encoding depends on and leaves a near-silent network --\n"
-        "a working brain against a dead one. That comparison is\n"
-        "retracted; this is the control that answers it instead.",
-        color=S.RED, fontsize=6.6, va="top", linespacing=1.65,
-    )
-    ax.text(
-        0, y0 - 0.075 - len(table) * 0.062 - 0.29,
-        "Caron et al. 2013 report PN -> KC connectivity in Drosophila\n"
-        "as largely random with respect to glomerular identity, so a\n"
-        "near-null here agrees with the biology rather than indicting\n"
-        "the model. A large effect would have been the surprise.",
-        color=S.MUTED, fontsize=6.6, va="top", linespacing=1.65,
+        0, y0 - 0.082 - len(table) * 0.072 - 0.055,
+        "The global shuffle this control replaces left a\n"
+        "near-silent network and is retracted; the README\n"
+        "says why. Caron et al. 2013 make a near-null here\n"
+        "the expected result, not an indictment of the model.",
+        color=S.MUTED, fontsize=7.2, va="top", linespacing=1.7,
     )
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)

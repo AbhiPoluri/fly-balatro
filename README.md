@@ -36,15 +36,24 @@ ways worth writing down.
 | **The fly is frozen.** | 146,271 brain neurons, 5,146,572 edges at ≥5 synapses, leaky integrate-and-fire with Shiu et al. 2024 constants. One 50 ms window from reset per decision. No weight changes, except on the plasticity path below. |
 | **Then one of two things decides.** | **(a)** a trained readout — linear or a 1×256 MLP on log1p spike counts, fitted to 120,755 teacher actions. Or **(b)** no trained action readout at all: the fly's own mushroom-body output neurons, `mean rate(66 approach) − mean rate(24 avoid) + bias`, and dopamine-gated depression of its 33,496 KC→MBON synapses driven by the chips the game pays. |
 
-**"No trained action readout" is not "nothing is fitted."** On path (b) nothing is
-fitted to an action, a label or an outcome — but the decision bias, the softmax
-temperature, 4,064 per-Kenyon-cell homeostatic thresholds and the
-punishment/reward per-pulse gain ratio *are* calibrated, all label-free and all
-before any learning. And dopamine is an **imposed harness signal** computed from
-the game's chips, not something the fly generates. Those four calibrations are
-named at every claim that depends on them.
-
 ![the pipeline, and where the boundary is](figures/01_pipeline.png)
+
+### What is fitted, what is only calibrated, and what is ours
+
+**"No trained action readout" is not "nothing is fitted."** Dopamine is an
+**imposed harness signal** computed from the game's chips, not something the fly
+generates, and four quantities on path (b) are calibrated before any learning
+starts. None of them sees an action, a label or an outcome; all four are named
+again at every claim that depends on them.
+
+| | path | what it is fitted or calibrated to |
+|---|---|---|
+| **trained action readout** — linear or a 1×256 MLP on log1p spike counts | (a) | **Fitted.** The teacher's chosen action on **120,755** held-in states. Everything it gets right is information that survived the trip through the fly. |
+| **decision bias** (−2.616) and **softmax temperature** (0.838) | (b) | Calibrated, **label-free**, from 200 hands before any learning. |
+| **4,064 per-Kenyon-cell homeostatic thresholds** | (b) | Calibrated, **label-free**: each cell sees only its own firing rate. |
+| **punishment / reward per-pulse gain ratio** (3.81) | (b) | Calibrated, **label-free**, by matching absolute weight change per pulse. |
+| **the APL gains, one global conductance, the uniform −45 mV spike threshold** | both | Neither fitted nor measured — **ours**. The connectome gives topology, synapse counts and a predicted sign per neuron; it does not give per-synapse efficacy or spike thresholds. Listed in [`outputs/mb/REPORT.md`](outputs/mb/REPORT.md) §1. |
+| **the 5,146,572 connectome edges themselves** | both | **Frozen.** Nothing moves on path (a) at all; on path (b) only the 33,496 KC→MBON weights move, under dopamine-gated depression. |
 
 ---
 
