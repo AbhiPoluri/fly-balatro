@@ -220,10 +220,21 @@ cover a 211 px card tilted 5.5°; the tilted box is the card's width.
 
 ### What is and is not verified
 
-Balatro was **not running** for any of this work (it exited before it started),
-so the Lua was written against the game's own decompiled `engine/node.lua` and
-`engine/moveable.lua`, syntax-checked, and installed, but **it has never been
-executed**. What that leaves:
+Balatro was **not running** for any of the work described in this section (it
+exited before it started), so the Lua was written against the game's own
+decompiled `engine/node.lua` and `engine/moveable.lua`, syntax-checked, and
+installed, but was not executed at the time of writing. What that left:
+
+> **Correction (2026-09-13).** The Lua has since executed. The game was
+> relaunched at 18:51:50 and seven `--plastic` sessions ran against it between
+> 19:07 and 19:33 (`outputs/realgame/logs/2026-09-13T18-51-50/`,
+> `outputs/realgame/log_gameview_runs.jsonl`). Every decision record from those
+> sessions carries the per-card `rect {x, y, w, h, r, moving}` and the `screen`
+> block that `patches/balatrobot-gamestate.patch` alone adds, so open item 1
+> below, whether the mod emits the fields at all, is settled. Item 4 is settled
+> in part: `width` 1209 against `pixel_width` 2418, so the two sources do differ.
+> Nothing here shows that the boxes land correctly on a moving card; that is
+> still open.
 
 * **Verified.** The Python consumer, on rects fed in by hand: parsing,
   the all-or-nothing fallback, hands of 1/2/3/5/7/8 cards, malformed and
