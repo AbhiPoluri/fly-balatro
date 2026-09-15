@@ -30,6 +30,23 @@ Kenyon cells fire ~50% vs ~5% in vivo: the untuned model's mushroom body is satu
 Most-frequent-legal-action baseline for imitation: 0.356.
 
 ## Reading
+
+> **Correction (v3, 2026-09-13).** Two conclusions in this section were overturned
+> later and are not live. (1) "Passing the state through the fly costs information
+> at every stage", and the gate probe's reading that the fly garbles what it is
+> given, were an artefact of **this encoding**, not a property of the fly. One
+> relay bit per whole ORN type instead of 10 scattered receptors takes Kenyon-cell
+> hand-type decoding to 1.000 and descending-neuron decoding to 0.842; see
+> [Glomerular encoding](#glomerular-encoding-2026-09-13) and
+> [v3](#v3-glomerular-encoding-2026-09-13). (2) "A degree-preserving shuffle is a
+> better reservoir than the evolved wiring" does not survive either: the ordering
+> reverses on the whole-brain linear readout in v3, and under the glomerular
+> encoding the global shuffle is not a like-for-like control at all, as
+> [that section's caveat](#did-real-wiring-stop-losing-to-shuffled) says. The
+> opposite claim, that real wiring beats shuffled, is **also retracted**; the
+> control that replaces it is the [calyx rewiring control](#calyx-rewiring-control),
+> and it finds no effect either way.
+
 The ordering raw bits > random projection > shuffled connectome > real connectome is established
 by the probe and by imitation accuracy (n≈28.7k held-out states; the shuffled-vs-real gap is
 0.553 vs 0.478 linear). In live play every brain condition lands between random (100 chips) and
@@ -110,6 +127,19 @@ Floors on the same held-out split (n = 29,282 states): most-frequent-legal-actio
 0.354, uniform-random-legal 0.205.
 
 ## Does the fly play real hand types?
+
+> **Correction (v3, 2026-09-13).** "The relay arrives degraded, not intact" and
+> "identity survives one synapse into the antennal lobe and is gone by the
+> descending neurons" describe the v1/v2 **encoding**, not the fly. Under one
+> relay bit per whole ORN glomerulus the same readout finds the best available
+> subset on 81% of plays against a no-brain control's 84%, and the descending
+> neurons decode hand type at 0.842. "Shuffled wiring beats real at every depth"
+> is superseded too: it reverses on the whole-brain linear readout in v3, and
+> under that encoding the global shuffle stops being a like-for-like control.
+> See [v3](#v3-glomerular-encoding-2026-09-13), its
+> [shuffle caveat](#did-real-wiring-stop-losing-to-shuffled), and the
+> [calyx rewiring control](#calyx-rewiring-control) for the control that replaces
+> the global shuffle.
 
 Every row's plays, classified by the relay bits the brain was driven with
 (`hand_evidence` in `outputs/bc2/eval.json`; "best" = fraction of plays where the
@@ -286,9 +316,9 @@ row, so that did not put anything in a loop.
 ## Imitation and live play (400 episodes, seeds 100000-100399, ante 1)
 
 **Read the linear column.** The 32 relay bits fed straight to an MLP score 0.755,
-and a random projection of the same 32 bits 0.757: that is the ceiling of what
-the fly is told. Every brain MLP row lands within 0.017 of it (0.740-0.750), so
-the MLP column is saturated and cannot separate wirings. The wiring argument is
+and a random projection of the same 32 bits 0.757: that is the best achieved on
+what the fly is told. Every brain MLP row except MBON-only lands within 0.017 of
+it (0.740-0.750), so the MLP column is saturated and cannot separate wirings. The wiring argument is
 in the linear column and in the hand-type table.
 
 | condition | imitation top-1 lin / MLP | clear ante 1 lin / MLP | mean chips lin / MLP |
@@ -946,8 +976,22 @@ fly that never plays until it must, and it sits **-0.123 [-0.217, -0.035]** agai
 best policy that reads only the score bucket (0.530).
 
 So the plasticity story **does not win, and it now fails for a reason that is measured
-rather than asserted: the reward, not the learning.** The dopamine
-ledger of the winning cell:
+rather than asserted: the reward, not the learning.**
+
+*Corrected (v4, 2026-09-14): that diagnosis did not survive.
+[Plasticity v4](#plasticity-v4-can-any-game-computable-reward-beat-always-discard-2026-09-14)
+replaced the reward twice and neither replacement beats always-discard; "paid its
+share but still lost the blind", the thing the reward would have to say, turns
+out to be inexpressible in **any** immediate same-hand reward term (0 of 2,374
+plays), and an eligibility trace that can reach it flips the `lt0.5` ledger from
++115 to -85 without changing the policy at all. A post-hoc probe (v4 section 6)
+then hands the rule a perfectly targeted punishment and it still cannot reach the
+0.530 policy: 83.6% of the synapses such a pulse can touch are already at the 5%
+weight floor. The binding constraint is the capacity of depression-only
+KC -> MBON plasticity, not the reward specification. The ledger below is
+unchanged; the conclusion drawn from it is superseded.*
+
+The dopamine ledger of the winning cell:
 
 | bucket | plays | rewarded | punished | learned P(play), greedy |
 |---|---|---|---|---|
@@ -962,7 +1006,8 @@ ledger of the winning cell:
 
 `lt0.5` comes out **net reward-positive** (139 vs 97), so the reward function *tells*
 the fly to play it, and the fly obeys. That is not a learning failure; it is the reward
-specification. `reward = chips_gained >= needed / plays_left` means "make your fair
+specification. *Corrected (v4): the ledger is right and that inference is not; see
+the note above and v4 sections 6 and 7.* `reward = chips_gained >= needed / plays_left` means "make your fair
 share of this blind", and with three or four plays left a hand scoring 0.25-0.5x what is
 still needed usually does make its share, while still not clearing the blind. The fly
 converged on the optimum of the signal it was given, and that optimum is
@@ -974,8 +1019,9 @@ in the current reward says that. The v1 and v2 caveats already flagged that "the
 thing" is defined by the same fair-share inequality the teacher uses; this round is
 where that caveat becomes the binding constraint.
 
-Two claims elsewhere in this file should be read with the same caution. The 0.757 at
-line 289 is an MLP on the raw 32 relay bits, an **achieved baseline**, not an
+Two claims elsewhere in this file should be read with the same caution. The 0.757 in
+the v3 imitation table is an MLP on a **random projection** of the 32 relay bits
+(0.755 is the MLP on the bits themselves), an **achieved baseline**, not an
 information-theoretic ceiling; and the "0.633 best odour-only policy" of the v1/v2
 sections was a search over three nested bucket policies on 60 seeds, which on 400 fresh
 seeds is 0.530.
@@ -1057,7 +1103,9 @@ comparison is claimed here.
 
 ## Artifacts
 
-`outputs/realgame/`: `log.jsonl` (253 per-decision records, all three runs),
+`outputs/realgame/`: `log.jsonl` (the three runs are its first 253 per-decision
+records; later sessions the same evening appended to the same file, which now
+holds 412),
 `log_run{1,2,3}.jsonl`, `summary_run{1,2,3}.json`, `run{1,2,3}.out`,
 `logs/<ts>/12346.log` (the mod chain loading), and the evidence:
 `balatro_fly.png` (Small Blind, round score 292/300, one hand and two discards
@@ -1111,7 +1159,16 @@ cannot drift apart. Weights start naive by default and are written out on exit,
 including on Ctrl-C; `--warm-start` loads
 `outputs/plast2/weights_real_eta0.05_s0.npz` instead.
 
-**It has not yet played actual Balatro.** The game exited before this work
+**It has not yet played actual Balatro.**
+*Corrected (audit, 2026-09-15): it did, later the same evening. The game was
+relaunched at 18:51:50 (`outputs/realgame/logs/2026-09-13T18-51-50/12346.log`)
+and `outputs/realgame/log_gameview_runs.jsonl` records seven `--plastic` sessions
+against it between 19:07 and 19:33: 105 decisions (55 play, 50 discard), 104
+outcomes, 26 reward and 5 punishment pulses, 15 blinds cleared and 5 lost, with
+the weights moving (1,149 of 33,496 synapses changed by the end of the longest
+session). Those runs were never written up and no clear rate is claimed from
+them; what follows describes the offline harness only.*
+The game exited before this work
 started and the brief said not to relaunch it, so what is on the record is the
 same loop against `scripts/realgame_plastic_offline.py`: a real `http.server`
 speaking the mod's JSON-RPC dialect, dealing random hands from a real 52-card
@@ -1155,7 +1212,19 @@ construction, animation-accurate, and correct for any number of cards. No model
 is left to be wrong.
 
 **Written, installed and unit-tested; never executed.** A Lua file is only read
-when the game launches, and the game has not launched since. What is verified is
+when the game launches, and the game has not launched since.
+*Corrected (audit, 2026-09-15): it launched at 18:51:50 that evening, after this
+Lua was installed, and the Lua did execute. Every decision record in
+`outputs/realgame/log_gameview_runs.jsonl` carries the per-card `rect`
+(`x/y/w/h/r/moving`) and the `screen` block that only these additions emit, so
+the sentence below, "what is not verified is that the mod emits the fields at
+all", is settled, as is the first of the five open items in `docs/POV.md` §3. The
+`screen` block answers part of that list's fourth item too: it reports `width`
+1209 against `pixel_width` 2418, so the two dimension sources do differ on this
+window. The rest of that list is still open, and nothing here establishes that
+the boxes land in the right place on a live window. `docs/POV.md` §3 was written
+before that session and still says the Lua has never run.*
+What is verified is
 the Python consumer (10 tests over parsing, fallback, scaling and hands of
 1–8 cards) and, on real pixels, that feeding it the card positions *measured
 off* `balatro_fly_firsthand.png` puts the boxes on the card borders where the
@@ -1512,7 +1581,7 @@ Mean `play_drive` in Hz per bucket (a bucket is played when its drive is >= 0),
 
 | arm | start | pulse 0 | pulse 120 | `lt0.5` reaches 0? | what happened to the others |
 |---|---|---|---|---|---|
-| one `lt0.5` odour | C80 weights | `lt0.5` **+9.045** | **+9.002** | **no** | nothing moves at all |
+| one `lt0.5` odour | C80 weights | `lt0.5` **+9.045** | **+9.002** | **no** | `ge1.0` +6.44 -> +6.82, `lt0.25` and `lt1.0` do not move at all |
 | all 7 `lt0.5` odours | C80 weights | `lt0.5` **+9.045** | **+8.494** | **no** | `lt1.0` +4.51 -> +4.63, `ge1.0` +6.44 -> +6.53 |
 | all 7 `lt0.5` odours | naive weights | `lt0.5` -0.002 | **-3.877** | yes | **`ge1.0` +1.50 -> -0.17, crossing zero at pulse 38**; `lt1.0` -2.47 -> -3.16; `lt0.25` +1.75 -> **+2.40** |
 

@@ -94,7 +94,10 @@ What came out of it:
   frozen copy of itself. It still only ties a fixed rule that discards whenever
   discarding is legal and plays only when it must. The pass mark for that
   experiment, written down before a single game was played, required beating
-  that rule too. It did not. That is a miss.
+  that rule too. It did not. That is a miss. What stops it is not the way the
+  chips were turned into reward, which was tested and replaced: the rule can only
+  ever *weaken* connections, and the ones it would have to weaken to do better
+  are already as weak as the rule allows.
 * Rewiring the one stage that was rewired fairly leaves every measurement where
   it was. An earlier claim that the real wiring beats a shuffled one is
   **retracted**: that shuffle left the network nearly silent, so it compared a
@@ -176,9 +179,9 @@ again at every claim that depends on them.
 | | path | what it is fitted or calibrated to |
 |---|---|---|
 | **trained action readout**, linear or a 1×256 MLP on log1p spike counts | (a) | **Fitted.** The teacher's chosen action on **120,755** held-in states. Everything it gets right is information that survived the trip through the fly. |
-| **decision bias** (−2.616) and **softmax temperature** (0.838) | (b) | Calibrated, **label-free**, from 200 hands before any learning. |
+| **decision bias** and **softmax temperature** (−2.616 and 0.838 for the v2 fly and the real game; −1.712 and 0.815 for the separated-encoding fly the headline plasticity numbers come from) | (b) | Calibrated, **label-free**, from 200 hands before any learning. |
 | **4,064 per-Kenyon-cell homeostatic thresholds**, each cell's own spike threshold, set so it answers to a small fraction of odours the way a real Kenyon cell does | (b) | Calibrated, **label-free**: each cell sees only its own firing rate. |
-| **punishment / reward per-pulse gain ratio** (3.81) | (b) | Calibrated, **label-free**, by matching absolute weight change per pulse. |
+| **punishment / reward per-pulse gain ratio** (3.81; 1.59 for the separated-encoding fly) | (b) | Calibrated, **label-free**, by matching absolute weight change per pulse. |
 | **the gains on APL**, the anterior paired lateral cell that damps the whole Kenyon-cell population, **one global conductance, the uniform −45 mV spike threshold** | both | Neither fitted nor measured. **Ours**. The connectome gives topology, synapse counts and a predicted sign per neuron; it does not give per-synapse efficacy or spike thresholds. Listed in [`outputs/mb/REPORT.md`](outputs/mb/REPORT.md) §1. |
 | **the 5,146,572 connectome edges themselves** | both | **Frozen.** Nothing moves on path (a) at all; on path (b) only the 33,496 KC→MBON weights move, under dopamine-gated depression. |
 
@@ -202,7 +205,7 @@ and the training runs both.
 | **Hand type decodable from Kenyon cells**, the cells that store the fly's smell memories | **1.000** (0.995 under grouped cross-validation, which holds near-identical inputs out together so nothing passes by memorising) | chance 0.117; driven-ORN-count-only confound 0.267. The old encoding's KC probe, on an *easier* binary label, managed 0.598 on a different task, so it is not a controlled comparison. |
 | **…at the descending neurons** (DNs), the only cells carrying anything from brain to body | **0.842** | but the DN *intensity* probe is 0.918, so DNs still carry how much more cleanly than what |
 | **Does evolved calyx wiring help?** The calyx is where smell relays hand over to the Kenyon cells | **No.** `real` sits inside the 3-seed rewired null on every measure | 12 paired comparisons, smallest p = **0.13** on an exact McNemar test, which counts only the games where two policies played the same seed and disagreed. Agrees with Caron et al. 2013. |
-| **Does the fly's own learning rule learn?** | **Yes: +0.234** [+0.141, +0.320] over its own frozen control | and it **ties** always-discard, a fixed rule that discards whenever that is legal and plays only when it must: +0.024 [−0.072, +0.113]. The preregistered rule, written down before any game was played, required beating both. **That is a miss.** |
+| **Does the fly's own learning rule learn?** | **Yes: +0.275** [+0.210, +0.338] over its own frozen control, under the best reward v4 found (v3's reward gives +0.234 [+0.141, +0.320]) | and it **ties** always-discard, a fixed rule that discards whenever that is legal and plays only when it must: +0.065 [+0.000, +0.130], p = 0.058, Holm-corrected 0.117. The preregistered rule, written down before any game was played, required beating both. **That is a miss.** |
 | Label-free recalibration, for scale | per-KC homeostatic thresholds move clear rate 0.265 → **0.380** | in every wiring condition equally. Calibration matters more than wiring here. |
 
 Two claims that were **retracted** rather than quietly dropped, and one bug that
@@ -282,7 +285,7 @@ by chips. Depression means a pulse only ever weakens a synapse: a reward pulse,
 carried by the PAM dopamine cluster, weakens the path to the avoid cells, and a
 punishment pulse, carried by PPL1, weakens the path to the approach cells.
 
-Three rounds, and the frozen control is bit-identical every time (0 of 33,496
+Four rounds, and the frozen control is bit-identical every time (0 of 33,496
 synapses move), so the learning effect is real:
 
 * **v1** learned "always play", which is the worst policy in the game. Clear rate
@@ -300,19 +303,40 @@ synapses move), so the learning effect is real:
   −0.023 and +0.022 alone, **+0.234** together, an interaction contrast of +0.171.
   An interaction contrast measures how much the two changes made together beat
   what adding up each change alone would give.
+* **v4** was preregistered as well
+  ([`outputs/plast4/PREREGISTRATION.md`](outputs/plast4/PREREGISTRATION.md),
+  again written before any game here was played) and asked whether **any** reward
+  computable from the game beats always-discard. None does. The best of them, an
+  eligibility trace that carries a lost blind's punishment back over the plays
+  that led into it, produces the best learned fly in the project, **0.448** in all
+  three training seeds, **+0.275** [+0.210, +0.338] over its frozen control, and
+  **+0.065** [+0.000, +0.130] against always-discard at p = 0.058,
+  Holm-corrected 0.117. Another miss, by the width of a rounding.
 
-It then stopped at the optimum of its own reward function. The
-dopamine ledger says so: the `< 0.5×` bucket comes out net reward-positive
-(139 rewards against 97 punishments), so the reward *tells* the fly to play it,
-and the fly obeys. Two of three runs reproduce a hand-written baseline's 400 game
-outcomes **bit for bit**. The failure is in the reward specification, not in the
-learning.
+v3 read the stall as a failure of the reward specification: its fly stopped at
+the optimum of its own reward function, and the dopamine ledger said so, with the
+`< 0.5×` bucket net reward-positive (139 rewards against 97 punishments). **v4
+overturned that reading.** The thing the reward would have to say, "this hand paid
+its share but the blind was still lost", cannot be expressed by any immediate
+same-hand reward term at all, and it happens 0 times in 2,374 plays; only a trace
+can reach it, and the trace flips that bucket's ledger without changing the policy
+at all. A post-hoc probe then hands the rule the best signal any reward or credit
+scheme could ever produce, punishment aimed at exactly the odours that need it,
+and it still cannot get there: **83.6 % of the synapses such a pulse can reach are
+already pinned at the 5 % weight floor**, 120 more pulses move the decision drive
+by 0.5 %, and the drive that is left is there because the *reward* pulses
+depressed the avoid side, which a depression-only rule has no operation to undo.
+**The binding constraint is a capacity limit of depression-only KC→MBON
+plasticity, not the reward specification and not credit assignment.** A
+bidirectional rule would have the operation this one is missing; that was outside
+the frozen spec every round ran under, and nothing was changed to chase it.
 
 ![the 2x2 interaction, and P(play) by score bucket](figures/04_plasticity.png)
 
 → [RESULTS.md § Plasticity](RESULTS.md#plasticity-does-the-flys-own-learning-rule-learn-balatro-from-chips-2026-09-13) ·
 [§ v2](RESULTS.md#plasticity-v2-kc-homeostasis-2026-09-13) ·
 [§ v3](RESULTS.md#plasticity-v3-the-audit-fixes-and-a-preregistered-2x2-2026-09-13) ·
+[§ v4](RESULTS.md#plasticity-v4-can-any-game-computable-reward-beat-always-discard-2026-09-14) ·
 [`outputs/plast/REPORT.md`](outputs/plast/REPORT.md) ·
 [`outputs/plast2/REPORT.md`](outputs/plast2/REPORT.md)
 
@@ -390,10 +414,14 @@ Both found here, both load-bearing for anyone building the same thing:
 * **It is not statistically powerful everywhere.** 400 episodes does not separate
   39.5 % from 40.5 %; 3 real-game runs separate nothing. Where an interval is not
   reported, assume it would cross zero.
-* **The overlay's Lua side has never executed.** ~120 lines were written,
-  installed and unit-tested against real pixels, but a Lua file is only read when
-  the game launches and the game has not launched since.
-  [`docs/POV.md`](docs/POV.md) §3 is explicit about which half is verified.
+* **The overlay's Lua side is only partly verified.** ~120 lines were written,
+  installed and unit-tested against real pixels. A later session did launch the
+  game with them, and every decision record in
+  `outputs/realgame/log_gameview_runs.jsonl` carries the per-card `rect` and the
+  `screen` block that only those lines emit, so the mod does emit the fields.
+  What that run does not settle is whether the rects put the boxes in the right
+  place on a live window. [`docs/POV.md`](docs/POV.md) §3 lists the five open
+  items, and was written before that session.
 
 ---
 
@@ -404,8 +432,9 @@ flybalatro/         the library: connectome loader, LIF brain, encodings,
                     hand analysis, plasticity, the viewer, the real-game driver
 scripts/            one file per experiment stage; every one has a --help that
                     states the protocol it implements
-tests/              466 tests, 1 skipped (a v1-era assertion that a brain
-                    readout does NOT exist; one does, so it cannot run)
+tests/              467 tests, 466 passed and 1 skipped (a v1-era assertion
+                    that a brain readout does NOT exist; one does, so it
+                    cannot run)
 outputs/            every artefact, with the config that produced it, plus five
                     long-form REPORT.md write-ups
 figures/            regenerated from outputs/ by scripts/figures.py
@@ -445,7 +474,7 @@ what it looks like with the real game embedded in it.
 * [`docs/REALGAME_INSTALL.md`](docs/REALGAME_INSTALL.md): driving the Steam
   build on macOS. The only part that cannot be reproduced headlessly.
 * [`patches/README.md`](patches/README.md): the two patched upstreams, pinned
-  commits, and why one of the three patches is a real engine bug.
+  commits, and why one of them is a real engine bug.
 
 ## Licence
 
